@@ -1,6 +1,14 @@
 # Health RI Metadata Schemas
 
-HealthRI metadata schemas draft project, aiming to define the HealthRI core metadata schema using DCAT and other standards. This is part of the portal project (based on COVID portal) 
+HealthRI metadata schemas draft project, aiming to define the HealthRI core metadata schema using DCAT and other standards to publish in a FAIR Data Point. This is part of the Health RI portal project (extension of Health RI COVID portal). The core metadata schema can also be used as a guideline for other portals. 
+The core metadata schema can be extended to COVID metadata, Cohort Metadata, Dementia Metadata, etc.
+
+### Related projects
+-NWO oncology portal
+-Cohort NCC
+-KWF ICRP Database
+
+
 
 Draft Drawings: https://drive.google.com/file/d/18Cq_lamOPybPcTWw_YxJACYARQTD6WmD/view?usp=sharing 
 
