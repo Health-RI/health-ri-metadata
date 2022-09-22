@@ -1,6 +1,6 @@
 # Health RI Metadata Schemas
 
-HealthRI metadata schemas draft project.
+HealthRI metadata schemas draft project, aiming to define the HealthRI core metadata schema using DCAT and other standards. This is part of the portal project (based on COVID portal) 
 
 Draft Drawings: https://drive.google.com/file/d/18Cq_lamOPybPcTWw_YxJACYARQTD6WmD/view?usp=sharing 
 
