@@ -1,8 +1,10 @@
-# Health RI Metadata
+# Health RI Metadata Schemas
 
-HealthRI metadata schemas
+HealthRI metadata schemas draft project.
 
-Drawings: https://drive.google.com/file/d/18Cq_lamOPybPcTWw_YxJACYARQTD6WmD/view?usp=sharing 
+Draft Drawings: https://drive.google.com/file/d/18Cq_lamOPybPcTWw_YxJACYARQTD6WmD/view?usp=sharing 
+
+Source Cedar Forms / Templates: 
 
 
 ## Reference
