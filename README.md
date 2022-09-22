@@ -1,6 +1,8 @@
 # Health RI Metadata
 
-HealtRI metadata schemas
+HealthRI metadata schemas
+
+Drawings: https://drive.google.com/file/d/18Cq_lamOPybPcTWw_YxJACYARQTD6WmD/view?usp=sharing 
 
 
 ## Reference
