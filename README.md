@@ -16,7 +16,7 @@ Cedar Forms / Templates:
 https://cedar.metadatacenter.org/dashboard?folderId=https:%2F%2Frepo.metadatacenter.org%2Ffolders%2Fe07ef045-bc38-4e9c-a03f-b53a960b3acc
 
 ## References
--- https://github.com/ejp-rd-vp/resource-metadata-schema
--- DCAT
--- FDP
--- Resource for Access metadata: https://www.sciencedirect.com/science/article/pii/S2666979X21000355
+- https://github.com/ejp-rd-vp/resource-metadata-schema
+- DCAT
+- FDP
+- Resource for Access metadata: https://www.sciencedirect.com/science/article/pii/S2666979X21000355
