@@ -6,17 +6,18 @@ The core metadata schema can be extended to COVID metadata, Cohort Metadata, Dem
 ## Diagrams
 https://drive.google.com/file/d/18Cq_lamOPybPcTWw_YxJACYARQTD6WmD/view?usp=sharing  
 
+## Source
+- Cedar Forms / Templates: 
+https://cedar.metadatacenter.org/dashboard?folderId=https:%2F%2Frepo.metadatacenter.org%2Ffolders%2Fe07ef045-bc38-4e9c-a03f-b53a960b3acc
+- Guidlines: https://osf.io/2y6ba
+
 ### Related projects
 - NWO oncology portal
 - Cohort NCC
 - KWF ICRP Database
 
-## Source
-Cedar Forms / Templates: 
-https://cedar.metadatacenter.org/dashboard?folderId=https:%2F%2Frepo.metadatacenter.org%2Ffolders%2Fe07ef045-bc38-4e9c-a03f-b53a960b3acc
-Guidlines: https://osf.io/2y6ba
 
-## References
+### References
 - https://github.com/ejp-rd-vp/resource-metadata-schema
 - DCAT
 - FDP
