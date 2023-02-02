@@ -22,3 +22,24 @@ https://cedar.metadatacenter.org/dashboard?folderId=https:%2F%2Frepo.metadatacen
 - DCAT
 - FDP
 - Resource for Access metadata: https://www.sciencedirect.com/science/article/pii/S2666979X21000355
+
+# Scope
+  ## DCAT + layer of metadata that specifically describes dataset in health domain and research (primary care as source of data, secondary data use)
+  -- add sunflower image --
+# describe the model
+# what problem will this solve
+## we will only describe the actual projects and datasets.
+# what we will not solve
+## we will not describe codebooks nor model common data elements in this project.
+
+-- add drawing of that levels of metadata we tackle --
+
+# governance proposal
+## maintenance
+
+# implementation (if you want to connect to the health ri portal, what do you have to do?)
+## DCAT 
+## FDP specs
+
+
+
