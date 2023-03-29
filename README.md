@@ -10,7 +10,7 @@ The core metadata schema can be extended to COVID metadata, Cohort Metadata, Dem
 - Cedar Forms / Templates: 
 https://cedar.metadatacenter.org/dashboard?folderId=https:%2F%2Frepo.metadatacenter.org%2Ffolders%2Fe07ef045-bc38-4e9c-a03f-b53a960b3acc
 - Guidelines: https://osf.io/2y6ba
--UMCs metadata schemas and identified metadata elements
+- UMCs metadata schemas and identified metadata elements
 
 ## Related projects
 - NWO oncology portal
@@ -24,24 +24,25 @@ https://cedar.metadatacenter.org/dashboard?folderId=https:%2F%2Frepo.metadatacen
 - FDP
 - Resource for Access metadata: https://www.sciencedirect.com/science/article/pii/S2666979X21000355
 
-# Scope
-  ## DCAT + layer of metadata that specifically describes dataset in health domain and research (primary care as source of data, secondary data use)
-  -- add sunflower image --
-# Description
-## what problem will this solve
-### we will only describe the actual projects and datasets.
-## what we will not solve
-### we will not describe codebooks nor model common data elements in this project.
+## Scope
+- DCAT + layer of metadata that specifically describes dataset in health domain and research (primary care as source of data, secondary data use)
+#### add sunflower image --
+  
+## Description
+- what problem will this solve
+ we will only describe the actual projects and datasets.
+- what we will not solve
+ we will not describe codebooks nor model common data elements in this project.
 
--- add drawing of that levels of metadata we tackle --
+#### add drawing of that levels of metadata we tackle
 
-# governance proposal
-### maintenance
+## governance proposal
+- maintenance
 
-# implementation (if you want to connect to the health ri portal, what do you have to do?)
-### DCAT 
-### FDP specs
-### You can use Visual Paradigm community version software to edit the conceptual model graph
+## implementation (if you want to connect to the health ri portal, what do you have to do?)
+- DCAT 
+- FDP specs
+- You can use Visual Paradigm community version software to edit the conceptual model graph
 
 
 
