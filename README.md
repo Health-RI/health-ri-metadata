@@ -16,8 +16,9 @@ https://cedar.metadatacenter.org/dashboard?folderId=https:%2F%2Frepo.metadatacen
 - UMCs metadata schemas and identified metadata elements
 - https://zenodo.org/record/4420116#.Yyt6V6RBxD8 
 - https://github.com/ejp-rd-vp/resource-metadata-schema
-- DCAT
-- DCAT-AP
+- DCAT https://www.w3.org/TR/vocab-dcat/
+- ODRL - https://www.w3.org/TR/odrl-vocab/
+- DCAT-AP https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/dcat-application-profile-data-portals-europe/release/211  / https://raw.githubusercontent.com/SEMICeu/DCAT-AP/master/releases/2.1.1/dcat-ap_2.1.1.svg
 - FDP specification
 - Resource for Access metadata: https://www.sciencedirect.com/science/article/pii/S2666979X21000355
 
