@@ -31,9 +31,9 @@ https://cedar.metadatacenter.org/dashboard?folderId=https:%2F%2Frepo.metadatacen
 - add sunflower image --
   
 ## Description
-- what problem will this solve
+- add what problem will this solve
  we will only describe the actual projects and datasets.
-- what we will not solve
+- add what we will not solve
  we will not describe codebooks nor model common data elements in this project.
 
 - add drawing of that levels of metadata we tackle
