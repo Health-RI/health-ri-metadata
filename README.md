@@ -11,6 +11,7 @@ The core metadata schema can be extended to COVID metadata, Cohort Metadata, Dem
 https://cedar.metadatacenter.org/dashboard?folderId=https:%2F%2Frepo.metadatacenter.org%2Ffolders%2Fe07ef045-bc38-4e9c-a03f-b53a960b3acc
 - Guidelines: https://osf.io/2y6ba
 - UMCs metadata schemas and identified metadata elements
+- https://zenodo.org/record/4420116#.Yyt6V6RBxD8 
 
 ## Related projects
 - NWO oncology portal
