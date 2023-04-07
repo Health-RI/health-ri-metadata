@@ -10,8 +10,9 @@ You can follow up the mapping progress here https://docs.google.com/spreadsheets
 - add diagram printscreen
 
 ### Sources
-- Cedar Forms / Templates: 
+- Cedar Forms / Templates from covid portal: 
 https://cedar.metadatacenter.org/dashboard?folderId=https:%2F%2Frepo.metadatacenter.org%2Ffolders%2Fe07ef045-bc38-4e9c-a03f-b53a960b3acc
+- and initial table mapping Cedar forms from covid portal to DCAT https://github.com/Health-RI/health-ri-metadata/blob/dev_brainstorm/metadata_schemas_from_users/MetaDataOverview.xlsx 
 - Guidelines: https://osf.io/2y6ba
 - UMCs metadata schemas and identified metadata elements
 - https://zenodo.org/record/4420116#.Yyt6V6RBxD8 
