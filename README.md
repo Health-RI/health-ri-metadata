@@ -16,16 +16,15 @@ The core metadata schema can also be used as a guideline for other portals. The 
 - Rare Diseases
 
 
-## Sources
-- Cedar Forms / Templates: 
-https://cedar.metadatacenter.org/dashboard?folderId=https:%2F%2Frepo.metadatacenter.org%2Ffolders%2Fe07ef045-bc38-4e9c-a03f-b53a960b3acc
-- Guidelines: https://osf.io/2y6ba
-- DCAT
-- DCAT AP Health
+## References
+- [Cedar Forms/Templates](https://cedar.metadatacenter.org/dashboard?folderId=https:%2F%2Frepo.metadatacenter.org%2Ffolders%2Fe07ef045-bc38-4e9c-a03f-b53a960b3acc)
+- [M4M Guidelines](https://osf.io/2y6ba)
+- [DCAT](https://www.w3.org/TR/vocab-dcat/)
+- [DCAT AP](https://tehdas.eu/app/uploads/2022/12/tehdas-recommendations-to-enhance-interoperability-within-healthdata-at-eu.pdf)
 - [EJP RD Metadata Schema](https://github.com/ejp-rd-vp/resource-metadata-schema)
 - Schemas provided by the Health-RI nodes
 - Resource for Access metadata: https://www.sciencedirect.com/science/article/pii/S2666979X21000355
-- FAIR Data Point
+- [FAIR Data Point](https://fairdatapoint.readthedocs.io/en/latest/)
 
 ## Related projects
 - NWO oncology portal
