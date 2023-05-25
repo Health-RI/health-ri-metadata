@@ -1,8 +1,8 @@
 # Leaves Metadata Schema
 Folder for the working groups to maintain their work on the domain metadata schemas (leaves). 
-The content can be browsed on the folders of this page: 
+Their schemas can be browsed on the folders: 
 
-- Omics #Omics group, add the link to your git folder here)
+- [Omics](https://github.com/Health-RI/health-ri-metadata/tree/master/Leaves/Omics)
 - Cohorts
 - Biobanks
 - Oncology
