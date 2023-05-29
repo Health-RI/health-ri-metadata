@@ -26,6 +26,7 @@ For illustrative purposes
 - [M4M Guidelines](https://osf.io/2y6ba)
 - [DCAT](https://www.w3.org/TR/vocab-dcat/)
 - [DCAT AP](https://tehdas.eu/app/uploads/2022/12/tehdas-recommendations-to-enhance-interoperability-within-healthdata-at-eu.pdf)
+- [DCAT AP training](https://data.europa.eu/en/dcat-and-dcat-ap-achieving-interoperability-through-data-modelling-and-standardisation)
 - [EJP RD Metadata Schema](https://github.com/ejp-rd-vp/resource-metadata-schema)
 - Schemas provided by the Health-RI nodes
 - Resource for Access metadata: https://www.sciencedirect.com/science/article/pii/S2666979X21000355
