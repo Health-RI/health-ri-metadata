@@ -3,7 +3,7 @@
 Health-RI metadata schemas draft project, aiming to define the HealthRI core metadata schema using DCAT and other standards to publish in a FAIR Data Point. This is part of the Health RI portal project, extension of [Health RI COVID portal](https://covid19initiatives.health-ri.nl/). 
 
 ## Core Metadata Schema
-The core metadata schema can also be used as a guideline for other portals. The schema can be extended to COVID metadata, Cohort Metadata, Dementia Metadata, governance aspects (Accessibility) etc. The extensions are defined by working groups (e.g. Omics group) and hereby called "leaves" in reference to the [sunflower diagram](https://github.com/Health-RI/health-ri-metadata/blob/master/presentations/HRI_Metadata_sunflower.pptx).
+The core metadata schema can also be used as a guideline for other portals. The schema can be extended to COVID metadata, Cohort Metadata, Dementia Metadata, governance aspects (Accessibility) etc. The extensions are defined by working groups (e.g. Omics group) and hereby called "leaves" in reference to the sunflower diagram.
 
 - [HRI core metadata schema draft](https://docs.google.com/spreadsheets/d/1KKfAxn4ftoOAM2v3WsqT2XcPhdmTjnf1BZkvFf9FqF8/edit#gid=0) 
 
@@ -14,6 +14,11 @@ The core metadata schema can also be used as a guideline for other portals. The 
 - Biobanks
 - Oncology
 - Rare Diseases
+
+## Sunflower Diagram
+For illustrative purposes
+
+<img src="https://github.com/Health-RI/health-ri-metadata/assets/54810046/c14e2908-6be3-4750-8dae-b625367edc5a" alt="sunflower" width=350 height=300 title="sunflower">
 
 
 ## References
