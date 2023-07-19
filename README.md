@@ -9,8 +9,8 @@ The core metadata schema can also be used as a guideline for other portals. The 
 - HRI core metadata schema (under development)
 
 
-## [Leaves Metadata Schema](https://github.com/Health-RI/health-ri-metadata/tree/master/Leaves)
-- [Omics](https://github.com/Health-RI/health-ri-metadata/tree/master/Leaves/Omics)
+## [Leaves Metadata Schema](https://github.com/Health-RI/health-ri-metadata/tree/master/Leaves_Petals)
+- [Omics](https://github.com/Health-RI/health-ri-metadata/tree/master/Leaves_Petals/Omics)
 - Cohorts
 - Biobanks
 - Oncology
