@@ -4,6 +4,9 @@ Their schemas can be browsed on the folders:
 
 - [Omics](https://github.com/Health-RI/health-ri-metadata/tree/master/Leaves_Petals/Omics)
 - Cohorts
-- Biobanks
+- Biobanks & Collections
 - Oncology
 - Rare Diseases
+- Imaging
+- ...
+
