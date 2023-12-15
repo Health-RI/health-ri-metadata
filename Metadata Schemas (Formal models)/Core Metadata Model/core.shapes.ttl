@@ -187,45 +187,40 @@ core:DataService_Shape
       sh:severity sh:Violation ;
     ] ;
   sh:property [
-      sh:path <https://www.w3.org/ns/dcat.ttlendpointDescription> ;
+      sh:path dcat:endpointDescription ;
       sh:nodeKind sh:BlankNodeOrIRI ;
       sh:severity sh:Violation ;
     ] ;
   sh:property [
-      sh:path <https://www.w3.org/ns/dcat.ttlendpointDescription> ;
+      sh:path dcat:endpointDescription ;
       sh:nodeKind sh:BlankNodeOrIRI ;
       sh:severity sh:Violation ;
     ] ;
   sh:property [
-      sh:path <https://www.w3.org/ns/dcat.ttlendpointURL> ;
+      sh:path dcat:endpointURL ;
       sh:minCount 1 ;
       sh:nodeKind sh:BlankNodeOrIRI ;
       sh:severity sh:Violation ;
     ] ;
+
   sh:property [
-      sh:path <https://www.w3.org/ns/dcat.ttlendpointURL> ;
-      sh:minCount 1 ;
-      sh:nodeKind sh:BlankNodeOrIRI ;
+      sh:path dcat:servesDataset ;
+      sh:class dcat:Dataset;
       sh:severity sh:Violation ;
     ] ;
   sh:property [
-      sh:path <https://www.w3.org/ns/dcat.ttlservesDataset> ;
-      sh:class <https://www.w3.org/ns/dcat.ttlDataset> ;
+      sh:path dcat:servesDataset ;
+      sh:class dcat:Dataset ;
       sh:severity sh:Violation ;
     ] ;
-  sh:property [
-      sh:path <https://www.w3.org/ns/dcat.ttlservesDataset> ;
-      sh:class <https://www.w3.org/ns/dcat.ttlDataset> ;
-      sh:severity sh:Violation ;
-    ] ;
-  sh:targetClass <https://www.w3.org/ns/dcat.ttlDataService> ;
+  sh:targetClass dcat:DataService ;
 .
 core:Dataset_Shape
   rdf:type sh:NodeShape ;
   sh:name "Dataset"@en ;
   sh:property [
       rdf:type sh:PropertyShape ;
-      sh:path <https://www.w3.org/ns/dcat.ttlcontactPoint> ;
+      sh:path dcat:contactPoint ;
       sh:class foaf:Agent ;
       sh:minCount 1 ;
       sh:name "contact point" ;
@@ -282,7 +277,7 @@ core:Dataset_Shape
     ] ;
   sh:property [
       sh:path dct:source ;
-      sh:class <https://www.w3.org/ns/dcat.ttlDataset> ;
+      sh:class dcat:Dataset;
       sh:severity sh:Violation ;
     ] ;
   sh:property [
