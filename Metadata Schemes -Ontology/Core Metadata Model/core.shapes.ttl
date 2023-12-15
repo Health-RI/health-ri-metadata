@@ -485,4 +485,39 @@ core:Identifier_Shape
 core:Project
   rdf:type sh:NodeShape ;
   rdfs:label "Project" ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path dct:description ;
+      sh:datatype xsd:string ;
+      sh:minCount 1 ;
+      sh:name "description" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path dct:identifier ;
+      sh:datatype xsd:string ;
+      sh:minCount 1 ;
+      sh:name "identifier" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path dct:title ;
+      sh:datatype xsd:string ;
+      sh:minCount 1 ;
+      sh:name "title" ;
+    ] ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path foaf:fundedBy ;
+      sh:class foaf:Agent ;
+      sh:minCount 1 ;
+      sh:name "funded by" ;
+    ] ;
+      sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path dcat:dataset ;
+      sh:class dcat:Dataset ;
+      sh:minCount 1 ;
+      sh:name "dataset" ;
+    ] ;
 .
