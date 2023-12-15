@@ -3,10 +3,11 @@
 This project aims to define the HealthRI core metadata schema using DCAT and other standards. This is part of the Health RI portal project, an extension of [Health RI COVID portal](https://covid19initiatives.health-ri.nl/). 
 
 ## Core Metadata Schema
-The core metadata schema can also be used as a guideline for other portals. The schema can be extended to COVID metadata, Cohort Metadata, Dementia Metadata, governance aspects (Accessibility) etc. The extensions are defined by working groups (e.g. Omics group) and are hereby called "leaves" or "petals" in reference to the sunflower diagram (see [Leaves Metadata Schema session](https://github.com/Health-RI/health-ri-metadata/blob/master/README.md#leaves-metadata-schema) ).
+The core metadata schema can also be used as a guideline for other portals. The schema can be extended to COVID metadata, Cohort Metadata, Dementia Metadata, governance aspects (Accessibility) etc. The extensions are defined by working groups (e.g. Omics group) and are hereby called "petals", following the sunflower illustration (see [Leaves Metadata Schema session](https://github.com/Health-RI/health-ri-metadata/blob/master/README.md#leaves-metadata-schema) ).
 
 - [HRI core metadata mapping spreadsheet](https://docs.google.com/spreadsheets/d/1KKfAxn4ftoOAM2v3WsqT2XcPhdmTjnf1BZkvFf9FqF8/edit#gid=0)
-- HRI core metadata schema diagram (under development)
+- [Core metadata schema specification](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/121110529/Core+Metadata+Schema+Specification) (Health-RI wiki/Confluence).
+- HRI core metadata schema diagram (under review):
 <img src="https://github.com/Health-RI/health-ri-metadata/blob/master/Diagrams%20(Visual%20Paradigm)/hricoreschemaplateau1releasecardinality.jpg" alt="diagram" width=1080 height=640 title="diagram">
 
 
@@ -22,7 +23,7 @@ The core metadata schema can also be used as a guideline for other portals. The 
 The official implementation specifications are not yet released, however, one option is for resources to publish their metadata according to this schema in a FAIR Data Point. For that, [shacl](https://github.com/Health-RI/health-ri-metadata/tree/master/shacl) will be provided.
 
 ## Sunflower Diagram
-For illustrative purposes
+To illustrate that after the core, other layers of metadata can be added per domain (e.g. certain funder could require certain metadata information that other funder would not; cancer domain resources need to be described with certain metadata that is not applicable to omics domain resources).
 
 <img src="https://github.com/Health-RI/health-ri-metadata/assets/54810046/c14e2908-6be3-4750-8dae-b625367edc5a">
 
