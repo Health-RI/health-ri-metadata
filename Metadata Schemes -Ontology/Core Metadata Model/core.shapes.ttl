@@ -1,0 +1,488 @@
+# baseURI: http://coreMetadat-healthRI.nl
+# imports: http://datashapes.org/dash
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://purl.org/dc/terms/
+# imports: http://www.w3.org/2004/02/skos/core
+# imports: https://www.w3.org/ns/dcat.ttl
+# prefix: core
+
+@prefix : <http://coreMetadat-healthRI.nl#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix core: <http://coreMetadat-healthRI.nl#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <https://www.w3.org/ns/dcat.ttl> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://coreMetadat-healthRI.nl>
+  rdf:type owl:Ontology ;
+  owl:imports <http://datashapes.org/dash> ;
+  owl:imports dc: ;
+  owl:imports dct: ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:imports <https://www.w3.org/ns/dcat.ttl> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+core:Agent_Shape
+  rdf:type sh:NodeShape ;
+  sh:name "Agent"@en ;
+  sh:property [
+      sh:path dct:type ;
+      sh:class skos:Concept ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path foaf:name ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:Literal ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:targetClass foaf:Agent ;
+.
+core:Catalog_Shape
+  rdf:type sh:NodeShape ;
+  sh:name "Catalog"@en ;
+  sh:property [
+      sh:path dct:creator ;
+      sh:class foaf:Agent ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:description ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:Literal ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:hasPart ;
+      sh:class <https://www.w3.org/ns/dcat.ttlCatalog> ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:isPartOf ;
+      sh:class <https://www.w3.org/ns/dcat.ttlCatalog> ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:issued ;
+      sh:maxCount 1 ;
+      sh:node core:DateOrDateTimeDataType_Shape ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:language ;
+      sh:class dct:LinguisticSystem ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:license ;
+      sh:class dct:LicenseDocument ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:modified ;
+      sh:maxCount 1 ;
+      sh:node core:DateOrDateTimeDataType_Shape ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:publisher ;
+      sh:class foaf:Agent ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:rights ;
+      sh:class dct:RightsStatement ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:spatial ;
+      sh:class dct:Location ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:title ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:Literal ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path foaf:homepage ;
+      sh:class foaf:Document ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path <https://www.w3.org/ns/dcat.ttlcatalog> ;
+      sh:class <https://www.w3.org/ns/dcat.ttlCatalog> ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path <https://www.w3.org/ns/dcat.ttldataset> ;
+      sh:class <https://www.w3.org/ns/dcat.ttlDataset> ;
+      sh:minCount 1 ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path <https://www.w3.org/ns/dcat.ttlrecord> ;
+      sh:class <https://www.w3.org/ns/dcat.ttlCatalogRecord> ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path <https://www.w3.org/ns/dcat.ttlservice> ;
+      sh:class <https://www.w3.org/ns/dcat.ttlDataService> ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path <https://www.w3.org/ns/dcat.ttlthemeTaxonomy> ;
+      sh:class skos:ConceptScheme ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:targetClass <https://www.w3.org/ns/dcat.ttlCatalog> ;
+.
+core:DataService_Shape
+  rdf:type sh:NodeShape ;
+  sh:name "Data Service"@en ;
+  sh:property [
+      sh:path dct:accessRights ;
+      sh:class dct:RightsStatement ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:accessRights ;
+      sh:class dct:RightsStatement ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:description ;
+      sh:nodeKind sh:Literal ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:description ;
+      sh:nodeKind sh:Literal ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:licence ;
+      sh:class dct:LicenseDocument ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:licence ;
+      sh:class dct:LicenseDocument ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:title ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:Literal ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:title ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:Literal ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path <https://www.w3.org/ns/dcat.ttlendpointDescription> ;
+      sh:nodeKind sh:BlankNodeOrIRI ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path <https://www.w3.org/ns/dcat.ttlendpointDescription> ;
+      sh:nodeKind sh:BlankNodeOrIRI ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path <https://www.w3.org/ns/dcat.ttlendpointURL> ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:BlankNodeOrIRI ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path <https://www.w3.org/ns/dcat.ttlendpointURL> ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:BlankNodeOrIRI ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path <https://www.w3.org/ns/dcat.ttlservesDataset> ;
+      sh:class <https://www.w3.org/ns/dcat.ttlDataset> ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path <https://www.w3.org/ns/dcat.ttlservesDataset> ;
+      sh:class <https://www.w3.org/ns/dcat.ttlDataset> ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:targetClass <https://www.w3.org/ns/dcat.ttlDataService> ;
+.
+core:Dataset_Shape
+  rdf:type sh:NodeShape ;
+  sh:name "Dataset"@en ;
+  sh:property [
+      rdf:type sh:PropertyShape ;
+      sh:path <https://www.w3.org/ns/dcat.ttlcontactPoint> ;
+      sh:class foaf:Agent ;
+      sh:minCount 1 ;
+      sh:name "contact point" ;
+      sh:nodeKind sh:BlankNodeOrIRI ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:creator ;
+      sh:class foaf:Agent ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:description ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:Literal ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:identifier ;
+      sh:datatype xsd:string ;
+      sh:nodeKind sh:Literal ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:identifier ;
+      sh:datatype xsd:string ;
+      sh:nodeKind sh:Literal ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:issued ;
+      sh:datatype xsd:datetime ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+      sh:shape core:DateOrDateTimeDataType_Shape ;
+    ] ;
+  sh:property [
+      sh:path dct:modified ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+      sh:shape core:DateOrDateTimeDataType_Shape ;
+    ] ;
+  sh:property [
+      sh:path dct:publisher ;
+      sh:class foaf:Agent ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:relation ;
+      sh:nodeKind sh:BlankNodeOrIRI ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:source ;
+      sh:class <https://www.w3.org/ns/dcat.ttlDataset> ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:spatialResolutionInMeters ;
+      sh:datatype xsd:decimal ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:temporal ;
+      sh:class dct:PeriodOfTime ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:temporalResolution ;
+      sh:datatype xsd:duration ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:theme ;
+      sh:class skos:Concept ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:title ;
+      sh:datatype xsd:string ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:Literal ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:title ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:Literal ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:type ;
+      sh:class skos:Concept ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path owl:versionInfo ;
+      sh:datatype xsd:string ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:Literal ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path <https://www.w3.org/ns/dcat.ttldistribution> ;
+      sh:class <https://www.w3.org/ns/dcat.ttlDistribution> ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path <https://www.w3.org/ns/dcat.ttllandingPage> ;
+      sh:class foaf:Document ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:targetClass <https://www.w3.org/ns/dcat.ttlDataset> ;
+.
+core:Distribution_Shape
+  rdf:type sh:NodeShape ;
+  sh:name "Distribution"@en ;
+  sh:property [
+      sh:path <http://data.europa.eu/r5ravailability> ;
+      sh:class skos:Concept ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:conformsTo ;
+      sh:class dct:Standard ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:description ;
+      sh:nodeKind sh:Literal ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:format ;
+      sh:class dct:MediaTypeOrExtent ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:issued ;
+      sh:maxCount 1 ;
+      sh:node core:DateOrDateTimeDataType_Shape ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:language ;
+      sh:class dct:LinguisticSystem ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:license ;
+      sh:class dct:LicenseDocument ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:modified ;
+      sh:maxCount 1 ;
+      sh:node core:DateOrDateTimeDataType_Shape ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:rights ;
+      sh:class dct:RightsStatement ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path dct:title ;
+      sh:nodeKind sh:Literal ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path adms:status ;
+      sh:class skos:Concept ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path <https://www.w3.org/ns/dcat.ttlaccessService> ;
+      sh:class <https://www.w3.org/ns/dcat.ttlDataService> ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path <https://www.w3.org/ns/dcat.ttlaccessURL> ;
+      sh:minCount 1 ;
+      sh:nodeKind sh:BlankNodeOrIRI ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path <https://www.w3.org/ns/dcat.ttlbyteSize> ;
+      sh:datatype xsd:decimal ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path <https://www.w3.org/ns/dcat.ttlcompressFormat> ;
+      sh:class dct:MediaType ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path <https://www.w3.org/ns/dcat.ttldownloadURL> ;
+      sh:nodeKind sh:BlankNodeOrIRI ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path <https://www.w3.org/ns/dcat.ttlmediaType> ;
+      sh:class dct:MediaType ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path <https://www.w3.org/ns/dcat.ttlspatialResolutionInMeters> ;
+      sh:datatype xsd:decimal ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path <https://www.w3.org/ns/dcat.ttltemporalResolution> ;
+      sh:datatype xsd:duration ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:targetClass <https://www.w3.org/ns/dcat.ttlDistribution> ;
+.
+core:Identifier_Shape
+  rdf:type sh:NodeShape ;
+  sh:name "Identifier"@en ;
+  sh:property [
+      sh:path skos:notation ;
+      sh:maxCount 1 ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:targetClass adms:Identifier ;
+.
+core:Project
+  rdf:type sh:NodeShape ;
+  rdfs:label "Project" ;
+.
