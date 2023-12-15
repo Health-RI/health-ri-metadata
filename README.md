@@ -25,7 +25,7 @@ The official implementation specifications are not yet released, however, one op
 ## Sunflower Diagram
 To illustrate that after the core, other layers of metadata can be added per domain (e.g. certain funder could require certain metadata information that other funder would not; cancer domain resources need to be described with certain metadata that is not applicable to omics domain resources).
 
-<img src="https://github.com/Health-RI/health-ri-metadata/assets/54810046/c14e2908-6be3-4750-8dae-b625367edc5a">
+<img src="https://github.com/Health-RI/health-ri-metadata/assets/54810046/c14e2908-6be3-4750-8dae-b625367edc5a" width=360 height=300 >
 
 
 ## References
