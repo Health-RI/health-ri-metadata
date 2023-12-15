@@ -66,38 +66,23 @@ core:Catalog_Shape
     ] ;
   sh:property [
       sh:path dct:hasPart ;
-      sh:class <https://www.w3.org/ns/dcat.ttlCatalog> ;
+      sh:class dcat:Catalog ;
       sh:severity sh:Violation ;
     ] ;
   sh:property [
       sh:path dct:isPartOf ;
-      sh:class <https://www.w3.org/ns/dcat.ttlCatalog> ;
+      sh:class dcat:Catalog ;
       sh:maxCount 1 ;
       sh:severity sh:Violation ;
     ] ;
-  sh:property [
-      sh:path dct:issued ;
-      sh:maxCount 1 ;
-      sh:node core:DateOrDateTimeDataType_Shape ;
-      sh:severity sh:Violation ;
-    ] ;
-  sh:property [
-      sh:path dct:language ;
-      sh:class dct:LinguisticSystem ;
-      sh:severity sh:Violation ;
-    ] ;
+ 
   sh:property [
       sh:path dct:license ;
       sh:class dct:LicenseDocument ;
       sh:maxCount 1 ;
       sh:severity sh:Violation ;
     ] ;
-  sh:property [
-      sh:path dct:modified ;
-      sh:maxCount 1 ;
-      sh:node core:DateOrDateTimeDataType_Shape ;
-      sh:severity sh:Violation ;
-    ] ;
+
   sh:property [
       sh:path dct:publisher ;
       sh:class foaf:Agent ;
@@ -129,32 +114,28 @@ core:Catalog_Shape
       sh:severity sh:Violation ;
     ] ;
   sh:property [
-      sh:path <https://www.w3.org/ns/dcat.ttlcatalog> ;
-      sh:class <https://www.w3.org/ns/dcat.ttlCatalog> ;
+      sh:path dcat:catalog ;
+      sh:class dcat:Catalog ;
       sh:severity sh:Violation ;
     ] ;
   sh:property [
-      sh:path <https://www.w3.org/ns/dcat.ttldataset> ;
-      sh:class <https://www.w3.org/ns/dcat.ttlDataset> ;
+      sh:path dcat:dataset ;
+      sh:class dcat:Dataset ;
       sh:minCount 1 ;
       sh:severity sh:Violation ;
     ] ;
+  
   sh:property [
-      sh:path <https://www.w3.org/ns/dcat.ttlrecord> ;
-      sh:class <https://www.w3.org/ns/dcat.ttlCatalogRecord> ;
+      sh:path dcat:service ;
+      sh:class dcat:DataService ;
       sh:severity sh:Violation ;
     ] ;
   sh:property [
-      sh:path <https://www.w3.org/ns/dcat.ttlservice> ;
-      sh:class <https://www.w3.org/ns/dcat.ttlDataService> ;
-      sh:severity sh:Violation ;
-    ] ;
-  sh:property [
-      sh:path <https://www.w3.org/ns/dcat.ttlthemeTaxonomy> ;
+      sh:path dcat:themeTaxonomy ;
       sh:class skos:ConceptScheme ;
       sh:severity sh:Violation ;
     ] ;
-  sh:targetClass <https://www.w3.org/ns/dcat.ttlCatalog> ;
+  sh:targetClass dcat:Catalog> ;
 .
 core:DataService_Shape
   rdf:type sh:NodeShape ;
@@ -350,69 +331,20 @@ core:Dataset_Shape
       sh:severity sh:Violation ;
     ] ;
   sh:property [
-      sh:path <https://www.w3.org/ns/dcat.ttldistribution> ;
-      sh:class <https://www.w3.org/ns/dcat.ttlDistribution> ;
+      sh:path dcat:distribution;
+      sh:class dcat:Distribution ;
       sh:severity sh:Violation ;
     ] ;
-  sh:property [
-      sh:path <https://www.w3.org/ns/dcat.ttllandingPage> ;
-      sh:class foaf:Document ;
-      sh:severity sh:Violation ;
-    ] ;
-  sh:targetClass <https://www.w3.org/ns/dcat.ttlDataset> ;
+  
+  sh:targetClass dcat:Dataset ;
 .
 core:Distribution_Shape
   rdf:type sh:NodeShape ;
   sh:name "Distribution"@en ;
-  sh:property [
-      sh:path <http://data.europa.eu/r5ravailability> ;
-      sh:class skos:Concept ;
-      sh:maxCount 1 ;
-      sh:severity sh:Violation ;
-    ] ;
-  sh:property [
-      sh:path dct:conformsTo ;
-      sh:class dct:Standard ;
-      sh:severity sh:Violation ;
-    ] ;
+  
   sh:property [
       sh:path dct:description ;
       sh:nodeKind sh:Literal ;
-      sh:severity sh:Violation ;
-    ] ;
-  sh:property [
-      sh:path dct:format ;
-      sh:class dct:MediaTypeOrExtent ;
-      sh:maxCount 1 ;
-      sh:severity sh:Violation ;
-    ] ;
-  sh:property [
-      sh:path dct:issued ;
-      sh:maxCount 1 ;
-      sh:node core:DateOrDateTimeDataType_Shape ;
-      sh:severity sh:Violation ;
-    ] ;
-  sh:property [
-      sh:path dct:language ;
-      sh:class dct:LinguisticSystem ;
-      sh:severity sh:Violation ;
-    ] ;
-  sh:property [
-      sh:path dct:license ;
-      sh:class dct:LicenseDocument ;
-      sh:maxCount 1 ;
-      sh:severity sh:Violation ;
-    ] ;
-  sh:property [
-      sh:path dct:modified ;
-      sh:maxCount 1 ;
-      sh:node core:DateOrDateTimeDataType_Shape ;
-      sh:severity sh:Violation ;
-    ] ;
-  sh:property [
-      sh:path dct:rights ;
-      sh:class dct:RightsStatement ;
-      sh:maxCount 1 ;
       sh:severity sh:Violation ;
     ] ;
   sh:property [
@@ -421,66 +353,31 @@ core:Distribution_Shape
       sh:severity sh:Violation ;
     ] ;
   sh:property [
-      sh:path adms:status ;
-      sh:class skos:Concept ;
-      sh:maxCount 1 ;
+      sh:path dcat:accessService ;
+      sh:class dcat:DataService ;
       sh:severity sh:Violation ;
     ] ;
   sh:property [
-      sh:path <https://www.w3.org/ns/dcat.ttlaccessService> ;
-      sh:class <https://www.w3.org/ns/dcat.ttlDataService> ;
-      sh:severity sh:Violation ;
-    ] ;
-  sh:property [
-      sh:path <https://www.w3.org/ns/dcat.ttlaccessURL> ;
+      sh:path dcat:accessURL ;
       sh:minCount 1 ;
       sh:nodeKind sh:BlankNodeOrIRI ;
       sh:severity sh:Violation ;
     ] ;
+ 
+  
   sh:property [
-      sh:path <https://www.w3.org/ns/dcat.ttlbyteSize> ;
-      sh:datatype xsd:decimal ;
-      sh:maxCount 1 ;
-      sh:severity sh:Violation ;
-    ] ;
-  sh:property [
-      sh:path <https://www.w3.org/ns/dcat.ttlcompressFormat> ;
-      sh:class dct:MediaType ;
-      sh:maxCount 1 ;
-      sh:severity sh:Violation ;
-    ] ;
-  sh:property [
-      sh:path <https://www.w3.org/ns/dcat.ttldownloadURL> ;
+      sh:path dcat:downloadURL ;
       sh:nodeKind sh:BlankNodeOrIRI ;
       sh:severity sh:Violation ;
     ] ;
   sh:property [
-      sh:path <https://www.w3.org/ns/dcat.ttlmediaType> ;
+      sh:path dcat:mediaType ;
       sh:class dct:MediaType ;
       sh:maxCount 1 ;
       sh:severity sh:Violation ;
     ] ;
-  sh:property [
-      sh:path <https://www.w3.org/ns/dcat.ttlspatialResolutionInMeters> ;
-      sh:datatype xsd:decimal ;
-      sh:severity sh:Violation ;
-    ] ;
-  sh:property [
-      sh:path <https://www.w3.org/ns/dcat.ttltemporalResolution> ;
-      sh:datatype xsd:duration ;
-      sh:severity sh:Violation ;
-    ] ;
-  sh:targetClass <https://www.w3.org/ns/dcat.ttlDistribution> ;
-.
-core:Identifier_Shape
-  rdf:type sh:NodeShape ;
-  sh:name "Identifier"@en ;
-  sh:property [
-      sh:path skos:notation ;
-      sh:maxCount 1 ;
-      sh:severity sh:Violation ;
-    ] ;
-  sh:targetClass adms:Identifier ;
+  
+  sh:targetClass dcat:Distribution ;
 .
 core:Project
   rdf:type sh:NodeShape ;
