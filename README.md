@@ -6,7 +6,8 @@ This project aims to define the HealthRI core metadata schema using DCAT and oth
 The core metadata schema can also be used as a guideline for other portals. The schema can be extended to COVID metadata, Cohort Metadata, Dementia Metadata, governance aspects (Accessibility) etc. The extensions are defined by working groups (e.g. Omics group) and are hereby called "leaves" or "petals" in reference to the sunflower diagram (see [Leaves Metadata Schema session](https://github.com/Health-RI/health-ri-metadata/blob/master/README.md#leaves-metadata-schema) ).
 
 - [HRI core metadata mapping spreadsheet](https://docs.google.com/spreadsheets/d/1KKfAxn4ftoOAM2v3WsqT2XcPhdmTjnf1BZkvFf9FqF8/edit#gid=0)
-- HRI core metadata schema (under development)
+- HRI core metadata schema diagram (under development)
+<img src="https://github.com/Health-RI/health-ri-metadata/blob/master/Diagrams%20(Visual%20Paradigm)/hricoreschemaplateau1releasecardinality.jpg" alt="diagram" width=1080 height=640 title="diagram">
 
 
 ## [Leaves Metadata Schema](https://github.com/Health-RI/health-ri-metadata/tree/master/Leaves_Petals)
@@ -23,7 +24,7 @@ The official implementation specifications are not yet released, however, one op
 ## Sunflower Diagram
 For illustrative purposes
 
-<img src="https://github.com/Health-RI/health-ri-metadata/assets/54810046/c14e2908-6be3-4750-8dae-b625367edc5a" alt="sunflower" width=350 height=300 title="sunflower">
+<img src="https://github.com/Health-RI/health-ri-metadata/assets/54810046/c14e2908-6be3-4750-8dae-b625367edc5a">
 
 
 ## References
