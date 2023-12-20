@@ -11,8 +11,8 @@ The core metadata schema can also be used as a guideline for other portals. The 
 <img src="https://github.com/Health-RI/health-ri-metadata/blob/master/Diagrams%20(Visual%20Paradigm)/hricoreschemaplateau1releasecardinality.jpg" alt="diagram" width=1080 height=640 title="diagram">
 
 
-## [Leaves Metadata Schema](https://github.com/Health-RI/health-ri-metadata/tree/master/Leaves_Petals)
-- [Omics](https://github.com/Health-RI/health-ri-metadata/tree/master/Leaves_Petals/Omics)
+## [Leaves Metadata Schema](https://github.com/Health-RI/health-ri-metadata/tree/master/Requirements-Leaves_Petals)
+- [Omics](https://github.com/Health-RI/health-ri-metadata/tree/master/Requirements-Leaves_Petals/Omics)
 - Cohorts
 - Biobanks
 - Oncology
