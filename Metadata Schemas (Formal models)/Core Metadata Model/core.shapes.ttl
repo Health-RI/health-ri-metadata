@@ -4,6 +4,7 @@
 # imports: http://purl.org/dc/terms/
 # imports: http://www.w3.org/2004/02/skos/core
 # imports: https://www.w3.org/ns/dcat.ttl
+# imports:
 # prefix: core
 
 @prefix : <http://coreMetadat-healthRI.nl#> .
@@ -22,6 +23,8 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fdp-o: <https://w3id.org/fdp/fdp-o#> .
+
 
 <http://coreMetadat-healthRI.nl>
   rdf:type owl:Ontology ;
