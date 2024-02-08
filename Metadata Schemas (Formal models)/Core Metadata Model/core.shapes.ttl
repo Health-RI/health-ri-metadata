@@ -12,7 +12,7 @@
 @prefix core: <http://coreMetadat-healthRI.nl#> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix dcat: <https://www.w3.org/ns/dcat.ttl> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -23,7 +23,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix fdp-o: <https://w3id.org/fdp/fdp-o#> .
 
 
 <http://coreMetadat-healthRI.nl>
@@ -32,7 +31,7 @@
   owl:imports dc: ;
   owl:imports dct: ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  owl:imports <https://www.w3.org/ns/dcat.ttl> ;
+  owl:imports <http://www.w3.org/ns/dcat#> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
 core:Agent_Shape
@@ -138,7 +137,7 @@ core:Catalog_Shape
       sh:class skos:ConceptScheme ;
       sh:severity sh:Violation ;
     ] ;
-  sh:targetClass dcat:Catalog> ;
+  sh:targetClass dcat:Catalog ;
 .
 core:DataService_Shape
   rdf:type sh:NodeShape ;
