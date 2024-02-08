@@ -1,4 +1,4 @@
-# baseURI: http://coreMetadat-healthRI.nl
+# baseURI: http://coreRule-healthri.nl
 # imports: http://datashapes.org/dash
 # imports: http://purl.org/dc/elements/1.1/
 # imports: http://purl.org/dc/terms/
@@ -7,9 +7,9 @@
 # imports:
 # prefix: core
 
-@prefix : <http://coreMetadat-healthRI.nl#> .
+@prefix : <http://coreRule-healthri.nl#> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
-@prefix core: <http://coreMetadat-healthRI.nl#> .
+@prefix core: <http://coreRule-healthri.nl#> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
@@ -25,7 +25,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 
-<http://coreMetadat-healthRI.nl>
+<http://coreRule-healthri.nl>
   rdf:type owl:Ontology ;
   owl:imports <http://datashapes.org/dash> ;
   owl:imports dc: ;
@@ -123,7 +123,7 @@ core:Catalog_Shape
   sh:property [
       sh:path dcat:dataset ;
       sh:class dcat:Dataset ;
-      sh:minCount 1 ;
+      sh:minCount 0 ;
       sh:severity sh:Violation ;
     ] ;
   
@@ -174,12 +174,6 @@ core:DataService_Shape
       sh:path dct:licence ;
       sh:class dct:LicenseDocument ;
       sh:maxCount 1 ;
-      sh:severity sh:Violation ;
-    ] ;
-  sh:property [
-      sh:path dct:title ;
-      sh:minCount 1 ;
-      sh:nodeKind sh:Literal ;
       sh:severity sh:Violation ;
     ] ;
   sh:property [
@@ -248,23 +242,15 @@ core:Dataset_Shape
       sh:severity sh:Violation ;
     ] ;
   sh:property [
-      sh:path dct:identifier ;
-      sh:datatype xsd:string ;
-      sh:nodeKind sh:Literal ;
-      sh:severity sh:Violation ;
-    ] ;
-  sh:property [
       sh:path dct:issued ;
       sh:datatype xsd:datetime ;
       sh:maxCount 1 ;
       sh:severity sh:Violation ;
-      sh:shape core:DateOrDateTimeDataType_Shape ;
     ] ;
   sh:property [
       sh:path dct:modified ;
       sh:maxCount 1 ;
       sh:severity sh:Violation ;
-      sh:shape core:DateOrDateTimeDataType_Shape ;
     ] ;
   sh:property [
       sh:path dct:publisher ;
