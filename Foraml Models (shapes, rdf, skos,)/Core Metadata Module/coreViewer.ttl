@@ -7,10 +7,12 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix vcard:<http://www.w3.org/2006/vcard#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dash: <http://datashapes.org/dash#> .
 
 <http://coreRule-healthri.nl> a owl:Ontology ;
     rdfs:comment "This set of rules defines constraints on the Data Catalog Vocabulary (DCAT) for establishing the fundamental requirements for onboarding metadata onto the national catalog" ;
-    owl:versionInfo "Created with TopBraid Composer" ;
+    owl:versionInfo "Created with TopBraid Composer - Version 1.0" ;
+    dct:creator "Dena Tahvildari" ;
     owl:imports <http://datashapes.org/dash>,
         <http://purl.org/dc/elements/1.1/>,
         <http://purl.org/dc/terms/>,
@@ -30,78 +32,84 @@
             sh:severity sh:Violation ;
             sh:class skos:Concept ;
             sh:maxCount 1
-        ] .
+        ] ;
+    dash:viewer dash:DetailsViewer ;
+    dash:widget dash:DetailsWidget ;
+    dash:order 1 .
 
 <http://coreRule-healthri.nl#Catalog_Shape> a sh:NodeShape ;
-  sh:property [
-      sh:path <http://purl.org/dc/terms/creator>;
-      sh:class foaf:Agent;
-      sh:maxCount 1;
-      sh:severity sh:Violation
+    sh:property [
+        sh:path <http://purl.org/dc/terms/creator>;
+        sh:class foaf:Agent;
+        sh:maxCount 1;
+        sh:severity sh:Violation
     ], [
-      sh:path <http://purl.org/dc/terms/description>;
-      sh:nodeKind sh:Literal;
-      sh:severity sh:Violation;
-      sh:minCount 1
+        sh:path <http://purl.org/dc/terms/description>;
+        sh:nodeKind sh:Literal;
+        sh:severity sh:Violation;
+        sh:minCount 1
     ], [
-      sh:path <http://purl.org/dc/terms/hasPart>;
-      sh:class <http://www.w3.org/ns/dcat#Catalog>;
-      sh:severity sh:Violation
+        sh:path <http://purl.org/dc/terms/hasPart>;
+        sh:class <http://www.w3.org/ns/dcat#Catalog>;
+        sh:severity sh:Violation
     ], [
-      sh:path <http://purl.org/dc/terms/isPartOf>;
-      sh:class <http://www.w3.org/ns/dcat#Catalog>;
-      sh:maxCount 1;
-      sh:severity sh:Violation
+        sh:path <http://purl.org/dc/terms/isPartOf>;
+        sh:class <http://www.w3.org/ns/dcat#Catalog>;
+        sh:maxCount 1;
+        sh:severity sh:Violation
     ], [
-      sh:path <http://purl.org/dc/terms/license>;
-      sh:class <http://purl.org/dc/terms/LicenseDocument>;
-      sh:maxCount 1;
-      sh:severity sh:Violation
+        sh:path <http://purl.org/dc/terms/license>;
+        sh:class <http://purl.org/dc/terms/LicenseDocument>;
+        sh:maxCount 1;
+        sh:severity sh:Violation
     ], [
-      sh:path <http://purl.org/dc/terms/publisher>;
-      sh:class foaf:Agent;
-      sh:maxCount 1;
-      sh:severity sh:Violation;
-      sh:minCount 1
+        sh:path <http://purl.org/dc/terms/publisher>;
+        sh:class foaf:Agent;
+        sh:maxCount 1;
+        sh:severity sh:Violation;
+        sh:minCount 1
     ], [
-      sh:path <http://purl.org/dc/terms/rights>;
-      sh:class <http://purl.org/dc/terms/RightsStatement>;
-      sh:maxCount 1;
-      sh:severity sh:Violation
+        sh:path <http://purl.org/dc/terms/rights>;
+        sh:class <http://purl.org/dc/terms/RightsStatement>;
+        sh:maxCount 1;
+        sh:severity sh:Violation
     ], [
-      sh:path <http://purl.org/dc/terms/spatial>;
-      sh:class <http://purl.org/dc/terms/Location>;
-      sh:severity sh:Violation
+        sh:path <http://purl.org/dc/terms/spatial>;
+        sh:class <http://purl.org/dc/terms/Location>;
+        sh:severity sh:Violation
     ], [
-      sh:path <http://purl.org/dc/terms/title>;
-      sh:nodeKind sh:Literal;
-      sh:severity sh:Violation;
-      sh:minCount 1
+        sh:path <http://purl.org/dc/terms/title>;
+        sh:nodeKind sh:Literal;
+        sh:severity sh:Violation;
+        sh:minCount 1
     ], [
-      sh:path foaf:homepage;
-      sh:class foaf:Document;
-      sh:maxCount 1;
-      sh:severity sh:Violation
+        sh:path foaf:homepage;
+        sh:class foaf:Document;
+        sh:maxCount 1;
+        sh:severity sh:Violation
     ], [
-      sh:path <http://www.w3.org/ns/dcat#catalog>;
-      sh:class <http://www.w3.org/ns/dcat#Catalog>;
-      sh:severity sh:Violation
+        sh:path <http://www.w3.org/ns/dcat#catalog>;
+        sh:class <http://www.w3.org/ns/dcat#Catalog>;
+        sh:severity sh:Violation
     ], [
-      sh:path <http://www.w3.org/ns/dcat#dataset>;
-      sh:class <http://www.w3.org/ns/dcat#Dataset>;
-      sh:severity sh:Violation;
-      sh:minCount 0
+        sh:path <http://www.w3.org/ns/dcat#dataset>;
+        sh:class <http://www.w3.org/ns/dcat#Dataset>;
+        sh:severity sh:Violation;
+        sh:minCount 0
     ], [
-      sh:path <http://www.w3.org/ns/dcat#service>;
-      sh:class <http://www.w3.org/ns/dcat#DataService>;
-      sh:severity sh:Violation
+        sh:path <http://www.w3.org/ns/dcat#service>;
+        sh:class <http://www.w3.org/ns/dcat#DataService>;
+        sh:severity sh:Violation
     ], [
-      sh:path <http://purl.org/dc/terms/theme>;
-      sh:class skos:ConceptScheme;
-      sh:severity sh:Violation
+        sh:path <http://purl.org/dc/terms/theme>;
+        sh:class skos:ConceptScheme;
+        sh:severity sh:Violation
     ];
-  sh:targetClass <http://www.w3.org/ns/dcat#Catalog>;
-  sh:name "Catalog"@en .
+    sh:targetClass <http://www.w3.org/ns/dcat#Catalog>;
+    sh:name "Catalog"@en ;
+    dash:viewer dash:DetailsViewer ;
+    dash:widget dash:DetailsWidget ;
+    dash:order 2 .
 
 <http://coreRule-healthri.nl#DataService_Shape> a sh:NodeShape ;
     sh:name "Data Service"@en ;
@@ -133,7 +141,12 @@
             sh:path <http://www.w3.org/ns/dcat#servesDataset> ;
             sh:class dcat:Dataset ;
             sh:severity sh:Violation
-        ] .
+        ] ;
+    sh:targetClass dcat:DataService ;
+    sh:name "Data Service"@en ;
+    dash:viewer dash:DetailsViewer ;
+    dash:widget dash:DetailsWidget ;
+    dash:order 3 .
 
 <http://coreRule-healthri.nl#Dataset_Shape> a sh:NodeShape ;
     sh:name "Dataset"@en ;
@@ -144,6 +157,11 @@
             sh:severity sh:Violation ;
             sh:minCount 1 ;
             sh:name "contact point"
+        ], [
+        sh:path dcat:inSeries ;
+            sh:class dcat:DatasetSeries ;
+            sh:mimCount 0 ;
+            sh:severity sh:Violation
         ], [
             sh:path <http://purl.org/dc/terms/creator> ;
             sh:class foaf:Agent ;
@@ -212,7 +230,12 @@
             sh:path <http://www.w3.org/ns/dcat#distribution> ;
             sh:class dcat:Distribution ;
             sh:severity sh:Violation
-        ] .
+        ] ;
+    sh:targetClass dcat:Dataset ;
+    sh:name "Dataset"@en ;
+    dash:viewer dash:DetailsViewer ;
+    dash:widget dash:DetailsWidget ;
+    dash:order 4 .
 
 <http://coreRule-healthri.nl#Distribution_Shape> a sh:NodeShape ;
     sh:name "Distribution"@en ;
@@ -244,7 +267,12 @@
             sh:class <http://purl.org/dc/terms/MediaType> ;
             sh:maxCount 1 ;
             sh:severity sh:Violation
-        ] .
+        ] ;
+    sh:targetClass dcat:Distribution ;
+    sh:name "Distribution"@en ;
+    dash:viewer dash:DetailsViewer ;
+    dash:widget dash:DetailsWidget ;
+    dash:order 5 .
 
 <http://coreRule-healthri.nl#Project> a sh:NodeShape ;
     rdfs:label "Project" ;
@@ -273,4 +301,49 @@
             sh:class dcat:Dataset ;
             sh:minCount 0 ;
             sh:name "dataset"
-        ] .
+        ] ;
+    sh:targetClass <http://coreRule-healthri.nl#Project> ;
+    sh:name "Project" ;
+    dash:viewer dash:DetailsViewer ;
+    dash:widget dash:DetailsWidget ;
+    dash:order 6 .
+
+<http://coreRule-healthri.nl#DataSeries_Shape> a sh:NodeShape ;
+    sh:targetClass dcat:DataSeries ;
+    sh:property [
+            sh:path dcat:title ;
+            sh:minCount 1 ;
+            sh:severity sh:Violation ;
+            sh:message "Title is mandatory for each DataSeries."
+    ] ;
+    sh:property [
+        sh:path dcat:description ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "Description is mandatory for each DataSeries."
+    ] ;
+    sh:name "DataSeries" ;
+    dash:viewer dash:DetailsViewer ;
+    dash:widget dash:DetailsWidget ;
+    dash:order 7 .
+
+<http://coreRule-healthri.nl#DatasetSeries_Shape> a sh:NodeShape ;
+    sh:targetClass dcat:DatasetSeries ;
+    sh:name "DatasetSeries" ;
+    dash:viewer dash:DetailsViewer ;
+    dash:widget dash:DetailsWidget ;
+    dash:order 8 .
+
+<http://coreRule-healthri.nl#CatalogRecord_Shape> a sh:NodeShape ;
+    sh:targetClass dcat:CatalogRecord ;
+    sh:name "CatalogRecord" ;
+    dash:viewer dash:DetailsViewer ;
+    dash:widget dash:DetailsWidget ;
+    dash:order 9 .
+
+<http://coreRule-healthri.nl#Catalog_Shape> a sh:NodeShape ;
+    sh:targetClass dcat:Catalog ;
+    sh:name "Catalog" ;
+    dash:viewer dash:DetailsViewer ;
+    dash:widget dash:DetailsWidget ;
+    dash:order 10 .
