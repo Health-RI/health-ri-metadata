@@ -20,7 +20,7 @@
         <http://purl.org/dc/terms/>,
         <http://www.w3.org/2004/02/skos/core>,
         <http://www.w3.org/ns/dcat#> .
-
+        
 <http://coreRule-healthri.nl#Agent_Shape> a sh:NodeShape ;
     sh:name "Agent"@en ;
     sh:targetClass foaf:Agent ;
@@ -37,7 +37,6 @@
             sh:maxCount 1 ;
             sh:uniqueLang true
         ] .
-
 <http://coreRule-healthri.nl#Catalog_Shape> a sh:NodeShape ;
     sh:name "Catalog"@en ;
     sh:targetClass dcat:Catalog ;
@@ -127,7 +126,6 @@
             sh:uniqueLang true ;
             dash:viewer dash:LabelViewer ;
         ] .
-
 <http://coreRule-healthri.nl#DataService_Shape> a sh:NodeShape ;
     sh:name "Data Service"@en ;
     sh:targetClass dcat:DataService ;
@@ -268,7 +266,6 @@
             sh:severity sh:Violation ;
             sh:uniqueLang true
         ] .
-
 <http://coreRule-healthri.nl#Distribution_Shape> a sh:NodeShape ;
     sh:name "Distribution"@en ;
     sh:targetClass dcat:Distribution ;
