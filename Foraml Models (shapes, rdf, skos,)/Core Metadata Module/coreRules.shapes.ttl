@@ -164,7 +164,6 @@
             sh:severity sh:Violation ;
             sh:uniqueLang true
         ] .
-
 <http://coreRule-healthri.nl#Dataset_Shape> a sh:NodeShape ;
     sh:name "Dataset"@en ;
     sh:targetClass dcat:Dataset ;
@@ -358,4 +357,4 @@
     sh:maxCount 1 ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
-  ]. 
+  ].
