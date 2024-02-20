@@ -1,3 +1,4 @@
+
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -8,6 +9,7 @@
 @prefix vcard:<http://www.w3.org/2006/vcard#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix dash: <http://datashapes.org/dash#> .
 
 <http://coreRule-healthri.nl> a owl:Ontology ;
     rdfs:comment "This set of rules defines constraints on the Data Catalog Vocabulary (DCAT) for establishing the fundamental requirements for onboarding metadata onto the national catalog" ;
@@ -97,7 +99,9 @@
             sh:class foaf:Document ;
             sh:maxCount 1 ;
             sh:severity sh:Violation ;
-            sh:uniqueLang true
+            sh:uniqueLang true;
+            dash:editor dash:URIEditor ;
+            dash:viewer dash:LabelViewer ;
         ], [
             sh:path <http://www.w3.org/ns/dcat#catalog> ;
             sh:class dcat:Catalog ;
@@ -120,7 +124,8 @@
             sh:class skos:ConceptScheme ;
             sh:severity sh:Violation ;
             sh:minCount 0 ;
-            sh:uniqueLang true
+            sh:uniqueLang true ;
+            dash:viewer dash:LabelViewer ;
         ] .
 
 <http://coreRule-healthri.nl#DataService_Shape> a sh:NodeShape ;
@@ -147,7 +152,9 @@
             sh:path <http://www.w3.org/ns/dcat#endpointDescription> ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:severity sh:Violation ;
-            sh:uniqueLang true
+            sh:uniqueLang true ;
+            dash:editor dash:TextAreaEditor ;
+            dash:viewer dash:LiteralViewer ;
         ], [
             sh:path <http://www.w3.org/ns/dcat#endpointURL> ;
             sh:nodeKind sh:BlankNodeOrIRI ;
@@ -170,7 +177,9 @@
             sh:severity sh:Violation ;
             sh:minCount 1 ;
             sh:name "contact point" ;
-            sh:uniqueLang true
+            sh:uniqueLang true ;
+            dash:editor dash:URIEditor ;
+            dash:viewer dash:LabelViewer ;
         ], [
             sh:path dcat:inSeries ;
             sh:class dcat:DatasetSeries ;
@@ -209,13 +218,17 @@
             sh:datatype xsd:dateTime ;
             sh:maxCount 1 ;
             sh:severity sh:Violation ;
-            sh:uniqueLang true
+            sh:uniqueLang true;
+            dash:editor dash:DatePickerEditor ;
+            dash:viewer dash:LiteralViewer 
         ], [
             sh:path <http://purl.org/dc/terms/modified> ;
             sh:maxCount 1 ;
             sh:datatype xsd:dateTime ;
             sh:severity sh:Violation ;
-            sh:uniqueLang true
+            sh:uniqueLang true ;
+            dash:editor dash:DatePickerEditor ;
+            dash:viewer dash:LiteralViewer  
         ], [
             sh:path <http://purl.org/dc/terms/publisher> ;
             sh:class foaf:Agent ;
@@ -233,7 +246,9 @@
             sh:class skos:Concept ;
             sh:severity sh:Violation ;
             sh:minCount 1 ;
-            sh:uniqueLang true
+            sh:uniqueLang true ;
+            dash:editor dash:URIEditor ;
+            dash:viewer dash:LabelViewer 
         ], [
             sh:path <http://purl.org/dc/terms/title> ;
             sh:nodeKind sh:Literal ;
@@ -308,3 +323,43 @@
             sh:minCount 1 ;
             sh:uniqueLang true
         ] .
+ <http://coreRule-healthri.nl#Resource_Shape> a sh:NodeShape ;
+  sh:targetClass dcat:Resource ;
+  sh:property [
+    sh:path dct:title ;
+    sh:nodeKind sh:Literal ;
+    sh:minCount 1 ;
+    sh:maxCount  1 ;
+    dash:editor dash:TextFieldEditor ;
+  ], [
+    sh:path dct:description ;
+    sh:nodeKind sh:Literal ;
+    sh:maxCount 1 ;
+    dash:editor dash:TextAreaEditor ;
+  ], [
+    sh:path dct:publisher ;
+    sh:node <http://coreRule-healthri.nl#Agent_Shape> ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    dash:editor dash:BlankNodeEditor ;
+  ], [
+    sh:path dcat:version ;
+    sh:name "version" ;
+    sh:nodeKind sh:Literal ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LiteralViewer ;
+  ], [
+    sh:path dct:language ;
+    sh:nodeKind sh:IRI ;
+    sh:maxCount 1 ;
+    dash:editor dash:URIEditor ;
+    dash:viewer dash:LabelViewer ;
+  ], [
+    sh:path dct:license ;
+    sh:nodeKind sh:IRI ;
+    sh:maxCount 1 ;
+    dash:editor dash:URIEditor ;
+    dash:viewer dash:LabelViewer ;
+  ]. 
