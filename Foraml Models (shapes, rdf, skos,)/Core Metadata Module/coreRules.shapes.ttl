@@ -333,7 +333,7 @@
     dash:editor dash:TextAreaEditor ;
   ], [
     sh:path dct:publisher ;
-    sh:node <http://coreRule-healthri.nl#Agent_Shape> ;
+    sh:node foaf:Agent ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
     dash:editor dash:BlankNodeEditor ;
