@@ -1,3 +1,5 @@
+#baseURI: http://coreRule-healthri.nl
+
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -9,17 +11,20 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dash: <http://datashapes.org/dash#> .
+@prefix core: <http://coreRule-healthri.nl#> .
+@prefix : <http://coreRule-healthri.nl#> .
 
-<http://coreRule-healthri.nl> a owl:Ontology ;
-    rdfs:comment "This set of rules defines constraints on the Data Catalog Vocabulary (DCAT) for establishing the fundamental requirements for onboarding metadata onto the national catalog" ;
-    owl:versionInfo "Created with TopBraid Composer - Version 1.0" ;
-    dct:creator "Dena Tahvildari" ;
-    owl:imports <http://datashapes.org/dash>,
+<http://coreRule-healthri.nl> 
+   rdf:type owl:Ontology ;
+   dc:creator "Dena Tahvildari" ;
+   rdfs:comment "This set of rules defines constraints on the Data Catalog Vocabulary (DCAT) for establishing the fundamental requirements for onboarding metadata onto the national catalog" ;
+   owl:versionInfo "Created with TopBraid Composer - Version 1.0" ;
+   owl:imports <http://datashapes.org/dash>,
         <http://purl.org/dc/elements/1.1/>,
         <http://purl.org/dc/terms/>,
         <http://www.w3.org/2004/02/skos/core>,
-        <http://www.w3.org/ns/dcat#> .
-
+        <http://www.w3.org/ns/dcat#> ,
+.
 <http://coreRule-healthri.nl#Agent_Shape> a sh:NodeShape ;
     sh:name "Agent"@en ;
     sh:targetClass foaf:Agent ;
@@ -69,13 +74,13 @@
            sh:nodeKind sh:LiteralOrIRI ;
            sh:severity sh:Violation ;
            sh:class foaf:Agent ;
-           sh:minCount 1 ;
+           sh:minCount 0 ;
            sh:uniqueLang true ;
       ] , [
            sh:path <http://www.w3.org/ns/dcat#dataset> ;
            sh:class dcat:Dataset ;
            sh:severity sh:Violation ;
-           sh:minCount 0 ;
+           sh:minCount 1 ;
            sh:uniqueLang true ;  
        ], [
            sh:path <http://purl.org/dc/terms/type> ;
@@ -104,6 +109,7 @@
             sh:path <http://purl.org/dc/terms/hasPart> ;
             sh:class dcat:Catalog ;
             sh:severity sh:Violation ;
+	    sh:minCount 0 ;
             sh:uniqueLang true ;
         ], [
             sh:path <http://purl.org/dc/terms/license> ;
@@ -114,15 +120,8 @@
         ], [
             sh:path <http://purl.org/dc/terms/publisher> ;
             sh:class foaf:Agent ;
-            sh:maxCount 1 ;
             sh:severity sh:Violation ;
             sh:minCount 1 ;
-            sh:uniqueLang true ;
-        ], [
-            sh:path <http://purl.org/dc/terms/rights> ;
-            sh:class <http://purl.org/dc/terms/RightsStatement> ;
-            sh:maxCount 1 ;
-            sh:severity sh:Violation ;
             sh:uniqueLang true ;
         ], [
             sh:path <http://purl.org/dc/terms/spatial> ;
@@ -139,7 +138,7 @@
         ], [
             sh:path foaf:homepage ;
             sh:class foaf:Document ;
-            sh:maxCount 1 ;
+            sh:minCount 0 ;
             sh:severity sh:Violation ;
             sh:uniqueLang true ;
             dash:editor dash:URIEditor ;
@@ -148,6 +147,7 @@
             sh:path <http://www.w3.org/ns/dcat#catalog> ;
             sh:class dcat:Catalog ;
             sh:severity sh:Violation ;
+	    sh:minCount 0 ;
             sh:uniqueLang true ;
         ], [
             sh:path <http://www.w3.org/ns/dcat#dataset> ;
@@ -236,29 +236,29 @@
         ], [
             sh:path <http://purl.org/dc/terms/creator> ;
             sh:class foaf:Agent ;
-            sh:maxCount 1 ;
+            sh:minCount 1 ;
             sh:severity sh:Violation ;
             sh:uniqueLang true ;
         ], [
-            sh:path <http://purl.org/dc/terms/version> ;
-            sh:nodeKind sh:IRI ;
+            sh:path dcat:hasVersion ;
+	    sh:nodeKind sh:LiteralOrIRI ;
             sh:severity sh:Violation ;
-            sh:minCount 1 ;
-            sh:name "version" ;
+	    sh:class [ owl:unionOf (rdfs:Literal sh:IRI) ]
+            sh:minCount 0 ;
+            sh:name "Has Version" ;
             sh:uniqueLang true ;
         ], [
              sh:path <http://purl.org/dc/terms/description> ;
              sh:nodeKind sh:LiteralOrIRI ;
              sh:severity sh:Violation ;
-             sh:class [ owl:unionOf (rdfs:Literal xsd:string) ] ;
+             sh:class [ owl:unionOf (rdfs:Literal sh:IRI) ] ;
              sh:minCount 1 ;
              sh:uniqueLang true ;
-    ]
         ], [
             sh:path <http://purl.org/dc/terms/identifier> ;
             sh:nodeKind sh:Literal ;
             sh:severity sh:Violation ;
-            sh:class [ owl:unionOf (rdfs:Literal xsd:string xsd:token) ] ;
+            sh:class [ owl:unionOf (rdfs:Literal) ] ;
             sh:minCount 1 ;
             sh:uniqueLang true ;
         ], [
@@ -291,7 +291,7 @@
             sh:uniqueLang true ;
         ], [
             sh:path <http://purl.org/dc/terms/theme> ;
-            sh:class skos:Concept ;
+            sh:class skos:ConceptScheme ;
             sh:severity sh:Violation ;
             sh:minCount 1 ;
             sh:uniqueLang true ; 
@@ -313,6 +313,7 @@
         ], [
             sh:path <http://www.w3.org/ns/dcat#distribution> ;
             sh:class dcat:Distribution ;
+            sh:minCount 0 ;
             sh:severity sh:Violation ;
             sh:uniqueLang true ;
         ] .
@@ -371,6 +372,7 @@
             sh:uniqueLang true ;
         ] .
  <http://coreRule-healthri.nl#Resource_Shape> a sh:NodeShape ;
+  sh:name "Resource"@en
   sh:targetClass dcat:Resource ;
   sh:property [
     sh:path dct:title ;
@@ -392,7 +394,7 @@
     sh:maxCount 1 ;
     dash:editor dash:BlankNodeEditor ;
   ], [
-    sh:path dcat:version ;
+    sh:path dcat:hasVersion ;
     sh:name "version" ;
     sh:nodeKind sh:Literal ;
     sh:minCount 1 ;
