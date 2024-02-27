@@ -27,6 +27,7 @@
             sh:path foaf:name ;
             sh:severity sh:Violation ;
             sh:nodeKind sh:Literal ;
+            sh:datatype xsd:string ;
             sh:minCount 1 ;
             sh:uniqueLang true
         ], [
@@ -49,17 +50,12 @@
             sh:path <http://purl.org/dc/terms/description> ;
             sh:nodeKind sh:Literal ;
             sh:severity sh:Violation ;
+            Sh:class rdfs:Literal ;
             sh:minCount 1 ;
             sh:uniqueLang true
         ], [
             sh:path <http://purl.org/dc/terms/hasPart> ;
             sh:class dcat:Catalog ;
-            sh:severity sh:Violation ;
-            sh:uniqueLang true
-        ], [
-            sh:path <http://purl.org/dc/terms/isPartOf> ;
-            sh:class dcat:Catalog ;
-            sh:maxCount 1 ;
             sh:severity sh:Violation ;
             sh:uniqueLang true
         ], [
@@ -90,6 +86,7 @@
             sh:path <http://purl.org/dc/terms/title> ;
             sh:nodeKind sh:Literal ;
             sh:severity sh:Violation ;
+            Sh:class rdfs:Literal ;
             sh:minCount 1 ;
             sh:uniqueLang true
         ], [
@@ -119,7 +116,7 @@
             sh:uniqueLang true
         ], [
             sh:path <http://purl.org/dc/terms/theme> ;
-            sh:class skos:ConceptScheme ;
+            sh:class skos:Concept ;
             sh:severity sh:Violation ;
             sh:minCount 0 ;
             sh:uniqueLang true ;
@@ -138,11 +135,13 @@
             sh:path <http://purl.org/dc/terms/description> ;
             sh:nodeKind sh:Literal ;
             sh:severity sh:Violation ;
+	    sh:class rdfs:Literal ;
             sh:uniqueLang true
         ], [
             sh:path <http://purl.org/dc/terms/title> ;
             sh:nodeKind sh:Literal ;
             sh:severity sh:Violation ;
+            sh:datatype xsd:string ;
             sh:minCount 1 ;
             sh:uniqueLang true
         ], [
@@ -150,12 +149,14 @@
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:severity sh:Violation ;
             sh:uniqueLang true ;
+            sh:class rdfs:Literal ;
             dash:editor dash:TextAreaEditor ;
             dash:viewer dash:LiteralViewer ;
         ], [
             sh:path <http://www.w3.org/ns/dcat#endpointURL> ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:severity sh:Violation ;
+            sh:class rdfs:Literal ;
             sh:minCount 1 ;
             sh:uniqueLang true
         ], [
@@ -170,6 +171,7 @@
     sh:property [
             sh:path <http://purl.org/dc/terms/contactPoint> ;
             sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:class card:Kind ;
             sh:severity sh:Violation ;
             sh:minCount 1 ;
             sh:name "contact point" ;
@@ -200,12 +202,12 @@
             sh:path <http://purl.org/dc/terms/description> ;
             sh:nodeKind sh:Literal ;
             sh:severity sh:Violation ;
+            sh:class rdfs:Literal ;
             sh:minCount 1 ;
             sh:uniqueLang true
         ], [
             sh:path <http://purl.org/dc/terms/identifier> ;
             sh:nodeKind sh:Literal ;
-            sh:datatype xsd:string ;
             sh:severity sh:Violation ;
             sh:minCount 1 ;
             sh:uniqueLang true
@@ -308,13 +310,13 @@
     sh:property [
             sh:path dcat:title ;
             sh:severity sh:Violation ;
-            sh:message "Title is mandatory for each DataSeries." ;
+            sh:class rdfs:Literal;
             sh:minCount 1 ;
             sh:uniqueLang true
         ], [
             sh:path dcat:description ;
             sh:severity sh:Violation ;
-            sh:message "Description is mandatory for each DataSeries." ;
+            sh:class rdfs:Literal ;
             sh:minCount 1 ;
             sh:uniqueLang true
         ] .
@@ -323,12 +325,14 @@
   sh:property [
     sh:path dct:title ;
     sh:nodeKind sh:Literal ;
+    sh:class rdfs:Literal ;
     sh:minCount 1 ;
     sh:maxCount  1 ;
     dash:editor dash:TextFieldEditor ;
   ], [
     sh:path dct:description ;
     sh:nodeKind sh:Literal ;
+    sh:class rdfs:Literal ;
     sh:maxCount 1 ;
     dash:editor dash:TextAreaEditor ;
   ], [
