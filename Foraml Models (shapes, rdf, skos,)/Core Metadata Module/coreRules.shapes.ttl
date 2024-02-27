@@ -5,7 +5,8 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix vcard:<http://www.w3.org/2006/vcard#> .
+
+@prefix vcard: <http://www.w3.org/2006/vcard#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dash: <http://datashapes.org/dash#> .
@@ -50,7 +51,7 @@
             sh:path <http://purl.org/dc/terms/description> ;
             sh:nodeKind sh:Literal ;
             sh:severity sh:Violation ;
-            Sh:class rdfs:Literal ;
+            sh:class rdfs:Literal ;
             sh:minCount 1 ;
             sh:uniqueLang true
         ], [
@@ -171,7 +172,7 @@
     sh:property [
             sh:path <http://purl.org/dc/terms/contactPoint> ;
             sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:class card:Kind ;
+            sh:class vcard:Kind ;
             sh:severity sh:Violation ;
             sh:minCount 1 ;
             sh:name "contact point" ;
