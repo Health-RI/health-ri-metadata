@@ -39,7 +39,7 @@
             sh:path <http://purl.org/dc/terms/identifier> ;
             sh:nodeKind sh:Literal ;
             sh:severity sh:Violation ;
-            sh:class [ owl:unionOf (rdfs:Literal xsd:string xsd:token) ] ;
+            sh:class [ owl:unionOf (rdfs:Literal sh:datatype) ] ; 
             sh:minCount 1 ;
             sh:uniqueLang true ;
     ] .
@@ -50,6 +50,7 @@
             sh:path <http://purl.org/dc/terms/title> ;
             sh:nodeKind sh:Literal ;
             sh:severity sh:Violation ;
+	    sh:datatype xsd:string ;
             sh:class rdfs:Literal ;
             sh:minCount 1 ;
             sh:uniqueLang true ;
@@ -57,7 +58,7 @@
             sh:path <http://purl.org/dc/terms/identifier> ;
             sh:nodeKind sh:Literal ;
             sh:severity sh:Violation ;
-            sh:class [ owl:unionOf (rdfs:Literal xsd:string xsd:token) ] ;
+            sh:class [ owl:unionOf (rdfs:Literal) ] ;
             sh:minCount 1 ;
             sh:uniqueLang true ;
         ] , [
@@ -65,7 +66,7 @@
             sh:path <http://purl.org/dc/terms/description> ;
             sh:nodeKind sh:LiteralOrIRI ;
             sh:severity sh:Violation ;
-            sh:class [ owl:unionOf (rdfs:Literal xsd:string) ] ;
+            sh:class [ owl:unionOf (rdfs:Literal) ] ;
             sh:minCount 1 ;
             sh:uniqueLang true ;
         ] , [
@@ -102,7 +103,7 @@
             sh:path <http://purl.org/dc/terms/description> ;
             sh:nodeKind sh:LiteralOrIRI ;
             sh:severity sh:Violation ;
-       	    sh:class [ owl:unionOf (rdfs:Literal xsd:string) ] ;
+       	    sh:class [ owl:unionOf (rdfs:Literal) ] ;
             sh:minCount 1 ;
             sh:uniqueLang true ;
         ], [
@@ -133,6 +134,7 @@
             sh:nodeKind sh:Literal ;
             sh:severity sh:Violation ;
             sh:class rdfs:Literal ;
+            sh:datatype xsd:string ;
             sh:minCount 1 ;
             sh:uniqueLang true ;
         ], [
@@ -173,44 +175,32 @@
     sh:name "Data Service"@en ;
     sh:targetClass dcat:DataService ;
     sh:property [
-            sh:path <http://purl.org/dc/terms/accessRights> ;
-            sh:class <http://purl.org/dc/terms/RightsStatement> ;
-            sh:maxCount 1 ;
-            sh:severity sh:Violation ;
-            sh:uniqueLang true ;
-        ], [
             sh:path <http://www.w3.org/ns/dcat#endpointDescription> ;
             sh:nodeKind sh:LiteralOrIRI ;
             sh:severity sh:Violation ;
             sh:uniqueLang true ;
-            sh:class [ owl:unionOf (rdfs:Literal) ] ;
+            sh:class [ owl:unionOf (rdfs:Literal sh:IRI) ] ;
+	    sh:minCount 0 ;
             dash:editor dash:TextAreaEditor ;
             dash:viewer dash:LiteralViewer ;
         ], [
             sh:path <http://purl.org/dc/terms/title> ;
             sh:nodeKind sh:Literal ;
             sh:severity sh:Violation ;
-            sh:datatype xsd:string ;
+	    sh:datatype xsd:string ;
             sh:minCount 1 ;
             sh:uniqueLang true ;
-        ], [
-            sh:path <http://www.w3.org/ns/dcat#endpointDescription> ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:severity sh:Violation ;
-            sh:uniqueLang true ;
-            sh:class rdfs:Literal ;
-            dash:editor dash:TextAreaEditor ;
-            dash:viewer dash:LiteralViewer ;
         ], [
             sh:path <http://www.w3.org/ns/dcat#endpointURL> ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:severity sh:Violation ;
             sh:class rdfs:Literal ;
-            sh:minCount 1 ;
+            sh:minCount 0 ;
             sh:uniqueLang true ;
         ], [
             sh:path <http://www.w3.org/ns/dcat#servesDataset> ;
             sh:class dcat:Dataset ;
+	    sh:minCount 0 ;
             sh:severity sh:Violation ;
             sh:uniqueLang true ;
         ] .
@@ -321,18 +311,25 @@
     sh:name "Distribution"@en ;
     sh:targetClass dcat:Distribution ;
     sh:property [
+            sh:property [
             sh:path <http://purl.org/dc/terms/description> ;
-            sh:nodeKind sh:Literal ;
+            sh:nodeKind sh:LiteralOrIRI ;
             sh:severity sh:Violation ;
+            sh:class [ owl:unionOf (rdfs:Literal sh:IRI) ] ;
+            sh:minCount 1 ;
             sh:uniqueLang true ;
-        ], [
-            sh:path <http://purl.org/dc/terms/title> ;
+    ], [
+	    sh:path <http://purl.org/dc/terms/title> ;
             sh:nodeKind sh:Literal ;
+	    sh:datatype xsd:string ;
             sh:severity sh:Violation ;
+	    sh:minCount 1 ;
             sh:uniqueLang true ;
         ], [
             sh:path <http://www.w3.org/ns/dcat#accessService> ;
-            sh:class dcat:DataService ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+	    sh:class dcat:DataService ;
+	    sh:minCount 0 ;
             sh:severity sh:Violation ;
             sh:uniqueLang true ;
         ], [
@@ -349,7 +346,8 @@
             sh:uniqueLang true ;
         ], [
             sh:path <http://www.w3.org/ns/dcat#mediaType> ;
-            sh:class <http://purl.org/dc/terms/MediaType> ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+	    sh:class <http://purl.org/dc/terms/MediaType> ;
             sh:maxCount 1 ;
             sh:severity sh:Violation ;
             sh:uniqueLang true ;
@@ -362,6 +360,7 @@
             sh:path dcat:title ;
             sh:severity sh:Violation ;
             sh:class rdfs:Literal;
+	    sh:datatype xsd:string ;
             sh:minCount 1 ;
             sh:uniqueLang true ;
         ], [
@@ -377,7 +376,7 @@
   sh:property [
     sh:path dct:title ;
     sh:nodeKind sh:Literal ;
-    sh:class rdfs:Literal ;
+    sh:datatype xsd:string ;
     sh:minCount 1 ;
     sh:maxCount  1 ;
     dash:editor dash:TextFieldEditor ;
