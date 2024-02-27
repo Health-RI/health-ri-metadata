@@ -86,7 +86,7 @@
             sh:path <http://purl.org/dc/terms/title> ;
             sh:nodeKind sh:Literal ;
             sh:severity sh:Violation ;
-            Sh:class rdfs:Literal ;
+            sh:class rdfs:Literal ;
             sh:minCount 1 ;
             sh:uniqueLang true
         ], [
