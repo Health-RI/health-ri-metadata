@@ -13,6 +13,7 @@
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix core: <http://coreRule-healthri.nl#> .
 @prefix : <http://coreRule-healthri.nl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 
 <http://coreRule-healthri.nl> 
    rdf:type owl:Ontology ;
