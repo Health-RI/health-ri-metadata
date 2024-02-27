@@ -24,19 +24,66 @@
     sh:name "Agent"@en ;
     sh:targetClass foaf:Agent ;
     sh:property [
-            sh:path foaf:name ;
-            sh:severity sh:Violation ;
+            sh:path <http://purl.org/dc/terms/title> ;
             sh:nodeKind sh:Literal ;
-            sh:datatype xsd:string ;
+            sh:severity sh:Violation ;
+            sh:class rdfs:Literal ;
             sh:minCount 1 ;
             sh:uniqueLang true ;
         ], [
-            sh:path <http://purl.org/dc/terms/type> ;
+            sh:path <http://purl.org/dc/terms/identifier> ;
+            sh:nodeKind sh:Literal ;
             sh:severity sh:Violation ;
-            sh:class skos:Concept ;
-            sh:maxCount 1 ;
+            sh:class [ owl:unionOf (rdfs:Literal xsd:string xsd:token) ] ;
+            sh:minCount 1 ;
             sh:uniqueLang true ;
-        ] .
+    ] .
+<http://coreRule-healthri.nl#Project_Shape> a sh:NodeShape ;
+    sh:name "Project"@en ;
+    sh:targetClass foaf:Project ;
+  sh:property [
+            sh:path <http://purl.org/dc/terms/title> ;
+            sh:nodeKind sh:Literal ;
+            sh:severity sh:Violation ;
+            sh:class rdfs:Literal ;
+            sh:minCount 1 ;
+            sh:uniqueLang true ;
+        ], [
+            sh:path <http://purl.org/dc/terms/identifier> ;
+            sh:nodeKind sh:Literal ;
+            sh:severity sh:Violation ;
+            sh:class [ owl:unionOf (rdfs:Literal xsd:string xsd:token) ] ;
+            sh:minCount 1 ;
+            sh:uniqueLang true ;
+        ] , [
+	    sh:property [
+            sh:path <http://purl.org/dc/terms/description> ;
+            sh:nodeKind sh:LiteralOrIRI ;
+            sh:severity sh:Violation ;
+            sh:class [ owl:unionOf (rdfs:Literal xsd:string) ] ;
+            sh:minCount 1 ;
+            sh:uniqueLang true ;
+        ] , [
+	   sh:property [
+           sh:path foaf:fundedBy ;
+           sh:nodeKind sh:LiteralOrIRI ;
+           sh:severity sh:Violation ;
+           sh:class foaf:Agent ;
+           sh:minCount 1 ;
+           sh:uniqueLang true ;
+      ] , [
+           sh:path <http://www.w3.org/ns/dcat#dataset> ;
+           sh:class dcat:Dataset ;
+           sh:severity sh:Violation ;
+           sh:minCount 0 ;
+           sh:uniqueLang true ;  
+       ], [
+           sh:path <http://purl.org/dc/terms/type> ;
+           sh:class skos:Concept ;
+           sh:severity sh:Violation ;
+           sh:minCount 0 ;
+           sh:uniqueLang true ;  
+	].
 <http://coreRule-healthri.nl#Catalog_Shape> a sh:NodeShape ;
     sh:name "Catalog"@en ;
     sh:targetClass dcat:Catalog ;
@@ -48,9 +95,9 @@
             sh:uniqueLang true ;
         ], [
             sh:path <http://purl.org/dc/terms/description> ;
-            sh:nodeKind sh:Literal ;
+            sh:nodeKind sh:LiteralOrIRI ;
             sh:severity sh:Violation ;
-            sh:class rdfs:Literal ;
+       	    sh:class [ owl:unionOf (rdfs:Literal xsd:string) ] ;
             sh:minCount 1 ;
             sh:uniqueLang true ;
         ], [
@@ -132,11 +179,13 @@
             sh:severity sh:Violation ;
             sh:uniqueLang true ;
         ], [
-            sh:path <http://purl.org/dc/terms/description> ;
-            sh:nodeKind sh:Literal ;
+            sh:path <http://www.w3.org/ns/dcat#endpointDescription> ;
+            sh:nodeKind sh:LiteralOrIRI ;
             sh:severity sh:Violation ;
-	    sh:class rdfs:Literal ;
             sh:uniqueLang true ;
+            sh:class [ owl:unionOf (rdfs:Literal) ] ;
+            dash:editor dash:TextAreaEditor ;
+            dash:viewer dash:LiteralViewer ;
         ], [
             sh:path <http://purl.org/dc/terms/title> ;
             sh:nodeKind sh:Literal ;
@@ -192,23 +241,24 @@
             sh:uniqueLang true ;
         ], [
             sh:path <http://purl.org/dc/terms/version> ;
-            sh:nodeKind sh:Literal ;
-            sh:datatype xsd:string ;
+            sh:nodeKind sh:IRI ;
             sh:severity sh:Violation ;
             sh:minCount 1 ;
             sh:name "version" ;
             sh:uniqueLang true ;
         ], [
-            sh:path <http://purl.org/dc/terms/description> ;
-            sh:nodeKind sh:Literal ;
-            sh:severity sh:Violation ;
-            sh:class rdfs:Literal ;
-            sh:minCount 1 ;
-            sh:uniqueLang true ;
+             sh:path <http://purl.org/dc/terms/description> ;
+             sh:nodeKind sh:LiteralOrIRI ;
+             sh:severity sh:Violation ;
+             sh:class [ owl:unionOf (rdfs:Literal xsd:string) ] ;
+             sh:minCount 1 ;
+             sh:uniqueLang true ;
+    ]
         ], [
             sh:path <http://purl.org/dc/terms/identifier> ;
             sh:nodeKind sh:Literal ;
             sh:severity sh:Violation ;
+            sh:class [ owl:unionOf (rdfs:Literal xsd:string xsd:token) ] ;
             sh:minCount 1 ;
             sh:uniqueLang true ;
         ], [
