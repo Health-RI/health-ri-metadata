@@ -17,7 +17,7 @@
 <http://coreRule-healthri.nl> 
    rdf:type owl:Ontology ;
    dc:creator "Dena Tahvildari" ;
-   rdfs:comment "This set of rules defines constraints on the Data Catalog Vocabulary (DCAT) for establishing the fundamental requirements for onboarding metadata onto the national catalog" ;
+   rdfs:comment "This set of rules defines constraints on the Data Catalog Vocabulary (DCAT) for establishing the fundamental requirements for onboarding metadata onto the DUtch National Catalog" ;
    owl:versionInfo "Created with TopBraid Composer - Version 1.0" ;
    owl:imports <http://datashapes.org/dash>,
         <http://purl.org/dc/elements/1.1/>,
