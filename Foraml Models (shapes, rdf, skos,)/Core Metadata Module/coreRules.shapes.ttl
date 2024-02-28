@@ -234,7 +234,7 @@
             sh:path dcat:hasVersion ;
 	    sh:nodeKind sh:LiteralOrIRI ;
             sh:severity sh:Violation ;
-	    sh:class [ owl:unionOf (rdfs:Literal sh:IRI) ]
+	    sh:class [ owl:unionOf (rdfs:Literal sh:IRI) ] ;
             sh:minCount 0 ;
             sh:name "Has Version" ;
             sh:uniqueLang true ;
@@ -372,7 +372,7 @@
             sh:uniqueLang true ;
         ] .
  <http://coreRule-healthri.nl#Resource_Shape> a sh:NodeShape ;
-  sh:name "Resource"@en
+  sh:name "Resource"@en ;
   sh:targetClass dcat:Resource ;
   sh:property [
     sh:path dct:title ;
