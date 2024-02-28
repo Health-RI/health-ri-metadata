@@ -1,0 +1,61 @@
+# Base URI and prefixes definition
+@base <http://coreRule-healthri.nl> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix core: <http://coreRule-healthri.nl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ex:  <http://example/metadatagraph.com/>
+
+# Imaging Data Metadata Instance
+ex:imagingDataset1
+    a dcat:Dataset ;
+    dct:title "Brain MRI Scans"@en ;
+    dct:description "A collection of brain MRI scans for neurological study."@en ;
+    dct:identifier "MRI-00123" ;
+    dct:issued "2024-02-28T00:00:00Z"^^xsd:dateTime ;
+    dct:creator ex:agent1 ;
+    dct:publisher ex:agent2 ;
+    dct:contactPoint ex:contact1 ;
+    dcat:distribution dcat:distribution1 ;
+    dct:theme skos:neurology ;
+    dct:type skos:image ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> .
+
+ex:distribution1
+    a dcat:Distribution ;
+    dct:title "Brain MRI Dataset Download"@en ;
+    dct:description "Download link for the Brain MRI dataset."@en ;
+    dcat:accessURL <http://instutiondb/data/mri-access> ;
+    dcat:downloadURL <http://instutiondb/data/data/mri-download> ;
+    dcat:mediaType "application/zip" .
+
+ex:agent1
+    a foaf:Agent ;
+    foaf:name "Neuro Imaging Lab"@en ;
+    dct:title "Dr. Alice Smith"@en ;
+    foaf:mbox "alice.smith@neuroimagelab.org" .
+
+ex:agent2
+    a foaf:Organization ;
+    foaf:name "Neuro Imaging Foundation"@en ;
+    dct:title "NIF"@en ;
+    foaf:homepage <http://www.neuroimagefoundation.org> .
+
+ex:contact1
+    a vcard:Kind ;
+    vcard:fn "Dr. Alice Smith" ;
+    vcard:hasEmail "mailto:alice.smith@neuroimagelab.org" .
+
+skos:Neurology
+    a skos:Concept ;
+    skos:prefLabel "Neurology"@en ;
+    skos:inScheme skos:ThemeScheme .
