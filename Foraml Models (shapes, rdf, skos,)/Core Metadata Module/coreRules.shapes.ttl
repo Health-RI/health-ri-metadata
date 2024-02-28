@@ -86,14 +86,12 @@ sh:property [
            sh:class dcat:Dataset ;
            sh:severity sh:Violation ;
            sh:minCount 1 ;
-           sh:uniqueLang true ;  
        ] ;  
  sh:property [
            sh:path <http://purl.org/dc/terms/type> ;
            sh:class skos:Concept ;
            sh:severity sh:Violation ;
-           sh:minCount 0 ;
-           sh:uniqueLang true ;  
+           sh:minCount 0 ; 
 	] .
 <http://coreRule-healthri.nl#Catalog_Shape> a sh:NodeShape ;
     sh:name "Catalog"@en ;
@@ -103,7 +101,6 @@ sh:property [
             sh:class foaf:Agent ;
             sh:maxCount 1 ;
             sh:severity sh:Violation ;
-            sh:uniqueLang true ;
         ] ; 
  sh:property [
             sh:path <http://purl.org/dc/terms/description> ;
@@ -111,35 +108,25 @@ sh:property [
             sh:severity sh:Violation ;
        	    sh:class [ owl:unionOf (rdfs:Literal) ] ;
             sh:minCount 1 ;
-            sh:uniqueLang true ;
         ] ;
  sh:property [
             sh:path <http://purl.org/dc/terms/hasPart> ;
             sh:class dcat:Catalog ;
             sh:severity sh:Violation ;
-	    sh:minCount 0 ;
-            sh:uniqueLang true ;
+	        sh:minCount 0 ;
         ] ; 
  sh:property [
             sh:path <http://purl.org/dc/terms/license> ;
             sh:class <http://purl.org/dc/terms/LicenseDocument> ;
             sh:maxCount 1 ;
             sh:severity sh:Violation ;
-            sh:uniqueLang true ;
         ] ;
  sh:property [
             sh:path <http://purl.org/dc/terms/publisher> ;
             sh:class foaf:Agent ;
             sh:severity sh:Violation ;
             sh:minCount 1 ;
-            sh:uniqueLang true ;
-        ] ; 
- sh:property [
-            sh:path <http://purl.org/dc/terms/spatial> ;
-            sh:class <http://purl.org/dc/terms/Location> ;
-            sh:severity sh:Violation ;
-            sh:uniqueLang true ;
-        ] ; 
+        ] ;  
  sh:property [
             sh:path <http://purl.org/dc/terms/title> ;
             sh:nodeKind sh:Literal ;
@@ -154,7 +141,6 @@ sh:property [
             sh:class foaf:Document ;
             sh:minCount 0 ;
             sh:severity sh:Violation ;
-            sh:uniqueLang true ;
             dash:editor dash:URIEditor ;
             dash:viewer dash:LabelViewer ;
         ] ; 
@@ -162,28 +148,25 @@ sh:property [
             sh:path <http://www.w3.org/ns/dcat#catalog> ;
             sh:class dcat:Catalog ;
             sh:severity sh:Violation ;
-	    sh:minCount 0 ;
-            sh:uniqueLang true ;
+	        sh:minCount 0 ;
         ] ; 
  sh:property [
             sh:path <http://www.w3.org/ns/dcat#dataset> ;
             sh:class dcat:Dataset ;
             sh:severity sh:Violation ;
             sh:minCount 0 ;
-            sh:uniqueLang true ;
         ] ; 
  sh:property [
             sh:path <http://www.w3.org/ns/dcat#service> ;
             sh:class dcat:DataService ;
             sh:severity sh:Violation ;
             sh:minCount 0 ;
-            sh:uniqueLang true ;
         ] ; 
  sh:property [
             sh:path <http://purl.org/dc/terms/theme> ;
             sh:class skos:Concept ;
             sh:severity sh:Violation ;
-            sh:minCount 0 ;
+            sh:minCount 1 ;
             sh:uniqueLang true ;
             dash:viewer dash:LabelViewer ;
         ] .
@@ -196,7 +179,8 @@ sh:property [
             sh:severity sh:Violation ;
             sh:uniqueLang true ;
             sh:class [ owl:unionOf (rdfs:Literal sh:IRI) ] ;
-	    sh:minCount 0 ;
+	        sh:minCount 0 ;
+            sh:uniqueLang true ;
             dash:editor dash:TextAreaEditor ;
             dash:viewer dash:LiteralViewer ;
         ]; 
@@ -212,16 +196,15 @@ sh:property [
             sh:path <http://www.w3.org/ns/dcat#endpointURL> ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:severity sh:Violation ;
-            sh:class rdfs:Literal ;
+            sh:uniqueLang true ;
             sh:minCount 0 ;
             sh:uniqueLang true ;
         ]; 
  sh:property [
             sh:path <http://www.w3.org/ns/dcat#servesDataset> ;
             sh:class dcat:Dataset ;
-	    sh:minCount 0 ;
+	        sh:minCount 0 ;
             sh:severity sh:Violation ;
-            sh:uniqueLang true ;
         ] .
 <http://coreRule-healthri.nl#Dataset_Shape> a sh:NodeShape ;
     sh:name "Dataset"@en ;
@@ -233,7 +216,6 @@ sh:property [
             sh:severity sh:Violation ;
             sh:minCount 1 ;
             sh:name "Contact point" ;
-            sh:uniqueLang true ; 
             dash:editor dash:URIEditor ;
             dash:viewer dash:LabelViewer ;
         ] ; 
@@ -242,25 +224,23 @@ sh:property [
             sh:class dcat:DatasetSeries ;
             sh:minCount 0 ;
             sh:severity sh:Violation ;
-            sh:uniqueLang true ;
         ]; 
  sh:property [
             sh:path <http://purl.org/dc/terms/creator> ;
             sh:class foaf:Agent ;
             sh:minCount 1 ;
             sh:severity sh:Violation ;
-            sh:uniqueLang true ;
         ] ; 
  sh:property [
-            sh:path core:project ;
+            sh:path core:hasProject ;
+            sh:nodeKind sh:IRI ;
             sh:class foaf:Project ;
-            sh:minCount 1 ;
+            sh:minCount 0 ;
             sh:severity sh:Violation ;
-            sh:uniqueLang true ;
         ]; 
  sh:property [
             sh:path dcat:hasVersion ;
-	    sh:nodeKind sh:LiteralOrIRI ;
+	        sh:nodeKind sh:LiteralOrIRI ;
             sh:severity sh:Violation ;
 	    sh:class [ owl:unionOf (rdfs:Literal sh:IRI) ] ;
             sh:minCount 0 ;
@@ -279,7 +259,6 @@ sh:property [
             sh:path <http://purl.org/dc/terms/identifier> ;
             sh:nodeKind sh:Literal ;
             sh:severity sh:Violation ;
-            sh:class [ owl:unionOf (rdfs:Literal) ] ;
             sh:minCount 1 ;
             sh:uniqueLang true ;
         ] ;
@@ -288,16 +267,14 @@ sh:property [
             sh:datatype xsd:dateTime ;
             sh:maxCount 1 ;
             sh:severity sh:Violation ;
-            sh:uniqueLang true;
             dash:editor dash:DatePickerEditor ;
             dash:viewer dash:LiteralViewer 
         ] ;
  sh:property [
             sh:path <http://purl.org/dc/terms/modified> ;
-            sh:maxCount 1 ;
             sh:datatype xsd:dateTime ;
             sh:severity sh:Violation ;
-            sh:uniqueLang true ;
+            sh:minCount 0 ;
             dash:editor dash:DatePickerEditor ;
             dash:viewer dash:LiteralViewer  
         ] ;
@@ -306,21 +283,18 @@ sh:property [
             sh:class foaf:Agent ;
             sh:minCount 1 ;
             sh:severity sh:Violation ;
-            sh:uniqueLang true ;
         ] ;
  sh:property [
             sh:path <http://purl.org/dc/terms/temporal> ;
             sh:class <http://purl.org/dc/terms/PeriodOfTime> ;
             sh:severity sh:Violation ;
             sh:minCount 0 ;
-            sh:uniqueLang true ;
         ] ;
  sh:property [
             sh:path <http://purl.org/dc/terms/theme> ;
             sh:class skos:ConceptScheme ;
             sh:severity sh:Violation ;
             sh:minCount 1 ;
-            sh:uniqueLang true ; 
             dash:editor dash:URIEditor ;
             dash:viewer dash:LabelViewer 
         ] ;
@@ -337,14 +311,12 @@ sh:property [
             sh:class skos:Concept ;
             sh:severity sh:Violation ;
             sh:minCount 0 ;
-            sh:uniqueLang true ;
         ] ;
  sh:property [
             sh:path <http://www.w3.org/ns/dcat#distribution> ;
             sh:class dcat:Distribution ;
             sh:minCount 0 ;
             sh:severity sh:Violation ;
-            sh:uniqueLang true ;
         ] .
 <http://coreRule-healthri.nl#Distribution_Shape> a sh:NodeShape ;
     sh:name "Distribution"@en ;
@@ -378,14 +350,12 @@ sh:property [
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:severity sh:Violation ;
             sh:minCount 1 ;
-            sh:uniqueLang true ;
         ] ;
  sh:property [
             sh:path <http://www.w3.org/ns/dcat#downloadURL> ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:maxCount 1 ;
             sh:severity sh:Violation ;
-            sh:uniqueLang true ;
         ] ;
  sh:property [
             sh:path <http://www.w3.org/ns/dcat#mediaType> ;
@@ -393,7 +363,6 @@ sh:property [
 	    sh:class <http://purl.org/dc/terms/MediaType> ;
             sh:maxCount 1 ;
             sh:severity sh:Violation ;
-            sh:uniqueLang true ;
         ] .
 <http://coreRule-healthri.nl#DataSeries_Shape> a sh:NodeShape ;
     sh:name "Data Series"@en ;
@@ -404,7 +373,6 @@ sh:property [
             sh:class rdfs:Literal;
 	    sh:datatype xsd:string ;
             sh:minCount 1 ;
-            sh:uniqueLang true ;
         ] ; 
  sh:property [
             sh:path dcat:description ;
@@ -422,6 +390,7 @@ sh:property [
     sh:datatype xsd:string ;
     sh:minCount 1 ;
     sh:maxCount  1 ;
+    sh:uniqueLang true ;
     dash:editor dash:TextFieldEditor ;
   ] ; 
  sh:property [
@@ -429,6 +398,7 @@ sh:property [
     sh:nodeKind sh:Literal ;
     sh:class rdfs:Literal ;
     sh:maxCount 1 ;
+    sh:uniqueLang true ;
     dash:editor dash:TextAreaEditor ;
   ] ;
  sh:property [
