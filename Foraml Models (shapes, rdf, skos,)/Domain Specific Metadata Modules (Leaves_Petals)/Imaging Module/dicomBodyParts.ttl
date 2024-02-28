@@ -1,3 +1,4 @@
+#just an taxonomy exmaple to show the rolw of these community taxonomies (the URI must be changed to dicom implementations, if exits)
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dicomBP: <http://healthRI.com/dicom/bodyparts#> .
