@@ -1,0 +1,34 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dicomMod: <http://healthRI.com/dicom/modalities#> .
+
+dicomMod:ImagingModalities a skos:ConceptScheme ;
+    skos:prefLabel "DICOM Imaging Modalities"@en ;
+    skos:definition "A taxonomy of imaging modalities as defined by the DICOM standards."@en .
+
+dicomMod:CT a skos:Concept ;
+    skos:inScheme dicomMod:ImagingModalities ;
+    skos:prefLabel "Computed Tomography"@en ;
+    skos:notation "CT" .
+
+dicomMod:MR a skos:Concept ;
+    skos:inScheme dicomMod:ImagingModalities ;
+    skos:prefLabel "Magnetic Resonance Imaging"@en ;
+    skos:notation "MR" .
+
+dicomMod:XRAY a skos:Concept ;
+    skos:inScheme dicomMod:ImagingModalities ;
+    skos:prefLabel "X-Ray Imaging"@en ;
+    skos:notation "XRAY" .
+
+dicomMod:US a skos:Concept ;
+    skos:inScheme dicomMod:ImagingModalities ;
+    skos:prefLabel "Ultrasound"@en ;
+    skos:notation "US" .
+
+dicomMod:ImagingModalitiesRadiology a skos:Collection ;
+    skos:prefLabel "Radiology Modalities"@en ;
+    skos:member dicomMod:CT, dicomMod:XRAY .
+    # This Collection could group modalities commonly used in radiology
+
+# Additional modalities must be added based on DICOM and other requirements.
