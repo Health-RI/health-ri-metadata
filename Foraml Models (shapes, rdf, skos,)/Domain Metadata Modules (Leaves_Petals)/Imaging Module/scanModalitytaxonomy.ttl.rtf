@@ -1,0 +1,42 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2757
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\
+@prefix dicomMod: <http://example.org/dicom/modalities#> .\
+\
+dicomMod:ImagingModalities a skos:ConceptScheme ;\
+    skos:prefLabel "DICOM Imaging Modalities"@en ;\
+    skos:definition "A taxonomy of imaging modalities as defined by the DICOM standards."@en .\
+\
+dicomMod:CT a skos:Concept ;\
+    skos:inScheme dicomMod:ImagingModalities ;\
+    skos:prefLabel "Computed Tomography"@en ;\
+    skos:notation "CT" .\
+\
+dicomMod:MR a skos:Concept ;\
+    skos:inScheme dicomMod:ImagingModalities ;\
+    skos:prefLabel "Magnetic Resonance Imaging"@en ;\
+    skos:notation "MR" .\
+\
+dicomMod:XRAY a skos:Concept ;\
+    skos:inScheme dicomMod:ImagingModalities ;\
+    skos:prefLabel "X-Ray Imaging"@en ;\
+    skos:notation "XRAY" .\
+\
+dicomMod:US a skos:Concept ;\
+    skos:inScheme dicomMod:ImagingModalities ;\
+    skos:prefLabel "Ultrasound"@en ;\
+    skos:notation "US" .\
+\
+dicomMod:ImagingModalitiesRadiology a skos:Collection ;\
+    skos:prefLabel "Radiology Modalities"@en ;\
+    skos:member dicomMod:CT, dicomMod:XRAY .\
+    # This Collection could group modalities commonly used in radiology\
+\
+# Additional modalities must be added based on DICOM and other requirements.\
+}
