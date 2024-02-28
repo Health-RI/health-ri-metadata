@@ -82,7 +82,7 @@ sh:property [
            sh:uniqueLang true ;
       ] ;   
 sh:property [
-           sh:path <http://www.w3.org/ns/dcat#dataset> ;
+           sh:path dcat:dataset ;
            sh:class dcat:Dataset ;
            sh:severity sh:Violation ;
            sh:minCount 1 ;
@@ -232,7 +232,7 @@ sh:property [
             sh:class vcard:Kind ;
             sh:severity sh:Violation ;
             sh:minCount 1 ;
-            sh:name "contact point" ;
+            sh:name "Contact point" ;
             sh:uniqueLang true ; 
             dash:editor dash:URIEditor ;
             dash:viewer dash:LabelViewer ;
@@ -251,6 +251,13 @@ sh:property [
             sh:severity sh:Violation ;
             sh:uniqueLang true ;
         ] ; 
+ sh:property [
+            sh:path core:project ;
+            sh:class foaf:Project ;
+            sh:minCount 1 ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ;
+        ]; 
  sh:property [
             sh:path dcat:hasVersion ;
 	    sh:nodeKind sh:LiteralOrIRI ;
