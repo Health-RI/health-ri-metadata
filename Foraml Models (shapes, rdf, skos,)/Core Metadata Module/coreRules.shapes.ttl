@@ -433,7 +433,7 @@ sh:property [
   ] ;
  sh:property [
     sh:path dcat:hasVersion ;
-    sh:name "version" ;
+    sh:name "Has Version" ;
     sh:nodeKind sh:Literal ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
