@@ -166,10 +166,9 @@ sh:property [
     sh:targetClass dcat:DataService ;
     sh:property [
             sh:path <http://www.w3.org/ns/dcat#endpointDescription> ;
-            sh:nodeKind sh:LiteralOrIRI ;
+            sh:nodeKind sh:Literal ;
             sh:severity sh:Violation ;
             sh:uniqueLang true ;
-            sh:class [ owl:unionOf (rdfs:Literal sh:IRI) ] ;
 	        sh:minCount 0 ;
             sh:uniqueLang true ;
             dash:editor dash:TextAreaEditor ;
@@ -185,16 +184,15 @@ sh:property [
         ]; 
  sh:property [
             sh:path <http://www.w3.org/ns/dcat#endpointURL> ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:nodeKind sh:IRI ;
             sh:severity sh:Violation ;
-            sh:uniqueLang true ;
             sh:minCount 0 ;
-            sh:uniqueLang true ;
         ]; 
  sh:property [
             sh:path <http://www.w3.org/ns/dcat#servesDataset> ;
             sh:class dcat:Dataset ;
-	        sh:minCount 0 ;
+	    sh:nodeKind sh:IRI ;
+	    sh:minCount 0 ;
             sh:severity sh:Violation ;
         ] .
 <http://coreRule-healthri.nl#Dataset_Shape> a sh:NodeShape ;
@@ -202,7 +200,7 @@ sh:property [
     sh:targetClass dcat:Dataset ;
     sh:property [
             sh:path <http://purl.org/dc/terms/contactPoint> ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:nodeKind sh:IRI ;
             sh:class vcard:Kind ;
             sh:severity sh:Violation ;
             sh:minCount 1 ;
@@ -212,13 +210,15 @@ sh:property [
         ] ; 
  sh:property [
             sh:path dcat:inSeries ;
+	    sh:nodeKind sh:IRI ;
             sh:class dcat:DatasetSeries ;
             sh:minCount 0 ;
             sh:severity sh:Violation ;
         ]; 
  sh:property [
             sh:path <http://purl.org/dc/terms/creator> ;
-            sh:class foaf:Agent ;
+            sh:nodeKind sh:IRI ;
+	    sh:class foaf:Agent ;
             sh:minCount 1 ;
             sh:severity sh:Violation ;
         ] ; 
@@ -242,7 +242,6 @@ sh:property [
              sh:path <http://purl.org/dc/terms/description> ;
              sh:nodeKind sh:Literal ;
              sh:severity sh:Violation ;
-             sh:class [ owl:unionOf (rdfs:Literal sh:IRI) ] ;
              sh:minCount 1 ;
              sh:uniqueLang true ;
         ] ;
@@ -272,18 +271,14 @@ sh:property [
  sh:property [
             sh:path <http://purl.org/dc/terms/publisher> ;
             sh:class foaf:Agent ;
+	    sh:nodeKind sh:IRI ;
             sh:minCount 1 ;
             sh:severity sh:Violation ;
         ] ;
  sh:property [
-            sh:path <http://purl.org/dc/terms/temporal> ;
-            sh:class <http://purl.org/dc/terms/PeriodOfTime> ;
-            sh:severity sh:Violation ;
-            sh:minCount 0 ;
-        ] ;
- sh:property [
             sh:path <http://purl.org/dc/terms/theme> ;
             sh:class skos:ConceptScheme ;
+            sh:nodeKind sh:IRI ;
             sh:severity sh:Violation ;
             sh:minCount 1 ;
             dash:editor dash:URIEditor ;
