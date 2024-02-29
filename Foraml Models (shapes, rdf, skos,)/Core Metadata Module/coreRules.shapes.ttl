@@ -73,7 +73,6 @@ sh:property [
            sh:severity sh:Violation ;
            sh:class foaf:Agent ;
            sh:minCount 0 ;
-           sh:uniqueLang true ;
       ] ;   
 sh:property [
            sh:path dcat:dataset ;
@@ -158,7 +157,6 @@ sh:property [
             sh:class skos:Concept ;
             sh:severity sh:Violation ;
             sh:minCount 1 ;
-            sh:uniqueLang true ;
             dash:viewer dash:LabelViewer ;
         ] .
 <http://coreRule-healthri.nl#DataService_Shape> a sh:NodeShape ;
@@ -187,6 +185,8 @@ sh:property [
             sh:nodeKind sh:IRI ;
             sh:severity sh:Violation ;
             sh:minCount 0 ;
+	    dash:editor dash:URIEditor ;
+            dash:viewer dash:LabelViewer ;
         ]; 
  sh:property [
             sh:path <http://www.w3.org/ns/dcat#servesDataset> ;
@@ -194,6 +194,8 @@ sh:property [
 	    sh:nodeKind sh:IRI ;
 	    sh:minCount 0 ;
             sh:severity sh:Violation ;
+	    dash:editor dash:URIEditor ;
+            dash:viewer dash:LabelViewer ;
         ] .
 <http://coreRule-healthri.nl#Dataset_Shape> a sh:NodeShape ;
     sh:name "Dataset"@en ;
@@ -214,6 +216,8 @@ sh:property [
             sh:class dcat:DatasetSeries ;
             sh:minCount 0 ;
             sh:severity sh:Violation ;
+	    dash:editor dash:URIEditor ;
+            dash:viewer dash:LabelViewer ;
         ]; 
  sh:property [
             sh:path <http://purl.org/dc/terms/creator> ;
@@ -221,6 +225,8 @@ sh:property [
 	    sh:class foaf:Agent ;
             sh:minCount 1 ;
             sh:severity sh:Violation ;
+	    dash:editor dash:URIEditor ;
+            dash:viewer dash:LabelViewer ;
         ] ; 
  sh:property [
             sh:path core:hasProject ;
@@ -228,6 +234,8 @@ sh:property [
             sh:class foaf:Project ;
             sh:minCount 0 ;
             sh:severity sh:Violation ;
+	    dash:editor dash:URIEditor ;
+            dash:viewer dash:LabelViewer ;
         ]; 
  sh:property [
             sh:path dcat:hasVersion ;
@@ -237,6 +245,8 @@ sh:property [
             sh:minCount 0 ;
             sh:name "Has Version" ;
             sh:uniqueLang true ;
+	    dash:editor dash:URIEditor ;
+            dash:viewer dash:LabelViewer ;
         ] ;
  sh:property [
              sh:path <http://purl.org/dc/terms/description> ;
@@ -274,6 +284,8 @@ sh:property [
 	    sh:nodeKind sh:IRI ;
             sh:minCount 1 ;
             sh:severity sh:Violation ;
+	    dash:editor dash:URIEditor ;
+            dash:viewer dash:LabelViewer ;
         ] ;
  sh:property [
             sh:path <http://purl.org/dc/terms/theme> ;
@@ -311,7 +323,6 @@ sh:property [
             sh:path <http://purl.org/dc/terms/description> ;
             sh:nodeKind sh:Literal ;
             sh:severity sh:Violation ;
-            sh:class [ owl:unionOf (rdfs:Literal sh:IRI) ] ;
             sh:minCount 1 ;
             sh:uniqueLang true ;
     ] ;
@@ -329,7 +340,6 @@ sh:property [
 	    sh:class dcat:DataService ;
 	    sh:minCount 0 ;
             sh:severity sh:Violation ;
-            sh:uniqueLang true ;
         ] ;
  sh:property [
             sh:path <http://www.w3.org/ns/dcat#accessURL> ;
@@ -351,9 +361,9 @@ sh:property [
             sh:severity sh:Violation ;
         ] .
 <http://coreRule-healthri.nl#DataSeries_Shape> a sh:NodeShape ;
-    sh:name "Data Series"@en ;
-    sh:targetClass dcat:DataSeries ;
-    sh:property [
+   sh:name "Data Series"@en ;
+   sh:targetClass dcat:DataSeries ;
+   sh:property [
             sh:path dcat:title ;
             sh:severity sh:Violation ;
             sh:class rdfs:Literal;
@@ -368,49 +378,50 @@ sh:property [
             sh:uniqueLang true ;
         ] .
  <http://coreRule-healthri.nl#Resource_Shape> a sh:NodeShape ;
-  sh:name "Resource"@en ;
-  sh:targetClass dcat:Resource ;
-  sh:property [
-    sh:path dct:title ;
-    sh:nodeKind sh:Literal ;
-    sh:datatype xsd:string ;
-    sh:minCount 1 ;
-    sh:uniqueLang true ;
-    dash:editor dash:TextFieldEditor ;
+ sh:name "Resource"@en ;
+ sh:targetClass dcat:Resource ;
+ sh:property [
+    	   sh:path dct:title ;
+    	   sh:nodeKind sh:Literal ;
+    	   sh:datatype xsd:string ;
+    	   sh:minCount 1 ;
+    	   sh:uniqueLang true ;
+           dash:editor dash:TextFieldEditor ;
   ] ; 
- sh:property [
-    sh:path dct:description ;
-    sh:nodeKind sh:Literal ;
-    sh:class rdfs:Literal ;
-    sh:minCount 1 ;
-    sh:uniqueLang true ;
-    dash:editor dash:TextAreaEditor ;
+  sh:property [
+	    sh:path dct:description ;
+	    sh:nodeKind sh:Literal ;
+	    sh:class rdfs:Literal ;
+	    sh:minCount 1 ;
+	    sh:uniqueLang true ;
+	    dash:editor dash:TextAreaEditor ;
   ] ;
  sh:property [
-    sh:path dct:publisher ;
-    sh:node foaf:Agent ;
-    sh:minCount 1 ;
-    dash:editor dash:BlankNodeEditor ;
+	    sh:path dct:publisher ;
+	    sh:nodeKind sh:IRI ;
+	    sh:node foaf:Agent ;
+	    sh:minCount 1 ;
+	    dash:editor dash:BlankNodeEditor ;
   ] ;
  sh:property [
-    sh:path dcat:hasVersion ;
-    sh:name "Has Version" ;
-    sh:nodeKind sh:Literal ;
-    sh:minCount 1 ;
-    dash:editor dash:TextFieldEditor ;
-    dash:viewer dash:LiteralViewer ;
+	    sh:path dcat:hasVersion ;
+	    sh:name "Has Version" ;
+	    sh:nodeKind sh:Literal ;
+	    sh:minCount 1 ;
+	    dash:editor dash:TextFieldEditor ;
+	    dash:viewer dash:LiteralViewer ;
   ] ;
  sh:property [
-    sh:path dct:language ;
-    sh:nodeKind sh:IRI ;
-    sh:minCount 1 ;
-    dash:editor dash:URIEditor ;
-    dash:viewer dash:LabelViewer ;
+	    sh:path dct:language ;
+	    sh:nodeKind sh:IRI ;
+	    sh:minCount 1 ;
+	    dash:editor dash:URIEditor ;
+	    dash:viewer dash:LabelViewer ;
   ] ; 
 sh:property [
-    sh:path dct:license ;
-    sh:nodeKind sh:IRI ;
-    sh:minCount 1 ;
-    dash:editor dash:URIEditor ;
-    dash:viewer dash:LabelViewer ;
+	    sh:path dct:license ;
+	    sh:nodeKind sh:IRI ;
+	    sh:minCount 1 ;
+	    dash:editor dash:URIEditor ;
+	    dash:viewer dash:LabelViewer ;
   ] . 
