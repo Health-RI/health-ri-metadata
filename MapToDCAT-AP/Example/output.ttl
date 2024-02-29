@@ -1,0 +1,22 @@
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+<http://example.org/patient/1>
+    dct:description "PA view";
+    dct:identifier "1";
+    dct:date "2023-05-15"^^xsd:date;
+    dct:title "PRIMARY";
+    dcat:keyword "Chest";
+    dcat:mediaType "ORIGINAL";
+    dcat:theme "X-ray".
+
+<http://example.org/patient/2>
+    dct:description "Weighted";
+    dct:identifier "2";
+    dct:date "2023-05-16"^^xsd:date;
+    dct:title "PRIMARY and this is the rml";
+    dcat:keyword "Brain";
+    dcat:mediaType "ORIGINAL";
+    dcat:theme "MRI".
