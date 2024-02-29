@@ -62,7 +62,7 @@ sh:property [
         ] ; 
 sh:property [
             sh:path <http://purl.org/dc/terms/description> ;
-            sh:nodeKind sh:LiteralOrIRI ;
+            sh:nodeKind sh:Literal ;
             sh:severity sh:Violation ;
             sh:minCount 1 ;
             sh:uniqueLang true ;
@@ -98,7 +98,7 @@ sh:property [
         ] ; 
  sh:property [
             sh:path <http://purl.org/dc/terms/description> ;
-            sh:nodeKind sh:LiteralOrIRI ;
+            sh:nodeKind sh:Literal ;
             sh:severity sh:Violation ;
             sh:minCount 1 ;
         ] ;
@@ -240,7 +240,7 @@ sh:property [
         ] ;
  sh:property [
              sh:path <http://purl.org/dc/terms/description> ;
-             sh:nodeKind sh:LiteralOrIRI ;
+             sh:nodeKind sh:Literal ;
              sh:severity sh:Violation ;
              sh:class [ owl:unionOf (rdfs:Literal sh:IRI) ] ;
              sh:minCount 1 ;
@@ -314,7 +314,7 @@ sh:property [
     sh:targetClass dcat:Distribution ;
     sh:property [
             sh:path <http://purl.org/dc/terms/description> ;
-            sh:nodeKind sh:LiteralOrIRI ;
+            sh:nodeKind sh:Literal ;
             sh:severity sh:Violation ;
             sh:class [ owl:unionOf (rdfs:Literal sh:IRI) ] ;
             sh:minCount 1 ;
