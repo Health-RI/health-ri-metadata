@@ -3,7 +3,7 @@
 This project aims to define the HealthRI core metadata schema using DCAT, DCAT-AP and other standards. This is part of the Health RI portal project, an extension of [Health RI COVID portal](https://covid19initiatives.health-ri.nl/). 
 
 ## Core Metadata Schema
-The core metadata schema can also be used as a guideline for other portals. The schema can be extended to COVID metadata, Cohort Metadata, Dementia Metadata, governance aspects (Accessibility) etc. The extensions are defined by working groups (e.g. Omics) and are hereby considered modules.
+The core metadata schema can also be used as a guideline for other portals. The schema can be extended to COVID metadata, Cohort Metadata, Dementia Metadata, governance aspects (Accessibility) etc. The extensions are defined by working groups (e.g. Omics) and are hereby considered [modules](https://github.com/Health-RI/health-ri-metadata/tree/master/Modules).
 
 - [HRI core metadata mapping spreadsheet](https://docs.google.com/spreadsheets/d/1KKfAxn4ftoOAM2v3WsqT2XcPhdmTjnf1BZkvFf9FqF8/edit#gid=0)
 - [Core metadata schema specification](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/121110529/Core+Metadata+Schema+Specification) (Health-RI wiki/Confluence).
@@ -11,10 +11,10 @@ The core metadata schema can also be used as a guideline for other portals. The 
 <img src="https://github.com/Health-RI/health-ri-metadata/blob/master/Images/1.0_plateau1/hricoreschemaplateau1releasecardinality.jpg" alt="diagram" width=1080 height=640 title="diagram">
 
 
-## [Leaves Metadata Schema](https://github.com/Health-RI/health-ri-metadata/tree/master/Requirements-Leaves_Petals)
-- [Omics](https://github.com/Health-RI/health-ri-metadata/tree/master/Requirements-Leaves_Petals/Omics)
-- Cohorts
-- Biobanks
+## [Modules (Leaves/Petals)](https://github.com/Health-RI/health-ri-metadata/tree/master/Modules)
+- [Omics](https://github.com/Health-RI/health-ri-metadata/tree/master/Modules/Omics)
+- [Imaging](https://github.com/Health-RI/health-ri-metadata/tree/master/Modules/Imaging)
+- [Biobanks&Collections](https://github.com/Health-RI/health-ri-metadata/tree/master/Modules/Biobanks%20%26%20Collections)
 - Oncology
 - Rare Diseases
 - ...
