@@ -1,12 +1,7 @@
-# Leaves Metadata Schema
-Folder for the working groups to maintain their work on the domain metadata schemas (leaves). 
-Their schemas can be browsed on the folders: 
-
-- [Omics](https://github.com/Health-RI/health-ri-metadata/tree/master/Leaves_Petals/Omics)
-- Cohorts
-- Biobanks & Collections
+## [Modules (Leaves/Petals)](https://github.com/Health-RI/health-ri-metadata/tree/master/Modules)
+- [Omics](https://github.com/Health-RI/health-ri-metadata/tree/master/Modules/Omics)
+- [Imaging](https://github.com/Health-RI/health-ri-metadata/tree/master/Modules/Imaging)
+- [Biobanks&Collections](https://github.com/Health-RI/health-ri-metadata/tree/master/Modules/Biobanks%20%26%20Collections)
 - Oncology
 - Rare Diseases
-- Imaging
 - ...
-
