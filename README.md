@@ -8,7 +8,7 @@ The core metadata schema can also be used as a guideline for other portals. The 
 - [HRI core metadata mapping spreadsheet](https://docs.google.com/spreadsheets/d/1KKfAxn4ftoOAM2v3WsqT2XcPhdmTjnf1BZkvFf9FqF8/edit#gid=0)
 - [Core metadata schema specification](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/121110529/Core+Metadata+Schema+Specification) (Health-RI wiki/Confluence).
 - HRI core metadata schema diagram (under review):
-<img src="https://github.com/Health-RI/health-ri-metadata/blob/master/Diagrams%20(Visual%20Paradigm)/hricoreschemaplateau1releasecardinality.jpg" alt="diagram" width=1080 height=640 title="diagram">
+<img src="https://github.com/Health-RI/health-ri-metadata/blob/master/Images/1.0_plateau1/hricoreschemaplateau1releasecardinality.jpg" alt="diagram" width=1080 height=640 title="diagram">
 
 
 ## [Leaves Metadata Schema](https://github.com/Health-RI/health-ri-metadata/tree/master/Requirements-Leaves_Petals)
