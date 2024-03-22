@@ -5,7 +5,7 @@ This project aims to define the HealthRI core metadata schema using DCAT, DCAT-A
 ## Core Metadata Schema
 The core metadata schema can also be used as a guideline for other portals. The schema can be extended to COVID metadata, Cohort Metadata, Dementia Metadata, governance aspects (Accessibility) etc. The extensions are defined by working groups (e.g. Omics) and are hereby considered [modules](https://github.com/Health-RI/health-ri-metadata/tree/master/Modules).
 
-- [HRI core metadata mapping spreadsheet](https://docs.google.com/spreadsheets/d/1KKfAxn4ftoOAM2v3WsqT2XcPhdmTjnf1BZkvFf9FqF8/edit#gid=0)
+<!-- - [HRI core metadata mapping spreadsheet](https://docs.google.com/spreadsheets/d/1KKfAxn4ftoOAM2v3WsqT2XcPhdmTjnf1BZkvFf9FqF8/edit#gid=0) -->
 - [Core metadata schema specification](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/121110529/Core+Metadata+Schema+Specification) (Health-RI wiki/Confluence).
 - HRI core metadata schema diagram (under review):
 <img src="https://github.com/Health-RI/health-ri-metadata/blob/master/Images/1.0_plateau1/hricoreschemaplateau1releasecardinality.jpg" alt="diagram" width=1080 height=640 title="diagram">
