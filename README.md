@@ -23,7 +23,7 @@ The core metadata schema can also be used as a guideline for other portals. The 
 The model is part of the requirements to onboard to the Health-RI catalog, and documentation for users is not yet released. However, users can start the onboarding process by publishing their metadata according to this schema in a FAIR Data Point. To start:
 - read the explanation of all classes and properties in the [Core Metadata Schema Specification wiki](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/121110529/Core+Metadata+Schema+Specification) 
 - collect and map your metadata instances to the model using this [example metadata collection sheet](https://github.com/Health-RI/health-ri-metadata/blob/master/Implementation/metadata%20collection%20sheet%20template.xlsx)
-- import the provided [shacl](https://github.com/Health-RI/health-ri-metadata/tree/master/Shapes_rdf_skos) to your FDP (note: tutorial on how to configure your FDP to Health-RI is being developed)
+- import the provided [shacl](https://github.com/Health-RI/health-ri-metadata/tree/master/Shapes_rdf_skos) to your FDP (note: tutorial on how to configure your FDP for Health-RI's requirements is being developed)
 
 <!-- ## Sunflower Diagram
 To illustrate that after the core, other layers of metadata can be added per domain (e.g. certain funder could require certain metadata information that other funder would not; cancer domain resources need to be described with certain metadata that is not applicable to omics domain resources).
