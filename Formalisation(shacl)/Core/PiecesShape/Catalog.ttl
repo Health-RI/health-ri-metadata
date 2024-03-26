@@ -1,228 +1,55 @@
-@prefix :     <http://fairdatapoint.org/> .
-@prefix dash: <http://datashapes.org/dash#> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct:  <http://purl.org/dc/terms/> .
-@prefix fdp:  <https://w3id.org/fdp/fdp-o#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix owl:  <http://www.w3.org/2002/07/owl#> .
-@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sh:   <http://www.w3.org/ns/shacl#> .
-@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix :         <http://fairdatapoint.org/> .
+@prefix dash:     <http://datashapes.org/dash#> .
+@prefix dcat:     <http://www.w3.org/ns/dcat#> .
+@prefix dct:      <http://purl.org/dc/terms/> .
+@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
+@prefix sh:       <http://www.w3.org/ns/shacl#> .
 
-:AgentShape  rdf:type   sh:NodeShape ;
-        sh:property     [ dash:editor  dash:TextFieldEditor ;
-                          sh:maxCount  1 ;
-                          sh:minCount  1 ;
-                          sh:nodeKind  sh:Literal ;
-                          sh:path      foaf:name
-                        ] ;
-        sh:targetClass  foaf:Agent .
-
-:MetadataServiceShape
-        rdf:type        sh:NodeShape ;
-        sh:targetClass  fdp:MetadataService .
-
-:CatalogShape  rdf:type  sh:NodeShape ;
-        sh:property     [ dash:viewer  dash:LabelViewer ;
-                          sh:nodeKind  sh:IRI ;
-                          sh:path      dcat:themeTaxonomy
-                        ] ;
-        sh:property     [ dash:editor  dash:URIEditor ;
-                          dash:viewer  dash:LabelViewer ;
-                          sh:maxCount  1 ;
-                          sh:nodeKind  sh:IRI ;
-                          sh:path      foaf:homePage
-                        ] ;
-        sh:property     [ dash:viewer  dash:LiteralViewer ;
-                          sh:datatype  xsd:dateTime ;
-                          sh:maxCount  1 ;
-                          sh:path      dct:modified
-                        ] ;
-        sh:property     [ dash:viewer  dash:LiteralViewer ;
-                          sh:datatype  xsd:dateTime ;
-                          sh:maxCount  1 ;
-                          sh:path      dct:issued
-                        ] ;
-        sh:targetClass  dcat:Catalog .
-
-:FDPShape  rdf:type     sh:NodeShape ;
-        sh:property     [ dash:editor  dash:DatePickerEditor ;
-                          dash:viewer  dash:LiteralViewer ;
-                          sh:datatype  xsd:dateTime ;
-                          sh:maxCount  1 ;
-                          sh:path      fdp:metadataModified
-                        ] ;
-        sh:property     [ dash:editor  dash:DatePickerEditor ;
-                          dash:viewer  dash:LiteralViewer ;
-                          sh:datatype  xsd:dateTime ;
-                          sh:maxCount  1 ;
-                          sh:path      fdp:metadataIssued
-                        ] ;
-        sh:property     [ dash:editor  dash:URIEditor ;
-                          dash:viewer  dash:LabelViewer ;
-                          sh:maxCount  1 ;
-                          sh:nodeKind  sh:IRI ;
-                          sh:path      fdp:metadataIdentifier
-                        ] ;
-        sh:property     [ dash:editor      dash:URIEditor ;
-                          dash:viewer      dash:LabelViewer ;
-                          sh:defaultValue  <http://id.loc.gov/vocabulary/iso639-1/en> ;
-                          sh:maxCount      1 ;
-                          sh:nodeKind      sh:IRI ;
-                          sh:path          fdp:uiLanguage
-                        ] ;
-        sh:property     [ dash:editor  dash:DatePickerEditor ;
-                          dash:viewer  dash:LiteralViewer ;
-                          sh:datatype  xsd:dateTime ;
-                          sh:maxCount  1 ;
-                          sh:path      fdp:endDate
-                        ] ;
-        sh:property     [ dash:editor  dash:DatePickerEditor ;
-                          dash:viewer  dash:LiteralViewer ;
-                          sh:datatype  xsd:dateTime ;
-                          sh:maxCount  1 ;
-                          sh:path      fdp:startDate
-                        ] ;
-        sh:targetClass  fdp:FAIRDataPoint .
-
-:DistributionShape  rdf:type  sh:NodeShape ;
-        sh:property     [ dash:editor  dash:TextFieldEditor ;
-                          dash:viewer  dash:LiteralViewer ;
-                          sh:maxCount  1 ;
-                          sh:nodeKind  sh:Literal ;
-                          sh:path      dcat:byteSize
-                        ] ;
-        sh:property     [ dash:editor  dash:TextFieldEditor ;
-                          dash:viewer  dash:LiteralViewer ;
-                          sh:maxCount  1 ;
-                          sh:nodeKind  sh:Literal ;
-                          sh:path      dcat:format
-                        ] ;
-        sh:property     [ dash:editor  dash:TextFieldEditor ;
-                          dash:viewer  dash:LiteralViewer ;
-                          sh:maxCount  1 ;
-                          sh:minCount  1 ;
-                          sh:nodeKind  sh:Literal ;
-                          sh:path      dcat:mediaType
-                        ] ;
-        sh:property     [ dash:editor  dash:URIEditor ;
-                          sh:maxCount  1 ;
-                          sh:nodeKind  sh:IRI ;
-                          sh:path      dcat:downloadURL
-                        ] ;
-        sh:property     [ dash:editor  dash:URIEditor ;
-                          sh:maxCount  1 ;
-                          sh:nodeKind  sh:IRI ;
-                          sh:path      dcat:accessURL
-                        ] ;
-        sh:property     [ dash:editor  dash:DatePickerEditor ;
-                          dash:viewer  dash:LiteralViewer ;
-                          sh:datatype  xsd:dateTime ;
-                          sh:maxCount  1 ;
-                          sh:path      dct:modified
-                        ] ;
-        sh:property     [ dash:editor  dash:DatePickerEditor ;
-                          dash:viewer  dash:LiteralViewer ;
-                          sh:datatype  xsd:dateTime ;
-                          sh:maxCount  1 ;
-                          sh:path      dct:issued
-                        ] ;
-        sh:targetClass  dcat:Distribution .
-
-:DataServiceShape  rdf:type  sh:NodeShape ;
-        sh:property     [ dash:editor  dash:TextAreaEditor ;
-                          dash:viewer  dash:LiteralViewer ;
-                          sh:maxCount  1 ;
-                          sh:nodeKind  sh:Literal ;
-                          sh:path      dcat:endpointDescription
-                        ] ;
-        sh:property     [ sh:maxCount  1 ;
-                          sh:nodeKind  sh:IRI ;
-                          sh:path      dcat:endpointURL
-                        ] ;
-        sh:targetClass  dcat:DataService .
-
-:ResourceShape  rdf:type  sh:NodeShape ;
-        sh:property     [ dash:editor  dash:URIEditor ;
-                          dash:viewer  dash:LabelViewer ;
-                          sh:maxCount  1 ;
-                          sh:nodeKind  sh:IRI ;
-                          sh:path      dct:rights
-                        ] ;
-        sh:property     [ dash:editor  dash:URIEditor ;
-                          dash:viewer  dash:LabelViewer ;
-                          sh:maxCount  1 ;
-                          sh:nodeKind  sh:IRI ;
-                          sh:path      dct:license
-                        ] ;
-        sh:property     [ dash:editor  dash:URIEditor ;
-                          dash:viewer  dash:LabelViewer ;
-                          sh:maxCount  1 ;
-                          sh:nodeKind  sh:IRI ;
-                          sh:path      dct:language
-                        ] ;
-        sh:property     [ dash:editor  dash:TextFieldEditor ;
-                          dash:viewer  dash:LiteralViewer ;
-                          sh:maxCount  1 ;
-                          sh:minCount  1 ;
-                          sh:name      "version" ;
-                          sh:nodeKind  sh:Literal ;
-                          sh:path      dcat:version
-                        ] ;
-        sh:property     [ dash:editor  dash:BlankNodeEditor ;
-                          sh:maxCount  1 ;
-                          sh:minCount  1 ;
-                          sh:node      :AgentShape ;
-                          sh:path      dct:publisher
-                        ] ;
-        sh:property     [ dash:editor  dash:TextAreaEditor ;
-                          sh:maxCount  1 ;
-                          sh:nodeKind  sh:Literal ;
-                          sh:path      dct:description
-                        ] ;
-        sh:property     [ dash:editor  dash:TextFieldEditor ;
-                          sh:maxCount  1 ;
-                          sh:minCount  1 ;
-                          sh:nodeKind  sh:Literal ;
-                          sh:path      dct:title
-                        ] ;
-        sh:targetClass  dcat:Resource .
-
-:DatasetShape  rdf:type  sh:NodeShape ;
-        sh:property     [ dash:editor  dash:URIEditor ;
-                          dash:viewer  dash:LabelViewer ;
-                          sh:maxCount  1 ;
-                          sh:nodeKind  sh:IRI ;
-                          sh:path      dcat:landingPage
-                        ] ;
-        sh:property     [ dash:editor  dash:TextFieldEditor ;
-                          dash:viewer  dash:LiteralViewer ;
-                          sh:nodeKind  sh:Literal ;
-                          sh:path      dcat:keyword
-                        ] ;
-        sh:property     [ dash:editor  dash:URIEditor ;
-                          dash:viewer  dash:LabelViewer ;
-                          sh:maxCount  1 ;
-                          sh:nodeKind  sh:IRI ;
-                          sh:path      dcat:contactPoint
-                        ] ;
-        sh:property     [ dash:editor  dash:URIEditor ;
-                          dash:viewer  dash:LabelViewer ;
-                          sh:minCount  1 ;
-                          sh:nodeKind  sh:IRI ;
-                          sh:path      dcat:theme
-                        ] ;
-        sh:property     [ dash:editor  dash:DatePickerEditor ;
-                          dash:viewer  dash:LiteralViewer ;
-                          sh:datatype  xsd:dateTime ;
-                          sh:maxCount  1 ;
-                          sh:path      dct:modified
-                        ] ;
-        sh:property     [ dash:editor  dash:DatePickerEditor ;
-                          dash:viewer  dash:LiteralViewer ;
-                          sh:datatype  xsd:dateTime ;
-                          sh:maxCount  1 ;
-                          sh:path      dct:issued
-                        ] ;
-        sh:targetClass  dcat:Dataset .
+:CatalogShape a sh:NodeShape ;
+  sh:targetClass dcat:Catalog ;
+  sh:name "Catalog"@en ;
+  sh:property 
+ [
+    sh:path <http://www.w3.org/ns/dcat#dataset> ;
+    sh:class dcat:Dataset ;
+    sh:severity sh:Violation ;
+    sh:minCount 1 ;
+  ] ,
+[
+    sh:path <http://purl.org/dc/terms/description> ;
+    sh:nodeKind sh:Literal ;
+    sh:severity sh:Violation ;
+    sh:minCount 1 ;
+    sh:uniqueLang true ;
+], 
+  [
+    sh:path <http://purl.org/dc/terms/publisher> ;
+    sh:class foaf:Agent ;
+    sh:severity sh:Violation ;
+    sh:minCount 1 ;
+  ] ,
+  [
+    sh:path <http://purl.org/dc/terms/title> ;
+    sh:nodeKind sh:Literal ;
+    sh:severity sh:Violation ;
+    sh:minCount 1 ;
+    sh:uniqueLang true ;
+  ], 
+  [
+   sh:path <http://www.w3.org/ns/dcat#catalog> ;
+   sh:class dcat:Catalog ;
+   sh:severity sh:Violation ;
+   sh:minCount 0 ;
+  ],
+  [
+    sh:path <http://purl.org/dc/terms/hasPart> ;
+    sh:class dcat:Catalog ;
+    sh:severity sh:Violation ;
+    sh:minCount 1 ;
+  ],
+  [
+    sh:path <http://www.w3.org/ns/dcat#service> ;
+    sh:class dcat:DataService ;
+    sh:severity sh:Violation ;
+    sh:minCount 0 ;
+  ] .
