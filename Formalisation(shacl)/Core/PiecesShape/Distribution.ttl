@@ -6,7 +6,7 @@
 @prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
 
 :DistributionShape a sh:NodeShape ;
-sh:name "Distribution"@en ;
+#sh:name "Distribution"@en ;
   sh:targetClass dcat:Distribution ;
 sh:property 
 [
