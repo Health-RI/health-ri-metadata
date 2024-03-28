@@ -7,6 +7,7 @@
 @prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
+#we do not instantiate resource, do we need to provide this shacl or is just confusing for users?
 :ResourceShape a sh:NodeShape ;
 #sh:name "Resource"@en ;
   sh:targetClass dcat:Resource ;
