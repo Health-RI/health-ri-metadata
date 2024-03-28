@@ -7,7 +7,7 @@
 
 :CatalogShape a sh:NodeShape ;
   sh:targetClass dcat:Catalog ;
-  sh:name "Catalog"@en ;
+#  sh:name "Catalog"@en ;
   sh:property 
  [
     sh:path <http://www.w3.org/ns/dcat#dataset> ;

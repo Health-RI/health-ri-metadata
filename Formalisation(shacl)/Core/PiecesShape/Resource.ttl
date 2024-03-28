@@ -8,7 +8,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 :ResourceShape a sh:NodeShape ;
-sh:name "Resource"@en ;
+#sh:name "Resource"@en ;
   sh:targetClass dcat:Resource ;
   sh:property [
     sh:path dct:title ;

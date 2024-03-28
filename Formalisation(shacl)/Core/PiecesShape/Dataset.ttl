@@ -15,7 +15,7 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 
 :DatasetShape a sh:NodeShape ;
-sh:name "Dataset"@en ;
+#sh:name "Dataset"@en ;
   sh:targetClass dcat:Dataset ;
   sh:property 
 [

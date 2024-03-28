@@ -15,7 +15,7 @@
 
 
 :DatasetSeriesShape a sh:NodeShape ;
-sh:name "DatasetSeries"@en ;
+#sh:name "DatasetSeries"@en ;
   sh:targetClass dcat:DatasetSeries ;
   sh:property [
 sh:path <http://purl.org/dc/terms/contactPoint> ;
