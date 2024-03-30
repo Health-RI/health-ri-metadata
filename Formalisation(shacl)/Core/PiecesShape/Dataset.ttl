@@ -19,10 +19,8 @@
   sh:targetClass dcat:Dataset ;
   sh:property 
 [
-    sh:path dcat:contactPoint;
-    sh:nodeKind sh:IRI ;
-    sh:class foaf:Agent;
-    sh:severity sh:Violation ;
+    sh:path dct:hasPart ;
+    sh:node sh:ContactPointShape ;
     sh:minCount 1 ;
     sh:name "Contact point" ;
     dash:editor dash:URIEditor ;
@@ -144,3 +142,12 @@
 	dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
 ] .
+
+:ContactPointShape a sh:NodeShape ;
+  sh:targetClass vcard:Kind ;
+  sh:property [
+    sh:path vcard:hasEmail ;
+    sh:nodeKind sh:Literal ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+  ]
