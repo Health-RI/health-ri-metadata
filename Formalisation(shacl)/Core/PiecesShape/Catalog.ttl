@@ -12,44 +12,47 @@
  [
     sh:path <http://www.w3.org/ns/dcat#dataset> ;
     sh:class dcat:Dataset ;
-    sh:severity sh:Violation ;
+    #sh:severity sh:Violation ;
     sh:minCount 1 ;
   ] ,
-[
+ [
     sh:path <http://purl.org/dc/terms/description> ;
     sh:nodeKind sh:Literal ;
-    sh:severity sh:Violation ;
+    # maybe use this instead of node kind? sh:datatype xsd:string
+    #sh:severity sh:Violation ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
-], 
+   ], 
   [
     sh:path <http://purl.org/dc/terms/publisher> ;
     sh:class foaf:Agent ;
-    sh:severity sh:Violation ;
+    #sh:severity sh:Violation ;
     sh:minCount 1 ;
   ] ,
   [
     sh:path <http://purl.org/dc/terms/title> ;
     sh:nodeKind sh:Literal ;
-    sh:severity sh:Violation ;
+    # maybe use this instead of node kind? sh:datatype xsd:string
+    #sh:severity sh:Violation ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
   ], 
   [
    sh:path <http://www.w3.org/ns/dcat#catalog> ;
    sh:class dcat:Catalog ;
-   sh:severity sh:Violation ;
+   #sh:severity sh:Violation ;
    sh:minCount 0 ;
   ],
-  [
-    sh:path <http://purl.org/dc/terms/hasPart> ;
-    sh:class dcat:Catalog ;
-    sh:severity sh:Violation ;
-    sh:minCount 1 ;
-  ],
+  #[
+  #  sh:path <http://purl.org/dc/terms/hasPart> ;
+  #  sh:class dcat:Catalog ;
+  #  #sh:severity sh:Violation ;
+  #  sh:minCount 1 ;
+  #  #is this property correct? it makes mandatory to have a catalog inside a catalog.
+  #],
   [
     sh:path <http://www.w3.org/ns/dcat#service> ;
     sh:class dcat:DataService ;
-    sh:severity sh:Violation ;
+    #sh:severity sh:Violation ;
     sh:minCount 0 ;
   ] .

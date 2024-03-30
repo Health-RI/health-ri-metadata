@@ -5,48 +5,49 @@
 @prefix foaf:     <http://xmlns.com/foaf/0.1/>.
 @prefix sh:       <http://www.w3.org/ns/shacl#> .
 @prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
 
+#we do not instantiate resource, do we need to provide this shacl or is just confusing for users since the FDP already comes w this shape?
 :ResourceShape a sh:NodeShape ;
 #sh:name "Resource"@en ;
   sh:targetClass dcat:Resource ;
   sh:property [
     sh:path dct:title ;
     sh:nodeKind sh:Literal ;
-    sh:datatype xsd:string ;#new
+    #sh:datatype xsd:string ;#new
     sh:minCount 1 ;
-    sh:uniqueLang true ;#new
+    #sh:uniqueLang true ;#new
     dash:editor dash:TextFieldEditor ;
   ], [
     sh:path dct:description ;
     sh:nodeKind sh:Literal ;
-    sh:class rdfs:Literal ;#new
-    sh:minCount 1 ;
-    #sh:maxCount 1 ;
-    sh:uniqueLang true ;
+    #sh:class rdfs:Literal ;#new
+    #sh:minCount 1 ;
+    sh:maxCount 1 ;
+    #sh:uniqueLang true ;
     dash:editor dash:TextAreaEditor ;
   ], [
     sh:path dct:publisher ;
-    sh:nodeKind sh:IRI ;#new
-    #sh:node :AgentShape ;
+    #sh:nodeKind sh:IRI ;#new
+    sh:node :AgentShape ;
     sh:node foaf:Agent ;#new
     sh:minCount 1 ;
-    #sh:maxCount 1 ;
+    sh:maxCount 1 ;
     dash:editor dash:BlankNodeEditor ;
   ], [
+    #sh:path dcat:version ;
     sh:path dct:hasVersion ;
-    sh:name "Has Version" ;#new
-    #sh:name "version" ;
+    #sh:name "Has Version" ;#new
     sh:nodeKind sh:Literal ;
     sh:minCount 1 ;
-    #sh:maxCount 1 ;
+    sh:maxCount 1 ;
     dash:editor dash:TextFieldEditor ;
     dash:viewer dash:LiteralViewer ;
   ], [
     sh:path dct:language ;
     sh:nodeKind sh:IRI ;
-    sh:minCount 1 ;#new
-    #sh:maxCount 1 ;
+    #sh:minCount 1 ;#new
+    sh:maxCount 1 ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
   ], [
@@ -58,12 +59,12 @@
   ], [
     sh:path dct:rights ;
     sh:nodeKind sh:IRI ;
-    sh:minCount 1 ;
-    #sh:maxCount 1 ;
+    #sh:minCount 1 ;
+    sh:maxCount 1 ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
   ] .
-#####Following is not present in Health RI core metadata model. It was here in FDP
+#####Following is not present in Health RI core metadata model. It is from FDP shacl.
 :AgentShape a sh:NodeShape ;
   sh:targetClass foaf:Agent ;
   sh:property [
