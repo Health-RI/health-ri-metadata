@@ -45,7 +45,7 @@ sh:property
     sh:nodeKind sh:BlankNodeOrIRI ;
     sh:class dcat:DataService ;
     sh:minCount 0 ;
-    sh:severity sh:Violation ;
+    #sh:severity sh:Violation ;
 ] ,
 [
     sh:path <http://www.w3.org/ns/dcat#downloadURL> ;
