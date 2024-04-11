@@ -34,14 +34,14 @@
 ],
 [
             sh:path <http://purl.org/dc/terms/title> ;
-            sh:nodeKind sh:Literal ;
-            sh:datatype xsd:string ;
+            #sh:nodeKind sh:Literal ;
+            sh:datatype rdfs:Literal; #xsd:string ;
             sh:minCount 1 ;
 ],
 [
              sh:path <http://purl.org/dc/terms/description> ;
-             sh:nodeKind sh:Literal ;
-	     sh:datatype xsd:string ;
+             #sh:nodeKind sh:Literal ;
+			sh:datatype rdfs:Literal; #xsd:string ;
              sh:minCount 1 ;
 ],
 [
@@ -109,9 +109,9 @@
             dash:viewer dash:LabelViewer ;
 ],
 [
-            sh:path <http://www.w3.org/ns/dcat#hasVersion> ;
-            sh:nodeKind sh:LiteralOrIRI ;
-			sh:datatype xsd:string ;
+            sh:path <http://www.w3.org/ns/dcat#version> ;
+            #sh:nodeKind sh:Literal ;
+			sh:datatype rdfs:Literal ; #xsd:string ;
             sh:minCount 0 ;
             sh:name "Has Version" ;
             dash:editor dash:URIEditor ;
