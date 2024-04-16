@@ -8,17 +8,16 @@
 
 :CatalogShape a sh:NodeShape ;
   sh:targetClass dcat:Catalog ;
-  sh:property 
- [
+  sh:property [
     sh:path <http://www.w3.org/ns/dcat#dataset> ;
     sh:class dcat:Dataset ;
     sh:minCount 0 ;
   ] ,
- [
+  [
     sh:path <http://purl.org/dc/terms/description> ;
     sh:datatype xsd:string ;
     sh:minCount 1 ;
-   ], 
+  ], 
   [
     sh:path <http://purl.org/dc/terms/publisher> ;
     sh:class foaf:Agent ;
@@ -26,13 +25,13 @@
   ] ,
   [
     sh:path <http://purl.org/dc/terms/title> ;
-	sh:datatype xsd:string ;
+    sh:datatype xsd:string ;
     sh:minCount 1 ;
   ], 
   [
-   sh:path <http://www.w3.org/ns/dcat#catalog> ;
-   sh:class dcat:Catalog ;
-   sh:minCount 0 ;
+    sh:path <http://www.w3.org/ns/dcat#catalog> ;
+    sh:class dcat:Catalog ;
+    sh:minCount 0 ;
   ],
   [
     sh:path <http://www.w3.org/ns/dcat#Service> ;

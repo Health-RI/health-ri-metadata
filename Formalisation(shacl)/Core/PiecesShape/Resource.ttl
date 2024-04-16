@@ -17,182 +17,174 @@
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
 
-
 :DcatResource_Shape
     a sh:NodeShape ;
     rdfs:comment "the union of Catalog, Dataset and DataService" ;
     rdfs:label "dcat:Resource" ;
     sh:message "The node is either a Catalog, Dataset, DataService or a foaf:Project (which is specified in Health RI core metadata model." ;
     sh:or ([
-            sh:class dcat:Catalog
-        ]
-        [
-            sh:class dcat:Dataset
-        ]
-        [
-            sh:class dcat:DataService
-        ]
-        [
-            sh:class foaf:Project
-        ]
-		);
+        sh:class dcat:Catalog
+      ]
+      [
+        sh:class dcat:Dataset
+      ]
+      [
+        sh:class dcat:DataService
+      ]
+      [
+        sh:class foaf:Project
+      ]
+    ) ;
 
     #describe all properteis of dcat 3
-
-  sh:property 
-[
-        sh:maxCount 1 ;
-        sh:path dct:accessRights ;
-        sh:severity sh:Violation
-    ],
-[
-        sh:maxCount 1 ;
-        sh:path dct:conformsTo ;
-        sh:severity sh:Violation
-    ],
-[
-        sh:path dcat:contactPoint ;
-        sh:severity sh:Violation
-    ],
-[
-        sh:path dct:creator ;
-        sh:severity sh:Violation
-    ],
-
-[
-        sh:minCount 1 ;
-        sh:nodeKind sh:Literal ;
-        sh:path dct:description ;
-        sh:severity sh:Violation
-    ],
-[
-        sh:minCount 1 ;
-        sh:nodeKind sh:Literal ;
-        sh:path dct:title ;
-        sh:severity sh:Violation
-    ],
-[
-        sh:maxCount 1 ;
-        sh:node :DateOrDateTimeDataType_Shape ;
-        sh:path dct:issued ;
-        sh:severity sh:Violation
-    ],
-[
-        sh:maxCount 1 ;
-        sh:path dct:modified ;
-        sh:severity sh:Violation ;
-        sh:shape :DateOrDateTimeDataType_Shape
-    ],
-[
-        sh:path dct:language ;
-        sh:severity sh:Violation
-    ],
-[
-        sh:maxCount 1 ;
-        sh:minCount 1 ;
-        sh:path dct:publisher ;
-        sh:severity sh:Violation
-    ],
-[
-        sh:nodeKind sh:Literal ;
-        sh:path dct:identifier ;
-        sh:severity sh:Violation
-    ],
-
-[
-        sh:path dcat:theme ;
-        sh:severity sh:Violation
-    ],
-[
-        sh:path dct:type ;
-        sh:severity sh:Violation
-    ],
-[
-        sh:path dcat:qualifiedRelation ;
-        sh:severity sh:Violation
-    ], 
-
-[
-        sh:path dcat:qualifiedRelation ;
-        sh:severity sh:Violation
-    ],
-[
-        sh:nodeKind sh:Literal ;
-        sh:path dcat:keyword ;
-        sh:severity sh:Violation
-    ],
-[
-        sh:path dcat:landingPage ;
-        sh:severity sh:Violation
-    ], 
-[
-        sh:path prov:qualifiedAttribution ;
-        sh:severity sh:Violation
-    ], 
-[
-        sh:maxCount 1 ;
-        sh:path dct:license ;
-        sh:severity sh:Violation
-    ],
-[
-        sh:maxCount 1 ;
-        sh:path dct:rights ;
-        sh:severity sh:Violation
-    ],
-[
-        sh:maxCount 1 ;
-        sh:path odrl:hasPolicy ;
-        sh:severity sh:Violation
-    ],
-[
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:path dct:isReferencedBy ;
-        sh:severity sh:Violation
-    ], 
-	[
-
-        sh:path dct:previousVersion ;
-        sh:severity sh:Violation
-    ],
-[
-        sh:path dct:hasVersion ;
-        sh:severity sh:Violation
-    ], 
-	[
-        sh:path dcat:hasCurrentVersion ;
-        sh:severity sh:Violation
-    ], 
-	[
-        sh:path dct:replaces ;
-        sh:severity sh:Violation
-    ], 
-	[
-        sh:path dcat:version ;
-        sh:severity sh:Violation
-    ], 	
-	[
-        sh:nodeKind sh:Literal ;
-        sh:path adms:versionNotes ;
-        sh:severity sh:Violation
-    ],
-	[
-        sh:maxCount 1 ;
-        sh:path adms:status ;
-        sh:severity sh:Violation
-    ],
-	[
-        sh:maxCount 1 ;
-        sh:path dcat:first ;
-        sh:severity sh:Violation
-    ],
-	[
-        sh:maxCount 1 ;
-        sh:path dcat:last ;
-        sh:severity sh:Violation
-    ],
-[
-        sh:maxCount 1 ;
-        sh:path dcat:prev ;
-        sh:severity sh:Violation
-    ]	
-	.
+  sh:property [
+    sh:maxCount 1 ;
+    sh:path dct:accessRights ;
+    sh:severity sh:Violation
+  ] ,
+  [
+    sh:maxCount 1 ;
+    sh:path dct:conformsTo ;
+    sh:severity sh:Violation
+  ] ,
+  [
+    sh:path dcat:contactPoint ;
+    sh:severity sh:Violation
+  ] ,
+  [
+    sh:path dct:creator ;
+    sh:severity sh:Violation
+  ] ,
+  [
+    sh:minCount 1 ;
+    sh:nodeKind sh:Literal ;
+    sh:path dct:description ;
+    sh:severity sh:Violation
+  ] ,
+  [
+    sh:minCount 1 ;
+    sh:nodeKind sh:Literal ;
+    sh:path dct:title ;
+    sh:severity sh:Violation
+  ] ,
+  [
+    sh:maxCount 1 ;
+    sh:node :DateOrDateTimeDataType_Shape ;
+    sh:path dct:issued ;
+    sh:severity sh:Violation
+  ] ,
+  [
+    sh:maxCount 1 ;
+    sh:path dct:modified ;
+    sh:severity sh:Violation ;
+    sh:shape :DateOrDateTimeDataType_Shape
+  ] ,
+  [
+    sh:path dct:language ;
+    sh:severity sh:Violation
+  ] ,
+  [
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:path dct:publisher ;
+    sh:severity sh:Violation
+  ] ,
+  [
+    sh:nodeKind sh:Literal ;
+    sh:path dct:identifier ;
+    sh:severity sh:Violation
+  ] ,
+  [
+    sh:path dcat:theme ;
+    sh:severity sh:Violation
+  ] ,
+  [
+    sh:path dct:type ;
+    sh:severity sh:Violation
+  ] ,
+  [
+    sh:path dcat:qualifiedRelation ;
+    sh:severity sh:Violation
+  ] , 
+  [
+    sh:path dcat:qualifiedRelation ;
+    sh:severity sh:Violation
+  ] ,
+  [
+    sh:nodeKind sh:Literal ;
+    sh:path dcat:keyword ;
+    sh:severity sh:Violation
+  ] ,
+  [
+    sh:path dcat:landingPage ;
+    sh:severity sh:Violation
+  ] , 
+  [
+    sh:path prov:qualifiedAttribution ;
+    sh:severity sh:Violation
+  ] , 
+  [
+    sh:maxCount 1 ;
+    sh:path dct:license ;
+    sh:severity sh:Violation
+  ] ,
+  [
+    sh:maxCount 1 ;
+    sh:path dct:rights ;
+    sh:severity sh:Violation
+  ] ,
+  [
+    sh:maxCount 1 ;
+    sh:path odrl:hasPolicy ;
+    sh:severity sh:Violation
+  ] ,
+  [
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path dct:isReferencedBy ;
+    sh:severity sh:Violation
+  ] ,
+  [
+    sh:path dct:previousVersion ;
+    sh:severity sh:Violation
+  ] ,
+  [
+    sh:path dct:hasVersion ;
+    sh:severity sh:Violation
+  ] , 
+  [
+    sh:path dcat:hasCurrentVersion ;
+    sh:severity sh:Violation
+  ] , 
+  [
+    sh:path dct:replaces ;
+    sh:severity sh:Violation
+  ] , 
+  [
+    sh:path dcat:version ;
+    sh:severity sh:Violation
+  ] ,
+  [
+    sh:nodeKind sh:Literal ;
+    sh:path adms:versionNotes ;
+    sh:severity sh:Violation
+  ] ,
+  [
+    sh:maxCount 1 ;
+    sh:path adms:status ;
+    sh:severity sh:Violation
+  ] ,
+  [
+    sh:maxCount 1 ;
+    sh:path dcat:first ;
+    sh:severity sh:Violation
+  ] ,
+  [
+    sh:maxCount 1 ;
+    sh:path dcat:last ;
+    sh:severity sh:Violation
+  ] ,
+  [
+    sh:maxCount 1 ;
+    sh:path dcat:prev ;
+    sh:severity sh:Violation
+  ] .
