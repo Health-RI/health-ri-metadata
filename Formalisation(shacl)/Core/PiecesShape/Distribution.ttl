@@ -8,8 +8,8 @@
 :DistributionShape a sh:NodeShape ;
   sh:targetClass dcat:Distribution ;
   sh:property [
-    sh:path <http://www.w3.org/ns/dcat#accessURL> ;
-    sh:datatype sh:IRI ;
+    sh:path dcat:accessURL ;
+    sh:nodeKind sh:IRI ;
     sh:minCount 1 ;
   ],
   [
@@ -20,25 +20,23 @@
     #dash:viewer dash:LiteralViewer ;
   ] ,
   [
-    sh:path <http://purl.org/dc/terms/title> ;
-    sh:nodeKind sh:Literal ;
+    sh:path dct:title ;
     sh:datatype xsd:string ;
     sh:minCount 1 ;
+    sh:uniqueLang true ;
   ] ,
   [
-    sh:path <http://purl.org/dc/terms/description> ;
-    sh:nodeKind sh:Literal ;
+    sh:path dct:description ;
     sh:datatype xsd:string ;
     sh:minCount 1 ;
-  ],
+    sh:uniqueLang true ;
+  ] ,
   [
-    sh:path <http://www.w3.org/ns/dcat#accessService> ;
+    sh:path dcat:accessService ;
     sh:class dcat:DataService ;
-    sh:minCount 0 ;
   ] ,
   [
-    sh:path <http://www.w3.org/ns/dcat#downloadURL> ;
-    sh:datatype sh:iRI ; 
-    sh:minCount 0 ;
+    sh:path dcat:downloadURL ;
+    sh:nodeKind sh:IRI ; 
     #dash:editor dash:URIEditor ;
   ] .
