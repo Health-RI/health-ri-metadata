@@ -17,7 +17,7 @@
 :DatasetSeriesShape a sh:NodeShape ;
   sh:targetClass dcat:DatasetSeries ;
   sh:property [
-    sh:path <http://www.w3.org/ns/dcat#contactPoint> ;
+    sh:path dcat:contactPoint ;
     sh:class vcard:Kind ;
     sh:minCount 1 ;
     sh:name "Contact point" ;
@@ -25,34 +25,33 @@
     dash:viewer dash:LabelViewer ;
   ],
   [
-    sh:path <http://purl.org/dc/terms/creator> ;
-    sh:datatype sh:IRI ;
+    sh:path dct:creator ;
+    sh:nodeKind sh:IRI ;
     sh:class foaf:Agent ;
     sh:minCount 1 ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
   ],
   [
-    sh:path <http://purl.org/dc/terms/title> ;
-    sh:nodeKind sh:Literal ;
+    sh:path dct:title ;
     sh:datatype xsd:string ;
     sh:minCount 1 ;
+    sh:uniqueLang true ;
   ],
   [
-    sh:path <http://purl.org/dc/terms/description> ;
-    sh:nodeKind sh:Literal ;
+    sh:path dct:description ;
     sh:datatype xsd:string ;
     sh:minCount 1 ;
+    sh:uniqueLang true ;
   ],
   [
-    sh:path <http://purl.org/dc/terms/identifier> ;
+    sh:path dct:identifier ;
     sh:nodeKind sh:Literal ;
-    sh:datatype xsd:string ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
   ],
   [
-    sh:path <http://purl.org/dc/terms/issued> ;
+    sh:path dct:issued ;
     sh:datatype xsd:dateTime ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
@@ -60,13 +59,13 @@
     dash:viewer dash:LiteralViewer ;
   ],
   [
-    sh:path <http://purl.org/dc/terms/license> ;
-    sh:datatype sh:IRI ;
+    sh:path dct:license ;
+    sh:nodeKind sh:IRI ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
   ],
   [
-    sh:path <http://purl.org/dc/terms/modified> ;
+    sh:path dct:modified ;
     sh:datatype xsd:dateTime ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
@@ -74,44 +73,43 @@
     dash:viewer dash:LiteralViewer ;
   ],
   [
-    sh:path <http://purl.org/dc/terms/publisher> ;
+    sh:path dct:publisher ;
     sh:class foaf:Agent ;
-    sh:datatype sh:IRI ;
+    sh:nodeKind sh:IRI ;
     sh:minCount 1 ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
   ],
   [
-    sh:path <http://www.w3.org/ns/dcat#theme> ;
+    sh:path dcat:theme ;
 #            sh:class skos:ConceptScheme ;
-    sh:datatype sh:IRI ;
+    sh:nodeKind sh:IRI ;
     sh:minCount 1 ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
   ],
   [
-    sh:path <http://purl.org/dc/terms/type> ;
+    sh:path dct:type ;
 #            sh:class skos:Concept ;
-    sh:datatype sh:IRI ;
+    sh:nodeKind sh:IRI ;
     sh:minCount 1 ;
   ],
   [
-    sh:path <http://www.w3.org/ns/dcat#distribution> ;
+    sh:path dcat:distribution ;
     sh:class dcat:Distribution ;
-    sh:minCount 0 ;
   ],
   [
-    sh:path <http://purl.org/dc/terms/relation> ;
-    sh:datatype sh:IRI ;
+    sh:path dct:relation ;
+    sh:nodeKind sh:IRI ;
     sh:class foaf:Project ;
     sh:minCount 0 ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
   ],
   [
-    sh:path <http://www.w3.org/ns/dcat#hasVersion> ;
+    sh:path dcat:hasVersion ;
     sh:datatype xsd:string ;
-    sh:minCount 0 ;
+    sh:minCount 0 ; #TDB
     sh:name "Has Version" ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer 
