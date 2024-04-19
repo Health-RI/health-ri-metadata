@@ -21,22 +21,24 @@
   ] ,
   [
     sh:path dct:title ;
-    sh:datatype xsd:string ;
+	sh:nodeKind sh:Literal ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
   ] ,
   [
     sh:path dct:description ;
-    sh:datatype xsd:string ;
+	sh:nodeKind sh:Literal ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
   ] ,
   [
     sh:path dcat:accessService ;
     sh:class dcat:DataService ;
+	sh:minCount 0 ;
   ] ,
   [
     sh:path dcat:downloadURL ;
     sh:nodeKind sh:IRI ; 
+	sh:minCount 0 ;
     #dash:editor dash:URIEditor ;
   ] .
