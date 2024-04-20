@@ -88,18 +88,19 @@
   ],
   [
     sh:path dct:type ;
-    #sh:class skos:Concept ;
     sh:nodeKind sh:IRI ;
     sh:minCount 1 ;
   ],
   [
     sh:path dcat:distribution ;
     sh:class dcat:Distribution ;
+	sh:minCount 0 ;
   ],
   [
     sh:path dct:relation ;
     sh:nodeKind sh:IRI ;
     sh:class foaf:Project ;
+	sh:minCount 0 ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
   ],
@@ -115,6 +116,7 @@
     sh:path dcat:inSeries ;
     sh:nodeKind sh:IRI ;
     sh:class dcat:DatasetSeries ;
+	sh:minCount 0 ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
   ] .
