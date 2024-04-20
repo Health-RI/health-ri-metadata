@@ -9,6 +9,7 @@
 :CatalogShape a sh:NodeShape ;
   sh:targetClass dcat:Catalog ;
     sh:path dcat:dataset ;
+  sh:property 
  [
     sh:class dcat:Dataset ;
     sh:minCount 0 ;
