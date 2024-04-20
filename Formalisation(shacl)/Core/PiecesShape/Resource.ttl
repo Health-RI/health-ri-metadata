@@ -49,6 +49,8 @@
   ] ,
   [
     sh:path dcat:contactPoint ;
+	sh:nodeKind  sh:IRI;
+	sh:maxCount  1;
     sh:severity sh:Violation
   ] ,
   [
@@ -77,16 +79,17 @@
     sh:maxCount 1 ;
     sh:path dct:modified ;
     sh:severity sh:Violation ;
-    sh:shape :DateOrDateTimeDataType_Shape
+    sh:node :DateOrDateTimeDataType_Shape
   ] ,
   [
     sh:path dct:language ;
     sh:severity sh:Violation
   ] ,
   [
-    sh:maxCount 1 ;
-    sh:minCount 1 ;
+    #sh:maxCount 1 ;
+    #sh:minCount 1 ;
     sh:path dct:publisher ;
+	sh:node      :AgentShape;
     sh:severity sh:Violation
   ] ,
   [
@@ -102,10 +105,6 @@
     sh:path dct:type ;
     sh:severity sh:Violation
   ] ,
-  [
-    sh:path dcat:qualifiedRelation ;
-    sh:severity sh:Violation
-  ] , 
   [
     sh:path dcat:qualifiedRelation ;
     sh:severity sh:Violation
@@ -126,6 +125,7 @@
   [
     sh:maxCount 1 ;
     sh:path dct:license ;
+	sh:nodeKind  sh:IRI;
     sh:severity sh:Violation
   ] ,
   [
