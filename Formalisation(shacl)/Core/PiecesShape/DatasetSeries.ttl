@@ -61,21 +61,21 @@
   [
     sh:path dct:license ;
     sh:nodeKind sh:IRI ;
-    sh:minCount 1 ;
+    #sh:minCount 1 ;
     sh:maxCount 1 ;
   ],
   [
     sh:path dct:modified ;
     sh:datatype xsd:dateTime ;
-    sh:minCount 1 ;
+    #sh:minCount 1 ;
     sh:maxCount 1 ;
     dash:editor dash:DatePickerEditor ;
     dash:viewer dash:LiteralViewer ;
   ],
   [
     sh:path dct:publisher ;
-    sh:class foaf:Agent ;
-    sh:nodeKind sh:IRI ;
+    #sh:class foaf:Agent ;
+    sh:node :AgentShape ;
     sh:minCount 1 ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
@@ -95,6 +95,7 @@
   [
     sh:path dcat:distribution ;
     sh:class dcat:Distribution ;
+	sh:minCount 0 ;
   ],
   [
     sh:path dct:relation ;
