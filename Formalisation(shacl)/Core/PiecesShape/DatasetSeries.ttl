@@ -34,13 +34,13 @@
   ],
   [
     sh:path dct:title ;
-    sh:datatype xsd:string ;
+	sh:nodeKind sh:Literal ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
   ],
   [
     sh:path dct:description ;
-    sh:datatype xsd:string ;
+	sh:nodeKind sh:Literal ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
   ],
@@ -82,7 +82,6 @@
   ],
   [
     sh:path dcat:theme ;
-#            sh:class skos:ConceptScheme ;
     sh:nodeKind sh:IRI ;
     sh:minCount 1 ;
     dash:editor dash:URIEditor ;
@@ -90,7 +89,6 @@
   ],
   [
     sh:path dct:type ;
-#            sh:class skos:Concept ;
     sh:nodeKind sh:IRI ;
     sh:minCount 1 ;
   ],
