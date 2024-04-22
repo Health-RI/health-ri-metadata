@@ -96,20 +96,20 @@
   [
     sh:path dcat:distribution ;
     sh:class dcat:Distribution ;
-	sh:minCount 0 ;
+	#sh:minCount 0 ;
   ],
   [
     sh:path dct:relation ;
     sh:nodeKind sh:IRI ;
     sh:class foaf:Project ;
-	sh:minCount 0 ;
+	#sh:minCount 0 ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
   ],
   [
     sh:path dcat:version ;
     sh:nodeKind sh:Literal ;
-    sh:minCount 0 ; #TBD
+    #sh:minCount 0 ; #TBD
     sh:name "Has Version" ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer 
@@ -118,7 +118,7 @@
     sh:path dcat:inSeries ;
     sh:nodeKind sh:IRI ;
     sh:class dcat:DatasetSeries ;
-	sh:minCount 0 ;
+	#sh:minCount 0 ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
   ] .

@@ -12,7 +12,7 @@
   sh:property 
  [
     sh:class dcat:Dataset ;
-    sh:minCount 0 ;
+    #sh:minCount 0 ;
   ] ,
   [
     sh:path dct:description ;
@@ -36,7 +36,7 @@
   [
     sh:path dcat:catalog ;
    sh:class dcat:Catalog ;
-   sh:minCount 0 ;
+   #sh:minCount 0 ;
   ],
   [
     sh:path dcat:service ;

@@ -95,20 +95,20 @@
   [
     sh:path dcat:distribution ;
     sh:class dcat:Distribution ;
-	sh:minCount 0 ;
+	#sh:minCount 0 ;
   ],
   [
     sh:path dct:relation ;
     sh:nodeKind sh:IRI ;
     sh:class foaf:Project ;
-    sh:minCount 0 ;
+    #sh:minCount 0 ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
   ],
   [
     sh:path dcat:hasVersion ;
     sh:datatype xsd:string ;
-    sh:minCount 0 ; #TDB
+    #sh:minCount 0 ; #TDB
     sh:name "Has Version" ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer 
