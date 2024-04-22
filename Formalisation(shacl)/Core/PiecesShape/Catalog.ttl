@@ -8,34 +8,50 @@
 
 :CatalogShape a sh:NodeShape ;
   sh:targetClass dcat:Catalog ;
+    sh:path dcat:dataset ;
   sh:property 
  [
-    sh:path <http://www.w3.org/ns/dcat#dataset> ;
     sh:class dcat:Dataset ;
-    sh:minCount 0 ;
+    #sh:minCount 0 ;
   ] ,
- [
-    sh:path <http://purl.org/dc/terms/description> ;
+  [
+    sh:path dct:description ;
     sh:datatype xsd:string ;
     sh:minCount 1 ;
-   ], 
-  [
-    sh:path <http://purl.org/dc/terms/publisher> ;
-    sh:class foaf:Agent ;
-    sh:minCount 1 ;
-  ] ,
-  [
-    sh:path <http://purl.org/dc/terms/title> ;
-	sh:datatype xsd:string ;
-    sh:minCount 1 ;
+    sh:uniqueLang true ;
   ], 
   [
-   sh:path <http://www.w3.org/ns/dcat#catalog> ;
-   sh:class dcat:Catalog ;
-   sh:minCount 0 ;
+    sh:path dct:publisher ;
+    sh:minCount 1 ;
+  dash:editor  dash:BlankNodeEditor;
+    sh:node      :AgentShape;
+    sh:path      dct:publisher
   ],
   [
-    sh:path <http://www.w3.org/ns/dcat#Service> ;
+    sh:path dct:title ;
+	sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:uniqueLang true ;
+  ], 
+  [
+    sh:path dcat:catalog ;
+   sh:class dcat:Catalog ;
+   #sh:minCount 0 ;
+  ],
+  [
+    sh:path dcat:service ;
     sh:class dcat:DataService ;
     sh:minCount 0 ;
   ] .
+  
+  
+  :AgentShape  a   sh:NodeShape;
+        sh:property     
+		[ 
+		dash:editor  dash:TextFieldEditor;
+        sh:maxCount  1;
+        sh:minCount  1;
+        sh:nodeKind  sh:Literal;
+        sh:path      foaf:name
+       ];
+       sh:targetClass  foaf:Agent .
