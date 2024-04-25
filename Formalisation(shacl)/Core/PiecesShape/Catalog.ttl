@@ -9,11 +9,18 @@
 :CatalogShape a sh:NodeShape ;
   sh:targetClass dcat:Catalog ;
     sh:property 
- [
-    sh:path dcat:dataset ;
-    sh:class dcat:Dataset ;
-    #sh:minCount 0 ;
-  ] ,
+ [  
+	sh:path dcat:dataset ;
+    sh:or (
+	[
+	sh:class dcat:Dataset ;
+    ]
+	[
+	sh:nodeKind sh:IRI ;	
+	]
+	)
+  ],
+  
   [
     sh:path dct:description ;
     sh:datatype xsd:string ;
