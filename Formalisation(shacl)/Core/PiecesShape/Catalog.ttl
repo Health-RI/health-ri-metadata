@@ -10,10 +10,17 @@
   sh:targetClass dcat:Catalog ;
     sh:path dcat:dataset ;
   sh:property 
- [
-    sh:class dcat:Dataset ;
-    #sh:minCount 0 ;
-  ] ,
+ [  
+    sh:path dcat:dataset ;
+    sh:or 
+    ([
+	sh:class dcat:Dataset ;
+    ]
+    [
+	sh:nodeKind sh:IRI ;	
+    ])
+ ],
+  
   [
     sh:path dct:description ;
     sh:datatype xsd:string ;
