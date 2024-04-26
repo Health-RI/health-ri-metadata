@@ -8,6 +8,7 @@
 
 :CatalogShape a sh:NodeShape ;
   sh:targetClass dcat:Catalog ;
+    sh:path dcat:dataset ;
   sh:property 
  [  
     sh:path dcat:dataset ;
@@ -18,7 +19,7 @@
     [
 	sh:nodeKind sh:IRI ;	
     ])
-  ],
+ ],
   
   [
     sh:path dct:description ;
