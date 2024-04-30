@@ -11,6 +11,8 @@
     sh:path dcat:accessURL ;
     sh:nodeKind sh:IRI ;
     sh:minCount 1 ;
+    dash:viewer dash:URIViewer ;
+    dash:editor dash:URIEditor ;
   ],
   [
     sh:path dcat:mediaType ;
@@ -24,12 +26,16 @@
     sh:datatype xsd:string ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
+    dash:viewer dash:LiteralViewer ;
+    dash:editor dash:TextFieldEditor ;
   ] ,
   [
     sh:path dct:description ;
     sh:datatype xsd:string ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
+    dash:viewer dash:LiteralViewer ;
+    dash:editor dash:TextAreaEditor ;
   ] ,
   [
     sh:path dcat:accessService ;
@@ -37,11 +43,12 @@
       [ sh:class dcat:DataService ]
       [ sh:nodeKind sh:IRI ]
     );
-  #sh:minCount 0 ;
+    #sh:minCount 0 ;
   ] ,
   [
     sh:path dcat:downloadURL ;
     sh:nodeKind sh:IRI ; 
-  #sh:minCount 0 ;
-    #dash:editor dash:URIEditor ;
+    #sh:minCount 0 ;
+    dash:viewer dash:URIViewer ;
+    dash:editor dash:URIEditor ;
   ] .

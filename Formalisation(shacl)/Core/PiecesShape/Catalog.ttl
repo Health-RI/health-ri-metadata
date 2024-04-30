@@ -25,19 +25,22 @@
     sh:datatype xsd:string ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
+    dash:viewer dash:LiteralViewer ;
+    dash:editor dash:TextAreaEditor ;
   ], 
   [
     sh:path dct:publisher ;
     sh:minCount 1 ;
-  dash:editor  dash:BlankNodeEditor;
-    sh:node      :AgentShape;
-    sh:path      dct:publisher
+    dash:editor dash:BlankNodeEditor;
+    sh:node :AgentShape;
   ],
   [
     sh:path dct:title ;
-  sh:datatype xsd:string ;
+    sh:datatype xsd:string ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
+    dash:viewer dash:LiteralViewer ;
+    dash:editor dash:TextFieldEditor ;
   ], 
   [
     sh:path dcat:catalog ;
@@ -54,16 +57,19 @@
       [ sh:nodeKind sh:IRI ]
     ) ;
     sh:minCount 0 ;
+    dash:viewer dash:URIViewer ;
+    dash:editor dash:URIEditor ;
   ] .
   
   
-  :AgentShape  a   sh:NodeShape;
-        sh:property     
+  :AgentShape a sh:NodeShape;
+    sh:property     
     [ 
-    dash:editor  dash:TextFieldEditor;
-        sh:maxCount  1;
-        sh:minCount  1;
-        sh:nodeKind  sh:Literal;
-        sh:path      foaf:name
-       ];
-       sh:targetClass  foaf:Agent .
+      dash:editor  dash:TextFieldEditor;
+      dash:viewer dash:LiteralViewer ;
+      sh:maxCount  1;
+      sh:minCount  1;
+      sh:nodeKind  sh:Literal;
+      sh:path      foaf:name
+    ];
+    sh:targetClass foaf:Agent .

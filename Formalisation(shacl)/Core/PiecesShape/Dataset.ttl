@@ -37,6 +37,8 @@
     sh:nodeKind sh:Literal ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
+    dash:viewer dash:LiteralViewer ;
+    dash:editor dash:TextFieldEditor ;
   ],
   [
     sh:path dct:description ;
@@ -44,33 +46,39 @@
     sh:nodeKind  sh:Literal;
     sh:maxCount 1 ;
     sh:uniqueLang true ;
+    dash:viewer dash:LiteralViewer ;
+    dash:editor dash:TextAreaEditor ;
   ],
   [
     sh:path dct:identifier ;
     sh:nodeKind sh:Literal ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
+    dash:viewer dash:LiteralViewer ;
+    dash:editor dash:TextFieldEditor ;
   ],
   [
     sh:path dct:issued ;
     sh:datatype xsd:dateTime ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
-    dash:editor dash:DatePickerEditor ;
+    dash:editor dash:DateTimePickerEditor ;
     dash:viewer dash:LiteralViewer ;
   ],
   [
     sh:path dct:license ;
     sh:nodeKind sh:IRI ;
     #sh:minCount 1 ;
-    sh:maxCount 1 ;    
+    sh:maxCount 1 ;
+    dash:viewer dash:LabelViewer ;
+    dash:editor dash:URIEditor ;
   ],
   [
     sh:path dct:modified ;
     sh:datatype xsd:dateTime ;
     #sh:minCount 1 ;
     sh:maxCount 1 ;
-    dash:editor dash:DatePickerEditor ;
+    dash:editor dash:DateTimePickerEditor ;
     dash:viewer dash:LiteralViewer ;
   ],
   [
@@ -92,6 +100,8 @@
     sh:path dct:type ;
     sh:nodeKind sh:IRI ;
     #sh:minCount 1 ;
+    dash:viewer dash:LabelViewer ;
+    dash:editor dash:URIEditor ;
   ],
   [
     sh:path dcat:distribution ;
