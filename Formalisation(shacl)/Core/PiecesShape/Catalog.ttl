@@ -13,10 +13,10 @@
     sh:path dcat:dataset ;
     sh:or 
     ([
-	sh:class dcat:Dataset ;
+      sh:class dcat:Dataset ;
     ]
     [
-	sh:nodeKind sh:IRI ;	
+      sh:nodeKind sh:IRI ;  
     ])
  ],
   
@@ -35,26 +35,32 @@
   ],
   [
     sh:path dct:title ;
-	sh:datatype xsd:string ;
+  sh:datatype xsd:string ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
   ], 
   [
     sh:path dcat:catalog ;
-   sh:class dcat:Catalog ;
+    sh:or (
+      [ sh:class dcat:Catalog ]
+      [ sh:nodeKind sh:IRI ]
+    ) ;
    #sh:minCount 0 ;
   ],
   [
     sh:path dcat:service ;
-    sh:class dcat:DataService ;
+    sh:or (
+      [ sh:class dcat:DataService ]
+      [ sh:nodeKind sh:IRI ]
+    ) ;
     sh:minCount 0 ;
   ] .
   
   
   :AgentShape  a   sh:NodeShape;
         sh:property     
-		[ 
-		dash:editor  dash:TextFieldEditor;
+    [ 
+    dash:editor  dash:TextFieldEditor;
         sh:maxCount  1;
         sh:minCount  1;
         sh:nodeKind  sh:Literal;
