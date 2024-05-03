@@ -27,10 +27,10 @@
   ],
   [
     sh:path dct:creator ;
-	sh:node foaf:Agent ;
+    sh:node :AgentShape ;
     sh:minCount 1 ;
-    dash:editor dash:URIEditor ;
-    dash:viewer dash:LabelViewer ;
+    dash:editor dash:BlankNodeEditor ;
+    dash:viewer dash:DetailsViewer ;
   ],
   [
     sh:path dct:title ;
@@ -122,3 +122,15 @@
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
   ] .
+
+:AgentShape a sh:NodeShape;
+  sh:property     
+  [ 
+    dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LiteralViewer ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:Literal ;
+    sh:path foaf:name ;
+  ] ;
+  sh:targetClass foaf:Agent .
