@@ -9,7 +9,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix vcard: <http://www.w3.org/2006/vcard#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix core: <http://coreRule-healthri.nl#> .
 @prefix : <http://coreRule-healthri.nl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -23,7 +23,6 @@
     sh:name "Contact point" ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
-	 sh:nodeKind  sh:IRI;
   ],
   [
     sh:path dct:creator ;
