@@ -1,0 +1,8 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<http://example.com/distribution> a dcat:Distribution ;
+    dct:title "Example Distribution" ;
+    dct:description "This is an example distribution to test the shapes" ;
+    dcat:accessURL <http://example.com/> ;
+    dcat:mediaType "text/plain" .

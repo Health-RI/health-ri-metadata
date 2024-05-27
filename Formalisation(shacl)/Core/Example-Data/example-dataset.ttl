@@ -1,0 +1,14 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.com/dataset> a dcat:Dataset ;
+    dct:title "Example Dataset" ;
+    dct:description "This is an example dataset to test the shapes" ;
+    dct:identifier "test-id" ;
+    dct:issued "2024-05-27T15:00:00+02:00"^^xsd:dateTime ;
+    dcat:theme <http://www.wikidata.org/entity/Q1141613> ;
+    dct:creator [
+        a foaf:Agent ;
+        foaf:name "Test" ;
+    ] .
