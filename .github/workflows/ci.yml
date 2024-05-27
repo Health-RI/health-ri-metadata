@@ -8,6 +8,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-          cache: 'pip'
       - run: pip install pyshacl
       - run: pyshacl --shacl "Formalisation(shacl)/Core/PiecesShape/Catalog.ttl" --metashacl "Formalisation(shacl)/Core/Example-Data/example-catalog.ttl"
