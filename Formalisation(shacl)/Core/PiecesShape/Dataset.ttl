@@ -33,22 +33,28 @@
   ],
   [
     sh:path dct:title ;
-	sh:nodeKind sh:Literal ;
+    sh:nodeKind sh:Literal ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
+    dash:viewer dash:LiteralViewer ;
+    dash:editor dash:TextFieldEditor ;
   ],
   [
     sh:path dct:description ;
     sh:datatype xsd:string ;
-	sh:nodeKind  sh:Literal;
+    sh:nodeKind  sh:Literal;
     sh:maxCount 1 ;
     sh:uniqueLang true ;
+    dash:viewer dash:LiteralViewer ;
+    dash:editor dash:TextAreaEditor ;
   ],
   [
     sh:path dct:identifier ;
     sh:nodeKind sh:Literal ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
+    dash:viewer dash:LiteralViewer ;
+    dash:editor dash:TextFieldEditor ;
   ],
   [
     sh:path dct:issued ;
@@ -62,7 +68,9 @@
     sh:path dct:license ;
     sh:nodeKind sh:IRI ;
     #sh:minCount 1 ;
-    sh:maxCount 1 ;    
+    sh:maxCount 1 ;
+    dash:viewer dash:LabelViewer ;
+    dash:editor dash:URIEditor ;
   ],
   [
     sh:path dct:modified ;
@@ -91,17 +99,19 @@
     sh:path dct:type ;
     sh:nodeKind sh:IRI ;
     #sh:minCount 1 ;
+    dash:viewer dash:LabelViewer ;
+    dash:editor dash:URIEditor ;
   ],
   [
     sh:path dcat:distribution ;
     sh:class dcat:Distribution ;
-	#sh:minCount 0 ;
+  #sh:minCount 0 ;
   ],
   [
     sh:path dct:relation ;
     sh:nodeKind sh:IRI ;
     sh:class foaf:Project ;
-	#sh:minCount 0 ;
+  #sh:minCount 0 ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
   ],
@@ -117,7 +127,7 @@
     sh:path dcat:inSeries ;
     sh:nodeKind sh:IRI ;
     sh:class dcat:DatasetSeries ;
-	#sh:minCount 0 ;
+  #sh:minCount 0 ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
   ] .
