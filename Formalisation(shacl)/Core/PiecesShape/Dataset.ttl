@@ -33,7 +33,7 @@
   ],
   [
     sh:path dct:title ;
-    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
     dash:viewer dash:LiteralViewer ;
@@ -42,7 +42,6 @@
   [
     sh:path dct:description ;
     sh:datatype xsd:string ;
-    sh:nodeKind  sh:Literal;
     sh:maxCount 1 ;
     sh:uniqueLang true ;
     dash:viewer dash:LiteralViewer ;
@@ -61,7 +60,7 @@
     sh:datatype xsd:dateTime ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
-    dash:editor dash:DatePickerEditor ;
+    dash:editor dash:DateTimePickerEditor ;
     dash:viewer dash:LiteralViewer ;
   ],
   [
@@ -77,7 +76,7 @@
     sh:datatype xsd:dateTime ;
     #sh:minCount 1 ;
     sh:maxCount 1 ;
-    dash:editor dash:DatePickerEditor ;
+    dash:editor dash:DateTimePickerEditor ;
     dash:viewer dash:LiteralViewer ;
   ],
   [
@@ -85,8 +84,8 @@
     sh:node :AgentShape ;
     #sh:nodeKind sh:IRI ;
     #sh:minCount 1 ;
-    dash:editor dash:URIEditor ;
-    dash:viewer dash:LabelViewer ;
+    dash:editor dash:BlankNodeEditor ;
+    dash:viewer dash:DetailsViewer ;
   ],
   [
     sh:path dcat:theme ;
@@ -120,8 +119,8 @@
     sh:nodeKind sh:Literal ;
     #sh:minCount 0 ; #TBD
     sh:name "Has Version" ;
-    dash:editor dash:URIEditor ;
-    dash:viewer dash:LabelViewer 
+    dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LabelViewer ;
   ] ,
   [
     sh:path dcat:inSeries ;
