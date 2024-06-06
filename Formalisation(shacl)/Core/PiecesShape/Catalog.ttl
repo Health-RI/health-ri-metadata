@@ -9,40 +9,48 @@
 :CatalogShape a sh:NodeShape ;
   sh:targetClass dcat:Catalog ;
   sh:property 
- [  
+  [  
     sh:path dcat:dataset ;
     sh:or 
     ([
-	sh:class dcat:Dataset ;
+      sh:class dcat:Dataset ;
     ]
     [
-	sh:nodeKind sh:IRI ;	
+      sh:nodeKind sh:IRI ;
     ])
- ],
-  
+  ],
   [
     sh:path dct:description ;
     sh:datatype xsd:string ;
     sh:minCount 1 ;
+
+    # The sh:uniqueLang constraint needs a sh:datatype rdf:langString to properly function.
+    # Currently, the FDP client does not provide support for dash:TextFieldWithLangEditor,
+    # therefore making this non-functional untill support in the client is added.
     sh:uniqueLang true ;
+    
+    dash:viewer dash:LiteralViewer ;
+    dash:editor dash:TextAreaEditor ;
   ], 
   [
     sh:path dct:publisher ;
     sh:minCount 1 ;
-  dash:editor  dash:BlankNodeEditor;
-    sh:node      :AgentShape;
-    sh:path      dct:publisher
+    sh:node :AgentShape;
+    dash:viewer dash:DetailsViewer ;
+    dash:editor dash:BlankNodeEditor ;
   ],
   [
     sh:path dct:title ;
-	sh:datatype xsd:string ;
+    sh:datatype xsd:string ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
+    dash:viewer dash:LiteralViewer ;
+    dash:editor dash:TextFieldEditor ;
   ], 
   [
     sh:path dcat:catalog ;
-   sh:class dcat:Catalog ;
-   #sh:minCount 0 ;
+    sh:class dcat:Catalog ;
+    #sh:minCount 0 ;
   ],
   [
     sh:path dcat:service ;
