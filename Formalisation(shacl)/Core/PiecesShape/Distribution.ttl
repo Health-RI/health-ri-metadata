@@ -16,7 +16,7 @@
   ],
   [
     sh:path dcat:mediaType ;
-    sh:datatype xsd:string ;
+    sh:nodeKind sh:IRI ; 
     sh:minCount 1 ;
     dash:editor dash:TextFieldEditor ;
     dash:viewer dash:LiteralViewer ;
