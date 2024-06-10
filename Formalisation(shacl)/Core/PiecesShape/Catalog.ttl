@@ -53,5 +53,12 @@
         sh:minCount  1;
         sh:nodeKind  sh:Literal;
         sh:path      foaf:name
-       ];
+       ],
+	   
+		[
+		sh:path dct:identifier ;
+		sh:nodeKind rdfs:Literal ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+  ];
        sh:targetClass  foaf:Agent .
