@@ -5,6 +5,7 @@
 @prefix foaf:     <http://xmlns.com/foaf/0.1/> .
 @prefix sh:       <http://www.w3.org/ns/shacl#> .
 @prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 :CatalogShape a sh:NodeShape ;
   sh:targetClass dcat:Catalog ;
@@ -21,7 +22,7 @@
   ],
   [
     sh:path dct:description ;
-    sh:datatype xsd:string ;
+    sh:datatype rdfs:Literal ;
     sh:minCount 1 ;
 
     # The sh:uniqueLang constraint needs a sh:datatype rdf:langString to properly function.
@@ -41,7 +42,7 @@
   ],
   [
     sh:path dct:title ;
-    sh:datatype xsd:string ;
+	sh:datatype rdfs:Literal ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
     dash:viewer dash:LiteralViewer ;
