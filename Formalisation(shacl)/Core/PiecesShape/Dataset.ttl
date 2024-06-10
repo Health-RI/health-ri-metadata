@@ -9,7 +9,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix vcard: <http://www.w3.org/2006/vcard#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix core: <http://coreRule-healthri.nl#> .
 @prefix : <http://coreRule-healthri.nl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -23,54 +23,61 @@
     sh:name "Contact point" ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
-	 sh:nodeKind  sh:IRI;
   ],
   [
     sh:path dct:creator ;
-	sh:node foaf:Agent ;
+    sh:node :AgentShape ;
     sh:minCount 1 ;
-    dash:editor dash:URIEditor ;
-    dash:viewer dash:LabelViewer ;
+    dash:editor dash:BlankNodeEditor ;
+    dash:viewer dash:DetailsViewer ;
   ],
   [
     sh:path dct:title ;
-	sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
+    dash:viewer dash:LiteralViewer ;
+    dash:editor dash:TextFieldEditor ;
   ],
   [
     sh:path dct:description ;
     sh:datatype xsd:string ;
-	sh:nodeKind  rdfs:Literal;
+  	sh:nodeKind  rdfs:Literal;
     sh:maxCount 1 ;
     sh:uniqueLang true ;
+    dash:viewer dash:LiteralViewer ;
+    dash:editor dash:TextAreaEditor ;
   ],
   [
     sh:path dct:identifier ;
     sh:nodeKind rdfs:Literal ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
+    dash:viewer dash:LiteralViewer ;
+    dash:editor dash:TextFieldEditor ;
   ],
   [
     sh:path dct:issued ;
     sh:datatype xsd:dateTime ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
-    dash:editor dash:DatePickerEditor ;
+    dash:editor dash:DateTimePickerEditor ;
     dash:viewer dash:LiteralViewer ;
   ],
   [
     sh:path dct:license ;
     sh:nodeKind sh:IRI ;
     #sh:minCount 1 ;
-    sh:maxCount 1 ;    
+    sh:maxCount 1 ;
+    dash:viewer dash:LabelViewer ;
+    dash:editor dash:URIEditor ;
   ],
   [
     sh:path dct:modified ;
     sh:datatype xsd:dateTime ;
     #sh:minCount 1 ;
     sh:maxCount 1 ;
-    dash:editor dash:DatePickerEditor ;
+    dash:editor dash:DateTimePickerEditor ;
     dash:viewer dash:LiteralViewer ;
   ],
   [
@@ -78,8 +85,8 @@
     sh:node :AgentShape ;
     #sh:nodeKind sh:IRI ;
     #sh:minCount 1 ;
-    dash:editor dash:URIEditor ;
-    dash:viewer dash:LabelViewer ;
+    dash:editor dash:BlankNodeEditor ;
+    dash:viewer dash:DetailsViewer ;
   ],
   [
     sh:path dcat:theme ;
@@ -92,17 +99,19 @@
     sh:path dct:type ;
     sh:nodeKind sh:IRI ;
     #sh:minCount 1 ;
+    dash:viewer dash:LabelViewer ;
+    dash:editor dash:URIEditor ;
   ],
   [
     sh:path dcat:distribution ;
     sh:class dcat:Distribution ;
-	#sh:minCount 0 ;
+  #sh:minCount 0 ;
   ],
   [
     sh:path dct:relation ;
     sh:nodeKind sh:IRI ;
     sh:class foaf:Project ;
-	#sh:minCount 0 ;
+  #sh:minCount 0 ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
   ],
@@ -111,14 +120,26 @@
     sh:nodeKind sh:Literal ;
     #sh:minCount 0 ; #TBD
     sh:name "Has Version" ;
-    dash:editor dash:URIEditor ;
-    dash:viewer dash:LabelViewer 
+    dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LabelViewer ;
   ] ,
   [
     sh:path dcat:inSeries ;
     sh:nodeKind sh:IRI ;
     sh:class dcat:DatasetSeries ;
-	#sh:minCount 0 ;
+  #sh:minCount 0 ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
   ] .
+
+:AgentShape a sh:NodeShape;
+  sh:property     
+  [ 
+    dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LiteralViewer ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:Literal ;
+    sh:path foaf:name ;
+  ] ;
+  sh:targetClass foaf:Agent .

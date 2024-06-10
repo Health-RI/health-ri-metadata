@@ -1,0 +1,20 @@
+name: Continuous Integration
+on: [ pull_request ]
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pyshacl
+
+      - name: Test catalog shape against catalog fixture
+        run: pyshacl --shacl "Formalisation(shacl)/Core/PiecesShape/Catalog.ttl" --metashacl "Formalisation(shacl)/Core/Example-Data/example-catalog.ttl"
+
+      - name: Test dataset shape against dataset fixture
+        run: pyshacl --shacl "Formalisation(shacl)/Core/PiecesShape/Dataset.ttl" --metashacl "Formalisation(shacl)/Core/Example-Data/example-dataset.ttl"
+
+      - name: Test distribution shape against distribution fixture
+        run: pyshacl --shacl "Formalisation(shacl)/Core/PiecesShape/Distribution.ttl" --metashacl "Formalisation(shacl)/Core/Example-Data/example-distribution.ttl"
