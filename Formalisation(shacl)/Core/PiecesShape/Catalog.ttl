@@ -63,7 +63,7 @@
   :AgentShape  a   sh:NodeShape;
         sh:property     
 		[ 
-		sh:path      foaf:name
+		sh:path      foaf:name;
     dash:editor  dash:TextFieldEditor;
     sh:maxCount  1;
     sh:minCount  1;
