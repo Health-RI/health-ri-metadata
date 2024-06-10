@@ -41,13 +41,13 @@
   [
     sh:path dct:description ;
     sh:datatype xsd:string ;
-	sh:nodeKind  sh:Literal;
+	sh:nodeKind  rdfs:Literal;
     sh:maxCount 1 ;
     sh:uniqueLang true ;
   ],
   [
     sh:path dct:identifier ;
-    sh:nodeKind sh:Literal ;
+    sh:nodeKind rdfs:Literal ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
   ],
