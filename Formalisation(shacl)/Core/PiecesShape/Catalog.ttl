@@ -58,14 +58,20 @@
     sh:minCount 0 ;
   ] .
 
-:AgentShape a sh:NodeShape;
-  sh:property     
-  [ 
-    dash:editor dash:TextFieldEditor ;
-    dash:viewer dash:LiteralViewer ;
-    sh:maxCount 1 ;
-    sh:minCount 1 ;
-    sh:nodeKind sh:Literal ;
-    sh:path foaf:name ;
-  ] ;
-  sh:targetClass foaf:Agent .
+
+  :AgentShape  a   sh:NodeShape;
+        sh:property     
+		[ 
+		sh:path      foaf:name
+    dash:editor  dash:TextFieldEditor;
+    sh:maxCount  1;
+    sh:minCount  1;
+    sh:nodeKind  sh:Literal;
+    ],
+  	[
+		sh:path dct:identifier ;
+		sh:nodeKind rdfs:Literal ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+  ];
+  sh:targetClass  foaf:Agent .
