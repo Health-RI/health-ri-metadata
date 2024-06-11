@@ -9,7 +9,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix vcard: <http://www.w3.org/2006/vcard#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix core: <http://coreRule-healthri.nl#> .
 @prefix : <http://coreRule-healthri.nl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -27,10 +27,10 @@
   ],
   [
     sh:path dct:creator ;
-    sh:node foaf:Agent ;
+    sh:node :AgentShape ;
     sh:minCount 1 ;
-    dash:editor dash:URIEditor ;
-    dash:viewer dash:LabelViewer ;
+    dash:editor dash:BlankNodeEditor ;
+    dash:viewer dash:DetailsViewer ;
   ],
   [
     sh:path dct:title ;
@@ -42,7 +42,6 @@
   ],
   [
     sh:path dct:description ;
-    sh:datatype xsd:string ;
     sh:nodeKind  sh:Literal;
     sh:maxCount 1 ;
     sh:uniqueLang true ;
@@ -51,7 +50,7 @@
   ],
   [
     sh:path dct:identifier ;
-    sh:nodeKind sh:Literal ;
+    sh:nodeKind rdfs:Literal ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
     dash:viewer dash:LiteralViewer ;
@@ -86,8 +85,8 @@
     sh:node :AgentShape ;
     #sh:nodeKind sh:IRI ;
     #sh:minCount 1 ;
-    dash:editor dash:URIEditor ;
-    dash:viewer dash:LabelViewer ;
+    dash:editor dash:BlankNodeEditor ;
+    dash:viewer dash:DetailsViewer ;
   ],
   [
     sh:path dcat:theme ;
@@ -126,8 +125,8 @@
     sh:nodeKind sh:Literal ;
     #sh:minCount 0 ; #TBD
     sh:name "Has Version" ;
-    dash:editor dash:URIEditor ;
-    dash:viewer dash:LabelViewer 
+    dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LabelViewer ;
   ] ,
   [
     sh:path dcat:inSeries ;
@@ -139,3 +138,15 @@
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
   ] .
+
+:AgentShape a sh:NodeShape;
+  sh:property     
+  [ 
+    dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LiteralViewer ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:Literal ;
+    sh:path foaf:name ;
+  ] ;
+  sh:targetClass foaf:Agent .
