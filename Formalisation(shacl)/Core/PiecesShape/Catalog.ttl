@@ -22,8 +22,9 @@
   ],
   [
     sh:path dct:description ;
-    sh:datatype rdfs:Literal ;
-    sh:minCount 1 ;
+    #sh:datatype sh:Literal ;
+    sh:nodeKind sh:Literal ;
+	sh:minCount 1 ;
 
     # The sh:uniqueLang constraint needs a sh:datatype rdf:langString to properly function.
     # Currently, the FDP client does not provide support for dash:TextFieldWithLangEditor,
@@ -41,21 +42,15 @@
   ],
    [
     sh:path dct:title ;
-	  sh:datatype rdfs:Literal ;
-    sh:minCount 1 ;
+	#sh:datatype sh:Literal ;
+    sh:nodeKind sh:Literal ;
+	sh:minCount 1 ;
     sh:uniqueLang true ;
     dash:viewer dash:LiteralViewer ;
     dash:editor dash:TextFieldEditor ;
   ], 
   [
-#    sh:path dcat:catalog ;
-#<<<<<<< feature/shape-refinement-1
-#    sh:or (
-#      [ sh:class dcat:Catalog ]
-#      [ sh:nodeKind sh:IRI ]
-#    ) ;
-   #sh:minCount 0 ;
-#=======
+    sh:path dcat:catalog ;
     sh:class dcat:Catalog ;
     #sh:minCount 0 ;
   ],
@@ -73,7 +68,7 @@
   :AgentShape  a   sh:NodeShape;
         sh:property     
 		[ 
-		sh:path      foaf:name
+		sh:path      foaf:name;
     dash:editor  dash:TextFieldEditor;
     dash:viewer dash:LiteralViewer ;
     sh:maxCount  1;
@@ -82,7 +77,7 @@
     ],
   	[
 		sh:path dct:identifier ;
-		sh:nodeKind rdfs:Literal ;
+		sh:nodeKind sh:Literal ;
 		sh:minCount 1 ;
 		sh:maxCount 1 ;
   ];
