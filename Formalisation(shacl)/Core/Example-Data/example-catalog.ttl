@@ -8,4 +8,5 @@
     dct:publisher [
         a foaf:Agent ;
         foaf:name "Test" ;
+		dct:identifier "12345";
     ] .

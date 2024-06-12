@@ -22,8 +22,9 @@
   ],
   [
     sh:path dct:description ;
-    sh:datatype sh:Literal ;
-    sh:minCount 1 ;
+    #sh:datatype sh:Literal ;
+    sh:nodeKind sh:Literal ;
+	sh:minCount 1 ;
 
     # The sh:uniqueLang constraint needs a sh:datatype rdf:langString to properly function.
     # Currently, the FDP client does not provide support for dash:TextFieldWithLangEditor,
@@ -42,8 +43,9 @@
   ],
   [
     sh:path dct:title ;
-	sh:datatype sh:Literal ;
-    sh:minCount 1 ;
+	#sh:datatype sh:Literal ;
+    sh:nodeKind sh:Literal ;
+	sh:minCount 1 ;
     sh:uniqueLang true ;
     dash:viewer dash:LiteralViewer ;
     dash:editor dash:TextFieldEditor ;
