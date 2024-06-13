@@ -1,5 +1,4 @@
-### [Latest published version](https://github.com/Health-RI/health-ri-metadata/blob/master/Foraml%20Models%20(shapes%2C%20rdf%2C%20skos%2C)/Core%20Metadata%20Module/coreRules.shapes.ttl "https://github.com/Health-RI/health-ri-metadata/blob/master/Foraml%20Models%20(shapes%2C%20rdf%2C%20skos%2C)/Core%20Metadata%20Module/coreRules.shapes.ttl")
-
+### Latest published version
 Plateau 1: [https://github.com/Health-RI/health-ri-metadata/tree/master/Formalisation(shacl)/Core/PiecesShape](https://github.com/Health-RI/health-ri-metadata/tree/master/Formalisation(shacl)/Core/PiecesShape)
 
 ### Purpose and audience
