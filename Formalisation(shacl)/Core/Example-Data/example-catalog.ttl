@@ -1,6 +1,10 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.com/catalog> a dcat:Catalog ;
     dct:title "Example Catalog" ;
@@ -10,3 +14,14 @@
         foaf:name "Test" ;
 		dct:identifier "12345";
     ] .
+
+
+<http://example.com/catalog/1> a dcat:Catalog ;
+    dcterms:description "Research works of 2nd grade Hogwarts students" ;
+    dcterms:identifier "http://example.com/catalog/1" ;
+    dcterms:issued "1992-01-06T00:00:00"^^xsd:dateTime ;
+    dcterms:title "Student research works 1992" ;
+    dcat:dataset <http://example.com/dataset/1>,
+        <http://example.com/dataset/2>,
+        <http://example.com/dataset/3>,
+        <http://example.com/dataset/4> .
