@@ -25,7 +25,7 @@ This repository outlines the Core Metadata Schema, detailing the classes and ent
     * [Project](#Project)
     * [Kind](#Kind)
     * [Cataloged Resource](#Cataloged-Resource)
-* [Feedback, Support, Extension and Implementation](#Feedback,-Support,-Extension-and-Implementation)
+* [Feedback, Support, Extension and Implementation](#Further-Information)
 
 Introduction
 ============
@@ -210,7 +210,7 @@ Cataloged Resource
 
 All things described by RDF are called _resources_, and they are instances of the class `dcat:Resource`. This is the class of everything. All other classes are [subclasses](https://www.w3.org/TR/rdf12-schema/#def-subclass "https://www.w3.org/TR/rdf12-schema/#def-subclass") of this class. To read more, go to
 
-Feedback, Support, Extension and Implementation
+Further Information
 ===============================================
 
 ### Feedback - Git Issues
