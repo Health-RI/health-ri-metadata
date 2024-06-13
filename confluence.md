@@ -25,7 +25,7 @@ This repository outlines the Core Metadata Schema, detailing the classes and ent
     * [Project](#Project)
     * [Kind](#Kind)
     * [Cataloged Resource](#Cataloged-Resource)
-* [Feedback, Support, Extension and Implementation](#Feedback%2C-Support%2C-Extension-and-Implementation)
+* [Feedback, Support, Extension and Implementation](#Feedback,-Support,-Extension-and-Implementation)
 
 Introduction
 ============
