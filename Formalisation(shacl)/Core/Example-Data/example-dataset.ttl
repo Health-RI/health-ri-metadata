@@ -3,14 +3,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix ns1: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
-@prefix core: <http://coreRule-healthri.nl#> .
-@prefix : <http://coreRule-healthri.nl#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
 
 
 <http://example.com/dataset> a dcat:Dataset ;
@@ -26,32 +20,32 @@
 
 
 <http://example.com/dataset/1> a dcat:Dataset ;
-    dcterms:creator [ a foaf:Agent  ;
+    dct:creator [ a foaf:Agent  ;
             foaf:name "Hermione Granger" ;
-            ns1:hasUID <https://harrypotter.fandom.com/wiki/Hermione_Granger> ] ;
-    dcterms:description "Impact of muggle technical inventions on word's magic presense" ;
-    dcterms:identifier "1" ;
-    dcterms:issued "1992-03-04T00:00:00"^^xsd:dateTime ;
-    dcterms:publisher [ a foaf:Agent ;
-            dcterms:identifier "https://harrypotter.fandom.com/wiki/Gryffindor" ;
+            vcard:hasUID <https://harrypotter.fandom.com/wiki/Hermione_Granger> ] ;
+    dct:description "Impact of muggle technical inventions on word's magic presense" ;
+    dct:identifier "1" ;
+    dct:issued "1992-03-04T00:00:00"^^xsd:dateTime ;
+    dct:publisher [ a foaf:Agent ;
+            dct:identifier "https://harrypotter.fandom.com/wiki/Gryffindor" ;
             foaf:name "House of Gryffindor" ] ;
-    dcterms:title "Gryffindor research project" ;
+    dct:title "Gryffindor research project" ;
     dcat:keyword " muggles",
         " technic",
         "magic" ;
     dcat:theme <https://harrypotter.fandom.com/wiki/Muggle_Studies> .
 
 <http://example.com/dataset/2> a dcat:Dataset ;
-    dcterms:creator [ a foaf:Agent ;
+    dct:creator [ a foaf:Agent ;
             foaf:name "Draco Malfoy" ;
-            ns1:hasUID <https://harrypotter.fandom.com/wiki/Draco_Malfoy> ] ;
-    dcterms:description "Comarative analysis of magic powers of muggle-born and blood wizards " ;
-    dcterms:identifier "2" ;
-    dcterms:issued "1992-05-25T00:00:00"^^xsd:dateTime ;
-    dcterms:publisher [ a foaf:Agent ;
-            dcterms:identifier "https://harrypotter.fandom.com/wiki/Slytherin" ;
+            vcard:hasUID <https://harrypotter.fandom.com/wiki/Draco_Malfoy> ] ;
+    dct:description "Comarative analysis of magic powers of muggle-born and blood wizards " ;
+    dct:identifier "2" ;
+    dct:issued "1992-05-25T00:00:00"^^xsd:dateTime ;
+    dct:publisher [ a foaf:Agent ;
+            dct:identifier "https://harrypotter.fandom.com/wiki/Slytherin" ;
             foaf:name "House of Slytherin" ] ;
-    dcterms:title "Slytherin research project" ;
+    dct:title "Slytherin research project" ;
     dcat:keyword " muggle-born",
         " pure-blood",
         "half-blood" ;
@@ -61,30 +55,30 @@
         <https://harrypotter.fandom.com/wiki/Pure-blood> .
 
 <http://example.com/dataset/3> a dcat:Dataset ;
-    dcterms:creator [ a foaf:Agent ;
+    dct:creator [ a foaf:Agent ;
             foaf:name "Luna Lovegood" ;
-            ns1:hasUID <https://harrypotter.fandom.com/wiki/Luna_Lovegood> ] ;
-    dcterms:description "Linguistic analysis of spells" ;
-    dcterms:identifier "3" ;
-    dcterms:issued "1992-05-26T00:00:00"^^xsd:dateTime ;
-    dcterms:publisher [ a foaf:Agent ;
-            dcterms:identifier "https://harrypotter.fandom.com/wiki/Ravenclaw" ;
+            vcard:hasUID <https://harrypotter.fandom.com/wiki/Luna_Lovegood> ] ;
+    dct:description "Linguistic analysis of spells" ;
+    dct:identifier "3" ;
+    dct:issued "1992-05-26T00:00:00"^^xsd:dateTime ;
+    dct:publisher [ a foaf:Agent ;
+            dct:identifier "https://harrypotter.fandom.com/wiki/Ravenclaw" ;
             foaf:name "House of Ravenclaw" ] ;
-    dcterms:title "Ravenclaw research project" ;
+    dct:title "Ravenclaw research project" ;
     dcat:keyword "linguastics spell" ;
     dcat:theme <https://harrypotter.fandom.com/wiki/List_of_spells> .
 
 <http://example.com/dataset/4> a dcat:Dataset ;
-    dcterms:creator [ a foaf:Agent ;
+    dct:creator [ a foaf:Agent ;
             foaf:name "Dora Williams" ;
-            ns1:hasUID <https://harrypotter.fandom.com/wiki/Dora_Williams> ] ;
-    dcterms:description "Domestics elfs reproduction rate changes in the last 100 years" ;
-    dcterms:identifier "4" ;
-    dcterms:issued "1992-05-27T00:00:00"^^xsd:dateTime ;
-    dcterms:publisher [ a foaf:Agent ;
-            dcterms:identifier "https://harrypotter.fandom.com/wiki/Hufflepuff" ;
+            vcard:hasUID <https://harrypotter.fandom.com/wiki/Dora_Williams> ] ;
+    dct:description "Domestics elfs reproduction rate changes in the last 100 years" ;
+    dct:identifier "4" ;
+    dct:issued "1992-05-27T00:00:00"^^xsd:dateTime ;
+    dct:publisher [ a foaf:Agent ;
+            dct:identifier "https://harrypotter.fandom.com/wiki/Hufflepuff" ;
             foaf:name "House of Hufflepuff" ] ;
-    dcterms:title "Hufflepuff research project" ;
+    dct:title "Hufflepuff research project" ;
     dcat:keyword "domestic elf" ;
     dcat:theme <https://harrypotter.fandom.com/wiki/House-elf> .
 
