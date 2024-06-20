@@ -23,6 +23,7 @@
     sh:name "Contact point" ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
+    sh:nodeKind  sh:IRI;
   ],
   [
     sh:path dct:creator ;
@@ -33,7 +34,7 @@
   ],
   [
     sh:path dct:title ;
-    sh:datatype xsd:string ;
+    sh:nodeKind sh:Literal ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
     dash:viewer dash:LiteralViewer ;
@@ -41,8 +42,7 @@
   ],
   [
     sh:path dct:description ;
-    sh:datatype xsd:string ;
-  	sh:nodeKind  sh:Literal;
+    sh:nodeKind  sh:Literal;
     sh:maxCount 1 ;
     sh:uniqueLang true ;
     dash:viewer dash:LiteralViewer ;
@@ -104,13 +104,18 @@
   ],
   [
     sh:path dcat:distribution ;
-    sh:class dcat:Distribution ;
+    sh:or (
+      [ sh:class dcat:Distribution ]
+      [ sh:nodeKind sh:IRI ]
+    ) ;
   #sh:minCount 0 ;
   ],
   [
     sh:path dct:relation ;
-    sh:nodeKind sh:IRI ;
-    sh:class foaf:Project ;
+    sh:or (
+      [ sh:class foaf:Project ]
+      [ sh:nodeKind sh:IRI ]
+    ) ;
   #sh:minCount 0 ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
@@ -125,8 +130,10 @@
   ] ,
   [
     sh:path dcat:inSeries ;
-    sh:nodeKind sh:IRI ;
-    sh:class dcat:DatasetSeries ;
+    sh:or (
+      [ sh:nodeKind sh:IRI ]
+      [ sh:class dcat:DatasetSeries ]
+    ) ;
   #sh:minCount 0 ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;

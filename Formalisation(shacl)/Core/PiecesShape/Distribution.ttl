@@ -35,12 +35,15 @@
     sh:minCount 1 ;
     sh:uniqueLang true ;
     dash:viewer dash:LiteralViewer ;
-    dash:editor dash:TextFieldEditor ;
+    dash:editor dash:TextAreaEditor ;
   ] ,
   [
     sh:path dcat:accessService ;
-    sh:class dcat:DataService ;
-    #sh:minCount 0 ;
+    sh:or (
+      [ sh:class dcat:DataService ]
+      [ sh:nodeKind sh:IRI ]
+    );
+    dash:editor dash:TextFieldEditor ;
   ] ,
   [
     sh:path dcat:downloadURL ;

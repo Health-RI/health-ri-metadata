@@ -34,13 +34,13 @@
   ],
   [
     sh:path dct:title ;
-	sh:nodeKind sh:Literal ;
+    sh:nodeKind sh:Literal ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
   ],
   [
     sh:path dct:description ;
-	sh:nodeKind sh:Literal ;
+    sh:nodeKind sh:Literal ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
   ],
@@ -95,12 +95,14 @@
   [
     sh:path dcat:distribution ;
     sh:class dcat:Distribution ;
-	#sh:minCount 0 ;
+  #sh:minCount 0 ;
   ],
   [
     sh:path dct:relation ;
-    sh:nodeKind sh:IRI ;
-    sh:class foaf:Project ;
+    sh:or (
+      [ sh:class foaf:Project ]
+      [ sh:nodeKind sh:IRI ]
+    ) ;
     #sh:minCount 0 ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;

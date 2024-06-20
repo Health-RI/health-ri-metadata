@@ -30,7 +30,6 @@
     # Currently, the FDP client does not provide support for dash:TextFieldWithLangEditor,
     # therefore making this non-functional untill support in the client is added.
     sh:uniqueLang true ;
-    
     dash:viewer dash:LiteralViewer ;
     dash:editor dash:TextAreaEditor ;
   ], 
@@ -39,9 +38,9 @@
     sh:minCount 1 ;
     sh:node :AgentShape;
     dash:viewer dash:DetailsViewer ;
-    dash:editor dash:BlankNodeEditor ;
+    dash:editor dash:BlankNodeEditor;
   ],
-  [
+   [
     sh:path dct:title ;
 	#sh:datatype sh:Literal ;
     sh:nodeKind sh:Literal ;
@@ -57,16 +56,21 @@
   ],
   [
     sh:path dcat:service ;
-    sh:class dcat:DataService ;
+    sh:or (
+      [ sh:class dcat:DataService ]
+      [ sh:nodeKind sh:IRI ]
+    ) ;
     sh:minCount 0 ;
+    dash:viewer dash:URIViewer ;
+    dash:editor dash:URIEditor ;
   ] .
-
 
   :AgentShape  a   sh:NodeShape;
         sh:property     
 		[ 
 		sh:path      foaf:name;
     dash:editor  dash:TextFieldEditor;
+    dash:viewer dash:LiteralViewer ;
     sh:maxCount  1;
     sh:minCount  1;
     sh:nodeKind  sh:Literal;
@@ -78,3 +82,4 @@
 		sh:maxCount 1 ;
   ];
   sh:targetClass  foaf:Agent .
+
