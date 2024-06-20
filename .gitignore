@@ -1,2 +1,5 @@
 
 health-ri-metadata/
+
+# ignore mac metadata
+.DS_Store
