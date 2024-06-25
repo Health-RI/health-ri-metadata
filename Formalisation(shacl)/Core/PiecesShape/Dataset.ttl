@@ -151,4 +151,5 @@
     sh:minCount 1 ;
     sh:maxCount 1 ;
   ];
+
 sh:targetClass foaf:Agent .

@@ -65,14 +65,14 @@
   :AgentShape  a   sh:NodeShape;
     sh:property     
     [ 
-    sh:path     foaf:name;
+    sh:path      foaf:name;
     dash:editor dash:TextFieldEditor;
     dash:viewer dash:LiteralViewer ;
     sh:maxCount  1;
     sh:minCount  1;
     sh:nodeKind  sh:Literal;
     ],
-  	[
+    [
     sh:path dct:identifier ;
     sh:nodeKind sh:Literal ;
     dash:viewer dash:LiteralViewer ;
@@ -80,4 +80,6 @@
     sh:minCount 1 ;
     sh:maxCount 1 ;
   ];
+  
   sh:targetClass  foaf:Agent .
+  
