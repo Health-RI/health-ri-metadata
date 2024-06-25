@@ -8,21 +8,24 @@
 <http://example.com/dataset> a dcat:Dataset ;
     dct:title "Example Dataset" ;
     dct:description "This is an example dataset to test the shapes" ;
-    dct:identifier "test-id" ;
+    dct:identifier "test-dataset-id-0" ;
     dct:issued "2024-05-27T15:00:00+02:00"^^xsd:dateTime ;
     dcat:theme <http://www.wikidata.org/entity/Q1141613> ;
     dct:creator [
         a foaf:Agent ;
         foaf:name "Test" ;
+        dct:identifier "test-creator-id-000" ;
     ] .
 
 
 <http://example.com/dataset/1> a dcat:Dataset ;
     dct:creator [ a foaf:Agent  ;
             foaf:name "Hermione Granger" ;
+            dct:identifier "test-creator-id-001" ;
             vcard:hasUID <https://harrypotter.fandom.com/wiki/Hermione_Granger> ] ;
+
     dct:description "Impact of muggle technical inventions on word's magic presense" ;
-    dct:identifier "1" ;
+    dct:identifier "test-dataset-id-1" ;
     dct:issued "1992-03-04T00:00:00"^^xsd:dateTime ;
     dct:publisher [ a foaf:Agent ;
             dct:identifier "https://harrypotter.fandom.com/wiki/Gryffindor" ;
@@ -36,9 +39,10 @@
 <http://example.com/dataset/2> a dcat:Dataset ;
     dct:creator [ a foaf:Agent ;
             foaf:name "Draco Malfoy" ;
+			dct:identifier "test-creator-id-002" ;
             vcard:hasUID <https://harrypotter.fandom.com/wiki/Draco_Malfoy> ] ;
     dct:description "Comarative analysis of magic powers of muggle-born and blood wizards " ;
-    dct:identifier "2" ;
+    dct:identifier "test-dataset-id-12" ;
     dct:issued "1992-05-25T00:00:00"^^xsd:dateTime ;
     dct:publisher [ a foaf:Agent ;
             dct:identifier "https://harrypotter.fandom.com/wiki/Slytherin" ;
@@ -55,9 +59,10 @@
 <http://example.com/dataset/3> a dcat:Dataset ;
     dct:creator [ a foaf:Agent ;
             foaf:name "Luna Lovegood" ;
+			dct:identifier "test-creator-id-003" ;
             vcard:hasUID <https://harrypotter.fandom.com/wiki/Luna_Lovegood> ] ;
     dct:description "Linguistic analysis of spells" ;
-    dct:identifier "3" ;
+    dct:identifier "test-dataset-id-3" ;
     dct:issued "1992-05-26T00:00:00"^^xsd:dateTime ;
     dct:publisher [ a foaf:Agent ;
             dct:identifier "https://harrypotter.fandom.com/wiki/Ravenclaw" ;
@@ -69,9 +74,10 @@
 <http://example.com/dataset/4> a dcat:Dataset ;
     dct:creator [ a foaf:Agent ;
             foaf:name "Dora Williams" ;
+			dct:identifier "test-creator-id-004" ;
             vcard:hasUID <https://harrypotter.fandom.com/wiki/Dora_Williams> ] ;
     dct:description "Domestics elfs reproduction rate changes in the last 100 years" ;
-    dct:identifier "4" ;
+    dct:identifier "test-dataset-id-4" ;
     dct:issued "1992-05-27T00:00:00"^^xsd:dateTime ;
     dct:publisher [ a foaf:Agent ;
             dct:identifier "https://harrypotter.fandom.com/wiki/Hufflepuff" ;
