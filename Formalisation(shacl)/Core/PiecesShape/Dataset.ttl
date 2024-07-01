@@ -153,3 +153,26 @@
   ];
 
 sh:targetClass foaf:Agent .
+
+
+:KindShape a sh:NodeShape;
+  sh:property     
+  [ 
+    sh:path vcard:hasEmail ;
+    sh:nodeKind sh:IRI ;
+    dash:viewer dash:LabelViewer ;
+    dash:editor dash:URIEditor ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ,
+  [
+    sh:path vcard:hasName ;
+    sh:nodeKind xsd:string ;
+    dash:viewer dash:LiteralViewer ;
+    dash:editor dash:TextFieldEditor ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ];
+
+sh:targetClass vcard:Kind .
+
