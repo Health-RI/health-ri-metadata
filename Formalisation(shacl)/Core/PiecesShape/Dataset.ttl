@@ -18,7 +18,8 @@
   sh:targetClass dcat:Dataset ;
   sh:property [
     sh:path dcat:contactPoint ;
-    sh:class vcard:Kind ;
+    #sh:class vcard:Kind ;
+    sh:node :KindShape ;
     sh:maxCount 1 ;
     sh:name "Contact point" ;
     dash:editor dash:URIEditor ;
