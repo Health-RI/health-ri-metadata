@@ -74,8 +74,8 @@
   ],
   [
     sh:path dct:publisher ;
-    #sh:class foaf:Agent ;
-    sh:node :AgentShape ;
+    sh:class foaf:Agent ;
+    #sh:node :AgentShape ;
     sh:minCount 1 ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
