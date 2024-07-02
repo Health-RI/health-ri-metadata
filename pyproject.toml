@@ -28,6 +28,9 @@ filterwarnings = [
 [tool.hatch.build.targets.wheel]
 packages = ["tests/"]
 
+[tool.hatch.envs.default.scripts]
+test = "pytest {args:tests}"
+
 [tool.hatch.envs.lint]
 detached = true
 dependencies = ["black>=23.1.0", "ruff>=0.0.243"]
