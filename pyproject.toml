@@ -1,0 +1,96 @@
+[project]
+name = "healthri-metadata"
+version = "1.0"
+requires-python = ">=3.8"
+dependencies = ["rdflib ~= 7.0", "pyshacl ~= 0.26", "pytest ~= 8.2"]
+
+[build-system]
+requires = ["hatchling >= 1.19.1"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+addopts = [
+    "--doctest-modules",
+    "--ignore=admin",
+    "--ignore=devtools",
+    "--ignore=rdflib/extras/external_graph_libs.py",
+    "--ignore-glob=docs/*.py",
+    "--doctest-glob=docs/*.rst",
+    "--strict-markers",
+]
+filterwarnings = [
+    # The below warning is a consequence of how pytest doctest detects mocks and how DefinedNamespace behaves when an undefined attribute is being accessed.
+    "ignore:Code. pytest_mock_example_attribute_that_shouldnt_exist is not defined in namespace .*:UserWarning",
+    # The below warning is a consequence of how pytest detects fixtures and how DefinedNamespace behaves when an undefined attribute is being accessed.
+    "ignore:Code. _pytestfixturefunction is not defined in namespace .*:UserWarning",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["tests/"]
+
+[tool.hatch.envs.default.scripts]
+test = "pytest {args:tests}"
+
+[tool.hatch.envs.lint]
+detached = true
+dependencies = ["black>=23.1.0", "ruff>=0.0.243"]
+
+
+[tool.ruff]
+lint.select = [
+    "A",
+    "ARG",
+    "B",
+    "C",
+    "DTZ",
+    "E",
+    "EM",
+    "F",
+    "FBT",
+    "I",
+    "ICN",
+    "ISC",
+    "N",
+    "PLC",
+    "PLE",
+    "PLR",
+    "PLW",
+    "Q",
+    "RUF",
+    "S",
+    "T",
+    "TID",
+    "UP",
+    "W",
+    "YTT",
+]
+target-version = "py38"
+line-length = 120
+lint.ignore = [
+    # Allow non-abstract empty methods in abstract base classes
+    "B027",
+    # Allow boolean positional values in function calls, like `dict.get(... True)`
+    "FBT003",
+    # Ignore checks for possible passwords
+    "S105",
+    "S106",
+    "S107",
+    # Ignore complexity
+    "C901",
+    "PLR0911",
+    "PLR0912",
+    "PLR0913",
+    "PLR0915",
+]
+
+# Taken from https://github.com/astral-sh/ruff/issues/4368
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = [
+    # at least this three should be fine in tests:
+    "S101", # asserts allowed in tests...
+    "ARG",  # Unused function args -> fixtures nevertheless are functionally relevant...
+    "FBT",  # Don't care about booleans as positional arguments in tests, e.g. via @pytest.mark.parametrize()
+    # The below are debateable
+    "PLR2004", # Magic value used in comparison, ...
+    "S311",    # Standard pseudo-random generators are not suitable for cryptographic purposes
+]
