@@ -1,7 +1,7 @@
-name: Continuous Integration
+name: Automated SHACL validation testing
 on: [ push ]
 jobs:
-  ci:
+  shacl_test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
