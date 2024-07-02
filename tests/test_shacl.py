@@ -11,8 +11,8 @@ from pyshacl import validate
     ],
 )
 def test_core_shapes(shacl, example):
-    shacl_graph = rf"Formalisation(shacl)/Core/PiecesShape/{shacl}.ttl"
-    example_graph = rf"Formalisation(shacl)/Core/Example-Data/{example}.ttl"
+    shacl_graph = get_shacl_path(shacl)
+    example_graph = get_example_path(example)
 
     conform, _, result_text = validate(
         data_graph=example_graph,
@@ -21,3 +21,9 @@ def test_core_shapes(shacl, example):
         meta_shacl=True,
     )
     assert conform, result_text
+
+def get_example_path(example):
+    return rf"Formalisation(shacl)/Core/Example-Data/{example}.ttl"
+
+def get_shacl_path(shacl):
+    return rf"Formalisation(shacl)/Core/PiecesShape/{shacl}.ttl"
