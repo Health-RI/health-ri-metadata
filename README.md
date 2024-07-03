@@ -80,7 +80,7 @@ Overview and Diagram
 An overview of the Metadata schema core is presented in the [UML](https://www.omg.org/spec/UML "https://www.omg.org/spec/UML") diagram depicted below. The UML showcases the primary classes (entities), excluding the detailed definitions such as rdfs:label rdfs:comment. Each block denotes a class and comprises a list of its attributes (properties). If a class is connected to another class by a closed arrow, indicating that it inherits all properties from the other class. For example, `dcat:DatasetSeries` inherits from `dcat:Dataset` which inherits from `dcat:Resource`. The other arrows, represent relations and contain the type of relation, such as `dcat:Dataset` connects to a `dcat:DatasetSeries` via the predicate `dcat:inSeries`, and include the cardinality, such as `dcat:Dataset` can be connected via `dcat:inSeries` to zero or more `dcat:DatasetSeries`.
 
 - HRI core metadata schema diagram (plateau 1):
-<img src="https://github.com/Health-RI/health-ri-metadata/blob/master/Images/1.0_plateau1/HRICoreSchemaReleasePlateau1.jpg" alt="diagram" width=1080 height=560 title="diagram">
+<img src="https://github.com/Health-RI/health-ri-metadata/blob/master/Images/1.0_plateau1/HRICoreSchemaReleasePlateau1.0.jpg" alt="diagram" width=1080 height=560 title="diagram">
 
 Main Classes
 ============
