@@ -22,6 +22,25 @@ def test_core_shapes(shacl, example):
     )
     assert conform, result_text
 
+@pytest.mark.parametrize(
+    ("shacl", "example"),
+    [
+        ("Dataset", "example-dataset-bad"),
+    ],
+)
+def test_core_shapes_negative(shacl, example):
+    shacl_graph = get_shacl_path(shacl)
+    example_graph = get_example_path(example)
+
+    conform, _, result_text = validate(
+        data_graph=example_graph,
+        shacl_graph=shacl_graph,
+        allow_warnings=False,
+        meta_shacl=True,
+    )
+    assert not conform, result_text
+
+
 def get_example_path(example):
     return rf"Formalisation(shacl)/Core/Example-Data/{example}.ttl"
 
