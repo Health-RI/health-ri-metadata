@@ -161,8 +161,8 @@ sh:targetClass foaf:Agent .
   [ 
     sh:path vcard:hasEmail ;
     sh:nodeKind sh:IRI ;
-    sh:pattern "mailto:\w+@\w+\.\w+"
-    dash:viewer dash:URIViewer
+    sh:pattern "mailto:\\w+@\\w+\\.\\w+" ;
+    dash:viewer dash:URIViewer ;
     dash:editor dash:URIEditor ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
