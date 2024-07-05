@@ -30,7 +30,7 @@
     sh:uniqueLang true ;
   ],
   [
-    sh:path dct:ServesDataset ;
+    sh:path dcat:servesDataset ;
     sh:nodeKind sh:IRI ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:URIViewer ;
