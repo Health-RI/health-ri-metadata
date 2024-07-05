@@ -26,7 +26,7 @@
     sh:path dct:endpointDescription ;
     sh:nodeKind sh:Literal ;
     dash:editor dash:TextFieldEditor ;
-    dash:viewer dash:LabelViewer ;
+    dash:viewer dash:LiteralViewer ;
     sh:uniqueLang true ;
   ],
   [
