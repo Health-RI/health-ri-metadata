@@ -18,7 +18,8 @@
   sh:targetClass dcat:Dataset ;
   sh:property [
     sh:path dcat:contactPoint ;
-    sh:class vcard:Kind ;
+    #sh:class vcard:Kind ;
+    sh:node :KindShape ;
     sh:maxCount 1 ;
     sh:name "Contact point" ;
     dash:editor dash:URIEditor ;
@@ -153,3 +154,27 @@
   ];
 
 sh:targetClass foaf:Agent .
+
+
+:KindShape a sh:NodeShape;
+  sh:property     
+  [ 
+    sh:path vcard:hasEmail ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "mailto:\\w+@\\w+\\.\\w+" ;
+    dash:viewer dash:URIViewer ;
+    dash:editor dash:URIEditor ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ,
+  [
+    sh:path vcard:hasName ;
+    sh:nodeKind sh:Literal ;
+    dash:viewer dash:LiteralViewer ;
+    dash:editor dash:TextFieldEditor ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ];
+
+sh:targetClass vcard:Kind .
+
