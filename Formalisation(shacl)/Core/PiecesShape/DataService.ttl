@@ -23,11 +23,10 @@
     sh:minCount 1 ;
   ],
   [
-    sh:path dct:endpointDescription ;
-    sh:nodeKind sh:Literal ;
-    dash:editor dash:TextFieldEditor ;
-    dash:viewer dash:LiteralViewer ;
-    sh:uniqueLang true ;
+    sh:path dcat:endpointDescription ;
+    sh:nodeKind sh:IRI ;
+    dash:viewer dash:URIViewer ;
+    dash:editor dash:URIEditor ;
   ],
   [
     sh:path dcat:servesDataset ;
