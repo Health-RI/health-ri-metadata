@@ -1,3 +1,4 @@
+@prefix :  <http://fairdatapoint.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
