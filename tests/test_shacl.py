@@ -8,7 +8,7 @@ from pyshacl import validate
         ("Catalog", "example-catalog"),
         ("Dataset", "example-dataset"),
         ("Distribution", "example-distribution"),
-        ("DataService","example-dataservice"),
+        ("DataService", "example-dataservice"),
     ],
 )
 def test_core_shapes(shacl, example):
