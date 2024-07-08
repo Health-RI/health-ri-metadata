@@ -26,12 +26,10 @@
   ],
   [
     sh:path dct:creator ;
-    sh:nodeKind sh:IRI ;
-    sh:class foaf:Agent ;
+    sh:node :AgentShape ;
     sh:minCount 1 ;
-    dash:editor dash:URIEditor ;
-    dash:viewer dash:LabelViewer ;
-  ],
+    dash:editor dash:BlankNodeEditor ;
+    dash:viewer dash:DetailsViewer ; ],
   [
     sh:path dct:title ;
 	sh:nodeKind sh:Literal ;
@@ -74,11 +72,9 @@
   ],
   [
     sh:path dct:publisher ;
-    sh:class foaf:Agent ;
-    #sh:node :AgentShape ;
-    sh:minCount 1 ;
-    dash:editor dash:URIEditor ;
-    dash:viewer dash:LabelViewer ;
+    sh:node :AgentShape ;
+    dash:editor dash:BlankNodeEditor ;
+    dash:viewer dash:DetailsViewer ;
   ],
   [
     sh:path dcat:theme ;
