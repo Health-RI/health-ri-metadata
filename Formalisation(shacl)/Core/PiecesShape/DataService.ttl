@@ -20,7 +20,6 @@
     dash:editor dash:TextFieldEditor ;
     dash:viewer dash:LiteralViewer ;
     sh:minCount 1 ;
-    sh:uniqueLang true ;
   ],
   [
     sh:path dct:endpointDescription ;
