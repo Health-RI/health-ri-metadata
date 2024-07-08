@@ -4,5 +4,5 @@
 
 <http://example.com/dataservice> a dcat:DataService ;
   dct:title "National Judicial Courts WMS"@en ;
-  dcat:endpointDescription "National Judicial Courts WMS"@en  ;
+  dcat:endpointDescription <http://services.ga.gov.au/gis/services/Judicial_Courts/MapServer/WMSServer>  ;
   dcat:endpointURL <http://services.ga.gov.au/gis/services/Judicial_Courts/MapServer/WMSServer> .
