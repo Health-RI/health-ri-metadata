@@ -1,5 +1,10 @@
 name: Automated SHACL validation testing
-on: [ push, pull_request ]
+on:
+  # Only run the SHACL testing if SHACLs or testing has actually changed
+  pull_request:
+    paths:
+      - 'Formalisation(shacl)/**'
+      - 'tests/**'
 jobs:
   ci:
     runs-on: ubuntu-latest
