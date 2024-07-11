@@ -128,10 +128,16 @@
     sh:path dcat:inSeries ;
     sh:nodeKind sh:IRI ;
     sh:class dcat:DatasetSeries ;
-  #sh:minCount 0 ;
+    #sh:minCount 0 ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
-  ] .
+  ],
+  [
+    sh:path dcat:keyword ;
+    sh:nodeKind sh:Literal ;
+    dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LabelViewer ;
+  ]  .
 
 
 :AgentShape a sh:NodeShape;
