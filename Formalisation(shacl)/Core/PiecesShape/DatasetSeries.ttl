@@ -86,7 +86,9 @@
   [
     sh:path dct:type ;
     sh:nodeKind sh:IRI ;
-    sh:minCount 1 ;
+    #sh:minCount 1 ;
+    dash:viewer dash:LabelViewer ;
+    dash:editor dash:URIEditor ;
   ],
   [
     sh:path dcat:distribution ;
