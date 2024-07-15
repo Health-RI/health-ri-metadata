@@ -45,7 +45,6 @@
   ],
   [
     sh:path dct:title ;
-    #sh:datatype sh:Literal ;
     sh:nodeKind sh:Literal ;
     dash:editor dash:TextFieldEditor ;
     dash:viewer dash:LiteralViewer ;
@@ -55,7 +54,6 @@
   [
     sh:path dcat:catalog ;
     sh:class dcat:Catalog ;
-    #sh:minCount 0 ;
   ],
   [
     sh:path dcat:service ;

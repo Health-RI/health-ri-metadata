@@ -90,8 +90,6 @@
     sh:severity sh:Violation
   ] ,
   [
-    #sh:maxCount 1 ;
-    #sh:minCount 1 ;
     sh:path dct:publisher ;
     sh:node      :AgentShape;
     sh:severity sh:Violation
