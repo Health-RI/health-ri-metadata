@@ -32,19 +32,25 @@
     dash:viewer dash:DetailsViewer ; ],
   [
     sh:path dct:title ;
-	sh:nodeKind sh:Literal ;
+    sh:nodeKind sh:Literal ;
+    dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LiteralViewer ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
   ],
   [
     sh:path dct:description ;
-	sh:nodeKind sh:Literal ;
+    sh:nodeKind sh:Literal ;
+    dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LiteralViewer ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
   ],
   [
     sh:path dct:identifier ;
     sh:nodeKind sh:Literal ;
+    dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LiteralViewer ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
   ],
