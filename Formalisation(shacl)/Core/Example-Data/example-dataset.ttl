@@ -15,6 +15,10 @@
         a foaf:Agent ;
         foaf:name "Test" ;
         dct:identifier "test-creator-id-000" ;
+    ] ;
+    dcat:contactPoint [
+        vcard:hasEmail <mailto:foo@bar.net> ;
+        vcard:fn "Foo Bar" ;
     ] .
 
 
