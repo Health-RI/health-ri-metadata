@@ -21,8 +21,6 @@
   [
     sh:path dct:description ;
     sh:nodeKind sh:Literal ;
-    dash:editor dash:TextFieldEditor ;
-    dash:viewer dash:LiteralViewer ;
     sh:minCount 1 ;
 
     # The sh:uniqueLang constraint needs a sh:datatype rdf:langString to properly function.
