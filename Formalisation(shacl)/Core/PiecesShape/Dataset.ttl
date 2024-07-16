@@ -162,6 +162,7 @@ sh:targetClass foaf:Agent .
   [
     sh:path vcard:fn ;
     sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
     dash:editor dash:TextFieldEditor ;
     dash:viewer dash:LiteralViewer ;
     sh:minCount 1 ;
