@@ -2867,7 +2867,112 @@ Contact information of the contact point for Dataset and DatasetSeries.
 
 ### Recommended Properties
 
-No recommended properties are identified for this release.
+<table data-testid="renderer-table" data-number-column="false" data-table-width="760" data-layout="default">
+   <colgroup>
+      <col style="width:88px">
+      <col style="width:125px">
+      <col style="width:95px">
+      <col style="width:78px">
+      <col style="width:72px">
+      <col style="width:71px">
+   </colgroup>
+   <tbody>
+      <tr>
+         <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" data-colwidth="127" aria-sort="none">
+            <div class="ak-renderer-tableHeader-sortable-column">
+               <p data-renderer-start-pos="20435"><strong data-renderer-mark="true">Property name</strong></p>
+               <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
+                  <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
+                     <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
+                        <div class="cc-1uj2pwb"></div>
+                     </div>
+                  </div>
+               </figure>
+            </div>
+         </th>
+         <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" data-colwidth="180" aria-sort="none">
+            <div class="ak-renderer-tableHeader-sortable-column">
+               <p data-renderer-start-pos="20452"><strong data-renderer-mark="true">Definition</strong></p>
+               <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
+                  <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
+                     <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
+                        <div class="cc-1uj2pwb"></div>
+                     </div>
+                  </div>
+               </figure>
+            </div>
+         </th>
+         <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" data-colwidth="137" aria-sort="none">
+            <div class="ak-renderer-tableHeader-sortable-column">
+               <p data-renderer-start-pos="20466"><strong data-renderer-mark="true">URI</strong></p>
+               <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
+                  <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
+                     <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
+                        <div class="cc-1uj2pwb"></div>
+                     </div>
+                  </div>
+               </figure>
+            </div>
+         </th>
+         <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" data-colwidth="112" aria-sort="none">
+            <div class="ak-renderer-tableHeader-sortable-column">
+               <p data-renderer-start-pos="20473"><strong data-renderer-mark="true">rdfs:Range</strong></p>
+               <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
+                  <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
+                     <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
+                        <div class="cc-1uj2pwb"></div>
+                     </div>
+                  </div>
+               </figure>
+            </div>
+         </th>
+         <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" data-colwidth="104" aria-sort="none">
+            <div class="ak-renderer-tableHeader-sortable-column">
+               <p data-renderer-start-pos="20487"><strong data-renderer-mark="true">Usage Note</strong></p>
+               <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
+                  <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
+                     <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
+                        <div class="cc-1uj2pwb"></div>
+                     </div>
+                  </div>
+               </figure>
+            </div>
+         </th>
+         <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" data-colwidth="102" aria-sort="none">
+            <div class="ak-renderer-tableHeader-sortable-column">
+               <p data-renderer-start-pos="20501"><strong data-renderer-mark="true">Cardinality</strong></p>
+               <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
+                  <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
+                     <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
+                        <div class="cc-1uj2pwb"></div>
+                     </div>
+                  </div>
+               </figure>
+            </div>
+         </th>
+      </tr>
+      <tr>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="127">
+            <p data-renderer-start-pos="20518"><a data-testid="link-with-safety" href="https://www.w3.org/TR/vcard-rdf/#d4e183" title="https://www.w3.org/TR/vcard-rdf/#d4e183" data-renderer-mark="true" class="cc-1rn59kg">has url</a></p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="180">
+            <p data-renderer-start-pos="20531">To specify a URL associated with the contact point</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="137">
+            <p data-renderer-start-pos="20607"><code class="code cc-1o5d2cw" data-renderer-mark="true">vcard:hasURL</code></p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="112">
+            <p data-renderer-start-pos="20625"><code class="code cc-1o5d2cw" data-renderer-mark="true">IRI</code></p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="104">
+            <p data-renderer-start-pos="20632">NA</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="102">
+            <p data-renderer-start-pos="20638">0..n</p>
+         </td>
+      </tr>
+   </tbody>
+</table>
 
 Cataloged Resource
 ------------------
