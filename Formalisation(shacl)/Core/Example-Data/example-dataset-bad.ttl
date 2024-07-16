@@ -1,0 +1,19 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+
+# This dataset has wrong types for publisher and contactpoint
+<http://example.com/dataset/AAA> a dcat:Dataset ;
+    dct:description "An Abdomination of a dataset" ;
+    dcat:issued "2024-01-01T13:33:37.069+02:00" ;
+    dct:publisher [ a vcard:Kind ; vcard:fn "Bad non-conforming publisher" ] ;
+    dct:title "AAA" ;
+    dcat:contactPoint [ a foaf:agent ; foaf:name "Prof. Dr. John Doe" ] .
+
+<http://example.com/dataset/BBB> a dcat:Dataset ;
+    dct:description "This dataset's contactPoint vcard:fn has a rdf:langString instead of an xsd:string" ;
+    dcat:issued "2024-07-16T15:08:00+02:00" ;
+    dct:publisher [ a foaf:Agent ; foaf:name "Bad non-conforming publisher" ] ;
+    dct:title "BBB" ;
+    dcat:contactPoint [ a vcard:Kind ; vcard:hasEmail <mailto:foo@bar.net> ; vcard:fn "Prof. Dr. John Doe"@en ] .

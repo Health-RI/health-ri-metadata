@@ -40,12 +40,10 @@
   [
     sh:path dcat:accessService ;
     sh:class dcat:DataService ;
-    #sh:minCount 0 ;
   ] ,
   [
     sh:path dcat:downloadURL ;
     sh:nodeKind sh:IRI ; 
-    #sh:minCount 0 ;
     dash:viewer dash:URIViewer ;
     dash:editor dash:URIEditor ;
   ] .

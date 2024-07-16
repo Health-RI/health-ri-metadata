@@ -1,5 +1,10 @@
-name: Continuous Integration
-on: [ push ]
+name: Automated SHACL validation testing
+on:
+  # Only run the SHACL testing if SHACLs or testing has actually changed
+  pull_request:
+    paths:
+      - 'Formalisation(shacl)/**'
+      - 'tests/**'
 jobs:
   ci:
     runs-on: ubuntu-latest
@@ -8,13 +13,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install pyshacl
-
-      - name: Test catalog shape against catalog fixture
-        run: pyshacl --shacl "Formalisation(shacl)/Core/PiecesShape/Catalog.ttl" --metashacl "Formalisation(shacl)/Core/Example-Data/example-catalog.ttl"
-
-      - name: Test dataset shape against dataset fixture
-        run: pyshacl --shacl "Formalisation(shacl)/Core/PiecesShape/Dataset.ttl" --metashacl "Formalisation(shacl)/Core/Example-Data/example-dataset.ttl"
-
-      - name: Test distribution shape against distribution fixture
-        run: pyshacl --shacl "Formalisation(shacl)/Core/PiecesShape/Distribution.ttl" --metashacl "Formalisation(shacl)/Core/Example-Data/example-distribution.ttl"
+          cache: 'pip' # caching pip dependencies
+      - name: Install Hatch
+        run: pipx install hatch
+        
+      - name: Run tests
+        run: hatch run pytest
