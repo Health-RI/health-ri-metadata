@@ -4,8 +4,6 @@
 @prefix dct:      <http://purl.org/dc/terms/> .
 @prefix foaf:     <http://xmlns.com/foaf/0.1/> .
 @prefix sh:       <http://www.w3.org/ns/shacl#> .
-@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 :CatalogShape a sh:NodeShape ;
   sh:targetClass dcat:Catalog ;
@@ -22,9 +20,8 @@
   ],
   [
     sh:path dct:description ;
-    #sh:datatype sh:Literal ;
     sh:nodeKind sh:Literal ;
-	sh:minCount 1 ;
+    sh:minCount 1 ;
 
     # The sh:uniqueLang constraint needs a sh:datatype rdf:langString to properly function.
     # Currently, the FDP client does not provide support for dash:TextFieldWithLangEditor,
@@ -43,17 +40,15 @@
   ],
   [
     sh:path dct:title ;
-	#sh:datatype sh:Literal ;
     sh:nodeKind sh:Literal ;
-	sh:minCount 1 ;
-    sh:uniqueLang true ;
-    dash:viewer dash:LiteralViewer ;
     dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LiteralViewer ;
+    sh:minCount 1 ;
+    sh:uniqueLang true ;
   ], 
   [
     sh:path dcat:catalog ;
     sh:class dcat:Catalog ;
-    #sh:minCount 0 ;
   ],
   [
     sh:path dcat:service ;
@@ -64,21 +59,21 @@
 
   :AgentShape  a   sh:NodeShape;
     sh:property     
-	[ 
-	sh:path      foaf:name;
+    [ 
+    sh:path      foaf:name;
+    sh:nodeKind  sh:Literal;
     dash:editor dash:TextFieldEditor;
-	dash:viewer dash:LiteralViewer ;
+    dash:viewer dash:LiteralViewer ;
     sh:maxCount  1;
     sh:minCount  1;
-    sh:nodeKind  sh:Literal;
     ],
-  	[
-	sh:path dct:identifier ;
-	sh:nodeKind sh:Literal ;
-	dash:viewer dash:LiteralViewer ;
-	dash:editor dash:TextFieldEditor ;
-	sh:minCount 1 ;
-	sh:maxCount 1 ;
+    [
+    sh:path dct:identifier ;
+    sh:nodeKind sh:Literal ;
+    dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LiteralViewer ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
   ];
   
   sh:targetClass  foaf:Agent .
