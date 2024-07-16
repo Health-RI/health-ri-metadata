@@ -4,8 +4,6 @@
 @prefix dct:      <http://purl.org/dc/terms/> .
 @prefix foaf:     <http://xmlns.com/foaf/0.1/> .
 @prefix sh:       <http://www.w3.org/ns/shacl#> .
-@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 :CatalogShape a sh:NodeShape ;
   sh:targetClass dcat:Catalog ;
@@ -22,7 +20,6 @@
   ],
   [
     sh:path dct:description ;
-    #sh:datatype sh:Literal ;
     sh:nodeKind sh:Literal ;
     dash:editor dash:TextFieldEditor ;
     dash:viewer dash:LiteralViewer ;
