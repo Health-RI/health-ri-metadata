@@ -2824,6 +2824,26 @@ Contact information of the contact point for Dataset and DatasetSeries.
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="127">
+            <p data-renderer-start-pos="20645"><a data-testid="link-with-safety" href="https://w3.org/TR/vcard-rdf/#d4e891" title="https://w3.org/TR/vcard-rdf/#d4e891" data-renderer-mark="true" class="cc-1rn59kg">formatted name</a></p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="180">
+            <p data-renderer-start-pos="20657">The full name of the object</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="137">
+            <p data-renderer-start-pos="20712"><code class="code cc-1o5d2cw" data-renderer-mark="true">vcard:fn</code></p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="112">
+            <p data-renderer-start-pos="20729"><code class="code cc-1o5d2cw" data-renderer-mark="true">xsd:string</code></p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="104">
+            <p data-renderer-start-pos="20743">NA</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="102">
+            <p data-renderer-start-pos="20749">1</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="127">
             <p data-renderer-start-pos="20518"><a data-testid="link-with-safety" href="https://www.w3.org/TR/vcard-rdf/#d4e183" title="https://www.w3.org/TR/vcard-rdf/#d4e183" data-renderer-mark="true" class="cc-1rn59kg">has email</a></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="180">
@@ -2840,26 +2860,6 @@ Contact information of the contact point for Dataset and DatasetSeries.
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="102">
             <p data-renderer-start-pos="20638">1</p>
-         </td>
-      </tr>
-      <tr>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="127">
-            <p data-renderer-start-pos="20645"><a data-testid="link-with-safety" href="https://www.w3.org/TR/vcard-rdf/#d4e380" title="https://www.w3.org/TR/vcard-rdf/#d4e380" data-renderer-mark="true" class="cc-1rn59kg">has name</a></p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="180">
-            <p data-renderer-start-pos="20657">To specify the components of the name of the object</p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="137">
-            <p data-renderer-start-pos="20712"><code class="code cc-1o5d2cw" data-renderer-mark="true">vcard:hasName</code></p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="112">
-            <p data-renderer-start-pos="20729"><code class="code cc-1o5d2cw" data-renderer-mark="true">xsd:string</code></p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="104">
-            <p data-renderer-start-pos="20743">NA</p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="102">
-            <p data-renderer-start-pos="20749">1</p>
          </td>
       </tr>
    </tbody>
