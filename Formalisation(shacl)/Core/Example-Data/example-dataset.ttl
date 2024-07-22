@@ -17,7 +17,7 @@
         dct:identifier "test-creator-id-000" ;
     ] ;
     dcat:contactPoint [
-        vcard:hasEmail <mailto:foo@bar.net> ;
+        vcard:hasEmail <mailto:foo.bar@health-ri.nl> ;
         vcard:fn "Foo Bar" ;
     ] .
 
