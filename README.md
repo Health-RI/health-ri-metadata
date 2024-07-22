@@ -236,7 +236,7 @@ Overview and Diagram
 An overview of the Metadata schema core is presented in the [UML](https://www.omg.org/spec/UML "https://www.omg.org/spec/UML") diagram depicted below. The UML showcases the primary classes (entities), excluding the detailed definitions such as rdfs:label rdfs:comment. Each block denotes a class and comprises a list of its attributes (properties). If a class is connected to another class by a closed arrow, indicating that it inherits all properties from the other class. For example, `dcat:DatasetSeries` inherits from `dcat:Dataset` which inherits from `dcat:Resource`. The other arrows, represent relations and contain the type of relation, such as `dcat:Dataset` connects to a `dcat:DatasetSeries` via the predicate `dcat:inSeries`, and include the cardinality, such as `dcat:Dataset` can be connected via `dcat:inSeries` to zero or more `dcat:DatasetSeries`.
 
 - HRI core metadata schema diagram (plateau 1):
-<img src="https://github.com/Health-RI/health-ri-metadata/blob/master/Images/1.0_plateau1/HRICoreSchemaReleasePlateau1.jpg" alt="diagram" width=1080 height=560 title="diagram">
+<img src="Images/1.0_plateau1/HRICoreSchemaReleasePlateau1.jpg" alt="diagram" width=1080 height=560 title="diagram">
 
 Main Classes
 ============
@@ -1282,6 +1282,26 @@ A collection of data, published or curated by a single agent, and available for 
          </td>
          <td rowspan="1" colspan="1" colorname="">
             <p data-renderer-start-pos="12349">0..*</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="116">
+            <p data-renderer-start-pos="10491"><a data-testid="link-with-safety" href="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_keyword" title="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_keyword" data-renderer-mark="true" class="cc-1rn59kg">keyword</a></p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="140">
+            <p data-renderer-start-pos="10505">A keyword or tag describing the dataset.</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
+            <p data-renderer-start-pos="10575"><code class="code cc-1o5d2cw" data-renderer-mark="true">dcat:keyword</code></p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
+            <p data-renderer-start-pos="10593"><code class="code cc-1o5d2cw" data-renderer-mark="true">rdfs:Literal</code></p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="189">
+            <p data-renderer-start-pos="10607">Use this property to add keywords that describe the dataset for better findability.</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
+            <p data-renderer-start-pos="10718">0..*</p>
          </td>
       </tr>
       <tr>
