@@ -24,7 +24,6 @@ This repository outlines the Core Metadata Schema, detailing the classes and ent
     * [Data Service](#Data-Service)
     * [Distribution](#Distribution)
     * [Agent](#Agent)
-    * [Project](#Project)
     * [Kind](#Kind)
     * [Cataloged Resource](#Cataloged-Resource)
 * [Feedback, Support, Extension and Implementation](#Further-Information)
@@ -236,7 +235,7 @@ Overview and Diagram
 An overview of the Metadata schema core is presented in the [UML](https://www.omg.org/spec/UML "https://www.omg.org/spec/UML") diagram depicted below. The UML showcases the primary classes (entities), excluding the detailed definitions such as rdfs:label rdfs:comment. Each block denotes a class and comprises a list of its attributes (properties). If a class is connected to another class by a closed arrow, indicating that it inherits all properties from the other class. For example, `dcat:DatasetSeries` inherits from `dcat:Dataset` which inherits from `dcat:Resource`. The other arrows, represent relations and contain the type of relation, such as `dcat:Dataset` connects to a `dcat:DatasetSeries` via the predicate `dcat:inSeries`, and include the cardinality, such as `dcat:Dataset` can be connected via `dcat:inSeries` to zero or more `dcat:DatasetSeries`.
 
 - HRI core metadata schema diagram (plateau 1):
-<img src="https://github.com/Health-RI/health-ri-metadata/blob/master/Images/1.0_plateau1/HRICoreSchemaReleasePlateau1.jpg" alt="diagram" width=1080 height=560 title="diagram">
+<img src="Images/1.0_plateau1/HRICoreSchemaReleasePlateau1.jpg" alt="diagram" width=1080 height=560 title="diagram">
 
 Main Classes
 ============
@@ -478,20 +477,6 @@ Recommended Classes
          </td>
          <td rowspan="1" colspan="1" colorname="">
             <p data-renderer-start-pos="7402"><code class="code cc-1o5d2cw" data-renderer-mark="true">dcat:DataService</code></p>
-         </td>
-      </tr>
-      <tr>
-         <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="7424"><a data-testid="link-with-safety" href="https://github.com/Health-RI/health-ri-metadata?tab=readme-ov-file#Project" title="https://github.com/Health-RI/health-ri-metadata?tab=readme-ov-file#Project" data-renderer-mark="true" class="cc-1rn59kg">Project</a></p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="7435">A project (a collective endeavour of some kind).</p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="7487">Used to describe a project that is connected to one or more datasets. A resource type</p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="7576"><code class="code cc-1o5d2cw" data-renderer-mark="true">foaf:Project</code></p>
          </td>
       </tr>
    </tbody>
@@ -1285,23 +1270,23 @@ A collection of data, published or curated by a single agent, and available for 
          </td>
       </tr>
       <tr>
-         <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="12359"><a data-testid="link-with-safety" href="http://purl.org/dc/terms/relation" title="http://purl.org/dc/terms/relation" data-renderer-mark="true" class="cc-1rn59kg">relation</a></p>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="116">
+            <p data-renderer-start-pos="10491"><a data-testid="link-with-safety" href="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_keyword" title="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_keyword" data-renderer-mark="true" class="cc-1rn59kg">keyword</a></p>
          </td>
-         <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="12371">defines a relation</p>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="140">
+            <p data-renderer-start-pos="10505">A keyword or tag describing the dataset.</p>
          </td>
-         <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="12393"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:relation</code></p>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
+            <p data-renderer-start-pos="10575"><code class="code cc-1o5d2cw" data-renderer-mark="true">dcat:keyword</code></p>
          </td>
-         <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="12409"><code class="code cc-1o5d2cw" data-renderer-mark="true"><mark id="cd08a08d-1fa9-4a83-89ba-5cfb31743055" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="cd08a08d-1fa9-4a83-89ba-5cfb31743055" class="cc-1rnxqbw">foaf:Project</mark></code></p>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
+            <p data-renderer-start-pos="10593"><code class="code cc-1o5d2cw" data-renderer-mark="true">rdfs:Literal</code></p>
          </td>
-         <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="12425">Use this property to point to the related project of this dataset when a project is available.</p>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="189">
+            <p data-renderer-start-pos="10607">Use this property to add keywords that describe the dataset for better findability.</p>
          </td>
-         <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="12523">0..*</p>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
+            <p data-renderer-start-pos="10718">0..*</p>
          </td>
       </tr>
       <tr>
@@ -1764,26 +1749,6 @@ A collection of data, published or curated by a single agent, and available for 
          </td>
          <td rowspan="1" colspan="1" colorname="">
             <p data-renderer-start-pos="15517">0..*</p>
-         </td>
-      </tr>
-      <tr>
-         <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="15527"><a data-testid="link-with-safety" href="http://purl.org/dc/terms/relation" title="http://purl.org/dc/terms/relation" data-renderer-mark="true" class="cc-1rn59kg">relation</a></p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="15539">defines a relation</p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="15561"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:relation</code></p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="15577"><code class="code cc-1o5d2cw" data-renderer-mark="true">foaf:Project</code></p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="15593">Use this property to point to the related project of this dataset when a project is available.</p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="15691">0..*</p>
          </td>
       </tr>
       <tr>
@@ -2533,204 +2498,6 @@ An entity that is associated with catalog and/or Datasets. Agent can be individu
 
 No recommended properties are identified for this release.
 
-Project
--------
-
-A project (a collective endeavour of some kind).
-
-### Mandatory Properties
-
-<table data-testid="renderer-table" data-number-column="false" data-table-width="760" data-layout="default">
-   <colgroup>
-      <col style="width:88px">
-      <col style="width:125px">
-      <col style="width:95px">
-      <col style="width:78px">
-      <col style="width:72px">
-      <col style="width:71px">
-   </colgroup>
-   <tbody>
-      <tr>
-         <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" data-colwidth="127" aria-sort="none">
-            <div class="ak-renderer-tableHeader-sortable-column">
-               <p data-renderer-start-pos="19654"><strong data-renderer-mark="true">Property name</strong></p>
-               <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
-                  <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
-                     <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
-                        <div class="cc-1uj2pwb"></div>
-                     </div>
-                  </div>
-               </figure>
-            </div>
-         </th>
-         <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" data-colwidth="180" aria-sort="none">
-            <div class="ak-renderer-tableHeader-sortable-column">
-               <p data-renderer-start-pos="19671"><strong data-renderer-mark="true">Definition</strong></p>
-               <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
-                  <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
-                     <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
-                        <div class="cc-1uj2pwb"></div>
-                     </div>
-                  </div>
-               </figure>
-            </div>
-         </th>
-         <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" data-colwidth="137" aria-sort="none">
-            <div class="ak-renderer-tableHeader-sortable-column">
-               <p data-renderer-start-pos="19685"><strong data-renderer-mark="true">URI</strong></p>
-               <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
-                  <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
-                     <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
-                        <div class="cc-1uj2pwb"></div>
-                     </div>
-                  </div>
-               </figure>
-            </div>
-         </th>
-         <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" data-colwidth="112" aria-sort="none">
-            <div class="ak-renderer-tableHeader-sortable-column">
-               <p data-renderer-start-pos="19692"><strong data-renderer-mark="true">rdfs:Range</strong></p>
-               <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
-                  <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
-                     <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
-                        <div class="cc-1uj2pwb"></div>
-                     </div>
-                  </div>
-               </figure>
-            </div>
-         </th>
-         <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" data-colwidth="104" aria-sort="none">
-            <div class="ak-renderer-tableHeader-sortable-column">
-               <p data-renderer-start-pos="19706"><strong data-renderer-mark="true">Usage Note</strong></p>
-               <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
-                  <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
-                     <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
-                        <div class="cc-1uj2pwb"></div>
-                     </div>
-                  </div>
-               </figure>
-            </div>
-         </th>
-         <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" data-colwidth="102" aria-sort="none">
-            <div class="ak-renderer-tableHeader-sortable-column">
-               <p data-renderer-start-pos="19720"><strong data-renderer-mark="true">Cardinality</strong></p>
-               <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
-                  <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
-                     <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
-                        <div class="cc-1uj2pwb"></div>
-                     </div>
-                  </div>
-               </figure>
-            </div>
-         </th>
-      </tr>
-      <tr>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="127">
-            <p data-renderer-start-pos="19737"><a data-testid="link-with-safety" href="http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description" data-renderer-mark="true" class="cc-1rn59kg">description</a></p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="180">
-            <p data-renderer-start-pos="19752">description of the project</p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="137">
-            <p data-renderer-start-pos="19783"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:description</code></p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="112">
-            <p data-renderer-start-pos="19802"><code class="code cc-1o5d2cw" data-renderer-mark="true">rdfs:Literal</code></p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="104">
-            <p data-renderer-start-pos="19818">NA</p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="102">
-            <p data-renderer-start-pos="19824">1..*</p>
-         </td>
-      </tr>
-      <tr>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="127">
-            <p data-renderer-start-pos="19834"><a data-testid="link-with-safety" href="http://purl.org/dc/terms/identifier" title="http://purl.org/dc/terms/identifier" data-renderer-mark="true" class="cc-1rn59kg">identifier</a></p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="180">
-            <p data-renderer-start-pos="19848">A unique identifier of the resource being described or catalog.</p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="137">
-            <p data-renderer-start-pos="19915"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:identifier</code></p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="112">
-            <p data-renderer-start-pos="19933"><code class="code cc-1o5d2cw" data-renderer-mark="true">xsd:string</code></p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="104">
-            <p data-renderer-start-pos="19947">NA</p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="102">
-            <p data-renderer-start-pos="19953">1.1</p>
-         </td>
-      </tr>
-      <tr>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="127">
-            <p data-renderer-start-pos="19962"><a data-testid="link-with-safety" href="http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title" data-renderer-mark="true" class="cc-1rn59kg">title</a></p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="180">
-            <p data-renderer-start-pos="19971">A name given to the resource.</p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="137">
-            <p data-renderer-start-pos="20004"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:title</code></p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="112">
-            <p data-renderer-start-pos="20017"><code class="code cc-1o5d2cw" data-renderer-mark="true">rdfs:Literal</code></p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="104">
-            <p data-renderer-start-pos="20033">NA</p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="102">
-            <p data-renderer-start-pos="20039">1..*</p>
-         </td>
-      </tr>
-      <tr>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="127">
-            <p data-renderer-start-pos="20049"><a data-testid="link-with-safety" href="http://xmlns.com/foaf/spec/#term_fundedBy" title="http://xmlns.com/foaf/spec/#term_fundedBy" data-renderer-mark="true" class="cc-1rn59kg">funded by</a></p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="180">
-            <p data-renderer-start-pos="20062">An organization funding a project or person.</p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="137">
-            <p data-renderer-start-pos="20110"><code class="code cc-1o5d2cw" data-renderer-mark="true">foaf:fundedBy</code></p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="112">
-            <p data-renderer-start-pos="20127"><code class="code cc-1o5d2cw" data-renderer-mark="true">foaf:Agent</code></p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="104">
-            <p data-renderer-start-pos="20141">NA</p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="102">
-            <p data-renderer-start-pos="20147">1..*</p>
-         </td>
-      </tr>
-      <tr>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="127">
-            <p data-renderer-start-pos="20157"><a data-testid="link-with-safety" href="https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset" title="https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset" data-renderer-mark="true" class="cc-1rn59kg">dataset</a></p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="180">
-            <p data-renderer-start-pos="20168">link to the project datasets</p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="137">
-            <p data-renderer-start-pos="20200"><code class="code cc-1o5d2cw" data-renderer-mark="true">dcat:dataset</code></p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="112">
-            <p data-renderer-start-pos="20216"><code class="code cc-1o5d2cw" data-renderer-mark="true">dcat:Dataset</code></p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="104">
-            <p data-renderer-start-pos="20232">NA</p>
-         </td>
-         <td rowspan="1" colspan="1" colorname="" data-colwidth="102">
-            <p data-renderer-start-pos="20238">1..*</p>
-         </td>
-      </tr>
-   </tbody>
-</table>
-
-### Recommended Properties
-
-No recommended properties are identified for this release.
-
 Kind
 ----
 
@@ -2997,8 +2764,6 @@ Within DCAT and DCAT-AP, the term "resource" generally encompasses all objects t
 *   `dcat:Catalog` is a type of `dcat:Resource` representing a collection of datasets.
     
 *   `dcat:DataService` , introduced in DCAT version 2, is a type of Resource representing a service for accessing data.
-    
-*   `foaf:Project` is a type of `dcat:Resource` representing project-level information
     
 
 In DCAT and DCAT-AP, the vocabulary is focused on datasets. Nonetheless, users may need to portray a variety of resources specific to certain domains, like biobanks or patient registries. In such cases, we propose potential scenarios for modifying or augmenting DCAT to accurately depict your resource type:
