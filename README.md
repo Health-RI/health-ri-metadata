@@ -300,19 +300,34 @@ Mandatory Classes
                </figure>
             </div>
          </th>
+         <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" data-colwidth="155" aria-sort="none">
+            <div class="ak-renderer-tableHeader-sortable-column">
+               <p data-renderer-start-pos="4716"><strong data-renderer-mark="true">Example</strong></p>
+               <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
+                  <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
+                     <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
+                        <div class="cc-1uj2pwb"></div>
+                     </div>
+                  </div>
+               </figure>
+            </div>
+         </th>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="120">
             <p data-renderer-start-pos="4725"><a data-testid="link-with-safety" href="https://github.com/Health-RI/health-ri-metadata?tab=readme-ov-file#dataset" title="https://github.com/Health-RI/health-ri-metadata?tab=readme-ov-file#dataset" data-renderer-mark="true" class="cc-1rn59kg">Dataset</a></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="205">
-            <p data-renderer-start-pos="4736">A resource type.<br>A collection of data, published or curated by a single agent, and available for access or download in one or more representations.</p>
+            <p data-renderer-start-pos="4736">A resource type.<br>A meaningful collection of data, published or curated by a single organisation or individual, and available for access or download in one or more representations.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="280">
-            <p data-renderer-start-pos="4887">Used to describe one or more datasets. This describes details about the dataset(s). However, a single dataset can have different ways in which they are made available to potential users. How the data in a dataset can be accessed is defined in the Distribution.</p>
+            <p data-renderer-start-pos="4887">When focusing on health data, a dataset typically contains structured information gathered from a study or research project related to health topics. This might include clinical trial results, public health statistics, patient records, survey data,  etc.<br>How the data in a dataset can be accessed is defined in the Distribution, which usually points to the  actual data files available for access or download. Datasets are often included in a catalog, which organizes and provides metadata about multiple datasets, making them easier to find and use. The term 'organization or individual' refers to any entity responsible for creating, maintaining, or distributing the dataset.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="155">
             <p data-renderer-start-pos="5151"><code class="code cc-1o5d2cw" data-renderer-mark="true">dcat:Dataset</code></p>
+         </td>
+            <td rowspan="1" colspan="1" colorname="" data-colwidth="205">
+            <p data-renderer-start-pos="4736">Questionnaire data of the Personalised RISk-based MAmmascreening Study (PRISMA),<br>Clinical data for Inflammatory Bowel Disease (IBD) from AUMC, LUMC and UMCG</p>
          </td>
       </tr>
       <tr>
@@ -323,10 +338,14 @@ Mandatory Classes
             <p data-renderer-start-pos="5180">A catalog that is listed in the National catalog.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="280">
-            <p data-renderer-start-pos="5233">Used to describe a bundle of datasets, data services, biobanks, patient registries, or guidelines together under a single title.</p>
+            <p data-renderer-start-pos="5233">Used to describe a bundle of datasets (and other resources) under a single title, for example a collection or a study.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="155">
             <p data-renderer-start-pos="5365"><code class="code cc-1o5d2cw" data-renderer-mark="true">dcat:Catalog</code></p>
+         </td>
+         </td>
+            <td rowspan="1" colspan="1" colorname="" data-colwidth="205">
+            <p data-renderer-start-pos="4736">NA</p>
          </td>
       </tr>
       <tr>
@@ -337,10 +356,14 @@ Mandatory Classes
             <p data-renderer-start-pos="5392">An entity that is associated with catalog and/or Datasets.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="280">
-            <p data-renderer-start-pos="5454"><mark id="b3bb2200-b0c5-43df-a9ad-23e061a55fa2" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="b3bb2200-b0c5-43df-a9ad-23e061a55fa2" class="cc-1rnxqbw">If the Agent is an organisation, the use of the </mark><a data-testid="link-with-safety" href="https://www.w3.org/TR/vocab-org/" title="https://www.w3.org/TR/vocab-org/" data-renderer-mark="true" class="cc-1rn59kg"><mark id="b3bb2200-b0c5-43df-a9ad-23e061a55fa2" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="b3bb2200-b0c5-43df-a9ad-23e061a55fa2" class="cc-1rnxqbw"><mark id="5f510486-53fc-4713-9f5d-22440083f4c8" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="5f510486-53fc-4713-9f5d-22440083f4c8" class="cc-1rnxqbw">Organization Ontology</mark></mark></a><a data-testid="link-with-safety" href="http://www.w3.org/TR/2013/CR-vocab-org-20130625/" title="http://www.w3.org/TR/2013/CR-vocab-org-20130625/" data-renderer-mark="true" class="cc-1rn59kg"><mark id="b3bb2200-b0c5-43df-a9ad-23e061a55fa2" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="b3bb2200-b0c5-43df-a9ad-23e061a55fa2" class="cc-1rnxqbw"> </mark></a><mark id="b3bb2200-b0c5-43df-a9ad-23e061a55fa2" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="b3bb2200-b0c5-43df-a9ad-23e061a55fa2" class="cc-1rnxqbw">is recommended.</mark></p>
+            <p data-renderer-start-pos="5233">A person or organization that is associated with the catalogue and/or datasets.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="155">
             <p data-renderer-start-pos="5545"><code class="code cc-1o5d2cw" data-renderer-mark="true">foaf:Agent</code></p>
+         </td>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="205">
+            <p data-renderer-start-pos="4736">NA</p>
          </td>
       </tr>
       <tr>
@@ -356,6 +379,9 @@ Mandatory Classes
          <td rowspan="1" colspan="1" colorname="" data-colwidth="155">
             <p data-renderer-start-pos="5813"><code class="code cc-1o5d2cw" data-renderer-mark="true">dcat:Resource</code></p>
          </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="205">
+            <p data-renderer-start-pos="4736">NA</p>
+         </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="120">
@@ -369,6 +395,9 @@ Mandatory Classes
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="155">
             <p data-renderer-start-pos="6036"><code class="code cc-1o5d2cw" data-renderer-mark="true">vcard:Kind</code></p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="205">
+            <p data-renderer-start-pos="4736">NA</p>
          </td>
       </tr>
    </tbody>
@@ -655,6 +684,18 @@ A curated collection of metadata about resources. A web-based data catalog is ty
                </figure>
             </div>
          </th>
+         <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" data-colwidth="155" aria-sort="none">
+            <div class="ak-renderer-tableHeader-sortable-column">
+               <p data-renderer-start-pos="4716"><strong data-renderer-mark="true">Example</strong></p>
+               <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
+                  <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
+                     <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
+                        <div class="cc-1uj2pwb"></div>
+                     </div>
+                  </div>
+               </figure>
+            </div>
+         </th>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="">
@@ -670,10 +711,13 @@ A curated collection of metadata about resources. A web-based data catalog is ty
             <p data-renderer-start-pos="8452"><code class="code cc-1o5d2cw" data-renderer-mark="true">rdfs:Literal</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="8468">The name of the catalog. This is a required field and needs to be unique.&nbsp;</p>
+            <p data-renderer-start-pos="8468">A name given to the catalogue. This property can be repeated for providing titles in different languages. This is a required field and needs to be unique.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="">
             <p data-renderer-start-pos="8546">1..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="8546">Inflammatory Bowel Disease catalogue,<br>Inflammatoire darmziekten catalogus</p>
          </td>
       </tr>
       <tr>
@@ -690,10 +734,13 @@ A curated collection of metadata about resources. A web-based data catalog is ty
             <p data-renderer-start-pos="8628"><code class="code cc-1o5d2cw" data-renderer-mark="true">rdfs:Literal</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="8644">A brief description of the catalog. It can consist of multiple strings. For example, this catalog describes breast cancer imaging datasets.&nbsp;</p>
+            <p data-renderer-start-pos="8644">A brief informative description of the catalogue. This property can be repeated for descriptions in different languages.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="">
             <p data-renderer-start-pos="8788">1..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="8788">This catalogue describes the core metadata of AUMC Inflammatory Bowel Disease datasets or<br>This catalogue describes breast cancer imaging, clinical and omics datasets.</p>
          </td>
       </tr>
       <tr>
@@ -701,7 +748,7 @@ A curated collection of metadata about resources. A web-based data catalog is ty
             <p data-renderer-start-pos="8798"><a data-testid="link-with-safety" href="http://purl.org/dc/terms/publisher" title="http://purl.org/dc/terms/publisher" data-renderer-mark="true" class="cc-1rn59kg">publisher</a></p>
          </td>
          <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="8811">The entity responsible for making the resource available.</p>
+            <p data-renderer-start-pos="8811">The entity responsible for making the catalogue available.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="">
             <p data-renderer-start-pos="8872"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:publisher</code></p>
@@ -710,10 +757,13 @@ A curated collection of metadata about resources. A web-based data catalog is ty
             <p data-renderer-start-pos="8889"><code class="code cc-1o5d2cw" data-renderer-mark="true">foaf:Agent</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="8903">The organisation or a person that has published the catalog</p>
+            <p data-renderer-start-pos="8903">The organization that published the catalogue (e.g. the specific UMC in question). In case of a multicenter study, the publisher is the organisation who makes the catalogue available online. To list multiple organisations involved, refer to the "creator" property.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="">
             <p data-renderer-start-pos="8967">1..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="8967">name: Radboud University Medical Center<br>identifier:  https://ror.org/05wg1m734<br>(see class foaf: Agent)</p>
          </td>
       </tr>
    </tbody>
@@ -871,7 +921,7 @@ A curated collection of metadata about resources. A web-based data catalog is ty
 [Dataset](https://www.w3.org/TR/vocab-dcat-3/#Class:Dataset "https://www.w3.org/TR/vocab-dcat-3/#Class:Dataset")
 ----------------------------------------------------------------------------------------------------------------
 
-A collection of data, published or curated by a single agent, and available for access or download in one or more representations.
+A meaningful collection of data, published or curated by a single organisation or individual, and available for access or download in one or more representations.
 
 ### Mandatory Properties
 
@@ -958,6 +1008,18 @@ A collection of data, published or curated by a single agent, and available for 
                </figure>
             </div>
          </th>
+         <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" data-colwidth="81" aria-sort="none">
+            <div class="ak-renderer-tableHeader-sortable-column">
+               <p data-renderer-start-pos="9709"><strong data-renderer-mark="true">Example</strong></p>
+               <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
+                  <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
+                     <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
+                        <div class="cc-1uj2pwb"></div>
+                     </div>
+                  </div>
+               </figure>
+            </div>
+         </th>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="116">
@@ -970,13 +1032,16 @@ A collection of data, published or curated by a single agent, and available for 
             <p data-renderer-start-pos="9801"><code class="code cc-1o5d2cw" data-renderer-mark="true">dcat:contactPoint</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
-            <p data-renderer-start-pos="9822"><code class="code cc-1o5d2cw" data-renderer-mark="true"><mark id="0176add6-a7da-4acd-8aeb-48f40f98e7e5" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="0176add6-a7da-4acd-8aeb-48f40f98e7e5" class="cc-1rnxqbw">vcard:Kind</mark></code></p>
+            <p data-renderer-start-pos="9801"><code class="code cc-1o5d2cw" data-renderer-mark="true">vcard:Kind</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="189">
-            <p data-renderer-start-pos="9836">Contact information that can be used, for example, for sending requests to further information or access to the Dataset.</p>
+            <p data-renderer-start-pos="9836">Contact information that can be used, for example, for sending requests for information or access to the dataset. Ideally, a data access committee or other service desk (a contact point that is rather persistent over time).</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
             <p data-renderer-start-pos="9960">1..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
+            <p data-renderer-start-pos="9960">mailto: data-access-committee@xumc.nl<br>with name Data Access Committee of the x UMC (see vcard:Kind)</p>
          </td>
       </tr>
       <tr>
@@ -993,10 +1058,13 @@ A collection of data, published or curated by a single agent, and available for 
             <p data-renderer-start-pos="10050"><code class="code cc-1o5d2cw" data-renderer-mark="true">foaf:Agent</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="189">
-            <p data-renderer-start-pos="10064">An agent (person or organisation) responsible for producing the dataset.</p>
+            <p data-renderer-start-pos="10064">The person or persons responsible for creating the dataset.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
             <p data-renderer-start-pos="10140">1..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
+            <p data-renderer-start-pos="10140">Jip Fictief, Inez Maginary, Fabio Abricated for name of foaf:Agent</p>
          </td>
       </tr>
       <tr>
@@ -1013,15 +1081,18 @@ A collection of data, published or curated by a single agent, and available for 
             <p data-renderer-start-pos="10221"><code class="code cc-1o5d2cw" data-renderer-mark="true"><mark id="294d7e15-8d65-4c8e-ab26-ca4f368e9ce7" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="294d7e15-8d65-4c8e-ab26-ca4f368e9ce7" class="cc-1rnxqbw">rdfs:Literal</mark></code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="189">
-            <p data-renderer-start-pos="10237">A free-text description of the Dataset. This property can be repeated for parallel language versions of the description.</p>
+            <p data-renderer-start-pos="10237">A free-text informative description of the dataset. This property can be repeated for providing descriptions in different languages.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
             <p data-renderer-start-pos="10361">1..*</p>
          </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
+            <p data-renderer-start-pos="10361">The primary aim of the PRISMA study was to investigate the potential value of risk-tailored versus traditional breast cancer screening protocols in the Netherlands. Data collection took place between 2014-2019, resulting in ∼67,000 mammograms, ∼38,000 surveys, ∼10,000 blood samples and ∼600 saliva samples.</p>
+         </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="116">
-            <p data-renderer-start-pos="10371"><a data-testid="link-with-safety" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/issued/" title="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/issued/" data-renderer-mark="true" class="cc-1rn59kg"><mark id="0efbfd9d-fe09-4886-ab68-ab75e464a8c4" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="0efbfd9d-fe09-4886-ab68-ab75e464a8c4" class="cc-1rnxqbw">issued</mark></a></p>
+            <p data-renderer-start-pos="10150"><a data-testid="link-with-safety" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/issued/" title="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/issued/" data-renderer-mark="true" class="cc-1rn59kg">issued</a></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="140">
             <p data-renderer-start-pos="10381">Date of formal issuance (e.g., publication) of the resource.</p>
@@ -1033,10 +1104,13 @@ A collection of data, published or curated by a single agent, and available for 
             <p data-renderer-start-pos="10459"><code class="code cc-1o5d2cw" data-renderer-mark="true">xsd:dateTime</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="189">
-            <p data-renderer-start-pos="10475">NA</p>
+            <p data-renderer-start-pos="10475">The date and time when the dataset was first issued.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
-            <p data-renderer-start-pos="10481"><mark id="3a772386-3677-4434-a22c-ff5ad7eac024" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="3a772386-3677-4434-a22c-ff5ad7eac024" class="cc-1rnxqbw">1..1</mark></p>
+            <p data-renderer-start-pos="10361">1..1</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
+            <p data-renderer-start-pos="10361">2024-06-04T13:36:10.246Z</p>
          </td>
       </tr>
       <tr>
@@ -1053,10 +1127,13 @@ A collection of data, published or curated by a single agent, and available for 
             <p data-renderer-start-pos="10593"><code class="code cc-1o5d2cw" data-renderer-mark="true">xsd:string</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="189">
-            <p data-renderer-start-pos="10607">The main identifier for the Dataset, e.g. the URI or other unique identifier in the context of the catalog.</p>
+            <p data-renderer-start-pos="10607">The main globally unique and persistent identifier of the dataset. Recommended practice is to identify the dataset by means of a string conforming to an identification system such as Digital Object Identifier (DOI).</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
             <p data-renderer-start-pos="10718">1..1</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
+            <p data-renderer-start-pos="10718">https://doi.org/10.34894/ZLOYOJ</p>
          </td>
       </tr>
       <tr>
@@ -1073,10 +1150,13 @@ A collection of data, published or curated by a single agent, and available for 
             <p data-renderer-start-pos="10837"><code class="code cc-1o5d2cw" data-renderer-mark="true">xsd:dateTime</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="189">
-            <p data-renderer-start-pos="10853">The most recent date on which the Dataset was changed or modified.</p>
+            <p data-renderer-start-pos="10853">The value indicates a change to the actual dataset, not a change to the catalog record. An absent value may indicate that the resource has never changed after its initial publication, or that the date of last modification is not known, or that the resource is continuously updated.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
             <p data-renderer-start-pos="10923">1..1</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
+            <p data-renderer-start-pos="10923">2024-06-04T13:36:10.246Z</p>
          </td>
       </tr>
       <tr>
@@ -1093,10 +1173,13 @@ A collection of data, published or curated by a single agent, and available for 
             <p data-renderer-start-pos="11024"><code class="code cc-1o5d2cw" data-renderer-mark="true">foaf:Agent</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="189">
-            <p data-renderer-start-pos="11038">An agent (organisation or person) responsible for making the Dataset available.</p>
+            <p data-renderer-start-pos="11038">The organization that published the dataset (e.g. the specific UMC in question). Can differ from catalogue publisher. </p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
             <p data-renderer-start-pos="11121">1..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
+            <p data-renderer-start-pos="11121">Radboud University Medical Center; identifier https://ror.org/05wg1m734 (see foaf: Agent)</p>
          </td>
       </tr>
       <tr>
@@ -1113,10 +1196,13 @@ A collection of data, published or curated by a single agent, and available for 
             <p data-renderer-start-pos="11227"><code class="code cc-1o5d2cw" data-renderer-mark="true"><mark id="38e24c59-4fbd-49cf-9835-5e90cdeea081" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="38e24c59-4fbd-49cf-9835-5e90cdeea081" class="cc-1rnxqbw">IRI</mark></code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="189">
-            <p data-renderer-start-pos="11234">It consists of 1 or more IRIs (links) separated by commas. <mark id="95b511b2-e9b7-4a7c-86e4-83785c313d80" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="95b511b2-e9b7-4a7c-86e4-83785c313d80" class="cc-1rnxqbw">When set, it specifies relevant ontology concepts that classify the dataset. </mark>Typically, these can be looked up using the <a data-testid="link-with-safety" href="https://www.ebi.ac.uk/ols/index" title="https://www.ebi.ac.uk/ols/index" data-renderer-mark="true" class="cc-1rn59kg"><u data-renderer-mark="true">Ontology Lookup Service (OLS)</u></a> or <a data-testid="link-with-safety" href="https://bioportal.bioontology.org/" title="https://bioportal.bioontology.org/" data-renderer-mark="true" class="cc-1rn59kg">Bioportal</a>.&nbsp;&nbsp;</p>
+            <p data-renderer-start-pos="11038">Consists of 1 or more IRIs (links) separated by commas. When set, it specifies relevant ontology concepts that classify the dataset. Typically, these can be looked up using the Ontology Lookup Service (OLS) or Bioportal</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
             <p data-renderer-start-pos="11463">1..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
+            <p data-renderer-start-pos="11463">http://publications.europa.eu/resource/authority/data-theme/HEAL</p>
          </td>
       </tr>
       <tr>
@@ -1139,6 +1225,9 @@ A collection of data, published or curated by a single agent, and available for 
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
             <p data-renderer-start-pos="11649">1..*</p>
          </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
+            <p data-renderer-start-pos="11649">Questionnaire data of the Personalised RISk-based MAmmascreening Study (PRISMA)</p>
+         </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="116">
@@ -1154,10 +1243,13 @@ A collection of data, published or curated by a single agent, and available for 
             <p data-renderer-start-pos="11911"><code class="code cc-1o5d2cw" data-renderer-mark="true"><mark id="1065c46b-1c43-414a-af11-e91cd979cf1a" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="1065c46b-1c43-414a-af11-e91cd979cf1a" class="cc-1rnxqbw">IRI</mark></code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="189">
-            <p data-renderer-start-pos="11918">This should contain a URL that provides details regarding the license that is applicable to this dataset.</p>
+            <p data-renderer-start-pos="11918">This should contain a URL that provides details regarding the license that is applicable to this dataset (open data commons, data access policy link etc.)</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
             <p data-renderer-start-pos="12027">1..1</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="9462">NA</p>
          </td>
       </tr>
    </tbody>
@@ -1248,6 +1340,18 @@ A collection of data, published or curated by a single agent, and available for 
                </figure>
             </div>
          </th>
+         <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" aria-sort="none">
+            <div class="ak-renderer-tableHeader-sortable-column">
+               <p data-renderer-start-pos="12129"><strong data-renderer-mark="true">Example</strong></p>
+               <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
+                  <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
+                     <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
+                        <div class="cc-1uj2pwb"></div>
+                     </div>
+                  </div>
+               </figure>
+            </div>
+         </th>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="">
@@ -1267,6 +1371,9 @@ A collection of data, published or curated by a single agent, and available for 
          </td>
          <td rowspan="1" colspan="1" colorname="">
             <p data-renderer-start-pos="12349">0..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="9462">NA</p>
          </td>
       </tr>
       <tr>
@@ -1288,6 +1395,9 @@ A collection of data, published or curated by a single agent, and available for 
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
             <p data-renderer-start-pos="10718">0..*</p>
          </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="9462">NA</p>
+         </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="116">
@@ -1303,10 +1413,13 @@ A collection of data, published or curated by a single agent, and available for 
             <p data-renderer-start-pos="11719"><code class="code cc-1o5d2cw" data-renderer-mark="true"><mark id="84a3e0f7-37ad-4b45-8d81-8b8f4df947e5" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="84a3e0f7-37ad-4b45-8d81-8b8f4df947e5" class="cc-1rnxqbw">IRI</mark></code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="189">
-            <p data-renderer-start-pos="11726"><mark id="cf5c6ba1-822a-483f-a7e3-a94ac3b7299e" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="cf5c6ba1-822a-483f-a7e3-a94ac3b7299e" class="cc-1rnxqbw">A type of the Dataset. A recommended controlled vocabulary data-type is foreseen.</mark></p>
+            <p data-renderer-start-pos="11726"><mark id="cf5c6ba1-822a-483f-a7e3-a94ac3b7299e" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="cf5c6ba1-822a-483f-a7e3-a94ac3b7299e" class="cc-1rnxqbw">The value SHOULD be taken from a well governed and broadly recognised controlled vocabulary, such as <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#DCMIType">DCMI Type vocabulary</a></mark></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
             <p data-renderer-start-pos="11811">0..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
+            <p data-renderer-start-pos="11811">http://purl.org/dc/dcmitype/MovingImage</p>
          </td>
       </tr>
       <tr>
@@ -1328,6 +1441,9 @@ A collection of data, published or curated by a single agent, and available for 
          <td rowspan="1" colspan="1" colorname="">
             <p data-renderer-start-pos="12643">0..*</p>
          </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="9462">NA</p>
+         </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="">
@@ -1347,6 +1463,9 @@ A collection of data, published or curated by a single agent, and available for 
          </td>
          <td rowspan="1" colspan="1" colorname="">
             <p data-renderer-start-pos="12761">0..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="9462">NA</p>
          </td>
       </tr>
    </tbody>
@@ -1370,7 +1489,7 @@ A collection of data, published or curated by a single agent, and available for 
       <tr>
          <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" data-colwidth="116" aria-sort="none">
             <div class="ak-renderer-tableHeader-sortable-column">
-               <p data-renderer-start-pos="12811"><strong data-renderer-mark="true">Property name</strong></p>
+               <p data-renderer-start-pos="9643"><strong data-renderer-mark="true">Property name</strong></p>
                <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
                   <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
                      <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
@@ -1382,7 +1501,7 @@ A collection of data, published or curated by a single agent, and available for 
          </th>
          <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" data-colwidth="140" aria-sort="none">
             <div class="ak-renderer-tableHeader-sortable-column">
-               <p data-renderer-start-pos="12828"><strong data-renderer-mark="true">Definition</strong></p>
+               <p data-renderer-start-pos="9660"><strong data-renderer-mark="true">Definition</strong></p>
                <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
                   <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
                      <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
@@ -1394,7 +1513,7 @@ A collection of data, published or curated by a single agent, and available for 
          </th>
          <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" data-colwidth="117" aria-sort="none">
             <div class="ak-renderer-tableHeader-sortable-column">
-               <p data-renderer-start-pos="12842"><strong data-renderer-mark="true">URI</strong></p>
+               <p data-renderer-start-pos="9674"><strong data-renderer-mark="true">URI</strong></p>
                <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
                   <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
                      <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
@@ -1406,7 +1525,7 @@ A collection of data, published or curated by a single agent, and available for 
          </th>
          <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" data-colwidth="117" aria-sort="none">
             <div class="ak-renderer-tableHeader-sortable-column">
-               <p data-renderer-start-pos="12849"><strong data-renderer-mark="true">rdfs:Range</strong></p>
+               <p data-renderer-start-pos="9681"><strong data-renderer-mark="true">rdfs:Range</strong></p>
                <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
                   <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
                      <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
@@ -1418,7 +1537,7 @@ A collection of data, published or curated by a single agent, and available for 
          </th>
          <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" data-colwidth="189" aria-sort="none">
             <div class="ak-renderer-tableHeader-sortable-column">
-               <p data-renderer-start-pos="12863"><strong data-renderer-mark="true">Usage Note</strong></p>
+               <p data-renderer-start-pos="9695"><strong data-renderer-mark="true">Usage Note</strong></p>
                <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
                   <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
                      <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
@@ -1430,7 +1549,19 @@ A collection of data, published or curated by a single agent, and available for 
          </th>
          <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" data-colwidth="81" aria-sort="none">
             <div class="ak-renderer-tableHeader-sortable-column">
-               <p data-renderer-start-pos="12877"><strong data-renderer-mark="true">Cardinality</strong></p>
+               <p data-renderer-start-pos="9709"><strong data-renderer-mark="true">Cardinality</strong></p>
+               <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
+                  <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
+                     <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
+                        <div class="cc-1uj2pwb"></div>
+                     </div>
+                  </div>
+               </figure>
+            </div>
+         </th>
+         <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" data-colwidth="81" aria-sort="none">
+            <div class="ak-renderer-tableHeader-sortable-column">
+               <p data-renderer-start-pos="9709"><strong data-renderer-mark="true">Example</strong></p>
                <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
                   <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
                      <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
@@ -1443,203 +1574,233 @@ A collection of data, published or curated by a single agent, and available for 
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="116">
-            <p data-renderer-start-pos="12894"><a data-testid="link-with-safety" href="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_contact_point" title="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_contact_point" data-renderer-mark="true" class="cc-1rn59kg">contact point</a></p>
+            <p data-renderer-start-pos="9726"><a data-testid="link-with-safety" href="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_contact_point" title="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_contact_point" data-renderer-mark="true" class="cc-1rn59kg">contact point</a></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="140">
-            <p data-renderer-start-pos="12911">Relevant contact information for the catalog resource.</p>
+            <p data-renderer-start-pos="9743">Relevant contact information for the catalog resource.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
-            <p data-renderer-start-pos="12969"><code class="code cc-1o5d2cw" data-renderer-mark="true">dcat:contactPoint</code></p>
+            <p data-renderer-start-pos="9801"><code class="code cc-1o5d2cw" data-renderer-mark="true">dcat:contactPoint</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
-            <p data-renderer-start-pos="12990"><code class="code cc-1o5d2cw" data-renderer-mark="true">vcard:Kind</code></p>
+            <p data-renderer-start-pos="9801"><code class="code cc-1o5d2cw" data-renderer-mark="true">vcard:Kind</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="189">
-            <p data-renderer-start-pos="13004">Contact information that can be used, for example, for sending requests to further information or access to the Dataset.</p>
+            <p data-renderer-start-pos="9836">Contact information that can be used, for example, for sending requests for information or access to the dataset. Ideally, a data access committee or other service desk (a contact point that is rather persistent over time).</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
-            <p data-renderer-start-pos="13128">1..*</p>
+            <p data-renderer-start-pos="9960">1..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
+            <p data-renderer-start-pos="9960">mailto: data-access-committee@xumc.nl<br>with name Data Access Committee of the x UMC (see vcard:Kind)</p>
          </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="116">
-            <p data-renderer-start-pos="13138"><a data-testid="link-with-safety" href="http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator" data-renderer-mark="true" class="cc-1rn59kg">creator</a></p>
+            <p data-renderer-start-pos="9970"><a data-testid="link-with-safety" href="http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator" data-renderer-mark="true" class="cc-1rn59kg">creator</a></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="140">
-            <p data-renderer-start-pos="13149">The entity responsible for producing the resource.</p>
+            <p data-renderer-start-pos="9981">The entity responsible for producing the resource.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
-            <p data-renderer-start-pos="13203"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:creator</code></p>
+            <p data-renderer-start-pos="10035"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:creator</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
-            <p data-renderer-start-pos="13218"><code class="code cc-1o5d2cw" data-renderer-mark="true">foaf:Agent</code></p>
+            <p data-renderer-start-pos="10050"><code class="code cc-1o5d2cw" data-renderer-mark="true">foaf:Agent</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="189">
-            <p data-renderer-start-pos="13232">An agent (person or organisation) responsible for producing the dataset.</p>
+            <p data-renderer-start-pos="10064">The person or persons responsible for creating the dataset.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
-            <p data-renderer-start-pos="13308">1..*</p>
+            <p data-renderer-start-pos="10140">1..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
+            <p data-renderer-start-pos="10140">Jip Fictief, Inez Maginary, Fabio Abricated for name of foaf:Agent</p>
          </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="116">
-            <p data-renderer-start-pos="13318"><a data-testid="link-with-safety" href="http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description" data-renderer-mark="true" class="cc-1rn59kg">description</a></p>
+            <p data-renderer-start-pos="10150"><a data-testid="link-with-safety" href="http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description" data-renderer-mark="true" class="cc-1rn59kg">description</a></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="140">
-            <p data-renderer-start-pos="13333">A free-text account of the record</p>
+            <p data-renderer-start-pos="10165">A free-text account of the record</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
-            <p data-renderer-start-pos="13370"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:description</code></p>
+            <p data-renderer-start-pos="10202"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:description</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
-            <p data-renderer-start-pos="13389"><code class="code cc-1o5d2cw" data-renderer-mark="true">rdfs:Literal</code></p>
+            <p data-renderer-start-pos="10221"><code class="code cc-1o5d2cw" data-renderer-mark="true"><mark id="294d7e15-8d65-4c8e-ab26-ca4f368e9ce7" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="294d7e15-8d65-4c8e-ab26-ca4f368e9ce7" class="cc-1rnxqbw">rdfs:Literal</mark></code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="189">
-            <p data-renderer-start-pos="13405">A free-text description of the Dataset. This property can be repeated for parallel language versions of the description.</p>
+            <p data-renderer-start-pos="10237">A free-text informative description of the dataset. This property can be repeated for providing descriptions in different languages.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
-            <p data-renderer-start-pos="13529">1..*</p>
+            <p data-renderer-start-pos="10361">1..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
+            <p data-renderer-start-pos="10361">The primary aim of the PRISMA study was to investigate the potential value of risk-tailored versus traditional breast cancer screening protocols in the Netherlands. Data collection took place between 2014-2019, resulting in ∼67,000 mammograms, ∼38,000 surveys, ∼10,000 blood samples and ∼600 saliva samples.</p>
          </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="116">
-            <p data-renderer-start-pos="13539"><a data-testid="link-with-safety" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/issued/" title="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/issued/" data-renderer-mark="true" class="cc-1rn59kg">issued</a></p>
+            <p data-renderer-start-pos="10150"><a data-testid="link-with-safety" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/issued/" title="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/issued/" data-renderer-mark="true" class="cc-1rn59kg">issued</a></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="140">
-            <p data-renderer-start-pos="13549">Date of formal issuance (e.g., publication) of the resource.</p>
+            <p data-renderer-start-pos="10381">Date of formal issuance (e.g., publication) of the resource.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
-            <p data-renderer-start-pos="13613"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:issued</code></p>
+            <p data-renderer-start-pos="10445"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:issued</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
-            <p data-renderer-start-pos="13627"><code class="code cc-1o5d2cw" data-renderer-mark="true">xsd:dateTime</code></p>
+            <p data-renderer-start-pos="10459"><code class="code cc-1o5d2cw" data-renderer-mark="true">xsd:dateTime</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="189">
-            <p data-renderer-start-pos="13643">NA</p>
+            <p data-renderer-start-pos="10475">The date and time when the dataset was first issued.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
-            <p data-renderer-start-pos="13649">1..1</p>
+            <p data-renderer-start-pos="10361">1..1</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
+            <p data-renderer-start-pos="10361">2024-06-04T13:36:10.246Z</p>
          </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="116">
-            <p data-renderer-start-pos="13659"><a data-testid="link-with-safety" href="http://purl.org/dc/terms/identifier" title="http://purl.org/dc/terms/identifier" data-renderer-mark="true" class="cc-1rn59kg">identifier</a></p>
+            <p data-renderer-start-pos="10491"><a data-testid="link-with-safety" href="http://purl.org/dc/terms/identifier" title="http://purl.org/dc/terms/identifier" data-renderer-mark="true" class="cc-1rn59kg">identifier</a></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="140">
-            <p data-renderer-start-pos="13673">A unique identifier of the resource being described or catalogued.</p>
+            <p data-renderer-start-pos="10505">A unique identifier of the resource being described or catalogued.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
-            <p data-renderer-start-pos="13743"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:identifier</code></p>
+            <p data-renderer-start-pos="10575"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:identifier</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
-            <p data-renderer-start-pos="13761"><code class="code cc-1o5d2cw" data-renderer-mark="true">xsd:string</code></p>
+            <p data-renderer-start-pos="10593"><code class="code cc-1o5d2cw" data-renderer-mark="true">xsd:string</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="189">
-            <p data-renderer-start-pos="13775">The main identifier for the Dataset, e.g. the URI or other unique identifier in the context of the catalog.</p>
+            <p data-renderer-start-pos="10607">The main globally unique and persistent identifier of the dataset. Recommended practice is to identify the dataset by means of a string conforming to an identification system such as Digital Object Identifier (DOI).</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
-            <p data-renderer-start-pos="13886">1..1</p>
+            <p data-renderer-start-pos="10718">1..1</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
+            <p data-renderer-start-pos="10718">https://doi.org/10.34894/ZLOYOJ</p>
          </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="116">
-            <p data-renderer-start-pos="13896"><a data-testid="link-with-safety" href="http://purl.org/dc/terms/modified" title="http://purl.org/dc/terms/modified" data-renderer-mark="true" class="cc-1rn59kg">modified</a></p>
+            <p data-renderer-start-pos="10728"><a data-testid="link-with-safety" href="http://purl.org/dc/terms/modified" title="http://purl.org/dc/terms/modified" data-renderer-mark="true" class="cc-1rn59kg">modified</a></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="140">
-            <p data-renderer-start-pos="13908">Most recent date on which the catalog entry was changed, updated or modified.</p>
+            <p data-renderer-start-pos="10740">Most recent date on which the catalog entry was changed, updated or modified.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
-            <p data-renderer-start-pos="13989"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:modified</code></p>
+            <p data-renderer-start-pos="10821"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:modified</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
-            <p data-renderer-start-pos="14005"><code class="code cc-1o5d2cw" data-renderer-mark="true">xsd:dateTime</code></p>
+            <p data-renderer-start-pos="10837"><code class="code cc-1o5d2cw" data-renderer-mark="true">xsd:dateTime</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="189">
-            <p data-renderer-start-pos="14021">The most recent date on which the Dataset was changed or modified.</p>
+            <p data-renderer-start-pos="10853">The value indicates a change to the actual dataset, not a change to the catalog record. An absent value may indicate that the resource has never changed after its initial publication, or that the date of last modification is not known, or that the resource is continuously updated.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
-            <p data-renderer-start-pos="14091">1..1</p>
+            <p data-renderer-start-pos="10923">1..1</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
+            <p data-renderer-start-pos="10923">2024-06-04T13:36:10.246Z</p>
          </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="116">
-            <p data-renderer-start-pos="14101"><a data-testid="link-with-safety" href="http://purl.org/dc/terms/publisher" title="http://purl.org/dc/terms/publisher" data-renderer-mark="true" class="cc-1rn59kg">publisher</a></p>
+            <p data-renderer-start-pos="10933"><a data-testid="link-with-safety" href="http://purl.org/dc/terms/publisher" title="http://purl.org/dc/terms/publisher" data-renderer-mark="true" class="cc-1rn59kg">publisher</a></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="140">
-            <p data-renderer-start-pos="14114">The entity responsible for making the resource available.</p>
+            <p data-renderer-start-pos="10946">The entity responsible for making the resource available.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
-            <p data-renderer-start-pos="14175"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:publisher</code></p>
+            <p data-renderer-start-pos="11007"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:publisher</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
-            <p data-renderer-start-pos="14192"><code class="code cc-1o5d2cw" data-renderer-mark="true">foaf:Agent</code></p>
+            <p data-renderer-start-pos="11024"><code class="code cc-1o5d2cw" data-renderer-mark="true">foaf:Agent</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="189">
-            <p data-renderer-start-pos="14206">An agent (organisation or person) responsible for making the Dataset available.</p>
+            <p data-renderer-start-pos="11038">The organization that published the dataset (e.g. the specific UMC in question). Can differ from catalogue publisher. </p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
-            <p data-renderer-start-pos="14289">1..*</p>
+            <p data-renderer-start-pos="11121">1..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
+            <p data-renderer-start-pos="11121">Radboud University Medical Center; identifier https://ror.org/05wg1m734 (see foaf: Agent)</p>
          </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="116">
-            <p data-renderer-start-pos="14299"><a data-testid="link-with-safety" href="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_theme" title="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_theme" data-renderer-mark="true" class="cc-1rn59kg">theme</a></p>
+            <p data-renderer-start-pos="11131"><a data-testid="link-with-safety" href="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_theme" title="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_theme" data-renderer-mark="true" class="cc-1rn59kg"><mark id="06439b7c-fc96-43ef-8b56-7b268a042f4e" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="06439b7c-fc96-43ef-8b56-7b268a042f4e" class="cc-1rnxqbw">theme</mark></a></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="140">
-            <p data-renderer-start-pos="14308">A main category of the resource. A resource can have multiple themes.</p>
+            <p data-renderer-start-pos="11140">A main category of the resource. A resource can have multiple themes.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
-            <p data-renderer-start-pos="14381"><code class="code cc-1o5d2cw" data-renderer-mark="true">dcat:theme</code></p>
+            <p data-renderer-start-pos="11213"><code class="code cc-1o5d2cw" data-renderer-mark="true"><mark id="e8143c9b-1da6-41c9-9616-a6696a617c44" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="e8143c9b-1da6-41c9-9616-a6696a617c44" class="cc-1rnxqbw">dcat:theme</mark></code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
-            <p data-renderer-start-pos="14395"><code class="code cc-1o5d2cw" data-renderer-mark="true"><mark id="435b4949-9472-444e-9408-8d70f26a4186" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="435b4949-9472-444e-9408-8d70f26a4186" class="cc-1rnxqbw">IRI</mark></code></p>
+            <p data-renderer-start-pos="11227"><code class="code cc-1o5d2cw" data-renderer-mark="true"><mark id="38e24c59-4fbd-49cf-9835-5e90cdeea081" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="38e24c59-4fbd-49cf-9835-5e90cdeea081" class="cc-1rnxqbw">IRI</mark></code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="189">
-            <p data-renderer-start-pos="14402">It consists of 1 or more IRIs (links) separated by commas. When set, it specifies relevant ontology concepts that classify the dataset. Typically, these can be looked up using the <a data-testid="link-with-safety" href="https://www.ebi.ac.uk/ols/index" title="https://www.ebi.ac.uk/ols/index" data-renderer-mark="true" class="cc-1rn59kg"><u data-renderer-mark="true">Ontology Lookup Service (OLS)</u></a> or <a data-testid="link-with-safety" href="https://bioportal.bioontology.org/" title="https://bioportal.bioontology.org/" data-renderer-mark="true" class="cc-1rn59kg">Bioportal</a>.&nbsp;&nbsp;</p>
+            <p data-renderer-start-pos="11038">Consists of 1 or more IRIs (links) separated by commas. When set, it specifies relevant ontology concepts that classify the dataset. Typically, these can be looked up using the Ontology Lookup Service (OLS) or Bioportal</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
-            <p data-renderer-start-pos="14631">1..*</p>
+            <p data-renderer-start-pos="11463">1..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
+            <p data-renderer-start-pos="11463">http://publications.europa.eu/resource/authority/data-theme/HEAL</p>
          </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="116">
-            <p data-renderer-start-pos="14641"><a data-testid="link-with-safety" href="http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title" data-renderer-mark="true" class="cc-1rn59kg">title</a></p>
+            <p data-renderer-start-pos="11473"><a data-testid="link-with-safety" href="http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title" data-renderer-mark="true" class="cc-1rn59kg">title</a></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="140">
-            <p data-renderer-start-pos="14650">A name given to the record.</p>
+            <p data-renderer-start-pos="11482">A name given to the record.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
-            <p data-renderer-start-pos="14681"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:title</code></p>
-            <p data-renderer-start-pos="14692">&nbsp;</p>
+            <p data-renderer-start-pos="11513"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:title</code></p>
+            <p data-renderer-start-pos="11524">&nbsp;</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
-            <p data-renderer-start-pos="14696"><code class="code cc-1o5d2cw" data-renderer-mark="true">rdfs:Literal</code></p>
+            <p data-renderer-start-pos="11528"><code class="code cc-1o5d2cw" data-renderer-mark="true">rdfs:Literal</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="189">
-            <p data-renderer-start-pos="14712">A name given to the Dataset. This property can be repeated for providing names in parallel languages.</p>
+            <p data-renderer-start-pos="11544">A name given to the Dataset. This property can be repeated for providing names in parallel languages.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
-            <p data-renderer-start-pos="14817">1..*</p>
+            <p data-renderer-start-pos="11649">1..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
+            <p data-renderer-start-pos="11649">Questionnaire data of the Personalised RISk-based MAmmascreening Study (PRISMA)</p>
          </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="116">
-            <p data-renderer-start-pos="14989"><a data-testid="link-with-safety" href="http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license" data-renderer-mark="true" class="cc-1rn59kg">license</a></p>
+            <p data-renderer-start-pos="11821"><a data-testid="link-with-safety" href="http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license" data-renderer-mark="true" class="cc-1rn59kg">license</a></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="140">
-            <p data-renderer-start-pos="15000">A legal document under which the resource is made available.</p>
+            <p data-renderer-start-pos="11832">A legal document under which the resource is made available.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
-            <p data-renderer-start-pos="15064"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:license</code></p>
+            <p data-renderer-start-pos="11896"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:license</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
-            <p data-renderer-start-pos="15079"><code class="code cc-1o5d2cw" data-renderer-mark="true"><mark id="ba7ac869-cc53-471e-9824-137e36634192" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="ba7ac869-cc53-471e-9824-137e36634192" class="cc-1rnxqbw">IRI</mark></code></p>
+            <p data-renderer-start-pos="11911"><code class="code cc-1o5d2cw" data-renderer-mark="true"><mark id="1065c46b-1c43-414a-af11-e91cd979cf1a" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="1065c46b-1c43-414a-af11-e91cd979cf1a" class="cc-1rnxqbw">IRI</mark></code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="189">
-            <p data-renderer-start-pos="15086">This should contain a URL that provides details regarding the license that is applicable to this dataset.</p>
+            <p data-renderer-start-pos="11918">This should contain a URL that provides details regarding the license that is applicable to this dataset (open data commons, data access policy link etc.)</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
-            <p data-renderer-start-pos="15195">1..1</p>
+            <p data-renderer-start-pos="12027">1..1</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="9462">NA</p>
          </td>
       </tr>
    </tbody>
@@ -1660,7 +1821,7 @@ A collection of data, published or curated by a single agent, and available for 
       <tr>
          <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" aria-sort="none">
             <div class="ak-renderer-tableHeader-sortable-column">
-               <p data-renderer-start-pos="15231"><strong data-renderer-mark="true">Property name</strong></p>
+               <p data-renderer-start-pos="12063"><strong data-renderer-mark="true">Property name</strong></p>
                <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
                   <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
                      <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
@@ -1672,7 +1833,7 @@ A collection of data, published or curated by a single agent, and available for 
          </th>
          <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" aria-sort="none">
             <div class="ak-renderer-tableHeader-sortable-column">
-               <p data-renderer-start-pos="15248"><strong data-renderer-mark="true">Definition</strong></p>
+               <p data-renderer-start-pos="12080"><strong data-renderer-mark="true">Definition</strong></p>
                <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
                   <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
                      <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
@@ -1684,7 +1845,7 @@ A collection of data, published or curated by a single agent, and available for 
          </th>
          <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" aria-sort="none">
             <div class="ak-renderer-tableHeader-sortable-column">
-               <p data-renderer-start-pos="15262"><strong data-renderer-mark="true">URI</strong></p>
+               <p data-renderer-start-pos="12094"><strong data-renderer-mark="true">URI</strong></p>
                <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
                   <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
                      <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
@@ -1696,7 +1857,7 @@ A collection of data, published or curated by a single agent, and available for 
          </th>
          <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" aria-sort="none">
             <div class="ak-renderer-tableHeader-sortable-column">
-               <p data-renderer-start-pos="15269"><strong data-renderer-mark="true">rdfs:Range</strong></p>
+               <p data-renderer-start-pos="12101"><strong data-renderer-mark="true">rdfs:Range</strong></p>
                <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
                   <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
                      <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
@@ -1708,7 +1869,7 @@ A collection of data, published or curated by a single agent, and available for 
          </th>
          <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" aria-sort="none">
             <div class="ak-renderer-tableHeader-sortable-column">
-               <p data-renderer-start-pos="15283"><strong data-renderer-mark="true">Usage Note</strong></p>
+               <p data-renderer-start-pos="12115"><strong data-renderer-mark="true">Usage Note</strong></p>
                <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
                   <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
                      <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
@@ -1720,7 +1881,19 @@ A collection of data, published or curated by a single agent, and available for 
          </th>
          <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" aria-sort="none">
             <div class="ak-renderer-tableHeader-sortable-column">
-               <p data-renderer-start-pos="15297"><strong data-renderer-mark="true">Cardinality</strong></p>
+               <p data-renderer-start-pos="12129"><strong data-renderer-mark="true">Cardinality</strong></p>
+               <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
+                  <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
+                     <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
+                        <div class="cc-1uj2pwb"></div>
+                     </div>
+                  </div>
+               </figure>
+            </div>
+         </th>
+         <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" aria-sort="none">
+            <div class="ak-renderer-tableHeader-sortable-column">
+               <p data-renderer-start-pos="12129"><strong data-renderer-mark="true">Example</strong></p>
                <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
                   <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
                      <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
@@ -1733,62 +1906,94 @@ A collection of data, published or curated by a single agent, and available for 
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="15314"><a data-testid="link-with-safety" href="https://www.w3.org/TR/vocab-dcat-3/#Property:dataset_distribution" title="https://www.w3.org/TR/vocab-dcat-3/#Property:dataset_distribution" data-renderer-mark="true" class="cc-1rn59kg">distribution</a></p>
+            <p data-renderer-start-pos="12146"><a data-testid="link-with-safety" href="https://www.w3.org/TR/vocab-dcat-3/#Property:dataset_distribution" title="https://www.w3.org/TR/vocab-dcat-3/#Property:dataset_distribution" data-renderer-mark="true" class="cc-1rn59kg">distribution</a></p>
          </td>
          <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="15330">An available distribution of the dataset.</p>
+            <p data-renderer-start-pos="12162">An available distribution of the dataset.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="15375"><code class="code cc-1o5d2cw" data-renderer-mark="true">dcat:distribution</code></p>
+            <p data-renderer-start-pos="12207"><code class="code cc-1o5d2cw" data-renderer-mark="true">dcat:distribution</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="15396"><code class="code cc-1o5d2cw" data-renderer-mark="true">dcat:Distribution</code></p>
+            <p data-renderer-start-pos="12228"><code class="code cc-1o5d2cw" data-renderer-mark="true">dcat:Distribution</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="15417">Use this property to point to the distribution of this dataset when a distribution is available.</p>
+            <p data-renderer-start-pos="12249">Use this property to point to the distribution of this dataset when a distribution is available.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="15517">0..*</p>
+            <p data-renderer-start-pos="12349">0..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="9462">NA</p>
          </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="116">
-            <p data-renderer-start-pos="14827"><a data-testid="link-with-safety" href="http://purl.org/dc/terms/type" title="http://purl.org/dc/terms/type" data-renderer-mark="true" class="cc-1rn59kg">type</a></p>
+            <p data-renderer-start-pos="11659"><a data-testid="link-with-safety" href="http://purl.org/dc/terms/type" title="http://purl.org/dc/terms/type" data-renderer-mark="true" class="cc-1rn59kg">type</a></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="140">
-            <p data-renderer-start-pos="14835">The nature or genre of the resource.</p>
+            <p data-renderer-start-pos="11667">The nature or genre of the resource.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
-            <p data-renderer-start-pos="14875"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:type</code></p>
+            <p data-renderer-start-pos="11707"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:type</code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="117">
-            <p data-renderer-start-pos="14887"><code class="code cc-1o5d2cw" data-renderer-mark="true"><mark id="b69a3822-7d3f-4317-b1a0-69ed4af8fe25" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="b69a3822-7d3f-4317-b1a0-69ed4af8fe25" class="cc-1rnxqbw">IRI</mark></code></p>
+            <p data-renderer-start-pos="11719"><code class="code cc-1o5d2cw" data-renderer-mark="true"><mark id="84a3e0f7-37ad-4b45-8d81-8b8f4df947e5" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="84a3e0f7-37ad-4b45-8d81-8b8f4df947e5" class="cc-1rnxqbw">IRI</mark></code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="189">
-            <p data-renderer-start-pos="14894">A type of the Dataset. A recommended controlled vocabulary data-type is foreseen.</p>
+            <p data-renderer-start-pos="11726"><mark id="cf5c6ba1-822a-483f-a7e3-a94ac3b7299e" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="cf5c6ba1-822a-483f-a7e3-a94ac3b7299e" class="cc-1rnxqbw">The value SHOULD be taken from a well governed and broadly recognised controlled vocabulary, such as <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#DCMIType">DCMI Type vocabulary</a></mark></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
-            <p data-renderer-start-pos="14979">0..*</p>
+            <p data-renderer-start-pos="11811">0..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
+            <p data-renderer-start-pos="11811">http://purl.org/dc/dcmitype/MovingImage</p>
          </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="15701"><a data-testid="link-with-safety" href="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version" title="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version" data-renderer-mark="true" class="cc-1rn59kg">version</a></p>
+            <p data-renderer-start-pos="12533"><a data-testid="link-with-safety" href="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version" title="https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version" data-renderer-mark="true" class="cc-1rn59kg">version</a></p>
          </td>
          <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="15712">The version indicator (name or identifier) of a resource.</p>
+            <p data-renderer-start-pos="12544">The version indicator (name or identifier) of a resource.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="15773"><code class="code cc-1o5d2cw" data-renderer-mark="true"><mark id="c3ebb829-ad09-4ac4-bd8f-989851c58eed" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="c3ebb829-ad09-4ac4-bd8f-989851c58eed" class="cc-1rnxqbw">dcat:version</mark></code></p>
+            <p data-renderer-start-pos="12605"><code class="code cc-1o5d2cw" data-renderer-mark="true"><mark id="c3ebb829-ad09-4ac4-bd8f-989851c58eed" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="c3ebb829-ad09-4ac4-bd8f-989851c58eed" class="cc-1rnxqbw">dcat:version</mark></code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="15789"><code class="code cc-1o5d2cw" data-renderer-mark="true"><mark id="e6fb29b0-7c9c-473e-bbc4-e2a7dcbf2273" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="e6fb29b0-7c9c-473e-bbc4-e2a7dcbf2273" class="cc-1rnxqbw">rdfs:Literal</mark></code></p>
+            <p data-renderer-start-pos="12621"><code class="code cc-1o5d2cw" data-renderer-mark="true"><mark id="e6fb29b0-7c9c-473e-bbc4-e2a7dcbf2273" aria-disabled="true" data-renderer-mark="true" data-mark-type="annotation" data-mark-annotation-type="inlineComment" data-id="e6fb29b0-7c9c-473e-bbc4-e2a7dcbf2273" class="cc-1rnxqbw">rdfs:Literal</mark></code></p>
          </td>
          <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="15805">NA</p>
+            <p data-renderer-start-pos="12637">NA</p>
          </td>
          <td rowspan="1" colspan="1" colorname="">
-            <p data-renderer-start-pos="15811">0..*</p>
+            <p data-renderer-start-pos="12643">0..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="9462">NA</p>
+         </td>
+      </tr>
+      <tr>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="12653"><a data-testid="link-with-safety" href="https://www.w3.org/TR/vocab-dcat-3/#Property:dataset_in_series" title="https://www.w3.org/TR/vocab-dcat-3/#Property:dataset_in_series" data-renderer-mark="true" class="cc-1rn59kg">in series</a></p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="12666">A dataset series of which the dataset is part.</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="12716"><code class="code cc-1o5d2cw" data-renderer-mark="true">dcat:inSeries</code></p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="12733"><code class="code cc-1o5d2cw" data-renderer-mark="true">dcat:DatasetSeries</code></p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="12755">NA</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="12761">0..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="9462">NA</p>
          </td>
       </tr>
    </tbody>
@@ -2147,6 +2352,18 @@ An available distribution of the dataset.
                </figure>
             </div>
          </th>
+         <th rowspan="1" colspan="1" colorname="" class="ak-renderer-tableHeader-sortable-column__wrapper" data-colwidth="132" aria-sort="none">
+            <div class="ak-renderer-tableHeader-sortable-column">
+               <p data-renderer-start-pos="17266"><strong data-renderer-mark="true">Example</strong></p>
+               <figure class="ak-renderer-tableHeader-sorting-icon__wrapper ak-renderer-tableHeader-sorting-icon__no-order">
+                  <div class="ak-renderer-tableHeader-sorting-icon  cc-1eczmg9" role="button" tabindex="0" aria-label="No sort applied to the column" aria-disabled="false">
+                     <div class="sorting-icon-svg__no_order ak-renderer-tableHeader-sorting-icon-inactive cc-37vp66">
+                        <div class="cc-1uj2pwb"></div>
+                     </div>
+                  </div>
+               </figure>
+            </div>
+         </th>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="148">
@@ -2166,6 +2383,9 @@ An available distribution of the dataset.
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="132">
             <p data-renderer-start-pos="17449">1..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="181">
+            <p data-renderer-start-pos="17358">CSV-distribution of the questionnaire data of the Personalised RISk-based MAmmascreening Study (PRISMA)</p>
          </td>
       </tr>
       <tr>
@@ -2187,6 +2407,9 @@ An available distribution of the dataset.
          <td rowspan="1" colspan="1" colorname="" data-colwidth="132">
             <p data-renderer-start-pos="17787">1..*</p>
          </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="9462">NA</p>
+         </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="148">
@@ -2207,13 +2430,16 @@ An available distribution of the dataset.
          <td rowspan="1" colspan="1" colorname="" data-colwidth="132">
             <p data-renderer-start-pos="18085">1..*</p>
          </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="132">
+            <p data-renderer-start-pos="18085">https://www.iana.org/assignments/media-types/text/csv</p>
+         </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="148">
             <p data-renderer-start-pos="18095"><a data-testid="link-with-safety" href="http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description" data-renderer-mark="true" class="cc-1rn59kg">description</a></p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="175">
-            <p data-renderer-start-pos="18110">A unique identifier of the resource being described or catalog.</p>
+            <p data-renderer-start-pos="18110">A free-text account of the distribution.</p>
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="149">
             <p data-renderer-start-pos="18177"><code class="code cc-1o5d2cw" data-renderer-mark="true">dct:description</code></p>
@@ -2226,6 +2452,9 @@ An available distribution of the dataset.
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="132">
             <p data-renderer-start-pos="18218">1..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="9462">NA</p>
          </td>
       </tr>
    </tbody>
