@@ -343,6 +343,10 @@ Mandatory Classes
          <td rowspan="1" colspan="1" colorname="" data-colwidth="155">
             <p data-renderer-start-pos="5365"><code class="code cc-1o5d2cw" data-renderer-mark="true">dcat:Catalog</code></p>
          </td>
+         </td>
+            <td rowspan="1" colspan="1" colorname="" data-colwidth="205">
+            <p data-renderer-start-pos="4736">NA</p>
+         </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="120">
@@ -356,6 +360,10 @@ Mandatory Classes
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="155">
             <p data-renderer-start-pos="5545"><code class="code cc-1o5d2cw" data-renderer-mark="true">foaf:Agent</code></p>
+         </td>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="205">
+            <p data-renderer-start-pos="4736">NA</p>
          </td>
       </tr>
       <tr>
@@ -371,6 +379,9 @@ Mandatory Classes
          <td rowspan="1" colspan="1" colorname="" data-colwidth="155">
             <p data-renderer-start-pos="5813"><code class="code cc-1o5d2cw" data-renderer-mark="true">dcat:Resource</code></p>
          </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="205">
+            <p data-renderer-start-pos="4736">NA</p>
+         </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="120">
@@ -384,6 +395,9 @@ Mandatory Classes
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="155">
             <p data-renderer-start-pos="6036"><code class="code cc-1o5d2cw" data-renderer-mark="true">vcard:Kind</code></p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="" data-colwidth="205">
+            <p data-renderer-start-pos="4736">NA</p>
          </td>
       </tr>
    </tbody>
@@ -1234,6 +1248,9 @@ A meaningful collection of data, published or curated by a single organisation o
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
             <p data-renderer-start-pos="12027">1..1</p>
          </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="9462">NA</p>
+         </td>
       </tr>
    </tbody>
 </table>
@@ -1355,6 +1372,9 @@ A meaningful collection of data, published or curated by a single organisation o
          <td rowspan="1" colspan="1" colorname="">
             <p data-renderer-start-pos="12349">0..*</p>
          </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="9462">NA</p>
+         </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="116">
@@ -1374,6 +1394,9 @@ A meaningful collection of data, published or curated by a single organisation o
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
             <p data-renderer-start-pos="10718">0..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="9462">NA</p>
          </td>
       </tr>
       <tr>
@@ -1418,6 +1441,9 @@ A meaningful collection of data, published or curated by a single organisation o
          <td rowspan="1" colspan="1" colorname="">
             <p data-renderer-start-pos="12643">0..*</p>
          </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="9462">NA</p>
+         </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="">
@@ -1437,6 +1463,9 @@ A meaningful collection of data, published or curated by a single organisation o
          </td>
          <td rowspan="1" colspan="1" colorname="">
             <p data-renderer-start-pos="12761">0..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="9462">NA</p>
          </td>
       </tr>
    </tbody>
@@ -1770,6 +1799,9 @@ A meaningful collection of data, published or curated by a single organisation o
          <td rowspan="1" colspan="1" colorname="" data-colwidth="81">
             <p data-renderer-start-pos="12027">1..1</p>
          </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="9462">NA</p>
+         </td>
       </tr>
    </tbody>
 </table>
@@ -1891,6 +1923,9 @@ A meaningful collection of data, published or curated by a single organisation o
          <td rowspan="1" colspan="1" colorname="">
             <p data-renderer-start-pos="12349">0..*</p>
          </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="9462">NA</p>
+         </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="116">
@@ -1934,6 +1969,9 @@ A meaningful collection of data, published or curated by a single organisation o
          <td rowspan="1" colspan="1" colorname="">
             <p data-renderer-start-pos="12643">0..*</p>
          </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="9462">NA</p>
+         </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="">
@@ -1953,6 +1991,9 @@ A meaningful collection of data, published or curated by a single organisation o
          </td>
          <td rowspan="1" colspan="1" colorname="">
             <p data-renderer-start-pos="12761">0..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="9462">NA</p>
          </td>
       </tr>
    </tbody>
@@ -2366,6 +2407,9 @@ An available distribution of the dataset.
          <td rowspan="1" colspan="1" colorname="" data-colwidth="132">
             <p data-renderer-start-pos="17787">1..*</p>
          </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="9462">NA</p>
+         </td>
       </tr>
       <tr>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="148">
@@ -2408,6 +2452,9 @@ An available distribution of the dataset.
          </td>
          <td rowspan="1" colspan="1" colorname="" data-colwidth="132">
             <p data-renderer-start-pos="18218">1..*</p>
+         </td>
+         <td rowspan="1" colspan="1" colorname="">
+            <p data-renderer-start-pos="9462">NA</p>
          </td>
       </tr>
    </tbody>
