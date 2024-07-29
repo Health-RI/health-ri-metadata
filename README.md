@@ -245,7 +245,7 @@ An available distribution of the dataset.
 | [access service](https://www.w3.org/TR/vocab-dcat-3/#Property:distribution_access_service) | A data service that gives access to the distribution of the dataset | `dcat:accessService` | `dcat:DataService` | `dcat:accessService` _SHOULD_ be used to link to a description of a `dcat:DataService` that can provide access to this distribution. | 0..\* |
 | [download URL](https://www.w3.org/TR/vocab-dcat-3/#Property:distribution_download_url) | The URL of the downloadable file in a given format. E.g., CSV file or RDF file. The format is indicated by the distribution's `dcterms:format` and/or `dcat:mediaType` | `dcat:downloadURL` | `IRI` | NA  | 0..\* |
 
-### Agent
+### [Agent](http://xmlns.com/foaf/spec/#term_Agent)
 
 An entity that is associated with catalog and/or Datasets. Agent can be individuals or organisations, If the Agent is an organisation, the use of the Organization Ontology is recommended.
 
