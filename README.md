@@ -107,7 +107,7 @@ An overview of the Metadata schema core is presented in the [UML](https://www.om
 | **Class name** | **Definition** | **Usage Note** | **URI** |
 | [Distribution](#distribution) | An available distribution of the dataset. | Used to describe the different ways that a single dataset can be made available in. I.e., it can be downloaded or it can be accessed online in one or more distributions (e.g. one in a downloadable .csv file, another file with an access or query webpage) | `dcat:Distribution` |
 | [Dataset Series](#dataset-series) | A resource type.<br><br>Dataset series are defined in \[[ISO-19115](https://www.w3.org/TR/vocab-dcat-3/#bib-iso-19115 "https://www.w3.org/TR/vocab-dcat-3/#bib-iso-19115")\] as a collection of datasets \[…\] sharing common characteristics. However, their use is not limited to geospatial data, although in other domains they can be named differently (e.g., time series, data slices) and defined more or less strictly (see, e.g., the notion of "dataset slice" in [VOCAB-DATA-CUBE](https://www.w3.org/TR/vocab-dcat-3/#bib-vocab-data-cube "https://www.w3.org/TR/vocab-dcat-3/#bib-vocab-data-cube")). | With Dataset Series we refer to data, somehow interrelated, that are published separately. An example is budget data split by year and/or country, instead of being made available in a single dataset. | `dcat:DatasetSeries` |
-| [Data Service](#data-service) | A Resource type.  <br>A collection of operations that provides access to one or more datasets or data processing functions. | The kind of service can be indicated using the `dcterms:type` property. Its value may be taken from a controlled vocabulary that should be defined in the community.<br><br>_DRAFT EXAMPLE:_ | `dcat:DataService` |
+| [Data Service](#data-service) | A Resource type.  <br>A collection of operations that provides access to one or more datasets or data processing functions. | The kind of service can be indicated using the `dcterms:type` property. Its value may be taken from a controlled vocabulary that should be defined in the community. | `dcat:DataService` |
 
 ### _Abstract Class_
 
@@ -255,7 +255,7 @@ An entity that is associated with catalog and/or Datasets. Agent can be individu
 | --- | --- | --- | --- | --- | --- |     
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
 | [name](http://xmlns.com/foaf/spec/#term_name) | A name for some thing. | `foaf:name` | `xsd:string` | This property contains a name of the agent. This property can be repeated for different versions of the name (e.g. the name in different languages) | 1..1 |
-| [identifier](http://purl.org/dc/terms/identifier) | A unique identifier of the resource being described or catalog. | `dct:identifier` | `xsd:string` |     | 1..1 |
+| [identifier](http://purl.org/dc/terms/identifier) | A unique identifier of the resource being described or catalog. | `dct:identifier` | `rdfs:Literal` |   A unique identifier of a person or organisation being described, like [ORCID](https://orcid.org) for a researcher or [ROR](https://ror.org) for an organization.  | 1..1 |
 
 #### Recommended Properties
 
