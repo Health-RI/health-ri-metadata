@@ -38,26 +38,26 @@ This schema describes the minimum amount of information that should be used to d
 
 ### Mandatory and Recommended
 
-Following the DCAT-AP specification, we categorize components into 'mandatory' and 'recommended' classes and properties. A potential third category, 'Optional,' may be introduced in the future.
+Following the [DCAT-AP 3.0](https://semiceu.github.io/DCAT-AP/releases/3.0.0/) specification, we categorize components into `mandatory` and `recommended` classes and properties. A potential third category, `optional`, may be introduced in the future.
 
 In the context of data exchange:
 
-*   **Mandatory** Class: Senders **MUST** provide information about instances of the class; Receivers MUST process information about instances of the class.
+*   **Mandatory** `Class`: Senders **MUST** provide information about instances of the class; Receivers MUST process information about instances of the class.
     
-*   **Recommended** Class: Senders **SHOULD** provide information about instances of the class if available; Receivers MUST process information about instances of the class.
+*   **Recommended** `Class`: Senders **SHOULD** provide information about instances of the class if available; Receivers MUST process information about instances of the class.
     
-*   **Optional** Class: Senders **MAY** provide the information but are not obliged to do so; Receivers MUST process information about instances of the class.
+*   **Optional** `Class`: Senders **MAY** provide the information but are not obliged to do so; Receivers MUST process information about instances of the class.
     
-*   Mandatory property: Senders MUST provide the information for that property; Receivers MUST process the information for that property.
+*   **Mandatory** `property`: Senders MUST provide the information for that property; Receivers MUST process the information for that property.
     
-*   Recommended property: Senders SHOULD provide the information if available; Receivers MUST process the information for that property.
+*   **Recommended** `property`: Senders SHOULD provide the information if available; Receivers MUST process the information for that property.
     
-*   Optional property: Senders MAY provide the information but are not obliged to do so; Receivers MUST process the information for that property.
+*   **Optional** `property`: Senders MAY provide the information but are not obliged to do so; Receivers MUST process the information for that property.
     
 
 ### Terminology
 
-According to DCAT-AP:
+According to [DCAT-AP](https://semiceu.github.io/DCAT-AP/releases/3.0.0/):
 
 *   An **Application Profile** defines the mandatory, recommended, and optional components for a specific use case by leveraging terminology from foundational standards. Additionally, it suggests standardized vocabularies to maintain consistency in the use of terms and data.
     
@@ -66,9 +66,8 @@ According to DCAT-AP:
 
 ### Used Prefixes
 
-|     |     |     |
-| --- | --- | --- |  
 | **Prefix** | **Namespace IRI** | **Source** |
+| --- | --- | --- | 
 | `dcat` | `http://www.w3.org/ns/dcat#` | \[[VOCAB-DCAT](https://w3c.github.io/dxwg/dcat/#bib-vocab-dcat "https://w3c.github.io/dxwg/dcat/#bib-vocab-dcat")\] |
 | `dct` | `http://purl.org/dc/terms/` | \[[DCT](https://w3c.github.io/dxwg/dcat/#bib-dcterms "https://w3c.github.io/dxwg/dcat/#bib-dcterms")\] |
 | `foaf` | `http://xmlns.com/foaf/0.1/` | \[[FOAF](https://w3c.github.io/dxwg/dcat/#bib-foaf "https://w3c.github.io/dxwg/dcat/#bib-foaf")\] |
@@ -82,7 +81,7 @@ According to DCAT-AP:
 
 ### Overview and Diagram
 
-An overview of the Metadata schema core is presented in the [UML](https://www.omg.org/spec/UML "https://www.omg.org/spec/UML") diagram depicted below. The UML showcases the primary classes (entities), excluding the detailed definitions such as rdfs:label rdfs:comment. Each block denotes a class and comprises a list of its attributes (properties). If a class is connected to another class by a closed arrow, indicating that it inherits all properties from the other class. For example, `dcat:DatasetSeries` inherits from `dcat:Dataset` which inherits from `dcat:Resource`. The other arrows, represent relations and contain the type of relation, such as `dcat:Dataset` connects to a `dcat:DatasetSeries` via the predicate `dcat:inSeries`, and include the cardinality, such as `dcat:Dataset` can be connected via `dcat:inSeries` to zero or more `dcat:DatasetSeries`.
+An overview of the Metadata schema core is presented in the [UML](https://www.omg.org/spec/UML "https://www.omg.org/spec/UML") diagram depicted below. The UML showcases the primary classes (entities), excluding the detailed definitions such as `rdfs:label` and `rdfs:comment`. Each block denotes a class and comprises a list of its attributes (properties). If a class is connected to another class by a closed arrow, indicating that it inherits all properties from the other class. For example, `dcat:DatasetSeries` inherits from `dcat:Dataset` which inherits from `dcat:Resource`. The other arrows, represent relations and contain the type of relation, such as `dcat:Dataset` connects to a `dcat:DatasetSeries` via the predicate `dcat:inSeries`, and include the cardinality, such as `dcat:Dataset` can be connected via `dcat:inSeries` to zero or more `dcat:DatasetSeries`.
 
 - HRI core metadata schema diagram (plateau 1):
 <img src="Images/1.0_plateau1/HRICoreSchemaReleasePlateau1.jpg" alt="diagram" width=1080 height=560 title="diagram">
@@ -90,11 +89,10 @@ An overview of the Metadata schema core is presented in the [UML](https://www.om
 ## Main Classes
 
 ### Mandatory Classes
-
-|     |     |     |     |     |
-| --- | --- | --- | --- | --- |   
+   
 | **Class name** | **Definition** | **Usage Note** | **URI** | **Example** |
-| [Dataset](#dataset) | A resource type.  <br>A meaningful collection of data, published or curated by a single organisation or individual, and available for access or download in one or more representations. | When focusing on health data, a dataset typically contains structured information gathered from a study or research project related to health topics. This might include clinical trial results, public health statistics, patient records, survey data, etc.  <br>How the data in a dataset can be accessed is defined in the Distribution, which usually points to the actual data files available for access or download. Datasets are often included in a catalog, which organizes and provides metadata about multiple datasets, making them easier to find and use. The term 'organization or individual' refers to any entity responsible for creating, maintaining, or distributing the dataset. | `dcat:Dataset` | Questionnaire data of the Personalised RISk-based MAmmascreening Study (PRISMA),  <br>Clinical data for Inflammatory Bowel Disease (IBD) from AUMC, LUMC and UMCG |
+| --- | --- | --- | --- | --- |
+| [Dataset](#dataset) | A resource type. <br>A meaningful collection of data, published or curated by a single organisation or individual, and available for access or download in one or more representations. | When focusing on health data, a dataset typically contains structured information gathered from a study or research project related to health topics. This might include clinical trial results, public health statistics, patient records, survey data, etc.  <br>How the data in a dataset can be accessed is defined in the Distribution, which usually points to the actual data files available for access or download. Datasets are often included in a catalog, which organizes and provides metadata about multiple datasets, making them easier to find and use. The term 'organization or individual' refers to any entity responsible for creating, maintaining, or distributing the dataset. | `dcat:Dataset` | Questionnaire data of the Personalised RISk-based MAmmascreening Study (PRISMA),  <br>Clinical data for Inflammatory Bowel Disease (IBD) from AUMC, LUMC and UMCG |
 | [Catalog](#catalog) | A catalog that is listed in the National catalog. | Used to describe a bundle of datasets (and other resources) under a single title, for example a collection or a study. | `dcat:Catalog` | NA  |
 | [Agent](#agent) | An entity that is associated with catalog and/or Datasets. | A person or organization that is associated with the catalogue and/or datasets. | `foaf:Agent` | NA  |
 | [Cataloged Resource](#cataloged-resource) | Resource published or curated by a single agent. | This is an abstract class, we do not use this class, instead we use specifications of it (e.g. Dataset). This is mainly for a high level grouping and the reuse of properties. | `dcat:Resource` | NA  |
@@ -102,20 +100,18 @@ An overview of the Metadata schema core is presented in the [UML](https://www.om
 
 ### Recommended Classes
 
-|     |     |     |     |
-| --- | --- | --- | --- |   
 | **Class name** | **Definition** | **Usage Note** | **URI** |
+| --- | --- | --- | --- |   
 | [Distribution](#distribution) | An available distribution of the dataset. | Used to describe the different ways that a single dataset can be made available in. I.e., it can be downloaded or it can be accessed online in one or more distributions (e.g. one in a downloadable .csv file, another file with an access or query webpage) | `dcat:Distribution` |
-| [Dataset Series](#dataset-series) | A resource type.<br><br>Dataset series are defined in \[[ISO-19115](https://www.w3.org/TR/vocab-dcat-3/#bib-iso-19115 "https://www.w3.org/TR/vocab-dcat-3/#bib-iso-19115")\] as a collection of datasets \[…\] sharing common characteristics. However, their use is not limited to geospatial data, although in other domains they can be named differently (e.g., time series, data slices) and defined more or less strictly (see, e.g., the notion of "dataset slice" in [VOCAB-DATA-CUBE](https://www.w3.org/TR/vocab-dcat-3/#bib-vocab-data-cube "https://www.w3.org/TR/vocab-dcat-3/#bib-vocab-data-cube")). | With Dataset Series we refer to data, somehow interrelated, that are published separately. An example is budget data split by year and/or country, instead of being made available in a single dataset. | `dcat:DatasetSeries` |
+| [Dataset Series](#dataset-series) | A collection of datasets that are published separately, but share some characteristics that group them. | With Dataset Series we refer to data, somehow interrelated, that are published separately. An example is budget data split by year and/or country, instead of being made available in a single dataset. | `dcat:DatasetSeries` |
 | [Data Service](#data-service) | A Resource type.  <br>A collection of operations that provides access to one or more datasets or data processing functions. | The kind of service can be indicated using the `dcterms:type` property. Its value may be taken from a controlled vocabulary that should be defined in the community. | `dcat:DataService` |
 
 ### _Abstract Class_
 
 _**Cataloged Resource**_ is a generic concept from the DCAT vocabulary, that is rarely used directly, but indirectly through its extensions. We recommend avoiding using `dcat:Resource` directly for your document and requesting a model extension or update, in case the type/class you need is not in this schema.
 
-|     |     |     |     |
-| --- | --- | --- | --- |   
 | **Class name** | **Definition** | **Usage Note** | **URI** |
+| --- | --- | --- | --- |   
 | [_Cataloged Resource_](#cataloged-resource) | The class resource, everything. | This class is for grouping and class hierarchy relation purposes. | `dcat:Resource` |
 
 ## Main Properties per Class
@@ -125,19 +121,17 @@ _**Cataloged Resource**_ is a generic concept from the DCAT vocabulary, that is 
 A curated collection of metadata about resources. A web-based data catalog is typically represented as a single instance of this class.
 
 #### Mandatory Properties
-
-|     |     |     |     |     |     |     |
-| --- | --- | --- | --- | --- | --- | --- |     
+   
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** | **Example** |
+| --- | --- | --- | --- | --- | --- | --- |  
 | [title](http://purl.org/dc/terms/title) | A name given to the resource. | `dct:title` | `rdfs:Literal` | A name given to the catalogue. This property can be repeated for providing titles in different languages. This is a required field and needs to be unique. | 1..\* | Inflammatory Bowel Disease catalogue,  <br>Inflammatoire darmziekten catalogus |
 | [description](http://purl.org/dc/terms/description) | A free-text account of the record. | `dct:description` | `rdfs:Literal` | A brief informative description of the catalogue. This property can be repeated for descriptions in different languages. | 1..\* | This catalogue describes the core metadata of AUMC Inflammatory Bowel Disease datasets or  <br>This catalogue describes breast cancer imaging, clinical and omics datasets. |
 | [publisher](http://purl.org/dc/terms/publisher) | The entity responsible for making the catalogue available. | `dct:publisher` | `foaf:Agent` | The organization that published the catalogue (e.g. the specific UMC in question). In case of a multicenter study, the publisher is the organisation who makes the catalogue available online. To list multiple organisations involved, refer to the "creator" property. | 1..\* | name: Radboud University Medical Center  <br>identifier: https://ror.org/05wg1m734  <br>(see class foaf: Agent) |
 
 #### Recommended Properties
-
-|     |     |     |     |     |     |
-| --- | --- | --- | --- | --- | --- |     
+    
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
+| --- | --- | --- | --- | --- | --- | 
 | [catalog](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_catalog) | A catalog that is listed in the catalog. | `dcat:catalog` | `dcat:Catalog` | NA  | 0..\* |
 | [dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset) | relates every catalog to its containing datasets. | `dcat:dataset` | `dcat:Dataset` | The connection to the one or more datasets that this catalog describes. | 0..\* |
 | [service](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_service) | A service that is listed in the catalog. | `dcat:service` | `dcat:DataService` | NA  | 0..\* |
@@ -147,10 +141,9 @@ A curated collection of metadata about resources. A web-based data catalog is ty
 A meaningful collection of data, published or curated by a single organisation or individual, and available for access or download in one or more representations.
 
 #### Mandatory Properties
-
-|     |     |     |     |     |     |     |
-| --- | --- | --- | --- | --- | --- | --- |     
+ 
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** | **Example** |
+| --- | --- | --- | --- | --- | --- | --- | 
 | [contact point](https://www.w3.org/TR/vocab-dcat-3/#Property:resource_contact_point) | Relevant contact information for the catalog resource. | `dcat:contactPoint` | `vcard:Kind` | Contact information that can be used, for example, for sending requests for information or access to the dataset. Ideally, a data access committee or other service desk (a contact point that is rather persistent over time). | 1..\* | mailto: data-access-committee@xumc.nl  <br>with name Data Access Committee of the x UMC (see vcard:Kind) |
 | [creator](http://purl.org/dc/terms/creator) | The entity responsible for producing the resource. | `dct:creator` | `foaf:Agent` | The person or persons responsible for creating the dataset. | 1..\* | Jip Fictief, Inez Maginary, Fabio Abricated for name of foaf:Agent |
 | [description](http://purl.org/dc/terms/description) | A free-text account of the record | `dct:description` | `rdfs:Literal` | A free-text informative description of the dataset. This property can be repeated for providing descriptions in different languages. | 1..\* | The primary aim of the PRISMA study was to investigate the potential value of risk-tailored versus traditional breast cancer screening protocols in the Netherlands. Data collection took place between 2014-2019, resulting in ∼67,000 mammograms, ∼38,000 surveys, ∼10,000 blood samples and ∼600 saliva samples. |
@@ -164,9 +157,8 @@ A meaningful collection of data, published or curated by a single organisation o
 
 #### Recommended Properties
 
-|     |     |     |     |     |     |     |
-| --- | --- | --- | --- | --- | --- | --- |     
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** | **Example** |
+| --- | --- | --- | --- | --- | --- | --- |    
 | [distribution](https://www.w3.org/TR/vocab-dcat-3/#Property:dataset_distribution) | An available distribution of the dataset. | `dcat:distribution` | `dcat:Distribution` | Use this property to point to the distribution of this dataset when a distribution is available. | 0..\* | NA  |
 | [keyword](https://www.w3.org/TR/vocab-dcat-3/#Property:resource_keyword) | A keyword or tag describing the dataset. | `dcat:keyword` | `rdfs:Literal` | Use this property to add keywords that describe the dataset for better findability. | 0..\* | NA  |
 | [type](http://purl.org/dc/terms/type) | The nature or genre of the resource. | `dct:type` | `IRI` | The value SHOULD be taken from a well governed and broadly recognised controlled vocabulary, such as [DCMI Type vocabulary](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#DCMIType) | 0..\* | http://purl.org/dc/dcmitype/MovingImage |
@@ -177,10 +169,9 @@ A meaningful collection of data, published or curated by a single organisation o
 
 
 #### Mandatory Properties
-
-|     |     |     |     |     |     |     |
-| --- | --- | --- | --- | --- | --- | --- |     
+  
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** | **Example** |
+| --- | --- | --- | --- | --- | --- | --- |   
 | [contact point](https://www.w3.org/TR/vocab-dcat-3/#Property:resource_contact_point) | Relevant contact information for the catalog resource. | `dcat:contactPoint` | `vcard:Kind` | Contact information that can be used, for example, for sending requests for information or access to the dataset. Ideally, a data access committee or other service desk (a contact point that is rather persistent over time). | 1..\* | mailto: data-access-committee@xumc.nl  <br>with name Data Access Committee of the x UMC (see vcard:Kind) |
 | [creator](http://purl.org/dc/terms/creator) | The entity responsible for producing the resource. | `dct:creator` | `foaf:Agent` | The person or persons responsible for creating the dataset. | 1..\* | Jip Fictief, Inez Maginary, Fabio Abricated for name of foaf:Agent |
 | [description](http://purl.org/dc/terms/description) | A free-text account of the record | `dct:description` | `rdfs:Literal` | A free-text informative description of the dataset. This property can be repeated for providing descriptions in different languages. | 1..\* | The primary aim of the PRISMA study was to investigate the potential value of risk-tailored versus traditional breast cancer screening protocols in the Netherlands. Data collection took place between 2014-2019, resulting in ∼67,000 mammograms, ∼38,000 surveys, ∼10,000 blood samples and ∼600 saliva samples. |
@@ -193,10 +184,9 @@ A meaningful collection of data, published or curated by a single organisation o
 | [license](http://purl.org/dc/terms/license) | A legal document under which the resource is made available. | `dct:license` | `IRI` | This should contain a URL that provides details regarding the license that is applicable to this dataset (open data commons, data access policy link etc.) | 1..1 | NA  |
 
 #### Recommended Properties
-
-|     |     |     |     |     |     |     |
-| --- | --- | --- | --- | --- | --- | --- |     
+  
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** | **Example** |
+| --- | --- | --- | --- | --- | --- | --- |   
 | [distribution](https://www.w3.org/TR/vocab-dcat-3/#Property:dataset_distribution) | An available distribution of the dataset. | `dcat:distribution` | `dcat:Distribution` | Use this property to point to the distribution of this dataset when a distribution is available. | 0..\* | NA  |
 | [type](http://purl.org/dc/terms/type) | The nature or genre of the resource. | `dct:type` | `IRI` | The value SHOULD be taken from a well governed and broadly recognised controlled vocabulary, such as [DCMI Type vocabulary](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#DCMIType) | 0..\* | http://purl.org/dc/dcmitype/MovingImage |
 | [version](https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version) | The version indicator (name or identifier) of a resource. | `dcat:version` | `rdfs:Literal` | NA  | 0..\* | NA  |
@@ -208,18 +198,16 @@ A meaningful collection of data, published or curated by a single organisation o
 A collection of operations that provides access to one or more datasets or data processing functions.
 
 #### Mandatory Properties
-
-|     |     |     |     |     |     |
-| --- | --- | --- | --- | --- | --- |     
+  
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
+| --- | --- | --- | --- | --- | --- | 
 | [end point URL](https://www.w3.org/TR/vocab-dcat-3/#Property:data_service_endpoint_url) | The root location or primary endpoint of the service (a Web-resolvable IRI). | `dcat:endPointURL` | `IRI` | NA  | 1..\* |
 | [title](http://purl.org/dc/terms/title) | A name given to the distribution. | `dct:title` | `rdfs:Literal` | NA  | 1..\* |
 
 #### Recommended Properties
 
-|     |     |     |     |     |     |
-| --- | --- | --- | --- | --- | --- |     
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
+| --- | --- | --- | --- | --- | --- |  
 | [end point description](https://www.w3.org/TR/vocab-dcat-3/#Property:data_service_endpoint_description) | A description of the services available via the end-points, including their operations, parameters etc. | `dcat:endpointDescription` | `rdfs:Literal` | An endpoint description may be expressed in a machine-readable form, such as an OpenAPI (Swagger) description \[[OpenAPI](https://www.w3.org/TR/vocab-dcat-3/#bib-openapi)\], an OGC `GetCapabilities` response \[[WFS](https://www.w3.org/TR/vocab-dcat-3/#bib-wfs)\], \[[ISO-19142](https://www.w3.org/TR/vocab-dcat-3/#bib-iso-19142)\], \[[WMS](https://www.w3.org/TR/vocab-dcat-3/#bib-wms)\], \[[ISO-19128](https://www.w3.org/TR/vocab-dcat-3/#bib-iso-19128)\], a SPARQL Service Description \[[SPARQL11-SERVICE-DESCRIPTION](https://www.w3.org/TR/vocab-dcat-3/#bib-sparql11-service-description)\], an \[[OpenSearch](https://www.w3.org/TR/vocab-dcat-3/#bib-opensearch)\] or \[[WSDL20](https://www.w3.org/TR/vocab-dcat-3/#bib-wsdl20)\] document, a Hydra API description \[[HYDRA](https://www.w3.org/TR/vocab-dcat-3/#bib-hydra)\], else in text or some other informal mode if a formal representation is not possible. | 0..\* |
 | [serves dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:data_service_serves_dataset) | A collection of data that this data service can distribute. | `dcat:servesDataset` | `dcat:Dataset` | NA  | 0..\* |
 
@@ -229,9 +217,8 @@ An available distribution of the dataset.
 
 #### Mandatory Properties
 
-|     |     |     |     |     |     |     |
-| --- | --- | --- | --- | --- | --- | --- |     
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** | **Example** |
+| --- | --- | --- | --- | --- | --- | --- |  
 | [title](http://purl.org/dc/terms/title) | A name given to the distribution. | `dct:title` | `rdfs:Literal` | the name of the dataset in combination with the format of the distribution can be used | 1..\* | CSV-distribution of the questionnaire data of the Personalised RISk-based MAmmascreening Study (PRISMA) |
 | [access URL](https://www.w3.org/TR/vocab-dcat-3/#Property:distribution_access_url) | A URL of the resource that gives access to a distribution of the dataset. E.g., landing page, feed, SPARQL endpoint. | `dcat:accessURL` | `IRI` | This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain information about how to get the Dataset. | 1..\* | NA  |
 | [media type](https://www.w3.org/TR/vocab-dcat-3/#Property:distribution_media_type) | The media type of the distribution as defined by IANA \[[IANA-MEDIA-TYPES](https://www.w3.org/TR/vocab-dcat-3/#bib-iana-media-types)\]. | `dcat:mediaType` | `IRI` | This property _SHOULD_ be used when the media type of the distribution is defined in IANA \[[IANA-MEDIA-TYPES](https://www.w3.org/TR/vocab-dcat-3/#bib-iana-media-types)\], otherwise `dcterms:format` _MAY_ be used with different values. | 1..\* | https://www.iana.org/assignments/media-types/text/csv |
@@ -239,9 +226,8 @@ An available distribution of the dataset.
 
 #### Recommended Properties
 
-|     |     |     |     |     |     |
-| --- | --- | --- | --- | --- | --- |     
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
+| --- | --- | --- | --- | --- | --- |
 | [access service](https://www.w3.org/TR/vocab-dcat-3/#Property:distribution_access_service) | A data service that gives access to the distribution of the dataset | `dcat:accessService` | `dcat:DataService` | `dcat:accessService` _SHOULD_ be used to link to a description of a `dcat:DataService` that can provide access to this distribution. | 0..\* |
 | [download URL](https://www.w3.org/TR/vocab-dcat-3/#Property:distribution_download_url) | The URL of the downloadable file in a given format. E.g., CSV file or RDF file. The format is indicated by the distribution's `dcterms:format` and/or `dcat:mediaType` | `dcat:downloadURL` | `IRI` | NA  | 0..\* |
 
@@ -251,9 +237,8 @@ An entity that is associated with catalog and/or Datasets. Agent can be individu
 
 #### Mandatory Properties
 
-|     |     |     |     |     |     |
-| --- | --- | --- | --- | --- | --- |     
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
+| --- | --- | --- | --- | --- | --- |   
 | [name](http://xmlns.com/foaf/spec/#term_name) | A name for some thing. | `foaf:name` | `xsd:string` | This property contains a name of the agent. This property can be repeated for different versions of the name (e.g. the name in different languages) | 1..1 |
 | [identifier](http://purl.org/dc/terms/identifier) | A unique identifier of the resource being described or catalog. | `dct:identifier` | `rdfs:Literal` |   A unique identifier of a person or organisation being described, like [ORCID](https://orcid.org) for a researcher or [ROR](https://ror.org) for an organization.  | 1..1 |
 
@@ -267,17 +252,15 @@ Contact information of the contact point for Dataset and DatasetSeries.
 
 #### Mandatory Properties
 
-|     |     |     |     |     |     |
-| --- | --- | --- | --- | --- | --- |     
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
+| --- | --- | --- | --- | --- | --- | 
 | [formatted name](https://w3.org/TR/vcard-rdf/#d4e891) | The full name of the object | `vcard:fn` | `xsd:string` | NA  | 1   |
 | [has email](https://www.w3.org/TR/vcard-rdf/#d4e183) | To specify the electronic mail address for communication with the object | `vcard:hasEmail` | `IRI` | NA  | 1   |
 
 #### Recommended Properties
 
-|     |     |     |     |     |     |
-| --- | --- | --- | --- | --- | --- |     
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
+| --- | --- | --- | --- | --- | --- | 
 | [has url](https://www.w3.org/TR/vcard-rdf/#d4e183) | To specify a URL associated with the contact point | `vcard:hasURL` | `IRI` | NA  | 0..n |
 
 ### Cataloged Resource
