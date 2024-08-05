@@ -76,7 +76,6 @@
     sh:node :AgentShape ;
     dash:editor dash:BlankNodeEditor ;
     dash:viewer dash:DetailsViewer ;
-    sh:minCount 1;
   ],
   [
     sh:path dcat:theme ;
