@@ -14,7 +14,7 @@
     sh:path dcat:contactPoint ;
     #sh:class vcard:Kind ;
     sh:node :KindShape ;
-    sh:minCount 1 ;
+    sh:maxCount 1 ;
     sh:name "Contact point" ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
