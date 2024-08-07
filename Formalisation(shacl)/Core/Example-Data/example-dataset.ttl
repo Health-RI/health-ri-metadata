@@ -98,7 +98,7 @@
         vcard:hasEmail <mailto:foo.bar@health-ri.nl> ;
         vcard:fn "Foo Bar" ;
     ] ;
-dct:license <https://opensource.org/license/mit>;
+    dct:license <https://opensource.org/license/mit>;
 dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime  .
 
 
