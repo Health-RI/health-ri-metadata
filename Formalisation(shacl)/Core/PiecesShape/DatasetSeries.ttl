@@ -60,10 +60,12 @@
     sh:path dct:license ;
     sh:nodeKind sh:IRI ;
     sh:maxCount 1 ;
+    sh:maxCount 1 ;
   ],
   [
     sh:path dct:modified ;
     sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
     sh:maxCount 1 ;
     dash:editor dash:DatePickerEditor ;
     dash:viewer dash:LiteralViewer ;
@@ -73,6 +75,7 @@
     sh:node :AgentShape ;
     dash:editor dash:BlankNodeEditor ;
     dash:viewer dash:DetailsViewer ;
+    sh:minCount 1 ;
   ],
   [
     sh:path dcat:theme ;
@@ -92,16 +95,8 @@
     sh:class dcat:Distribution ;
   ],
   [
-    sh:path dct:relation ;
-    sh:nodeKind sh:IRI ;
-    sh:class foaf:Project ;
-    dash:editor dash:URIEditor ;
-    dash:viewer dash:LabelViewer ;
-  ],
-  [
     sh:path dcat:hasVersion ;
     sh:datatype xsd:string ;
-    #sh:minCount 0 ; #TDB
     sh:name "Has Version" ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer 

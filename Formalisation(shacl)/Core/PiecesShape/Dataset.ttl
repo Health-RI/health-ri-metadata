@@ -14,7 +14,7 @@
     sh:path dcat:contactPoint ;
     #sh:class vcard:Kind ;
     sh:node :KindShape ;
-    sh:maxCount 1 ;
+    sh:minCount 1 ;
     sh:name "Contact point" ;
     dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
@@ -40,7 +40,7 @@
     sh:nodeKind  sh:Literal;
     dash:editor dash:TextFieldEditor ;
     dash:viewer dash:LiteralViewer ;
-    sh:maxCount 1 ;
+    sh:minCount 1 ;
     sh:uniqueLang true ;
   ],
   [
@@ -62,6 +62,7 @@
   [
     sh:path dct:license ;
     sh:nodeKind sh:IRI ;
+    sh:minCount 1 ;
     sh:maxCount 1 ;
     dash:viewer dash:LabelViewer ;
     dash:editor dash:URIEditor ;
@@ -69,6 +70,7 @@
   [
     sh:path dct:modified ;
     sh:datatype xsd:dateTime ;
+    sh:minCount 1 ;
     sh:maxCount 1 ;
     dash:editor dash:DateTimePickerEditor ;
     dash:viewer dash:LiteralViewer ;
@@ -78,6 +80,7 @@
     sh:node :AgentShape ;
     dash:editor dash:BlankNodeEditor ;
     dash:viewer dash:DetailsViewer ;
+    sh:minCount 1;
   ],
   [
     sh:path dcat:theme ;
@@ -97,16 +100,8 @@
     sh:class dcat:Distribution ;
   ],
   [
-    sh:path dct:relation ;
-    sh:nodeKind sh:IRI ;
-    sh:class foaf:Project ;
-    dash:editor dash:URIEditor ;
-    dash:viewer dash:LabelViewer ;
-  ],
-  [
     sh:path dcat:version ;
     sh:nodeKind sh:Literal ;
-    #sh:minCount 0 ; #TBD
     sh:name "Has Version" ;
     dash:editor dash:TextFieldEditor ;
     dash:viewer dash:LabelViewer ;

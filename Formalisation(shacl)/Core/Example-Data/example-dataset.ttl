@@ -19,7 +19,13 @@
     dcat:contactPoint [
         vcard:hasEmail <mailto:foo.bar@health-ri.nl> ;
         vcard:fn "Foo Bar" ;
-    ] .
+    ] ;
+    dct:publisher [ a foaf:Agent ;
+        dct:identifier "https://nl.wikipedia.org/wiki/J.K._Rowling" ;
+        foaf:name "Joanne Rowling" 
+    ] ;
+    dct:license <https://opensource.org/license/mit>;
+    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime    .
 
 
 <http://example.com/dataset/1> a dcat:Dataset ;
@@ -38,7 +44,14 @@
     dcat:keyword " muggles",
         " technic",
         "magic" ;
-    dcat:theme <https://harrypotter.fandom.com/wiki/Muggle_Studies> .
+    dcat:theme <https://harrypotter.fandom.com/wiki/Muggle_Studies> ;
+    dcat:contactPoint [
+        vcard:hasEmail <mailto:foo.bar@health-ri.nl> ;
+        vcard:fn "Foo Bar" ;
+    ];
+    dct:license <https://opensource.org/license/mit>;
+    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime  .
+
 
 <http://example.com/dataset/2> a dcat:Dataset ;
     dct:creator [ a foaf:Agent ;
@@ -58,7 +71,14 @@
     dcat:theme <https://harrypotter.fandom.com/wiki/Half-blood>,
         <https://harrypotter.fandom.com/wiki/Muggle-born>,
         <https://harrypotter.fandom.com/wiki/Muggle_Studies>,
-        <https://harrypotter.fandom.com/wiki/Pure-blood> .
+        <https://harrypotter.fandom.com/wiki/Pure-blood> ;
+        dcat:contactPoint [
+        vcard:hasEmail <mailto:foo.bar@health-ri.nl> ;
+        vcard:fn "Foo Bar" ;
+    ] ;
+    dct:license <https://opensource.org/license/mit>;
+    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime .
+
 
 <http://example.com/dataset/3> a dcat:Dataset ;
     dct:creator [ a foaf:Agent ;
@@ -73,7 +93,14 @@
             foaf:name "House of Ravenclaw" ] ;
     dct:title "Ravenclaw research project" ;
     dcat:keyword "linguastics spell" ;
-    dcat:theme <https://harrypotter.fandom.com/wiki/List_of_spells> .
+    dcat:theme <https://harrypotter.fandom.com/wiki/List_of_spells> ;
+    dcat:contactPoint [
+        vcard:hasEmail <mailto:foo.bar@health-ri.nl> ;
+        vcard:fn "Foo Bar" ;
+    ] ;
+    dct:license <https://opensource.org/license/mit>;
+    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime  .
+
 
 <http://example.com/dataset/4> a dcat:Dataset ;
     dct:creator [ a foaf:Agent ;
@@ -88,5 +115,12 @@
             foaf:name "House of Hufflepuff" ] ;
     dct:title "Hufflepuff research project" ;
     dcat:keyword "domestic elf" ;
-    dcat:theme <https://harrypotter.fandom.com/wiki/House-elf> .
+    dcat:theme <https://harrypotter.fandom.com/wiki/House-elf> ;
+    dcat:contactPoint [
+        vcard:hasEmail <mailto:foo.bar@health-ri.nl> ;
+        vcard:fn "Foo Bar" ;
+    ]; 
+    dct:license <https://opensource.org/license/mit>;
+    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime .
+
 

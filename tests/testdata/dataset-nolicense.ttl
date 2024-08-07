@@ -1,0 +1,27 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+
+
+<http://example.com/dataset> a dcat:Dataset ;
+    dct:title "Example Dataset" ;
+    dct:description "This is an example dataset to test the shapes" ;
+    dct:identifier "test-dataset-id-0" ;
+    dct:issued "2024-05-27T15:00:00+02:00"^^xsd:dateTime ;
+    dct:modified "2024-05-27T15:00:00+02:00"^^xsd:dateTime ;
+    dcat:theme <http://www.wikidata.org/entity/Q1141613> ;
+    dct:creator [
+        a foaf:Agent ;
+        foaf:name "Test" ;
+        dct:identifier "test-creator-id-000" ;
+    ] ;
+    dcat:contactPoint [
+        vcard:hasEmail <mailto:foo.bar@health-ri.nl> ;
+        vcard:fn "Foo Bar" ;
+    ] ;
+    dct:publisher [ a foaf:Agent ;
+        dct:identifier "https://nl.wikipedia.org/wiki/J.K._Rowling" ;
+        foaf:name "Joanne Rowling" 
+    ] .
