@@ -48,11 +48,13 @@
     sh:nodeKind sh:Literal ;
     dash:editor dash:TextFieldEditor ;
     dash:viewer dash:LiteralViewer ;
+    sh:minCount 1 ;
     sh:maxCount 1 ;
   ],
   [
     sh:path dct:issued ;
     sh:datatype xsd:dateTime ;
+    sh:minCount 1 ;
     sh:maxCount 1 ;
     dash:editor dash:DateTimePickerEditor ;
     dash:viewer dash:LiteralViewer ;
@@ -60,6 +62,7 @@
   [
     sh:path dct:license ;
     sh:nodeKind sh:IRI ;
+    sh:minCount 1 ;
     sh:maxCount 1 ;
     dash:viewer dash:LabelViewer ;
     dash:editor dash:URIEditor ;
@@ -67,6 +70,7 @@
   [
     sh:path dct:modified ;
     sh:datatype xsd:dateTime ;
+    sh:minCount 1 ;
     sh:maxCount 1 ;
     dash:editor dash:DateTimePickerEditor ;
     dash:viewer dash:LiteralViewer ;
