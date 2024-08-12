@@ -1,7 +1,7 @@
 # Core Metadata Schema Specification
 
 ## Latest published version
-Plateau 1: [https://github.com/Health-RI/health-ri-metadata/tree/master/Formalisation(shacl)/Core/PiecesShape](https://github.com/Health-RI/health-ri-metadata/tree/master/Formalisation(shacl)/Core/PiecesShape)
+Latest version [available here](https://github.com/Health-RI/health-ri-metadata/releases/tag/v1.0.0)
 
 ## Purpose and audience
 
@@ -28,6 +28,8 @@ This repository outlines the Core Metadata Schema, detailing the classes and ent
     * [Cataloged Resource](#cataloged-resource)
 * [Feedback, Support, Extension and Implementation](#further-information)
 
+## Contributing
+If you would like to contribute or have an issue/question, please refer to the Contribution file.
 ## Introduction
 
 ### Scope
@@ -269,10 +271,6 @@ All things described by RDF are called _resources_, and they are instances of th
 
 ## Further Information
 
-### Feedback - Git Issues
-
-If you wish to extend the model, such as with Resource, and/or create a new concept, please open an issue [here](https://github.com/Health-RI/health-ri-metadata/issues) and provide a clear explanation for the extension. Assign the issue to either ‘**brunasv’ or ‘xiaofengleo’**, and we will work with you to implement the addition in the next release.
-
 ### Model extension
 
 Within DCAT and DCAT-AP, the term "resource" generally encompasses all objects that can be described using [RDF](https://www.w3.org/RDF/). However, there are specific categories and attributes used to indicate the different types of resources:
@@ -311,8 +309,8 @@ To create the current core metadata schema, we examined existing metadata from t
 
 ### Implementation
 
-The model is part of the requirements to onboard to the Health-RI catalog, and documentation for users is not yet released. However, users can start the onboarding process by publishing their metadata according to this schema in a FAIR Data Point. To start:
-- read the explanation of all classes and properties in the [Core Metadata Schema Specification](https://github.com/Health-RI/health-ri-metadata) 
+The model is part of the requirements to onboard to the Health-RI catalog. Users can start the onboarding process by publishing their metadata according to this schema in a FAIR Data Point. To start:
+- read the explanation of all classes and properties above,
 - collect and map your metadata instances to the model using this [example metadata collection sheet](https://github.com/Health-RI/health-ri-metadata/blob/master/Implementation/metadata%20collection%20sheet%20template.xlsx)
 - import the provided [shacl](https://github.com/Health-RI/health-ri-metadata/tree/master/Formalisation(shacl)/Core/PiecesShape) to your FDP (note: tutorial on how to configure your FDP for Health-RI's requirements is being developed)
 - For a complete overview of the onboarding process, users can look for the [Metadata Onboarding on the National Catalogue](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/279150593) with details on how to implement and connect to it.
