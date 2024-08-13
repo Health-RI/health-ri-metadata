@@ -28,8 +28,6 @@ This repository outlines the Core Metadata Schema, detailing the classes and ent
     * [Cataloged Resource](#cataloged-resource)
 * [Feedback, Support, Extension and Implementation](#further-information)
 
-## Contributing
-If you would like to contribute or have an issue/question, please refer to the Contribution file.
 ## Introduction
 
 ### Scope
