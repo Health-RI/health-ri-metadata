@@ -9,7 +9,7 @@
     dct:title "Example Dataset" ;
     dct:description "This is an example dataset to test the shapes" ;
     dct:identifier "test-dataset-id-0" ;
-    dct:issued "2024-05-27T15:00:00z"^^xsd:dateTime ;
+    dct:issued "2024-05-27T15:00:00.923z"^^xsd:dateTime ;
     dcat:theme <http://www.wikidata.org/entity/Q1141613> ;
     dct:creator [
         a foaf:Agent ;
@@ -25,7 +25,7 @@
         foaf:name "Joanne Rowling" 
     ] ;
     dct:license <https://opensource.org/license/mit>;
-    dct:modified "2024-07-11T11:48:00Z"^^xsd:dateTime    .
+    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime    .
 
 
 <http://example.com/dataset/1> a dcat:Dataset ;
@@ -36,7 +36,7 @@
 
     dct:description "Impact of muggle technical inventions on word's magic presense" ;
     dct:identifier "test-dataset-id-1" ;
-    dct:issued "1992-03-04T00:00:00Z"^^xsd:dateTime ;
+    dct:issued "1992-03-04T00:00:00.923Z"^^xsd:dateTime ;
     dct:publisher [ a foaf:Agent ;
             dct:identifier "https://harrypotter.fandom.com/wiki/Gryffindor" ;
             foaf:name "House of Gryffindor" ] ;
@@ -50,7 +50,7 @@
         vcard:fn "Foo Bar" ;
     ];
     dct:license <https://opensource.org/license/mit>;
-    dct:modified "2024-07-11T11:48:00Z"^^xsd:dateTime  .
+    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime  .
 
 
 <http://example.com/dataset/2> a dcat:Dataset ;
@@ -60,7 +60,7 @@
             vcard:hasUID <https://harrypotter.fandom.com/wiki/Draco_Malfoy> ] ;
     dct:description "Comarative analysis of magic powers of muggle-born and blood wizards " ;
     dct:identifier "test-dataset-id-12" ;
-    dct:issued "1992-05-25T00:00:00Z"^^xsd:dateTime ;
+    dct:issued "1992-05-25T00:00:00.923Z"^^xsd:dateTime ;
     dct:publisher [ a foaf:Agent ;
             dct:identifier "https://harrypotter.fandom.com/wiki/Slytherin" ;
             foaf:name "House of Slytherin" ] ;
@@ -77,7 +77,7 @@
         vcard:fn "Foo Bar" ;
     ] ;
     dct:license <https://opensource.org/license/mit>;
-    dct:modified "2024-07-11T11:48:00Z"^^xsd:dateTime .
+    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime .
 
 
 <http://example.com/dataset/3> a dcat:Dataset ;
@@ -87,7 +87,7 @@
             vcard:hasUID <https://harrypotter.fandom.com/wiki/Luna_Lovegood> ] ;
     dct:description "Linguistic analysis of spells" ;
     dct:identifier "test-dataset-id-3" ;
-    dct:issued "1992-05-26T00:00:00Z"^^xsd:dateTime ;
+    dct:issued "1992-05-26T00:00:00.923Z"^^xsd:dateTime ;
     dct:publisher [ a foaf:Agent ;
             dct:identifier "https://harrypotter.fandom.com/wiki/Ravenclaw" ;
             foaf:name "House of Ravenclaw" ] ;
@@ -99,7 +99,7 @@
         vcard:fn "Foo Bar" ;
     ] ;
     dct:license <https://opensource.org/license/mit>;
-    dct:modified "2024-07-11T11:48:00Z"^^xsd:dateTime  .
+    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime  .
 
 
 <http://example.com/dataset/4> a dcat:Dataset ;
@@ -109,7 +109,7 @@
             vcard:hasUID <https://harrypotter.fandom.com/wiki/Dora_Williams> ] ;
     dct:description "Domestics elfs reproduction rate changes in the last 100 years" ;
     dct:identifier "test-dataset-id-4" ;
-    dct:issued "1992-05-27T00:00:00Z"^^xsd:dateTime ;
+    dct:issued "1992-05-27T00:00:00.923Z"^^xsd:dateTime ;
     dct:publisher [ a foaf:Agent ;
             dct:identifier "https://harrypotter.fandom.com/wiki/Hufflepuff" ;
             foaf:name "House of Hufflepuff" ] ;
@@ -121,5 +121,5 @@
         vcard:fn "Foo Bar" ;
     ]; 
     dct:license <https://opensource.org/license/mit>;
-    dct:modified "2024-07-11T11:48:00Z"^^xsd:dateTime .
+    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime .
 
