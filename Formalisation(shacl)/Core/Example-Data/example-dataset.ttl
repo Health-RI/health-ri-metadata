@@ -121,5 +121,5 @@
         vcard:fn "Foo Bar" ;
     ]; 
     dct:license <https://opensource.org/license/mit>;
-    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime .
+    dct:modified "2024-07-11T11:48:00Z"^^xsd:dateTime .
 
