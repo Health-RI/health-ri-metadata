@@ -11,7 +11,7 @@ from pyshacl import validate
         ("DataService", "example-dataservice"),
     ],
 )
-def test_core_shapes(shacl, example):
+def test_core_shapes_examples(shacl, example):
     shacl_graph = get_shacl_path(shacl)
     example_graph = get_example_path(example)
 
@@ -35,6 +35,25 @@ def test_core_shapes(shacl, example):
     ],
 )
 def test_core_shapes_negative(shacl, example):
+    shacl_graph = get_shacl_path(shacl)
+    example_graph = get_testcase_path(example)
+
+    conform, _, result_text = validate(
+        data_graph=example_graph,
+        shacl_graph=shacl_graph,
+        allow_warnings=False,
+        meta_shacl=True,
+    )
+    assert not conform, result_text
+
+
+@pytest.mark.parametrize(
+    ("shacl", "example"),
+    [
+        ("Dataset", "dataset-iso8601"),
+    ],
+)
+def test_core_shapes_good(shacl, example):
     shacl_graph = get_shacl_path(shacl)
     example_graph = get_testcase_path(example)
 
