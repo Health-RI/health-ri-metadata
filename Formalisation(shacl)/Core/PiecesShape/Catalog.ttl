@@ -7,10 +7,10 @@
 
 :CatalogShape a sh:NodeShape ;
   sh:targetClass dcat:Catalog ;
-  sh:property 
-  [  
+  sh:property
+  [
     sh:path dcat:dataset ;
-    sh:or 
+    sh:or
     ([
       sh:class dcat:Dataset ;
     ]
@@ -30,7 +30,7 @@
     
     dash:viewer dash:LiteralViewer ;
     dash:editor dash:TextAreaEditor ;
-  ], 
+  ],
   [
     sh:path dct:publisher ;
     sh:minCount 1 ;
@@ -45,7 +45,7 @@
     dash:viewer dash:LiteralViewer ;
     sh:minCount 1 ;
     sh:uniqueLang true ;
-  ], 
+  ],
   [
     sh:path dcat:catalog ;
     sh:class dcat:Catalog ;
@@ -57,8 +57,8 @@
 
 
   :AgentShape  a   sh:NodeShape;
-    sh:property     
-    [ 
+    sh:property
+    [
     sh:path      foaf:name;
     sh:nodeKind  sh:Literal;
     dash:editor dash:TextFieldEditor;
@@ -76,4 +76,3 @@
   ];
   
   sh:targetClass  foaf:Agent .
-  
