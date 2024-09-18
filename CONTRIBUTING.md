@@ -1,26 +1,25 @@
 # Contributing to the Health-RI metadata schema
 Thanks for taking the time to contribute! ❤️ All types of contributions are encouraged and valued. See the [Table of Contents](#table-of-contents) for different ways to help and details on how the issues are handled. Please make sure to read the relevant section before making your contribution. It will make it a lot easier for us maintainers and smooth out the experience for all involved. We look forward to your contributions. 🎉
-Please note: this GitHub page is about the Health-RI metadata model. If you have a question or an issue with the implementation of Fair Data Point, please contact servicedesk@health-ri.nl. 
+Please note: this GitHub page is about the Health-RI metadata model. If you have a question or an issue with the implementation of FAIR Data Points, please contact servicedesk@health-ri.nl. 
 ## Table of Contents
 - [I have a question](#i-have-a-question)
 - [I want to report a bug](#i-want-to-report-a-bug)
 - [I want to suggest enhancements](#i-want-to-suggest-enhancements)
 - [I want to join the modeling team](#i-want-to-join-the-modeling-team)
 ## I Have a Question
-> If you want to ask a general question, we assume that you have read the available [Documentation](https://github.com/Health-RI/health-ri-metadata/blob/master/README.md).
+If you want to ask a general question, we assume that you have read the available [Documentation](https://github.com/Health-RI/health-ri-metadata/blob/master/README.md).
 If you then still feel the need to ask a question or need clarification, please direct your question to servicedesk@health-ri.nl. This will create a ticket in Topdesk and we will then take care of it as soon as possible.
 ## I want to report a bug
-### Reporting Bugs
 #### Before Submitting a Bug Report
 A good bug report shouldn't leave others needing to chase you up for more information. Therefore, we ask you to investigate carefully, collect information and describe the issue in detail in your report. Please complete the following steps in advance to help us fix any potential bug as fast as possible.
 - Make sure that you are using the [latest version](https://github.com/Health-RI/health-ri-metadata/releases).
 - Determine if your bug is really a bug and not an error on your side e.g. using incompatible environment
   components/versions (Make sure that you have read  the [documentation](https://github.com/Health-RI/health-ri-metadata/blob/master/README.md)). If you are looking for support, you might want to check [this section](#i-have-a-question).
-- To see if other users have experienced (and potentially already solved) the same issue you are having, check if there is not already a bug report existing for your bug or error in the [bug tracker](https://github.com/Health-RI/health-ri-metadata/issues)
+- To see if other users have experienced (and potentially already solved) the same issue you are having, check if there is not already a bug report existing for your bug or error in the [bug tracker](https://github.com/Health-RI/health-ri-metadata/issues).
 - Collect information about the bug:
   - Stack trace (Traceback)
-  - OS, Platform and Version (Windows, Linux, macOS, x86, ARM)
-  - Version of the interpreter, compiler, SDK, runtime environment, package manager, depending on what seems relevant.
+  - OS, Platform and Version
+  - Version of the interpreter, compiler, SDK, runtime environment, package manager, depending on what seems relevant
   - Possibly your input and the output
   - Can you reliably reproduce the issue? And can you also reproduce it with older versions?
 #### How Do I Submit a Good Bug Report?
