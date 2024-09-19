@@ -1,0 +1,65 @@
+name: "Draft version 2 feedback"
+description: "Metadata model draft version 2 feedback form"
+title: "feedback: "
+labels: ["draft-v2-feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Health-RI metadata model version 2 draft feedback
+
+        Please use this form to describe feedback related to the plateau 2 draft version of the core / generic health metadata schema (link).
+
+  - type: checkboxes
+    id: version-check
+    attributes:
+      label: Version check
+      description: Please confirm that you have referenced the correct version of the metadata schema for review
+      options:
+        - label: "My issue concerns the draft v2 model"
+          required: true
+
+  - type: checkboxes
+    id: duplicate-check
+    attributes:
+      label: Duplicate check
+      description: Please confirm that this issue has not been reported before.
+      options:
+        - label: "I have searched both open and closed issues and found no similar reports."
+          required: true
+
+  - type: input
+    id: class-and-property
+    attributes:
+      label: "Class and property"
+      description: "Which class and/or property does the issue concern? If your comment is general, please fill 'General'"
+      placeholder: ""
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: "Issue description"
+      description: "Please describe the issue / review point you encountered"
+      placeholder: ""
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-change
+    attributes:
+      label: "Proposed change"
+      description: "Please describe your proposed adjustment or addition to the metadata model"
+      placeholder: ""
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Priority"
+      description: "Indicate/choose the priority level of your issue"
+      multiple: false
+      options:
+        - "Must have"
+        - "Should have"
+        - "Nice to have"
