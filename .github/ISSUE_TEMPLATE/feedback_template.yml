@@ -57,7 +57,7 @@ body:
     id: priority
     attributes:
       label: "Priority"
-      description: "Indicate/choose the priority level of your issue"
+      description: "Please indicate the priority level of your issue"
       multiple: false
       options:
         - "Must have"
