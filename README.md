@@ -124,9 +124,11 @@ A curated collection of metadata about resources. A web-based data catalog is ty
    
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** | **Example** |
 | --- | --- | --- | --- | --- | --- | --- |  
-| [title](http://purl.org/dc/terms/title) | A name given to the resource. | `dct:title` | `rdfs:Literal` | A name given to the catalogue. This property can be repeated for providing titles in different languages. This is a required field and needs to be unique. | 1..\* | Inflammatory Bowel Disease catalogue,  <br>Inflammatoire darmziekten catalogus |
+| [title](http://purl.org/dc/terms/title) | A name given to the Catalogue. | `dct:title` | `rdfs:Literal` | A name given to the catalogue. This property can be repeated for providing titles in different languages. This is a required field and needs to be unique. | 1..\* | Inflammatory Bowel Disease catalogue,  <br>Inflammatoire darmziekten catalogus |
 | [description](http://purl.org/dc/terms/description) | A free-text account of the record. | `dct:description` | `rdfs:Literal` | A brief informative description of the catalogue. This property can be repeated for descriptions in different languages. | 1..\* | This catalogue describes the core metadata of AUMC Inflammatory Bowel Disease datasets or  <br>This catalogue describes breast cancer imaging, clinical and omics datasets. |
-| [publisher](http://purl.org/dc/terms/publisher) | The entity responsible for making the catalogue available. | `dct:publisher` | `foaf:Agent` | The organization that published the catalogue (e.g. the specific UMC in question). In case of a multicenter study, the publisher is the organisation who makes the catalogue available online. To list multiple organisations involved, refer to the "creator" property. | 1..\* | name: Radboud University Medical Center  <br>identifier: https://ror.org/05wg1m734  <br>(see class foaf: Agent) |
+| [publisher](http://purl.org/dc/terms/publisher) | An entity (organisation) responsible for making the Catalogue available. | `dct:publisher` | `foaf:Agent` | The organization that published the catalogue (e.g. the specific UMC in question). In case of a multicenter study, the publisher is the organisation who makes the catalogue available online. To list multiple organisations involved, refer to the "creator" property. | 1 | name: Radboud University Medical Center  <br>identifier: https://ror.org/05wg1m734  <br>(see class foaf: Agent) |
+| [contact point](https://www.w3.org/TR/vocab-dcat-3/#Property:resource_contact_point) | Relevant contact information for the Catalogue. | `dcat:contactPoint` | `vcard:Kind` | TBA |
+| [applicable legislation](https://semiceu.github.io/DCAT-AP/r5r/releases/3.0.0/#applicableLegislation) | The legislation that mandates the creation or management of the Catalog. | `dcatap:applicableLegislation` | `eli:LegalResource` | TBA |
 
 #### Recommended Properties
     
@@ -135,6 +137,18 @@ A curated collection of metadata about resources. A web-based data catalog is ty
 | [catalog](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_catalog) | A catalog that is listed in the catalog. | `dcat:catalog` | `dcat:Catalog` | NA  | 0..\* |
 | [dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset) | relates every catalog to its containing datasets. | `dcat:dataset` | `dcat:Dataset` | The connection to the one or more datasets that this catalog describes. | 0..\* |
 | [service](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_service) | A service that is listed in the catalog. | `dcat:service` | `dcat:DataService` | NA  | 0..\* |
+| [creator](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#creator) | An entity responsible for the creation of the catalogue. | `dct:creator` | `foaf:Agent` | NA  | 0..\* |
+| [geographical coverage](http://purl.org/dc/terms/spatial) | A geographical area covered by the Catalogue. | `dct:spatial` | `dct:Location` | NA  | 0..\* |
+| [has part](http://purl.org/dc/terms/hasPart) | A related Catalogue that is part of the described Catalogue. | `dct:hasPart` | `dcat:Catalog` | NA  | 0..\* |
+| [home page](http://xmlns.com/foaf/spec/#term_homepage) | A web page that acts as the main page for the Catalogue. | `foaf:homepage` | `foaf:Document` | Could be a page describing the catalogue, incl. link to catalogue.  | 0..1 |
+| [language](http://purl.org/dc/terms/language) | A language used in the textual metadata describing titles, descriptions, etc. of the Datasets in the Catalogue. | `dct:language` | `dct:LinguisticSystem` | NA  | 0..\* |
+| [license](http://purl.org/dc/terms/license) | A licence under which the Catalogue can be used or reused. | `dct:license` | `dct:LicenseDocument` | NA  | 0..1 |
+| [modification date](http://purl.org/dc/terms/modified) | The most recent date on which the Catalogue was modified. | `dct:modified` | temporal literal | NA  | 0..1 |
+| [record](https://www.w3.org/ns/dcat#record) | A Catalogue Record that is part of the Catalogue. | `dcat:record` | `dcat:CatalogRecord` | NA  | 0..\* |
+| [release date](http://purl.org/dc/terms/issued) | The date of formal issuance (e.g., publication) of the Catalogue. | `dct:issued` | temporal literal | NA  | 0..1 |
+| [rights](http://purl.org/dc/terms/rights) | A statement that specifies rights associated with the Catalogue. | `dct:rights` | `dct:RightsStatement` | NA  | 0..1 |
+| [temporal coverage](http://purl.org/dc/terms/temporal) | A temporal period that the Catalogue covers. | `dct:temporal` | `dct:PeriodOfTime` | NA  | 0..\* |
+| [themes](https://www.w3.org/ns/dcat#themeTaxonomy) | A knowledge organisation system used to classify the Catalogue's Datasets. | `dcat:themeTaxanomy` | `skos:ConceptScheme` | This property refers to a knowledge organisation system used to classify the Catalogue's Datasets. It must have at least the value `NAL:data-theme` as this is the mandatory controlled vocabulary for dcat:theme.  | 0..\* |
 
 ### [Dataset](https://www.w3.org/TR/vocab-dcat-3/#Class:Dataset)
 
