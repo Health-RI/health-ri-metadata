@@ -330,12 +330,17 @@ An entity that is associated with catalog and/or Datasets. Agent can be individu
 
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
 | --- | --- | --- | --- | --- | --- |   
-| [name](http://xmlns.com/foaf/spec/#term_name) | A name for some thing. | `foaf:name` | `xsd:string` | This property contains a name of the agent. This property can be repeated for different versions of the name (e.g. the name in different languages) | 1..1 |
-| [identifier](http://purl.org/dc/terms/identifier) | A unique identifier of the resource being described or catalog. | `dct:identifier` | `rdfs:Literal` |   A unique identifier of a person or organisation being described, like [ORCID](https://orcid.org) for a researcher or [ROR](https://ror.org) for an organization.  | 1..1 |
+| [name](http://xmlns.com/foaf/spec/#term_name) | A name of the agent. | `foaf:name` | `rdfs:Literal` | This property contains a name of the agent. This property can be repeated for different versions of the name (e.g. the name in different languages) | 1..\* |
+| [identifier](http://purl.org/dc/terms/identifier) | A unique identifier of the agent. | `dct:identifier` | `rdfs:Literal` |   A unique identifier of a person or organisation being described, like [ORCID](https://orcid.org) for a researcher or [ROR](https://ror.org) for an organization.  | 1..1 |
 
 #### Recommended Properties
 
-No recommended properties are identified for this release.
+| **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
+| --- | --- | --- | --- | --- | --- |   
+| [type](http://purl.org/dc/terms/type) | A type of the agent that makes the Catalogue or Dataset available. | `dct:type` | `skos:Concept` | Property should be described using [ADMS vocabulary](http://purl.org/adms/publishertype/1.0) | 0..1 |
+| [URL](http://xmlns.com/foaf/spec/#term_homepage) | A webpage that either allows to make contact (i.e. a webform) or the information contains how to get into contact. | `foaf:homepage` | `rdfs:Resource` | NA | 0..1 |
+| [email](http://xmlns.com/foaf/spec/#term_mbox) | A email address via which contact can be made. This property SHOULD be used to provide the email address of the Agent, specified using fully qualified mailto: URI scheme [RFC6068]. The email SHOULD be used to establish a communication channel to the agent. | `foaf:mbox` | `rdfs:Resource` | NA | 0..\* |
+| [country](http://purl.org/dc/terms/spatial) | Country of the agent. | `dct:spatial` | `dct:Location` | Point to the country code URL from [Geonames](https://www.geonames.org/). | 0..\* | http://publications.europa.eu/resource/authority/place/NLD_AMS |
 
 ### Kind
 
@@ -345,14 +350,14 @@ Contact information of the contact point for Dataset and DatasetSeries.
 
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
 | --- | --- | --- | --- | --- | --- | 
-| [formatted name](https://w3.org/TR/vcard-rdf/#d4e891) | The full name of the object | `vcard:fn` | `xsd:string` | NA  | 1   |
-| [has email](https://www.w3.org/TR/vcard-rdf/#d4e183) | To specify the electronic mail address for communication with the object | `vcard:hasEmail` | `IRI` | NA  | 1   |
+| [formatted name](https://w3.org/TR/vcard-rdf/#d4e891) | The full name of the object | `vcard:fn` | `xsd:string` | NA  | 1 |
+| [has email](https://www.w3.org/TR/vcard-rdf/#d4e183) | A email address via which contact can be made. | `vcard:hasEmail` | `rdfs:Resource` | NA  | 1   |
 
 #### Recommended Properties
 
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
 | --- | --- | --- | --- | --- | --- | 
-| [has url](https://www.w3.org/TR/vcard-rdf/#d4e183) | To specify a URL associated with the contact point | `vcard:hasURL` | `IRI` | NA  | 0..n |
+| [contact page](https://www.w3.org/TR/vcard-rdf/#d4e605) | A webpage that either allows to make contact (i.e. a webform) or the information contains how to get into contact. | `vcard:hasURL` | `rdfs:Resource` | NA  | 0..\* |
 
 ### Cataloged Resource
 
