@@ -1,4 +1,5 @@
 # Core Metadata Schema Specification
+This is a draft version of Health-RI metadata schema 2.0 intended for review.
 
 ## Latest published version
 Latest version [available here](https://github.com/Health-RI/health-ri-metadata/releases/tag/v1.0.0)
@@ -25,6 +26,9 @@ This repository outlines the Core Metadata Schema, detailing the classes and ent
     * [Distribution](#distribution)
     * [Agent](#agent)
     * [Kind](#kind)
+    * [Checksum](#checksum)
+    * [Period of time](#period-of-time)
+    * [Catalogue Record](#catalogue-record)
     * [Cataloged Resource](#cataloged-resource)
 * [Feedback, Support, Extension and Implementation](#further-information)
 
@@ -34,11 +38,14 @@ This repository outlines the Core Metadata Schema, detailing the classes and ent
 
 To make it easier to share, find and reuse data, the Health-RI nodes decided to list resources in a national directory that can be accessed internationally. They all agreed on what basic information should be included, and that the catalog should be interoperable with other EU portals, which led to the creation of the Core Metadata Schema.
 
-This schema describes the minimum amount of information that should be used to describe resources across Health-RI nodes through the national directory, which is in line with what Plateau 1 offers. The schema can be changed or extended to meet the needs of different areas, and new versions will be released in the future.
+This schema describes the minimum amount of information that should be used to describe resources across Health-RI nodes through the national directory. The schema can be changed or extended to meet the needs of different areas, and new versions will be released in the future.
 
 ### Mandatory and Recommended
 
-Following the [DCAT-AP 3.0](https://semiceu.github.io/DCAT-AP/releases/3.0.0/) specification, we categorize components into `mandatory` and `recommended` classes and properties. A potential third category, `optional`, may be introduced in the future.
+In the version 2 of the schema, we extended the current version, which is based on the [DCAT-AP 3.0](https://semiceu.github.io/DCAT-AP/releases/3.0.0/) specification, by adding new properties from [HealthDCAT-AP](https://healthdcat-ap.github.io/) and [DCAT-AP NL](https://docs.geostandaarden.nl/dcat/dcat-ap-nl30/), as well as changing cardinalities in order to make it compatible with both extensions.
+Please note that [HealthDCAT-AP](https://healthdcat-ap.github.io/) is still in its draft version, so we made some properties less strict than what it currently specifies. Once the proper release is out, we will reevaluate and make our HRI schema compatible with the HealthDCAT-AP.
+
+In the HRI schema, we categorize components into `mandatory` and `recommended` classes and properties. A potential third category, `optional`, may be introduced in the future.
 
 In the context of data exchange:
 
@@ -68,16 +75,18 @@ According to [DCAT-AP](https://semiceu.github.io/DCAT-AP/releases/3.0.0/):
 
 | **Prefix** | **Namespace IRI** | **Source** |
 | --- | --- | --- | 
-| `dcat` | `http://www.w3.org/ns/dcat#` | \[[VOCAB-DCAT](https://w3c.github.io/dxwg/dcat/#bib-vocab-dcat "https://w3c.github.io/dxwg/dcat/#bib-vocab-dcat")\] |
-| `dct` | `http://purl.org/dc/terms/` | \[[DCT](https://w3c.github.io/dxwg/dcat/#bib-dcterms "https://w3c.github.io/dxwg/dcat/#bib-dcterms")\] |
-| `foaf` | `http://xmlns.com/foaf/0.1/` | \[[FOAF](https://w3c.github.io/dxwg/dcat/#bib-foaf "https://w3c.github.io/dxwg/dcat/#bib-foaf")\] |
-| `owl` | `http://www.w3.org/2002/07/owl#` | \[[OWL2-SYNTAX](https://w3c.github.io/dxwg/dcat/#bib-owl2-syntax "https://w3c.github.io/dxwg/dcat/#bib-owl2-syntax")\] |
-| `rdf` | `http://www.w3.org/1999/02/22-rdf-syntax-ns#` | \[[RDF-SYNTAX-GRAMMAR](https://w3c.github.io/dxwg/dcat/#bib-rdf-syntax-grammar "https://w3c.github.io/dxwg/dcat/#bib-rdf-syntax-grammar")\] |
-| `rdfs` | `http://www.w3.org/2000/01/rdf-schema#` | \[[RDF-SCHEMA](https://w3c.github.io/dxwg/dcat/#bib-rdf-schema "https://w3c.github.io/dxwg/dcat/#bib-rdf-schema")\] |
-| `skos` | `http://www.w3.org/2004/02/skos/core#` | \[[SKOS-REFERENCE](https://w3c.github.io/dxwg/dcat/#bib-skos-reference "https://w3c.github.io/dxwg/dcat/#bib-skos-reference")\] |
-| `time` | `http://www.w3.org/2006/time#` | \[[OWL-TIME](https://w3c.github.io/dxwg/dcat/#bib-owl-time "https://w3c.github.io/dxwg/dcat/#bib-owl-time")\] |
-| `xsd` | `http://www.w3.org/2001/XMLSchema#` | \[[XMLSCHEMA11-2](https://w3c.github.io/dxwg/dcat/#bib-xmlschema11-2 "https://w3c.github.io/dxwg/dcat/#bib-xmlschema11-2")\] |
-| `vcard` | `http://www.w3.org/2006/vcard/ns#` | \[[VCARD](https://www.w3.org/TR/vcard-rdf/ "https://www.w3.org/TR/vcard-rdf/")\] |
+| `adms` | `http://www.w3.org/ns/adms#` | [VOCAB-ADMS](https://www.w3.org/TR/vocab-dcat-3/#bib-vocab-adms) |
+| `dcat` | `http://www.w3.org/ns/dcat#` | [VOCAB-DCAT](https://w3c.github.io/dxwg/dcat/#bib-vocab-dcat) |
+| `dct` | `http://purl.org/dc/terms/` | [DCT](https://w3c.github.io/dxwg/dcat/#bib-dcterms) |
+| `foaf` | `http://xmlns.com/foaf/0.1/` | [FOAF](https://w3c.github.io/dxwg/dcat/#bib-foaf) |
+| `owl` | `http://www.w3.org/2002/07/owl#` | [OWL2-SYNTAX](https://w3c.github.io/dxwg/dcat/#bib-owl2-syntax) |
+| `rdf` | `http://www.w3.org/1999/02/22-rdf-syntax-ns#` | [RDF-SYNTAX-GRAMMAR](https://w3c.github.io/dxwg/dcat/#bib-rdf-syntax-grammar) |
+| `rdfs` | `http://www.w3.org/2000/01/rdf-schema#` | [RDF-SCHEMA](https://w3c.github.io/dxwg/dcat/#bib-rdf-schema) |
+| `skos` | `http://www.w3.org/2004/02/skos/core#` | [SKOS-REFERENCE](https://w3c.github.io/dxwg/dcat/#bib-skos-reference) |
+| `spdx` | `http://spdx.org/rdf/terms#` | [SPDX](https://www.w3.org/TR/vocab-dcat-3/#bib-spdx) |
+| `time` | `http://www.w3.org/2006/time#` | [OWL-TIME](https://w3c.github.io/dxwg/dcat/#bib-owl-time) |
+| `xsd` | `http://www.w3.org/2001/XMLSchema#` | [XMLSCHEMA11-2](https://w3c.github.io/dxwg/dcat/#bib-xmlschema11-2) |
+| `vcard` | `http://www.w3.org/2006/vcard/ns#` | [VCARD](https://www.w3.org/TR/vcard-rdf/) |
 
 ### Overview and Diagram
 
@@ -215,35 +224,12 @@ A meaningful collection of data, published or curated by a single organisation o
 | [qualified relation](https://semiceu.github.io/DCAT-AP/releases/3.0.0/#Dataset.qualifiedrelation) | A description of a relationship with another resource. | `dcat:qualifiedRelation` | `dcat:Relationship` | NA | 0..\* | NA |
 
 
-
-
-
 ### [Dataset Series](https://www.w3.org/TR/vocab-dcat-3/#Class:Dataset_Series)
 
+A collection of datasets that are published separately, but share some characteristics that group them.
 
-#### Mandatory Properties
-  
-| **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** | **Example** |
-| --- | --- | --- | --- | --- | --- | --- |   
-| [contact point](https://www.w3.org/TR/vocab-dcat-3/#Property:resource_contact_point) | Relevant contact information for the catalog resource. | `dcat:contactPoint` | `vcard:Kind` | Contact information that can be used for sending comments about the Dataset Series. Ideally, a data access committee or other service desk (a contact point that is rather persistent over time). | 1..\* | mailto: data-access-committee@xumc.nl  <br>with name Data Access Committee of the x UMC (see vcard:Kind) |
-| [creator](http://purl.org/dc/terms/creator) | The entity responsible for producing the resource. | `dct:creator` | `foaf:Agent` | The person or persons responsible for creating the dataset. | 1..\* | Jip Fictief, Inez Maginary, Fabio Abricated for name of foaf:Agent |
-| [description](http://purl.org/dc/terms/description) | A free-text account of the record | `dct:description` | `rdfs:Literal` | A free-text informative description of the dataset. This property can be repeated for providing descriptions in different languages. | 1..\* | The primary aim of the PRISMA study was to investigate the potential value of risk-tailored versus traditional breast cancer screening protocols in the Netherlands. Data collection took place between 2014-2019, resulting in ∼67,000 mammograms, ∼38,000 surveys, ∼10,000 blood samples and ∼600 saliva samples. |
-| [issued](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/issued/) | Date of formal issuance (e.g., publication) of the resource. | `dct:issued` | `xsd:dateTime` | The date and time when the dataset was first issued. | 1..1 | 2024-06-04T13:36:10.246Z |
-| [identifier](http://purl.org/dc/terms/identifier) | A unique identifier of the resource being described or catalogued. | `dct:identifier` | `xsd:string` | The main globally unique and persistent identifier of the dataset. Recommended practice is to identify the dataset by means of a string conforming to an identification system such as Digital Object Identifier (DOI). | 1..1 | https://doi.org/10.34894/ZLOYOJ |
-| [modified](http://purl.org/dc/terms/modified) | Most recent date on which the catalog entry was changed, updated or modified. | `dct:modified` | `xsd:dateTime` | The value indicates a change to the actual dataset, not a change to the catalog record. An absent value may indicate that the resource has never changed after its initial publication, or that the date of last modification is not known, or that the resource is continuously updated. | 1..1 | 2024-06-04T13:36:10.246Z |
-| [publisher](http://purl.org/dc/terms/publisher) | The entity responsible for making the resource available. | `dct:publisher` | `foaf:Agent` | The organization that published the dataset (e.g. the specific UMC in question). Can differ from catalogue publisher. | 1..\* | Radboud University Medical Center; identifier https://ror.org/05wg1m734 (see foaf: Agent) |
-| [theme](https://www.w3.org/TR/vocab-dcat-3/#Property:resource_theme) | A main category of the resource. A resource can have multiple themes. | `dcat:theme` | `IRI` | Consists of 1 or more IRIs (links) separated by commas. When set, it specifies relevant ontology concepts that classify the dataset. Typically, these can be looked up using the Ontology Lookup Service (OLS) or Bioportal | 1..\* | http://publications.europa.eu/resource/authority/data-theme/HEAL |
-| [title](http://purl.org/dc/terms/title) | A name given to the record. | `dct:title` | `rdfs:Literal` | A name given to the Dataset. This property can be repeated for providing names in parallel languages. | 1..\* | Questionnaire data of the Personalised RISk-based MAmmascreening Study (PRISMA) |
-| [license](http://purl.org/dc/terms/license) | A legal document under which the resource is made available. | `dct:license` | `IRI` | This should contain a URL that provides details regarding the license that is applicable to this dataset (open data commons, data access policy link etc.) | 1..1 | NA  |
+**Please note**: Dataset Series inherits its properties from the Dataset class. This means when you describe Dataset Series, refer to properties listed above, under [Dataset](#dataset) class.
 
-#### Recommended Properties
-  
-| **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** | **Example** |
-| --- | --- | --- | --- | --- | --- | --- |   
-| [distribution](https://www.w3.org/TR/vocab-dcat-3/#Property:dataset_distribution) | An available distribution of the dataset. | `dcat:distribution` | `dcat:Distribution` | Use this property to point to the distribution of this dataset when a distribution is available. | 0..\* | NA  |
-| [type](http://purl.org/dc/terms/type) | The nature or genre of the resource. | `dct:type` | `IRI` | The value SHOULD be taken from a well governed and broadly recognised controlled vocabulary, such as [DCMI Type vocabulary](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#DCMIType) | 0..\* | http://purl.org/dc/dcmitype/MovingImage |
-| [version](https://www.w3.org/TR/vocab-dcat-3/#Property:resource_version) | The version indicator (name or identifier) of a resource. | `dcat:version` | `rdfs:Literal` | NA  | 0..\* | NA  |
-| [in series](https://www.w3.org/TR/vocab-dcat-3/#Property:dataset_in_series) | A dataset series of which the dataset is part. | `dcat:inSeries` | `dcat:DatasetSeries` | NA  | 0..\* | NA  |
 
 ### [Data Service](http://www.w3.org/ns/dcat#DataService)
 ---------------------------------------------------------------------------------------------
@@ -342,7 +328,7 @@ An entity that is associated with catalog and/or Datasets. Agent can be individu
 | [email](http://xmlns.com/foaf/spec/#term_mbox) | A email address via which contact can be made. This property SHOULD be used to provide the email address of the Agent, specified using fully qualified mailto: URI scheme [RFC6068]. The email SHOULD be used to establish a communication channel to the agent. | `foaf:mbox` | `rdfs:Resource` | NA | 0..\* |
 | [country](http://purl.org/dc/terms/spatial) | Country of the agent. | `dct:spatial` | `dct:Location` | Point to the country code URL from [Geonames](https://www.geonames.org/). | 0..\* | http://publications.europa.eu/resource/authority/place/NLD_AMS |
 
-### Kind
+### [Kind](https://www.w3.org/TR/vcard-rdf/#d4e1819)
 
 Contact information of the contact point for Dataset and DatasetSeries.
 
@@ -359,9 +345,62 @@ Contact information of the contact point for Dataset and DatasetSeries.
 | --- | --- | --- | --- | --- | --- | 
 | [contact page](https://www.w3.org/TR/vcard-rdf/#d4e605) | A webpage that either allows to make contact (i.e. a webform) or the information contains how to get into contact. | `vcard:hasURL` | `rdfs:Resource` | NA  | 0..\* |
 
+### [Checksum](https://spdx.org/rdf/terms/#d4e2091)
+
+A value that allows the contents of a file to be authenticated. This class allows the results of a variety of checksum and cryptographic message digest algorithms to be represented.
+
+#### Mandatory Properties
+
+| **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
+| --- | --- | --- | --- | --- | --- | 
+| [algorithm](https://spdx.org/rdf/terms/#algorithm) | The algorithm used to produce the subject Checksum. | `spdx:algorithm` | `ChecksumAlgorithm` | NA  | 1 |
+| [checksum value](https://spdx.org/rdf/terms/#checksumValue) | A lower case hexadecimal encoded digest value produced using a specific algorithm. | `spdx:checksumValue` | `xsd:hexBinary` | NA  | 1  |
+
+#### Recommended Properties
+
+There are currently no recommended properties for this class.
+
+### [Period of time](https://semiceu.github.io/DCAT-AP/releases/3.0.0/#Periodoftime)
+
+An interval of time that is named or defined by its start and end dates.
+
+#### Mandatory Properties
+
+There are currently no mandatory properties for this class.
+
+#### Recommended Properties
+
+| **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
+| --- | --- | --- | --- | --- | --- | 
+| [start date](https://semiceu.github.io/DCAT-AP/releases/3.0.0/#Periodoftime.startdate) | The start of the period. | `dcat:startDate` | `xsd:dateTime` | NA  | 0..1 |
+| [end date](https://semiceu.github.io/DCAT-AP/releases/3.0.0/#Periodoftime.enddate) | The end of the period. | `dcat:endDate` | `xsd:dateTime` | NA  | 0..1  |
+
+### [Catalogue Record](https://semiceu.github.io/DCAT-AP/releases/3.0.0/#CatalogueRecord)
+
+A description of a Catalogued Resource's entry in the Catalogue.
+
+#### Mandatory Properties
+
+| **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
+| --- | --- | --- | --- | --- | --- |   
+| [primary topic](http://xmlns.com/foaf/spec/#term_primaryTopic) | A link to the Dataset, Data service or Catalog described in the record. | `foaf:primaryTopic ` | `dcat:Resource ` | A catalogue record will refer to one entity in a catalogue. This can be either a Dataset or a Data Service. To ensure an unambigous reading of the cardinality the range is set to Catalogued Resource. However it is not the intend with this range to require the explicit use of the class Catalogued Record. As abstract class, an subclass should be used. | 1 |
+| [modification date](http://purl.org/dc/terms/modified) | The most recent date on which the Catalogue entry was changed or modified. | `dct:modified` | `xsd:dateTime` |   NA  | 1 |
+| [language](http://purl.org/dc/terms/language) | A language used in the textual metadata describing titles, descriptions, etc. of the Dataset. | `dct:language` | `dct:LinguisticSystem ` |   This property can be repeated if the metadata is provided in multiple languages.  | 1..\* |
+
+#### Recommended Properties
+
+| **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
+| --- | --- | --- | --- | --- | --- |   
+| [title ](http://purl.org/dc/terms/title) | A name given to the Catalogue Record. | `dct:title` | `rdfs:Literal` | This property can be repeated for parallel language versions of the name. | 0..\* |
+| [description ](http://purl.org/dc/terms/description) | A free-text account of the record. This property can be repeated for parallel language versions of the description. | `dct:description` | `rdfs:Literal` | NA | 0..\* |
+| [listing date](http://purl.org/dc/terms/issued) | The date on which the description of the Dataset was included in the Catalogue. | `dct:issued` | `xsd:dateTime` | NA | 0..1 |
+| [application profile](http://purl.org/dc/terms/conformsTo) | An Application Profile that the Dataset's metadata conforms to. | `dct:conformsTo` | `dct:Standard` | NA | 0..1 |
+| [source metadata](http://purl.org/dc/terms/source) | The original metadata that was used in creating metadata for the Dataset. | `dct:source` | `dcat:CatalogRecord` | NA | 0..1 |
+| [change type](https://www.w3.org/TR/vocab-adms/#adms_status) | The status of the catalogue record in the context of editorial flow of the dataset and data service descriptions. | `adms:status` | `skos:Concept` | NA | 0..1 |
+
 ### Cataloged Resource
 
-All things described by RDF are called _resources_, and they are instances of the class `dcat:Resource`. This is the class of everything. All other classes are [subclasses](https://www.w3.org/TR/rdf12-schema/#def-subclass) of this class. To read more, go to
+All things described by RDF are called _resources_, and they are instances of the class `dcat:Resource`. This is the class of everything. All other classes are [subclasses](https://www.w3.org/TR/rdf12-schema/#def-subclass) of this class.
 
 ## Further Information
 
