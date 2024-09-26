@@ -65,3 +65,5 @@ body:
         - "Must have"
         - "Should have"
         - "Nice to have"
+    validations:
+      required: true
