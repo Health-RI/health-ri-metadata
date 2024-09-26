@@ -8,7 +8,9 @@ body:
       value: |
         ## Health-RI metadata model version 2 draft feedback
 
-        Please use this form to describe feedback related to the plateau 2 draft version of the core / generic health metadata schema (link).
+        Please use this form to describe feedback related to the plateau 2 draft version of the core / generic health metadata schema.
+        
+        You can find the draft version [here](https://github.com/Health-RI/health-ri-metadata/tree/develop).
 
   - type: checkboxes
     id: version-check
