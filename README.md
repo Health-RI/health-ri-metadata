@@ -290,7 +290,6 @@ An available distribution of the dataset.
 | [byte size](https://semiceu.github.io/DCAT-AP/releases/3.0.0/#Distribution.bytesize) | The size of a Distribution in bytes. | `dcat:byteSize` | `xsd:nonNegativeInteger` | NA  | 0..1 | NA  |
 | [description](http://purl.org/dc/terms/description) | A free-text account of the distribution. | `dct:description` | `rdfs:Literal` | This property can be repeated for parallel language versions of the description.  | 0..\* | NA  |
 | [title](http://purl.org/dc/terms/title) | A name given to the Distribution. | `dct:title` | `rdfs:Literal` | This property can be repeated for providing names in parallel languages. | 0..\* | NA |
-| [description](http://purl.org/dc/terms/description) | A free-text account of the Distribution. | `dct:description` | `rdfs:Literal` | This property can be repeated for parallel language versions of the description. | 0..\* | NA |
 | [download URL](https://www.w3.org/TR/vocab-dcat-3/#Property:distribution_download_url) | The URL of the downloadable file in a given format. E.g., CSV file or RDF file. The format is indicated by the distribution's `dcterms:format` and/or `dcat:mediaType` | `dcat:downloadURL` | `IRI` | NA  | 0..1 | NA |
 | [media type](https://www.w3.org/TR/vocab-dcat-3/#Property:distribution_media_type) | The media type of the distribution as defined by IANA \[[IANA-MEDIA-TYPES](https://www.w3.org/TR/vocab-dcat-3/#bib-iana-media-types)\]. | `dcat:mediaType` | `IRI` | This property _SHOULD_ be used when the media type of the distribution is defined in IANA \[[IANA-MEDIA-TYPES](https://www.w3.org/TR/vocab-dcat-3/#bib-iana-media-types)\], otherwise `dcterms:format` _MAY_ be used with different values. | 0..1 | https://www.iana.org/assignments/media-types/text/csv |
 | [release date](http://purl.org/dc/terms/issued) | The date of formal issuance (e.g., publication) of the Distribution. | `dct:issued` | `xsd:dateTime` | NA  | 0..1 | NA |
@@ -353,7 +352,7 @@ A value that allows the contents of a file to be authenticated. This class allow
 
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
 | --- | --- | --- | --- | --- | --- | 
-| [algorithm](https://spdx.org/rdf/terms/#algorithm) | The algorithm used to produce the subject Checksum. | `spdx:algorithm` | `ChecksumAlgorithm` | NA  | 1 |
+| [algorithm](https://spdx.org/rdf/terms/#algorithm) | The algorithm used to produce the subject Checksum. | `spdx:algorithm` | `spdx:ChecksumAlgorithm` | NA  | 1 |
 | [checksum value](https://spdx.org/rdf/terms/#checksumValue) | A lower case hexadecimal encoded digest value produced using a specific algorithm. | `spdx:checksumValue` | `xsd:hexBinary` | NA  | 1  |
 
 #### Recommended Properties
