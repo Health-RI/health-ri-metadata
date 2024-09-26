@@ -35,7 +35,7 @@ body:
     attributes:
       label: "Class and property"
       description: "Which class and/or property does the issue concern? If your comment is general, please fill 'General'"
-      placeholder: ""
+      placeholder: "Class: ..., Property: ..."
     validations:
       required: true
 
@@ -44,7 +44,7 @@ body:
     attributes:
       label: "Issue description"
       description: "Please describe the issue / review point you encountered"
-      placeholder: ""
+      placeholder: "My feedback is ..."
     validations:
       required: true
 
@@ -53,7 +53,7 @@ body:
     attributes:
       label: "Proposed change"
       description: "Please describe your proposed adjustment or addition to the metadata model"
-      placeholder: ""
+      placeholder: "I suggest to change to... / add ... / remove... / ..."
 
   - type: dropdown
     id: priority
