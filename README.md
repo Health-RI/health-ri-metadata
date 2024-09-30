@@ -32,7 +32,7 @@ Feedback to the draft version is being collected via issues in this repository, 
     * [Period of time](#period-of-time)
     * [Catalogue Record](#catalogue-record)
     * [Cataloged Resource](#cataloged-resource)
-* [Feedback, Support, Extension and Implementation](#further-information)
+* [Feedback, Support and Extension](#further-information)
 
 ## Introduction
 
@@ -449,13 +449,3 @@ and
 `rdfs:subClassOf dcat:Dataset .`
 
 When creating custom classes, it is essential to provide detailed metadata for each type of resource. This will enable users and systems to distinguish between them and comprehend their subtle differences. For instance, consider the distinction between a collection and a dataset. Therefore, it is crucial to provide specific and unambiguous information to ensure complete understanding.
-
-### Implementation
-
-The model is part of the requirements to onboard to the Health-RI catalog. Users can start the onboarding process by publishing their metadata according to this schema in a FAIR Data Point. To start:
-- read the explanation of all classes and properties above,
-- collect and map your metadata instances to the model using this [example metadata collection sheet](https://github.com/Health-RI/health-ri-metadata/blob/master/Implementation/metadata%20collection%20sheet%20template.xlsx)
-- import the provided [shacl](https://github.com/Health-RI/health-ri-metadata/tree/master/Formalisation(shacl)/Core/PiecesShape) to your FDP (note: tutorial on how to configure your FDP for Health-RI's requirements is being developed)
-- For a complete overview of the onboarding process, users can look for the [Metadata Onboarding on the National Catalogue](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/279150593) with details on how to implement and connect to it.
-- For an overview of the mapping pipeline visit the [Mapping Pipeline](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/290291734).    
-- With any further questions or comments please contact Health-RI via the [Health-RI Servicedesk](https://www.health-ri.nl/health-ri-servicedesk) or via [servicedesk@health-ri.nl](mailto:servicedesk@health-ri.nl "mailto:servicedesk@health-ri.nl")
