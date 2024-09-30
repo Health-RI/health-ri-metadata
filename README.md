@@ -2,11 +2,13 @@
 This is a draft version of Health-RI metadata schema 2.0 intended for review.
 
 ## Latest published version
-Latest version [available here](https://github.com/Health-RI/health-ri-metadata/releases/tag/v1.0.0)
+Latest published version (version 1.0.0) [available here](https://github.com/Health-RI/health-ri-metadata/releases/tag/v1.0.0).
 
 ## Purpose and audience
 
-This repository outlines the Core Metadata Schema, detailing the classes and entities involved and offering usage notes for developers. It addresses the schema's design and application but excludes discussion on the national catalog and its onboarding process. It aims at a technical audience tasked with implementing the metadata schema and stakeholders interested in a detailed understanding of the core schema.
+This branch contains the draft version of the plateau 2 core and generic health metadata schema, detailing the classes and entities involved and offering usage notes for developers. It addresses the schema's design and application but excludes discussion on the national catalog and its onboarding process. It aims at a technical audience tasked with reviewing the metadata schema. 
+
+Feedback to the draft version is being collected via issues in this repository, preferably via the [provided template](https://github.com/Health-RI/health-ri-metadata/issues/new/choose).
 
 * [Introduction](#introduction)
     * [Scope](#scope)
@@ -36,9 +38,15 @@ This repository outlines the Core Metadata Schema, detailing the classes and ent
 
 ### Scope
 
-To make it easier to share, find and reuse data, the Health-RI nodes decided to list resources in a national directory that can be accessed internationally. They all agreed on what basic information should be included, and that the catalog should be interoperable with other EU portals, which led to the creation of the Core Metadata Schema.
+Building on the [1st version of the metadata schema](https://github.com/Health-RI/health-ri-metadata/tree/master), the scope of the plateau 2 version is to incorporate both [DCAT-AP NL](https://geonovum.github.io/DCAT-AP-NL30/) and the (yet to be finalized) [HealthDCAT-AP](https://healthdcat-ap.github.io/), as well as Health-RI specific requirements / needs for the National Health Data Catalogue. 
 
-This schema describes the minimum amount of information that should be used to describe resources across Health-RI nodes through the national directory. The schema can be changed or extended to meet the needs of different areas, and new versions will be released in the future.
+It therefore introduces several health-related properties (indicated in blue in the UML diagram below), with (where applicable) suggested or required controlled vocabularies. 
+
+In addition, several **ELSI**-related metadata fields, as [gathered](https://health-ri.atlassian.net/wiki/spaces/HA/pages/469893133/Metadata+rondom+gebruiksvoorwaarden+en+authenticatie+autorisatie+en+ELSI+aspecten#Catalogus) by the Health-RI ELSI team, are included in this draft version, although not mandatory. The use of these properties will be explored and evaluated once the new version is implemented in the catalogue. 
+
+Next to that, the **Project** and **Study** classes are currently still under development. Placeholders are included in the UML (in grey) and tabular overview of the draft schema. 
+
+Finally, the newly introduced property `data origin` (in grey in the UML), with the goal to discriminate non-synthetic from synthetic data, is included in the draft, but has to be further modelled. We now propose to further indicate the nature of the data (eg. Whole genome sequencing data, or questionnaire data) with `healthdcatap:healthCategory` and `healthdcatap:healthTheme`. 
 
 ### Mandatory and Recommended
 
@@ -90,10 +98,13 @@ According to [DCAT-AP](https://semiceu.github.io/DCAT-AP/releases/3.0.0/):
 
 ### Overview and Diagram
 
-An overview of the Metadata schema core is presented in the [UML](https://www.omg.org/spec/UML "https://www.omg.org/spec/UML") diagram depicted below. The UML showcases the primary classes (entities), excluding the detailed definitions such as `rdfs:label` and `rdfs:comment`. Each block denotes a class and comprises a list of its attributes (properties). If a class is connected to another class by a closed arrow, indicating that it inherits all properties from the other class. For example, `dcat:DatasetSeries` inherits from `dcat:Dataset` which inherits from `dcat:Resource`. The other arrows, represent relations and contain the type of relation, such as `dcat:Dataset` connects to a `dcat:DatasetSeries` via the predicate `dcat:inSeries`, and include the cardinality, such as `dcat:Dataset` can be connected via `dcat:inSeries` to zero or more `dcat:DatasetSeries`.
+An overview of the Metadata schema core is presented in the UML diagram depicted below. The UML showcases the primary classes (entities), excluding the detailed definitions such as rdfs:label and rdfs:comment. Each block denotes a class and comprises a list of its attributes (properties). If a class is connected to another class by a closed arrow, indicating that it inherits all properties from the other class. For example, dcat:DatasetSeries inherits from dcat:Dataset which inherits from dcat:Resource. The other arrows, represent relations and contain the type of relation, such as dcat:Dataset connects to a dcat:DatasetSeries via the predicate dcat:inSeries, and include the cardinality, such as dcat:Dataset can be connected via dcat:inSeries to zero or more dcat:DatasetSeries. 
 
-- HRI core metadata schema diagram (plateau 1):
-<img src="Images/1.0_plateau1/HRICoreSchemaReleasePlateau1.jpg" alt="diagram" width=1080 height=560 title="diagram">
+Next to the UML, a tabular overview of all classes and properties, including their range, cardinality, controlled vocabulary (if applicable) and usage note is findable below. 
+The same information can be referred to in this [sheet](Documents/Version2_evaluation/Draft_metadata_CoreGenericHealth_p2.xlsx). In this sheet, we also state the origin of the (new) constrain (DCAT-AP v3, DCAT-AP NL or HealthDCAT-AP). 
+
+- HRI core metadata schema diagram (plateau 2):
+<img src="Images/2.0_plateau2/HRI_metadata_p2.png" alt="diagram" width=1080 height=560 title="diagram">
 
 ## Main Classes
 
@@ -213,8 +224,8 @@ A meaningful collection of data, published or curated by a single organisation o
 | [publisher note](https://healthdcat-ap.github.io/#Dataset.publishernote) | A description of the publisher activities. | `healthdcatap:publishernote` | `rdfs:Literal` | NA | 0..1 | NA |
 | [publisher type](https://healthdcat-ap.github.io/#Dataset.publishernote) | A type of organisation that makes the Dataset available. | `healthdcatap:publishertype` | `skos:Concept` | A [controlled vocabulary](https://raw.githubusercontent.com/SEMICeu/ADMS-AP/master/purl.org/ADMS_SKOS_v1.00.rdf) is provided, denoting commonly recognised health publishers. | 0..1 | http://purl.org/adms/publishertype/NonGovernmentalOrganisation |
 | [purpose](https://w3c.github.io/dpv/2.0/dpv/#dfn-haspurpose) | A free text statement of the purpose of the processing of data or personal data. | `dpv:hasPurpose` | `dpv:Purpose` | NA | 0..\* | NA |
-| [qualified attribution](https://www.w3.org/TR/prov-o/#qualifiedAttribution) | An Agent having some form of responsibility for the resource. | prov:qualifiedAttribution | prov:Attribution | NA | 0..\* | NA |
-| [qualified relation](https://semiceu.github.io/DCAT-AP/releases/3.0.0/#Dataset.qualifiedrelation) | A description of a relationship with another resource. | dcat:qualifiedRelation | dcat:Relationship | NA | 0..\* | NA |
+| [qualified attribution](https://www.w3.org/TR/prov-o/#qualifiedAttribution) | An Agent having some form of responsibility for the resource. | `prov:qualifiedAttribution` | `prov:Attribution` | NA | 0..\* | NA |
+| [qualified relation](https://semiceu.github.io/DCAT-AP/releases/3.0.0/#Dataset.qualifiedrelation) | A description of a relationship with another resource. | `dcat:qualifiedRelation` | `dcat:Relationship` | NA | 0..\* | NA |
 | [quality annotation](https://www.w3.org/TR/vocab-dqv/#dqv:hasQualityAnnotation) | A statement related to quality of the Dataset, including rating, quality certificate, feedback that can be associated to the dataset. | `dqv:hasQualityAnnotation` | `dqv:qualityCertificate` | NA | 0..\* | NA |
 | [release date](http://purl.org/dc/terms/issued) | The date of formal issuance (e.g., publication) of the Dataset. | `dct:issued` | `xsd:dateTime` | NA | 0..1 | NA |
 | [retention period](https://healthdcat-ap.github.io/#Dataset.retentionperiod) | A temporal period which the dataset is available for secondary use. | `healthdcatap:retentionperiod` | `dct:PeriodOfTime` | NA | 0..\* | NA |
