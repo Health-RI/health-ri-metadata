@@ -26,6 +26,8 @@ Feedback to the draft version is being collected via issues in this repository, 
     * [Dataset Series](#dataset-series)
     * [Data Service](#data-service)
     * [Distribution](#distribution)
+    * [Project](#project)
+    * [Study](#study)
     * [Agent](#agent)
     * [Kind](#kind)
     * [Checksum](#checksum)
@@ -321,6 +323,42 @@ An available distribution of the dataset.
 | [temporal resolution](https://semiceu.github.io/DCAT-AP/releases/3.0.0/#Distribution.temporalresolution) | The minimum time period resolvable in the dataset distribution.| `dcat:temporalResolution` | `xsd:duration` | NA | 0..1 | NA |
 | [title](http://purl.org/dc/terms/title) | A name given to the Distribution. | `dct:title` | `rdfs:Literal` | This property can be repeated for providing names in parallel languages. | 0..\* | NA |
 
+### [Project](http://xmlns.com/foaf/spec/#term_Project)
+
+A collective endeavour of some kind. The Project class represents the class of things that are 'projects'. These may be formal or informal, collective or individual. It is often useful to indicate the homepage of a Project.
+
+#### Mandatory Properties
+
+| **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
+| --- | --- | --- | --- | --- | --- |   
+| [catalogue](https://www.w3.org/ns/dcat#resource) | TBA | `dcat:resource` | `dcat:Catalog` | NA | 1..\* |
+| [description](http://purl.org/dc/terms/description) | A free-text account of the Project. | `dct:description` | `rdfs:Literal` |   NA  | 1..\* |
+| [funder](http://xmlns.com/foaf/spec/#term_fundedBy) | The funding agent providing funding for the project | `foaf:fundedBy` | `foaf:Agent` | NA | 1..\* |
+| [identifier](http://purl.org/dc/terms/identifier) | A unique identifier of the project. | `dct:identifier` | `rdfs:Literal` | NA | 1 |
+| [title](http://purl.org/dc/terms/title) | A title of the project. | `dct:title` | `rdfs:Literal` | NA | 1..\* |
+
+#### Recommended Properties
+
+| **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
+| --- | --- | --- | --- | --- | --- | 
+| study | A study that is performed in the context of the project. | `dct:hasPart` | `Study` | NA | 0..\* |
+
+### Study
+A Study represents the process by which a data set was generated or collected.
+
+#### Mandatory Properties
+
+| **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
+| --- | --- | --- | --- | --- | --- |   
+| [dataset](https://www.w3.org/TR/prov-o/#generated) | The dataset that was generated as a result of this study. | `prov:generated` | `dcat:Dataset` | NA | 1..\* |
+| [description](http://purl.org/dc/terms/description) | A free text desription of the study.. | `dct:description` | `rdfs:Literal` |   NA  | 1..\* |
+| [identifier](http://purl.org/dc/terms/identifier) | A unique identifier of the study. | `dct:identifier` | `rdfs:Literal` | NA | 1 |
+| [project](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#isPartOf) | The project of which this study is a part. | `dct:isPartOf` | `foaf:Project` | NA | 1 |
+| [title](http://purl.org/dc/terms/title) | The title of the study. | `dct:title` | `rdfs:Literal` | NA | 1..\* |
+
+#### Recommended Properties
+
+There are currently no recommended properties for this class.
 
 ### [Agent](http://xmlns.com/foaf/spec/#term_Agent)
 
