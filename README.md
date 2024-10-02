@@ -26,6 +26,8 @@ Feedback to the draft version is being collected via issues in this repository, 
     * [Dataset Series](#dataset-series)
     * [Data Service](#data-service)
     * [Distribution](#distribution)
+    * [Project](#project)
+    * [Study](#study)
     * [Agent](#agent)
     * [Kind](#kind)
     * [Checksum](#checksum)
@@ -44,7 +46,7 @@ It therefore introduces several health-related properties (indicated in blue in 
 
 In addition, several **ELSI**-related metadata fields, as [gathered](https://health-ri.atlassian.net/wiki/spaces/HA/pages/469893133/Metadata+rondom+gebruiksvoorwaarden+en+authenticatie+autorisatie+en+ELSI+aspecten#Catalogus) by the Health-RI ELSI team, are included in this draft version, although not mandatory. The use of these properties will be explored and evaluated once the new version is implemented in the catalogue. 
 
-Next to that, the **Project** and **Study** classes are currently still under development. Placeholders are included in the UML (in grey) and tabular overview of the draft schema. 
+Next to that, the **Project** and **Study**  classes are currently still under development. Therefore, the proposed properties, cardinalities and ranges are a starting point, and your input on these two classes is very welcome! If you would like to join the discussions on these two classes, feel free to contact us.
 
 Finally, the newly introduced property `data origin` (in grey in the UML), with the goal to discriminate non-synthetic from synthetic data, is included in the draft, but has to be further modelled. We now propose to further indicate the nature of the data (eg. Whole genome sequencing data, or questionnaire data) with `healthdcatap:healthCategory` and `healthdcatap:healthTheme`. 
 
@@ -125,6 +127,8 @@ The same information can be referred to in this [sheet](Documents/Version2_evalu
 | [Distribution](#distribution) | An available distribution of the dataset. | Used to describe the different ways that a single dataset can be made available in. I.e., it can be downloaded or it can be accessed online in one or more distributions (e.g. one in a downloadable .csv file, another file with an access or query webpage) | `dcat:Distribution` |
 | [Dataset Series](#dataset-series) | A collection of datasets that are published separately, but share some characteristics that group them. | With Dataset Series we refer to data, somehow interrelated, that are published separately. An example is budget data split by year and/or country, instead of being made available in a single dataset. | `dcat:DatasetSeries` |
 | [Data Service](#data-service) | A Resource type.  <br>A collection of operations that provides access to one or more datasets or data processing functions. | The kind of service can be indicated using the `dcterms:type` property. Its value may be taken from a controlled vocabulary that should be defined in the community. | `dcat:DataService` |
+| [Project](#project) | A collective endeavour of some kind. The Project class represents the class of things that are 'projects'. These may be formal or informal, collective or individual. It is often useful to indicate the homepage of a Project. | Used to denote the information of a funded project, including funding agent. A project can consist of several studies. | `foaf:Project` |
+| [Study](#study) | A Study represents the process by which a data set was generated or collected. | Used to describe the information of a study that generates or collects data described in a dataset. A study is connected to one project. | TBA |
 
 ### _Abstract Class_
 
@@ -321,6 +325,43 @@ An available distribution of the dataset.
 | [temporal resolution](https://semiceu.github.io/DCAT-AP/releases/3.0.0/#Distribution.temporalresolution) | The minimum time period resolvable in the dataset distribution.| `dcat:temporalResolution` | `xsd:duration` | NA | 0..1 | NA |
 | [title](http://purl.org/dc/terms/title) | A name given to the Distribution. | `dct:title` | `rdfs:Literal` | This property can be repeated for providing names in parallel languages. | 0..\* | NA |
 
+### [Project](http://xmlns.com/foaf/spec/#term_Project)
+
+A collective endeavour of some kind. The Project class represents the class of things that are 'projects'. These may be formal or informal, collective or individual. It is often useful to indicate the homepage of a Project.
+
+#### Mandatory Properties
+
+| **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
+| --- | --- | --- | --- | --- | --- |   
+| [catalogue](https://www.w3.org/ns/dcat#resource) | TBA | `dcat:resource` | `dcat:Catalog` | NA | 1..\* |
+| [description](http://purl.org/dc/terms/description) | A free-text account of the Project. | `dct:description` | `rdfs:Literal` |   NA  | 1..\* |
+| [funder](http://xmlns.com/foaf/spec/#term_fundedBy) | The funding agent providing funding for the project | `foaf:fundedBy` | `foaf:Agent` | NA | 1..\* |
+| [identifier](http://purl.org/dc/terms/identifier) | A unique identifier of the project. | `dct:identifier` | `rdfs:Literal` | NA | 1 |
+| [title](http://purl.org/dc/terms/title) | A title of the project. | `dct:title` | `rdfs:Literal` | NA | 1..\* |
+
+#### Recommended Properties
+
+| **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
+| --- | --- | --- | --- | --- | --- | 
+| study | A study that is performed in the context of the project. | `dct:hasPart` | `Study` | NA | 0..\* |
+
+### Study
+
+A Study represents the process by which a data set was generated or collected.
+
+#### Mandatory Properties
+
+| **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
+| --- | --- | --- | --- | --- | --- |   
+| [dataset](https://www.w3.org/TR/prov-o/#generated) | The dataset that was generated as a result of this study. | `prov:generated` | `dcat:Dataset` | NA | 1..\* |
+| [description](http://purl.org/dc/terms/description) | A free text desription of the study.. | `dct:description` | `rdfs:Literal` |   NA  | 1..\* |
+| [identifier](http://purl.org/dc/terms/identifier) | A unique identifier of the study. | `dct:identifier` | `rdfs:Literal` | NA | 1 |
+| [project](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#isPartOf) | The project of which this study is a part. | `dct:isPartOf` | `foaf:Project` | NA | 1 |
+| [title](http://purl.org/dc/terms/title) | The title of the study. | `dct:title` | `rdfs:Literal` | NA | 1..\* |
+
+#### Recommended Properties
+
+There are currently no recommended properties for this class.
 
 ### [Agent](http://xmlns.com/foaf/spec/#term_Agent)
 
