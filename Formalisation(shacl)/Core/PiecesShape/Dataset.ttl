@@ -38,10 +38,9 @@
     <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#access-rights>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#analytics>,
     <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#code-values>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#coding-system>,
     <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#conforms-to>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#contact-point>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#creator>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#data-origin>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#description>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#distribution>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#documentation>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#frequency>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#geographical-coverage>,
+    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#creator>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#description>,
+    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#distribution>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#documentation>,
+    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#frequency>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#geographical-coverage>,
     <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#has-version>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#health-category>,
     <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#health-theme>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#identifier>;
   sh:targetClass dcat:Dataset .
@@ -108,11 +107,6 @@
   sh:name "creator"@en;
   sh:nodeKind sh:IRI;
   sh:path dct:creator .
-
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#data-origin> sh:description
-    "The origin of the data in the data set"@en;
-  sh:maxCount 1;
-  sh:name "data origin"@en .
 
 <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#description> sh:class rdfs:Literal;
   sh:datatype xsd:string;
