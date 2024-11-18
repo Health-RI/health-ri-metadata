@@ -217,6 +217,7 @@
   sh:minCount 1;
   sh:name "number of records"@en;
   sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
   sh:path healthdcatap:number-of-records .
 
 <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#number-of-unique-infividuals>
