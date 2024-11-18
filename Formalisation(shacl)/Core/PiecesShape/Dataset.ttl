@@ -390,54 +390,63 @@
   sh:nodeKind sh:IRI;
   sh:path prov:wasUsedBy .
 
+<http://data.health-ri.nl/core/p2/AgentShapeAgentShape> a sh:NodeShape;
+ rdfs:label "Agent"@en;
+  sh:property <http://data.health-ri.nl/core/p2/AgentShapeAgentShape#foaf:name>, <http://data.health-ri.nl/core/p2/AgentShapeAgentShape#dct:identifier>;
+  sh:targetClass sh:targetClass foaf:Agent  .
 
-:AgentShape a sh:NodeShape;
-  sh:property     
-  [ 
-    sh:path foaf:name ;
-    sh:nodeKind sh:Literal ;
+
+<http://data.health-ri.nl/core/p2/AgentShapeAgentShape#foaf:name>
     dash:editor dash:TextFieldEditor ;
     dash:viewer dash:LiteralViewer ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
-  ] ,
-  [
+    sh:nodeKind sh:Literal ;
+    sh:path foaf:name .
+
+<http://data.health-ri.nl/core/p2/AgentShapeAgentShape#dct:identifier>
     sh:path dct:identifier ;
     sh:nodeKind sh:Literal ;
     dash:editor dash:TextFieldEditor ;
     dash:viewer dash:LiteralViewer ;
     sh:minCount 1 ;
-    sh:maxCount 1 ;
-  ];
-
-sh:targetClass foaf:Agent .
+    sh:maxCount 1 .
 
 
-:KindShape a sh:NodeShape;
-  sh:property     
-  [ 
+
+
+
+
+<http://data.health-ri.nl/core/p2/KindShapeKindShape> a sh:NodeShape;
+rdfs:label "Kind"@en;
+  sh:property <http://data.health-ri.nl/core/p2/KindShapeKindShape#vcard:hasEmail>, 
+  <http://data.health-ri.nl/core/p2/KindShapeKindShape#vcard:fn>,
+  <http://data.health-ri.nl/core/p2/KindShapeKindShape#vcard:hasURL>;
+  sh:targetClass sh:targetClass vcard:Kind  .
+
+
+<http://data.health-ri.nl/core/p2/KindShapeKindShape#vcard:hasEmail>
     sh:path vcard:hasEmail ;
     sh:nodeKind sh:IRI ;
     sh:pattern "^mailto:.+@.+\\..+$" ;
     dash:viewer dash:URIViewer ;
     dash:editor dash:URIEditor ;
     sh:minCount 1 ;
-    sh:maxCount 1 ;
-  ] ,
-  [
+    sh:maxCount 1 . 
+
+
+  <http://data.health-ri.nl/core/p2/KindShapeKindShape#vcard:fn>
     sh:path vcard:fn ;
     sh:nodeKind sh:Literal ;
     sh:datatype xsd:string ;
     dash:editor dash:TextFieldEditor ;
     dash:viewer dash:LiteralViewer ;
     sh:minCount 1 ;
-    sh:maxCount 1 ;
-  ] ,
-  [ 
+    sh:maxCount 1 .
+
+
+  <http://data.health-ri.nl/core/p2/KindShapeKindShape#vcard:hasURL> 
     sh:path vcard:hasURL ;
     sh:nodeKind sh:IRI ;
     dash:viewer dash:URIViewer ;
-    dash:editor dash:URIEditor ;
-  ] ;
-
-sh:targetClass vcard:Kind .
+    dash:editor dash:URIEditor .
