@@ -393,7 +393,7 @@
 <http://data.health-ri.nl/core/p2/AgentShapeAgentShape> a sh:NodeShape;
  rdfs:label "Agent"@en;
   sh:property <http://data.health-ri.nl/core/p2/AgentShapeAgentShape#foaf:name>, <http://data.health-ri.nl/core/p2/AgentShapeAgentShape#dct:identifier>;
-  sh:targetClass sh:targetClass foaf:Agent  .
+  sh:targetClass foaf:Agent  .
 
 
 <http://data.health-ri.nl/core/p2/AgentShapeAgentShape#foaf:name>
@@ -422,7 +422,7 @@ rdfs:label "Kind"@en;
   sh:property <http://data.health-ri.nl/core/p2/KindShapeKindShape#vcard:hasEmail>, 
   <http://data.health-ri.nl/core/p2/KindShapeKindShape#vcard:fn>,
   <http://data.health-ri.nl/core/p2/KindShapeKindShape#vcard:hasURL>;
-  sh:targetClass sh:targetClass vcard:Kind  .
+  sh:targetClass vcard:Kind  .
 
 
 <http://data.health-ri.nl/core/p2/KindShapeKindShape#vcard:hasEmail>
