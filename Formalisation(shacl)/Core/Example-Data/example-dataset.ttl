@@ -150,5 +150,5 @@
     ]; 
     dct:license <https://opensource.org/license/mit>;
     dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime;
-    healthdcatap:numberOfRecords "1" .
+    healthdcatap:number-of-records "1" .
 
