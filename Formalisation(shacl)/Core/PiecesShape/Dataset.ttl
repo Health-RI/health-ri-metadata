@@ -389,3 +389,55 @@
 <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#was-used-by> sh:name "was used by"@en;
   sh:nodeKind sh:IRI;
   sh:path prov:wasUsedBy .
+
+
+:AgentShape a sh:NodeShape;
+  sh:property     
+  [ 
+    sh:path foaf:name ;
+    sh:nodeKind sh:Literal ;
+    dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LiteralViewer ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ,
+  [
+    sh:path dct:identifier ;
+    sh:nodeKind sh:Literal ;
+    dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LiteralViewer ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ];
+
+sh:targetClass foaf:Agent .
+
+
+:KindShape a sh:NodeShape;
+  sh:property     
+  [ 
+    sh:path vcard:hasEmail ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^mailto:.+@.+\\..+$" ;
+    dash:viewer dash:URIViewer ;
+    dash:editor dash:URIEditor ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ,
+  [
+    sh:path vcard:fn ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LiteralViewer ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ,
+  [ 
+    sh:path vcard:hasURL ;
+    sh:nodeKind sh:IRI ;
+    dash:viewer dash:URIViewer ;
+    dash:editor dash:URIEditor ;
+  ] ;
+
+sh:targetClass vcard:Kind .
