@@ -25,7 +25,9 @@
         foaf:name "Joanne Rowling" 
     ] ;
     dct:license <https://opensource.org/license/mit>;
-    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime    .
+    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime;
+    healthdcatap:numberOfRecords "1" .
+
 
 
 <http://example.com/dataset/1> a dcat:Dataset ;
@@ -50,7 +52,9 @@
         vcard:fn "Foo Bar" ;
     ];
     dct:license <https://opensource.org/license/mit>;
-    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime  .
+    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime;
+    healthdcatap:numberOfRecords "1" .
+
 
 
 <http://example.com/dataset/2> a dcat:Dataset ;
@@ -77,7 +81,9 @@
         vcard:fn "Foo Bar" ;
     ] ;
     dct:license <https://opensource.org/license/mit>;
-    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime .
+    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime;
+    healthdcatap:numberOfRecords "1" .
+
 
 
 <http://example.com/dataset/3> a dcat:Dataset ;
@@ -99,7 +105,8 @@
         vcard:fn "Foo Bar" ;
     ] ;
     dct:license <https://opensource.org/license/mit>;
-    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime  .
+    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime;
+    healthdcatap:numberOfRecords "1" .
 
 
 <http://example.com/dataset/4> a dcat:Dataset ;
@@ -121,5 +128,6 @@
         vcard:fn "Foo Bar" ;
     ]; 
     dct:license <https://opensource.org/license/mit>;
-    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime .
+    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime;
+    healthdcatap:numberOfRecords "1" .
 
