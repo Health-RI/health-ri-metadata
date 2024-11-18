@@ -211,8 +211,7 @@
   sh:nodeKind sh:Literal;
   sh:path dct:modified .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#number-of-records> sh:datatype
-    xsd:nonNegativeInteger;
+<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#number-of-records> 
   sh:description "Size of the dataset in terms of the number of records"@en;
   sh:maxCount 1;
   sh:minCount 1;
