@@ -81,7 +81,7 @@
   sh:nodeKind sh:IRI;
   sh:path dct:creator .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#description> sh:class rdfs:Literal;
+<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#description> sh:class sh:Literal;
   sh:datatype xsd:string;
   sh:description "A free-text account of the Dataset."@en;
   sh:minCount 1;
