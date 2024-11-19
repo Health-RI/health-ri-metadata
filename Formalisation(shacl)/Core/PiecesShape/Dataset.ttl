@@ -24,6 +24,7 @@
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix hri: <http://coreRule-healthri.nl#> .
 
 <http://data.health-ri.nl/core/p2/DatasetShape> a owl:Ontology;
   dct:description "This Excel file shows how to edit simple SHACL shapes in an Excel file"@en;
@@ -71,7 +72,7 @@
   sh:maxCount 1;
   sh:minCount 1;
   sh:name "contact point"@en;
-  sh:nodeKind :KindShape;
+  sh:nodeKind hri:KindShape;
   sh:path dcat:contactPoint .
 
 <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#creator> sh:description
