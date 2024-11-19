@@ -171,7 +171,6 @@
 
 <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#legal-basis> sh:description
     "The legal basis used to justify processing of personal data"@en;
-  sh:minCount 1;
   sh:name "legal basis"@en;
   sh:nodeKind sh:IRI;
   sh:path dqv:hasLegalBasis .
