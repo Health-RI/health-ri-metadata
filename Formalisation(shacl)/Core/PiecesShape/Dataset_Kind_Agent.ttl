@@ -71,7 +71,7 @@
   sh:maxCount 1;
   sh:minCount 1;
   sh:name "contact point"@en;
-  sh:nodeKind :KindShape;
+  sh:nodeKind sh:IRI;
   sh:path dcat:contactPoint .
 
 <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#creator> sh:description
