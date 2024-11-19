@@ -47,7 +47,20 @@
     ] ;
     dct:license <https://opensource.org/license/mit>;
     dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime;
-    healthdcatap:numberOfRecords "0"^^xsd:nonNegativeInteger .
+    healthdcatap:numberOfRecords "0"^^xsd:nonNegativeInteger ;
+    dct:spatial [
+    a dcterms:Location ;
+    locn:geometry """<http://www.opengis.net/def/crs/EPSG/0/28992> POLYGON ((
+      120749.725 487589.422 , 120752.55 487594.375  ,
+      120751.227 487595.129 , 120732.539 487605.788 ,
+      120723.505 487589.745 , 120721.387 487585.939 ,
+      120740.668 487575.07  , 120743.316 487573.589 ,
+      120747.735 487581.337 , 120751.564 487579.154 ,
+      120755.411 487576.96  , 120750.935 487569.172 ,
+      120755.941 487566.288 , 120764.369 487581.066 ,
+      120749.725 487589.422
+    ))"""^^geosparql:wktLiteral ;
+  ] .
 
 
 
@@ -74,7 +87,11 @@
     ];
     dct:license <https://opensource.org/license/mit>;
     dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime;
-    healthdcatap:numberOfRecords "1"^^xsd:nonNegativeInteger .
+    healthdcatap:numberOfRecords "1"^^xsd:nonNegativeInteger ;
+    dct:spatial [
+    a dcterms:Location ;
+    dcat:centroid "POINT(4.88412 52.37509)"^^geosparql:wktLiteral ;
+  ] .
 
 
 
@@ -103,7 +120,15 @@
     ] ;
     dct:license <https://opensource.org/license/mit>;
     dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime;
-    healthdcatap:numberOfRecords "2"^^xsd:nonNegativeInteger .
+    healthdcatap:numberOfRecords "2"^^xsd:nonNegativeInteger ;
+    dct:spatial [
+    a dcterms:Location ;
+    dcat:bbox """POLYGON((
+      3.053 47.975 , 7.24  47.975 ,
+      7.24  53.504 , 3.053 53.504 ,
+      3.053 47.975
+    ))"""^^geosparql:wktLiteral ;
+  ] .
 
 
 
@@ -127,7 +152,15 @@
     ] ;
     dct:license <https://opensource.org/license/mit>;
     dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime;
-    healthdcatap:numberOfRecords "3"^^xsd:nonNegativeInteger .
+    healthdcatap:numberOfRecords "3"^^xsd:nonNegativeInteger ;
+    dct:spatial [
+    a dcterms:Location ;
+    dcat:bbox """POLYGON((
+      3.053 47.975 , 7.24  47.975 ,
+      7.24  53.504 , 3.053 53.504 ,
+      3.053 47.975
+    ))"""^^geosparql:wktLiteral ;
+  ] .
 
 
 <http://example.com/dataset/4> a dcat:Dataset ;
@@ -150,4 +183,12 @@
     ]; 
     dct:license <https://opensource.org/license/mit>;
     dct:modified "2024-07-11T11:48:00.925Z"^^xsd:dateTime;
-    healthdcatap:numberOfRecords "4"^^xsd:nonNegativeInteger .
+    healthdcatap:numberOfRecords "4"^^xsd:nonNegativeInteger ;
+    dct:spatial [
+    a dcterms:Location ;
+    dcat:bbox """POLYGON((
+      3.053 47.975 , 7.24  47.975 ,
+      7.24  53.504 , 3.053 53.504 ,
+      3.053 47.975
+    ))"""^^geosparql:wktLiteral ;
+  ] .
