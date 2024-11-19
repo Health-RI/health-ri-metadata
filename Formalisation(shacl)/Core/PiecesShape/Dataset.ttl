@@ -79,7 +79,7 @@
     "An entity responsible for producing the dataset."@en;
   sh:minCount 1;
   sh:name "creator"@en;
-  sh:nodeKind sh:IRI;
+  sh:node foaf:Agent;
   sh:path dct:creator .
 
 <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#description> sh:datatype
