@@ -49,7 +49,8 @@
     dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime;
     healthdcatap:numberOfRecords "0"^^xsd:nonNegativeInteger ;
     dct:spatial <http://sws.geonames.org/6695072/> ;
-    dcterms:type  <http://purl.org/dc/dcmitype/Dataset> .
+    dcterms:type  <http://purl.org/dc/dcmitype/Dataset> ;
+    healthdcatap:healthTheme <https://www.wikidata.org/wiki/Q7907952> .
 
 
 
@@ -78,7 +79,8 @@
     dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime;
     healthdcatap:numberOfRecords "1"^^xsd:nonNegativeInteger ;
     dct:spatial <http://sws.geonames.org/6695072/> ;
-    dcterms:type  <http://id.loc.gov/vocabulary/marcgt/dtb> .
+    dcterms:type  <http://id.loc.gov/vocabulary/marcgt/dtb> ;
+    healthdcatap:healthTheme <https://www.wikidata.org/wiki/Q58624061> .
 
 
 
@@ -109,7 +111,8 @@
     dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime;
     healthdcatap:numberOfRecords "2"^^xsd:nonNegativeInteger ;
     dct:spatial <http://sws.geonames.org/6695072/> ;
-    dcterms:type  <urn:example:datacite/resourceType/Dataset> .
+    dcterms:type  <urn:example:datacite/resourceType/Dataset> ;
+    healthdcatap:healthTheme <https://www.wikidata.org/wiki/Q58624061> .
 
 
 
@@ -135,7 +138,8 @@
     dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime;
     healthdcatap:numberOfRecords "3"^^xsd:nonNegativeInteger ;
     dct:spatial <http://sws.geonames.org/6695072/> ;
-    dcterms:type  <urn:example:re3data/contentType/database> .
+    dcterms:type  <urn:example:re3data/contentType/database> ;
+    healthdcatap:healthTheme <https://www.wikidata.org/wiki/Q58624061> .
 
 
 <http://example.com/dataset/4> a dcat:Dataset ;
@@ -160,4 +164,5 @@
     dct:modified "2024-07-11T11:48:00.925Z"^^xsd:dateTime;
     healthdcatap:numberOfRecords "4"^^xsd:nonNegativeInteger ;
     dct:spatial <http://sws.geonames.org/6695072/> ;
-    dcterms:type <https://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType/download> .
+    dcterms:type <https://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType/download>;
+    healthdcatap:healthTheme <https://www.wikidata.org/wiki/Q58624061> .
