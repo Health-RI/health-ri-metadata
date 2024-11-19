@@ -48,7 +48,7 @@
     dct:license <https://opensource.org/license/mit>;
     dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime;
     healthdcatap:numberOfRecords "0"^^xsd:nonNegativeInteger ;
-    dcterms:spatial <http://sws.geonames.org/6695072/> .
+    dct:spatial <http://sws.geonames.org/6695072/> .
 
 
 
@@ -76,7 +76,7 @@
     dct:license <https://opensource.org/license/mit>;
     dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime;
     healthdcatap:numberOfRecords "1"^^xsd:nonNegativeInteger ;
-    dcterms:spatial <http://sws.geonames.org/6695072/> .
+    dct:spatial <http://sws.geonames.org/6695072/> .
 
 
 
@@ -106,7 +106,7 @@
     dct:license <https://opensource.org/license/mit>;
     dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime;
     healthdcatap:numberOfRecords "2"^^xsd:nonNegativeInteger ;
-    dcterms:spatial <http://sws.geonames.org/6695072/> .
+    dct:spatial <http://sws.geonames.org/6695072/> .
 
 
 
@@ -131,7 +131,7 @@
     dct:license <https://opensource.org/license/mit>;
     dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime;
     healthdcatap:numberOfRecords "3"^^xsd:nonNegativeInteger ;
-    dcterms:spatial <http://sws.geonames.org/6695072/> .
+    dct:spatial <http://sws.geonames.org/6695072/> .
 
 
 <http://example.com/dataset/4> a dcat:Dataset ;
@@ -155,4 +155,4 @@
     dct:license <https://opensource.org/license/mit>;
     dct:modified "2024-07-11T11:48:00.925Z"^^xsd:dateTime;
     healthdcatap:numberOfRecords "4"^^xsd:nonNegativeInteger ;
-    dcterms:spatial <http://sws.geonames.org/6695072/> .
+    dct:spatial <http://sws.geonames.org/6695072/> .
