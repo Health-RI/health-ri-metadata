@@ -252,7 +252,7 @@
   sh:maxCount 1;
   sh:minCount 1;
   sh:name "publisher"@en;
-  sh:nodeKind sh:IRI;
+  sh:nodeKind foaf:Agent;
   sh:path dct:publisher .
 
 <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#publisher-note> sh:datatype
