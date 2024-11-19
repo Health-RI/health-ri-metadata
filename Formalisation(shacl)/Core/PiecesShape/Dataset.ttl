@@ -10,6 +10,7 @@
 @prefix example: <http://data.health-ri.nl/core/p2/DatasetShape> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix healthdcatap: <http://example.com/ns/healthdcatap#> .
+@prefix hri: <http://coreRule-healthri.nl#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -24,7 +25,6 @@
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix hri: <http://coreRule-healthri.nl#> .
 
 <http://data.health-ri.nl/core/p2/DatasetShape> a owl:Ontology;
   dct:description "This Excel file shows how to edit simple SHACL shapes in an Excel file"@en;
@@ -212,13 +212,13 @@
   sh:nodeKind sh:Literal;
   sh:path dct:modified .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#number-of-records> 
+<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#number-of-records> sh:datatype
+    xsd:nonNegativeInteger;
   sh:description "Size of the dataset in terms of the number of records"@en;
   sh:maxCount 1;
   sh:minCount 1;
   sh:name "number of records"@en;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
   sh:path healthdcatap:numberOfRecords .
 
 <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#number-of-unique-infividuals>
@@ -390,6 +390,7 @@
 <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#was-used-by> sh:name "was used by"@en;
   sh:nodeKind sh:IRI;
   sh:path prov:wasUsedBy .
+
 
 <http://data.health-ri.nl/core/p2/AgentShapeAgentShape> a sh:NodeShape;
  rdfs:label "Agent"@en;
