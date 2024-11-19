@@ -1,0 +1,41 @@
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+<http://data.health-ri.nl/core/p2/KindShapeKindShape> a sh:NodeShape;
+rdfs:label "Kind"@en;
+  sh:property <http://data.health-ri.nl/core/p2/KindShapeKindShape#vcard:hasEmail>, 
+  <http://data.health-ri.nl/core/p2/KindShapeKindShape#vcard:fn>,
+  <http://data.health-ri.nl/core/p2/KindShapeKindShape#vcard:hasURL>;
+  sh:targetClass vcard:Kind  .
+
+
+<http://data.health-ri.nl/core/p2/KindShapeKindShape#vcard:hasEmail>
+    sh:path vcard:hasEmail ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^mailto:.+@.+\\..+$" ;
+    dash:viewer dash:URIViewer ;
+    dash:editor dash:URIEditor ;
+    sh:minCount 1 ;
+    sh:maxCount 1 . 
+
+
+  <http://data.health-ri.nl/core/p2/KindShapeKindShape#vcard:fn>
+    sh:path vcard:fn ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LiteralViewer ;
+    sh:minCount 1 ;
+    sh:maxCount 1 .
+
+
+  <http://data.health-ri.nl/core/p2/KindShapeKindShape#vcard:hasURL> 
+    sh:path vcard:hasURL ;
+    sh:nodeKind sh:IRI ;
+    dash:viewer dash:URIViewer ;
+    dash:editor dash:URIEditor .
