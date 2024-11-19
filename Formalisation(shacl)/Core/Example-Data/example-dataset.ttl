@@ -28,6 +28,7 @@
 
 <http://example.com/dataset> a dcat:Dataset ;
     dct:title "Example Dataset" ;
+    dcat:keyword "Example" ;
     dct:description "This is an example dataset to test the shapes" ;
     dct:identifier "test-dataset-id-0" ;
     dct:issued "2024-05-27T15:00:00+02:00"^^xsd:dateTime ;
