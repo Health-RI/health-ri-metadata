@@ -27,10 +27,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://data.health-ri.nl/core/p2/DatasetShape> a owl:Ontology;
-  dct:description "This Excel file shows how to edit simple SHACL shapes in an Excel file"@en;
-  dct:modified "2024-02-22T00:00:00.000Z"^^xsd:dateTime;
-  rdfs:comment "An example SHACL file in Excel"@en;
-  rdfs:label "SHACL example"@en;
+  dct:description "This is an excel template, which will be used as input for the excel2rdf pipelien,where the SCHACLPlay API is called to generate SHACL shapes for class Dataset in Health RI Core plateau 2."@en;
+  dct:modified "2024-11-21T00:00:00.000Z"^^xsd:dateTime;
+  rdfs:comment "Excel template for Dataset class"@en;
+  rdfs:label "Excel template for Dataset class"@en;
   owl:versionInfo "0.1" .
 
 <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape> a sh:NodeShape;
@@ -261,14 +261,14 @@
   sh:maxCount 1;
   sh:name "publisher note"@en;
   sh:nodeKind sh:Literal;
-  sh:path healthdcatap:publishernote .
+  sh:path healthdcatap:publisherNote .
 
 <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#publisher-type> sh:description
     "A type of organisation that makes the Dataset available"@en;
   sh:maxCount 1;
   sh:name "publisher type"@en;
   sh:nodeKind sh:IRI;
-  sh:path healthdcatap:publishertype .
+  sh:path healthdcatap:publisherType .
 
 <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#purpose> sh:description
     "A free text statement of the purpose of the processing of data or personal data."@en;
@@ -306,7 +306,7 @@
     "A temporal period which the dataset is available for secondary use"@en;
   sh:name "retention period"@en;
   sh:nodeKind sh:IRI;
-  sh:path healthdcatap:retentionperiod .
+  sh:path healthdcatap:retentionPeriod .
 
 <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#sample> sh:description
     "A sample distribution of the dataset"@en;
@@ -378,7 +378,7 @@
   sh:description "A description of the differences between this version and a previous version of the Dataset"@en;
   sh:name "version notes"@en;
   sh:nodeKind sh:Literal;
-  sh:path adms:versionnotes .
+  sh:path adms:versionNotes .
 
 <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#was-generated-by> sh:description
     "An activity that generated, or provides the business context for, the creation of the dataset."@en;
