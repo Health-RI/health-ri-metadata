@@ -38,4 +38,4 @@ rdfs:label "Kind"@en;
     sh:path vcard:hasURL ;
     sh:nodeKind sh:IRI ;
     dash:viewer dash:URIViewer ;
-    dash:editor dash:URIEditor .
+   dash:editor dash:URIEditor .
