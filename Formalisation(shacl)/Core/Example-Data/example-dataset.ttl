@@ -52,8 +52,8 @@
     dct:spatial <http://sws.geonames.org/6695072/> ;
     dcterms:type  <http://purl.org/dc/dcmitype/Dataset> ;
     healthdcatap:healthTheme <https://www.wikidata.org/wiki/Q7907952> ;
-    dct:accessRights: <http://publications.europa.eu/resource/authority/access-right> ;
-    dcatap:applicableLegislation: <https://www.irishstatutebook.ie/eli/2004/ca/27/enacted/ga> .
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right> ;
+    dcatap:applicableLegislation <https://www.irishstatutebook.ie/eli/2004/ca/27/enacted/ga> .
 
 
 
@@ -84,8 +84,8 @@
     dct:spatial <http://sws.geonames.org/6695072/> ;
     dcterms:type  <http://id.loc.gov/vocabulary/marcgt/dtb> ;
     healthdcatap:healthTheme <https://www.wikidata.org/wiki/Q58624061>;
-    dct:accessRights: <http://publications.europa.eu/resource/authority/access-right>;
-    dcatap:applicableLegislation: <https://www.irishstatutebook.ie/eli/2004/ca/27/enacted/ga> .
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right>;
+    dcatap:applicableLegislation <https://www.irishstatutebook.ie/eli/2004/ca/27/enacted/ga> .
 
 
 
@@ -118,8 +118,8 @@
     dct:spatial <http://sws.geonames.org/6695072/> ;
     dcterms:type  <urn:example:datacite/resourceType/Dataset> ;
     healthdcatap:healthTheme <https://www.wikidata.org/wiki/Q58624061> ;
-    dct:accessRights: <http://publications.europa.eu/resource/authority/access-right>;
-    dcatap:applicableLegislation: <https://www.irishstatutebook.ie/eli/2004/ca/27/enacted/ga> .
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right>;
+    dcatap:applicableLegislation <https://www.irishstatutebook.ie/eli/2004/ca/27/enacted/ga> .
 
 
 
@@ -147,8 +147,8 @@
     dct:spatial <http://sws.geonames.org/6695072/> ;
     dcterms:type  <urn:example:re3data/contentType/database> ;
     healthdcatap:healthTheme <https://www.wikidata.org/wiki/Q58624061>;
-    dct:accessRights: <http://publications.europa.eu/resource/authority/access-right>;
-    dcatap:applicableLegislation: <https://www.irishstatutebook.ie/eli/2004/ca/27/enacted/ga> .
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right>;
+    dcatap:applicableLegislation <https://www.irishstatutebook.ie/eli/2004/ca/27/enacted/ga> .
 
 
 <http://example.com/dataset/4> a dcat:Dataset ;
@@ -175,5 +175,5 @@
     dct:spatial <http://sws.geonames.org/6695072/> ;
     dcterms:type <https://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType/download>;
     healthdcatap:healthTheme <https://www.wikidata.org/wiki/Q58624061> ;
-    dct:accessRights: <http://publications.europa.eu/resource/authority/access-right> ;
-    dcatap:applicableLegislation: <https://www.irishstatutebook.ie/eli/2004/ca/27/enacted/ga> .
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right> ;
+    dcatap:applicableLegislation <https://www.irishstatutebook.ie/eli/2004/ca/27/enacted/ga> .
