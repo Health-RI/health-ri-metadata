@@ -6,6 +6,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix dqv: <https://www.w3.org/TR/vocab-dqv/> .
+@prefix efo: <http://www.ebi.ac.uk/efo/efo.owl/> .
 @prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
 @prefix example: <http://data.health-ri.nl/core/p2/DatasetShape> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
@@ -97,12 +98,12 @@
   sh:node foaf:Agent;
   sh:path dct:creator .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#data-origin> sh:description
-    "The origin of the data in the data set"@en;
+<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#data-origin> sh:datatype
+    xsd:boolean;
+  sh:description "The origin of the data in the data set"@en;
   sh:maxCount 1;
   sh:name "data origin"@en;
-  sh:nodeKind xsd:boolean;
-  sh:path "efo:EFO_0022043" .
+  sh:path efo:EFO_0022043 .
 
 <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#description> sh:datatype
     xsd:string;
