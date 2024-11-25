@@ -51,7 +51,8 @@
     healthdcatap:numberOfRecords "0"^^xsd:nonNegativeInteger ;
     dct:spatial <http://sws.geonames.org/6695072/> ;
     dcterms:type  <http://purl.org/dc/dcmitype/Dataset> ;
-    healthdcatap:healthTheme <https://www.wikidata.org/wiki/Q7907952> .
+    healthdcatap:healthTheme <https://www.wikidata.org/wiki/Q7907952> ;
+    dct:accessRights: <http://publications.europa.eu/resource/authority/access-right> .
 
 
 
@@ -81,7 +82,8 @@
     healthdcatap:numberOfRecords "1"^^xsd:nonNegativeInteger ;
     dct:spatial <http://sws.geonames.org/6695072/> ;
     dcterms:type  <http://id.loc.gov/vocabulary/marcgt/dtb> ;
-    healthdcatap:healthTheme <https://www.wikidata.org/wiki/Q58624061> .
+    healthdcatap:healthTheme <https://www.wikidata.org/wiki/Q58624061>;
+    dct:accessRights: <http://publications.europa.eu/resource/authority/access-right> .
 
 
 
@@ -113,7 +115,8 @@
     healthdcatap:numberOfRecords "2"^^xsd:nonNegativeInteger ;
     dct:spatial <http://sws.geonames.org/6695072/> ;
     dcterms:type  <urn:example:datacite/resourceType/Dataset> ;
-    healthdcatap:healthTheme <https://www.wikidata.org/wiki/Q58624061> .
+    healthdcatap:healthTheme <https://www.wikidata.org/wiki/Q58624061> ;
+    dct:accessRights: <http://publications.europa.eu/resource/authority/access-right> .
 
 
 
@@ -140,7 +143,8 @@
     healthdcatap:numberOfRecords "3"^^xsd:nonNegativeInteger ;
     dct:spatial <http://sws.geonames.org/6695072/> ;
     dcterms:type  <urn:example:re3data/contentType/database> ;
-    healthdcatap:healthTheme <https://www.wikidata.org/wiki/Q58624061> .
+    healthdcatap:healthTheme <https://www.wikidata.org/wiki/Q58624061>;
+    dct:accessRights: <http://publications.europa.eu/resource/authority/access-right> .
 
 
 <http://example.com/dataset/4> a dcat:Dataset ;
@@ -166,4 +170,5 @@
     healthdcatap:numberOfRecords "4"^^xsd:nonNegativeInteger ;
     dct:spatial <http://sws.geonames.org/6695072/> ;
     dcterms:type <https://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType/download>;
-    healthdcatap:healthTheme <https://www.wikidata.org/wiki/Q58624061> .
+    healthdcatap:healthTheme <https://www.wikidata.org/wiki/Q58624061> ;
+    dct:accessRights: <http://publications.europa.eu/resource/authority/access-right> .
