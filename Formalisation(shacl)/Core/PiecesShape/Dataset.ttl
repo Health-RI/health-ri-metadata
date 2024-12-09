@@ -28,7 +28,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://data.health-ri.nl/core/p2/DatasetShape> a owl:Ontology;
-  dct:description "This is an excel template, which will be used as input for the excel2rdf pipelien,where the SCHACLPlay API is called to generate SHACL shapes for class Dataset in Health RI Core plateau 2."@en;
+  dct:description "This is an excel template for Dataset class in Health RI Core plateau 2."@en;
   dct:modified "2024-11-21T00:00:00.000Z"^^xsd:dateTime;
   rdfs:comment "Excel template for Dataset class"@en;
   rdfs:label "Excel template for Dataset class"@en;
