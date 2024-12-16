@@ -97,7 +97,7 @@
   sh:maxCount 1;
   sh:minCount 1;
   sh:name "contact point"@en;
-  sh:node hri:KindShape;
+  sh:node <http://data.health-ri.nl/core/p2/KindShapeKindShape> ;
   sh:path dcat:contactPoint .
 
 <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#creator> dash:editor dash:BlankNodeEditor;
