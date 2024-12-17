@@ -1,14 +1,14 @@
 # Core Metadata Schema Specification
-This is a draft version of Health-RI metadata schema 2.0 intended for review.
+This is a pre-release version of Health-RI metadata schema 2.0. 
 
 ## Latest published version
 Latest published version (version 1.0.0) [available here](https://github.com/Health-RI/health-ri-metadata/releases/tag/v1.0.0).
 
 ## Purpose and audience
 
-This branch contains the draft version of the plateau 2 core and generic health metadata schema, detailing the classes and entities involved and offering usage notes for developers. It addresses the schema's design and application but excludes discussion on the national catalog and its onboarding process. It aims at a technical audience tasked with reviewing the metadata schema. 
+This branch contains the 2nd version of the Health-RI core and generic health metadata schema for the National Health Data Catalogue, detailing the classes and entities involved and offering usage notes for developers. It addresses the schema's design and application but excludes discussion on the National Health Data Catalogue and its onboarding process (these are described here). Please note that we are currently still working on the implementation of the new schema into the National Health Data Catalogue. 
 
-Feedback to the draft version is being collected via issues in this repository, preferably via the [provided template](https://github.com/Health-RI/health-ri-metadata/issues/new/choose).
+This documentation aims at a technical audience tasked with implementing the metadata schema and stakeholders interested in a detailed understanding of the core metadata schema. With any further questions or comments please contact Health-RI via the [Health-RI Servicedesk](https://www.health-ri.nl/health-ri-servicedesk) or via [servicedesk@health-ri.nl](mailto:servicedesk@health-ri.nl) 
 
 * [Introduction](#introduction)
     * [Scope](#scope)
@@ -36,24 +36,25 @@ Feedback to the draft version is being collected via issues in this repository, 
 
 ## Introduction
 
-### Scope
+### Scope and current state of the Health-RI core metadata schema
 
-Building on the [1st version of the metadata schema](https://github.com/Health-RI/health-ri-metadata/tree/master), the scope of the plateau 2 version is to incorporate both [DCAT-AP NL](https://geonovum.github.io/DCAT-AP-NL30/) and the (yet to be finalized) [HealthDCAT-AP](https://healthdcat-ap.github.io/), as well as Health-RI specific requirements / needs for the National Health Data Catalogue. 
+Building on the [1st version of the metadata schema](https://github.com/Health-RI/health-ri-metadata/tree/master), the scope of the plateau 2 version is to incorporate both [DCAT-AP NL](https://geonovum.github.io/DCAT-AP-NL30/) and the (yet to be finalized) [HealthDCAT-AP](https://healthdcat-ap.github.io/), as well as Health-RI specific requirements / needs for the National Health Data Catalogue. It introduces several health-related properties (indicated in blue in the UML diagram below), with (where applicable) suggested or required controlled vocabularies.
 
-It therefore introduces several health-related properties (indicated in blue in the UML diagram below), with (where applicable) suggested or required controlled vocabularies. 
+Please note that HealthDCAT-AP has currently not officially been finalized and is subject to change and further specification. Once the official release is published, we will reevaluate and make the Health-RI schema compatible with HealthDCAT-AP. The current version of the model is based on the HealthDCAT-AP draft, version of 16-12-2024. In that version, cardinalities of HealthDCAT-AP are dependent for different access rights (public, restricted, non-public). It was decided to be compliant to the [open](https://healthdcat-ap.github.io/OPEN%20DATA%20HealthDCAT-AP%203.0.0.drawio.png) version for now, and cardinalities from that UML diagram of the HealthDCAT-AP specification were used as a reference for compliance checking. 
 
 In addition, several **ELSI**-related metadata fields, as [gathered](https://health-ri.atlassian.net/wiki/spaces/HA/pages/469893133/Metadata+rondom+gebruiksvoorwaarden+en+authenticatie+autorisatie+en+ELSI+aspecten#Catalogus) by the Health-RI ELSI team, are included in this draft version, although not mandatory. The use of these properties will be explored and evaluated once the new version is implemented in the catalogue. 
 
-Next to that, the **Project** and **Study**  classes are currently still under development. Therefore, the proposed properties, cardinalities and ranges are a starting point, and your input on these two classes is very welcome! If you would like to join the discussions on these two classes, feel free to contact us.
+Next to that, the **Project** and **Study** classes are introduced, but still contain minimal properties. The proposed properties, cardinalities and ranges are a starting point, and your input on these two classes is very welcome! If you would like to join the discussions on these two classes, feel free to contact us.
 
-Finally, the newly introduced property `data origin` (in grey in the UML), with the goal to discriminate non-synthetic from synthetic data, is included in the draft, but has to be further modelled. We now propose to further indicate the nature of the data (eg. Whole genome sequencing data, or questionnaire data) with `healthdcatap:healthCategory` and `healthdcatap:healthTheme`. 
+Finally, the newly introduced property `data origin` (in grey in the UML), with the goal to discriminate non-synthetic from synthetic data, is included in the draft. We now propose to further indicate the **nature of the data** (eg. Whole genome sequencing data, or questionnaire data) with `healthdcatap:healthTheme`. 
+
+Several classes have been included from of DCAT-AP NL and HealthDCAT-AP without further specification so far at Health-RI. This includes the DataService class. Therefore, these classes can be used, but are not yet further modelled to reflect specific needs of dataholders for the National Health Data Catalogue. 
 
 ### Mandatory and Recommended
 
 In the version 2 of the schema, we extended the current version, which is based on the [DCAT-AP 3.0](https://semiceu.github.io/DCAT-AP/releases/3.0.0/) specification, by adding new properties from [HealthDCAT-AP](https://healthdcat-ap.github.io/) and [DCAT-AP NL](https://docs.geostandaarden.nl/dcat/dcat-ap-nl30/), as well as changing cardinalities in order to make it compatible with both extensions.
-Please note that [HealthDCAT-AP](https://healthdcat-ap.github.io/) is still in its draft version, so we made some properties less strict than what it currently specifies. Once the proper release is out, we will reevaluate and make our HRI schema compatible with the HealthDCAT-AP.
+Please note that [HealthDCAT-AP](https://healthdcat-ap.github.io/) is still in its draft version, so we made some properties less strict than what it currently specifies. In the HRI schema, we categorize components into `mandatory` and `recommended` classes and properties. A potential third category, `optional`, may be introduced in the future.
 
-In the HRI schema, we categorize components into `mandatory` and `recommended` classes and properties. A potential third category, `optional`, may be introduced in the future.
 
 In the context of data exchange:
 
@@ -85,7 +86,11 @@ According to [DCAT-AP](https://semiceu.github.io/DCAT-AP/releases/3.0.0/):
 | --- | --- | --- | 
 | `adms` | `http://www.w3.org/ns/adms#` | [VOCAB-ADMS](https://www.w3.org/TR/vocab-dcat-3/#bib-vocab-adms) |
 | `dcat` | `http://www.w3.org/ns/dcat#` | [VOCAB-DCAT](https://w3c.github.io/dxwg/dcat/#bib-vocab-dcat) |
+| `dcatap` | `http://data.europa.eu/r5r/` | NA |
 | `dct` | `http://purl.org/dc/terms/` | [DCT](https://w3c.github.io/dxwg/dcat/#bib-dcterms) |
+| `dpv` | `https://w3id.org/dpv#` | NA |
+| `dpv-pd` | `https://w3id.org/dpv/dpv-pd#` | NA |
+| `dqv` | `https://www.w3.org/TR/vocab-dqv/` | NA |
 | `foaf` | `http://xmlns.com/foaf/0.1/` | [FOAF](https://w3c.github.io/dxwg/dcat/#bib-foaf) |
 | `owl` | `http://www.w3.org/2002/07/owl#` | [OWL2-SYNTAX](https://w3c.github.io/dxwg/dcat/#bib-owl2-syntax) |
 | `rdf` | `http://www.w3.org/1999/02/22-rdf-syntax-ns#` | [RDF-SYNTAX-GRAMMAR](https://w3c.github.io/dxwg/dcat/#bib-rdf-syntax-grammar) |
@@ -95,16 +100,34 @@ According to [DCAT-AP](https://semiceu.github.io/DCAT-AP/releases/3.0.0/):
 | `time` | `http://www.w3.org/2006/time#` | [OWL-TIME](https://w3c.github.io/dxwg/dcat/#bib-owl-time) |
 | `xsd` | `http://www.w3.org/2001/XMLSchema#` | [XMLSCHEMA11-2](https://w3c.github.io/dxwg/dcat/#bib-xmlschema11-2) |
 | `vcard` | `http://www.w3.org/2006/vcard/ns#` | [VCARD](https://www.w3.org/TR/vcard-rdf/) |
+| `healthdcatap` | TBD | NA |
+
 
 ### Overview and Diagram
 
-An overview of the Metadata schema core is presented in the UML diagram depicted below. The UML showcases the primary classes (entities), excluding the detailed definitions such as rdfs:label and rdfs:comment. Each block denotes a class and comprises a list of its attributes (properties). If a class is connected to another class by a closed arrow, indicating that it inherits all properties from the other class. For example, `dcat:DatasetSeries` inherits from `dcat:Dataset` which inherits from `dcat:Resource`. The other arrows, represent relations and contain the type of relation, such as `dcat:Dataset` connects to a `dcat:DatasetSeries` via the predicate `dcat:inSeries`, and include the cardinality, such as `dcat:Dataset` can be connected via `dcat:inSeries` to zero or more `dcat:DatasetSeries`.
+An overview of the Metadata schema core is presented in the UML diagram depicted below. The UML showcases the primary classes (entities), excluding the detailed definitions such as rdfs:label and rdfs:comment. Each block denotes a class and comprises a list of its attributes (properties). Where properties connect to another class (the range of the property is another class), this range is stated in pink font. 
+If a class is connected to another class by a closed arrow, this indicates that it inherits all properties from the other class. For example, `dcat:DatasetSeries` inherits from `dcat:Dataset` which inherits from `dcat:Resource`. The other arrows, represent relations and contain the type of relation, such as `dcat:Dataset` connects to a `dcat:DatasetSeries` via the predicate `dcat:inSeries`, and include the cardinality, such as `dcat:Dataset` can be connected via `dcat:inSeries` to zero or more `dcat:DatasetSeries`. Mandatory relationships are marked with dark labels, recommended relationships with a lighter colour. 
+In the UML, we have separated the main classes from supporting classes. Relationships between main classes are indicated with arrows as described above. Relationships with supporting classes are not shown with arrows to keep a better overview in the drawing, but can still be deduced from the pink coloured ranges of the listed properties per class. 
 
-Next to the UML, a tabular overview of all classes and properties, including their range, cardinality, controlled vocabulary (if applicable) and usage note is findable below. 
-The same information can be referred to in this [sheet](Documents/Version2_evaluation/Draft_metadata_CoreGenericHealth_p2.xlsx). In this sheet, we also state the origin of the (new) constrain (DCAT-AP v3, DCAT-AP NL or HealthDCAT-AP). 
+Next to the UML, a tabular overview of all classes and properties, including their range, cardinality, controlled vocabulary (if applicable) and usage note is findable below. The same information can be referred to in this [sheet](Documents/Version2_evaluation/Draft_metadata_CoreGenericHealth_p2.xlsx). In this sheet, we also state the origin of the (new) constrain (DCAT-AP v3, DCAT-AP NL or HealthDCAT-AP). 
 
 - HRI core metadata schema diagram (plateau 2):
 <img src="Images/2.0_plateau2/HRI_metadata_p2.png" alt="diagram" width=1080 height=560 title="diagram">
+
+**Some notes on using the metadata schema / mapping**: 
+
+- It is possible that not all classes of the metadata schema are necessary to describe your data or the structure of your data. For example, `DataService` or `DatasetSeries` might not apply to all datasets described/onboarded in the National Health Data Catalogue 
+
+- The power of DCAT is that it is flexible in use, giving a data holder the ability to reflect the structure of their data by using the different classes. 
+
+- To improve this even further, we have now introduced Project and Study classes. 
+
+- Some properties in a number of classes (eg. dct:publisher, dct:creator, dct:contactPoint) refer to other, small classes (e.g. foaf:Agent, vcard:Kind). If used, these properties will instantiate these classes individually. This means, that for example the publisher and creator can instantiate two times foaf:Agent with different content (organization vs. person). This applies to: foaf:Agent, vcard:Kind, spdx:Checksum and dct:PeriodOfTime. 
+
+- This documentation contains some abstract classes (Catalogued resource / Catalogue Record). They are taken up in the documentation for the matter of completeness, but usually not used. This is indicated in the class descriptions below. 
+
+- We collect and share mapping examples from differen data sources [here](https://health-ri.atlassian.net/wiki/spaces/FSD/folder/736985095). 
+
 
 ## Main Classes
 
@@ -112,35 +135,29 @@ The same information can be referred to in this [sheet](Documents/Version2_evalu
    
 | **Class name** | **Definition** | **Usage Note** | **URI** | **Example** |
 | --- | --- | --- | --- | --- |
-| [Dataset](#dataset) | A resource type. <br>A meaningful collection of data, published or curated by a single organisation or individual, and available for access or download in one or more representations. | When focusing on health data, a dataset typically contains structured information gathered from a study or research project related to health topics. This might include clinical trial results, public health statistics, patient records, survey data, etc.  <br>How the data in a dataset can be accessed is defined in the Distribution, which usually points to the actual data files available for access or download. Datasets are often included in a catalog, which organizes and provides metadata about multiple datasets, making them easier to find and use. The term 'organization or individual' refers to any entity responsible for creating, maintaining, or distributing the dataset. | `dcat:Dataset` | Questionnaire data of the Personalised RISk-based MAmmascreening Study (PRISMA),  <br>Clinical data for Inflammatory Bowel Disease (IBD) from AUMC, LUMC and UMCG |
-| [Catalog](#catalog) | A catalog that is listed in the National catalog. | Used to describe a bundle of datasets (and other resources) under a single title, for example a collection or a study. | `dcat:Catalog` | NA  |
-| [Agent](#agent) | An entity that is associated with catalog and/or Datasets. | A person or organization that is associated with the catalogue and/or datasets. | `foaf:Agent` | NA  |
-| [Cataloged Resource](#cataloged-resource) | Resource published or curated by a single agent. | This is an abstract class, we do not use this class, instead we use specifications of it (e.g. Dataset). This is mainly for a high level grouping and the reuse of properties. | `dcat:Resource` | NA  |
-| [Kind](#kind) | A description following the vCard specification, e.g. to provide telephone number and e-mail address for a contact point. | Used to describe contact information for Dataset and DatasetSeries. | `vcard:Kind` | NA  |
+| [Dataset](#dataset) | A resource type. <br>A meaningful collection of data, published or curated by a single organisation or individual, and available for access or download in one or more representations. | When focusing on health data, a dataset typically contains structured information gathered from a study or research project related to health topics. This might include clinical trial results, public health statistics, patient records, survey data, etc.  
+How the data in a dataset can be accessed is defined in the Distribution, which usually points to the actual data files available for access or download. Datasets are often included in a catalog, which organizes and provides metadata about multiple datasets, making them easier to find and use. The term 'organization or individual' refers to any entity responsible for creating, maintaining, or distributing the dataset. | `dcat:Dataset` | Questionnaire data of the Personalised RISk-based MAmmascreening Study (PRISMA),  <br>Clinical data for Inflammatory Bowel Disease (IBD) from AUMC, LUMC and UMCG |
+| [Catalog](#catalog) | A catalog that is listed in the National Health Data catalog and contains one or several datasets and/or data services. | Used to describe a bundle of datasets (and other resources) under a single title, for example a collection. | `dcat:Catalog` | Personalised RISK-based MAmmascreening Study (PRISMA) |
+| [Agent](#agent) | An entity that is associated with catalog and/or Datasets. | A person or organization that is associated with the catalogue, dataset or project. This class is instantiated in these classes, whenever the range is foaf:Agent. | `foaf:Agent` | NA  |
+| [Kind](#kind) | A description following the vCard specification to provide contact information. | Used to describe contact information for Dataset and DatasetSeries. This class is instantiated in these classes, whenever the range is vcard:Kind. | `vcard:Kind` | NA |
 
 ### Recommended Classes
 
 | **Class name** | **Definition** | **Usage Note** | **URI** |
 | --- | --- | --- | --- |   
 | [Distribution](#distribution) | An available distribution of the dataset. | Used to describe the different ways that a single dataset can be made available in. I.e., it can be downloaded or it can be accessed online in one or more distributions (e.g. one in a downloadable .csv file, another file with an access or query webpage) | `dcat:Distribution` |
-| [Dataset Series](#dataset-series) | A collection of datasets that are published separately, but share some characteristics that group them. | With Dataset Series we refer to data, somehow interrelated, that are published separately. An example is budget data split by year and/or country, instead of being made available in a single dataset. | `dcat:DatasetSeries` |
+| [Dataset Series](#dataset-series) | A collection of datasets that are published separately, but share some characteristics that group them. | With Dataset Series is a collection of similar datasets that are somehow interrelated but published separately. An example is consecutive datasets split by year and or datasets seperated by location. Instead of being made available in a single dataset, the individual datasets are linked together with the Dataset Series class. | `dcat:DatasetSeries` |
 | [Data Service](#data-service) | A Resource type.  <br>A collection of operations that provides access to one or more datasets or data processing functions. | The kind of service can be indicated using the `dcterms:type` property. Its value may be taken from a controlled vocabulary that should be defined in the community. | `dcat:DataService` |
-| [Project](#project) | A collective endeavour of some kind. The Project class represents the class of things that are 'projects'. These may be formal or informal, collective or individual. It is often useful to indicate the homepage of a Project. | Used to denote the information of a funded project, including funding agent. A project can consist of several studies. | `foaf:Project` |
-| [Study](#study) | A Study represents the process by which a data set was generated or collected. | Used to describe the information of a study that generates or collects data described in a dataset. A study is connected to one project. | TBA |
-
-### _Abstract Class_
-
-_**Cataloged Resource**_ is a generic concept from the DCAT vocabulary, that is rarely used directly, but indirectly through its extensions. We recommend avoiding using `dcat:Resource` directly for your document and requesting a model extension or update, in case the type/class you need is not in this schema.
-
-| **Class name** | **Definition** | **Usage Note** | **URI** |
-| --- | --- | --- | --- |   
-| [_Cataloged Resource_](#cataloged-resource) | The class resource, everything. | This class is for grouping and class hierarchy relation purposes. | `dcat:Resource` |
+| [Project](#project) | A collective endeavour of some kind. The Project class represents the class of things that are 'projects'. These may be formal or informal, collective or individual. | This class can be used to describe organizational aspects of a (research or other) funded project, in which one or multiple studies are executed that result in the generation of one or multiple datasets. Next to an overall description of the project, it includes information about the funding agent(s). | `foaf:Project` |
+| [Study](#study) | A Study represents the process by which a data set was generated or collected. | Used to describe the information of a study that generates or collects data described in a dataset. A study is connected to one project. Furthermore, a study can generate one or multiple datasets. | `disco:Study` |
+| [Period of Time](#period-of-time) | An interval of time that is named or defined by its start and end dates. This class is instantiated by properties in other classes that have the range `dct:PeriodOfTime`. | TBD | `dct:PeriodOfTime` |
+| [Checksum](#checksum) | A value that allows the contents of a file to be authenticated. This class allows the results of a variety of checksum and cryptographic message digest algorithms to be represented. This class is instantiated by properties in other classes that have the range `spdx:Checksum`.  | TBD | `spdx:Checksum` |
 
 ## Main Properties per Class
 
 ### [Catalog](https://www.w3.org/TR/vocab-dcat-3/#Class:Catalog)
 
-A curated collection of metadata about resources. A web-based data catalog is typically represented as a single instance of this class.
+A catalog that is listed in the National Health Data catalog and contains one or several datasets and/or data services. 
 
 #### Mandatory Properties
    
@@ -246,7 +263,6 @@ A collection of datasets that are published separately, but share some character
 
 
 ### [Data Service](http://www.w3.org/ns/dcat#DataService)
----------------------------------------------------------------------------------------------
 
 A collection of operations that provides access to one or more datasets or data processing functions.
 
@@ -322,7 +338,7 @@ An available distribution of the dataset.
 
 ### [Project](http://xmlns.com/foaf/spec/#term_Project)
 
-A collective endeavour of some kind. The Project class represents the class of things that are 'projects'. These may be formal or informal, collective or individual. It is often useful to indicate the homepage of a Project.
+A collective endeavour of some kind. The Project class represents the class of things that are 'projects'. These may be formal or informal, collective or individual.
 
 #### Mandatory Properties
 
@@ -342,7 +358,7 @@ A collective endeavour of some kind. The Project class represents the class of t
 
 ### [Study](https://rdf-vocabulary.ddialliance.org/discovery.html#dfn-disco-study)
 
-A Study represents the process by which a data set was generated or collected.
+A Study represents the process by which a data set was generated or collected. 
 
 #### Mandatory Properties
 
@@ -360,7 +376,7 @@ There are currently no recommended properties for this class.
 
 ### [Agent](http://xmlns.com/foaf/spec/#term_Agent)
 
-An entity that is associated with catalog and/or Datasets. Agent can be individuals or organisations, If the Agent is an organisation, the use of the Organization Ontology is recommended.
+An entity that is associated with catalog and/ or dataset. 
 
 #### Mandatory Properties
 
@@ -382,7 +398,7 @@ An entity that is associated with catalog and/or Datasets. Agent can be individu
 
 ### [Kind](https://www.w3.org/TR/vcard-rdf/#d4e1819)
 
-Contact information of the contact point for Dataset and DatasetSeries.
+A description following the vCard specification to provide contact information. 
 
 #### Mandatory Properties
 
@@ -399,7 +415,7 @@ Contact information of the contact point for Dataset and DatasetSeries.
 
 ### [Checksum](https://spdx.org/rdf/terms/#d4e2091)
 
-A value that allows the contents of a file to be authenticated. This class allows the results of a variety of checksum and cryptographic message digest algorithms to be represented.
+A value that allows the contents of a file to be authenticated. This class allows the results of a variety of checksum and cryptographic message digest algorithms to be represented. This class is instantiated by properties in other classes that have the range `spdx:Checksum`. 
 
 #### Mandatory Properties
 
@@ -414,7 +430,7 @@ There are currently no recommended properties for this class.
 
 ### [Period of time](https://semiceu.github.io/DCAT-AP/releases/3.0.0/#Periodoftime)
 
-An interval of time that is named or defined by its start and end dates.
+An interval of time that is named or defined by its start and end dates. This class is instantiated by properties in other classes that have the range `dct:PeriodOfTime`. 
 
 #### Mandatory Properties
 
