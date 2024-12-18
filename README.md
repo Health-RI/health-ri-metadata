@@ -32,7 +32,6 @@ This documentation aims at a **technical audience** tasked with implementing the
     * [Period of time](#period-of-time)
 * [Feedback, Support and Extension](#further-information)
     * [Model extension](#model-extension)
-    * [Terminology](#terminology)
 
 ## Introduction
 
@@ -435,11 +434,3 @@ There are currently no mandatory properties for this class.
 ### Model extension
 
 This is a Health-RI core metadata schema, which means it is designed to be “minimal” and cover the basic metadata elements of catalogue resources. If you come from a specific working group or domain and see some of the important elements from your domain should be represented in the metadata, you could build an extension (or so-called petal) of this model for your domain’s specific needs. For more information on this, please check out the [process description for domain-specific metadata](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/545783826/Domain-specific+metadata+schema+development). 
-
-### Terminology
-
-According to [DCAT-AP](https://semiceu.github.io/DCAT-AP/releases/3.0.0/):
-
-*   An **Application Profile** defines the mandatory, recommended, and optional components for a specific use case by leveraging terminology from foundational standards. Additionally, it suggests standardized vocabularies to maintain consistency in the use of terms and data.
-    
-*   A **Dataset** is a self-contained set of data produced by a specific organization, which can be accessed or downloaded for various uses. A **Data Portal** is an online platform that offers a catalog of datasets and tools to help users locate and utilize these datasets effectively.
