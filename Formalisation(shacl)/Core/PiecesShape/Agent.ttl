@@ -2,37 +2,39 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://data.health-ri.nl/core/p2/DatasetShape> a owl:Ontology;
-  dct:description "This Excel file shows how to edit simple SHACL shapes in an Excel file"@en;
-  dct:modified "2024-02-22T00:00:00.000Z"^^xsd:dateTime;
-  rdfs:comment "An example SHACL file in Excel"@en;
-  rdfs:label "SHACL example"@en;
+<http://data.health-ri.nl/core/p2/AgentShape> a owl:Ontology;
+  dct:description "This is an excel template for Agent class in Health RI Core plateau 2."@en;
+  dct:modified "2024-12-17T00:00:00.000Z"^^xsd:dateTime;
+  rdfs:comment "Excel template for Agent class"@en;
+  rdfs:label "Excel template for Agent class"@en;
   owl:versionInfo "0.1" .
 
-
 <http://data.health-ri.nl/core/p2/AgentShapeAgentShape> a sh:NodeShape;
- rdfs:label "Agent"@en;
-  sh:property <http://data.health-ri.nl/core/p2/AgentShapeAgentShape#foaf:name>, <http://data.health-ri.nl/core/p2/AgentShapeAgentShape#dct:identifier>;
-  sh:targetClass foaf:Agent  .
+  rdfs:label "Agent"@en;
+  sh:property <http://data.health-ri.nl/core/p2/AgentShapeAgentShape#dct-identifier>,
+    <http://data.health-ri.nl/core/p2/AgentShapeAgentShape#foaf-name>;
+  sh:targetClass foaf:Agent .
 
+<http://data.health-ri.nl/core/p2/AgentShapeAgentShape#foaf-name> dash:editor dash:TextFieldEditor;
+  dash:viewer dash:LiteralViewer;
+  sh:description "name"@en;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "name"@en;
+  sh:nodeKind sh:Literal;
+  sh:path foaf:name .
 
-<http://data.health-ri.nl/core/p2/AgentShapeAgentShape#foaf:name>
-    dash:editor dash:TextFieldEditor ;
-    dash:viewer dash:LiteralViewer ;
-    sh:minCount 1 ;
-    sh:maxCount 1 ;
-    sh:nodeKind sh:Literal ;
-    sh:path foaf:name .
-
-<http://data.health-ri.nl/core/p2/AgentShapeAgentShape#dct:identifier>
-    sh:path dct:identifier ;
-    sh:nodeKind sh:Literal ;
-    dash:editor dash:TextFieldEditor ;
-    dash:viewer dash:LiteralViewer ;
-    sh:minCount 1 ;
-    sh:maxCount 1 .
-
+<http://data.health-ri.nl/core/p2/AgentShapeAgentShape#dct-identifier> dash:editor
+    dash:TextFieldEditor;
+  dash:viewer dash:LiteralViewer;
+  sh:description "identifier"@en;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "identifier"@en;
+  sh:nodeKind sh:Literal;
+  sh:path dct:identifier .
