@@ -43,7 +43,7 @@ Please note that HealthDCAT-AP has currently not officially been finalized and i
 
 In addition, several **ELSI**-related metadata fields, as [gathered](https://health-ri.atlassian.net/wiki/spaces/HA/pages/469893133/Metadata+rondom+gebruiksvoorwaarden+en+authenticatie+autorisatie+en+ELSI+aspecten#Catalogus) by the Health-RI ELSI team, are included in this draft version, although not mandatory. The use of these properties will be explored and evaluated once the new version is implemented in the catalogue. 
 
-Next to that, the [**Project**](#project) and [**Study**](#study) classes are introduced, but still contain minimal properties. The proposed properties, cardinalities and ranges are a starting point, and your input on these two classes is very welcome! If you would like to join the discussions on these two classes, feel free to contact us.
+Next to that, the [**Project**](#project) and [**Study**](#study) classes are introduced, but still contain minimal properties. The proposed properties, cardinalities and ranges are a starting point, and your input on these two classes is very welcome! If you would like to join the discussions on these two classes, feel free to [contact us](mailto:servicedesk@health-ri.nl).
 
 Finally, the newly introduced property `data origin` (in grey in the UML), with the goal to discriminate non-synthetic from synthetic data, is included in the draft. We now propose to further indicate the **nature of the data** (eg. Whole genome sequencing data, or questionnaire data) with `healthdcatap:healthTheme`. 
 
