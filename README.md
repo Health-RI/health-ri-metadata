@@ -13,7 +13,6 @@ This documentation aims at a **technical audience** tasked with implementing the
 * [Introduction](#introduction)
     * [Scope](#scope)
     * [Mandatory and Recommended](#mandatory-and-recommended)
-    * [Terminology](#terminology)
     * [Used Prefixes](#used-prefixes)
     * [Overview and Diagram](#overview-and-diagram)
 * [Main Classes](#main-classes)
@@ -32,6 +31,8 @@ This documentation aims at a **technical audience** tasked with implementing the
     * [Checksum](#checksum)
     * [Period of time](#period-of-time)
 * [Feedback, Support and Extension](#further-information)
+    * [Model extension](#model-extension)
+    * [Terminology](#terminology)
 
 ## Introduction
 
@@ -68,16 +69,6 @@ In the context of data exchange:
 *   **Recommended** `property`: Senders SHOULD provide the information if available; Receivers MUST process the information for that property.
     
 *   **Optional** `property`: Senders MAY provide the information but are not obliged to do so; Receivers MUST process the information for that property.
-    
-
-### Terminology
-
-According to [DCAT-AP](https://semiceu.github.io/DCAT-AP/releases/3.0.0/):
-
-*   An **Application Profile** defines the mandatory, recommended, and optional components for a specific use case by leveraging terminology from foundational standards. Additionally, it suggests standardized vocabularies to maintain consistency in the use of terms and data.
-    
-*   A **Dataset** is a self-contained set of data produced by a specific organization, which can be accessed or downloaded for various uses. A **Data Portal** is an online platform that offers a catalog of datasets and tools to help users locate and utilize these datasets effectively.
-    
 
 ### Used Prefixes
 
@@ -443,32 +434,12 @@ There are currently no mandatory properties for this class.
 
 ### Model extension
 
-Within DCAT and DCAT-AP, the term "resource" generally encompasses all objects that can be described using [RDF](https://www.w3.org/RDF/). However, there are specific categories and attributes used to indicate the different types of resources:
+This is a Health-RI core metadata schema, which means it is designed to be “minimal” and cover the basic metadata elements of catalogue resources. If you come from a specific working group or domain and see some of the important elements from your domain should be represented in the metadata, you could build an extension (or so-called petal) of this model for your domain’s specific needs. For more information on this, please check out the [process description for domain-specific metadata](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/545783826/Domain-specific+metadata+schema+development). 
 
-*   `dcat:Dataset` is a type of `dcat:Resource` representing a collection of data
+### Terminology
+
+According to [DCAT-AP](https://semiceu.github.io/DCAT-AP/releases/3.0.0/):
+
+*   An **Application Profile** defines the mandatory, recommended, and optional components for a specific use case by leveraging terminology from foundational standards. Additionally, it suggests standardized vocabularies to maintain consistency in the use of terms and data.
     
-*   `dcat:Distribution` is a type of `dcat:Resourcee` representing an available form or representation of a dataset.
-    
-*   `dcat:Catalog` is a type of `dcat:Resource` representing a collection of datasets.
-    
-*   `dcat:DataService` , introduced in DCAT version 2, is a type of Resource representing a service for accessing data.
-    
-
-In DCAT and DCAT-AP, the vocabulary is focused on datasets. Nonetheless, users may need to portray a variety of resources specific to certain domains, like biobanks or patient registries. In such cases, we propose potential scenarios for modifying or augmenting DCAT to accurately depict your resource type:
-
-*   **Use** `dcat:Resource` **directly**: If the asset you are dealing with is not in line with the `dcat:Dataset` definition, you can use the broader term `dcat:Resource`. This term allows you to represent almost any type of asset. However, this approach may not be completely clear for users who are trying to understand the essence of the asset. We can de define the asset type further with specific vocabularies over time.
-    
-*   **Expand with Personalised Classes**: If there is a need to represent specific resources, such as biobanks or patient registries, it may be beneficial to supplement the foundational DCAT vocabulary with custom classes. For example:
-    
-
-`:Collection a rdfs:Class ;`
-
-`rdfs:subClassOf dcat:Resource .`
-
-and
-
-`:PatientRegistry a rdfs:Class ;`
-
-`rdfs:subClassOf dcat:Dataset .`
-
-When creating custom classes, it is essential to provide detailed metadata for each type of resource. This will enable users and systems to distinguish between them and comprehend their subtle differences. For instance, consider the distinction between a collection and a dataset. Therefore, it is crucial to provide specific and unambiguous information to ensure complete understanding.
+*   A **Dataset** is a self-contained set of data produced by a specific organization, which can be accessed or downloaded for various uses. A **Data Portal** is an online platform that offers a catalog of datasets and tools to help users locate and utilize these datasets effectively.
