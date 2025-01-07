@@ -26,9 +26,9 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://data.sparna.fr/shapes-example#> a owl:Ontology;
-  dct:description "This Excel file shows how to edit simple SHACL shapes in an Excel file"@en;
-  dct:modified "2025-01-07T09:51:51.290Z"^^xsd:dateTime;
-  rdfs:comment "An example SHACL file in Excel"@en;
+  dct:description "SHACL definitions for the Health-RI v2 model for Catalog."@en;
+  dct:modified "2025-01-07T10:02:19.400Z"^^xsd:dateTime;
+  rdfs:comment "Health-RI v2 Catalog."@en;
   rdfs:label "Catalog"@en;
   owl:versionInfo "0.1" .
 
