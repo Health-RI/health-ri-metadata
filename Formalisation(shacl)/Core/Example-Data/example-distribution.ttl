@@ -5,4 +5,5 @@
     dct:title "Example Distribution" ;
     dct:description "This is an example distribution to test the shapes" ;
     dcat:accessURL <http://example.com/> ;
-	dcat:mediaType <http://example.com/> .
+	dcat:mediaType <http://example.com/> ;
+    dct:license <https://creativecommons.org/public-domain/cc0/> .
