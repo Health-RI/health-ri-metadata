@@ -1,78 +1,173 @@
-@prefix :         <http://fairdatapoint.org/> .
-@prefix dash:     <http://datashapes.org/dash#> .
-@prefix dcat:     <http://www.w3.org/ns/dcat#> .
-@prefix dct:      <http://purl.org/dc/terms/> .
-@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
-@prefix sh:       <http://www.w3.org/ns/shacl#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix example: <https://data.sparna.fr/shapes-example/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix healthdcatap: <http://example.com/ns/healthdcatap#> .
+@prefix hri: <http://data.health-ri.nl/core/p2/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-:CatalogShape a sh:NodeShape ;
-  sh:targetClass dcat:Catalog ;
-  sh:property
-  [
-    sh:path dcat:dataset ;
-    sh:or
-    ([
-      sh:class dcat:Dataset ;
-    ]
-    [
-      sh:nodeKind sh:IRI ;
-    ])
-  ],
-  [
-    sh:path dct:description ;
-    sh:nodeKind sh:Literal ;
-    sh:minCount 1 ;
+<https://data.sparna.fr/shapes-example#> a owl:Ontology;
+  dct:description "This Excel file shows how to edit simple SHACL shapes in an Excel file"@en;
+  dct:modified "2025-01-07T09:51:51.290Z"^^xsd:dateTime;
+  rdfs:comment "An example SHACL file in Excel"@en;
+  rdfs:label "Catalog"@en;
+  owl:versionInfo "0.1" .
 
-    # The sh:uniqueLang constraint needs a sh:datatype rdf:langString to properly function.
-    # Currently, the FDP client does not provide support for dash:TextFieldWithLangEditor,
-    # therefore making this non-functional untill support in the client is added.
-    sh:uniqueLang true ;
-    
-    dash:viewer dash:LiteralViewer ;
-    dash:editor dash:TextAreaEditor ;
-  ],
-  [
-    sh:path dct:publisher ;
-    sh:minCount 1 ;
-    sh:node :AgentShape;
-    dash:viewer dash:DetailsViewer ;
-    dash:editor dash:BlankNodeEditor ;
-  ],
-  [
-    sh:path dct:title ;
-    sh:nodeKind sh:Literal ;
-    dash:editor dash:TextFieldEditor ;
-    dash:viewer dash:LiteralViewer ;
-    sh:minCount 1 ;
-    sh:uniqueLang true ;
-  ],
-  [
-    sh:path dcat:catalog ;
-    sh:class dcat:Catalog ;
-  ],
-  [
-    sh:path dcat:service ;
-    sh:class dcat:DataService ;
-  ] .
+hri:CatalogShape a sh:NodeShape;
+  rdfs:label "Catalog"@en;
+  sh:nodeKind sh:IRI;
+  sh:order 1;
+  sh:property <http://data.health-ri.nl/core/p2/CatalogShape#dcat:catalog>, <http://data.health-ri.nl/core/p2/CatalogShape#dcat:contactPoint>,
+    <http://data.health-ri.nl/core/p2/CatalogShape#dcat:dataset>, <http://data.health-ri.nl/core/p2/CatalogShape#dcat:record>,
+    <http://data.health-ri.nl/core/p2/CatalogShape#dcat:service>, <http://data.health-ri.nl/core/p2/CatalogShape#dcatap:applicableLegislation>,
+    <http://data.health-ri.nl/core/p2/CatalogShape#dct:creator>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:description>,
+    <http://data.health-ri.nl/core/p2/CatalogShape#dct:hasPart>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:issued>,
+    <http://data.health-ri.nl/core/p2/CatalogShape#dcat:themeTaxonomy>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:language>,
+    <http://data.health-ri.nl/core/p2/CatalogShape#dct:license>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:modified>,
+    <http://data.health-ri.nl/core/p2/CatalogShape#dct:publisher>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:rights>,
+    <http://data.health-ri.nl/core/p2/CatalogShape#dct:spatial>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:temporal>,
+    <http://data.health-ri.nl/core/p2/CatalogShape#dct:title>, <http://data.health-ri.nl/core/p2/CatalogShape#foaf:homepage>;
+  sh:targetClass dcat:Catalog;
+  shacl-play:background-color "Green" .
 
+<http://data.health-ri.nl/core/p2/CatalogShape#dcatap:applicableLegislation> dash:editor
+    dash:URIEditor;
+  dash:viewer dash:URIViewer;
+  sh:name "Applicable Legislation"@en;
+  sh:nodeKind sh:IRI;
+  sh:path dcatap:applicableLegislation .
 
-  :AgentShape  a   sh:NodeShape;
-    sh:property
-    [
-    sh:path      foaf:name;
-    sh:nodeKind  sh:Literal;
-    dash:editor dash:TextFieldEditor;
-    dash:viewer dash:LiteralViewer ;
-    sh:maxCount  1;
-    sh:minCount  1;
-    ],
-    [
-    sh:path dct:identifier ;
-    sh:nodeKind sh:Literal ;
-    dash:editor dash:TextFieldEditor ;
-    dash:viewer dash:LiteralViewer ;
-    sh:minCount 1 ;
-    sh:maxCount 1 ;
-  ];
-  
-  sh:targetClass  foaf:Agent .
+<http://data.health-ri.nl/core/p2/CatalogShape#dcat:catalog> sh:class dcat:Catalog;
+  sh:name "catalog"@en;
+  sh:path dcat:catalog .
+
+<http://data.health-ri.nl/core/p2/CatalogShape#dcat:contactPoint> dash:editor dash:BlankNodeEditor;
+  dash:viewer dash:DetailsViewer;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "Contact point"@en;
+  sh:node vcard:Kind;
+  sh:path dcat:contactPoint .
+
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:creator> dash:editor dash:BlankNodeEditor;
+  dash:viewer dash:DetailsViewer;
+  sh:name "creator"@en;
+  sh:node foaf:Agent;
+  sh:path dct:creator .
+
+<http://data.health-ri.nl/core/p2/CatalogShape#dcat:dataset> sh:name "dataset"@en;
+  sh:path dcat:dataset .
+
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:description> dash:editor dash:TextAreaEditor;
+  dash:viewer dash:LiteralViewer;
+  sh:minCount 1;
+  sh:name "description"@en;
+  sh:nodeKind sh:Literal;
+  sh:path dct:description .
+
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:spatial> dash:editor dash:URIEditor;
+  dash:viewer dash:URIViewer;
+  sh:description "The EU Vocabularies Name Authority Lists must be used for continents, countries and places that are in those lists; if a particular location is not in one of the mentioned Named Authority Lists, Geonames URIs must be used. For districts or neighbourhoods in NL, the Dutch vocab can be used."@en;
+  sh:name "geographical coverage"@en;
+  sh:nodeKind sh:IRI;
+  sh:path dct:spatial .
+
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:hasPart> sh:class dcat:Catalog;
+  sh:name "has part"@en;
+  sh:path dct:hasPart .
+
+<http://data.health-ri.nl/core/p2/CatalogShape#foaf:homepage> dash:editor dash:URIEditor;
+  dash:viewer dash:URIViewer;
+  sh:maxCount 1;
+  sh:name "home page"@en;
+  sh:nodeKind sh:IRI;
+  sh:path foaf:homepage .
+
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:language> dash:editor dash:URIEditor;
+  dash:viewer dash:URIViewer;
+  sh:name "language"@en;
+  sh:nodeKind sh:IRI;
+  sh:path dct:language .
+
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:license> dash:editor dash:URIEditor;
+  dash:viewer dash:URIViewer;
+  sh:maxCount 1;
+  sh:name "licence"@en;
+  sh:nodeKind sh:IRI;
+  sh:path dct:license .
+
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:modified> dash:editor dash:DateTimePickerEditor;
+  dash:viewer dash:LiteralViewer;
+  sh:datatype xsd:dateTime;
+  sh:maxCount 1;
+  sh:name "modification date"@en;
+  sh:path dct:modified .
+
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:publisher> dash:editor dash:BlankNodeEditor;
+  dash:viewer dash:DetailsViewer;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "publisher"@en;
+  sh:node foaf:Agent;
+  sh:path dct:publisher .
+
+<http://data.health-ri.nl/core/p2/CatalogShape#dcat:record> sh:class dcat:CatalogRecord;
+  sh:name "record"@en;
+  sh:path dcat:record .
+
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:issued> dash:editor dash:DateTimePickerEditor;
+  dash:viewer dash:LiteralViewer;
+  sh:datatype xsd:dateTime;
+  sh:maxCount 1;
+  sh:name "release date"@en;
+  sh:path dct:issued .
+
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:rights> dash:editor dash:URIEditor;
+  dash:viewer dash:URIViewer;
+  sh:maxCount 1;
+  sh:name "rights"@en;
+  sh:nodeKind sh:IRI;
+  sh:path dct:rights .
+
+<http://data.health-ri.nl/core/p2/CatalogShape#dcat:service> sh:class dcat:DataService;
+  sh:name "service"@en;
+  sh:path dcat:service .
+
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:temporal> dash:editor dash:BlankNodeEditor;
+  dash:viewer dash:DetailsViewer;
+  sh:name "temporal coverage"@en;
+  sh:node dct:PeriodOfTime;
+  sh:path dct:temporal .
+
+<http://data.health-ri.nl/core/p2/CatalogShape#dcat:themeTaxonomy> dash:editor dash:URIEditor;
+  dash:viewer dash:URIViewer;
+  sh:description "This property refers to a knowledge organisation system used to classify the Catalogue's Datasets. It must have at least the value NAL:data-theme as this is the mandatory controlled vocabulary for dcat:theme."@en;
+  sh:name "themes"@en;
+  sh:nodeKind sh:IRI;
+  sh:path dcat:themeTaxonomy .
+
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:title> dash:editor dash:TextFieldEditor;
+  dash:viewer dash:LiteralViewer;
+  sh:minCount 1;
+  sh:name "title"@en;
+  sh:nodeKind sh:Literal;
+  sh:path dct:title .

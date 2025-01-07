@@ -11,6 +11,9 @@
         a foaf:Agent ;
         foaf:name "Test" ;
 		dct:identifier "ID_00002";
+    ] ;
+    dcat:contactPoint [
+        a vcard:Kind ;
     ] .
 
 
@@ -27,4 +30,7 @@
     dcat:dataset <http://example.com/dataset/1>,
         <http://example.com/dataset/2>,
         <http://example.com/dataset/3>,
-        <http://example.com/dataset/4> .
+        <http://example.com/dataset/4> ;
+    dcat:contactPoint [
+        a vcard:Kind ;
+    ] .
