@@ -10,7 +10,7 @@
     dct:publisher [
         a foaf:Agent ;
         foaf:name "Test" ;
-		dct:identifier "ID_00002";
+        dct:identifier "ID_00002";
     ] ;
     dcat:contactPoint [
         a vcard:Kind ;
@@ -22,7 +22,7 @@
     dct:identifier "http://example.com/catalog/1" ;
     dct:issued "1992-01-06T00:00:00"^^xsd:dateTime ;
     dct:title "Student research works 1992" ;
-	dct:publisher [
+    dct:publisher [
         a foaf:Agent ;
         foaf:name "Test" ;
         dct:identifier "ID_00001" ;
