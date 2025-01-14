@@ -27,7 +27,7 @@
 
 <https://data.sparna.fr/shapes-example#> a owl:Ontology;
   dct:description "SHACL definitions for the Health-RI v2 model for Distribution."@en;
-  dct:modified "2025-01-07T10:02:45.680Z"^^xsd:dateTime;
+  dct:modified "2025-01-20T12:11:41.160Z"^^xsd:dateTime;
   rdfs:comment "Health-RI v2 Distribution."@en;
   rdfs:label "Distribution"@en;
   owl:versionInfo "0.1" .
@@ -40,13 +40,14 @@ hri:DistributionShape a sh:NodeShape;
     <http://data.health-ri.nl/core/p2/DistributionShape#dcat:accessURL>, <http://data.health-ri.nl/core/p2/DistributionShape#dcat:byteSize>,
     <http://data.health-ri.nl/core/p2/DistributionShape#dcat:compressFormat>, <http://data.health-ri.nl/core/p2/DistributionShape#dcat:downloadURL>,
     <http://data.health-ri.nl/core/p2/DistributionShape#dcat:mediaType>, <http://data.health-ri.nl/core/p2/DistributionShape#dcatap:applicableLegislation>,
-    <http://data.health-ri.nl/core/p2/DistributionShape#dct:conformsTo>, <http://data.health-ri.nl/core/p2/DistributionShape#dcat:packageFormat>,
-    <http://data.health-ri.nl/core/p2/DistributionShape#dct:description>, <http://data.health-ri.nl/core/p2/DistributionShape#dct:format>,
+    <http://data.health-ri.nl/core/p2/DistributionShape#dct:conformsTo>, <http://data.health-ri.nl/core/p2/DistributionShape#dct:description>,
+    <http://data.health-ri.nl/core/p2/DistributionShape#dct:format>, <http://data.health-ri.nl/core/p2/DistributionShape#dcat:packageFormat>,
     <http://data.health-ri.nl/core/p2/DistributionShape#dct:language>, <http://data.health-ri.nl/core/p2/DistributionShape#dct:license>,
     <http://data.health-ri.nl/core/p2/DistributionShape#dct:modified>, <http://data.health-ri.nl/core/p2/DistributionShape#foaf:page>,
-    <http://data.health-ri.nl/core/p2/DistributionShape#spdx:checksum>, <http://data.health-ri.nl/core/p2/DistributionShape#dct:issued>;
+    <http://data.health-ri.nl/core/p2/DistributionShape#spdx:checksum>;
   sh:targetClass dcat:Distribution;
-  shacl-play:background-color "Green" .
+  shacl-play:background-color "Green";
+  sh:property <http://data.health-ri.nl/core/p2/DistributionShape#dct:issued> .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#dcat:accessService> sh:class dcat:DataService;
   sh:maxCount 1;
@@ -73,6 +74,7 @@ hri:DistributionShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   sh:datatype xsd:nonNegativeInteger;
   sh:maxCount 1;
+  sh:minCount 1;
   sh:name "byte size"@en;
   sh:nodeKind sh:Literal;
   sh:path dcat:byteSize .
@@ -118,6 +120,7 @@ hri:DistributionShape a sh:NodeShape;
 <http://data.health-ri.nl/core/p2/DistributionShape#dct:format> dash:editor dash:URIEditor;
   dash:viewer dash:URIViewer;
   sh:maxCount 1;
+  sh:minCount 1;
   sh:name "format"@en;
   sh:nodeKind sh:IRI;
   sh:path dct:format .
@@ -189,13 +192,13 @@ hri:DistributionShape sh:property <http://data.health-ri.nl/core/p2/Distribution
   dash:viewer dash:URIViewer;
   sh:description "A statement that concerns all rights not addressed in fields License or Rights, such as copyright statements. Everything that is not covered with licece"@en;
   sh:maxCount 1;
+  sh:minCount 1;
   sh:name "rights"@en;
   sh:nodeKind sh:IRI;
   sh:path dct:rights .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#adms:status> dash:editor dash:URIEditor;
   dash:viewer dash:URIViewer;
-  sh:class <http://www.w3.org/2004/02/skos/core#Concept\u0020(IRI)>;
   sh:description "It MUST take one of the values Completed, Deprecated, Under Development, Withdrawn."@en;
   sh:maxCount 1;
   sh:name "status"@en;

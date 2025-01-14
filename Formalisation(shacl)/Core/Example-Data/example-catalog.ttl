@@ -14,6 +14,8 @@
     ] ;
     dcat:contactPoint [
         a vcard:Kind ;
+        vcard:hasEmail <mailto:info@example.com> ;
+        vcard:fn "Example" ;
     ] .
 
 
@@ -24,8 +26,10 @@
     dct:title "Student research works 1992" ;
     dct:publisher [
         a foaf:Agent ;
+        foaf:mbox <mailto:info@example.com> ;
         foaf:name "Test" ;
         dct:identifier "ID_00001" ;
+        foaf:homepage <http://example.com> ;
     ] ;
     dcat:dataset <http://example.com/dataset/1>,
         <http://example.com/dataset/2>,
@@ -33,4 +37,6 @@
         <http://example.com/dataset/4> ;
     dcat:contactPoint [
         a vcard:Kind ;
+        vcard:hasEmail <mailto:info@example.com> ;
+        vcard:fn "Example" ;
     ] .

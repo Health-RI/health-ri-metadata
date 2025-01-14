@@ -8,6 +8,8 @@
   dct:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
   dcat:contactPoint [
     a vcard:Kind ;
+    vcard:hasEmail <mailto:info@example.com> ;
+    vcard:fn "Example" ;
   ] ;
   dct:description "This is an example description" ;
   dcat:endpointDescription "http://services.ga.gov.au/gis/services/Judicial_Courts/MapServer/WMSServer"  ;
@@ -15,6 +17,12 @@
   dct:identifier "WMSServer" ;
   dct:license <https://creativecommons.org/public-domain/cc0/> ;
   dct:modified "2025-01-06T00:00:00"^^xsd:dateTime ;
-  dct:publisher [ a foaf:Agent ] ;
-  dcat:theme <http://www.wikidata.org/entity/Q14944328> ;
+  dct:publisher [
+    a foaf:Agent ;
+    foaf:mbox <mailto:info@example.com> ;
+    dct:identifier "example" ;
+    foaf:name "Example" ;
+    foaf:homepage <http://example.com> ;
+  ] ;
+  dcat:theme <https://publications.europa.eu/resource/authority/data-theme/HEAL> ;
   dct:title "National Judicial Courts WMS"@en .
