@@ -56,7 +56,7 @@
 <http://example.com/dataset/2> a dcat:Dataset ;
     dct:creator [ a foaf:Agent ;
             foaf:name "Draco Malfoy" ;
-			dct:identifier "test-creator-id-002" ;
+            dct:identifier "test-creator-id-002" ;
             vcard:hasUID <https://harrypotter.fandom.com/wiki/Draco_Malfoy> ] ;
     dct:description "Comarative analysis of magic powers of muggle-born and blood wizards " ;
     dct:identifier "test-dataset-id-12" ;
@@ -83,7 +83,7 @@
 <http://example.com/dataset/3> a dcat:Dataset ;
     dct:creator [ a foaf:Agent ;
             foaf:name "Luna Lovegood" ;
-			dct:identifier "test-creator-id-003" ;
+            dct:identifier "test-creator-id-003" ;
             vcard:hasUID <https://harrypotter.fandom.com/wiki/Luna_Lovegood> ] ;
     dct:description "Linguistic analysis of spells" ;
     dct:identifier "test-dataset-id-3" ;
@@ -105,7 +105,7 @@
 <http://example.com/dataset/4> a dcat:Dataset ;
     dct:creator [ a foaf:Agent ;
             foaf:name "Dora Williams" ;
-			dct:identifier "test-creator-id-004" ;
+            dct:identifier "test-creator-id-004" ;
             vcard:hasUID <https://harrypotter.fandom.com/wiki/Dora_Williams> ] ;
     dct:description "Domestics elfs reproduction rate changes in the last 100 years" ;
     dct:identifier "test-dataset-id-4" ;
