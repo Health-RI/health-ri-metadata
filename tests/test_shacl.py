@@ -7,6 +7,7 @@ from pyshacl import validate
     [
         ("Catalog", "example-catalog"),
         ("Dataset", "example-dataset"),
+        ("Dataset-mandatory", "example-dataset-mandatory"),
         ("Distribution", "example-distribution"),
         ("DataService", "example-dataservice"),
     ],
@@ -32,6 +33,11 @@ def test_core_shapes_examples(shacl, example):
         ("Dataset", "dataset-nopublisher"),
         ("Dataset", "dataset-nolicense"),
         ("Dataset", "dataset-nodescription"),
+        ("Dataset-mandatory", "example-dataset-bad"),
+        ("Dataset-mandatory", "dataset-nomodified"),
+        ("Dataset-mandatory", "dataset-nopublisher"),
+        ("Dataset-mandatory", "dataset-nolicense"),
+        ("Dataset-mandatory", "dataset-nodescription"),
     ],
 )
 def test_core_shapes_negative(shacl, example):
@@ -51,6 +57,7 @@ def test_core_shapes_negative(shacl, example):
     ("shacl", "example"),
     [
         ("Dataset", "dataset-iso8601"),
+        ("Dataset-mandatory", "dataset-iso8601"),
     ],
 )
 def test_core_shapes_good(shacl, example):

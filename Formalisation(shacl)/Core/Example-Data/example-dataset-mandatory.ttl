@@ -1,0 +1,132 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix example: <http://data.health-ri.nl/core/p2/DatasetShape> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix healthdcatap: <http://example.com/ns/healthdcatap#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<http://example.com/dataset> a dcat:Dataset ;
+    dct:title "Example Dataset" ;
+    dcat:keyword "Example" ;
+    dct:description "This is an example dataset to test the shapes" ;
+    dct:identifier <http://example.com/test-dataset-id-0> ;
+    dcat:theme <http://www.wikidata.org/entity/Q1141613> ;
+    dct:creator [
+        a foaf:Agent ;
+        foaf:name "Test" ;
+        dct:identifier "test-creator-id-000" ;
+    ] ;
+    dcat:contactPoint [
+        vcard:hasEmail <mailto:foo.bar@health-ri.nl> ;
+        vcard:fn "Foo Bar" ;
+    ] ;
+    dct:publisher [ a foaf:Agent ;
+        dct:identifier "https://nl.wikipedia.org/wiki/J.K._Rowling" ;
+        foaf:name "Joanne Rowling" 
+    ] ;
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right> .
+
+<http://example.com/dataset/1> a dcat:Dataset ;
+    dct:creator [ a foaf:Agent  ;
+            foaf:name "Hermione Granger" ;
+            dct:identifier "test-creator-id-001" ;
+            vcard:hasUID <https://harrypotter.fandom.com/wiki/Hermione_Granger> ] ;
+
+    dct:description "Impact of muggle technical inventions on word's magic presense" ;
+    dct:identifier <http://example.com/test-dataset-id-1> ;
+    dct:publisher [ a foaf:Agent ;
+            dct:identifier "https://harrypotter.fandom.com/wiki/Gryffindor" ;
+            foaf:name "House of Gryffindor" ] ;
+    dct:title "Gryffindor research project" ;
+    dcat:keyword " muggles",
+        " technic",
+        "magic" ;
+    dcat:theme <https://harrypotter.fandom.com/wiki/Muggle_Studies> ;
+    dcat:contactPoint [
+        vcard:hasEmail <mailto:foo.bar@health-ri.nl> ;
+        vcard:fn "Foo Bar" ;
+    ];
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right> .
+
+<http://example.com/dataset/2> a dcat:Dataset ;
+    dct:creator [ a foaf:Agent ;
+            foaf:name "Draco Malfoy" ;
+            dct:identifier "test-creator-id-002" ;
+            vcard:hasUID <https://harrypotter.fandom.com/wiki/Draco_Malfoy> ] ;
+    dct:description "Comarative analysis of magic powers of muggle-born and blood wizards " ;
+    dct:identifier <http://example.com/test-dataset-id-12> ;
+    dct:publisher [ a foaf:Agent ;
+            dct:identifier "https://harrypotter.fandom.com/wiki/Slytherin" ;
+            foaf:name "House of Slytherin" ] ;
+    dct:title "Slytherin research project" ;
+    dcat:keyword " muggle-born",
+        " pure-blood",
+        "half-blood" ;
+    dcat:theme <https://harrypotter.fandom.com/wiki/Half-blood>,
+        <https://harrypotter.fandom.com/wiki/Muggle-born>,
+        <https://harrypotter.fandom.com/wiki/Muggle_Studies>,
+        <https://harrypotter.fandom.com/wiki/Pure-blood> ;
+    dcat:contactPoint [
+        vcard:hasEmail <mailto:foo.bar@health-ri.nl> ;
+        vcard:fn "Foo Bar" ;
+    ] ;
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right> .
+
+<http://example.com/dataset/3> a dcat:Dataset ;
+    dct:creator [ a foaf:Agent ;
+            foaf:name "Luna Lovegood" ;
+            dct:identifier "test-creator-id-003" ;
+            vcard:hasUID <https://harrypotter.fandom.com/wiki/Luna_Lovegood> ] ;
+    dct:description "Linguistic analysis of spells" ;
+    dct:identifier <http://example.com/test-dataset-id-3> ;
+    dct:publisher [ a foaf:Agent ;
+            dct:identifier "https://harrypotter.fandom.com/wiki/Ravenclaw" ;
+            foaf:name "House of Ravenclaw" ] ;
+    dct:title "Ravenclaw research project" ;
+    dcat:keyword "linguastics spell" ;
+    dcat:theme <https://harrypotter.fandom.com/wiki/List_of_spells> ;
+    dcat:contactPoint [
+        vcard:hasEmail <mailto:foo.bar@health-ri.nl> ;
+        vcard:fn "Foo Bar" ;
+    ] ;
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right> .
+
+<http://example.com/dataset/4> a dcat:Dataset ;
+    dct:creator [ a foaf:Agent ;
+            foaf:name "Dora Williams" ;
+            dct:identifier "test-creator-id-004" ;
+            vcard:hasUID <https://harrypotter.fandom.com/wiki/Dora_Williams> ] ;
+    dct:description "Domestics elfs reproduction rate changes in the last 100 years" ;
+    dct:identifier <http://example.com/test-dataset-id-4> ;
+    dct:publisher [ a foaf:Agent ;
+            dct:identifier "https://harrypotter.fandom.com/wiki/Hufflepuff" ;
+            foaf:name "House of Hufflepuff" ] ;
+    dct:title "Hufflepuff research project" ;
+    dcat:keyword "domestic elf" ;
+    dcat:theme <https://harrypotter.fandom.com/wiki/House-elf> ;
+    dcat:contactPoint [
+        vcard:hasEmail <mailto:foo.bar@health-ri.nl> ;
+        vcard:fn "Foo Bar" ;
+    ]; 
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right> .
