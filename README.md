@@ -101,7 +101,7 @@ In the UML, we have separated the main classes from supporting classes. Relation
 Next to the UML, a tabular overview of all classes and properties, including their range, cardinality, controlled vocabulary (if applicable) and usage note is findable below. The same information can be referred to in [this sheet](Documents/Pre-release_metadata_CoreGenericHealth_p2.xlsx). In this sheet, we also state the origin of the (new) constrain (DCAT-AP v3, DCAT-AP NL or HealthDCAT-AP). 
 
 - HRI core metadata schema diagram (plateau 2):
-<img src="Images/2.0_plateau2/HRI_metadata_p2.png" alt="diagram" width=1080 height=560 title="diagram">
+<img src="Images/2.0_plateau2/HRI_metadata_p2.png" alt="diagram" width=800 height=1100 title="diagram">
 
 **Some notes on using the metadata schema / mapping**: 
 
