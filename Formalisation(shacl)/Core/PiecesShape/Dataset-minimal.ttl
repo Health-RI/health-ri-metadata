@@ -1,0 +1,105 @@
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix hri: <http://data.health-ri.nl/core/p2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://data.sparna.fr/shapes-example#> a owl:Ontology;
+  dct:description "SHACL mandatory definitions for the Health-RI v2 model for Dataset."@en;
+  dct:modified "2025-02-10T15:52:37.650Z"^^xsd:dateTime;
+  rdfs:comment "Health-RI v2 Dataset (mandatory)."@en;
+  rdfs:label "Dataset"@en;
+  owl:versionInfo "0.1" .
+
+hri:DatasetShape a sh:NodeShape;
+  rdfs:label "Dataset"@en;
+  sh:nodeKind sh:IRI;
+  sh:order 1;
+  sh:property <http://data.health-ri.nl/core/p2/DatasetShape#dcat:contactPoint>, <http://data.health-ri.nl/core/p2/DatasetShape#dcat:keyword>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#dcat:theme>, <http://data.health-ri.nl/core/p2/DatasetShape#dct:accessRights>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#dct:creator>, <http://data.health-ri.nl/core/p2/DatasetShape#dct:description>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#dct:identifier>, <http://data.health-ri.nl/core/p2/DatasetShape#dct:publisher>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#dct:title>;
+  sh:targetClass dcat:Dataset;
+  shacl-play:background-color "Green" .
+
+<http://data.health-ri.nl/core/p2/DatasetShape#dct:accessRights> dash:editor dash:URIEditor;
+  dash:viewer dash:URIViewer;
+  sh:description "Information that indicates whether the Dataset is publicly accessible, has access restrictions or is not public"@en;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "access rights"@en;
+  sh:nodeKind sh:IRI;
+  sh:path dct:accessRights .
+
+<http://data.health-ri.nl/core/p2/DatasetShape#dcat:contactPoint> dash:editor dash:BlankNodeEditor;
+  dash:viewer dash:DetailsViewer;
+  sh:description "Contact information that can be used for sending comments about the Dataset."@en;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "contact point"@en;
+  sh:node hri:KindShapeKindShape;
+  sh:path dcat:contactPoint .
+
+<http://data.health-ri.nl/core/p2/DatasetShape#dct:creator> dash:editor dash:BlankNodeEditor;
+  dash:viewer dash:DetailsViewer;
+  sh:description "An entity responsible for producing the dataset."@en;
+  sh:minCount 1;
+  sh:name "creator"@en;
+  sh:node hri:AgentShapeAgentShape;
+  sh:path dct:creator .
+
+<http://data.health-ri.nl/core/p2/DatasetShape#dct:description> dash:editor dash:TextAreaEditor;
+  dash:viewer dash:LiteralViewer;
+  sh:description "A free-text account of the Dataset."@en;
+  sh:minCount 1;
+  sh:name "description"@en;
+  sh:nodeKind sh:Literal;
+  sh:path dct:description .
+
+<http://data.health-ri.nl/core/p2/DatasetShape#dct:identifier> dash:editor dash:URIEditor;
+  dash:viewer dash:URIViewer;
+  sh:description "The main identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalogue."@en;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "identifier"@en;
+  sh:nodeKind sh:IRI;
+  sh:path dct:identifier .
+
+<http://data.health-ri.nl/core/p2/DatasetShape#dcat:keyword> dash:editor dash:TextFieldEditor;
+  dash:viewer dash:LiteralViewer;
+  sh:description "A keyword or tag describing the Dataset."@en;
+  sh:minCount 1;
+  sh:name "keyword"@en;
+  sh:nodeKind sh:Literal;
+  sh:path dcat:keyword .
+
+<http://data.health-ri.nl/core/p2/DatasetShape#dct:publisher> dash:editor dash:BlankNodeEditor;
+  dash:viewer dash:DetailsViewer;
+  sh:description "An entity (organisation) responsible for making the Dataset available."@en;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "publisher"@en;
+  sh:node hri:AgentShapeAgentShape;
+  sh:path dct:publisher .
+
+<http://data.health-ri.nl/core/p2/DatasetShape#dcat:theme> dash:editor dash:URIEditor;
+  dash:viewer dash:URIViewer;
+  sh:description "A category of the Dataset"@en;
+  sh:minCount 1;
+  sh:name "theme"@en;
+  sh:nodeKind sh:IRI;
+  sh:path dcat:theme .
+
+<http://data.health-ri.nl/core/p2/DatasetShape#dct:title> dash:editor dash:TextFieldEditor;
+  dash:viewer dash:LiteralViewer;
+  sh:description "A name given to the Dataset."@en;
+  sh:minCount 1;
+  sh:name "title"@en;
+  sh:nodeKind sh:Literal;
+  sh:path dct:title .
