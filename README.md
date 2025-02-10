@@ -245,7 +245,26 @@ A meaningful collection of data, published or curated by a single organisation o
 
 A collection of datasets that are published separately, but share some characteristics that group them.
 
-**Please note**: Dataset Series inherits its properties from the Dataset class. This means when you describe Dataset Series, refer to properties listed above, under [Dataset](#dataset) class.
+#### Mandatory Properties
+ 
+| **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
+| --- | --- | --- | --- | --- | --- | 
+| [description](http://purl.org/dc/terms/description) | A free-text account of the Dataset Series. | `dct:description` | `rdfs:Literal` | Briefly describe the dataset series in the catalog. You can repeat this in multiple languages.  | 1..\* | 
+| [title](http://purl.org/dc/terms/title) |  A name given to the Dataset Series. | `dct:title` | `rdfs:Literal` | Provide a unique title for your Dataset Series, which can be repeated in multiple languages. | 1..\* |
+
+#### Recommended Properties
+
+| **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
+| --- | --- | --- | --- | --- | --- |
+| [applicable legislation](http://data.europa.eu/r5r/applicableLegislation) | The legislation that mandates the creation or management of the Dataset Series. | `dcatap:applicableLegislation` | `eli:LegalResource` | The ELI of the EHDS is currently not yet available. We have therefore decided to keep this property recommended for now. | 0..\* |
+| [contact point](https://www.w3.org/TR/vocab-dcat-3/#Property:resource_contact_point) | Contact information that can be used for sending comments about the Dataset Series. | `dcat:contactPoint` | `vcard:Kind` | A contact point is someone who can answer questions about the dataset series. Additional properties for the contact point can be found in Class:kind. Example: Data Manager/Steward | 0..\* |
+| [frequency](http://purl.org/dc/terms/accrualPeriodicity) | The frequency at which the Dataset Series is updated. | `dct:accrualPeriodicity` | `skos:Concept` | A resource from the following authority table must be used: http://publications.europa.eu/resource/authority/frequency. The frequency of a dataset series is not equal to the frequency of the dataset in the collection. | 0..1 | 
+| [geographical coverage](http://purl.org/dc/terms/spatial) | A geographic region that is covered by the Dataset Series. | `dct:spatial` | `dct:Location` | The EU Vocabularies Name Authority Lists must be used for [continents](https://publications.europa.eu/resource/authority/continent/), [countries](https://publications.europa.eu/resource/authority/country) and [places](https://publications.europa.eu/resource/authority/place/) that are in those lists; if a particular location is not in one of the mentioned Named Authority Lists, [Geonames URIs](https://sws.geonames.org/) must be used. For districts or neighbourhoods in NL, the [Dutch vocab](https://vocabs.cbs.nl/nl/) can be used. However, it might in many cases be desirable to keep the geographical coverage broader (eg. indicating that NL is covered), to not expose detailed information of subject's locations. | 0..\* | 
+| [modification date](http://purl.org/dc/terms/modified) | The most recent date on which the Dataset Series was changed or modified. | `dct:modified` | `xsd:dateTime` | This is not equal to the most recent modified dataset in the collection of the dataset series. | 0..1 | 
+| [publisher](http://purl.org/dc/terms/publisher) | An entity (organisation) responsible for ensuring the coherency of the Dataset Series. | `dct:publisher` | `foaf:Agent` | The publisher of the dataset series may not be the publisher of all datasets. E.g. a digital archive could take over the publishing of older datasets in the series.  | 0..1 | 
+| [release date](http://purl.org/dc/terms/issued) | The date of formal issuance (e.g., publication) of the Dataset Series. | `dct:issued` | `xsd:dateTime` | The moment when the dataset series was established as a managed resource. This is not equal to the release date of the oldest dataset in the collection of the dataset series. | 0..1 | 
+| [temporal coverage](http://purl.org/dc/terms/temporal) | A temporal period that the Dataset Series covers. | `dct:temporal` | `dct:PeriodOfTime` | When temporal coverage is a dimension in the dataset series then the temporal coverage of each dataset in the collection should be part of the temporal coverage. In that case, an open ended value is recommended, e.g. after 2012. | 0..\* | 
+
 
 
 ### [Data Service](http://www.w3.org/ns/dcat#DataService)
