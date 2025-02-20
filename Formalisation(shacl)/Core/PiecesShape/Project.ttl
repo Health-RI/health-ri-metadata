@@ -1,31 +1,24 @@
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix hri: <http://data.health-ri.nl/core/p2/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://data.sparna.fr/shapes-example#> a owl:Ontology;
-  dct:description "SHACL mandatory definitions for the Health-RI v2 model for Project."@en;
-  dct:modified "2025-02-10T15:54:15.890Z"^^xsd:dateTime;
+hri:ProjectShape a owl:Ontology, sh:NodeShape;
+  dct:description "SHACL definitions for the Health-RI v2 model for Project."@en;
+  dct:modified "2025-02-17T13:47:02.050Z"^^xsd:dateTime;
   rdfs:comment "Health-RI v2 Project."@en;
-  rdfs:label "Dataset"@en;
-  owl:versionInfo "0.1" .
-
-<http://data.health-ri.nl/core/p2/ProjectShape> a sh:NodeShape;
   rdfs:label "Project"@en;
-  sh:nodeKind sh:IRI;
-  sh:order 1;
+  owl:versionInfo "0.1";
   sh:property <http://data.health-ri.nl/core/p2/ProjectShape#dcat:resource>, <http://data.health-ri.nl/core/p2/ProjectShape#dct:description>,
     <http://data.health-ri.nl/core/p2/ProjectShape#dct:hasPart>, <http://data.health-ri.nl/core/p2/ProjectShape#dct:identifier>,
     <http://data.health-ri.nl/core/p2/ProjectShape#dct:title>, <http://data.health-ri.nl/core/p2/ProjectShape#foaf:fundedBy>;
-  sh:targetClass foaf:Project;
-  shacl-play:background-color "Green" .
+  sh:targetClass foaf:Project .
 
 <http://data.health-ri.nl/core/p2/ProjectShape#dct:description> dash:editor dash:TextAreaEditor;
   dash:viewer dash:LiteralViewer;
@@ -35,8 +28,8 @@
   sh:nodeKind sh:Literal;
   sh:path dct:description .
 
-<http://data.health-ri.nl/core/p2/ProjectShape#dct:identifier> dash:editor dash:URIEditor;
-  dash:viewer dash:URIViewer;
+<http://data.health-ri.nl/core/p2/ProjectShape#dct:identifier> dash:editor dash:TextFieldEditor;
+  dash:viewer dash:LiteralViewer;
   sh:description "This property is intended for the GrantID of the project."@en;
   sh:maxCount 1;
   sh:minCount 1;
@@ -46,7 +39,6 @@
 
 <http://data.health-ri.nl/core/p2/ProjectShape#dcat:resource> dash:editor dash:URIEditor;
   dash:viewer dash:URIViewer;
-  sh:class dcat:Catalog;
   sh:description "This property is intended to connect the project to a catalogue of which the project is part of."@en;
   sh:minCount 1;
   sh:name "Catalogue"@en;
@@ -58,8 +50,7 @@
   sh:description "Use this property to indicate the funding agency/agencies that provide funding for the project. This property uses the class foaf:Agent, which has its own mandatory and recommended properties. In case the project is funded internally, the corresponding institute can be submitted as funding agent."@en;
   sh:minCount 1;
   sh:name "Funder"@en;
-  sh:node foaf:Agent;
-  sh:nodeKind sh:IRI;
+  sh:node hri:AgentShapeAgentShape;
   sh:path foaf:fundedBy .
 
 <http://data.health-ri.nl/core/p2/ProjectShape#dct:title> dash:editor dash:TextFieldEditor;
@@ -74,6 +65,5 @@
   dash:viewer dash:DetailsViewer;
   sh:description "As the study class is used to give more information about data generation or collection, the different data collection endeavors of the project can be stated by instantiating one or several instances of the study class. This property links a project to its study/studies."@en;
   sh:name "Study"@en;
-  sh:node disco:Study;
   sh:nodeKind sh:IRI;
   sh:path dct:hasPart .
