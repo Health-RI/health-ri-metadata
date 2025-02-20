@@ -1,107 +1,115 @@
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix vcard: <http://www.w3.org/2006/vcard#> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
 @prefix dash: <http://datashapes.org/dash#> .
-@prefix : <http://coreRule-healthri.nl#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix hri: <http://data.health-ri.nl/core/p2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<https://data.sparna.fr/shapes-example#> a owl:Ontology;
+  dct:description "SHACL mandatory definitions for the Health-RI v2 model for Dataset Series."@en;
+  dct:modified "2025-02-10T16:01:54.150Z"^^xsd:dateTime;
+  rdfs:comment "Health-RI v2 Dataset Series"@en;
+  rdfs:label "Dataset Series"@en;
+  owl:versionInfo "0.1" .
 
-:DatasetSeriesShape a sh:NodeShape ;
-  sh:targetClass dcat:DatasetSeries ;
-  sh:property [
-    sh:path dcat:contactPoint ;
-    sh:class vcard:Kind ;
-    sh:minCount 1 ;
-    sh:name "Contact point" ;
-    dash:editor dash:URIEditor ;
-    dash:viewer dash:LabelViewer ;
-  ],
-  [
-    sh:path dct:creator ;
-    sh:node :AgentShape ;
-    sh:minCount 1 ;
-    dash:editor dash:BlankNodeEditor ;
-    dash:viewer dash:DetailsViewer ; ],
-  [
-    sh:path dct:title ;
-    sh:nodeKind sh:Literal ;
-    dash:editor dash:TextFieldEditor ;
-    dash:viewer dash:LiteralViewer ;
-    sh:minCount 1 ;
-    sh:uniqueLang true ;
-  ],
-  [
-    sh:path dct:description ;
-    sh:nodeKind sh:Literal ;
-    dash:editor dash:TextFieldEditor ;
-    dash:viewer dash:LiteralViewer ;
-    sh:minCount 1 ;
-    sh:uniqueLang true ;
-  ],
-  [
-    sh:path dct:identifier ;
-    sh:nodeKind sh:Literal ;
-    dash:editor dash:TextFieldEditor ;
-    dash:viewer dash:LiteralViewer ;
-    sh:minCount 1 ;
-    sh:maxCount 1 ;
-  ],
-  [
-    sh:path dct:issued ;
-    sh:datatype xsd:dateTime ;
-    sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$" ;
-    sh:message "Value must be a valid ISO 8601 timestamp." ;
-    sh:minCount 1 ;
-    sh:maxCount 1 ;
-    dash:editor dash:DatePickerEditor ;
-    dash:viewer dash:LiteralViewer ;
-  ],
-  [
-    sh:path dct:license ;
-    sh:nodeKind sh:IRI ;
-    sh:maxCount 1 ;
-    sh:maxCount 1 ;
-  ],
-  [
-    sh:path dct:modified ;
-    sh:datatype xsd:dateTime ;
-    sh:pattern "^([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$" ;
-    sh:message "Value must be a valid ISO 8601 timestamp." ;
-    sh:maxCount 1 ;
-    sh:maxCount 1 ;
-    dash:editor dash:DatePickerEditor ;
-    dash:viewer dash:LiteralViewer ;
-  ],
-  [
-    sh:path dct:publisher ;
-    sh:node :AgentShape ;
-    dash:editor dash:BlankNodeEditor ;
-    dash:viewer dash:DetailsViewer ;
-    sh:minCount 1 ;
-  ],
-  [
-    sh:path dcat:theme ;
-    sh:nodeKind sh:IRI ;
-    sh:minCount 1 ;
-    dash:editor dash:URIEditor ;
-    dash:viewer dash:LabelViewer ;
-  ],
-  [
-    sh:path dct:type ;
-    sh:nodeKind sh:IRI ;
-    dash:viewer dash:LabelViewer ;
-    dash:editor dash:URIEditor ;
-  ],
-  [
-    sh:path dcat:distribution ;
-    sh:class dcat:Distribution ;
-  ],
-  [
-    sh:path dcat:hasVersion ;
-    sh:datatype xsd:string ;
-    sh:name "Has Version" ;
-    dash:editor dash:URIEditor ;
-    dash:viewer dash:LabelViewer 
-  ] .
+hri:DatasetSeriesShape a sh:NodeShape;
+  rdfs:label "DatasetSeries"@en;
+  sh:nodeKind sh:IRI;
+  sh:order 1;
+  sh:property <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dcat:contactPoint>,
+    <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dcatap:applicableLegislation>,
+    <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:accrualPeriodicity>, <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:description>,
+    <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:issued>, <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:modified>,
+    <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:publisher>, <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:spatial>,
+    <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:temporal>, <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:title>;
+  sh:targetClass dcat:DatasetSeries;
+  shacl-play:background-color "Green" .
+
+<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dcatap:applicableLegislation>
+  dash:editor dash:URIEditor;
+  dash:viewer dash:URIViewer;
+  sh:description "The legislation that mandates the creation or management of the Dataset Series."@en;
+  sh:name "Applicable Legislation"@en;
+  sh:nodeKind sh:IRI;
+  sh:path dcatap:applicableLegislation .
+
+<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dcat:contactPoint> dash:editor
+    dash:BlankNodeEditor;
+  dash:viewer dash:DetailsViewer;
+  sh:description "Contact information that can be used for sending comments about the Dataset Series."@en;
+  sh:name "contact point"@en;
+  sh:node hri:KindShapeKindShape;
+  sh:path dcat:contactPoint .
+
+<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:description> dash:editor
+    dash:TextFieldEditor;
+  dash:viewer dash:LiteralViewer;
+  sh:datatype xsd:string;
+  sh:description "A free-text account of the Dataset Series."@en;
+  sh:minCount 1;
+  sh:name "description"@en;
+  sh:nodeKind sh:Literal;
+  sh:path dct:description .
+
+<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:accrualPeriodicity> dash:editor
+    dash:URIEditor;
+  dash:viewer dash:URIViewer;
+  sh:description "The frequency at which the Dataset Series is updated."@en;
+  sh:maxCount 1;
+  sh:name "frequency"@en;
+  sh:nodeKind sh:IRI;
+  sh:path dct:accrualPeriodicity .
+
+<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:spatial> dash:editor dash:URIEditor;
+  dash:viewer dash:URIViewer;
+  sh:description "A geographic region that is covered by the Dataset Series."@en;
+  sh:name "geographical coverage"@en;
+  sh:nodeKind sh:IRI;
+  sh:path dct:spatial .
+
+<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:modified> dash:editor dash:DateTimePickerEditor;
+  dash:viewer dash:LiteralViewer;
+  sh:datatype xsd:dateTime;
+  sh:description "The most recent date on which the Dataset Series was changed or modified."@en;
+  sh:maxCount 1;
+  sh:name "modification date"@en;
+  sh:nodeKind sh:Literal;
+  sh:path dct:modified .
+
+<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:publisher> dash:editor dash:BlankNodeEditor;
+  dash:viewer dash:DetailsViewer;
+  sh:description "An entity (organisation) responsible for ensuring the coherency of the Dataset Series."@en;
+  sh:maxCount 1;
+  sh:name "publisher"@en;
+  sh:node hri:AgentShapeAgentShape;
+  sh:path dct:publisher .
+
+<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:issued> dash:editor dash:DateTimePickerEditor;
+  dash:viewer dash:LiteralViewer;
+  sh:datatype xsd:dateTime;
+  sh:description "The date of formal issuance (e.g., publication) of the Dataset Series."@en;
+  sh:maxCount 1;
+  sh:name "release date"@en;
+  sh:nodeKind sh:Literal;
+  sh:path dct:issued .
+
+<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:temporal> dash:editor dash:URIEditor;
+  dash:viewer dash:URIViewer;
+  sh:description "A temporal period that the Dataset Series covers."@en;
+  sh:name "temporal coverage"@en;
+  sh:nodeKind sh:IRI;
+  sh:path dct:temporal .
+
+<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:title> dash:editor dash:TextFieldEditor;
+  dash:viewer dash:LiteralViewer;
+  sh:datatype xsd:string;
+  sh:description "A name given to the Dataset Series."@en;
+  sh:minCount 1;
+  sh:name "title"@en;
+  sh:nodeKind sh:Literal;
+  sh:path dct:title .
