@@ -1,0 +1,36 @@
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://data.health-ri.nl/core/p2/ChecksumShape> a owl:Ontology, sh:NodeShape;
+  dct:description "SHACL definitions for the Health-RI v2 model for Checksum."@en;
+  dct:modified "2025-02-18T08:00:05.210Z"^^xsd:dateTime;
+  rdfs:comment "Health-RI v2 Checksum."@en;
+  rdfs:label "Checksum"@en;
+  owl:versionInfo "0.1";
+  sh:property <http://data.health-ri.nl/core/p2/ChecksumShape#spdx:algorithm>, <http://data.health-ri.nl/core/p2/ChecksumShape#spdx:checksumValue>;
+  sh:targetClass spdx:Checksum .
+
+<http://data.health-ri.nl/core/p2/ChecksumShape#spdx:algorithm> dash:editor dash:URIEditor;
+  dash:viewer dash:URIViewer;
+  sh:description "The algorithm used to produce the subject Checksum"@en;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "algorithm"@en;
+  sh:nodeKind sh:IRI;
+  sh:path spdx:algorithm .
+
+<http://data.health-ri.nl/core/p2/ChecksumShape#spdx:checksumValue> dash:editor dash:TextAreaEditor;
+  dash:viewer dash:LiteralViewer;
+  sh:datatype xsd:hexBinary;
+  sh:description "A lower case hexadecimal encoded digest value produced using a specific algorithm"@en;
+  sh:maxCount 1;
+  sh:minCount 1;
+  sh:name "checksum value"@en;
+  sh:nodeKind sh:Literal;
+  sh:path spdx:checksumValue .

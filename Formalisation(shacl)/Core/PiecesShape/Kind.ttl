@@ -10,7 +10,7 @@
 
 <http://data.health-ri.nl/core/p2/KindShapeKindShape> a owl:Ontology;
   dct:description "SHACL mandatory definitions for the Health-RI v2 model for vcard:Kind."@en;
-  dct:modified "2025-02-10T16:41:02.970Z"^^xsd:dateTime;
+  dct:modified "2025-02-10T15:41:02.970Z"^^xsd:dateTime;
   rdfs:comment "Health-RI v2 Kind."@en;
   rdfs:label "Kind"@en;
   owl:versionInfo "0.1" .

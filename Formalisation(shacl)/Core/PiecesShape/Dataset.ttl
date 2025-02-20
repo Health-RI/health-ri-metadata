@@ -29,7 +29,7 @@
 
 <http://data.health-ri.nl/core/p2/DatasetShape> a owl:Ontology;
   dct:description "This is an excel template for Dataset class in Health RI Core plateau 2."@en;
-  dct:modified "2024-11-21T00:00:00.000Z"^^xsd:dateTime;
+  dct:modified "2025-02-10T00:00:00.000Z"^^xsd:dateTime;
   rdfs:comment "Excel template for Dataset class"@en;
   rdfs:label "Excel template for Dataset class"@en;
   owl:versionInfo "0.1" .
@@ -380,12 +380,12 @@
   sh:path dct:issued .
 
 <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#retention-period> dash:editor
-    dash:URIEditor;
-  dash:viewer dash:LiteralViewer;
+    dash:BlankNodeEditor;
+  dash:viewer dash:DetailsViewer;
   sh:description "A temporal period which the dataset is available for secondary use"@en;
   sh:maxCount 1;
   sh:name "retention period"@en;
-  sh:nodeKind sh:IRI;
+  sh:node <http://data.health-ri.nl/core/p2/PeriodOfTimeShape>;
   sh:path healthdcatap:retentionPeriod .
 
 <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#sample> dash:editor dash:URIEditor;
@@ -411,11 +411,11 @@
   sh:path adms:status .
 
 <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#temporal-coverage> dash:editor
-    dash:URIEditor;
-  dash:viewer dash:URIViewer;
+    dash:BlankNodeEditor;
+  dash:viewer dash:DetailsViewer;
   sh:description "A temporal period that the Dataset covers."@en;
   sh:name "temporal coverage"@en;
-  sh:nodeKind sh:IRI;
+  sh:node <http://data.health-ri.nl/core/p2/PeriodOfTimeShape>;
   sh:path dct:temporal .
 
 <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#temporal-resolution> dash:editor

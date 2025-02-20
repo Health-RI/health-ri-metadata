@@ -27,15 +27,13 @@
 
 <https://data.sparna.fr/shapes-example#> a owl:Ontology;
   dct:description "SHACL definitions for the Health-RI v2 model for DataService."@en;
-  dct:modified "2025-01-07T10:02:53.040Z"^^xsd:dateTime;
+  dct:modified "2025-02-18T08:13:15.470Z"^^xsd:dateTime;
   rdfs:comment "Health-RI v2 DataService."@en;
   rdfs:label "DataService"@en;
   owl:versionInfo "0.1" .
 
 hri:DataServiceShape a sh:NodeShape;
   rdfs:label "DataService"@en;
-  sh:nodeKind sh:IRI;
-  sh:order 1;
   sh:property <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:contactPoint>,
     <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:endpointDescription>, <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:endpointURL>,
     <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:keyword>, <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:landingPage>,
@@ -46,8 +44,7 @@ hri:DataServiceShape a sh:NodeShape;
     <http://data.health-ri.nl/core/p2/DataServiceShape#dct:identifier>, <http://data.health-ri.nl/core/p2/DataServiceShape#dct:language>,
     <http://data.health-ri.nl/core/p2/DataServiceShape#dct:license>, <http://data.health-ri.nl/core/p2/DataServiceShape#dct:modified>,
     <http://data.health-ri.nl/core/p2/DataServiceShape#dct:rights>;
-  sh:targetClass dcat:DataService;
-  shacl-play:background-color "Green" .
+  sh:targetClass dcat:DataService .
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dct:accessRights> dash:editor dash:URIEditor;
   dash:viewer dash:URIViewer;
@@ -78,13 +75,13 @@ hri:DataServiceShape a sh:NodeShape;
   sh:maxCount 1;
   sh:minCount 1;
   sh:name "Contact Point"@en;
-  sh:node vcard:Kind;
+  sh:node hri:KindShapeKindShape;
   sh:path dcat:contactPoint .
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dct:creator> dash:editor dash:BlankNodeEditor;
   dash:viewer dash:DetailsViewer;
   sh:name "creator"@en;
-  sh:node foaf:Agent;
+  sh:node hri:AgentShapeAgentShape;
   sh:path dct:creator .
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dct:rights> dash:editor dash:URIEditor;
@@ -188,7 +185,7 @@ hri:DataServiceShape sh:property <http://data.health-ri.nl/core/p2/DataServiceSh
   sh:maxCount 1;
   sh:minCount 1;
   sh:name "Publisher"@en;
-  sh:node foaf:Agent;
+  sh:node hri:AgentShapeAgentShape;
   sh:path dct:publisher .
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:servesDataset> sh:class dcat:Dataset;
@@ -203,7 +200,9 @@ hri:DataServiceShape sh:property <http://data.health-ri.nl/core/p2/DataServiceSh
   sh:nodeKind sh:IRI;
   sh:path dcat:theme .
 
-<http://data.health-ri.nl/core/p2/DataServiceShape#dct:title> sh:minCount 1;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:title> dash:editor dash:TextFieldEditor;
+  dash:viewer dash:LiteralViewer;
+  sh:minCount 1;
   sh:name "title"@en;
   sh:nodeKind sh:Literal;
   sh:path dct:title .

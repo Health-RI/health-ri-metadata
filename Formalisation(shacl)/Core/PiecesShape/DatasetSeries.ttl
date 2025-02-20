@@ -7,28 +7,24 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://data.sparna.fr/shapes-example#> a owl:Ontology;
   dct:description "SHACL mandatory definitions for the Health-RI v2 model for Dataset Series."@en;
-  dct:modified "2025-02-10T16:01:54.150Z"^^xsd:dateTime;
+  dct:modified "2025-02-18T08:16:08.460Z"^^xsd:dateTime;
   rdfs:comment "Health-RI v2 Dataset Series"@en;
   rdfs:label "Dataset Series"@en;
   owl:versionInfo "0.1" .
 
 hri:DatasetSeriesShape a sh:NodeShape;
   rdfs:label "DatasetSeries"@en;
-  sh:nodeKind sh:IRI;
-  sh:order 1;
   sh:property <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dcat:contactPoint>,
     <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dcatap:applicableLegislation>,
     <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:accrualPeriodicity>, <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:description>,
     <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:issued>, <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:modified>,
     <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:publisher>, <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:spatial>,
     <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:temporal>, <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:title>;
-  sh:targetClass dcat:DatasetSeries;
-  shacl-play:background-color "Green" .
+  sh:targetClass dcat:DatasetSeries .
 
 <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dcatap:applicableLegislation>
   dash:editor dash:URIEditor;

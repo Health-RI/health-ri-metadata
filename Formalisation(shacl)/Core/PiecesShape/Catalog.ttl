@@ -27,27 +27,24 @@
 
 <https://data.sparna.fr/shapes-example#> a owl:Ontology;
   dct:description "SHACL definitions for the Health-RI v2 model for Catalog."@en;
-  dct:modified "2025-01-07T10:02:19.400Z"^^xsd:dateTime;
+  dct:modified "2025-02-18T07:54:59.850Z"^^xsd:dateTime;
   rdfs:comment "Health-RI v2 Catalog."@en;
   rdfs:label "Catalog"@en;
   owl:versionInfo "0.1" .
 
 hri:CatalogShape a sh:NodeShape;
   rdfs:label "Catalog"@en;
-  sh:nodeKind sh:IRI;
-  sh:order 1;
   sh:property <http://data.health-ri.nl/core/p2/CatalogShape#dcat:catalog>, <http://data.health-ri.nl/core/p2/CatalogShape#dcat:contactPoint>,
     <http://data.health-ri.nl/core/p2/CatalogShape#dcat:dataset>, <http://data.health-ri.nl/core/p2/CatalogShape#dcat:record>,
     <http://data.health-ri.nl/core/p2/CatalogShape#dcat:service>, <http://data.health-ri.nl/core/p2/CatalogShape#dcatap:applicableLegislation>,
     <http://data.health-ri.nl/core/p2/CatalogShape#dct:creator>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:description>,
-    <http://data.health-ri.nl/core/p2/CatalogShape#dct:hasPart>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:issued>,
-    <http://data.health-ri.nl/core/p2/CatalogShape#dcat:themeTaxonomy>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:language>,
+    <http://data.health-ri.nl/core/p2/CatalogShape#dct:hasPart>, <http://data.health-ri.nl/core/p2/CatalogShape#dcat:themeTaxonomy>,
+    <http://data.health-ri.nl/core/p2/CatalogShape#dct:issued>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:language>,
     <http://data.health-ri.nl/core/p2/CatalogShape#dct:license>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:modified>,
     <http://data.health-ri.nl/core/p2/CatalogShape#dct:publisher>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:rights>,
     <http://data.health-ri.nl/core/p2/CatalogShape#dct:spatial>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:temporal>,
     <http://data.health-ri.nl/core/p2/CatalogShape#dct:title>, <http://data.health-ri.nl/core/p2/CatalogShape#foaf:homepage>;
-  sh:targetClass dcat:Catalog;
-  shacl-play:background-color "Green" .
+  sh:targetClass dcat:Catalog .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dcatap:applicableLegislation> dash:editor
     dash:URIEditor;
@@ -65,13 +62,13 @@ hri:CatalogShape a sh:NodeShape;
   sh:maxCount 1;
   sh:minCount 1;
   sh:name "Contact point"@en;
-  sh:node vcard:Kind;
+  sh:node hri:KindShapeKindShape;
   sh:path dcat:contactPoint .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:creator> dash:editor dash:BlankNodeEditor;
   dash:viewer dash:DetailsViewer;
   sh:name "creator"@en;
-  sh:node foaf:Agent;
+  sh:node hri:AgentShapeAgentShape;
   sh:path dct:creator .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dcat:dataset> sh:name "dataset"@en;
@@ -127,7 +124,7 @@ hri:CatalogShape a sh:NodeShape;
   sh:maxCount 1;
   sh:minCount 1;
   sh:name "publisher"@en;
-  sh:node foaf:Agent;
+  sh:node hri:AgentShapeAgentShape;
   sh:path dct:publisher .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dcat:record> sh:class dcat:CatalogRecord;
@@ -155,7 +152,7 @@ hri:CatalogShape a sh:NodeShape;
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:temporal> dash:editor dash:BlankNodeEditor;
   dash:viewer dash:DetailsViewer;
   sh:name "temporal coverage"@en;
-  sh:node dct:PeriodOfTime;
+  sh:node hri:PeriodOfTimeShape;
   sh:path dct:temporal .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dcat:themeTaxonomy> dash:editor dash:URIEditor;
