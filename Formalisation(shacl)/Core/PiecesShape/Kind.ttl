@@ -33,7 +33,7 @@ hri:KindShapeKindShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Kind."@en;
   dcterms:description "SHACL mandatory definitions for the Health-RI v2 model for vcard:Kind."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-02-24T15:05:08.130Z"^^xsd:dateTime .
+  dcterms:modified "2025-02-25T10:04:14.990Z"^^xsd:dateTime .
 
 hri:KindShape a sh:NodeShape;
   rdfs:label "Kind"@en;
@@ -54,6 +54,7 @@ hri:KindShape a sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
+  sh:pattern "^mailto:.+@.+\\..+$";
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
