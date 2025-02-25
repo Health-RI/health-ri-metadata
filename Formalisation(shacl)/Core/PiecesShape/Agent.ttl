@@ -1,91 +1,109 @@
-@prefix dash: <http://datashapes.org/dash#> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix healthdcatap: <http://example.com/ns/healthdcatap#> .
+@prefix schema: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix example: <https://data.sparna.fr/shapes-example/> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix healthdcatap: <http://example.com/ns/healthdcatap#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix hri: <http://data.health-ri.nl/core/p2/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix xls2rdf: <https://xls2rdf.sparna.fr/vocabulary#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 
-<http://data.health-ri.nl/core/p2/AgentShapeAgentShape> a owl:Ontology;
-  dct:description "This is an excel template for Agent class in Health RI Core plateau 2."@en;
-  dct:modified "2024-02-10T00:00:00.000Z"^^xsd:dateTime;
-  rdfs:comment "Excel template for Agent class"@en;
+hri:AgentShapeAgentShape a owl:Ontology;
   rdfs:label "Agent class"@en;
-  owl:versionInfo "0.1" .
+  rdfs:comment "Excel template for Agent class"@en;
+  dcterms:description "This is an excel template for Agent class in Health RI Core plateau 2."@en;
+  owl:versionInfo "0.1";
+  dcterms:modified "2024-02-10T00:00:00.000Z"^^xsd:dateTime .
 
-<http://data.health-ri.nl/core/p2/AgentShape> a sh:NodeShape;
+hri:AgentShape a sh:NodeShape;
   rdfs:label "Agent"@en;
   sh:targetClass foaf:Agent;
-  sh:property <http://data.health-ri.nl/core/p2/AgentShape#dct:identifier>, <http://data.health-ri.nl/core/p2/AgentShape#dct:spatial>,
-    <http://data.health-ri.nl/core/p2/AgentShape#dct:type>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:homepage>,
-    <http://data.health-ri.nl/core/p2/AgentShape#foaf:mbox>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:name>,
-    <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishernote>, <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishertype> .
+  sh:property <http://data.health-ri.nl/core/p2/AgentShape#dct:spatial>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:mbox>,
+    <http://data.health-ri.nl/core/p2/AgentShape#dct:identifier>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:name>,
+    <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishernote>, <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishertype>,
+    <http://data.health-ri.nl/core/p2/AgentShape#dct:type>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:homepage> .
 
-<http://data.health-ri.nl/core/p2/AgentShape#dct:spatial> dash:editor dash:URIEditor;
-  dash:viewer dash:URIViewer;
+<http://data.health-ri.nl/core/p2/AgentShape#dct:spatial> sh:path dcterms:spatial;
   sh:name "country"@en;
   sh:nodeKind sh:IRI;
-  sh:path dct:spatial .
-
-<http://data.health-ri.nl/core/p2/AgentShape#foaf:mbox> dash:editor dash:URIEditor;
   dash:viewer dash:URIViewer;
-  sh:description "A email address via which contact can be made. This property SHOULD be used to provide the email address of the Agent, specified using fully qualified mailto: URI scheme [RFC6068]. The email SHOULD be used to establish a communication channel to the agent."@en;
-  sh:maxCount 1;
-  sh:minCount 1;
+  dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/core/p2/AgentShape#foaf:mbox> sh:path foaf:mbox;
   sh:name "email"@en;
-  sh:nodeKind sh:IRI;
-  sh:path foaf:mbox .
-
-<http://data.health-ri.nl/core/p2/AgentShape#dct:identifier> dash:editor dash:TextAreaEditor;
-  dash:viewer dash:LiteralViewer;
-  sh:description "A unique identifier of the agent."@en;
-  sh:maxCount 1;
+  sh:description "A email address via which contact can be made. This property SHOULD be used to provide the email address of the Agent, specified using fully qualified mailto: URI scheme [RFC6068]. The email SHOULD be used to establish a communication channel to the agent."@en;
   sh:minCount 1;
-  sh:name "identifier"@en;
-  sh:nodeKind sh:Literal;
-  sh:path dct:identifier .
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/AgentShape#foaf:name> dash:editor dash:TextAreaEditor;
+<http://data.health-ri.nl/core/p2/AgentShape#dct:identifier> sh:path dcterms:identifier;
+  sh:name "identifier"@en;
+  sh:description "A unique identifier of the agent."@en;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
   dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextAreaEditor .
+
+<http://data.health-ri.nl/core/p2/AgentShape#foaf:name> sh:path foaf:name;
+  sh:name "name"@en;
   sh:description "A name of the agent."@en;
   sh:minCount 1;
-  sh:name "name"@en;
   sh:nodeKind sh:Literal;
-  sh:path foaf:name .
-
-<http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishernote> dash:editor
-    dash:TextAreaEditor;
   dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextAreaEditor .
+
+<http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishernote> sh:path healthdcatap:publishernote;
+  sh:name "publisher note"@en;
   sh:description "A description of the publisher activities"@en;
   sh:maxCount 1;
-  sh:name "publisher note"@en;
   sh:nodeKind sh:Literal;
-  sh:path healthdcatap:publishernote .
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextAreaEditor .
 
-<http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishertype> dash:editor
-    dash:URIEditor;
-  dash:viewer dash:URIViewer;
+<http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishertype> sh:path healthdcatap:publishertype;
+  sh:name "publisher type"@en;
   sh:description "A type of organisation that makes the Dataset available"@en;
   sh:maxCount 1;
-  sh:name "publisher type"@en;
   sh:nodeKind sh:IRI;
-  sh:path healthdcatap:publishertype .
-
-<http://data.health-ri.nl/core/p2/AgentShape#dct:type> dash:editor dash:URIEditor;
   dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/core/p2/AgentShape#dct:type> sh:path dcterms:type;
+  sh:name "type"@en;
   sh:description "A type of the agent that makes the Catalogue or Dataset available"@en;
   sh:maxCount 1;
-  sh:name "type"@en;
   sh:nodeKind sh:IRI;
-  sh:path dct:type .
-
-<http://data.health-ri.nl/core/p2/AgentShape#foaf:homepage> dash:editor dash:URIEditor;
   dash:viewer dash:URIViewer;
-  sh:description "A webpage that either allows to make contact (i.e. a webform) or the information contains how to get into contact."@en;
-  sh:maxCount 1;
-  sh:minCount 1;
+  dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/core/p2/AgentShape#foaf:homepage> sh:path foaf:homepage;
   sh:name "URL"@en;
+  sh:description "A webpage that either allows to make contact (i.e. a webform) or the information contains how to get into contact."@en;
+  sh:minCount 1;
+  sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:path foaf:homepage .
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
