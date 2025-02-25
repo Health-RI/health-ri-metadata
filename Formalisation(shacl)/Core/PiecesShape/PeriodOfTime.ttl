@@ -1,40 +1,58 @@
-@prefix dash: <http://datashapes.org/dash#> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix schema: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix example: <https://data.sparna.fr/shapes-example/> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix healthdcatap: <http://example.com/ns/healthdcatap#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix hri: <http://data.health-ri.nl/core/p2/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix xls2rdf: <https://xls2rdf.sparna.fr/vocabulary#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 
-<http://data.health-ri.nl/core/p2/aux-PeriodOfTimeShape> a owl:Ontology;
-  dct:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
-  dct:modified "2025-02-13T08:50:45.280Z"^^xsd:dateTime;
+hri:aux-PeriodOfTimeShape a owl:Ontology;
+  rdfs:label "Period of Time"@en;
   rdfs:comment "Health-RI v2 Period of Time"@en;
-  rdfs:label "Period of Time"@en;
-  owl:versionInfo "0.1" .
+  dcterms:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
+  owl:versionInfo "0.1";
+  dcterms:modified "2025-02-17T10:58:10.790Z"^^xsd:dateTime .
 
-<http://data.health-ri.nl/core/p2/PeriodOfTimeShape> a sh:NodeShape;
+hri:PeriodOfTimeShape a sh:NodeShape;
   rdfs:label "Period of Time"@en;
-  sh:targetClass dct:PeriodOfTime;
-  shacl-play:background-color "Green";
+  sh:targetClass dcterms:PeriodOfTime;
   sh:property <http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:endDate>, <http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:startDate> .
 
-<http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:endDate> dash:editor dash:DateTimePickerEditor;
-  dash:viewer dash:LiteralViewer;
-  sh:datatype xsd:dateTime;
+<http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:endDate> sh:path dcat:endDate;
+  sh:name "end date"@en;
   sh:description "The end of the period."@en;
   sh:maxCount 1;
-  sh:name "end date"@en;
   sh:nodeKind sh:Literal;
-  sh:path dcat:endDate .
-
-<http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:startDate> dash:editor dash:DateTimePickerEditor;
-  dash:viewer dash:LiteralViewer;
   sh:datatype xsd:dateTime;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:DateTimePickerEditor .
+
+<http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:startDate> sh:path dcat:startDate;
+  sh:name "start date"@en;
   sh:description "The start of the period."@en;
   sh:maxCount 1;
-  sh:name "start date"@en;
   sh:nodeKind sh:Literal;
-  sh:path dcat:startDate .
+  sh:datatype xsd:dateTime;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:DateTimePickerEditor .

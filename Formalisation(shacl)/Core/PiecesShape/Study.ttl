@@ -1,70 +1,82 @@
-@prefix dash: <http://datashapes.org/dash#> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix example: <https://data.sparna.fr/shapes-example/> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix healthdcatap: <http://example.com/ns/healthdcatap#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix hri: <http://data.health-ri.nl/core/p2/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix xls2rdf: <https://xls2rdf.sparna.fr/vocabulary#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 
-<https://data.sparna.fr/shapes-example#> a owl:Ontology;
-  dct:description "SHACL mandatory definitions for the Health-RI v2 model for Dataset."@en;
-  dct:modified "2025-02-10T15:57:48.210Z"^^xsd:dateTime;
-  rdfs:comment "Health-RI v2 Dataset (mandatory)."@en;
-  rdfs:label "Dataset"@en;
-  owl:versionInfo "0.1" .
-
-<http://data.health-ri.nl/core/p2/StudyShape> a sh:NodeShape;
+hri:StudyShape a owl:Ontology, sh:NodeShape;
   rdfs:label "Study"@en;
-  sh:nodeKind sh:IRI;
-  sh:order 1;
-  sh:property <http://data.health-ri.nl/core/p2/StudyShape#dct:description>, <http://data.health-ri.nl/core/p2/StudyShape#dct:identifier>,
-    <http://data.health-ri.nl/core/p2/StudyShape#dct:isPartOf>, <http://data.health-ri.nl/core/p2/StudyShape#dct:title>,
-    <http://data.health-ri.nl/core/p2/StudyShape#prov:generated>;
-  sh:targetClass dcat:Dataset;
-  shacl-play:background-color "Green" .
+  rdfs:comment "Health-RI v2 Study."@en;
+  dcterms:description "SHACL definitions for the Health-RI v2 model for Study."@en;
+  owl:versionInfo "0.1";
+  dcterms:modified "2025-02-17T11:18:31.400Z"^^xsd:dateTime;
+  sh:targetClass disco:Study;
+  sh:property <http://data.health-ri.nl/core/p2/StudyShape#prov:generated>, <http://data.health-ri.nl/core/p2/StudyShape#dct:description>,
+    <http://data.health-ri.nl/core/p2/StudyShape#dct:identifier>, <http://data.health-ri.nl/core/p2/StudyShape#dct:isPartOf>,
+    <http://data.health-ri.nl/core/p2/StudyShape#dct:title> .
 
-<http://data.health-ri.nl/core/p2/StudyShape#prov:generated> dash:editor dash:URIEditor;
-  dash:viewer dash:URIViewer;
+<http://data.health-ri.nl/core/p2/StudyShape#prov:generated> sh:path prov:generated;
+  sh:name "dataset"@en;
   sh:description "The dataset that was generated as a result of this study."@en;
   sh:minCount 1;
-  sh:name "dataset"@en;
-  sh:node dcat:Dataset;
-  sh:path prov:generated .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/StudyShape#dct:description> dash:editor dash:TextAreaEditor;
-  dash:viewer dash:LiteralViewer;
+<http://data.health-ri.nl/core/p2/StudyShape#dct:description> sh:path dcterms:description;
+  sh:name "description"@en;
   sh:description "A free text desription of the study."@en;
   sh:minCount 1;
-  sh:name "description"@en;
   sh:nodeKind sh:Literal;
-  sh:path dct:description .
-
-<http://data.health-ri.nl/core/p2/StudyShape#dct:identifier> dash:editor dash:URIEditor;
-  dash:viewer dash:URIViewer;
-  sh:description "A unique identifier of the study."@en;
-  sh:maxCount 1;
-  sh:minCount 1;
-  sh:name "identifier"@en;
-  sh:nodeKind sh:IRI;
-  sh:path dct:identifier .
-
-<http://data.health-ri.nl/core/p2/StudyShape#dct:isPartOf> dash:editor dash:URIEditor;
-  dash:viewer dash:URIViewer;
-  sh:description "The project of which this study is a part."@en;
-  sh:maxCount 1;
-  sh:minCount 1;
-  sh:name "project"@en;
-  sh:node foaf:Project;
-  sh:path dct:isPartOf .
-
-<http://data.health-ri.nl/core/p2/StudyShape#dct:title> dash:editor dash:TextFieldEditor;
   dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextAreaEditor .
+
+<http://data.health-ri.nl/core/p2/StudyShape#dct:identifier> sh:path dcterms:identifier;
+  sh:name "identifier"@en;
+  sh:description "A unique identifier of the study."@en;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/core/p2/StudyShape#dct:isPartOf> sh:path dcterms:isPartOf;
+  sh:name "project"@en;
+  sh:description "The project of which this study is a part."@en;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/core/p2/StudyShape#dct:title> sh:path dcterms:title;
+  sh:name "title"@en;
   sh:description "The title of the study."@en;
   sh:minCount 1;
-  sh:name "title"@en;
   sh:nodeKind sh:Literal;
-  sh:path dct:title .
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
