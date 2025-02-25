@@ -126,7 +126,7 @@
   sh:name "creator"@en;
   sh:description "An entity responsible for producing the dataset."@en;
   sh:minCount 1;
-  sh:node <http://data.health-ri.nl/core/p2/AgentShapeAgentShape>;
+  sh:node <http://data.health-ri.nl/core/p2/AgentShape>;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
@@ -320,7 +320,7 @@
   sh:description "An entity (organisation) responsible for making the Dataset available."@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:node <http://data.health-ri.nl/core/p2/AgentShapeAgentShape>;
+  sh:node <http://data.health-ri.nl/core/p2/AgentShape>;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
