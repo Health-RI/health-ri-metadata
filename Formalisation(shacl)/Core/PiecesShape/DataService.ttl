@@ -32,7 +32,7 @@
   rdfs:comment "Health-RI v2 DataService."@en;
   dcterms:description "SHACL definitions for the Health-RI v2 model for DataService."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-02-24T15:07:24.410Z"^^xsd:dateTime .
+  dcterms:modified "2025-02-25T13:58:43.860Z"^^xsd:dateTime .
 
 hri:DataServiceShape a sh:NodeShape;
   rdfs:label "DataService"@en;
@@ -83,7 +83,7 @@ hri:DataServiceShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dct:creator> sh:path dcterms:creator;
   sh:name "creator"@en;
-  sh:node hri:AgentShapeAgentShape;
+  sh:node hri:AgentShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
@@ -182,7 +182,7 @@ hri:DataServiceShape a sh:NodeShape;
   sh:name "Publisher"@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:node hri:AgentShapeAgentShape;
+  sh:node hri:AgentShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 

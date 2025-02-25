@@ -33,7 +33,7 @@ hri:ProjectShape a owl:Ontology, sh:NodeShape;
   rdfs:comment "Health-RI v2 Project."@en;
   dcterms:description "SHACL definitions for the Health-RI v2 model for Project."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-02-17T13:47:02.050Z"^^xsd:dateTime;
+  dcterms:modified "2025-02-25T14:00:01.070Z"^^xsd:dateTime;
   sh:targetClass foaf:Project;
   sh:property <http://data.health-ri.nl/core/p2/ProjectShape#dct:description>, <http://data.health-ri.nl/core/p2/ProjectShape#dct:identifier>,
     <http://data.health-ri.nl/core/p2/ProjectShape#dcat:resource>, <http://data.health-ri.nl/core/p2/ProjectShape#foaf:fundedBy>,
@@ -68,7 +68,7 @@ hri:ProjectShape a owl:Ontology, sh:NodeShape;
   sh:name "Funder"@en;
   sh:description "Use this property to indicate the funding agency/agencies that provide funding for the project. This property uses the class foaf:Agent, which has its own mandatory and recommended properties. In case the project is funded internally, the corresponding institute can be submitted as funding agent."@en;
   sh:minCount 1;
-  sh:node hri:AgentShapeAgentShape;
+  sh:node hri:AgentShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
