@@ -32,7 +32,7 @@
   rdfs:comment "Health-RI v2 Catalog."@en;
   dcterms:description "SHACL definitions for the Health-RI v2 model for Catalog."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-02-25T13:58:20.400Z"^^xsd:dateTime .
+  dcterms:modified "2025-03-03T13:15:07.020Z"^^xsd:dateTime .
 
 hri:CatalogShape a sh:NodeShape;
   rdfs:label "Catalog"@en;
@@ -93,7 +93,9 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:hasPart> sh:path dcterms:hasPart;
   sh:name "has part"@en;
-  sh:class dcat:Catalog .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#foaf:homepage> sh:path foaf:homepage;
   sh:name "home page"@en;
@@ -150,7 +152,9 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dcat:service> sh:path dcat:service;
   sh:name "service"@en;
-  sh:class dcat:DataService .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:temporal> sh:path dcterms:temporal;
   sh:name "temporal coverage"@en;

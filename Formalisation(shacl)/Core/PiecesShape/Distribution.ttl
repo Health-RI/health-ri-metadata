@@ -32,7 +32,7 @@
   rdfs:comment "Health-RI v2 Distribution."@en;
   dcterms:description "SHACL definitions for the Health-RI v2 model for Distribution."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-02-18T08:05:56.040Z"^^xsd:dateTime .
+  dcterms:modified "2025-03-03T09:40:11.350Z"^^xsd:dateTime .
 
 hri:DistributionShape a sh:NodeShape;
   rdfs:label "Distribution"@en;
@@ -156,7 +156,7 @@ hri:DistributionShape a sh:NodeShape;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
   dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextFieldEditor .
+  dash:editor dash:DateTimePickerEditor .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#dcat:packageFormat> sh:path dcat:packageFormat;
   sh:name "packaging format"@en;
@@ -172,7 +172,7 @@ hri:DistributionShape a sh:NodeShape;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
   dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextFieldEditor .
+  dash:editor dash:DateTimePickerEditor .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#healthdcatap:retentionperiod>
   sh:path healthdcatap:retentionperiod;
