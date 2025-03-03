@@ -32,7 +32,7 @@
   rdfs:comment "Health-RI v2 DataService."@en;
   dcterms:description "SHACL definitions for the Health-RI v2 model for DataService."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-02-25T13:58:43.860Z"^^xsd:dateTime .
+  dcterms:modified "2025-03-03T13:25:51.670Z"^^xsd:dateTime .
 
 hri:DataServiceShape a sh:NodeShape;
   rdfs:label "DataService"@en;
@@ -62,6 +62,7 @@ hri:DataServiceShape a sh:NodeShape;
 <http://data.health-ri.nl/core/p2/DataServiceShape#dcatap:applicableLegislation> sh:path
     dcatap:applicableLegislation;
   sh:name "Applicable Legislation"@en;
+  sh:description "The legislation that mandates the creation or management of the Data Service."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
@@ -75,6 +76,7 @@ hri:DataServiceShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:contactPoint> sh:path dcat:contactPoint;
   sh:name "Contact Point"@en;
+  sh:description "Contact information that can be used for sending comments about the Data Service."@en;
   sh:minCount 1;
   sh:maxCount 1;
   sh:node hri:KindShape;
@@ -95,6 +97,7 @@ hri:DataServiceShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dct:description> sh:path dcterms:description;
   sh:name "Description"@en;
+  sh:description "A free-text account of the Data Service."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
   dash:viewer dash:LiteralViewer;
@@ -112,6 +115,7 @@ hri:DataServiceShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:endpointURL> sh:path dcat:endpointURL;
   sh:name "end point URL"@en;
+  sh:description "The root location or primary endpoint of the service (an IRI)."@en;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
@@ -120,6 +124,7 @@ hri:DataServiceShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dct:format> sh:path dcterms:format;
   sh:name "format"@en;
+  sh:description "The structure that can be returned by querying the endpointURL."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
@@ -140,6 +145,7 @@ hri:DataServiceShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:keyword> sh:path dcat:keyword;
   sh:name "keyword"@en;
+  sh:description "A keyword or tag describing the Data Service."@en;
   sh:nodeKind sh:Literal;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
@@ -159,6 +165,7 @@ hri:DataServiceShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dct:license> sh:path dcterms:license;
   sh:name "License"@en;
+  sh:description "A licence under which the Data service is made available."@en;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
@@ -180,6 +187,7 @@ hri:DataServiceShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dct:publisher> sh:path dcterms:publisher;
   sh:name "Publisher"@en;
+  sh:description "An entity (organisation) responsible for making the Data Service available."@en;
   sh:minCount 1;
   sh:maxCount 1;
   sh:node hri:AgentShape;
@@ -188,7 +196,10 @@ hri:DataServiceShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:servesDataset> sh:path dcat:servesDataset;
   sh:name "serves dataset"@en;
-  sh:class dcat:Dataset .
+  sh:description "This property refers to a collection of data that this data service can distribute."@en;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:theme> sh:path dcat:theme;
   sh:name "theme"@en;
@@ -200,6 +211,7 @@ hri:DataServiceShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dct:title> sh:path dcterms:title;
   sh:name "title"@en;
+  sh:description "A name given to the Data Service."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
   dash:viewer dash:LiteralViewer;

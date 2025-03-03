@@ -33,7 +33,7 @@ hri:StudyShape a owl:Ontology, sh:NodeShape;
   rdfs:comment "Health-RI v2 Study."@en;
   dcterms:description "SHACL definitions for the Health-RI v2 model for Study."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-02-17T11:18:31.400Z"^^xsd:dateTime;
+  dcterms:modified "2025-03-03T13:22:36.740Z"^^xsd:dateTime;
   sh:targetClass disco:Study;
   sh:property <http://data.health-ri.nl/core/p2/StudyShape#prov:generated>, <http://data.health-ri.nl/core/p2/StudyShape#dct:description>,
     <http://data.health-ri.nl/core/p2/StudyShape#dct:identifier>, <http://data.health-ri.nl/core/p2/StudyShape#dct:isPartOf>,
@@ -60,9 +60,9 @@ hri:StudyShape a owl:Ontology, sh:NodeShape;
   sh:description "A unique identifier of the study."@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
 
 <http://data.health-ri.nl/core/p2/StudyShape#dct:isPartOf> sh:path dcterms:isPartOf;
   sh:name "project"@en;

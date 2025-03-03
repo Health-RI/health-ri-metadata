@@ -14,7 +14,7 @@
 @prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix hri: <http://coreRule-healthri.nl#> .
+@prefix hri: <http://data.health-ri.nl/core/p2/> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix dcatap: <http://data.europa.eu/r5r/> .
 @prefix org: <http://www.w3.org/ns/org#> .
@@ -22,6 +22,7 @@
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix efo: <http://www.ebi.ac.uk/efo/efo.owl/> .
+@prefix eu: <http://publications.europa.eu/resource/authority/access-right/> .
 @prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dash: <http://datashapes.org/dash#> .
@@ -29,108 +30,111 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 
-<http://data.health-ri.nl/core/p2/DatasetShape> a owl:Ontology;
-  rdfs:label "Excel template for Dataset class"@en;
+hri:DatasetShape a owl:Ontology, sh:NodeShape;
+  rdfs:label "Excel template for Dataset class"@en, "Dataset"@en;
   rdfs:comment "Excel template for Dataset class"@en;
   dcterms:description "This is an excel template for Dataset class in Health RI Core plateau 2."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-02-10T00:00:00.000Z"^^xsd:dateTime .
-
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape> a sh:NodeShape;
-  rdfs:label "Dataset"@en;
+  dcterms:modified "2025-02-10T00:00:00.000Z"^^xsd:dateTime;
   sh:targetClass dcat:Dataset;
-  sh:property <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#accessRights>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#analytics>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#applicableLegislation>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#code-values>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#coding-system>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#conforms-to>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#contact-point>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#creator>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#data-origin>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#description>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#distribution>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#documentation>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#frequency>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#geographical-coverage>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#has-version>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#health-theme>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#identifier>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#in-series>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#is-referenced-by>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#keyword>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#language>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#legal-basis>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#maximum-typical-age>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#minimum-typical-age>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#modification-date>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#number-of-records>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#number-of-unique-infividuals>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#other-identifier>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#personal-data>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#population-coverage>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#publisher>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#purpose>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#qualified-attribution>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#qualified-relation>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#quality-annotation>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#release-date>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#retention-period>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#sample>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#source>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#status>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#temporal-coverage>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#temporal-resolution>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#theme>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#title>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#type>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#version>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#version-notes>,
-    <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#was-generated-by>, <http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#was-used-by> .
+  sh:property <http://data.health-ri.nl/core/p2/DatasetShape#access-rights>, <http://data.health-ri.nl/core/p2/DatasetShape#analytics>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#applicable-legislation>, <http://data.health-ri.nl/core/p2/DatasetShape#code-values>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#coding-system>, <http://data.health-ri.nl/core/p2/DatasetShape#conforms-to>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#contact-point>, <http://data.health-ri.nl/core/p2/DatasetShape#creator>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#data-origin>, <http://data.health-ri.nl/core/p2/DatasetShape#description>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#distribution>, <http://data.health-ri.nl/core/p2/DatasetShape#documentation>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#frequency>, <http://data.health-ri.nl/core/p2/DatasetShape#geographical-coverage>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#has-version>, <http://data.health-ri.nl/core/p2/DatasetShape#health-theme>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#identifier>, <http://data.health-ri.nl/core/p2/DatasetShape#in-series>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#is-referenced-by>, <http://data.health-ri.nl/core/p2/DatasetShape#keyword>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#language>, <http://data.health-ri.nl/core/p2/DatasetShape#legal-basis>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#maximum-typical-age>, <http://data.health-ri.nl/core/p2/DatasetShape#minimum-typical-age>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#modification-date>, <http://data.health-ri.nl/core/p2/DatasetShape#number-of-records>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#number-of-unique-infividuals>, <http://data.health-ri.nl/core/p2/DatasetShape#other-identifier>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#personal-data>, <http://data.health-ri.nl/core/p2/DatasetShape#population-coverage>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#publisher>, <http://data.health-ri.nl/core/p2/DatasetShape#purpose>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#qualified-attribution>, <http://data.health-ri.nl/core/p2/DatasetShape#qualified-relation>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#quality-annotation>, <http://data.health-ri.nl/core/p2/DatasetShape#release-date>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#retention-period>, <http://data.health-ri.nl/core/p2/DatasetShape#sample>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#source>, <http://data.health-ri.nl/core/p2/DatasetShape#status>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#temporal-coverage>, <http://data.health-ri.nl/core/p2/DatasetShape#temporal-resolution>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#theme>, <http://data.health-ri.nl/core/p2/DatasetShape#title>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#type>, <http://data.health-ri.nl/core/p2/DatasetShape#version>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#version-notes>, <http://data.health-ri.nl/core/p2/DatasetShape#was-generated-by>,
+    <http://data.health-ri.nl/core/p2/DatasetShape#was-used-by> .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#accessRights> sh:path dcterms:accessRights;
+<http://data.health-ri.nl/core/p2/DatasetShape#access-rights> sh:path dcterms:accessRights;
   sh:name "access rights"@en;
   sh:description "Information that indicates whether the Dataset is publicly accessible, has access restrictions or is not public"@en;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
+  sh:in _:c9e9aea49e3f492abce90c9c9c6da1cc2;
   dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  dash:editor dash:EnumSelectEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#analytics> sh:path healthdcatap:analytics;
+_:c9e9aea49e3f492abce90c9c9c6da1cc2 rdf:first eu:PUBLIC;
+  rdf:rest _:c9e9aea49e3f492abce90c9c9c6da1cc3 .
+
+_:c9e9aea49e3f492abce90c9c9c6da1cc3 rdf:first eu:RESTRICTED;
+  rdf:rest _:c9e9aea49e3f492abce90c9c9c6da1cc4 .
+
+_:c9e9aea49e3f492abce90c9c9c6da1cc4 rdf:first eu:NON_PUBLIC;
+  rdf:rest rdf:nil .
+
+<http://data.health-ri.nl/core/p2/DatasetShape#analytics> sh:path healthdcatap:analytics;
   sh:name "analytics"@en;
   sh:description "An analytics distribution of the dataset"@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#applicableLegislation>
-  sh:path dcatap:applicableLegislation;
+<http://data.health-ri.nl/core/p2/DatasetShape#applicable-legislation> sh:path dcatap:applicableLegislation;
   sh:name "applicable legislation"@en;
   sh:description "The legislation that mandates the creation or management of the Dataset."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#code-values> sh:path healthdcatap:hasCodeValues;
+<http://data.health-ri.nl/core/p2/DatasetShape#code-values> sh:path healthdcatap:hasCodeValues;
   sh:name "code values"@en;
   sh:description "Health classifications and their codes associated with the dataset"@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#coding-system> sh:path
-    healthdcatap:hasCodingSystem;
+<http://data.health-ri.nl/core/p2/DatasetShape#coding-system> sh:path healthdcatap:hasCodingSystem;
   sh:name "coding system"@en;
   sh:description "Coding systems in use (ex: ICD-10-CM, DGRs, SNOMED=CT, ...)"@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#conforms-to> sh:path dcterms:conformsTo;
+<http://data.health-ri.nl/core/p2/DatasetShape#conforms-to> sh:path dcterms:conformsTo;
   sh:name "conforms to"@en;
   sh:description "An implementing rule or other specification"@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#contact-point> sh:path
-    dcat:contactPoint;
+<http://data.health-ri.nl/core/p2/DatasetShape#contact-point> sh:path dcat:contactPoint;
   sh:name "contact point"@en;
   sh:description "Contact information that can be used for sending comments about the Dataset."@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:node <http://data.health-ri.nl/core/p2/KindShape>;
+  sh:node hri:KindShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:BlankNodeEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#creator> sh:path dcterms:creator;
+<http://data.health-ri.nl/core/p2/DatasetShape#creator> sh:path dcterms:creator;
   sh:name "creator"@en;
   sh:description "An entity responsible for producing the dataset."@en;
   sh:minCount 1;
-  sh:node <http://data.health-ri.nl/core/p2/AgentShape>;
+  sh:node hri:AgentShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#data-origin> sh:path efo:EFO_0022043;
+<http://data.health-ri.nl/core/p2/DatasetShape#data-origin> sh:path efo:EFO_0022043;
   sh:name "data origin"@en;
   sh:description "The origin of the data in the data set"@en;
   sh:maxCount 1;
@@ -138,7 +142,7 @@
   dash:viewer dash:URIViewer;
   dash:editor dash:BooleanSelectEdito .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#description> sh:path dcterms:description;
+<http://data.health-ri.nl/core/p2/DatasetShape#description> sh:path dcterms:description;
   sh:name "description"@en;
   sh:description "A free-text account of the Dataset."@en;
   sh:minCount 1;
@@ -147,22 +151,21 @@
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#distribution> sh:path dcat:distribution;
+<http://data.health-ri.nl/core/p2/DatasetShape#distribution> sh:path dcat:distribution;
   sh:name "distribution"@en;
   sh:description "An available Distribution for the Dataset."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#documentation> sh:path
-    foaf:page;
+<http://data.health-ri.nl/core/p2/DatasetShape#documentation> sh:path foaf:page;
   sh:name "documentation"@en;
   sh:description "A page or document about this Dataset."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#frequency> sh:path dcterms:accrualPeriodicity;
+<http://data.health-ri.nl/core/p2/DatasetShape#frequency> sh:path dcterms:accrualPeriodicity;
   sh:name "frequency"@en;
   sh:description "The frequency at which the Dataset is updated"@en;
   sh:maxCount 1;
@@ -170,29 +173,28 @@
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#geographical-coverage>
-  sh:path dcterms:spatial;
+<http://data.health-ri.nl/core/p2/DatasetShape#geographical-coverage> sh:path dcterms:spatial;
   sh:name "geographical coverage"@en;
   sh:description "A geographic region that is covered by the Dataset."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#has-version> sh:path dcat:hasVersion;
+<http://data.health-ri.nl/core/p2/DatasetShape#has-version> sh:path dcat:hasVersion;
   sh:name "has version"@en;
   sh:description "A related Dataset that is a version, edition, or adaptation of the described Dataset."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#health-theme> sh:path healthdcatap:healthTheme;
+<http://data.health-ri.nl/core/p2/DatasetShape#health-theme> sh:path healthdcatap:healthTheme;
   sh:name "health theme"@en;
   sh:description "A category of the Dataset or tag describing the Dataset."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#identifier> sh:path dcterms:identifier;
+<http://data.health-ri.nl/core/p2/DatasetShape#identifier> sh:path dcterms:identifier;
   sh:name "identifier"@en;
   sh:description "The main identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalogue."@en;
   sh:minCount 1;
@@ -202,22 +204,21 @@
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#in-series> sh:path dcat:inSeries;
+<http://data.health-ri.nl/core/p2/DatasetShape#in-series> sh:path dcat:inSeries;
   sh:name "in series"@en;
   sh:description "A dataset series of which the dataset is part."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#is-referenced-by> sh:path
-    dcterms:isReferencedBy;
+<http://data.health-ri.nl/core/p2/DatasetShape#is-referenced-by> sh:path dcterms:isReferencedBy;
   sh:name "is referenced by"@en;
   sh:description "A related resource, such as a publication, that references, cites, or otherwise points to the dataset."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#keyword> sh:path dcat:keyword;
+<http://data.health-ri.nl/core/p2/DatasetShape#keyword> sh:path dcat:keyword;
   sh:name "keyword"@en;
   sh:description "A keyword or tag describing the Dataset."@en;
   sh:minCount 1;
@@ -226,22 +227,21 @@
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#language> sh:path dcterms:language;
+<http://data.health-ri.nl/core/p2/DatasetShape#language> sh:path dcterms:language;
   sh:name "language"@en;
   sh:description "A language of the Dataset."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#legal-basis> sh:path dqv:hasLegalBasis;
+<http://data.health-ri.nl/core/p2/DatasetShape#legal-basis> sh:path dqv:hasLegalBasis;
   sh:name "legal basis"@en;
   sh:description "The legal basis used to justify processing of personal data"@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#maximum-typical-age> sh:path
-    healthdcatap:maxTypicalAge;
+<http://data.health-ri.nl/core/p2/DatasetShape#maximum-typical-age> sh:path healthdcatap:maxTypicalAge;
   sh:name "maximum typical age"@en;
   sh:description "Maximum typical age of the population within the dataset"@en;
   sh:maxCount 1;
@@ -250,8 +250,7 @@
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#minimum-typical-age> sh:path
-    healthdcatap:minTypicalAge;
+<http://data.health-ri.nl/core/p2/DatasetShape#minimum-typical-age> sh:path healthdcatap:minTypicalAge;
   sh:name "minimum typical age"@en;
   sh:description "Minimum typical age of the population within the dataset"@en;
   sh:maxCount 1;
@@ -260,8 +259,7 @@
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#modification-date> sh:path
-    dcterms:modified;
+<http://data.health-ri.nl/core/p2/DatasetShape#modification-date> sh:path dcterms:modified;
   sh:name "modification date"@en;
   sh:description "The most recent date on which the Dataset was changed or modified."@en;
   sh:maxCount 1;
@@ -270,8 +268,7 @@
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#number-of-records> sh:path
-    healthdcatap:numberOfRecords;
+<http://data.health-ri.nl/core/p2/DatasetShape#number-of-records> sh:path healthdcatap:numberOfRecords;
   sh:name "number of records"@en;
   sh:description "Size of the dataset in terms of the number of records"@en;
   sh:maxCount 1;
@@ -280,8 +277,8 @@
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#number-of-unique-infividuals>
-  sh:path healthdcatap:numberOfUniqueIndividuals;
+<http://data.health-ri.nl/core/p2/DatasetShape#number-of-unique-infividuals> sh:path
+    healthdcatap:numberOfUniqueIndividuals;
   sh:name "number of unique infividuals"@en;
   sh:description "Number of records for unique individuals."@en;
   sh:maxCount 1;
@@ -290,24 +287,21 @@
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#other-identifier> sh:path
-    adms:identifier;
+<http://data.health-ri.nl/core/p2/DatasetShape#other-identifier> sh:path adms:identifier;
   sh:name "other identifier"@en;
   sh:description "A secondary identifier of the Dataset, such as MAST/ADS17, DataCite18, DOI19, EZID20 or W3ID21"@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#personal-data> sh:path
-    dqv:hasPersonalData;
+<http://data.health-ri.nl/core/p2/DatasetShape#personal-data> sh:path dqv:hasPersonalData;
   sh:name "personal data"@en;
   sh:description "Key elements that represent an individual in the dataset."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#population-coverage> sh:path
-    healthdcatap:populationCoverage;
+<http://data.health-ri.nl/core/p2/DatasetShape#population-coverage> sh:path healthdcatap:populationCoverage;
   sh:name "population coverage"@en;
   sh:description "A definition of the population within the dataset"@en;
   sh:nodeKind sh:Literal;
@@ -315,47 +309,44 @@
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#publisher> sh:path dcterms:publisher;
+<http://data.health-ri.nl/core/p2/DatasetShape#publisher> sh:path dcterms:publisher;
   sh:name "publisher"@en;
   sh:description "An entity (organisation) responsible for making the Dataset available."@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:node <http://data.health-ri.nl/core/p2/AgentShape>;
+  sh:node hri:AgentShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#purpose> sh:path dqv:hasPurpose;
+<http://data.health-ri.nl/core/p2/DatasetShape#purpose> sh:path dqv:hasPurpose;
   sh:name "purpose"@en;
   sh:description "A free text statement of the purpose of the processing of data or personal data."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#qualified-attribution>
-  sh:path prov:qualifiedAttribution;
+<http://data.health-ri.nl/core/p2/DatasetShape#qualified-attribution> sh:path prov:qualifiedAttribution;
   sh:name "qualified attribution"@en;
   sh:description "An Agent having some form of responsibility for the resource"@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#qualified-relation> sh:path
-    dcat:qualifiedRelation;
+<http://data.health-ri.nl/core/p2/DatasetShape#qualified-relation> sh:path dcat:qualifiedRelation;
   sh:name "qualified relation"@en;
   sh:description "A description of a relationship with another resource"@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#quality-annotation> sh:path
-    dqv:hasQualityAnnotation;
+<http://data.health-ri.nl/core/p2/DatasetShape#quality-annotation> sh:path dqv:hasQualityAnnotation;
   sh:name "quality annotation"@en;
   sh:description "A statement related to quality of the Dataset, including rating, quality certificate, feedback that can be associated to the dataset"@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#release-date> sh:path dcterms:issued;
+<http://data.health-ri.nl/core/p2/DatasetShape#release-date> sh:path dcterms:issued;
   sh:name "release date"@en;
   sh:description "The date of formal issuance (e.g., publication) of the Dataset."@en;
   sh:maxCount 1;
@@ -364,30 +355,29 @@
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#retention-period> sh:path
-    healthdcatap:retentionPeriod;
+<http://data.health-ri.nl/core/p2/DatasetShape#retention-period> sh:path healthdcatap:retentionPeriod;
   sh:name "retention period"@en;
   sh:description "A temporal period which the dataset is available for secondary use"@en;
   sh:maxCount 1;
-  sh:node <http://data.health-ri.nl/core/p2/PeriodOfTimeShape>;
+  sh:node hri:PeriodOfTimeShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#sample> sh:path adms:sample;
+<http://data.health-ri.nl/core/p2/DatasetShape#sample> sh:path adms:sample;
   sh:name "sample"@en;
   sh:description "A sample distribution of the dataset"@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#source> sh:path dcterms:source;
+<http://data.health-ri.nl/core/p2/DatasetShape#source> sh:path dcterms:source;
   sh:name "source"@en;
   sh:description "A related dataset from which the described dataset is derived"@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#status> sh:path adms:status;
+<http://data.health-ri.nl/core/p2/DatasetShape#status> sh:path adms:status;
   sh:name "status"@en;
   sh:description "The status of a dataset"@en;
   sh:maxCount 1;
@@ -395,16 +385,14 @@
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#temporal-coverage> sh:path
-    dcterms:temporal;
+<http://data.health-ri.nl/core/p2/DatasetShape#temporal-coverage> sh:path dcterms:temporal;
   sh:name "temporal coverage"@en;
   sh:description "A temporal period that the Dataset covers."@en;
-  sh:node <http://data.health-ri.nl/core/p2/PeriodOfTimeShape>;
+  sh:node hri:PeriodOfTimeShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#temporal-resolution> sh:path
-    dcat:temporalResolution;
+<http://data.health-ri.nl/core/p2/DatasetShape#temporal-resolution> sh:path dcat:temporalResolution;
   sh:name "temporal resolution"@en;
   sh:description "The minimum time period resolvable in the dataset."@en;
   sh:maxCount 1;
@@ -413,7 +401,7 @@
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#theme> sh:path dcat:theme;
+<http://data.health-ri.nl/core/p2/DatasetShape#theme> sh:path dcat:theme;
   sh:name "theme"@en;
   sh:description "A category of the Dataset"@en;
   sh:minCount 1;
@@ -421,7 +409,7 @@
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#title> sh:path dcterms:title;
+<http://data.health-ri.nl/core/p2/DatasetShape#title> sh:path dcterms:title;
   sh:name "title"@en;
   sh:description "A name given to the Dataset."@en;
   sh:minCount 1;
@@ -430,7 +418,7 @@
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#type> sh:path dcterms:type;
+<http://data.health-ri.nl/core/p2/DatasetShape#type> sh:path dcterms:type;
   sh:name "type"@en;
   sh:description "A type of the Dataset."@en;
   sh:maxCount 1;
@@ -438,7 +426,7 @@
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#version> sh:path dcat:version;
+<http://data.health-ri.nl/core/p2/DatasetShape#version> sh:path dcat:version;
   sh:name "version"@en;
   sh:description "The version indicator (name or identifier) of a resource."@en;
   sh:maxCount 1;
@@ -447,8 +435,7 @@
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#version-notes> sh:path
-    adms:versionNotes;
+<http://data.health-ri.nl/core/p2/DatasetShape#version-notes> sh:path adms:versionNotes;
   sh:name "version notes"@en;
   sh:description "A description of the differences between this version and a previous version of the Dataset"@en;
   sh:nodeKind sh:Literal;
@@ -456,15 +443,14 @@
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#was-generated-by> sh:path
-    prov:wasGeneratedBy;
+<http://data.health-ri.nl/core/p2/DatasetShape#was-generated-by> sh:path prov:wasGeneratedBy;
   sh:name "was generated by"@en;
   sh:description "An activity that generated, or provides the business context for, the creation of the dataset."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShapeDatasetShape#was-used-by> sh:path prov:wasUsedBy;
+<http://data.health-ri.nl/core/p2/DatasetShape#was-used-by> sh:path prov:wasUsedBy;
   sh:name "was used by"@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
