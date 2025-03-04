@@ -1,0 +1,37 @@
+@prefix schema: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix example: <https://data.sparna.fr/shapes-example/> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix healthdcatap: <http://example.com/ns/healthdcatap#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix hri: <http://data.health-ri.nl/core/p2/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix xls2rdf: <https://xls2rdf.sparna.fr/vocabulary#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+hri:ResourceShape a owl:Ontology, sh:NodeShape;
+  rdfs:label "Resource"@en;
+  rdfs:comment "Health-RI v2 Resource placeholder."@en;
+  dcterms:description "SHACL stub for the Health-RI v2 model for Resource."@en;
+  owl:versionInfo "0.1";
+  dcterms:modified "2025-03-03T13:34:21.800Z"^^xsd:dateTime;
+  sh:targetClass dcat:Resource .

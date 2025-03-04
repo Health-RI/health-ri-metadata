@@ -4,7 +4,6 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 
-
 <http://example.com/dataset> a dcat:Dataset ;
     dct:title "Example Dataset" ;
     dct:description "This is an example dataset to test the shapes" ;
@@ -14,31 +13,41 @@
     dct:creator [
         a foaf:Agent ;
         foaf:name "Test" ;
+        foaf:mbox <mailto:info@example.com> ;
         dct:identifier "test-creator-id-000" ;
+        foaf:homepage <http://www.example.com/homepage> ;
     ] ;
+    dcat:keyword "keyword" ;
     dcat:contactPoint [
         vcard:hasEmail <mailto:foo.bar@health-ri.nl> ;
         vcard:fn "Foo Bar" ;
     ] ;
     dct:publisher [ a foaf:Agent ;
         dct:identifier "https://nl.wikipedia.org/wiki/J.K._Rowling" ;
-        foaf:name "Joanne Rowling" 
+        foaf:name "Joanne Rowling" ;
+        foaf:mbox <mailto:j.k.Rowling@example.com> ;
+        foaf:homepage <https://nl.wikipedia.org/wiki/J.K._Rowling>
     ] ;
-    dct:license <https://opensource.org/license/mit>;
+    dct:license <https://opensource.org/license/mit> ;
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC> ;
     dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime    .
 
 
 <http://example.com/dataset/1> a dcat:Dataset ;
     dct:creator [ a foaf:Agent  ;
-            foaf:name "Hermione Granger" ;
-            dct:identifier "test-creator-id-001" ;
-            vcard:hasUID <https://harrypotter.fandom.com/wiki/Hermione_Granger> ] ;
+                  foaf:name "Hermione Granger" ;
+                  foaf:mbox <mailto:info@example.com> ;
+                  dct:identifier "test-creator-id-001" ;
+                  foaf:homepage <https://harrypotter.fandom.com/wiki/Hermione_Granger>
+            ] ;
 
     dct:description "Impact of muggle technical inventions on word's magic presense" ;
     dct:identifier "test-dataset-id-1" ;
     dct:issued "1992-03-04T00:00:00.923Z"^^xsd:dateTime ;
     dct:publisher [ a foaf:Agent ;
             dct:identifier "https://harrypotter.fandom.com/wiki/Gryffindor" ;
+            foaf:homepage <https://harrypotter.fandom.com/wiki/Gryffindor> ;
+            foaf:mbox <mailto:gryffindor@fandom.com> ;
             foaf:name "House of Gryffindor" ] ;
     dct:title "Gryffindor research project" ;
     dcat:keyword " muggles",
@@ -50,20 +59,25 @@
         vcard:fn "Foo Bar" ;
     ];
     dct:license <https://opensource.org/license/mit>;
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC> ;
     dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime  .
 
 
 <http://example.com/dataset/2> a dcat:Dataset ;
     dct:creator [ a foaf:Agent ;
-            foaf:name "Draco Malfoy" ;
-            dct:identifier "test-creator-id-002" ;
-            vcard:hasUID <https://harrypotter.fandom.com/wiki/Draco_Malfoy> ] ;
+                  foaf:name "Draco Malfoy" ;
+                  foaf:mbox <mailto:harry@fandom.com> ;
+                  dct:identifier "harrypotter.fandom.com/wiki/Draco_Malfoy" ;
+                  foaf:homepage <https://harrypotter.fandom.com/wiki/Draco_Malfoy>
+                ] ;
     dct:description "Comarative analysis of magic powers of muggle-born and blood wizards " ;
     dct:identifier "test-dataset-id-12" ;
     dct:issued "1992-05-25T00:00:00.923Z"^^xsd:dateTime ;
     dct:publisher [ a foaf:Agent ;
-            dct:identifier "https://harrypotter.fandom.com/wiki/Slytherin" ;
-            foaf:name "House of Slytherin" ] ;
+                    dct:identifier "https://harrypotter.fandom.com/wiki/Slytherin" ;
+                    foaf:mbox <mailto:harry@fandom.com> ;
+                    foaf:homepage <https://harrypotter.fandom.com/wiki/Slytherin> ;
+                    foaf:name "House of Slytherin" ] ;
     dct:title "Slytherin research project" ;
     dcat:keyword " muggle-born",
         " pure-blood",
@@ -77,20 +91,24 @@
         vcard:fn "Foo Bar" ;
     ] ;
     dct:license <https://opensource.org/license/mit>;
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC> ;
     dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime .
 
 
 <http://example.com/dataset/3> a dcat:Dataset ;
     dct:creator [ a foaf:Agent ;
-            foaf:name "Luna Lovegood" ;
-            dct:identifier "test-creator-id-003" ;
-            vcard:hasUID <https://harrypotter.fandom.com/wiki/Luna_Lovegood> ] ;
+                  foaf:name "Luna Lovegood" ;
+                  dct:identifier "test-creator-id-003" ;
+                  foaf:homepage <https://harrypotter.fandom.com/wiki/Luna_Lovegood>;
+                  foaf:mbox <mailto:luna@fandom.com>] ;
     dct:description "Linguistic analysis of spells" ;
     dct:identifier "test-dataset-id-3" ;
     dct:issued "1992-05-26T00:00:00.923Z"^^xsd:dateTime ;
     dct:publisher [ a foaf:Agent ;
-            dct:identifier "https://harrypotter.fandom.com/wiki/Ravenclaw" ;
-            foaf:name "House of Ravenclaw" ] ;
+                    dct:identifier "https://harrypotter.fandom.com/wiki/Ravenclaw" ;
+                    foaf:homepage <https://harrypotter.fandom.com/wiki/Ravenclaw> ;
+                    foaf:mbox  <ravenclaw@fandom/com> ;
+                    foaf:name "House of Ravenclaw" ] ;
     dct:title "Ravenclaw research project" ;
     dcat:keyword "linguastics spell" ;
     dcat:theme <https://harrypotter.fandom.com/wiki/List_of_spells> ;
@@ -99,19 +117,23 @@
         vcard:fn "Foo Bar" ;
     ] ;
     dct:license <https://opensource.org/license/mit>;
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC> ;
     dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime  .
 
 
 <http://example.com/dataset/4> a dcat:Dataset ;
     dct:creator [ a foaf:Agent ;
-            foaf:name "Dora Williams" ;
-            dct:identifier "test-creator-id-004" ;
-            vcard:hasUID <https://harrypotter.fandom.com/wiki/Dora_Williams> ] ;
+                  foaf:name "Dora Williams" ;
+                  dct:identifier "test-creator-id-004" ;
+                  foaf:homepage  <https://harrypotter.fandom.com/wiki/Dora_Williams> ;
+                  foaf:mbox <mailto:williams@fandom.com>] ;
     dct:description "Domestics elfs reproduction rate changes in the last 100 years" ;
     dct:identifier "test-dataset-id-4" ;
     dct:issued "1992-05-27T00:00:00.923Z"^^xsd:dateTime ;
     dct:publisher [ a foaf:Agent ;
             dct:identifier "https://harrypotter.fandom.com/wiki/Hufflepuff" ;
+            foaf:homepage <https://harrypotter.fandom.com/wiki/Hufflepuff> ;
+            foaf:mbox <mailto:hufflePuff@fandaom.com> ;
             foaf:name "House of Hufflepuff" ] ;
     dct:title "Hufflepuff research project" ;
     dcat:keyword "domestic elf" ;
@@ -121,5 +143,6 @@
         vcard:fn "Foo Bar" ;
     ]; 
     dct:license <https://opensource.org/license/mit>;
+    dct:accessRights <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC> ;
     dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime .
 
