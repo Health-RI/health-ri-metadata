@@ -1,0 +1,88 @@
+@prefix schema: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix example: <https://data.sparna.fr/shapes-example/> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix healthdcatap: <http://example.com/ns/healthdcatap#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix hri: <http://data.health-ri.nl/core/p2/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix xls2rdf: <https://xls2rdf.sparna.fr/vocabulary#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+hri:ProjectShape a owl:Ontology, sh:NodeShape;
+  rdfs:label "Project"@en;
+  rdfs:comment "Health-RI v2 Project."@en;
+  dcterms:description "SHACL definitions for the Health-RI v2 model for Project."@en;
+  owl:versionInfo "0.1";
+  dcterms:modified "2025-02-25T14:00:01.070Z"^^xsd:dateTime;
+  sh:targetClass foaf:Project;
+  sh:property <http://data.health-ri.nl/core/p2/ProjectShape#dct:description>, <http://data.health-ri.nl/core/p2/ProjectShape#dct:identifier>,
+    <http://data.health-ri.nl/core/p2/ProjectShape#dcat:resource>, <http://data.health-ri.nl/core/p2/ProjectShape#foaf:fundedBy>,
+    <http://data.health-ri.nl/core/p2/ProjectShape#dct:title>, <http://data.health-ri.nl/core/p2/ProjectShape#dct:hasPart> .
+
+<http://data.health-ri.nl/core/p2/ProjectShape#dct:description> sh:path dcterms:description;
+  sh:name "Description"@en;
+  sh:description "A free text description of the project. Cardinality 1..n to supply the information in multiple languages, if preferred."@en;
+  sh:minCount 1;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextAreaEditor .
+
+<http://data.health-ri.nl/core/p2/ProjectShape#dct:identifier> sh:path dcterms:identifier;
+  sh:name "Identifier"@en;
+  sh:description "This property is intended for the GrantID of the project."@en;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
+
+<http://data.health-ri.nl/core/p2/ProjectShape#dcat:resource> sh:path dcat:resource;
+  sh:name "Catalogue"@en;
+  sh:description "This property is intended to connect the project to a catalogue of which the project is part of."@en;
+  sh:minCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/core/p2/ProjectShape#foaf:fundedBy> sh:path foaf:fundedBy;
+  sh:name "Funder"@en;
+  sh:description "Use this property to indicate the funding agency/agencies that provide funding for the project. This property uses the class foaf:Agent, which has its own mandatory and recommended properties. In case the project is funded internally, the corresponding institute can be submitted as funding agent."@en;
+  sh:minCount 1;
+  sh:node hri:AgentShape;
+  dash:viewer dash:DetailsViewer;
+  dash:editor dash:BlankNodeEditor .
+
+<http://data.health-ri.nl/core/p2/ProjectShape#dct:title> sh:path dcterms:title;
+  sh:name "Title"@en;
+  sh:description "Indicate the title of the project here. The title can be supplied in multiple languages if preferred; this is why the cardinality is set to 1..n."@en;
+  sh:minCount 1;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
+
+<http://data.health-ri.nl/core/p2/ProjectShape#dct:hasPart> sh:path dcterms:hasPart;
+  sh:name "Study"@en;
+  sh:description "As the study class is used to give more information about data generation or collection, the different data collection endeavors of the project can be stated by instantiating one or several instances of the study class. This property links a project to its study/studies."@en;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:DetailsViewer;
+  dash:editor dash:BlankNodeEditor .

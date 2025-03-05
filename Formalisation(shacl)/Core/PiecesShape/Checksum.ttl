@@ -2,7 +2,6 @@
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
 @prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix example: <https://data.sparna.fr/shapes-example/> .
@@ -28,10 +27,29 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 
-hri:ResourceShape a owl:Ontology, sh:NodeShape;
-  rdfs:label "Resource"@en;
-  rdfs:comment "Health-RI v2 Resource placeholder."@en;
-  dcterms:description "SHACL stub for the Health-RI v2 model for Resource."@en;
+hri:ChecksumShape a owl:Ontology, sh:NodeShape;
+  rdfs:label "Checksum"@en;
+  rdfs:comment "Health-RI v2 Checksum."@en;
+  dcterms:description "SHACL definitions for the Health-RI v2 model for Checksum."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-03-03T13:34:21.800Z"^^xsd:dateTime;
-  sh:targetClass dcat:Resource .
+  dcterms:modified "2025-02-18T08:07:01.270Z"^^xsd:dateTime;
+  sh:targetClass spdx:Checksum;
+  sh:property <http://data.health-ri.nl/core/p2/ChecksumShape#spdx:algorithm>, <http://data.health-ri.nl/core/p2/ChecksumShape#spdx:checksumValue> .
+
+<http://data.health-ri.nl/core/p2/ChecksumShape#spdx:algorithm> sh:path spdx:algorithm;
+  sh:name "algorithm"@en;
+  sh:description "The algorithm used to produce the subject Checksum"@en;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/core/p2/ChecksumShape#spdx:checksumValue> sh:path spdx:checksumValue;
+  sh:name "checksum value"@en;
+  sh:description "A lower case hexadecimal encoded digest value produced using a specific algorithm"@en;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextAreaEditor .

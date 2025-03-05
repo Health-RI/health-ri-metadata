@@ -9,7 +9,9 @@
     dct:description "This is an example catalog to test the shapes" ;
     dct:publisher [
         a foaf:Agent ;
-        foaf:name "Test" ;
+        foaf:name "Publisher" ;
+        foaf:homepage <http://www.example.com/publisher> ;
+        foaf:mbox <mailto:info@example.com> ;
         dct:identifier "ID_00002";
     ] ;
     dcat:contactPoint [

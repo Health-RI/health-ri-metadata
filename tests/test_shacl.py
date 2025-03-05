@@ -75,4 +75,4 @@ def get_testcase_path(testcase):
 
 
 def get_shacl_path(shacl):
-    return rf"Formalisation(shacl)/Core/PiecesShape/{shacl}.ttl"
+    return rf"Formalisation(shacl)/Core/FairDataPointShape/{shacl}.ttl"

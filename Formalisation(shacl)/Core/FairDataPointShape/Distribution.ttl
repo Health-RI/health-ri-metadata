@@ -213,3 +213,60 @@ hri:DistributionShape a sh:NodeShape;
   sh:nodeKind sh:Literal;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
+
+hri:aux-PeriodOfTimeShape a owl:Ontology;
+  rdfs:label "Period of Time"@en;
+  rdfs:comment "Health-RI v2 Period of Time"@en;
+  dcterms:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
+  owl:versionInfo "0.1";
+  dcterms:modified "2025-02-17T10:58:10.790Z"^^xsd:dateTime .
+
+hri:PeriodOfTimeShape a sh:NodeShape;
+  rdfs:label "Period of Time"@en;
+  sh:targetClass dcterms:PeriodOfTime;
+  sh:property <http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:endDate>, <http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:startDate> .
+
+<http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:endDate> sh:path dcat:endDate;
+  sh:name "end date"@en;
+  sh:description "The end of the period."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:dateTime;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:DateTimePickerEditor .
+
+<http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:startDate> sh:path dcat:startDate;
+  sh:name "start date"@en;
+  sh:description "The start of the period."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:dateTime;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:DateTimePickerEditor .
+
+hri:ChecksumShape a owl:Ontology, sh:NodeShape;
+  rdfs:label "Checksum"@en;
+  rdfs:comment "Health-RI v2 Checksum."@en;
+  dcterms:description "SHACL definitions for the Health-RI v2 model for Checksum."@en;
+  owl:versionInfo "0.1";
+  dcterms:modified "2025-02-18T08:07:01.270Z"^^xsd:dateTime;
+  sh:targetClass spdx:Checksum;
+  sh:property <http://data.health-ri.nl/core/p2/ChecksumShape#spdx:algorithm>, <http://data.health-ri.nl/core/p2/ChecksumShape#spdx:checksumValue> .
+
+<http://data.health-ri.nl/core/p2/ChecksumShape#spdx:algorithm> sh:path spdx:algorithm;
+  sh:name "algorithm"@en;
+  sh:description "The algorithm used to produce the subject Checksum"@en;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/core/p2/ChecksumShape#spdx:checksumValue> sh:path spdx:checksumValue;
+  sh:name "checksum value"@en;
+  sh:description "A lower case hexadecimal encoded digest value produced using a specific algorithm"@en;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextAreaEditor .
