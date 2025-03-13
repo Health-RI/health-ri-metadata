@@ -7,7 +7,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix example: <https://data.sparna.fr/shapes-example/> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
-@prefix healthdcatap: <http://example.com/ns/healthdcatap#> .
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -33,7 +33,7 @@ hri:ProjectShape a owl:Ontology, sh:NodeShape;
   rdfs:comment "Health-RI v2 Project."@en;
   dcterms:description "SHACL definitions for the Health-RI v2 model for Project."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-02-25T14:00:01.070Z"^^xsd:dateTime;
+  dcterms:modified "2025-03-13T12:16:29.170Z"^^xsd:dateTime;
   sh:targetClass foaf:Project;
   sh:property <http://data.health-ri.nl/core/p2/ProjectShape#dct:description>, <http://data.health-ri.nl/core/p2/ProjectShape#dct:identifier>,
     <http://data.health-ri.nl/core/p2/ProjectShape#dcat:resource>, <http://data.health-ri.nl/core/p2/ProjectShape#foaf:fundedBy>,
@@ -114,6 +114,7 @@ hri:AgentShape a sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
+  sh:pattern "^mailto:.+@.+\\..+$";
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
