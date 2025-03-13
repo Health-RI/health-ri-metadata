@@ -6,7 +6,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix example: <http://data.health-ri.nl/core/p2/DatasetShape> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
-@prefix healthdcatap: <http://healthdataportal.eu/ns/health#>
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
