@@ -6,7 +6,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix example: <http://data.health-ri.nl/core/p2/DatasetShape> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
-@prefix healthdcatap: <http://example.com/ns/healthdcatap#> .
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -69,17 +69,17 @@ hri:DatasetShape a owl:Ontology, sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:c9e9aea49e3f492abce90c9c9c6da1cc2;
+  sh:in _:8d38ad2dc52e40dab7dd6426eb3dfeaa2;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:c9e9aea49e3f492abce90c9c9c6da1cc2 rdf:first eu:PUBLIC;
-  rdf:rest _:c9e9aea49e3f492abce90c9c9c6da1cc3 .
+_:8d38ad2dc52e40dab7dd6426eb3dfeaa2 rdf:first eu:PUBLIC;
+  rdf:rest _:8d38ad2dc52e40dab7dd6426eb3dfeaa3 .
 
-_:c9e9aea49e3f492abce90c9c9c6da1cc3 rdf:first eu:RESTRICTED;
-  rdf:rest _:c9e9aea49e3f492abce90c9c9c6da1cc4 .
+_:8d38ad2dc52e40dab7dd6426eb3dfeaa3 rdf:first eu:RESTRICTED;
+  rdf:rest _:8d38ad2dc52e40dab7dd6426eb3dfeaa4 .
 
-_:c9e9aea49e3f492abce90c9c9c6da1cc4 rdf:first eu:NON_PUBLIC;
+_:8d38ad2dc52e40dab7dd6426eb3dfeaa4 rdf:first eu:NON_PUBLIC;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#analytics> sh:path healthdcatap:analytics;

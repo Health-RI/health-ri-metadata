@@ -107,7 +107,7 @@
     dct:publisher [ a foaf:Agent ;
                     dct:identifier "https://harrypotter.fandom.com/wiki/Ravenclaw" ;
                     foaf:homepage <https://harrypotter.fandom.com/wiki/Ravenclaw> ;
-                    foaf:mbox  <ravenclaw@fandom/com> ;
+                    foaf:mbox  <mailto:ravenclaw@fandom.com> ;
                     foaf:name "House of Ravenclaw" ] ;
     dct:title "Ravenclaw research project" ;
     dcat:keyword "linguastics spell" ;

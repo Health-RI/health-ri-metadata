@@ -6,7 +6,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix example: <https://data.sparna.fr/shapes-example/> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
-@prefix healthdcatap: <http://example.com/ns/healthdcatap#> .
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -32,7 +32,7 @@
   rdfs:comment "Health-RI v2 Catalog."@en;
   dcterms:description "SHACL definitions for the Health-RI v2 model for Catalog."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-03-03T13:15:07.020Z"^^xsd:dateTime .
+  dcterms:modified "2025-03-13T12:14:36.480Z"^^xsd:dateTime .
 
 hri:CatalogShape a sh:NodeShape;
   rdfs:label "Catalog"@en;

@@ -6,7 +6,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix example: <https://data.sparna.fr/shapes-example/> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
-@prefix healthdcatap: <http://example.com/ns/healthdcatap#> .
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -33,7 +33,7 @@
   rdfs:comment "Health-RI v2 Catalog."@en;
   dcterms:description "SHACL definitions for the Health-RI v2 model for Catalog."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-03-03T13:15:07.020Z"^^xsd:dateTime .
+  dcterms:modified "2025-03-13T12:14:36.480Z"^^xsd:dateTime .
 
 hri:CatalogShape a sh:NodeShape;
   rdfs:label "Catalog"@en;
@@ -204,6 +204,7 @@ hri:AgentShape a sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
+  sh:pattern "^mailto:.+@.+\\..+$";
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
@@ -262,7 +263,7 @@ hri:KindShapeKindShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Kind."@en;
   dcterms:description "SHACL mandatory definitions for the Health-RI v2 model for vcard:Kind."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-02-25T10:04:14.990Z"^^xsd:dateTime .
+  dcterms:modified "2025-03-13T12:15:54.050Z"^^xsd:dateTime .
 
 hri:KindShape a sh:NodeShape;
   rdfs:label "Kind"@en;
@@ -301,7 +302,7 @@ hri:aux-PeriodOfTimeShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Period of Time"@en;
   dcterms:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-02-17T10:58:10.790Z"^^xsd:dateTime .
+  dcterms:modified "2025-03-13T12:16:09.790Z"^^xsd:dateTime .
 
 hri:PeriodOfTimeShape a sh:NodeShape;
   rdfs:label "Period of Time"@en;

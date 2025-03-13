@@ -6,7 +6,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix example: <https://data.sparna.fr/shapes-example/> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
-@prefix healthdcatap: <http://example.com/ns/healthdcatap#> .
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -32,7 +32,7 @@
   rdfs:comment "Health-RI v2 Distribution."@en;
   dcterms:description "SHACL definitions for the Health-RI v2 model for Distribution."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-03-03T09:40:11.350Z"^^xsd:dateTime .
+  dcterms:modified "2025-03-13T12:15:38.800Z"^^xsd:dateTime .
 
 hri:DistributionShape a sh:NodeShape;
   rdfs:label "Distribution"@en;
