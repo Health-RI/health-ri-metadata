@@ -115,6 +115,7 @@ hri:AgentShape a sh:NodeShape;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   sh:pattern "^mailto:.+@.+\\..+$";
+  sh:defaultValue <mailto:>;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 

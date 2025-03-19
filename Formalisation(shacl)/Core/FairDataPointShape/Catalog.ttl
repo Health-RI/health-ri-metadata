@@ -205,6 +205,7 @@ hri:AgentShape a sh:NodeShape;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   sh:pattern "^mailto:.+@.+\\..+$";
+  sh:defaultValue <mailto:>;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
@@ -263,7 +264,7 @@ hri:KindShapeKindShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Kind."@en;
   dcterms:description "SHACL mandatory definitions for the Health-RI v2 model for vcard:Kind."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-03-13T12:15:54.050Z"^^xsd:dateTime .
+  dcterms:modified "2025-03-17T12:58:47.890Z"^^xsd:dateTime .
 
 hri:KindShape a sh:NodeShape;
   rdfs:label "Kind"@en;
@@ -285,6 +286,7 @@ hri:KindShape a sh:NodeShape;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   sh:pattern "^mailto:.+@.+\\..+$";
+  sh:defaultValue <mailto:>;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 

@@ -71,19 +71,19 @@ hri:DatasetShape a owl:Ontology, sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-c9e9786222a44bcc85a5b0c225d185c117-879AA9460A5AAA01ACE2E9F78B7C6FA2;
+  sh:in _:genid-3891ca980aa44f72bfe58464c0c4413f17-3FD13CAECAC481E7A539AF0D0CC9C1D8;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-c9e9786222a44bcc85a5b0c225d185c117-879AA9460A5AAA01ACE2E9F78B7C6FA2 rdf:first
+_:genid-3891ca980aa44f72bfe58464c0c4413f17-3FD13CAECAC481E7A539AF0D0CC9C1D8 rdf:first
     eu:PUBLIC;
-  rdf:rest _:genid-c9e9786222a44bcc85a5b0c225d185c117-34F4521C64B16D7064E66AEB49AB6B81 .
+  rdf:rest _:genid-3891ca980aa44f72bfe58464c0c4413f17-7C0E81F3DAE90850E0EEF1A35DB0A122 .
 
-_:genid-c9e9786222a44bcc85a5b0c225d185c117-34F4521C64B16D7064E66AEB49AB6B81 rdf:first
+_:genid-3891ca980aa44f72bfe58464c0c4413f17-7C0E81F3DAE90850E0EEF1A35DB0A122 rdf:first
     eu:RESTRICTED;
-  rdf:rest _:genid-c9e9786222a44bcc85a5b0c225d185c117-40350D0CD1764733F0574530912C9DD9 .
+  rdf:rest _:genid-3891ca980aa44f72bfe58464c0c4413f17-71FE7C0B2C2098D1BE994A0680D14C02 .
 
-_:genid-c9e9786222a44bcc85a5b0c225d185c117-40350D0CD1764733F0574530912C9DD9 rdf:first
+_:genid-3891ca980aa44f72bfe58464c0c4413f17-71FE7C0B2C2098D1BE994A0680D14C02 rdf:first
     eu:NON_PUBLIC;
   rdf:rest rdf:nil .
 
@@ -489,6 +489,7 @@ hri:AgentShape a sh:NodeShape;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   sh:pattern "^mailto:.+@.+\\..+$";
+  sh:defaultValue <mailto:>;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
@@ -509,7 +510,7 @@ hri:AgentShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
-<http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishernote> sh:path <http://healthdataportal.eu/ns/health#publishernote>;
+<http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishernote> sh:path healthdcatap:publishernote;
   sh:name "publisher note"@en;
   sh:description "A description of the publisher activities"@en;
   sh:maxCount 1;
@@ -517,7 +518,7 @@ hri:AgentShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
-<http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishertype> sh:path <http://healthdataportal.eu/ns/health#publishertype>;
+<http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishertype> sh:path healthdcatap:publishertype;
   sh:name "publisher type"@en;
   sh:description "A type of organisation that makes the Dataset available"@en;
   sh:maxCount 1;
@@ -547,7 +548,7 @@ hri:KindShapeKindShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Kind."@en;
   dcterms:description "SHACL mandatory definitions for the Health-RI v2 model for vcard:Kind."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-03-13T12:15:54.050Z"^^xsd:dateTime .
+  dcterms:modified "2025-03-17T12:58:47.890Z"^^xsd:dateTime .
 
 hri:KindShape a sh:NodeShape;
   rdfs:label "Kind"@en;
@@ -569,6 +570,7 @@ hri:KindShape a sh:NodeShape;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   sh:pattern "^mailto:.+@.+\\..+$";
+  sh:defaultValue <mailto:>;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
