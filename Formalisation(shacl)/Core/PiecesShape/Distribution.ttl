@@ -24,6 +24,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix status: <http://publications.europa.eu/resource/authority/distribution-status/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 
@@ -32,7 +33,7 @@
   rdfs:comment "Health-RI v2 Distribution."@en;
   dcterms:description "SHACL definitions for the Health-RI v2 model for Distribution."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-03-13T12:15:38.800Z"^^xsd:dateTime .
+  dcterms:modified "2025-03-20T13:51:38.610Z"^^xsd:dateTime .
 
 hri:DistributionShape a sh:NodeShape;
   rdfs:label "Distribution"@en;
@@ -192,11 +193,24 @@ hri:DistributionShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/DistributionShape#adms:status> sh:path adms:status;
   sh:name "status"@en;
-  sh:description "It MUST take one of the values Completed, Deprecated, Under Development, Withdrawn."@en;
+  sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
+  sh:in _:ab6d3359c1d442dc81fece41d5ed6fc92;
   dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  dash:editor dash:EnumSelectEditor .
+
+_:ab6d3359c1d442dc81fece41d5ed6fc92 rdf:first status:COMPLETED;
+  rdf:rest _:ab6d3359c1d442dc81fece41d5ed6fc93 .
+
+_:ab6d3359c1d442dc81fece41d5ed6fc93 rdf:first status:DEVELOP;
+  rdf:rest _:ab6d3359c1d442dc81fece41d5ed6fc94 .
+
+_:ab6d3359c1d442dc81fece41d5ed6fc94 rdf:first status:WITHDRAWN;
+  rdf:rest _:ab6d3359c1d442dc81fece41d5ed6fc95 .
+
+_:ab6d3359c1d442dc81fece41d5ed6fc95 rdf:first status:DEPRECATED;
+  rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#dcat:temporalResolution> sh:path
     dcat:temporalResolution;
