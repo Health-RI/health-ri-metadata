@@ -1,37 +1,40 @@
 # Core Metadata Schema Specification
 This is a pre-release version of Health-RI metadata schema 2.0. 
 
+- [Latest published version](#latest-published-version)
+- [Purpose and audience](#purpose-and-audience)
+- [Introduction](#introduction)
+  - [Scope and current state of the Health-RI core metadata schema](#scope-and-current-state-of-the-health-ri-core-metadata-schema)
+  - [Used Prefixes](#used-prefixes)
+  - [Overview and Diagram](#overview-and-diagram)
+- [Main Classes](#main-classes)
+  - [Mandatory Classes](#mandatory-classes)
+  - [Recommended Classes](#recommended-classes)
+- [Main Properties per Class](#main-properties-per-class)
+  - [Catalog](#catalog)
+  - [Dataset](#dataset)
+  - [Dataset Series](#dataset-series)
+  - [Data Service](#data-service)
+  - [Distribution](#distribution)
+  - [Project](#project)
+  - [Study](#study)
+  - [Agent](#agent)
+  - [Kind](#kind)
+  - [Checksum](#checksum)
+  - [Period of time](#period-of-time)
+- [Further Information](#further-information)
+  - [Model extension](#model-extension)
+
+
 ## Latest published version
 Latest published version (version 1.0.0) [available here](https://github.com/Health-RI/health-ri-metadata/releases/tag/v1.0.0).
 
 ## Purpose and audience
 
-This branch contains the 2nd version of the Health-RI core and generic health metadata schema for the National Health Data Catalogue, detailing the classes and entities involved and offering usage notes for developers. It addresses the schema's design and application but excludes discussion on the National Health Data Catalogue and its onboarding process (these are described [here](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/279150593/Metadata+onboarding+on+the+National+Catalogue)). **Please note that we are currently still working on the implementation of the new schema into the National Health Data Catalogue.** 
+This branch contains the 2nd version of the Health-RI core and generic health metadata schema for the National Health Data Catalogue, detailing the classes and entities involved and offering usage notes for developers. It addresses the schema's design and application but excludes discussion on the National Health Data Catalogue and its onboarding process (these are described [here](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/279150593/Metadata+onboarding+on+the+National+Catalogue)). **Please note that we are currently still working on the implementation of the new schema into the frontend of the National Health Data Catalogue.** 
 
 This documentation aims at a **technical audience** tasked with implementing the metadata schema and stakeholders interested in a detailed understanding of the core metadata schema. With any further questions or comments please contact Health-RI via the [Health-RI Servicedesk](https://www.health-ri.nl/health-ri-servicedesk) or via [servicedesk@health-ri.nl](mailto:servicedesk@health-ri.nl) 
 
-* [Introduction](#introduction)
-    * [Scope](#scope)
-    * [Mandatory and Recommended](#mandatory-and-recommended)
-    * [Used Prefixes](#used-prefixes)
-    * [Overview and Diagram](#overview-and-diagram)
-* [Main Classes](#main-classes)
-    * [Mandatory Classes](#mandatory-classes)
-    * [Recommended Classes](#recommended-classes)
-* [Main Properties per Class](#main-properties-per-class)
-    * [Catalog](#catalog)
-    * [Dataset](#dataset)
-    * [Dataset Series](#dataset-series)
-    * [Data Service](#data-service)
-    * [Distribution](#distribution)
-    * [Project](#project)
-    * [Study](#study)
-    * [Agent](#agent)
-    * [Kind](#kind)
-    * [Checksum](#checksum)
-    * [Period of time](#period-of-time)
-* [Further Information](#further-information)
-    * [Model extension](#model-extension)
 
 ## Introduction
 
@@ -47,27 +50,7 @@ Next to that, the [**Project**](#project) and [**Study**](#study) classes are in
 
 Finally, the newly introduced property `data origin` (in grey in the UML), with the goal to discriminate non-synthetic from synthetic data, is included in the draft. We now propose to further indicate the **nature of the data** (eg. Whole genome sequencing data, or questionnaire data) with `healthdcatap:healthTheme`. 
 
-Several classes have been included from [DCAT-AP NL](https://docs.geostandaarden.nl/dcat/dcat-ap-nl30/) and [HealthDCAT-AP](https://healthdcat-ap.github.io/) without further specification so far at Health-RI. This includes the [DataService class](#data-service). Therefore, these classes can be used, but are not yet further modelled to reflect specific needs of dataholders for the National Health Data Catalogue. 
-
-### Mandatory and Recommended
-
-In the version 2 of the schema, we extended the [current version](https://github.com/Health-RI/health-ri-metadata/releases/tag/v1.0.0), which is based on the [DCAT-AP 3.0](https://semiceu.github.io/DCAT-AP/releases/3.0.0/) specification, by adding new properties from [HealthDCAT-AP](https://healthdcat-ap.github.io/) and [DCAT-AP NL](https://docs.geostandaarden.nl/dcat/dcat-ap-nl30/), as well as changing cardinalities in order to make it compatible with both extensions.
-Please note that [HealthDCAT-AP](https://healthdcat-ap.github.io/) is still in its draft version, so we made some properties less strict than what it currently specifies. In the HRI schema, we categorize components into `mandatory` and `recommended` classes and properties. A potential third category, `optional`, may be introduced in the future.
-
-
-In the context of data exchange:
-
-*   **Mandatory** `Class`: Senders **MUST** provide information about instances of the class; Receivers MUST process information about instances of the class.
-    
-*   **Recommended** `Class`: Senders **SHOULD** provide information about instances of the class if available; Receivers MUST process information about instances of the class.
-    
-*   **Optional** `Class`: Senders **MAY** provide the information but are not obliged to do so; Receivers MUST process information about instances of the class.
-    
-*   **Mandatory** `property`: Senders MUST provide the information for that property; Receivers MUST process the information for that property.
-    
-*   **Recommended** `property`: Senders SHOULD provide the information if available; Receivers MUST process the information for that property.
-    
-*   **Optional** `property`: Senders MAY provide the information but are not obliged to do so; Receivers MUST process the information for that property.
+Several classes have been included from [DCAT-AP NL](https://docs.geostandaarden.nl/dcat/dcat-ap-nl30/) and [HealthDCAT-AP](https://healthdcat-ap.github.io/) without further specification so far at Health-RI. This includes the [DataService class](#data-service). Therefore, these classes can be used, but are not yet further modelled to reflect specific needs of dataholders for the National Health Data Catalogue.
 
 ### Used Prefixes
 
@@ -111,7 +94,7 @@ Next to the UML, a tabular overview of all classes and properties, including the
 
 - To improve this even further, we have now introduced [Project](#project) and [Study](#study) classes. 
 
-- Some properties that are present in multiple classes (eg. `dct:publisher`, `dct:creator`, `dct:contactPoint`) refer to other, small classes (e.g. [foaf:Agent](#agent), [vcard:Kind](#kind)). When used, these properties will instantiate new instances of these classes for each usage. This means, that for example the `dct:publisher` and `dct:creator` can instantiate [foaf:Agent](#agent) at two separate times with different content (organization vs. person). This applies to: [foaf:Agent](#agent), [vcard:Kind](#kind), [spdx:Checksum](#checksum) and [dct:PeriodOfTime](#period-of-time). 
+- Some properties that are present in multiple classes (eg. `dct:publisher`, `dct:creator`, `dct:contactPoint`) refer to other, small classes (e.g. [foaf:Agent](#agent), [vcard:Kind](#kind)). Whenever one of these properties is used, it creates a separate instance of the corresponding class. This means, that for example the `dct:publisher` and `dct:creator` can instantiate [foaf:Agent](#agent) at two separate times with different content (organisation vs. person). This applies to: [foaf:Agent](#agent), [vcard:Kind](#kind), [spdx:Checksum](#checksum) and [dct:PeriodOfTime](#period-of-time). 
 
 - We collect and share mapping examples from differen data sources [here](https://health-ri.atlassian.net/wiki/spaces/FSD/folder/736985095). 
 
