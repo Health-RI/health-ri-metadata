@@ -1,5 +1,6 @@
 # Core Metadata Schema Specification
-This is a pre-release version of Health-RI metadata schema 2.0. 
+
+This is a pre-release version of Health-RI metadata schema 2.0.
 
 - [Latest published version](#latest-published-version)
 - [Purpose and audience](#purpose-and-audience)
@@ -25,13 +26,13 @@ This is a pre-release version of Health-RI metadata schema 2.0.
 - [Further Information](#further-information)
   - [Model extension](#model-extension)
 
-
 ## Latest published version
+
 Latest published version (version 1.0.0) [available here](https://github.com/Health-RI/health-ri-metadata/releases/tag/v1.0.0).
 
 ## Purpose and audience
 
-This branch contains the 2nd version of the Health-RI core and generic health metadata schema for the National Health Data Catalogue, detailing the classes and entities involved and offering usage notes for developers. It addresses the schema's design and application but excludes discussion on the National Health Data Catalogue and its onboarding process (these are described [here](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/279150593/Metadata+onboarding+on+the+National+Catalogue)). **Please note that we are currently still working on the implementation of the new schema into the frontend of the National Health Data Catalogue.** 
+This branch contains the 2nd version of the Health-RI core and generic health metadata schema for the National Health Data Catalogue, detailing the classes and entities involved and offering usage notes for developers. It addresses the schema's design and application but excludes discussion on the National Health Data Catalogue and its onboarding process (these are described [here](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/279150593/Metadata+onboarding+on+the+National+Catalogue)). **Please note that we are currently still working on the implementation of the new schema into the frontend of the National Health Data Catalogue.**
 
 This documentation aims at a **technical audience** tasked with implementing the metadata schema and stakeholders interested in a detailed understanding of the core metadata schema. With any further questions or comments please contact Health-RI via the [Health-RI Servicedesk](https://www.health-ri.nl/health-ri-servicedesk) or via [servicedesk@health-ri.nl](mailto:servicedesk@health-ri.nl).
 
@@ -53,26 +54,25 @@ Several classes have been included from [DCAT-AP NL](https://docs.geostandaarden
 
 ### Used Prefixes
 
-| **Prefix** | **Namespace IRI** | 
-| --- | --- | 
-| `adms` | `http://www.w3.org/ns/adms#` | 
-| `dcat` | `http://www.w3.org/ns/dcat#` | 
-| `dcatap` | `http://data.europa.eu/r5r/` | 
-| `dct` | `http://purl.org/dc/terms/` | 
-| `dpv` | `https://w3id.org/dpv#` | 
-| `dpv-pd` | `https://w3id.org/dpv/dpv-pd#` | 
+| **Prefix** | **Namespace IRI** |
+| --- | --- |
+| `adms` | `http://www.w3.org/ns/adms#` |
+| `dcat` | `http://www.w3.org/ns/dcat#` |
+| `dcatap` | `http://data.europa.eu/r5r/` |
+| `dct` | `http://purl.org/dc/terms/` |
+| `dpv` | `https://w3id.org/dpv#` |
+| `dpv-pd` | `https://w3id.org/dpv/dpv-pd#` |
 | `dqv` | `https://www.w3.org/TR/vocab-dqv/` |
-| `foaf` | `http://xmlns.com/foaf/0.1/` | 
-| `owl` | `http://www.w3.org/2002/07/owl#` | 
-| `rdf` | `http://www.w3.org/1999/02/22-rdf-syntax-ns#` | 
-| `rdfs` | `http://www.w3.org/2000/01/rdf-schema#` | 
-| `skos` | `http://www.w3.org/2004/02/skos/core#` | 
-| `spdx` | `http://spdx.org/rdf/terms#` | 
-| `time` | `http://www.w3.org/2006/time#` | 
-| `xsd` | `http://www.w3.org/2001/XMLSchema#` | 
-| `vcard` | `http://www.w3.org/2006/vcard/ns#` | 
-| `healthdcatap` | TBD | 
-
+| `foaf` | `http://xmlns.com/foaf/0.1/` |
+| `owl` | `http://www.w3.org/2002/07/owl#` |
+| `rdf` | `http://www.w3.org/1999/02/22-rdf-syntax-ns#` |
+| `rdfs` | `http://www.w3.org/2000/01/rdf-schema#` |
+| `skos` | `http://www.w3.org/2004/02/skos/core#` |
+| `spdx` | `http://spdx.org/rdf/terms#` |
+| `time` | `http://www.w3.org/2006/time#` |
+| `xsd` | `http://www.w3.org/2001/XMLSchema#` |
+| `vcard` | `http://www.w3.org/2006/vcard/ns#` |
+| `healthdcatap` | TBD |
 
 ### Overview and Diagram
 
@@ -85,7 +85,7 @@ Next to the UML, a tabular overview of all classes and properties, including the
 - HRI core metadata schema diagram (plateau 2):
 <img src="Images/2.0_plateau2/HRI_metadata_p2.png" alt="diagram" width=800 height=1100 title="diagram">
 
-**Some notes on using the metadata schema / mapping**: 
+**Some notes on using the metadata schema / mapping**:
 
 - It is possible that not all classes of the metadata schema are necessary to describe your data or the structure of your data. For example, [DataService](#data-service) or [DatasetSeries](#dataset-series) might not apply to all datasets described/onboarded in the National Health Data Catalogue.
 
@@ -93,30 +93,29 @@ Next to the UML, a tabular overview of all classes and properties, including the
 
 - To improve this even further, we have now introduced [Project](#project) and [Study](#study) classes.
 
-- Some properties that are present in multiple classes (e.g. `dct:publisher`, `dct:creator`, `dct:contactPoint`) refer to other, small classes (e.g. [foaf:Agent](#agent), [vcard:Kind](#kind)). When used, these properties will instantiate new instances of these classes for each usage. This means that, for example, the `dct:publisher` and `dct:creator` can instantiate [foaf:Agent](#agent) at two separate times with different content (organization vs. person). This applies to: [foaf:Agent](#agent), [vcard:Kind](#kind), [spdx:Checksum](#checksum) and [dct:PeriodOfTime](#period-of-time).
+- Some properties that are present in multiple classes (e.g. `dct:publisher`, `dct:creator`, `dct:contactPoint`) refer to other, small classes (e.g. [foaf:Agent](#agent), [vcard:Kind](#kind)). When used, these properties will instantiate new instances of these classes for each usage. This means that, for example, the `dct:publisher` and `dct:creator` can instantiate [foaf:Agent](#agent) at two separate times with different content (organisation vs. person). This applies to: [foaf:Agent](#agent), [vcard:Kind](#kind), [spdx:Checksum](#checksum) and [dct:PeriodOfTime](#period-of-time).
 
 - We collect and share mapping examples from different data sources [here](https://health-ri.atlassian.net/wiki/spaces/FSD/folder/736985095).
-
 
 ## Main Classes
 
 ### Mandatory Classes
-   
+
 | **Class name** | **Definition** | **Usage Note** | **URI** |
-| --- | --- | --- | --- | 
-| [Dataset](#dataset) | A resource type. <br>A meaningful collection of data, published or curated by a single organisation or individual, and available for access or download in one or more representations. | When focusing on health data, a dataset typically contains structured information gathered from a study or research project related to health topics. This might include clinical trial results, public health statistics, patient records, survey data, etc.<br>How the data in a dataset can be accessed is defined in the Distribution, which usually points to the actual data files available for access or download. Datasets are often included in a catalog, which organizes and provides metadata about multiple datasets, making them easier to find and use. The term 'organization or individual' refers to any entity responsible for creating, maintaining, or distributing the dataset. | `dcat:Dataset` |
+| --- | --- | --- | --- |
+| [Dataset](#dataset) | A Resource type.<br>A meaningful collection of data, published or curated by a single organisation or individual, and available for access or download in one or more representations. | When focusing on health data, a dataset typically contains structured information gathered from a study or research project related to health topics. This might include clinical trial results, public health statistics, patient records, survey data, etc.<br>How the data in a dataset can be accessed is defined in the Distribution, which usually points to the actual data files available for access or download. Datasets are often included in a catalog, which organizes and provides metadata about multiple datasets, making them easier to find and use. The term 'organisation or individual' refers to any entity responsible for creating, maintaining, or distributing the dataset. | `dcat:Dataset` |
 | [Catalog](#catalog) | A catalog that is listed in the National Health Data catalog and contains one or several datasets and/or data services. | Used to describe a bundle of datasets (and other resources) under a single title, for example, a collection. | `dcat:Catalog` |
-| [Agent](#agent) | An entity that is associated with catalog and/or Datasets. | A person or organization that is associated with the catalogue, dataset or project. This class is instantiated in these classes whenever the range is foaf:Agent. | `foaf:Agent` |
-| [Kind](#kind) | A description following the vCard specification to provide contact information. | Used to describe contact information for Dataset and DatasetSeries. This class is instantiated in these classes whenever the range is vcard:Kind. | `vcard:Kind` | 
+| [Agent](#agent) | An entity that is associated with catalog and/or Datasets. | A person or organisation that is associated with the catalogue, dataset or project. This class is instantiated in these classes whenever the range is foaf:Agent. | `foaf:Agent` |
+| [Kind](#kind) | A description following the vCard specification to provide contact information. | Used to describe contact information for Dataset and DatasetSeries. This class is instantiated in these classes whenever the range is vcard:Kind. | `vcard:Kind` |
 
 ### Recommended Classes
 
 | **Class name** | **Definition** | **Usage Note** | **URI** |
-| --- | --- | --- | --- |   
+| --- | --- | --- | --- |  
 | [Distribution](#distribution) | An available distribution of the dataset. | Used to describe the different ways that a single dataset can be made available in. I.e., it can be downloaded or it can be accessed online in one or more distributions (e.g. one in a downloadable .csv file, another file with an access or query webpage) | `dcat:Distribution` |
 | [Dataset Series](#dataset-series) | A collection of datasets that are published separately, but share some characteristics that group them. | A Dataset Series is a collection of similar datasets that are somehow interrelated but published separately. An example is consecutive datasets split by year and/or datasets separated by location. Instead of being made available in a single dataset, the individual (e.g. yearly) datasets are linked together with the Dataset Series class. | `dcat:DatasetSeries` |
-| [Data Service](#data-service) | A Resource type.  <br>A collection of operations that provides access to one or more datasets or data processing functions. | A Data service offers the possibility to access and query the data of one (or several datasets) through operations. It offers more extensive possibilities to access the data than the Distribution through a variety of potential actions. An example of a Data Service is a [Beacon API](https://docs.genomebeacons.org/) to query genomics data. | `dcat:DataService` |
-| [Project](#project) | A collective endeavour of some kind. The Project class represents the class of things that are 'projects'. These may be formal or informal, collective or individual. | This class can be used to describe organizational aspects of a (research or other) funded project, in which one or multiple studies are executed that result in the generation of one or multiple datasets. Next to an overall description of the project, it includes information about the funding agent(s). | `foaf:Project` |
+| [Data Service](#data-service) | A Resource type.<br>A collection of operations that provides access to one or more datasets or data processing functions. | A Data service offers the possibility to access and query the data of one (or several datasets) through operations. It offers more extensive possibilities to access the data than the Distribution through a variety of potential actions. An example of a Data Service is a [Beacon API](https://docs.genomebeacons.org/) to query genomics data. | `dcat:DataService` |
+| [Project](#project) | A collective endeavour of some kind. The Project class represents the class of things that are 'projects'. These may be formal or informal, collective or individual. | This class can be used to describe organisational aspects of a (research or other) funded project, in which one or multiple studies are executed that result in the generation of one or multiple datasets. Next to an overall description of the project, it includes information about the funding agent(s). | `foaf:Project` |
 | [Study](#study) | A Study represents the process by which a data set was generated or collected. | Used to describe the information of a study that generates or collects data described in a dataset. A study is connected to one project. Furthermore, a study can generate one or multiple datasets. | `disco:Study` |
 | [Period of Time](#period-of-time) | An interval of time that is named or defined by its start and end dates. This class is instantiated by properties in other classes that have the range `dct:PeriodOfTime`. | TBD | `dct:PeriodOfTime` |
 | [Checksum](#checksum) | A value that allows the contents of a file to be authenticated. This class allows the results of a variety of checksum and cryptographic message digest algorithms to be represented. This class is instantiated by properties in other classes that have the range `spdx:Checksum`.  | TBD | `spdx:Checksum` |
@@ -128,18 +127,17 @@ Next to the UML, a tabular overview of all classes and properties, including the
 A catalog that is listed in the National Health Data catalog and contains one or several datasets and/or data services.
 
 #### Mandatory Properties
-   
+
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** | **Example** |
-| --- | --- | --- | --- | --- | --- | --- |  
+| --- | --- | --- | --- | --- | --- | --- |
 | [contact point](https://www.w3.org/TR/vocab-dcat-3/#Property:resource_contact_point) | Relevant contact information for the Catalogue. | `dcat:contactPoint` | `vcard:Kind` | A contact point is someone who can answer questions about the catalogue. Additional properties for the contact point can be found in Class:kind. Example: Data Manager/Steward. | 1 | TBD |
 | [dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:catalog_dataset) | relates every catalog to its containing datasets. | `dcat:dataset` | `dcat:Dataset` | Each catalog contains one or more datasets. This property serves to link datasets to a catalogue. Therefore, a dataset is always contained inside a catalogue. | 1..\* | TBD |
-| [description](http://purl.org/dc/terms/description) | A free-text account of the record. | `dct:description` | `rdfs:Literal` | Briefly describe the datasets in the catalog. You can repeat this in multiple languages. Tip: Use the abstract from your Data Management Plan (DMP) if available. | 1..\* | This catalogue describes the core metadata of AUMC Inflammatory Bowel Disease datasets or  <br>This catalogue describes breast cancer imaging, clinical and omics datasets. |
+| [description](http://purl.org/dc/terms/description) | A free-text account of the record. | `dct:description` | `rdfs:Literal` | Briefly describe the datasets in the catalog. You can repeat this in multiple languages. Tip: Use the abstract from your Data Management Plan (DMP) if available. | 1..\* | This catalogue describes the core metadata of AUMC Inflammatory Bowel Disease datasets.<br>This catalogue describes breast cancer imaging, clinical and omics datasets. |
 | [publisher](http://purl.org/dc/terms/publisher) | An entity (organisation) responsible for making the Catalogue available. | `dct:publisher` | `foaf:Agent` | The organisation or individual that is the holder of the intellectual property rights of a dataset. For more details about the publisher, see the class Agent. | 1 | name: Radboud University Medical Center  <br>identifier: https://ror.org/05wg1m734  <br>(see class foaf: Agent) |
 | [title](http://purl.org/dc/terms/title) | A name given to the Catalogue. | `dct:title` | `rdfs:Literal` | Provide a unique title for your catalog, which can be repeated in multiple languages. | 1..\* | Healthy Brain Study |
 
-
 #### Recommended Properties
-    
+
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
 | --- | --- | --- | --- | --- | --- |
 | [applicable legislation](https://semiceu.github.io/DCAT-AP/r5r/releases/3.0.0/#applicableLegislation) | The legislation that mandates the creation or management of the Catalog. | `dcatap:applicableLegislation` | `eli:LegalResource` | TBD | 0..\* |
@@ -158,15 +156,14 @@ A catalog that is listed in the National Health Data catalog and contains one or
 | [temporal coverage](http://purl.org/dc/terms/temporal) | A temporal period that the Catalogue covers. | `dct:temporal` | `dct:PeriodOfTime` | TBD  | 0..\* |
 | [themes](https://www.w3.org/ns/dcat#themeTaxonomy) | A knowledge organisation system used to classify the Catalogue's Datasets. | `dcat:themeTaxanomy` | `skos:ConceptScheme` | This property refers to a knowledge organisation system used to classify the Catalogue's Datasets. It must have at least the value `NAL:data-theme` as this is the mandatory controlled vocabulary for dcat:theme.  | 0..\* |
 
-
 ### [Dataset](https://www.w3.org/TR/vocab-dcat-3/#Class:Dataset)
 
 A meaningful collection of data, published or curated by a single organisation or individual, and available for access or download in one or more representations.
 
 #### Mandatory Properties
- 
+
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** | **Example** |
-| --- | --- | --- | --- | --- | --- | --- | 
+| --- | --- | --- | --- | --- | --- | --- |
 | [access rights](http://purl.org/dc/terms/accessRights) | Information that indicates whether the Dataset is publicly accessible, has access restrictions, or is not public. | `dct:accessRights` | [Rights Statement (IRI)](http://publications.europa.eu/resource/authority/access-right) | Information that indicates whether the Dataset is publicly accessible, has access restrictions, or is not public. It is foreseen that one of the three options has to be used: public, restricted, non-public. *Public*: Publicly accessible by everyone. Usage note: Permissible obstacles include registration and request for API keys, as long as anyone can request such registration and/or API keys. *Restricted*: Only available under certain conditions. Usage note: This category may include resources that require payment, resources shared under non-disclosure agreements, resources for which the publisher or owner has not yet decided if they can be publicly released. *Non-public*: Not publicly accessible for privacy, security or other reasons. Usage note: This category may include resources that contain sensitive or personal information. | 1 | `http://publications.europa.eu/resource/authority/access-right/RESTRICTED` |
 | [contact point](https://www.w3.org/TR/vocab-dcat-3/#Property:resource_contact_point) | Contact information that can be used for sending comments about the Dataset. | `dcat:contactPoint` | `vcard:Kind` | A contact point is someone who can answer questions about the dataset. Additional properties for the contact point can be found in the class vcard:Kind. Example: Data Manager/Steward. | 1 | mailto: data-access-committee@xumc.nl  <br>with the name Data Access Committee of the x UMC (see vcard:Kind) |
 | [creator](http://purl.org/dc/terms/creator) | The entity responsible for producing the dataset. | `dct:creator` | `foaf:Agent` | This property points to a person (known as Agent) responsible for the generation of the dataset. Typically, this takes the form of the PI involved in the project. | 1..\* | Jip Fictief, Inez Maginary, Fabio Abricated for name of foaf:Agent |
@@ -176,7 +173,6 @@ A meaningful collection of data, published or curated by a single organisation o
 | [publisher](http://purl.org/dc/terms/publisher) | An entity (organisation) responsible for making the Dataset available. | `dct:publisher` | `foaf:Agent` | The organisation or individual responsible for making the dataset available. For datasets, this is typically the employer of the data creators. In simpler cases, the dataset publisher may match the catalog publisher. However, in complex research settings, a catalog might include datasets from multiple publishers (e.g. a consortium), each operating independently. If that is the case, where possible, include the information of the consortium. Otherwise, provide information of additional publishers in dct:creator. For details, see the class Agent. | 1 | Radboud University Medical Center; identifier https://ror.org/05wg1m734 (see foaf: Agent) |
 | [theme](https://www.w3.org/TR/vocab-dcat-3/#Property:resource_theme) | A category of the Dataset. | `dcat:theme` | `skos:Concept` | This property should use the [controlled vocabulary](https://publications.europa.eu/resource/authority/data-theme). In the Health Data Catalogue, most datasets will use NAL:data-theme 'HEAL', but additional values from the same vocabulary are allowed. | 1..\* | http://publications.europa.eu/resource/authority/data-theme/HEAL |
 | [title](http://purl.org/dc/terms/title) | A name given to the Dataset. | `dct:title` | `rdfs:Literal` | Provide a unique title for your Dataset, which can be repeated in multiple languages. | 1..\* | Healthy Brain Study - Physiological Data |
-
 
 #### Recommended Properties
 
@@ -228,10 +224,10 @@ A meaningful collection of data, published or curated by a single organisation o
 A collection of datasets that are published separately, but share some characteristics that group them.
 
 #### Mandatory Properties
- 
+
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
-| --- | --- | --- | --- | --- | --- | 
-| [description](http://purl.org/dc/terms/description) | A free-text account of the Dataset Series. | `dct:description` | `rdfs:Literal` | Provide a brief description of the dataset series in the catalog. You can repeat this in multiple languages. | 1..\* | 
+| --- | --- | --- | --- | --- | --- |
+| [description](http://purl.org/dc/terms/description) | A free-text account of the Dataset Series. | `dct:description` | `rdfs:Literal` | Provide a brief description of the dataset series in the catalog. You can repeat this in multiple languages. | 1..\* |
 | [title](http://purl.org/dc/terms/title) | A name given to the Dataset Series. | `dct:title` | `rdfs:Literal` | Provide a unique title for your Dataset Series. It can be provided in multiple languages. | 1..\* |
 
 #### Recommended Properties
@@ -240,21 +236,19 @@ A collection of datasets that are published separately, but share some character
 | --- | --- | --- | --- | --- | --- |
 | [applicable legislation](http://data.europa.eu/r5r/applicableLegislation) | The legislation that mandates the creation or management of the Dataset Series. | `dcatap:applicableLegislation` | `eli:LegalResource` | The ELI of the EHDS is currently not yet available. Therefore, this property remains recommended at this moment. | 0..\* |
 | [contact point](https://www.w3.org/TR/vocab-dcat-3/#Property:resource_contact_point) | Contact information that can be used for sending comments about the Dataset Series. | `dcat:contactPoint` | `vcard:Kind` | A contact point is someone who can answer questions about the dataset series. Additional properties for the contact point can be found in Class:kind. Example: a Data Manager or Data Steward. | 0..\* |
-| [frequency](http://purl.org/dc/terms/accrualPeriodicity) | The frequency at which the Dataset Series is updated. | `dct:accrualPeriodicity` | `skos:Concept` | A resource from the following authority table must be used: http://publications.europa.eu/resource/authority/frequency. The frequency of a dataset series is not equal to the frequency of the datasets in the collection. | 0..1 | 
-| [geographical coverage](http://purl.org/dc/terms/spatial) | A geographic region that is covered by the Dataset Series. | `dct:spatial` | `dct:Location` | The EU Vocabularies Name Authority Lists must be used for [continents](https://publications.europa.eu/resource/authority/continent/), [countries](https://publications.europa.eu/resource/authority/country), and [places](https://publications.europa.eu/resource/authority/place/) that are in those lists. If a particular location is not in one of the mentioned Named Authority Lists, [Geonames URIs](https://sws.geonames.org/) must be used. For districts or neighbourhoods in NL, the [Dutch vocab](https://vocabs.cbs.nl/nl/) can be used. However, it might in many cases be desirable to keep the geographical coverage broader (e.g., indicating that NL is covered) to avoid exposing detailed information about the subjects’ locations. | 0..\* | 
-| [modification date](http://purl.org/dc/terms/modified) | The most recent date on which the Dataset Series was changed or modified. | `dct:modified` | `xsd:dateTime` | This does not correspond to the most recently modified dataset in the collection of the dataset series. | 0..1 | 
-| [publisher](http://purl.org/dc/terms/publisher) | An entity (organisation) responsible for ensuring the coherence of the Dataset Series. | `dct:publisher` | `foaf:Agent` | The publisher of the dataset series may not be the publisher of all datasets. E.g., a digital archive could take over the publishing of older datasets in the series. | 0..1 | 
-| [release date](http://purl.org/dc/terms/issued) | The date of formal issuance (e.g., publication) of the Dataset Series. | `dct:issued` | `xsd:dateTime` | This refers to the moment when the dataset series was established as a managed resource. This is not equal to the release date of the oldest dataset in the collection of the dataset series. | 0..1 | 
+| [frequency](http://purl.org/dc/terms/accrualPeriodicity) | The frequency at which the Dataset Series is updated. | `dct:accrualPeriodicity` | `skos:Concept` | A resource from the following authority table must be used: http://publications.europa.eu/resource/authority/frequency. The frequency of a dataset series is not equal to the frequency of the datasets in the collection. | 0..1 |
+| [geographical coverage](http://purl.org/dc/terms/spatial) | A geographic region that is covered by the Dataset Series. | `dct:spatial` | `dct:Location` | The EU Vocabularies Name Authority Lists must be used for [continents](https://publications.europa.eu/resource/authority/continent/), [countries](https://publications.europa.eu/resource/authority/country), and [places](https://publications.europa.eu/resource/authority/place/) that are in those lists. If a particular location is not in one of the mentioned Named Authority Lists, [Geonames URIs](https://sws.geonames.org/) must be used. For districts or neighbourhoods in NL, the [Dutch vocab](https://vocabs.cbs.nl/nl/) can be used. However, it might in many cases be desirable to keep the geographical coverage broader (e.g., indicating that NL is covered) to avoid exposing detailed information about the subjects’ locations. | 0..\* |
+| [modification date](http://purl.org/dc/terms/modified) | The most recent date on which the Dataset Series was changed or modified. | `dct:modified` | `xsd:dateTime` | This does not correspond to the most recently modified dataset in the collection of the dataset series. | 0..1 |
+| [publisher](http://purl.org/dc/terms/publisher) | An entity (organisation) responsible for ensuring the coherence of the Dataset Series. | `dct:publisher` | `foaf:Agent` | The publisher of the dataset series may not be the publisher of all datasets. E.g., a digital archive could take over the publishing of older datasets in the series. | 0..1 |
+| [release date](http://purl.org/dc/terms/issued) | The date of formal issuance (e.g., publication) of the Dataset Series. | `dct:issued` | `xsd:dateTime` | This refers to the moment when the dataset series was established as a managed resource. This is not equal to the release date of the oldest dataset in the collection of the dataset series. | 0..1 |
 | [temporal coverage](http://purl.org/dc/terms/temporal) | A temporal period that the Dataset Series covers. | `dct:temporal` | `dct:PeriodOfTime` | When temporal coverage is a dimension in the dataset series, then the temporal coverage of each dataset in the collection should be part of the temporal coverage. In that case, an open-ended value is recommended, e.g., after 2012. | 0..\* |
-
-
 
 ### [Data Service](http://www.w3.org/ns/dcat#DataService)
 
 A collection of operations that provides access to one or more datasets or data processing functions.
 
 #### Mandatory Properties
-  
+
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** | **Example** |
 | --- | --- | --- | --- | --- | --- | --- |
 | [access rights](http://purl.org/dc/terms/accessRights) | Information regarding access or restrictions based on privacy, security, or other policies. | `dct:accessRights` | [Rights Statement (IRI)](http://publications.europa.eu/resource/authority/access-right) | Information that indicates whether the Dataset is publicly accessible, has access restrictions, or is not public. This property is required to adopt one of the predefined values listed in the Access Rights Named Authority List provided by the Publications Office. This designation informs data users whether the dataset is considered open data or is classified as non-public. | 1 | For non-public data, use the value: `http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC` |
@@ -264,28 +258,26 @@ A collection of operations that provides access to one or more datasets or data 
 | [end point URL](https://www.w3.org/TR/vocab-dcat-3/#Property:data_service_endpoint_url) | The root location or primary endpoint of the service (a Web-resolvable IRI). | `dcat:endPointURL` | `IRI` | Provide the URL of the endpoint that users can interact with to access the data service. This should be a direct link to the service's endpoint, such as an API URL, SPARQL endpoint, or similar.  | 1 | NA |
 | [identifier](http://purl.org/dc/terms/identifier) | A unique identifier of the resource being described or catalogued. | `dct:identifier` | `rdfs:Literal` | Provide a unique identifier for the data service. This could be a globally unique and persistent identifier, such as a DOI, URN, or UUID. If no persistent identifier is available, you may use the accessURL or endpointURL as the identifier, provided it is stable and unique to the service. | 1 | NA |
 | [license](http://purl.org/dc/terms/license) | A licence under which the Data service is made available. | `dct:license` | `dct:LicenseDocument` | For public data, use a Creative Commons (CC) license (see [Geonovum options](https://definities.geostandaarden.nl/dcat-ap-nl/nl/)). For most National Health Data Catalogue data services, where data is not public, use the 'not open' license from Geonovum and specify data reuse agreements in the dct:rights property. | 1 | NA |
-| [publisher](http://purl.org/dc/terms/publisher) | An entity (organisation) responsible for making the Data Service available. | `dct:publisher` | `foaf:Agent` | The organization or individual responsible for making the data service available. In the context of data services, the publisher is typically the organization that manages or provides access to the service. For details, see the class Agent. | 1 | name: Radboud University Medical Center  <br>identifier: https://ror.org/05wg1m734  <br>(see class foaf: Agent) |
+| [publisher](http://purl.org/dc/terms/publisher) | An entity (organisation) responsible for making the Data Service available. | `dct:publisher` | `foaf:Agent` | The organisation or individual responsible for making the data service available. In the context of data services, the publisher is typically the organisation that manages or provides access to the service. For details, see the class Agent. | 1 | name: Radboud University Medical Center  <br>identifier: https://ror.org/05wg1m734  <br>(see class foaf: Agent) |
 | [theme](https://www.w3.org/TR/vocab-dcat-3/#Property:resource_theme) | A category of the Data Service. | `dcat:theme` | `skos:Concept` | This property should use the [controlled vocabulary](https://publications.europa.eu/resource/authority/data-theme). In the Health Data Catalogue, most data services will use NAL:data-theme 'HEAL', but additional values from the same vocabulary are allowed. | 1..\* | https://publications.europa.eu/resource/authority/data-theme/HEAL |
 | [title](http://purl.org/dc/terms/title) | A name given to the Data Service. | `dct:title` | `rdfs:Literal` | NA  | 1..\* | NA |
-
 
 #### Recommended Properties
 
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
-| --- | --- | --- | --- | --- | --- |  
+| --- | --- | --- | --- | --- | --- |
 | [applicable legislation](https://semiceu.github.io/DCAT-AP/r5r/releases/3.0.0/#applicableLegislation) | The legislation that mandates the creation or management of the Data Service. | `dcatap:applicableLegislation` | `eli:LegalResource` | TBA | 0..\* | NA |
-| [application profile](http://purl.org/dc/terms/conformsTo) | An established (technical) standard to which the Data Service conforms. | `dct:conformsTo` | `dct:Standard` | The standards referred here SHOULD describe the Data Service and not the data it serves. The latter is provided by the dataset with which this Data Service is connected. For instance, the data service adheres to the OGC WFS API standard, while the associated dataset adheres to the [INSPIRE](https://knowledge-base.inspire.ec.europa.eu/index_en) Address data model.  | 0..\* | 
-| [creator](http://purl.org/dc/terms/creator) | The entity responsible for producing the resource. | `dct:creator` | `foaf:Agent` | NA | 0..\* | 
-| [format](http://purl.org/dc/terms/format) | The structure that can be returned by querying the endpointURL. | `dct:format` | `dct:MediaType or Extent` | Use the term from the authority table: https://publications.europa.eu/resource/authority/file-type | 0..\* | 
-| [HVD Category](https://semiceu.github.io/DCAT-AP/r5r/releases/3.0.0/#hvdCategory) | A data category defined in the High Value Dataset Implementing Regulation. | `dcatap:hvdCategory` | `skos:Concept` | For the possible values consult the regulation at http://data.europa.eu/eli/reg_impl/2023/138/oj. Or consult the controlled vocabulary derived from it. | 0..\* | 
+| [application profile](http://purl.org/dc/terms/conformsTo) | An established (technical) standard to which the Data Service conforms. | `dct:conformsTo` | `dct:Standard` | The standards referred here SHOULD describe the Data Service and not the data it serves. The latter is provided by the dataset with which this Data Service is connected. For instance, the data service adheres to the OGC WFS API standard, while the associated dataset adheres to the [INSPIRE](https://knowledge-base.inspire.ec.europa.eu/index_en) Address data model.  | 0..\* |
+| [creator](http://purl.org/dc/terms/creator) | The entity responsible for producing the resource. | `dct:creator` | `foaf:Agent` | NA | 0..\* |
+| [format](http://purl.org/dc/terms/format) | The structure that can be returned by querying the endpointURL. | `dct:format` | `dct:MediaType or Extent` | Use the term from the authority table: https://publications.europa.eu/resource/authority/file-type | 0..\* |
+| [HVD Category](https://semiceu.github.io/DCAT-AP/r5r/releases/3.0.0/#hvdCategory) | A data category defined in the High Value Dataset Implementing Regulation. | `dcatap:hvdCategory` | `skos:Concept` | For the possible values consult the regulation at http://data.europa.eu/eli/reg_impl/2023/138/oj. Or consult the controlled vocabulary derived from it. | 0..\* |
 | [keyword](https://www.w3.org/ns/dcat#keyword) | A keyword or tag describing the Data Service. | `dcat:keyword` | `rdfs:Literal` | NA | 0..\* |
 | [landing page](https://www.w3.org/TR/vocab-dcat-3/#Property:resource_landing_page) | A web page that provides access to the Data Service and/or additional information. | `dcat:landingPage` | `foaf:Document` | It is intended to point to a landing page at the original data service provider, not to a page on a site of a third party, such as an aggregator. | 0..\* |
-| [language](http://purl.org/dc/terms/language) | A language of the Data Service. | `dct:language` | `dct:LinguisticSystem` | Indicates the natural language used in the data service, indicated with a value from the [EU controlled vocabulary](https://publications.europa.eu/resource/authority/language). | 0..\* | 
+| [language](http://purl.org/dc/terms/language) | A language of the Data Service. | `dct:language` | `dct:LinguisticSystem` | Indicates the natural language used in the data service, indicated with a value from the [EU controlled vocabulary](https://publications.europa.eu/resource/authority/language). | 0..\* |
 | [modification date](http://purl.org/dc/terms/modified) | Date on which the data service was changed. | `dct:modified` | `xsd:dateTime` | This property indicates the date of the last changes to the dataset, not the metadata record. An absent value may mean the resource hasn't changed since publication, the modification date is unknown, or the resource is continuously updated. | 0..1 |
 | [other identifier](https://docs.geostandaarden.nl/dcat/dcat-ap-nl30/#dataservice-other-identifier) | Any other identifiers in addition to the identifier. | `adms:identifier` | `adms:Identifier` | NA | 0..\* |
-| [rights](http://purl.org/dc/terms/rights) | A statement that specifies rights associated with the Data Service. | `dct:rights` | `dct:RightsStatement` | NA  | 0..\* | 
+| [rights](http://purl.org/dc/terms/rights) | A statement that specifies rights associated with the Data Service. | `dct:rights` | `dct:RightsStatement` | NA  | 0..\* |
 | [serves dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:data_service_serves_dataset) | This property refers to a collection of data that this data service can distribute. | `dcat:servesDataset` | `dcat:Dataset` | This property connects the Data Service class to its corresponding dataset(s), ensuring every data service links to at least one dcat:Dataset. While essential for metadata implementation teams on each node, it’s less relevant for researchers to collect.  | 0..\* |
-
 
 ### [Distribution](http://www.w3.org/ns/dcat#Distribution)
 
@@ -294,7 +286,7 @@ An available distribution of the dataset.
 #### Mandatory Properties
 
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** | **Example** |
-| --- | --- | --- | --- | --- | --- | --- |  
+| --- | --- | --- | --- | --- | --- | --- |
 | [access URL](https://www.w3.org/TR/vocab-dcat-3/#Property:distribution_access_url) | A URL that gives access to a Distribution of the Dataset. | `dcat:accessURL` | `IRI` | Add a link that points to where the dataset can be found. If it’s hosted in a Data Repository, include the link to its entry. For datasets not in a repository (like registries), but still available for secondary use, provide a link to an access request form or a webpage with instructions for accessing the data. | 1 | NA  |
 | [byte size](https://semiceu.github.io/DCAT-AP/releases/3.0.0/#Distribution.bytesize) | The size of a Distribution in bytes. | `dcat:byteSize` | `xsd:nonNegativeInteger` | Describes the size of the distribution (the actual file) in bytes, and is therefore expressed as a non-negative integer. If the actual size is not know, it can be estimated.  | 1 | NA  |
 | [format](http://purl.org/dc/terms/format) | The file format of the Distribution. | `dct:format` | `dct:MediaType or Extent` | This property can be used to describe a media format in more detail than "media type" (using IANA media type) when needed. Instances of this property should use a URL, e.g., from the [File Type vocabulary](https://publications.europa.eu/resource/authority/file-type). For instance, for mzML files, the value of this property could be: http://edamontology.org/format_3244 | 1 | http://publications.europa.eu/resource/authority/file-type/TSV |
@@ -330,7 +322,7 @@ A collective endeavour of some kind. The Project class represents the class of t
 #### Mandatory Properties
 
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
-| --- | --- | --- | --- | --- | --- |   
+| --- | --- | --- | --- | --- | --- |  
 | [catalogue](https://www.w3.org/ns/dcat#resource) | TBA | `dcat:resource` | `dcat:Catalog` | This property is intended to connect the project to a catalogue of which the project is part of. | 1..\* |
 | [description](http://purl.org/dc/terms/description) | A free-text account of the Project. | `dct:description` | `rdfs:Literal` | A free text description of the project. Cardinality 1..n to supply the information in multiple languages, if preferred. | 1..\* |
 | [funder](http://xmlns.com/foaf/spec/#term_fundedBy) | The funding agent providing funding for the project | `foaf:fundedBy` | `foaf:Agent` | Use this property to indicate the funding agency/agencies that provide funding for the project. This property uses the class foaf:Agent, which has its own mandatory and recommended properties. In case the project is funded internally, the corresponding institute can be submitted as funding agent. | 1..\* |
@@ -340,7 +332,7 @@ A collective endeavour of some kind. The Project class represents the class of t
 #### Recommended Properties
 
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
-| --- | --- | --- | --- | --- | --- | 
+| --- | --- | --- | --- | --- | --- |
 | [study](http://purl.org/dc/terms/hasPart) | A study that is performed in the context of the project. | `dct:hasPart` | `disco:Study` | As the study class is used to give more information about data generation or collection, the different data collection endeavors of the project can be stated by instantiating one or several instances of the study class. This property links a project to its study/studies. | 0..\* |
 
 ### [Study](https://rdf-vocabulary.ddialliance.org/discovery.html#dfn-disco-study)
@@ -350,7 +342,7 @@ A Study represents the process by which a data set was generated or collected.
 #### Mandatory Properties
 
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
-| --- | --- | --- | --- | --- | --- |   
+| --- | --- | --- | --- | --- | --- |  
 | [dataset](https://www.w3.org/TR/prov-o/#generated) | The dataset that was generated as a result of this study. | `prov:generated` | `dcat:Dataset` | This property links the study class to the corresponding dataset(s). Therefore, every study must be connected to at least one dcat:Dataset. | 1..\* |
 | [description](http://purl.org/dc/terms/description) | A free text description of the study. | `dct:description` | `rdfs:Literal` | This description should include information about data generation or collection that has resulted in the dataset(s). Thus, it differs from the description in the project class, and should be more specific to the data generation/collection. | 1..\* |
 | [identifier](http://purl.org/dc/terms/identifier) | A unique identifier of the study. | `dct:identifier` | `rdfs:Literal` | This property should contain the persistent identifier of the Study. If the persistent identifier is not yet available, generate your own (e.g., exampleIS001). *Ensure that metadata is updated if your situation changes*. | 1 |
@@ -368,16 +360,16 @@ An entity that is associated with catalog and/ or dataset.
 #### Mandatory Properties
 
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
-| --- | --- | --- | --- | --- | --- |   
+| --- | --- | --- | --- | --- | --- |  
 | [email](http://xmlns.com/foaf/spec/#term_mbox) | An email address via which contact can be made. This property SHOULD be used to provide the email address of the Agent, specified using fully qualified mailto: URI scheme [RFC6068]. The email SHOULD be used to establish a communication channel to the agent. | `foaf:mbox` | `rdfs:Resource` | It is possible to provide the email address of the appropriate institution or department if no personal email address can be provided. | 1 |
-| [identifier](http://purl.org/dc/terms/identifier) | A unique identifier of the agent. | `dct:identifier` | `rdfs:Literal` | Specify the entity (person or organization) by providing an identifier. For individuals, use an [ORCID](https://orcid.org) identifier. For organizations, use an [ROR](https://ror.org) identifier. | 1 |
-| [name](http://xmlns.com/foaf/spec/#term_name) | A name of the agent. | `foaf:name` | `rdfs:Literal` | This property refers to the given name of the entity. Example: Jane Doe (for a person) and Radboudumc (for an organization). This property can be repeated for different versions of the name (e.g. the name in different languages). | 1..\* |
+| [identifier](http://purl.org/dc/terms/identifier) | A unique identifier of the agent. | `dct:identifier` | `rdfs:Literal` | Specify the entity (person or organisation) by providing an identifier. For individuals, use an [ORCID](https://orcid.org) identifier. For organisations, use an [ROR](https://ror.org) identifier. | 1 |
+| [name](http://xmlns.com/foaf/spec/#term_name) | A name of the agent. | `foaf:name` | `rdfs:Literal` | This property refers to the given name of the entity. Example: Jane Doe (for a person) and Radboudumc (for an organisation). This property can be repeated for different versions of the name (e.g. the name in different languages). | 1..\* |
 | [URL](http://xmlns.com/foaf/spec/#term_homepage) | A webpage that either allows to make contact (i.e. a web form) or contains the information on how to get into contact. | `foaf:homepage` | `rdfs:Resource` | Provide the URL of the page containing contact information, such as a contact form or details for reaching out. If a specific contact page is unavailable, the main website of the Agent is sufficient. | 1 |
 
 #### Recommended Properties
 
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
-| --- | --- | --- | --- | --- | --- |   
+| --- | --- | --- | --- | --- | --- |  
 | [country](http://purl.org/dc/terms/spatial) | Country of the agent. | `dct:spatial` | `dct:Location` | Use the appropriate term from [the EU authority table](https://publications.europa.eu/resource/authority/country). Example for the Netherlands: `http://publications.europa.eu/resource/authority/country/NLD` | 0..\* |
 | [publisher note](https://healthdcat-ap.github.io/#Dataset.publishernote) | A property used to provide additional context about a publisher. | `healthdcatap:publishernote` | `rdfs:Literal` | This property can be repeated for parallel language versions of the publisher's notes. Example: "Sciensano is a research institute and the national public health institute of Belgium. It is a so-called federal scientific institution that operates under the authority of the federal minister of Public Health and the federal minister of Agriculture of Belgium."@en | 0..1 | NA |
 | [publisher type](https://healthdcat-ap.github.io/#Dataset.publishertype) | A category (type) of organisation that makes the Dataset available | `healthdcatap:publishertype` | `skos:Concept` | A [controlled vocabulary](https://raw.githubusercontent.com/SEMICeu/ADMS-AP/master/purl.org/ADMS_SKOS_v1.00.rdf) is provided, denoting commonly recognised health publishers. *Current status*: Specifically for the health domain, a controlled vocabulary is being developed to include commonly recognised health publishers. This vocabulary is currently under development. Version 1.0 includes the following types: Academia-ScientificOrganisation, Company, IndustryConsortium, LocalAuthority, NationalAuthority, NonGovernmentalOrganisation, NonProfitOrganisation, PrivateIndividual, RegionalAuthority, StandardisationBody and SupraNationalAuthority. These should use the following URL: http://purl.org/adms/publishertype/[type]. | 0..1 |
@@ -390,14 +382,14 @@ A description following the vCard specification to provide contact information.
 #### Mandatory Properties
 
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
-| --- | --- | --- | --- | --- | --- | 
+| --- | --- | --- | --- | --- | --- |
 | [formatted name](https://w3.org/TR/vcard-rdf/#d4e891) | The full name of the contact point. | `vcard:fn` | `xsd:string` | Provide the full name of the contact point, such as the name of a person or department responsible for communication. | 1 |
 | [has email](https://www.w3.org/TR/vcard-rdf/#d4e183) | An email address via which contact can be made. | `vcard:hasEmail` | `rdfs:Resource` | When naming a contact point, this information needs to be further specified with additional information, i.e., an email. This email does not need to be a direct contact to the person responsible for the management of the data, could be a generic information email. For example: info@example.com / Jane.doe@example.com | 1 |
 
 #### Recommended Properties
 
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
-| --- | --- | --- | --- | --- | --- | 
+| --- | --- | --- | --- | --- | --- |
 | [contact page](https://www.w3.org/TR/vcard-rdf/#d4e605) | A webpage that either allows to make contact (i.e. a web form) or the information contains how to get into contact. | `vcard:hasURL` | `rdfs:Resource` | Fill this in, if you have a contact form about your resource.  | 0..\* |
 
 ### [Checksum](https://spdx.org/rdf/terms/#d4e2091)
@@ -407,7 +399,7 @@ A value that allows the contents of a file to be authenticated. This class allow
 #### Mandatory Properties
 
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
-| --- | --- | --- | --- | --- | --- | 
+| --- | --- | --- | --- | --- | --- |
 | [algorithm](https://spdx.org/rdf/terms/#algorithm) | The algorithm used to produce the subject Checksum. | `spdx:algorithm` | `spdx:ChecksumAlgorithm` | Choose one member of the [checksum algorithm members](https://spdx.org/rdf/terms/#d4e2129).  | 1 |
 | [checksum value](https://spdx.org/rdf/terms/#checksumValue) | A lower case hexadecimal encoded digest value produced using a specific algorithm. | `spdx:checksumValue` | `xsd:hexBinary` | NA  | 1  |
 
@@ -426,7 +418,7 @@ There are currently no mandatory properties for this class.
 #### Recommended Properties
 
 | **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
-| --- | --- | --- | --- | --- | --- | 
+| --- | --- | --- | --- | --- | --- |
 | [end date](https://semiceu.github.io/DCAT-AP/releases/3.0.0/#Periodoftime.enddate) | The end of the period. | `dcat:endDate` | `xsd:dateTime` | NA  | 0..1  |
 | [start date](https://semiceu.github.io/DCAT-AP/releases/3.0.0/#Periodoftime.startdate) | The start of the period. | `dcat:startDate` | `xsd:dateTime` | NA  | 0..1 |
 
