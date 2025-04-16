@@ -17,8 +17,6 @@ This is a pre-release version of Health-RI metadata schema 2.0.
   - [Dataset Series](#dataset-series)
   - [Data Service](#data-service)
   - [Distribution](#distribution)
-  - [Project](#project)
-  - [Study](#study)
   - [Agent](#agent)
   - [Kind](#kind)
   - [Checksum](#checksum)
@@ -45,8 +43,6 @@ Building on the [1st version of the metadata schema](https://github.com/Health-R
 Please note that HealthDCAT-AP has currently not officially been finalized and is subject to change and further specification. Once the official release is published, we will reevaluate and make the Health-RI schema compatible with HealthDCAT-AP. The current version of the model is based on the HealthDCAT-AP draft, version of 16-12-2024. In that version, cardinalities of HealthDCAT-AP are dependent on different access rights (public, restricted, non-public). It was decided to be compliant with the [open](https://healthdcat-ap.github.io/OPEN%20DATA%20HealthDCAT-AP%203.0.0.drawio.png) version for now, and cardinalities from that UML diagram of the HealthDCAT-AP specification were used as a reference for compliance checking.
 
 In addition, several **ELSI**-related metadata fields, as [gathered](https://health-ri.atlassian.net/wiki/spaces/HA/pages/469893133/Metadata+rondom+gebruiksvoorwaarden+en+authenticatie+autorisatie+en+ELSI+aspecten#Catalogus) by the Health-RI ELSI team, are included in this draft version, although not mandatory. The use of these properties will be explored and evaluated once the new version is implemented in the catalogue.
-
-Next to that, the [**Project**](#project) and [**Study**](#study) classes are introduced, but still contain minimal properties. The proposed properties, cardinalities and ranges are a starting point, and your input on these two classes is very welcome! If you would like to join the discussions on these two classes, feel free to [contact us](mailto:servicedesk@health-ri.nl).
 
 Finally, the newly introduced property `data origin` (in grey in the UML), with the goal to discriminate non-synthetic from synthetic data, is included in the draft. We now propose to further indicate the **nature of the data** (e.g. Whole genome sequencing data, or questionnaire data) with `healthdcatap:healthTheme`.
 
@@ -92,8 +88,6 @@ Next to the UML, a tabular overview of all classes and properties, including the
 
 - The power of [DCAT](https://www.w3.org/TR/vocab-dcat-3/) is that it is flexible in use, giving a data holder the ability to reflect the structure of their data by using the different classes.
 
-- To improve this even further, we have now introduced [Project](#project) and [Study](#study) classes.
-
 - Some properties that are present in multiple classes (e.g. `dct:publisher`, `dct:creator`, `dct:contactPoint`) refer to other, small classes (e.g. [`foaf:Agent`](#agent), [`vcard:Kind`](#kind)). When used, these properties will instantiate new instances of these classes for each usage. This means that, for example, the `dct:publisher` and `dct:creator` can instantiate [`foaf:Agent`](#agent) at two separate times with different content (organisation vs. person). This applies to: [`foaf:Agent`](#agent), [`vcard:Kind`](#kind), [`spdx:Checksum`](#checksum) and [`dct:PeriodOfTime`](#period-of-time).
 
 - We collect and share mapping examples from different data sources [here](https://health-ri.atlassian.net/wiki/spaces/FSD/folder/736985095).
@@ -106,7 +100,7 @@ Next to the UML, a tabular overview of all classes and properties, including the
 | --- | --- | --- | --- |
 | [Dataset](#dataset) | A Resource type. <br> A meaningful collection of data, published or curated by a single organisation or individual, and available for access or download in one or more representations. | When focusing on health data, a dataset typically contains structured information gathered from a study or research project related to health topics. This might include clinical trial results, public health statistics, patient records, survey data, etc. <br> How the data in a dataset can be accessed is defined in the Distribution, which usually points to the actual data files available for access or download. Datasets are often included in a catalog, which organizes and provides metadata about multiple datasets, making them easier to find and use. The term 'organisation or individual' refers to any entity responsible for creating, maintaining, or distributing the dataset. | `dcat:Dataset` |
 | [Catalog](#catalog) | A catalog that is listed in the National Health Data catalog and contains one or several datasets and/or data services. | Used to describe a bundle of datasets (and other resources) under a single title, for example, a collection. | `dcat:Catalog` |
-| [Agent](#agent) | An entity that is associated with catalog and/or Datasets. | A person or organisation that is associated with the catalogue, dataset or project. This class is instantiated in these classes whenever the range is `foaf:Agent`. | `foaf:Agent` |
+| [Agent](#agent) | An entity that is associated with catalog and/or Datasets. | A person or organisation that is associated with the catalogue or dataset. This class is instantiated in these classes whenever the range is `foaf:Agent`. | `foaf:Agent` |
 | [Kind](#kind) | A description following the vCard specification to provide contact information. | Used to describe contact information for Dataset and DatasetSeries. This class is instantiated in these classes whenever the range is `vcard:Kind`. | `vcard:Kind` |
 
 ### Recommended Classes
@@ -116,8 +110,6 @@ Next to the UML, a tabular overview of all classes and properties, including the
 | [Distribution](#distribution) | An available distribution of the dataset. | Used to describe the different ways that a single dataset can be made available in. I.e., it can be downloaded or it can be accessed online in one or more distributions (e.g. one in a downloadable .csv file, another file with an access or query webpage) | `dcat:Distribution` |
 | [Dataset Series](#dataset-series) | A collection of datasets that are published separately, but share some characteristics that group them. | A Dataset Series is a collection of similar datasets that are somehow interrelated but published separately. An example is consecutive datasets split by year and/or datasets separated by location. Instead of being made available in a single dataset, the individual (e.g. yearly) datasets are linked together with the Dataset Series class. | `dcat:DatasetSeries` |
 | [Data Service](#data-service) | A Resource type. <br> A collection of operations that provides access to one or more datasets or data processing functions. | A Data service offers the possibility to access and query the data of one (or several datasets) through operations. It offers more extensive possibilities to access the data than the Distribution through a variety of potential actions. An example of a Data Service is a [Beacon API](https://docs.genomebeacons.org/) to query genomics data. | `dcat:DataService` |
-| [Project](#project) | A collective endeavour of some kind. The Project class represents the class of things that are 'projects'. These may be formal or informal, collective or individual. | This class can be used to describe organisational aspects of a (research or other) funded project, in which one or multiple studies are executed that result in the generation of one or multiple datasets. Next to an overall description of the project, it includes information about the funding agent(s). | `foaf:Project` |
-| [Study](#study) | A Study represents the process by which a data set was generated or collected. | Used to describe the information of a study that generates or collects data described in a dataset. A study is connected to one project. Furthermore, a study can generate one or multiple datasets. | `disco:Study` |
 | [Period of Time](#period-of-time) | An interval of time that is named or defined by its start and end dates. This class is instantiated by properties in other classes that have the range `dct:PeriodOfTime`. | TBD | `dct:PeriodOfTime` |
 | [Checksum](#checksum) | A value that allows the contents of a file to be authenticated. This class allows the results of a variety of checksum and cryptographic message digest algorithms to be represented. This class is instantiated by properties in other classes that have the range `spdx:Checksum`. | TBD | `spdx:Checksum` |
 
@@ -218,7 +210,6 @@ A meaningful collection of data, published or curated by a single organisation o
 | [version](https://semiceu.github.io/DCAT-AP/releases/3.0.0/#Dataset.version) | The version indicator (name or identifier) of a resource. | `dcat:version` | `rdfs:Literal` | Suggested practice: track major_version.minor_version. Register a new identifier for major changes (e.g., 1.0.0 for an unchanged dataset). | 0..1 | NA |
 | [version notes](https://www.w3.org/ns/legacy_adms#versionNotes) | A description of the differences between this version and a previous version of the Dataset. | `adms:versionnotes` | `rdfs:Literal` | Provide a short description of changes made to the dataset from the previous version. | 0..\* | NA |
 | [was generated by](https://www.w3.org/TR/prov-o/#wasGeneratedBy) | An activity that generated, or provides the business context for, the creation of the dataset. | `prov:wasGeneratedBy` | `prov:Activity` | NA | 0..\* | NA |
-| [was used by](https://www.w3.org/TR/prov-o/#wasUsedBy) | TBD | `prov:wasUsedBy` | `prov:Activity` | NA | 0..\* | NA |
 
 ### [Dataset Series](https://www.w3.org/TR/vocab-dcat-3/#Class:Dataset_Series)
 
@@ -315,44 +306,6 @@ An available distribution of the dataset.
 | [status](https://www.w3.org/ns/legacy_adms#status) | The status of the distribution in the context of maturity lifecycle. | `adms:status` | `skos:Concept` | It MUST take one of the values Completed, Deprecated, Under Development, Withdrawn. Use a term from the authority table: `https://publications.europa.eu/resource/authority/distribution-status` | 0..1 | NA |
 | [temporal resolution](https://semiceu.github.io/DCAT-AP/releases/3.0.0/#Distribution.temporalresolution) | The minimum time period resolvable in the dataset distribution.| `dcat:temporalResolution` | `xsd:duration` | If applicable, this property indicates the minimum time period resolvable in the dataset distribution, expressed in `xsd:duration` format (see for more information [here](https://www.w3schools.com/xml/schema_dtypes_date.asp)) | 0..1 | NA |
 | [title](http://purl.org/dc/terms/title) | A name given to the Distribution. | `dct:title` | `rdfs:Literal` | A title given to the distribution. This property can be repeated to provide names in parallel languages. | 0..\* | Data Access Request of Healthy Brain study |
-
-### [Project](http://xmlns.com/foaf/spec/#term_Project)
-
-A collective endeavour of some kind. The Project class represents the class of things that are 'projects'. These may be formal or informal, collective or individual.
-
-#### Mandatory Properties
-
-| **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
-| --- | --- | --- | --- | --- | --- |
-| [catalogue](https://www.w3.org/ns/dcat#resource) | TBA | `dcat:resource` | `dcat:Catalog` | This property is intended to connect the project to a catalogue of which the project is part of. | 1..\* |
-| [description](http://purl.org/dc/terms/description) | A free-text account of the Project. | `dct:description` | `rdfs:Literal` | A free text description of the project. Cardinality 1..n to supply the information in multiple languages, if preferred. | 1..\* |
-| [funder](http://xmlns.com/foaf/spec/#term_fundedBy) | The funding agent providing funding for the project | `foaf:fundedBy` | `foaf:Agent` | Use this property to indicate the funding agency/agencies that provide funding for the project. This property uses the class `foaf:Agent`, which has its own mandatory and recommended properties. In case the project is funded internally, the corresponding institute can be submitted as funding agent. | 1..\* |
-| [identifier](http://purl.org/dc/terms/identifier) | A unique identifier of the project. | `dct:identifier` | `rdfs:Literal` | This property is intended for the GrantID of the project. | 1 |
-| [title](http://purl.org/dc/terms/title) | A title of the project. | `dct:title` | `rdfs:Literal` | Indicate the title of the project here. The title can be supplied in multiple languages if preferred; this is why the cardinality is set to 1..n. | 1..\* |
-
-#### Recommended Properties
-
-| **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
-| --- | --- | --- | --- | --- | --- |
-| [study](http://purl.org/dc/terms/hasPart) | A study that is performed in the context of the project. | `dct:hasPart` | `disco:Study` | As the study class is used to give more information about data generation or collection, the different data collection endeavors of the project can be stated by instantiating one or several instances of the study class. This property links a project to its study/studies. | 0..\* |
-
-### [Study](https://rdf-vocabulary.ddialliance.org/discovery.html#dfn-disco-study)
-
-A Study represents the process by which a data set was generated or collected.
-
-#### Mandatory Properties
-
-| **Property name** | **Definition** | **URI** | **rdfs:Range** | **Usage Note** | **Cardinality** |
-| --- | --- | --- | --- | --- | --- |
-| [dataset](https://www.w3.org/TR/prov-o/#generated) | The dataset that was generated as a result of this study. | `prov:generated` | `dcat:Dataset` | This property links the study class to the corresponding dataset(s). Therefore, every study must be connected to at least one `dcat:Dataset`. | 1..\* |
-| [description](http://purl.org/dc/terms/description) | A free text description of the study. | `dct:description` | `rdfs:Literal` | This description should include information about data generation or collection that has resulted in the dataset(s). Thus, it differs from the description in the project class, and should be more specific to the data generation/collection. | 1..\* |
-| [identifier](http://purl.org/dc/terms/identifier) | A unique identifier of the study. | `dct:identifier` | `rdfs:Literal` | This property should contain the persistent identifier of the Study. If the persistent identifier is not yet available, generate your own (e.g., exampleIS001). *Ensure that metadata is updated if your situation changes*. | 1 |
-| [project](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#isPartOf) | The project of which this study is a part. | `dct:isPartOf` | `foaf:Project` | This property links the study class to the [Project](#project) under which the study falls. | 1 |
-| [title](http://purl.org/dc/terms/title) | The title of the study. | `dct:title` | `rdfs:Literal` | The title of the study (in contrary to the project) should refer to data collection/generation event within a project. | 1..\* |
-
-#### Recommended Properties
-
-There are currently no recommended properties for this class.
 
 ### [Agent](http://xmlns.com/foaf/spec/#term_Agent)
 
