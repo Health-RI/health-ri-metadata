@@ -225,15 +225,17 @@ A collection of datasets that are published separately, but share some character
 
 #### Mandatory Properties
 
-| **Property name** | **Definition** | **URI** | **Controlled Vocabulary** | **rdfs:Range** | **Usage Note** | **Cardinality** | **Example** |
-| --- | --- | --- | --- | --- | --- | --- | --- |
+<!-- TODO: This table misses an example column. -->
+| **Property name** | **Definition** | **URI** | **Controlled Vocabulary** | **rdfs:Range** | **Usage Note** | **Cardinality** |
+| --- | --- | --- | --- | --- | --- | --- |
 | [description](http://purl.org/dc/terms/description) | An account of the resource. | `dct:description` | NA | `rdfs:Literal` | Provide a brief description of the dataset series in the catalog. You can repeat this in multiple languages. | 1..\* |
 | [title](http://purl.org/dc/terms/title) | A name given to the resource. | `dct:title` | NA |  `rdfs:Literal` | Provide a unique title for your Dataset Series. It can be provided in multiple languages. | 1..\* |
 
 #### Recommended Properties
 
-| **Property name** | **Definition** | **URI** | **Controlled Vocabulary** | **rdfs:Range** | **Usage Note** | **Cardinality** | **Example** |
-| --- | --- | --- | --- | --- | --- | --- | --- |
+<!-- TODO: This table misses an example column. -->
+| **Property name** | **Definition** | **URI** | **Controlled Vocabulary** | **rdfs:Range** | **Usage Note** | **Cardinality** |
+| --- | --- | --- | --- | --- | --- | --- |
 | [applicable legislation](http://data.europa.eu/r5r/applicableLegislation) | The legislation that is applicable to this resource. | `dcatap:applicableLegislation` | NA | `eli:LegalResource` | The ELI of the EHDS is currently not yet available. Therefore, this property remains recommended at this moment. | 0..\* |
 | [contact point](https://www.w3.org/TR/vocab-dcat-3/#Property:resource_contact_point) | Relevant contact information for the cataloged resource. | `dcat:contactPoint` | NA | `vcard:Kind` | A contact point is someone who can answer questions about the dataset series. Additional properties for the contact point can be found in the class Kind. Example: a Data Manager or Data Steward. | 0..\* |
 | [frequency](http://purl.org/dc/terms/accrualPeriodicity) | The frequency with which items are added to a collection. | `dct:accrualPeriodicity` | `http://publications.europa.eu/resource/authority/frequency` | `skos:Concept` | The frequency of a dataset series is not equal to the frequency of the dataset in the collection. | 0..1 |
@@ -264,8 +266,9 @@ A collection of operations that provides access to one or more datasets or data 
 
 #### Recommended Properties
 
-| **Property name** | **Definition** | **URI** | **Controlled Vocabulary** | **rdfs:Range** | **Usage Note** | **Cardinality** | **Example** |
-| --- | --- | --- | --- | --- | --- | --- | --- |
+<!-- TODO: This table misses an example column. -->
+| **Property name** | **Definition** | **URI** | **Controlled Vocabulary** | **rdfs:Range** | **Usage Note** | **Cardinality** |
+| --- | --- | --- | --- | --- | --- | --- |
 | [applicable legislation](https://semiceu.github.io/DCAT-AP/r5r/releases/3.0.0/#applicableLegislation) | The legislation that is applicable to this resource. | `dcatap:applicableLegislation` | NA |`eli:LegalResource` | TBA | 0..\* |
 | [application profile](http://purl.org/dc/terms/conformsTo) | An established standard to which the described resource conforms. | `dct:conformsTo` | NA | `dct:Standard` | The standards referred here SHOULD describe the Data Service and not the data it serves. The latter is provided by the dataset with which this Data Service is connected. For instance, the data service adheres to the OGC WFS API standard, while the associated dataset adheres to the [INSPIRE](https://knowledge-base.inspire.ec.europa.eu/index_en) Address data model. | 0..\* |
 | [creator](http://purl.org/dc/terms/creator) | An entity responsible for making the resource. | `dct:creator` | NA | `foaf:Agent` | Note that the Health-RI model diverges from DCAT-AP NL here, which reduces the maximum number of creators to 1. The Health-RI model allows specification of multiple creators of a data service. | 0..\* |
