@@ -60,7 +60,6 @@ Several classes have been included from [DCAT-AP NL](https://docs.geostandaarden
 | `dcat` | `http://www.w3.org/ns/dcat#` |
 | `dcatap` | `http://data.europa.eu/r5r/` |
 | `dct` | `http://purl.org/dc/terms/` |
-| `dpv-pd` | `https://w3id.org/dpv/dpv-pd#` |
 | `dpv` | `https://w3id.org/dpv#` |
 | `dqv` | `https://www.w3.org/TR/vocab-dqv/` |
 | `eli` | `http://data.europa.eu/eli/ontology#` |
