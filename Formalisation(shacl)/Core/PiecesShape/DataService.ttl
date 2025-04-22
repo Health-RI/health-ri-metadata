@@ -32,7 +32,7 @@
   rdfs:comment "Health-RI v2 DataService."@en;
   dcterms:description "SHACL definitions for the Health-RI v2 model for DataService."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-03-13T12:14:59.140Z"^^xsd:dateTime .
+  dcterms:modified "2025-04-22T14:37:03.100Z"^^xsd:dateTime .
 
 hri:DataServiceShape a sh:NodeShape;
   rdfs:label "DataService"@en;
@@ -140,6 +140,7 @@ hri:DataServiceShape a sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
+  sh:datatype xsd:anyURI;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 

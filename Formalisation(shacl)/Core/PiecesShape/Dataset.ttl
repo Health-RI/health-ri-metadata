@@ -70,17 +70,17 @@ hri:DatasetShape a owl:Ontology, sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:f8ba5191426e4e9486e56fb63217868e2;
+  sh:in _:fbdd823e254b47229244b90c82aab43d2;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:f8ba5191426e4e9486e56fb63217868e2 rdf:first eu:PUBLIC;
-  rdf:rest _:f8ba5191426e4e9486e56fb63217868e3 .
+_:fbdd823e254b47229244b90c82aab43d2 rdf:first eu:PUBLIC;
+  rdf:rest _:fbdd823e254b47229244b90c82aab43d3 .
 
-_:f8ba5191426e4e9486e56fb63217868e3 rdf:first eu:RESTRICTED;
-  rdf:rest _:f8ba5191426e4e9486e56fb63217868e4 .
+_:fbdd823e254b47229244b90c82aab43d3 rdf:first eu:RESTRICTED;
+  rdf:rest _:fbdd823e254b47229244b90c82aab43d4 .
 
-_:f8ba5191426e4e9486e56fb63217868e4 rdf:first eu:NON_PUBLIC;
+_:fbdd823e254b47229244b90c82aab43d4 rdf:first eu:NON_PUBLIC;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#analytics> sh:path healthdcatap:analytics;
@@ -203,7 +203,7 @@ _:f8ba5191426e4e9486e56fb63217868e4 rdf:first eu:NON_PUBLIC;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
+  sh:datatype xsd:anyURI;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -237,10 +237,11 @@ _:f8ba5191426e4e9486e56fb63217868e4 rdf:first eu:NON_PUBLIC;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShape#legal-basis> sh:path dqv:hasLegalBasis;
+<http://data.health-ri.nl/core/p2/DatasetShape#legal-basis> sh:path dpv:hasLegalBasis;
   sh:name "legal basis"@en;
   sh:description "The legal basis used to justify processing of personal data"@en;
   sh:nodeKind sh:IRI;
+  sh:defaultValue <https://w3id.org/dpv#>;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
@@ -297,10 +298,11 @@ _:f8ba5191426e4e9486e56fb63217868e4 rdf:first eu:NON_PUBLIC;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShape#personal-data> sh:path dqv:hasPersonalData;
+<http://data.health-ri.nl/core/p2/DatasetShape#personal-data> sh:path dpv:hasPersonalData;
   sh:name "personal data"@en;
   sh:description "Key elements that represent an individual in the dataset."@en;
   sh:nodeKind sh:IRI;
+  sh:defaultValue <https://w3id.org/dpv/dpv-pd#>;
   dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
@@ -321,10 +323,11 @@ _:f8ba5191426e4e9486e56fb63217868e4 rdf:first eu:NON_PUBLIC;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetShape#purpose> sh:path dqv:hasPurpose;
+<http://data.health-ri.nl/core/p2/DatasetShape#purpose> sh:path dpv:hasPurpose;
   sh:name "purpose"@en;
   sh:description "A free text statement of the purpose of the processing of data or personal data."@en;
   sh:nodeKind sh:IRI;
+  sh:defaultValue <https://w3id.org/dpv#>;
   dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
