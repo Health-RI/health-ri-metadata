@@ -27,32 +27,33 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 
-hri:aux-ChecksumShape a owl:Ontology;
-  rdfs:label "Checksum"@en;
-  rdfs:comment "Health-RI v2 Checksum."@en;
-  dct:description "SHACL definitions for the Health-RI v2 model for Checksum."@en;
+hri:aux-IdentifierShape a owl:Ontology;
+  rdfs:label "Identifier"@en;
+  rdfs:comment "Health-RI v2 Identifier"@en;
+  dct:description "SHACL definitions for the Health-RI v2 model for Identifier."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-22T09:24:32.200Z"^^xsd:dateTime .
+  dct:modified "2025-04-22T09:24:48.010Z"^^xsd:dateTime .
 
-hri:ChecksumShape a sh:NodeShape;
-  rdfs:label "Checksum"@en;
-  sh:targetClass spdx:Checksum;
-  sh:property <http://data.health-ri.nl/core/p2/ChecksumShape#spdx:algorithm>, <http://data.health-ri.nl/core/p2/ChecksumShape#spdx:checksumValue> .
+hri:IdentifierShape a sh:NodeShape;
+  rdfs:label "Identifier"@en;
+  sh:targetClass adms:Identifier;
+  sh:property <http://data.health-ri.nl/core/p2/IdentifierShape#skos:notation>, <http://data.health-ri.nl/core/p2/IdentifierShape#adms:schemaAgency> .
 
-<http://data.health-ri.nl/core/p2/ChecksumShape#spdx:algorithm> sh:path spdx:algorithm;
-  sh:name "algorithm"@en;
-  sh:description "The algorithm used to produce the subject Checksum"@en;
-  sh:minCount 1;
-  sh:maxCount 1;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
-<http://data.health-ri.nl/core/p2/ChecksumShape#spdx:checksumValue> sh:path spdx:checksumValue;
-  sh:name "checksum value"@en;
-  sh:description "A lower case hexadecimal encoded digest value produced using a specific algorithm"@en;
+<http://data.health-ri.nl/core/p2/IdentifierShape#skos:notation> sh:path skos:notation;
+  sh:name "notation"@en;
+  sh:description "A string that is an identifier in the context of the identifier scheme referenced by its datatype."@en;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
   dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextAreaEditor .
+  dash:editor dash:TextFieldEditor .
+
+<http://data.health-ri.nl/core/p2/IdentifierShape#adms:schemaAgency> sh:path adms:schemaAgency;
+  sh:name "schema agency"@en;
+  sh:description "The name of the agency that issued the identifier."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .

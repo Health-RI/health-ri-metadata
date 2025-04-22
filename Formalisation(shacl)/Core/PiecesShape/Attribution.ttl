@@ -27,32 +27,30 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 
-hri:aux-ChecksumShape a owl:Ontology;
-  rdfs:label "Checksum"@en;
-  rdfs:comment "Health-RI v2 Checksum."@en;
-  dct:description "SHACL definitions for the Health-RI v2 model for Checksum."@en;
+hri:aux-AttributionShape a owl:Ontology;
+  rdfs:label "Attribution"@en;
+  rdfs:comment "Health-RI v2 Attribution"@en;
+  dct:description "SHACL definitions for the Health-RI v2 model for Attribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-22T09:24:32.200Z"^^xsd:dateTime .
+  dct:modified "2025-04-22T09:24:27.760Z"^^xsd:dateTime .
 
-hri:ChecksumShape a sh:NodeShape;
-  rdfs:label "Checksum"@en;
-  sh:targetClass spdx:Checksum;
-  sh:property <http://data.health-ri.nl/core/p2/ChecksumShape#spdx:algorithm>, <http://data.health-ri.nl/core/p2/ChecksumShape#spdx:checksumValue> .
+hri:AttributionShape a sh:NodeShape;
+  rdfs:label "Attribution"@en;
+  sh:targetClass prov:Attribution;
+  sh:property <http://data.health-ri.nl/core/p2/AttributionShape#prov:agent>, <http://data.health-ri.nl/core/p2/AttributionShape#dcat:hadRole> .
 
-<http://data.health-ri.nl/core/p2/ChecksumShape#spdx:algorithm> sh:path spdx:algorithm;
-  sh:name "algorithm"@en;
-  sh:description "The algorithm used to produce the subject Checksum"@en;
-  sh:minCount 1;
+<http://data.health-ri.nl/core/p2/AttributionShape#prov:agent> sh:path prov:agent;
+  sh:name "agent"@en;
+  sh:description "The agent that has a specific role with the described resource."@en;
+  sh:maxCount 1;
+  sh:node hri:AgentShape;
+  dash:viewer dash:DetailsViewer;
+  dash:editor dash:BlankNodeEditor .
+
+<http://data.health-ri.nl/core/p2/AttributionShape#dcat:hadRole> sh:path dcat:hadRole;
+  sh:name "role"@en;
+  sh:description "The nature of the relationship between the agent and the described resource, as indicated by a value from the controlled vocabulary."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
-
-<http://data.health-ri.nl/core/p2/ChecksumShape#spdx:checksumValue> sh:path spdx:checksumValue;
-  sh:name "checksum value"@en;
-  sh:description "A lower case hexadecimal encoded digest value produced using a specific algorithm"@en;
-  sh:minCount 1;
-  sh:maxCount 1;
-  sh:nodeKind sh:Literal;
-  dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextAreaEditor .
