@@ -7,10 +7,10 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix example: <https://data.sparna.fr/shapes-example/> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
-@prefix healthdcatap: <http://example.com/ns/healthdcatap#> .
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -31,7 +31,7 @@
 hri:ResourceShape a owl:Ontology, sh:NodeShape;
   rdfs:label "Resource"@en;
   rdfs:comment "Health-RI v2 Resource placeholder."@en;
-  dcterms:description "SHACL stub for the Health-RI v2 model for Resource."@en;
+  dct:description "SHACL stub for the Health-RI v2 model for Resource."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-03-03T13:34:21.800Z"^^xsd:dateTime;
+  dct:modified "2025-04-23T13:25:07.820Z"^^xsd:dateTime;
   sh:targetClass dcat:Resource .

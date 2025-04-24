@@ -8,9 +8,9 @@
 @prefix example: <https://data.sparna.fr/shapes-example/> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
 @prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -31,9 +31,9 @@
 hri:AgentShapeAgentShape a owl:Ontology;
   rdfs:label "Agent class"@en;
   rdfs:comment "Excel template for Agent class"@en;
-  dcterms:description "This is an excel template for Agent class in Health RI Core plateau 2."@en;
+  dct:description "This is an excel template for Agent class in Health RI Core plateau 2."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2024-02-10T00:00:00.000Z"^^xsd:dateTime .
+  dct:modified "2024-02-10T00:00:00.000Z"^^xsd:dateTime .
 
 hri:AgentShape a sh:NodeShape;
   rdfs:label "Agent"@en;
@@ -43,7 +43,7 @@ hri:AgentShape a sh:NodeShape;
     <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishernote>, <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishertype>,
     <http://data.health-ri.nl/core/p2/AgentShape#dct:type>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:homepage> .
 
-<http://data.health-ri.nl/core/p2/AgentShape#dct:spatial> sh:path dcterms:spatial;
+<http://data.health-ri.nl/core/p2/AgentShape#dct:spatial> sh:path dct:spatial;
   sh:name "country"@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
@@ -60,13 +60,12 @@ hri:AgentShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/AgentShape#dct:identifier> sh:path dcterms:identifier;
+<http://data.health-ri.nl/core/p2/AgentShape#dct:identifier> sh:path dct:identifier;
   sh:name "identifier"@en;
   sh:description "A unique identifier of the agent."@en;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:anyURI;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
@@ -94,7 +93,7 @@ hri:AgentShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/AgentShape#dct:type> sh:path dcterms:type;
+<http://data.health-ri.nl/core/p2/AgentShape#dct:type> sh:path dct:type;
   sh:name "type"@en;
   sh:description "A type of the agent that makes the Catalogue or Dataset available"@en;
   sh:maxCount 1;

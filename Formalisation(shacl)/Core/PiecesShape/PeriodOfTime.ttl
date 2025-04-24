@@ -7,9 +7,9 @@
 @prefix example: <https://data.sparna.fr/shapes-example/> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
 @prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -30,13 +30,13 @@
 hri:aux-PeriodOfTimeShape a owl:Ontology;
   rdfs:label "Period of Time"@en;
   rdfs:comment "Health-RI v2 Period of Time"@en;
-  dcterms:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
+  dct:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-03-13T12:16:09.790Z"^^xsd:dateTime .
+  dct:modified "2025-04-23T13:25:13.170Z"^^xsd:dateTime .
 
 hri:PeriodOfTimeShape a sh:NodeShape;
   rdfs:label "Period of Time"@en;
-  sh:targetClass dcterms:PeriodOfTime;
+  sh:targetClass dct:PeriodOfTime;
   sh:property <http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:endDate>, <http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:startDate> .
 
 <http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:endDate> sh:path dcat:endDate;
@@ -44,7 +44,6 @@ hri:PeriodOfTimeShape a sh:NodeShape;
   sh:description "The end of the period."@en;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:dateTime;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -53,6 +52,5 @@ hri:PeriodOfTimeShape a sh:NodeShape;
   sh:description "The start of the period."@en;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:dateTime;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .

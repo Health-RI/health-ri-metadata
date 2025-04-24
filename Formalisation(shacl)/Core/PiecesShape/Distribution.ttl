@@ -7,9 +7,9 @@
 @prefix example: <https://data.sparna.fr/shapes-example/> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
 @prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -31,9 +31,9 @@
 <https://data.sparna.fr/shapes-example#> a owl:Ontology;
   rdfs:label "Distribution"@en;
   rdfs:comment "Health-RI v2 Distribution."@en;
-  dcterms:description "SHACL definitions for the Health-RI v2 model for Distribution."@en;
+  dct:description "SHACL definitions for the Health-RI v2 model for Distribution."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-03-20T13:51:38.610Z"^^xsd:dateTime .
+  dct:modified "2025-04-23T13:25:14.930Z"^^xsd:dateTime .
 
 hri:DistributionShape a sh:NodeShape;
   rdfs:label "Distribution"@en;
@@ -77,6 +77,8 @@ hri:DistributionShape a sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
+  sh:datatype xsd:integer;
+  sh:minExclusive "0";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -96,7 +98,7 @@ hri:DistributionShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dct:description> sh:path dcterms:description;
+<http://data.health-ri.nl/core/p2/DistributionShape#dct:description> sh:path dct:description;
   sh:name "description"@en;
   sh:description "This property can be repeated for parallel language versions of the description."@en;
   sh:nodeKind sh:Literal;
@@ -116,7 +118,7 @@ hri:DistributionShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dct:format> sh:path dcterms:format;
+<http://data.health-ri.nl/core/p2/DistributionShape#dct:format> sh:path dct:format;
   sh:name "format"@en;
   sh:minCount 1;
   sh:maxCount 1;
@@ -124,14 +126,14 @@ hri:DistributionShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dct:language> sh:path dcterms:language;
+<http://data.health-ri.nl/core/p2/DistributionShape#dct:language> sh:path dct:language;
   sh:name "language"@en;
   sh:description "This property can be repeated if the metadata is provided in multiple languages."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dct:license> sh:path dcterms:license;
+<http://data.health-ri.nl/core/p2/DistributionShape#dct:license> sh:path dct:license;
   sh:name "license"@en;
   sh:minCount 1;
   sh:maxCount 1;
@@ -139,7 +141,7 @@ hri:DistributionShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dct:conformsTo> sh:path dcterms:conformsTo;
+<http://data.health-ri.nl/core/p2/DistributionShape#dct:conformsTo> sh:path dct:conformsTo;
   sh:name "linked schemas"@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
@@ -152,7 +154,7 @@ hri:DistributionShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dct:modified> sh:path dcterms:modified;
+<http://data.health-ri.nl/core/p2/DistributionShape#dct:modified> sh:path dct:modified;
   sh:name "modification date"@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
@@ -167,7 +169,7 @@ hri:DistributionShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dct:issued> sh:path dcterms:issued;
+<http://data.health-ri.nl/core/p2/DistributionShape#dct:issued> sh:path dct:issued;
   sh:name "release date"@en;
   sh:description "The date the dataset distribution was issued."@en;
   sh:maxCount 1;
@@ -182,7 +184,7 @@ hri:DistributionShape a sh:NodeShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dct:rights> sh:path dcterms:rights;
+<http://data.health-ri.nl/core/p2/DistributionShape#dct:rights> sh:path dct:rights;
   sh:name "rights"@en;
   sh:description "A statement that concerns all rights not addressed in fields License or Rights, such as copyright statements. Everything that is not covered with licece"@en;
   sh:minCount 1;
@@ -196,20 +198,20 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:ab6d3359c1d442dc81fece41d5ed6fc92;
+  sh:in _:3019d1e8b7544a8b8553c093971cdbd92;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:ab6d3359c1d442dc81fece41d5ed6fc92 rdf:first status:COMPLETED;
-  rdf:rest _:ab6d3359c1d442dc81fece41d5ed6fc93 .
+_:3019d1e8b7544a8b8553c093971cdbd92 rdf:first status:COMPLETED;
+  rdf:rest _:3019d1e8b7544a8b8553c093971cdbd93 .
 
-_:ab6d3359c1d442dc81fece41d5ed6fc93 rdf:first status:DEVELOP;
-  rdf:rest _:ab6d3359c1d442dc81fece41d5ed6fc94 .
+_:3019d1e8b7544a8b8553c093971cdbd93 rdf:first status:DEVELOP;
+  rdf:rest _:3019d1e8b7544a8b8553c093971cdbd94 .
 
-_:ab6d3359c1d442dc81fece41d5ed6fc94 rdf:first status:WITHDRAWN;
-  rdf:rest _:ab6d3359c1d442dc81fece41d5ed6fc95 .
+_:3019d1e8b7544a8b8553c093971cdbd94 rdf:first status:WITHDRAWN;
+  rdf:rest _:3019d1e8b7544a8b8553c093971cdbd95 .
 
-_:ab6d3359c1d442dc81fece41d5ed6fc95 rdf:first status:DEPRECATED;
+_:3019d1e8b7544a8b8553c093971cdbd95 rdf:first status:DEPRECATED;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#dcat:temporalResolution> sh:path
@@ -220,7 +222,7 @@ _:ab6d3359c1d442dc81fece41d5ed6fc95 rdf:first status:DEPRECATED;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#dct:title> sh:path dcterms:title;
+<http://data.health-ri.nl/core/p2/DistributionShape#dct:title> sh:path dct:title;
   sh:name "title"@en;
   sh:description "This property can be repeated for parallel language versions of the description."@en;
   sh:minCount 1;
