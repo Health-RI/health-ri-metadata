@@ -198,23 +198,23 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-abf777c63d194ae894386f41fae78ca033-08A74E602DA6FD81661710C5022150D1;
+  sh:in _:genid-4f95f1404f1e487ea50442ff9675ecff33-08A74E602DA6FD81661710C5022150D1;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-abf777c63d194ae894386f41fae78ca033-08A74E602DA6FD81661710C5022150D1 rdf:first
+_:genid-4f95f1404f1e487ea50442ff9675ecff33-08A74E602DA6FD81661710C5022150D1 rdf:first
     status:COMPLETED;
-  rdf:rest _:genid-abf777c63d194ae894386f41fae78ca033-E83C8C99E71B76D6EF5473CCF1E1E5E7 .
+  rdf:rest _:genid-4f95f1404f1e487ea50442ff9675ecff33-E83C8C99E71B76D6EF5473CCF1E1E5E7 .
 
-_:genid-abf777c63d194ae894386f41fae78ca033-E83C8C99E71B76D6EF5473CCF1E1E5E7 rdf:first
+_:genid-4f95f1404f1e487ea50442ff9675ecff33-E83C8C99E71B76D6EF5473CCF1E1E5E7 rdf:first
     status:DEVELOP;
-  rdf:rest _:genid-abf777c63d194ae894386f41fae78ca033-1F5CECC6C4A126EF0BDE800009A762D2 .
+  rdf:rest _:genid-4f95f1404f1e487ea50442ff9675ecff33-1F5CECC6C4A126EF0BDE800009A762D2 .
 
-_:genid-abf777c63d194ae894386f41fae78ca033-1F5CECC6C4A126EF0BDE800009A762D2 rdf:first
+_:genid-4f95f1404f1e487ea50442ff9675ecff33-1F5CECC6C4A126EF0BDE800009A762D2 rdf:first
     status:WITHDRAWN;
-  rdf:rest _:genid-abf777c63d194ae894386f41fae78ca033-9179702FD5BE6AD419C642EBA45332AC .
+  rdf:rest _:genid-4f95f1404f1e487ea50442ff9675ecff33-9179702FD5BE6AD419C642EBA45332AC .
 
-_:genid-abf777c63d194ae894386f41fae78ca033-9179702FD5BE6AD419C642EBA45332AC rdf:first
+_:genid-4f95f1404f1e487ea50442ff9675ecff33-9179702FD5BE6AD419C642EBA45332AC rdf:first
     status:DEPRECATED;
   rdf:rest rdf:nil .
 
@@ -239,7 +239,7 @@ hri:aux-PeriodOfTimeShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Period of Time"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-23T13:25:13.170Z"^^xsd:dateTime .
+  dct:modified "2025-04-24T08:40:25.850Z"^^xsd:dateTime .
 
 hri:PeriodOfTimeShape a sh:NodeShape;
   rdfs:label "Period of Time"@en;
@@ -251,6 +251,7 @@ hri:PeriodOfTimeShape a sh:NodeShape;
   sh:description "The end of the period."@en;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
+  sh:datatype xsd:dateTime;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -259,6 +260,7 @@ hri:PeriodOfTimeShape a sh:NodeShape;
   sh:description "The start of the period."@en;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
+  sh:datatype xsd:dateTime;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 

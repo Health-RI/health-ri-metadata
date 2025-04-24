@@ -72,19 +72,19 @@ hri:DatasetShape a owl:Ontology, sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-abf777c63d194ae894386f41fae78ca09-0F8FCE48429CA7F5158C889E25EBEC82;
+  sh:in _:genid-4f95f1404f1e487ea50442ff9675ecff9-0F8FCE48429CA7F5158C889E25EBEC82;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-abf777c63d194ae894386f41fae78ca09-0F8FCE48429CA7F5158C889E25EBEC82 rdf:first
+_:genid-4f95f1404f1e487ea50442ff9675ecff9-0F8FCE48429CA7F5158C889E25EBEC82 rdf:first
     eu:PUBLIC;
-  rdf:rest _:genid-abf777c63d194ae894386f41fae78ca09-A9A638A2DF2E416646FA071329FCEE2A .
+  rdf:rest _:genid-4f95f1404f1e487ea50442ff9675ecff9-A9A638A2DF2E416646FA071329FCEE2A .
 
-_:genid-abf777c63d194ae894386f41fae78ca09-A9A638A2DF2E416646FA071329FCEE2A rdf:first
+_:genid-4f95f1404f1e487ea50442ff9675ecff9-A9A638A2DF2E416646FA071329FCEE2A rdf:first
     eu:RESTRICTED;
-  rdf:rest _:genid-abf777c63d194ae894386f41fae78ca09-A285BD426B6EC32231255310A2357CF7 .
+  rdf:rest _:genid-4f95f1404f1e487ea50442ff9675ecff9-A285BD426B6EC32231255310A2357CF7 .
 
-_:genid-abf777c63d194ae894386f41fae78ca09-A285BD426B6EC32231255310A2357CF7 rdf:first
+_:genid-4f95f1404f1e487ea50442ff9675ecff9-A285BD426B6EC32231255310A2357CF7 rdf:first
     eu:NON_PUBLIC;
   rdf:rest rdf:nil .
 
@@ -588,7 +588,7 @@ hri:aux-PeriodOfTimeShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Period of Time"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-23T13:25:13.170Z"^^xsd:dateTime .
+  dct:modified "2025-04-24T08:40:25.850Z"^^xsd:dateTime .
 
 hri:PeriodOfTimeShape a sh:NodeShape;
   rdfs:label "Period of Time"@en;
@@ -600,6 +600,7 @@ hri:PeriodOfTimeShape a sh:NodeShape;
   sh:description "The end of the period."@en;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
+  sh:datatype xsd:dateTime;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -608,6 +609,7 @@ hri:PeriodOfTimeShape a sh:NodeShape;
   sh:description "The start of the period."@en;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
+  sh:datatype xsd:dateTime;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 

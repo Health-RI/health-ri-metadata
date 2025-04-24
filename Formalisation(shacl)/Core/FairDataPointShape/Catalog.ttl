@@ -304,7 +304,7 @@ hri:aux-PeriodOfTimeShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Period of Time"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-23T13:25:13.170Z"^^xsd:dateTime .
+  dct:modified "2025-04-24T08:40:25.850Z"^^xsd:dateTime .
 
 hri:PeriodOfTimeShape a sh:NodeShape;
   rdfs:label "Period of Time"@en;
@@ -316,6 +316,7 @@ hri:PeriodOfTimeShape a sh:NodeShape;
   sh:description "The end of the period."@en;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
+  sh:datatype xsd:dateTime;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -324,5 +325,6 @@ hri:PeriodOfTimeShape a sh:NodeShape;
   sh:description "The start of the period."@en;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
+  sh:datatype xsd:dateTime;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
