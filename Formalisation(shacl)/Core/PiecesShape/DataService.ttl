@@ -7,9 +7,9 @@
 @prefix example: <https://data.sparna.fr/shapes-example/> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
 @prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -30,9 +30,9 @@
 <https://data.sparna.fr/shapes-example#> a owl:Ontology;
   rdfs:label "DataService"@en;
   rdfs:comment "Health-RI v2 DataService."@en;
-  dcterms:description "SHACL definitions for the Health-RI v2 model for DataService."@en;
+  dct:description "SHACL definitions for the Health-RI v2 model for DataService."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-04-22T14:37:03.100Z"^^xsd:dateTime .
+  dct:modified "2025-04-23T13:25:32.440Z"^^xsd:dateTime .
 
 hri:DataServiceShape a sh:NodeShape;
   rdfs:label "DataService"@en;
@@ -50,7 +50,7 @@ hri:DataServiceShape a sh:NodeShape;
     <http://data.health-ri.nl/core/p2/DataServiceShape#dct:publisher>, <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:servesDataset>,
     <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:theme>, <http://data.health-ri.nl/core/p2/DataServiceShape#dct:title> .
 
-<http://data.health-ri.nl/core/p2/DataServiceShape#dct:accessRights> sh:path dcterms:accessRights;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:accessRights> sh:path dct:accessRights;
   sh:name "Access Rights"@en;
   sh:description "Information that indicates whether the Dataset is publicly accessible, has access restrictions or is not public. Use one of the following values (:public, :restricted, :non-public)."@en;
   sh:minCount 1;
@@ -67,7 +67,7 @@ hri:DataServiceShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DataServiceShape#dct:conformsTo> sh:path dcterms:conformsTo;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:conformsTo> sh:path dct:conformsTo;
   sh:name "application profile"@en;
   sh:description "The standards referred here SHOULD describe the Data Service and not the data it serves. The latter is provided by the dataset with which this Data Service is connected. For instance the data service adheres to the OGC WFS API standard, while the associated dataset adheres to the INSPIRE Address data model."@en;
   sh:nodeKind sh:IRI;
@@ -83,19 +83,19 @@ hri:DataServiceShape a sh:NodeShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<http://data.health-ri.nl/core/p2/DataServiceShape#dct:creator> sh:path dcterms:creator;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:creator> sh:path dct:creator;
   sh:name "creator"@en;
   sh:node hri:AgentShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<http://data.health-ri.nl/core/p2/DataServiceShape#dct:rights> sh:path dcterms:rights;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:rights> sh:path dct:rights;
   sh:name "rights"@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DataServiceShape#dct:description> sh:path dcterms:description;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:description> sh:path dct:description;
   sh:name "Description"@en;
   sh:description "A free-text account of the Data Service."@en;
   sh:minCount 1;
@@ -122,7 +122,7 @@ hri:DataServiceShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DataServiceShape#dct:format> sh:path dcterms:format;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:format> sh:path dct:format;
   sh:name "format"@en;
   sh:description "The structure that can be returned by querying the endpointURL."@en;
   sh:nodeKind sh:IRI;
@@ -135,12 +135,11 @@ hri:DataServiceShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DataServiceShape#dct:identifier> sh:path dcterms:identifier;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:identifier> sh:path dct:identifier;
   sh:name "Identifier"@en;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:anyURI;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -158,13 +157,13 @@ hri:DataServiceShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DataServiceShape#dct:language> sh:path dcterms:language;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:language> sh:path dct:language;
   sh:name "language"@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DataServiceShape#dct:license> sh:path dcterms:license;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:license> sh:path dct:license;
   sh:name "License"@en;
   sh:description "A licence under which the Data service is made available."@en;
   sh:minCount 1;
@@ -173,7 +172,7 @@ hri:DataServiceShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DataServiceShape#dct:modified> sh:path dcterms:modified;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:modified> sh:path dct:modified;
   sh:name "modification date"@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
@@ -186,7 +185,7 @@ hri:DataServiceShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DataServiceShape#dct:publisher> sh:path dcterms:publisher;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:publisher> sh:path dct:publisher;
   sh:name "Publisher"@en;
   sh:description "An entity (organisation) responsible for making the Data Service available."@en;
   sh:minCount 1;
@@ -210,7 +209,7 @@ hri:DataServiceShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DataServiceShape#dct:title> sh:path dcterms:title;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:title> sh:path dct:title;
   sh:name "title"@en;
   sh:description "A name given to the Data Service."@en;
   sh:minCount 1;

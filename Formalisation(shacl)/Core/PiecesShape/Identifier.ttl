@@ -32,7 +32,7 @@ hri:aux-IdentifierShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Identifier"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Identifier."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-22T09:24:48.010Z"^^xsd:dateTime .
+  dct:modified "2025-04-23T13:25:22.090Z"^^xsd:dateTime .
 
 hri:IdentifierShape a sh:NodeShape;
   rdfs:label "Identifier"@en;

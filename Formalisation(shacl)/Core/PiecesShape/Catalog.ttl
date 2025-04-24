@@ -7,9 +7,9 @@
 @prefix example: <https://data.sparna.fr/shapes-example/> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
 @prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -30,9 +30,9 @@
 <https://data.sparna.fr/shapes-example#> a owl:Ontology;
   rdfs:label "Catalog"@en;
   rdfs:comment "Health-RI v2 Catalog."@en;
-  dcterms:description "SHACL definitions for the Health-RI v2 model for Catalog."@en;
+  dct:description "SHACL definitions for the Health-RI v2 model for Catalog."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-03-13T12:14:36.480Z"^^xsd:dateTime .
+  dct:modified "2025-04-23T13:25:16.780Z"^^xsd:dateTime .
 
 hri:CatalogShape a sh:NodeShape;
   rdfs:label "Catalog"@en;
@@ -68,7 +68,7 @@ hri:CatalogShape a sh:NodeShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dct:creator> sh:path dcterms:creator;
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:creator> sh:path dct:creator;
   sh:name "creator"@en;
   sh:node hri:AgentShape;
   dash:viewer dash:DetailsViewer;
@@ -77,21 +77,21 @@ hri:CatalogShape a sh:NodeShape;
 <http://data.health-ri.nl/core/p2/CatalogShape#dcat:dataset> sh:path dcat:dataset;
   sh:name "dataset"@en .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dct:description> sh:path dcterms:description;
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:description> sh:path dct:description;
   sh:name "description"@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dct:spatial> sh:path dcterms:spatial;
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:spatial> sh:path dct:spatial;
   sh:name "geographical coverage"@en;
   sh:description "The EU Vocabularies Name Authority Lists must be used for continents, countries and places that are in those lists; if a particular location is not in one of the mentioned Named Authority Lists, Geonames URIs must be used. For districts or neighbourhoods in NL, the Dutch vocab can be used."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dct:hasPart> sh:path dcterms:hasPart;
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:hasPart> sh:path dct:hasPart;
   sh:name "has part"@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
@@ -104,27 +104,27 @@ hri:CatalogShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dct:language> sh:path dcterms:language;
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:language> sh:path dct:language;
   sh:name "language"@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dct:license> sh:path dcterms:license;
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:license> sh:path dct:license;
   sh:name "licence"@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dct:modified> sh:path dcterms:modified;
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:modified> sh:path dct:modified;
   sh:name "modification date"@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dct:publisher> sh:path dcterms:publisher;
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:publisher> sh:path dct:publisher;
   sh:name "publisher"@en;
   sh:minCount 1;
   sh:maxCount 1;
@@ -136,14 +136,14 @@ hri:CatalogShape a sh:NodeShape;
   sh:name "record"@en;
   sh:class dcat:CatalogRecord .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dct:issued> sh:path dcterms:issued;
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:issued> sh:path dct:issued;
   sh:name "release date"@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dct:rights> sh:path dcterms:rights;
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:rights> sh:path dct:rights;
   sh:name "rights"@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
@@ -156,7 +156,7 @@ hri:CatalogShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dct:temporal> sh:path dcterms:temporal;
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:temporal> sh:path dct:temporal;
   sh:name "temporal coverage"@en;
   sh:node hri:PeriodOfTimeShape;
   dash:viewer dash:DetailsViewer;
@@ -169,7 +169,7 @@ hri:CatalogShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dct:title> sh:path dcterms:title;
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:title> sh:path dct:title;
   sh:name "title"@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;

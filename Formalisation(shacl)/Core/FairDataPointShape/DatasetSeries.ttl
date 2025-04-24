@@ -7,9 +7,9 @@
 @prefix example: <https://data.sparna.fr/shapes-example/> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
 @prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -31,9 +31,9 @@
 <https://data.sparna.fr/shapes-example#> a owl:Ontology;
   rdfs:label "Dataset Series"@en;
   rdfs:comment "Health-RI v2 Dataset Series"@en;
-  dcterms:description "SHACL mandatory definitions for the Health-RI v2 model for Dataset Series."@en;
+  dct:description "SHACL mandatory definitions for the Health-RI v2 model for Dataset Series."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-03-13T12:15:20.450Z"^^xsd:dateTime .
+  dct:modified "2025-04-23T13:25:09.770Z"^^xsd:dateTime .
 
 hri:DatasetSeriesShape a sh:NodeShape;
   rdfs:label "DatasetSeries"@en;
@@ -60,7 +60,7 @@ hri:DatasetSeriesShape a sh:NodeShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:description> sh:path dcterms:description;
+<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:description> sh:path dct:description;
   sh:name "description"@en;
   sh:description "A free-text account of the Dataset Series."@en;
   sh:minCount 1;
@@ -70,7 +70,7 @@ hri:DatasetSeriesShape a sh:NodeShape;
   dash:editor dash:TextFieldEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:accrualPeriodicity> sh:path
-    dcterms:accrualPeriodicity;
+    dct:accrualPeriodicity;
   sh:name "frequency"@en;
   sh:description "The frequency at which the Dataset Series is updated."@en;
   sh:maxCount 1;
@@ -78,14 +78,14 @@ hri:DatasetSeriesShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:spatial> sh:path dcterms:spatial;
+<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:spatial> sh:path dct:spatial;
   sh:name "geographical coverage"@en;
   sh:description "A geographic region that is covered by the Dataset Series."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:modified> sh:path dcterms:modified;
+<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:modified> sh:path dct:modified;
   sh:name "modification date"@en;
   sh:description "The most recent date on which the Dataset Series was changed or modified."@en;
   sh:maxCount 1;
@@ -94,7 +94,7 @@ hri:DatasetSeriesShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:publisher> sh:path dcterms:publisher;
+<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:publisher> sh:path dct:publisher;
   sh:name "publisher"@en;
   sh:description "An entity (organisation) responsible for ensuring the coherency of the Dataset Series."@en;
   sh:maxCount 1;
@@ -102,7 +102,7 @@ hri:DatasetSeriesShape a sh:NodeShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:issued> sh:path dcterms:issued;
+<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:issued> sh:path dct:issued;
   sh:name "release date"@en;
   sh:description "The date of formal issuance (e.g., publication) of the Dataset Series."@en;
   sh:maxCount 1;
@@ -111,14 +111,14 @@ hri:DatasetSeriesShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:temporal> sh:path dcterms:temporal;
+<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:temporal> sh:path dct:temporal;
   sh:name "temporal coverage"@en;
   sh:description "A temporal period that the Dataset Series covers."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:title> sh:path dcterms:title;
+<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:title> sh:path dct:title;
   sh:name "title"@en;
   sh:description "A name given to the Dataset Series."@en;
   sh:minCount 1;
@@ -130,9 +130,9 @@ hri:DatasetSeriesShape a sh:NodeShape;
 hri:AgentShapeAgentShape a owl:Ontology;
   rdfs:label "Agent class"@en;
   rdfs:comment "Excel template for Agent class"@en;
-  dcterms:description "This is an excel template for Agent class in Health RI Core plateau 2."@en;
+  dct:description "This is an excel template for Agent class in Health RI Core plateau 2."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2024-02-10T00:00:00.000Z"^^xsd:dateTime .
+  dct:modified "2024-02-10T00:00:00.000Z"^^xsd:dateTime .
 
 hri:AgentShape a sh:NodeShape;
   rdfs:label "Agent"@en;
@@ -142,7 +142,7 @@ hri:AgentShape a sh:NodeShape;
     <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishernote>, <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishertype>,
     <http://data.health-ri.nl/core/p2/AgentShape#dct:type>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:homepage> .
 
-<http://data.health-ri.nl/core/p2/AgentShape#dct:spatial> sh:path dcterms:spatial;
+<http://data.health-ri.nl/core/p2/AgentShape#dct:spatial> sh:path dct:spatial;
   sh:name "country"@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
@@ -155,10 +155,11 @@ hri:AgentShape a sh:NodeShape;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   sh:pattern "^mailto:.+@.+\\..+$";
+  sh:defaultValue <mailto:>;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/AgentShape#dct:identifier> sh:path dcterms:identifier;
+<http://data.health-ri.nl/core/p2/AgentShape#dct:identifier> sh:path dct:identifier;
   sh:name "identifier"@en;
   sh:description "A unique identifier of the agent."@en;
   sh:minCount 1;
@@ -191,7 +192,7 @@ hri:AgentShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<http://data.health-ri.nl/core/p2/AgentShape#dct:type> sh:path dcterms:type;
+<http://data.health-ri.nl/core/p2/AgentShape#dct:type> sh:path dct:type;
   sh:name "type"@en;
   sh:description "A type of the agent that makes the Catalogue or Dataset available"@en;
   sh:maxCount 1;
@@ -211,9 +212,9 @@ hri:AgentShape a sh:NodeShape;
 hri:KindShapeKindShape a owl:Ontology;
   rdfs:label "Kind"@en;
   rdfs:comment "Health-RI v2 Kind."@en;
-  dcterms:description "SHACL mandatory definitions for the Health-RI v2 model for vcard:Kind."@en;
+  dct:description "SHACL mandatory definitions for the Health-RI v2 model for vcard:Kind."@en;
   owl:versionInfo "0.1";
-  dcterms:modified "2025-03-13T12:15:54.050Z"^^xsd:dateTime .
+  dct:modified "2025-04-23T13:25:11.960Z"^^xsd:dateTime .
 
 hri:KindShape a sh:NodeShape;
   rdfs:label "Kind"@en;
@@ -235,6 +236,7 @@ hri:KindShape a sh:NodeShape;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   sh:pattern "^mailto:.+@.+\\..+$";
+  sh:defaultValue <mailto:>;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
