@@ -163,7 +163,6 @@ hri:AgentShape a sh:NodeShape;
   sh:name "identifier"@en;
   sh:description "A unique identifier of the agent."@en;
   sh:minCount 1;
-  sh:maxCount 1;
   sh:nodeKind sh:Literal;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .

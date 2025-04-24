@@ -72,19 +72,19 @@ hri:DatasetShape a owl:Ontology, sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-4f95f1404f1e487ea50442ff9675ecff9-0F8FCE48429CA7F5158C889E25EBEC82;
+  sh:in _:genid-6a604983e8664d37a1ce648860a6873d9-A4F8C566E3D11C9A59DEBF73B60C3A6F;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-4f95f1404f1e487ea50442ff9675ecff9-0F8FCE48429CA7F5158C889E25EBEC82 rdf:first
+_:genid-6a604983e8664d37a1ce648860a6873d9-A4F8C566E3D11C9A59DEBF73B60C3A6F rdf:first
     eu:PUBLIC;
-  rdf:rest _:genid-4f95f1404f1e487ea50442ff9675ecff9-A9A638A2DF2E416646FA071329FCEE2A .
+  rdf:rest _:genid-6a604983e8664d37a1ce648860a6873d9-EB7992645AB487168EF7E341B86543AF .
 
-_:genid-4f95f1404f1e487ea50442ff9675ecff9-A9A638A2DF2E416646FA071329FCEE2A rdf:first
+_:genid-6a604983e8664d37a1ce648860a6873d9-EB7992645AB487168EF7E341B86543AF rdf:first
     eu:RESTRICTED;
-  rdf:rest _:genid-4f95f1404f1e487ea50442ff9675ecff9-A285BD426B6EC32231255310A2357CF7 .
+  rdf:rest _:genid-6a604983e8664d37a1ce648860a6873d9-63129C2972DE0464775C6D3A0A1DDC58 .
 
-_:genid-4f95f1404f1e487ea50442ff9675ecff9-A285BD426B6EC32231255310A2357CF7 rdf:first
+_:genid-6a604983e8664d37a1ce648860a6873d9-63129C2972DE0464775C6D3A0A1DDC58 rdf:first
     eu:NON_PUBLIC;
   rdf:rest rdf:nil .
 
@@ -497,7 +497,6 @@ hri:AgentShape a sh:NodeShape;
   sh:name "identifier"@en;
   sh:description "A unique identifier of the agent."@en;
   sh:minCount 1;
-  sh:maxCount 1;
   sh:nodeKind sh:Literal;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
