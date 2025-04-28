@@ -143,7 +143,8 @@ Next to the UML, a tabular overview of all classes and properties, including the
 
 ### [Catalog](https://www.w3.org/TR/vocab-dcat-3/#Class:Catalog)
 
-A catalogue or repository that hosts the Datasets or Data Services being described.
+A catalogue or repository that hosts the Datasets or Data Services being described. <br><br>
+`Usage note`: A catalog that is listed in the [National Health Data catalog](https://catalogus.healthdata.nl/) and contains one or several datasets and/or data services. Used to describe a bundle of datasets (and other resources) under a single title, for example, a collection.
 
 #### Mandatory Properties
 
@@ -177,7 +178,9 @@ A catalogue or repository that hosts the Datasets or Data Services being describ
 
 ### [Dataset](https://www.w3.org/TR/vocab-dcat-3/#Class:Dataset)
 
-A conceptual entity that represents the information published.
+A conceptual entity that represents the information published. <br><br>
+`Usage note`: When focusing on health data, a dataset typically contains structured information gathered from a study or research project related to health topics. This might include clinical trial results, public health statistics, patient records, survey data, etc. <br> How the data in a dataset can be accessed is defined in the [Distribution](#distribution), which usually points to the actual data files available for access or download. Datasets are often included in a catalog, which organizes and provides metadata about multiple datasets, making them easier to find and use. The term 'agent' refers to any entity responsible for creating, maintaining, or distributing the dataset.
+
 
 #### Mandatory Properties
 
@@ -239,7 +242,8 @@ A conceptual entity that represents the information published.
 
 ### [Data Service](http://www.w3.org/ns/dcat#DataService)
 
-A collection of operations that provides access to one or more datasets or data processing functions.
+A collection of operations that provides access to one or more datasets or data processing functions. <br><br>
+`Usage note`: A Data service offers the possibility to access and query the data of one (or several datasets) through operations. It offers more extensive possibilities to access the data than the [Distribution](#distribution) through a variety of potential actions. An example of a Data Service is a [Beacon API](https://docs.genomebeacons.org/) to query genomics data.
 
 #### Mandatory Properties
 
@@ -276,7 +280,8 @@ A collection of operations that provides access to one or more datasets or data 
 
 ### [Dataset Series](https://www.w3.org/TR/vocab-dcat-3/#Class:Dataset_Series)
 
-A collection of datasets that are published separately, but share some characteristics that group them.
+A collection of datasets that are published separately, but share some characteristics that group them. <br><br>
+`Usage note`: A Dataset Series is a collection of similar datasets that are somehow interrelated but published separately. An example is consecutive datasets split by year and/or datasets separated by location. Instead of being made available in a single dataset, the individual (e.g. yearly) datasets are linked together with the Dataset Series class.
 
 #### Mandatory Properties
 
@@ -302,7 +307,8 @@ A collection of datasets that are published separately, but share some character
 
 ### [Distribution](http://www.w3.org/ns/dcat#Distribution)
 
-A physical embodiment of the Dataset in a particular format.
+A physical embodiment of the Dataset in a particular format. <br><br>
+`Usage note`: Used to describe the different ways that a single dataset can be made available in. I.e., it can be downloaded, or it can be accessed online in one or more distributions (e.g. one in a downloadable `.csv` file, another file with an access or query webpage)
 
 #### Mandatory Properties
 
@@ -338,7 +344,8 @@ A physical embodiment of the Dataset in a particular format.
 
 ### [Agent](http://xmlns.com/foaf/spec/#term_Agent)
 
-Any entity carrying out actions with respect to the (Core) entities Catalogue, Datasets, Data Services and Distributions.
+Any entity carrying out actions with respect to the (Core) entities Catalogue, Datasets, Data Services and Distributions. <br><br>
+`Usage note`: A person or organisation that is associated with the catalogue or dataset. This class is instantiated in these classes whenever the range is `foaf:Agent`.
 
 #### Mandatory Properties
 
@@ -360,7 +367,8 @@ Any entity carrying out actions with respect to the (Core) entities Catalogue, D
 
 ### [Kind](https://www.w3.org/TR/vcard-rdf/#d4e1819)
 
-A description following the vCard specification.
+A description following the vCard specification. <br><br>
+`Usage note`: Used to describe contact information for [Dataset](#dataset) and [Dataset Series](#dataset-series). This class is instantiated in these classes whenever the range is `vcard:Kind`.
 
 #### Mandatory Properties
 
@@ -377,7 +385,8 @@ A description following the vCard specification.
 
 ### [Attribution](https://www.w3.org/ns/prov#Attribution)
 
-Attribution is the ascribing of an entity to an agent.
+Attribution is the ascribing of an entity to an agent. <br><br>
+`Usage note`: This class is instantiated by the property "qualified attribution".
 
 #### Mandatory Properties
 
@@ -392,7 +401,8 @@ There are currently no mandatory properties for this class.
 
 ### [Checksum](https://spdx.org/rdf/terms/#d4e2091)
 
-A value that allows the contents of a file to be authenticated.
+A value that allows the contents of a file to be authenticated. <br><br>
+`Usage note`: his class is instantiated by properties in other classes that have the range `spdx:Checksum`.
 
 #### Mandatory Properties
 
@@ -407,7 +417,8 @@ There are currently no recommended properties for this class.
 
 ### [Identifier](https://semiceu.github.io/DCAT-AP/releases/3.0.0/#Identifier)
 
-An identifier in a particular context, consisting of the string that is the identifier; an optional identifier for the identifier scheme; an optional identifier for the version of the identifier scheme; an optional identifier for the agency that manages the identifier scheme.
+An identifier in a particular context, consisting of the string that is the identifier; an optional identifier for the identifier scheme; an optional identifier for the version of the identifier scheme; an optional identifier for the agency that manages the identifier scheme. <br><br>
+`Usage note`: This class is instantiated by the property "other identifier".
 
 #### Mandatory Properties
 
@@ -423,7 +434,8 @@ An identifier in a particular context, consisting of the string that is the iden
 
 ### [Period of time](https://semiceu.github.io/DCAT-AP/releases/3.0.0/#Periodoftime)
 
-An interval of time that is named or defined by its start and end dates.
+An interval of time that is named or defined by its start and end dates. <br><br>
+`Usage note`: This class is instantiated by properties in other classes that have the range `dct:PeriodOfTime`.
 
 #### Mandatory Properties
 
@@ -438,7 +450,8 @@ There are currently no mandatory properties for this class.
 
 ### [Relationship](https://w3c.github.io/dxwg/dcat/#Class:Relationship)
 
-An association class for attaching additional information to a relationship between DCAT Resources.
+An association class for attaching additional information to a relationship between DCAT Resources. <br><br>
+`Usage note`: This class is instantiated by the property "qualified relation" (`dcat:qualifiedRelation`) in other classes. Use this class to describe a relationship with another resource or dataset. Within the class, that resource is indicated, as well as the role this resource has in relation to the described one. The role is indicated based on a controlled vocabulary.
 
 #### Mandatory Properties
 
@@ -453,7 +466,8 @@ There are currently no recommended properties for this class.
 
 ### [Quality certificate](https://www.w3.org/TR/vocab-dqv/#dqv:QualityCertificate)
 
-An annotation that associates a resource (especially a dataset or a distribution) to another resource (for example, a document) that certifies the resource's quality according to a set of quality assessment rules.
+An annotation that associates a resource (especially a dataset or a distribution) to another resource (for example, a document) that certifies the resource's quality according to a set of quality assessment rules. <br><br>
+`Usage note`: This class is instantiated by the property "quality annotation" (`dqv:hasQualityAnnotation`) in other classes. Use this class to provide a link between the resource or dataset and an associated quality annotation.
 
 #### Mandatory Properties
 
