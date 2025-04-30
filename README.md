@@ -51,31 +51,31 @@ Please note that HealthDCAT-AP has currently not officially been finalized and i
 
 In addition, several **ELSI**-related metadata fields, as [gathered](https://health-ri.atlassian.net/wiki/spaces/HA/pages/469893133/Metadata+rondom+gebruiksvoorwaarden+en+authenticatie+autorisatie+en+ELSI+aspecten#Catalogus) by the Health-RI ELSI team, are included in this version 2 of the Health-RI core metadata schema, although not mandatory. The use of these properties will be explored and evaluated once the new version is implemented in the catalogue.
 
-We propose to indicate the **nature of the data** (e.g. whole genome sequencing data, or questionnaire data) with `healthdcatap:healthTheme`. In case you are describing **synthetic data**, you can use the `dct:type` property with the required controlled vocabluary (including a value for synthetic data) in the `dcat:Dataset` class.
+We propose to indicate the **nature of the data** (e.g. whole genome sequencing data, or questionnaire data) with `healthdcatap:healthTheme`. In case you are describing **synthetic data**, you can use the `dct:type` property with the required controlled vocabulary (including a value for synthetic data) in the `dcat:Dataset` class.
 
 Several classes have been included from [DCAT-AP NL](https://docs.geostandaarden.nl/dcat/dcat-ap-nl30/) and draft [HealthDCAT-AP](https://healthdcat-ap.github.io/) without further specification so far at Health-RI. This includes the [DataService class](#data-service). Therefore, these classes can be used, but are not yet further modelled to reflect specific needs of dataholders for the National Health Data Catalogue.
 
 ### Used Prefixes
 
-| **Prefix** | **Namespace IRI** |
-| --- | --- |
-| `adms` | `http://www.w3.org/ns/adms#` |
-| `dcat` | `http://www.w3.org/ns/dcat#` |
-| `dcatap` | `http://data.europa.eu/r5r/` |
-| `dct` | `http://purl.org/dc/terms/` |
-| `dpv` | `https://w3id.org/dpv#` |
-| `dqv` | `https://www.w3.org/TR/vocab-dqv/` |
-| `eli` | `http://data.europa.eu/eli/ontology#` |
-| `foaf` | `http://xmlns.com/foaf/0.1/` |
-| `owl` | `http://www.w3.org/2002/07/owl#` |
-| `rdf` | `http://www.w3.org/1999/02/22-rdf-syntax-ns#` |
-| `rdfs` | `http://www.w3.org/2000/01/rdf-schema#` |
-| `skos` | `http://www.w3.org/2004/02/skos/core#` |
-| `spdx` | `http://spdx.org/rdf/terms#` |
-| `time` | `http://www.w3.org/2006/time#` |
-| `vcard` | `http://www.w3.org/2006/vcard/ns#` |
-| `xsd` | `http://www.w3.org/2001/XMLSchema#` |
-| `healthdcatap` | TBD |
+| **Prefix**     | **Namespace IRI**                             |
+| -------------- | --------------------------------------------- |
+| `adms`         | `http://www.w3.org/ns/adms#`                  |
+| `dcat`         | `http://www.w3.org/ns/dcat#`                  |
+| `dcatap`       | `http://data.europa.eu/r5r/`                  |
+| `dct`          | `http://purl.org/dc/terms/`                   |
+| `dpv`          | `https://w3id.org/dpv#`                       |
+| `dqv`          | `https://www.w3.org/TR/vocab-dqv/`            |
+| `eli`          | `http://data.europa.eu/eli/ontology#`         |
+| `foaf`         | `http://xmlns.com/foaf/0.1/`                  |
+| `owl`          | `http://www.w3.org/2002/07/owl#`              |
+| `rdf`          | `http://www.w3.org/1999/02/22-rdf-syntax-ns#` |
+| `rdfs`         | `http://www.w3.org/2000/01/rdf-schema#`       |
+| `skos`         | `http://www.w3.org/2004/02/skos/core#`        |
+| `spdx`         | `http://spdx.org/rdf/terms#`                  |
+| `time`         | `http://www.w3.org/2006/time#`                |
+| `vcard`        | `http://www.w3.org/2006/vcard/ns#`            |
+| `xsd`          | `http://www.w3.org/2001/XMLSchema#`           |
+| `healthdcatap` | TBD                                           |
 
 ### Overview and Diagram
 
@@ -95,7 +95,7 @@ Next to the UML, a tabular overview of all classes and properties, including the
 - We discriminate between main and supporting classes, and within each group between mandatory and recommended classes.
 
 - The main classes are [Catalog](#catalog), [Dataset](#dataset), [Data Service](#data-service), [Dataset Series](#dataset-series), [Distribution](#distribution)
-- The supporting classes are [Agent](#agent), [Kind](#kind), [Attribution](#attribution), [Checksum](#checksum), [Identifier](#identifier), [Period of time](#period-of-time), [Relationship](#relationship), [Quality certificate](#quality-certificate) 
+- The supporting classes are [Agent](#agent), [Kind](#kind), [Attribution](#attribution), [Checksum](#checksum), [Identifier](#identifier), [Period of time](#period-of-time), [Relationship](#relationship), [Quality certificate](#quality-certificate)
 
 - Certain properties (e.g. `dct:publisher`, `dct:creator`, `dct:contactPoint`) in several of the main classes refer to the supporting classes (e.g. [`foaf:Agent`](#agent), [`vcard:Kind`](#kind)). When used, these properties will instantiate new instances of the specific supporting classes for each usage.
 This means that, for example, the `dct:publisher` and `dct:creator` can instantiate [`foaf:Agent`](#agent) at two separate times with different content (organisation vs. person).
@@ -187,7 +187,6 @@ A catalogue or repository that hosts the Datasets or Data Services being describ
 A conceptual entity that represents the information published. <br><br>
 `Usage note`: When focusing on health data, a dataset typically contains structured information gathered from a study or research project related to health topics. This might include clinical trial results, public health statistics, patient records, survey data, etc. <br> How the data in a dataset can be accessed is defined in the [Distribution](#distribution), which usually points to the actual data files available for access or download. Datasets are often included in a catalog, which organizes and provides metadata about multiple datasets, making them easier to find and use. The term 'agent' refers to any entity responsible for creating, maintaining, or distributing the dataset.
 
-
 #### Mandatory Properties
 
 | **Property name** | **Definition** | **URI** | **Controlled Vocabulary** | **rdfs:Range** | **Usage Note** | **Cardinality** | **Example** |
@@ -254,7 +253,7 @@ A collection of operations that provides access to one or more datasets or data 
 
 | **Property name** | **Definition** | **URI** | **Controlled Vocabulary** | **rdfs:Range** | **Usage Note** | **Cardinality** | **Example** |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| [access rights](http://purl.org/dc/terms/accessRights) | Information about who accesses the resource or an indication of its security status. | `dct:accessRights` | [EU Vocabularies Access Rights Authority List](http://publications.europa.eu/resource/authority/access-right) | [Rights Statement (IRI)](http://publications.europa.eu/resource/authority/access-right) | Information that indicates whether the Dataset is publicly accessible, has access restrictions, or is not public. This property is required to adopt one of the predefined values listed in the Access Rights Named Authority List provided by the Publications Office. This designation informs data users whether the dataset is considered open data or is classified as non-public. | 1 | For non-public data, use the value: `http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC` |
+| [access rights](http://purl.org/dc/terms/accessRights) | Information about who accesses the resource or an indication of its security status. | `dct:accessRights` | [EU Vocabularies Access Rights Authority List](http://publications.europa.eu/resource/authority/access-right) | [Rights Statement (IRI)](http://publications.europa.eu/resource/authority/access-right) | Information that indicates whether the Dataset is publicly accessible, has access restrictions, or is not public. This property is required to adopt one of the predefined values listed in the Access Rights Named Authority List provided by the Publications Office. This designation informs data users whether the dataset is considered open data or is classified as non-public. | 1 | For non-public data, use the value: `http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC` |
 | [contact point](https://www.w3.org/TR/vocab-dcat-3/#Property:resource_contact_point) | Relevant contact information for the cataloged resource. | `dcat:contactPoint` | NA | `vcard:Kind` | This property points to a contact point (department or person) that can answer questions about the data service. Details on how to describe these are provided under class `vcard:Kind`. <br> Whenever possible, use **general contact information** (for example from a department) instead of contact information of an individual. | 1 | mailto: `data-access-committee@xumc.nl` <br> with the name Data Access Committee of the x UMC (see `vcard:Kind`) |
 | [description](http://purl.org/dc/terms/description) | An account of the resource. | `dct:description` | NA | `rdfs:Literal` | Briefly describe the data service provided. You can repeat this description in multiple languages. | 1..\* | A data service that provides API access to real-time electrocardiogram (ECG) monitoring data for clinical research applications. |
 | [end point description](https://www.w3.org/TR/vocab-dcat-3/#Property:data_service_endpoint_description) | A description of the services available via the end-points, including their operations, parameters, etc. | `dcat:endpointDescription` | NA | `rdfs:Literal` | Provides technical documentation that explains how to access and interact with the data service’s endpoint. | 1 | TBD |
@@ -279,7 +278,7 @@ A collection of operations that provides access to one or more datasets or data 
 | [landing page](https://www.w3.org/TR/vocab-dcat-3/#Property:resource_landing_page) | A Web page that can be navigated to in a Web browser to gain access to the catalog, a dataset, its distributions and/or additional information. | `dcat:landingPage` | NA | `foaf:Document` | It is intended to point to a landing page at the original data service provider, not to a page on a site of a third party, such as an aggregator. | 0..\* |
 | [language](http://purl.org/dc/terms/language) | A language of the resource. | `dct:language` | [EU Vocabularies Language Authority List](http://publications.europa.eu/resource/authority/language) | `dct:LinguisticSystem` | Indicates the natural language used in the data service, indicated with a value from the [EU controlled vocabulary](https://publications.europa.eu/resource/authority/language). | 0..\* |
 | [modification date](http://purl.org/dc/terms/modified) | Date on which the resource was changed. | `dct:modified` | NA | `xsd:dateTime` | This property indicates the date of the last changes to the dataset, not the metadata record. An absent value may mean the resource hasn't changed since publication, the modification date is unknown, or the resource is continuously updated. | 0..1 |
-| [other identifier](https://docs.geostandaarden.nl/dcat/dcat-ap-nl30/#dataservice-other-identifier) | Links a resource to an adms:Identifier class. | `adms:identifier` | NA | `adms:Identifier` | NA | 0..\* |
+| [other identifier](https://docs.geostandaarden.nl/dcat/dcat-ap-nl30/#dataservice-other-identifier) | Links a resource to an `adms:Identifier` class. | `adms:identifier` | NA | `adms:Identifier` | NA | 0..\* |
 | [rights](http://purl.org/dc/terms/rights) | Information about rights held in and over the resource. | `dct:rights` | NA | `dct:RightsStatement` | NA | 0..\* |
 | [serves dataset](https://www.w3.org/TR/vocab-dcat-3/#Property:data_service_serves_dataset) | A collection of data that this data service can distribute. | `dcat:servesDataset` | NA | `dcat:Dataset` | This property connects the Data Service class to its corresponding dataset(s), ensuring every data service links to at least one `dcat:Dataset`. While essential for metadata implementation teams on each node, it's less relevant for researchers to collect. | 0..\* |
 
