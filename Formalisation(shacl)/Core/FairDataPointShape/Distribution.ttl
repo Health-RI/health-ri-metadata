@@ -78,7 +78,7 @@ hri:DistributionShape a sh:NodeShape;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
   sh:datatype xsd:integer;
-  sh:minExclusive "0";
+  sh:minExclusive 0;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
