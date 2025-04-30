@@ -407,7 +407,7 @@ There are currently no mandatory properties for this class.
 ### [Checksum](https://spdx.org/rdf/terms/#d4e2091)
 
 A value that allows the contents of a file to be authenticated. <br><br>
-`Usage note`: his class is instantiated by properties in other classes that have the range `spdx:Checksum`.
+`Usage note`: This class is instantiated by properties in other classes that have the range `spdx:Checksum`.
 
 #### Mandatory Properties
 
