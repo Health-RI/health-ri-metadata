@@ -3,6 +3,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix example: <https://data.sparna.fr/shapes-example/> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
@@ -18,6 +19,7 @@
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix dcatap: <http://data.europa.eu/r5r/> .
 @prefix org: <http://www.w3.org/ns/org#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 @prefix xls2rdf: <https://xls2rdf.sparna.fr/vocabulary#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
@@ -25,15 +27,13 @@
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix status: <http://publications.europa.eu/resource/authority/distribution-status/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 
 <https://data.sparna.fr/shapes-example#> a owl:Ontology;
   rdfs:label "Distribution"@en;
   rdfs:comment "Health-RI v2 Distribution."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Distribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-23T13:25:14.930Z"^^xsd:dateTime .
+  dct:modified "2025-05-02T05:12:16.430Z"^^xsd:dateTime .
 
 hri:DistributionShape a sh:NodeShape;
   rdfs:label "Distribution"@en;
@@ -198,23 +198,23 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-6a604983e8664d37a1ce648860a6873d33-B396BA40C83BE1233A13144FBEBE93C4;
+  sh:in _:genid-da6932df208249999cca8f74f47df74831-B8C0D19C0D0A0AADD3F5BBB535A1757B;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-6a604983e8664d37a1ce648860a6873d33-B396BA40C83BE1233A13144FBEBE93C4 rdf:first
+_:genid-da6932df208249999cca8f74f47df74831-B8C0D19C0D0A0AADD3F5BBB535A1757B rdf:first
     status:COMPLETED;
-  rdf:rest _:genid-6a604983e8664d37a1ce648860a6873d33-442A834CC308C8C0D654E85281B9F6EB .
+  rdf:rest _:genid-da6932df208249999cca8f74f47df74831-BC386D931CCC43EB5DCD940CDE56E1B4 .
 
-_:genid-6a604983e8664d37a1ce648860a6873d33-442A834CC308C8C0D654E85281B9F6EB rdf:first
+_:genid-da6932df208249999cca8f74f47df74831-BC386D931CCC43EB5DCD940CDE56E1B4 rdf:first
     status:DEVELOP;
-  rdf:rest _:genid-6a604983e8664d37a1ce648860a6873d33-42082B56D9E213FC9A7E6F60C32EDE03 .
+  rdf:rest _:genid-da6932df208249999cca8f74f47df74831-05FAACE1BBFD2C2DEC85572B168435DA .
 
-_:genid-6a604983e8664d37a1ce648860a6873d33-42082B56D9E213FC9A7E6F60C32EDE03 rdf:first
+_:genid-da6932df208249999cca8f74f47df74831-05FAACE1BBFD2C2DEC85572B168435DA rdf:first
     status:WITHDRAWN;
-  rdf:rest _:genid-6a604983e8664d37a1ce648860a6873d33-92A8D1416B18A12FB6A5198CD2A204AE .
+  rdf:rest _:genid-da6932df208249999cca8f74f47df74831-AD0B8CAF3108E4231B2E6E045AC9894E .
 
-_:genid-6a604983e8664d37a1ce648860a6873d33-92A8D1416B18A12FB6A5198CD2A204AE rdf:first
+_:genid-da6932df208249999cca8f74f47df74831-AD0B8CAF3108E4231B2E6E045AC9894E rdf:first
     status:DEPRECATED;
   rdf:rest rdf:nil .
 
@@ -239,7 +239,7 @@ hri:aux-PeriodOfTimeShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Period of Time"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-24T08:40:25.850Z"^^xsd:dateTime .
+  dct:modified "2025-04-24T09:10:17.860Z"^^xsd:dateTime .
 
 hri:PeriodOfTimeShape a sh:NodeShape;
   rdfs:label "Period of Time"@en;

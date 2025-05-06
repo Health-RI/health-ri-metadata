@@ -3,6 +3,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix example: <https://data.sparna.fr/shapes-example/> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
@@ -18,6 +19,7 @@
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix dcatap: <http://data.europa.eu/r5r/> .
 @prefix org: <http://www.w3.org/ns/org#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 @prefix xls2rdf: <https://xls2rdf.sparna.fr/vocabulary#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
@@ -25,15 +27,13 @@
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix status: <http://publications.europa.eu/resource/authority/distribution-status/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 
 <https://data.sparna.fr/shapes-example#> a owl:Ontology;
   rdfs:label "Distribution"@en;
   rdfs:comment "Health-RI v2 Distribution."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Distribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-23T13:25:14.930Z"^^xsd:dateTime .
+  dct:modified "2025-05-02T05:12:16.430Z"^^xsd:dateTime .
 
 hri:DistributionShape a sh:NodeShape;
   rdfs:label "Distribution"@en;
@@ -78,7 +78,7 @@ hri:DistributionShape a sh:NodeShape;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
   sh:datatype xsd:integer;
-  sh:minExclusive "0";
+  sh:minExclusive 0;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -198,20 +198,20 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:99d14728f28047199352ee56ba3ec33e2;
+  sh:in _:c43d47d21f8e45a0a6b80a39c0fca5702;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:99d14728f28047199352ee56ba3ec33e2 rdf:first status:COMPLETED;
-  rdf:rest _:99d14728f28047199352ee56ba3ec33e3 .
+_:c43d47d21f8e45a0a6b80a39c0fca5702 rdf:first status:COMPLETED;
+  rdf:rest _:c43d47d21f8e45a0a6b80a39c0fca5703 .
 
-_:99d14728f28047199352ee56ba3ec33e3 rdf:first status:DEVELOP;
-  rdf:rest _:99d14728f28047199352ee56ba3ec33e4 .
+_:c43d47d21f8e45a0a6b80a39c0fca5703 rdf:first status:DEVELOP;
+  rdf:rest _:c43d47d21f8e45a0a6b80a39c0fca5704 .
 
-_:99d14728f28047199352ee56ba3ec33e4 rdf:first status:WITHDRAWN;
-  rdf:rest _:99d14728f28047199352ee56ba3ec33e5 .
+_:c43d47d21f8e45a0a6b80a39c0fca5704 rdf:first status:WITHDRAWN;
+  rdf:rest _:c43d47d21f8e45a0a6b80a39c0fca5705 .
 
-_:99d14728f28047199352ee56ba3ec33e5 rdf:first status:DEPRECATED;
+_:c43d47d21f8e45a0a6b80a39c0fca5705 rdf:first status:DEPRECATED;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#dcat:temporalResolution> sh:path
