@@ -69,17 +69,17 @@ hri:DatasetShape a owl:Ontology, sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:f7895198615b4613985abdc7f240e94a6;
+  sh:in _:c43d47d21f8e45a0a6b80a39c0fca5706;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:f7895198615b4613985abdc7f240e94a6 rdf:first eu:PUBLIC;
-  rdf:rest _:f7895198615b4613985abdc7f240e94a7 .
+_:c43d47d21f8e45a0a6b80a39c0fca5706 rdf:first eu:PUBLIC;
+  rdf:rest _:c43d47d21f8e45a0a6b80a39c0fca5707 .
 
-_:f7895198615b4613985abdc7f240e94a7 rdf:first eu:RESTRICTED;
-  rdf:rest _:f7895198615b4613985abdc7f240e94a8 .
+_:c43d47d21f8e45a0a6b80a39c0fca5707 rdf:first eu:RESTRICTED;
+  rdf:rest _:c43d47d21f8e45a0a6b80a39c0fca5708 .
 
-_:f7895198615b4613985abdc7f240e94a8 rdf:first eu:NON_PUBLIC;
+_:c43d47d21f8e45a0a6b80a39c0fca5708 rdf:first eu:NON_PUBLIC;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#analytics> sh:path healthdcatap:analytics;
@@ -229,9 +229,8 @@ _:f7895198615b4613985abdc7f240e94a8 rdf:first eu:NON_PUBLIC;
 
 <http://data.health-ri.nl/core/p2/DatasetShape#legal-basis> sh:path dpv:hasLegalBasis;
   sh:name "legal basis"@en;
-  sh:description "The legal basis used to justify processing of personal data. The legal basis can be provided as a value from the dpv taxonomy"@en;
+  sh:description "The legal basis used to justify processing of personal data. The legal basis can be provided as a value from the dpv taxonomy and should be provided via IRI, for example https://w3id.org/dpv#Consent"@en;
   sh:nodeKind sh:IRI;
-  sh:defaultValue <https://w3id.org/dpv#>;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
@@ -290,9 +289,8 @@ _:f7895198615b4613985abdc7f240e94a8 rdf:first eu:NON_PUBLIC;
 
 <http://data.health-ri.nl/core/p2/DatasetShape#personal-data> sh:path dpv:hasPersonalData;
   sh:name "personal data"@en;
-  sh:description "Key elements that represent an individual in the dataset. Values can be picked from the dpv taxonomy."@en;
+  sh:description "Key elements that represent an individual in the dataset. Values can be picked from the dpv taxonomy, for example https://w3id.org/dpv/dpv-pd#Gender"@en;
   sh:nodeKind sh:IRI;
-  sh:defaultValue <https://w3id.org/dpv/dpv-pd#>;
   dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
@@ -315,9 +313,8 @@ _:f7895198615b4613985abdc7f240e94a8 rdf:first eu:NON_PUBLIC;
 
 <http://data.health-ri.nl/core/p2/DatasetShape#purpose> sh:path dpv:hasPurpose;
   sh:name "purpose"@en;
-  sh:description "Indicates association with Purpose. One (or many) category or sub-category of the purposes can be chosen from the taxonomy provided by dpv."@en;
+  sh:description "Indicates association with Purpose. One (or many) category or sub-category of the purposes can be chosen from the taxonomy provided by dpv and should be provided via IRI, for example https://w3id.org/dpv#ScientificResearch"@en;
   sh:nodeKind sh:IRI;
-  sh:defaultValue <https://w3id.org/dpv#>;
   dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 

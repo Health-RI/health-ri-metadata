@@ -71,19 +71,19 @@ hri:DatasetShape a owl:Ontology, sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-d2c31ce987834c0fba07706c044768d415-4FBC5B690ADE17A88B045B7FA0F62F57;
+  sh:in _:genid-da6932df208249999cca8f74f47df74815-BF6149BFECB8E84A2A1B741A5BC0B788;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-d2c31ce987834c0fba07706c044768d415-4FBC5B690ADE17A88B045B7FA0F62F57 rdf:first
+_:genid-da6932df208249999cca8f74f47df74815-BF6149BFECB8E84A2A1B741A5BC0B788 rdf:first
     eu:PUBLIC;
-  rdf:rest _:genid-d2c31ce987834c0fba07706c044768d415-AD09BC4120CB46D7443C455C307C6169 .
+  rdf:rest _:genid-da6932df208249999cca8f74f47df74815-9E62FD79D9F37683EED6986B00D42809 .
 
-_:genid-d2c31ce987834c0fba07706c044768d415-AD09BC4120CB46D7443C455C307C6169 rdf:first
+_:genid-da6932df208249999cca8f74f47df74815-9E62FD79D9F37683EED6986B00D42809 rdf:first
     eu:RESTRICTED;
-  rdf:rest _:genid-d2c31ce987834c0fba07706c044768d415-1B2498101F60F5A420D976B7FDABF6C9 .
+  rdf:rest _:genid-da6932df208249999cca8f74f47df74815-54095F1B2782AEC4774D363AA503AFE3 .
 
-_:genid-d2c31ce987834c0fba07706c044768d415-1B2498101F60F5A420D976B7FDABF6C9 rdf:first
+_:genid-da6932df208249999cca8f74f47df74815-54095F1B2782AEC4774D363AA503AFE3 rdf:first
     eu:NON_PUBLIC;
   rdf:rest rdf:nil .
 
@@ -234,9 +234,8 @@ _:genid-d2c31ce987834c0fba07706c044768d415-1B2498101F60F5A420D976B7FDABF6C9 rdf:
 
 <http://data.health-ri.nl/core/p2/DatasetShape#legal-basis> sh:path dpv:hasLegalBasis;
   sh:name "legal basis"@en;
-  sh:description "The legal basis used to justify processing of personal data. The legal basis can be provided as a value from the dpv taxonomy"@en;
+  sh:description "The legal basis used to justify processing of personal data. The legal basis can be provided as a value from the dpv taxonomy and should be provided via IRI, for example https://w3id.org/dpv#Consent"@en;
   sh:nodeKind sh:IRI;
-  sh:defaultValue <https://w3id.org/dpv#>;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
@@ -295,9 +294,8 @@ _:genid-d2c31ce987834c0fba07706c044768d415-1B2498101F60F5A420D976B7FDABF6C9 rdf:
 
 <http://data.health-ri.nl/core/p2/DatasetShape#personal-data> sh:path dpv:hasPersonalData;
   sh:name "personal data"@en;
-  sh:description "Key elements that represent an individual in the dataset. Values can be picked from the dpv taxonomy."@en;
+  sh:description "Key elements that represent an individual in the dataset. Values can be picked from the dpv taxonomy, for example https://w3id.org/dpv/dpv-pd#Gender"@en;
   sh:nodeKind sh:IRI;
-  sh:defaultValue <https://w3id.org/dpv/dpv-pd#>;
   dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
@@ -320,9 +318,8 @@ _:genid-d2c31ce987834c0fba07706c044768d415-1B2498101F60F5A420D976B7FDABF6C9 rdf:
 
 <http://data.health-ri.nl/core/p2/DatasetShape#purpose> sh:path dpv:hasPurpose;
   sh:name "purpose"@en;
-  sh:description "Indicates association with Purpose. One (or many) category or sub-category of the purposes can be chosen from the taxonomy provided by dpv."@en;
+  sh:description "Indicates association with Purpose. One (or many) category or sub-category of the purposes can be chosen from the taxonomy provided by dpv and should be provided via IRI, for example https://w3id.org/dpv#ScientificResearch"@en;
   sh:nodeKind sh:IRI;
-  sh:defaultValue <https://w3id.org/dpv#>;
   dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
@@ -474,12 +471,11 @@ hri:AgentShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/AgentShape#foaf:mbox> sh:path foaf:mbox;
   sh:name "email"@en;
-  sh:description "A email address via which contact can be made. This property SHOULD be used to provide the email address of the Agent, specified using fully qualified mailto: URI scheme [RFC6068]. The email SHOULD be used to establish a communication channel to the agent."@en;
+  sh:description "An email address via which contact can be made. This property SHOULD be used to provide the email address of the Agent, specified using fully qualified mailto: URI scheme. For example: mailto:info@example.com"@en;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   sh:pattern "^mailto:.+@.+\\..+$";
-  sh:defaultValue <mailto:>;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
@@ -537,7 +533,7 @@ hri:KindShapeKindShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Kind."@en;
   dct:description "SHACL mandatory definitions for the Health-RI v2 model for vcard:Kind."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-23T13:25:11.960Z"^^xsd:dateTime .
+  dct:modified "2025-05-02T06:45:41.960Z"^^xsd:dateTime .
 
 hri:KindShape a sh:NodeShape;
   rdfs:label "Kind"@en;
@@ -554,12 +550,11 @@ hri:KindShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/KindShape#vcard:hasEmail> sh:path vcard:hasEmail;
   sh:name "has email"@en;
-  sh:description "A email address via which contact can be made."@en;
+  sh:description "A email address via which contact can be made. Make sure you use the correct format, starting with 'mailto:'. For example: mailto:info@example.com"@en;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   sh:pattern "^mailto:.+@.+\\..+$";
-  sh:defaultValue <mailto:>;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
@@ -601,119 +596,3 @@ hri:PeriodOfTimeShape a sh:NodeShape;
   sh:datatype xsd:dateTime;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
-
-hri:aux-AttributionShape a owl:Ontology;
-  rdfs:label "Attribution"@en;
-  rdfs:comment "Health-RI v2 Attribution"@en;
-  dct:description "SHACL definitions for the Health-RI v2 model for Attribution."@en;
-  owl:versionInfo "0.1";
-  dct:modified "2025-04-23T13:25:20.480Z"^^xsd:dateTime .
-
-hri:AttributionShape a sh:NodeShape;
-  rdfs:label "Attribution"@en;
-  sh:targetClass prov:Attribution;
-  sh:property <http://data.health-ri.nl/core/p2/AttributionShape#prov:agent>, <http://data.health-ri.nl/core/p2/AttributionShape#dcat:hadRole> .
-
-<http://data.health-ri.nl/core/p2/AttributionShape#prov:agent> sh:path prov:agent;
-  sh:name "agent"@en;
-  sh:description "The agent that has a specific role with the described resource."@en;
-  sh:maxCount 1;
-  sh:node hri:AgentShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
-
-<http://data.health-ri.nl/core/p2/AttributionShape#dcat:hadRole> sh:path dcat:hadRole;
-  sh:name "role"@en;
-  sh:description "The nature of the relationship between the agent and the described resource, as indicated by a value from the controlled vocabulary."@en;
-  sh:maxCount 1;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:LabelViewer;
-  dash:editor dash:URIEditor .
-
-hri:aux-IdentifierShape a owl:Ontology;
-  rdfs:label "Identifier"@en;
-  rdfs:comment "Health-RI v2 Identifier"@en;
-  dct:description "SHACL definitions for the Health-RI v2 model for Identifier."@en;
-  owl:versionInfo "0.1";
-  dct:modified "2025-04-30T10:51:11.420Z"^^xsd:dateTime .
-
-hri:IdentifierShape a sh:NodeShape;
-  rdfs:label "Identifier"@en;
-  sh:targetClass adms:Identifier;
-  sh:property <http://data.health-ri.nl/core/p2/IdentifierShape#skos:notation>, <http://data.health-ri.nl/core/p2/IdentifierShape#adms:schemaAgency> .
-
-<http://data.health-ri.nl/core/p2/IdentifierShape#skos:notation> sh:path skos:notation;
-  sh:name "notation"@en;
-  sh:description "A string that is an identifier in the context of the identifier scheme referenced by its datatype."@en;
-  sh:minCount 1;
-  sh:maxCount 1;
-  sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
-  dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextFieldEditor .
-
-<http://data.health-ri.nl/core/p2/IdentifierShape#adms:schemaAgency> sh:path adms:schemaAgency;
-  sh:name "schema agency"@en;
-  sh:description "The name of the agency that issued the identifier."@en;
-  sh:maxCount 1;
-  sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
-  dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextFieldEditor .
-
-hri:aux-QualityCertificateShape a owl:Ontology;
-  rdfs:label "Quality Certificate"@en;
-  rdfs:comment "Health-RI v2 Quality Certificate"@en;
-  dct:description "SHACL definitions for the Health-RI v2 model for Quality Certificate."@en;
-  owl:versionInfo "0.1";
-  dct:modified "2025-04-24T11:33:11.140Z"^^xsd:dateTime .
-
-hri:QualityCertificateShape a sh:NodeShape;
-  rdfs:label "Quality Certificate"@en;
-  sh:targetClass dqv:QualityCertificate;
-  sh:property <http://data.health-ri.nl/core/p2/QualityCertificateShape#oa:hasTarget>,
-    <http://data.health-ri.nl/core/p2/QualityCertificateShape#oa:hasBody> .
-
-<http://data.health-ri.nl/core/p2/QualityCertificateShape#oa:hasTarget> sh:path oa:hasTarget;
-  sh:name "target"@en;
-  sh:description "The identifier of the described resource targetet by the quality certificate."@en;
-  sh:maxCount 1;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
-<http://data.health-ri.nl/core/p2/QualityCertificateShape#oa:hasBody> sh:path oa:hasBody;
-  sh:name "body"@en;
-  sh:description "The (web)location of the quality certificate."@en;
-  sh:maxCount 1;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
-hri:aux-RelationshipShape a owl:Ontology;
-  rdfs:label "Relationship"@en;
-  rdfs:comment "Health-RI v2 Relationship"@en;
-  dct:description "SHACL definitions for the Health-RI v2 model for Relationship."@en;
-  owl:versionInfo "0.1";
-  dct:modified "2025-04-30T10:50:43.190Z"^^xsd:dateTime .
-
-hri:RelationshipShape a sh:NodeShape;
-  rdfs:label "Relation"@en;
-  sh:targetClass dcat:Relationship;
-  sh:property <http://data.health-ri.nl/core/p2/RelationshipShape#dcat:hadRole>, <http://data.health-ri.nl/core/p2/RelationshipShape#dct:relation> .
-
-<http://data.health-ri.nl/core/p2/RelationshipShape#dcat:hadRole> sh:path dcat:hadRole;
-  sh:name "had role"@en;
-  sh:description "The nature of the relationship, as indicated via a value from the controlled vocabulary."@en;
-  sh:minCount 1;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
-<http://data.health-ri.nl/core/p2/RelationshipShape#dct:relation> sh:path dct:relation;
-  sh:name "relation"@en;
-  sh:description "A resource with a relationship to the cataloged resource."@en;
-  sh:minCount 1;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
