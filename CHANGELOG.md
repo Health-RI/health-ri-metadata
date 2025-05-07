@@ -4,7 +4,7 @@
 
 ### Overview
 
-The new version (v2) of the Health-RI model is somewhat more extensive than v1. While it introduces only a limited number of new mandatory properties, there are many new recommended properties a data holder can use to describe their data.
+The new version (v2) of the Health-RI model is somewhat more extensive than v1. While it introduces only a limited number of new mandatory properties, there are many new recommended properties a data holder can use to describe their data. Most of these are taken from the [HealthDCAT-AP draft](https://healthdcat-ap.github.io/).
 
 In [this sheet](Documents/Pre-release_metadata_CoreGenericHealth_p2.xlsx) we state for each property whether it is identical to v1, adapted compared to v1, or completely new (column I). In below table you find an overview of the number of mandatory and recommended properties in both versions.
 
@@ -58,7 +58,7 @@ In the tables below, you can find an overview of the number of mandatory and rec
 - `homepage`
 
 **Data Service**  
-- Now includes 10 mandatory properties (up from 2), aligning with **DCAT-AP NL** standards
+- Now includes 10 mandatory properties (up from 2), aligning with [DCAT-AP NL](https://docs.geostandaarden.nl/dcat/dcat-ap-nl30/) standards
 
 #### ➖ Deprecated Mandatory Properties (now optional or moved)
 
