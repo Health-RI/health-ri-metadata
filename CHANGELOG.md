@@ -26,7 +26,7 @@ In the tables below, you can find an overview of the number of mandatory and rec
 | Agent   | 2            | 4            | 0              | 4              |
 | Kind    | 2            | 2            | 1              | 1              |
 
-**Total**  
+**Totals for Mandatory Classes**  
 - **Mandatory properties**: increased from **17** to **21**  
 - **Recommended properties**: increased from **8** to **57**
 
@@ -38,7 +38,9 @@ In the tables below, you can find an overview of the number of mandatory and rec
 | Dataset Series | 10           | 2            | 3              | 10             |
 | Data Service   | 2            | 10           | 2              | 12             |
 
----
+**Totals for Remaining Classes**  
+- **Mandatory properties**: increased from **16** to **17**  
+- **Recommended properties**: increased from **7** to **39**
 
 ### Notable Changes
 
@@ -58,9 +60,17 @@ In the tables below, you can find an overview of the number of mandatory and rec
 - `homepage`
 
 **Data Service**  
-- Now includes 10 mandatory properties (up from 2), aligning with [DCAT-AP NL](https://docs.geostandaarden.nl/dcat/dcat-ap-nl30/) standards
+  Now includes 10 mandatory properties (up from 2), aligning with [DCAT-AP NL](https://docs.geostandaarden.nl/dcat/dcat-ap-nl30/) standards.
+-  `access rights`
+-  `contact point`
+-  `description`
+-  `end point description`
+-  `identifier`
+-  `licence`
+-  `publisher`
+-  `theme`
 
-#### ➖ Deprecated Mandatory Properties (now optional or moved)
+#### Deprecated Mandatory Properties (now optional or moved)
 
 **Dataset**  
 - `release date`  
