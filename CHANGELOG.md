@@ -1,6 +1,6 @@
 # Changelog
 
-## [v2] - YYYY-MM-DD  
+## [v.2.0.0.] - 2025-05-07  
 
 ### Overview
 
@@ -45,17 +45,17 @@ In the tables below, you can find an overview of the number of mandatory and rec
 #### New Mandatory Properties
 
 **Dataset**  
-- [access rights](https://healthdcat-ap.github.io/#Dataset.accessrights)
+- `access rights`
 - `keyword`  
-- [applicable legislation](https://healthdcat-ap.github.io/#Dataset.applicablelegislation) (uses ELI from EHDS for health datasets)
+- `applicable legislation`
 
 **Catalog**  
-- [contact point](https://docs.geostandaarden.nl/dcat/dcat-ap-nl30/#catalog-contact-point)
+- `contact point`
 - `dataset`
 
 **Agent**  
-- [email](https://healthdcat-ap.github.io/#Agent.email) 
-- [homepage](https://healthdcat-ap.github.io/#Agent)
+- `email`
+- `homepage`
 
 **Data Service**  
 - Now includes 10 mandatory properties (up from 2), aligning with **DCAT-AP NL** standards
