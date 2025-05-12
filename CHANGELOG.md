@@ -6,7 +6,7 @@
 
 The new version (v2) of the Health-RI model is somewhat more extensive than v1. While it introduces only a limited number of new mandatory properties, there are many new recommended properties a data holder can use to describe their data. Most of these are taken from the [HealthDCAT-AP draft](https://healthdcat-ap.github.io/).
 
-In [this sheet](Documents/metadata_CoreGenericHealth_p2.xlsx) we state for each property whether it is identical to v1, adapted compared to v1, or completely new (column I). In below table you find an overview of the number of mandatory and recommended properties in both versions.
+In [this sheet](Documents/Metadata_CoreGenericHealth_v2.xlsx) we state for each property whether it is identical to v1, adapted compared to v1, or completely new (column I). In below table you find an overview of the number of mandatory and recommended properties in both versions.
 
 ---
 

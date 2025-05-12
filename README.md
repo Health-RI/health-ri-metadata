@@ -85,7 +85,7 @@ In the UML, we have separated the main classes from supporting classes. Relation
 
 Properties that are derived from draft [HealthDCAT-AP](https://healthdcat-ap.github.io/) (mostly in the `dcat:Dataset` class) are marked blue.
 
-Next to the UML, a tabular overview of all classes and properties, including their range, cardinality, controlled vocabulary (if applicable), and usage note, can be found below. The same information can be referred to in [this sheet](Documents/metadata_CoreGenericHealth_p2.xlsx). In this sheet, we also state the history of each property (compared to v1 of the Health-RI core metadata schema) and the origin of the (new) constraint (whether it is taken from DCAT-AP v3, DCAT-AP NL or HealthDCAT-AP).
+Next to the UML, a tabular overview of all classes and properties, including their range, cardinality, controlled vocabulary (if applicable), and usage note, can be found below. The same information can be referred to in [this sheet](Documents/Metadata_CoreGenericHealth_v2.xlsx). In this sheet, we also state the history of each property (compared to v1 of the Health-RI core metadata schema) and the origin of the (new) constraint (whether it is taken from DCAT-AP v3, DCAT-AP NL or HealthDCAT-AP).
 
   UML of the Health-RI core metadata schema diagram (version 2):
 <img src="Images/2.0_plateau2/HRI_metadata_p2.png" alt="diagram" width=800 height=1100 title="diagram">
