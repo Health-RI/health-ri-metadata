@@ -1,5 +1,5 @@
 ## [Modules (Leaves/Petals)](https://github.com/Health-RI/health-ri-metadata/tree/master/Modules)
-  Note: The files in this folder are not currently maintained!
+  > Note: The files in this folder are not currently maintained!
   For information on Domain specific metadata, please refer to [this page](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/545783826/Domain-specific+metadata+schema+development).
 
 - [Omics](https://github.com/Health-RI/health-ri-metadata/tree/master/Modules/Omics)
