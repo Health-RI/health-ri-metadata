@@ -1,6 +1,6 @@
 # Core Metadata Schema Specification
 
-This is version 2.0 of Health-RI metadata schema.
+This is version 2.0 of Health-RI core metadata schema.
 
 - [Previous published version](#previous-published-version)
 - [Purpose and audience](#purpose-and-audience)
