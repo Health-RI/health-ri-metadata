@@ -28,8 +28,8 @@ abstract: >-
   Catalogue. It aligns with with DCAT-AP NL and draft
   HealthDCAT-AP, it includes Health-RI-specific and
   ELSI-related fields. The schema defines main and
-  supporting classes with structured properties to describe
-  datasets, catalogues, and data services.
+  supporting classes with structured properties to describe-
+  among others-datasets, catalogues, and data services.
 keywords:
   - metadata
   - FAIR
