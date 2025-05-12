@@ -1,3 +1,0 @@
-﻿patient_id;study_date;modality;body part;study_description;series_description;image_type
-1;15/05/2023;X-ray;Chest;PA view;ORIGINAL;PRIMARY
-2;16/05/2023;MRI;Brain;Weighted;ORIGINAL;PRIMARY
