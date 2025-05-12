@@ -1,0 +1,40 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Health-RI Core Metadata Schema
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - name: Stichting Health-RI
+    address: Jaarbeursplein 6
+    post-code: '3521 AL '
+    city: Utrecht
+    country: NL
+    location: 'Beatrixgebouw Jaarbeurs, 5e etage'
+    email: info@health-ri.nl
+    tel: '+31 85 3039498 '
+    website: 'https://www.health-ri.nl/'
+identifiers:
+  - type: url
+    value: 'https://w3id.org/health-ri/metadata/git'
+    description: Git repository
+repository-code: 'https://w3id.org/health-ri/metadata/git'
+abstract: >-
+  The Health-RI Core Metadata Schema (v2.0.0) is an
+  RDF-based specification for the Dutch National Health Data
+  Catalogue. Aligned with DCAT-AP NL and draft
+  HealthDCAT-AP, it includes Health-RI-specific and
+  ELSI-related fields. The schema defines main and
+  supporting classes with structured properties to describe
+  datasets, catalogues, and data services.
+keywords:
+  - metadata
+  - FAIR
+  - health data
+  - DCAT
+  - healthcare
+version: v2.0.0
+date-released: '2025-05-07'
