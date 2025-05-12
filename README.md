@@ -8,6 +8,9 @@ This is a pre-release version of Health-RI metadata schema 2.0.
   - [Scope and current state of the Health-RI core metadata schema](#scope-and-current-state-of-the-health-ri-core-metadata-schema)
   - [Used Prefixes](#used-prefixes)
   - [Overview and Diagram](#overview-and-diagram)
+- [Permanent URLs for Health-RI Metadata Resources](#permanent-urls-for-health-ri-metadata-resources)
+  - [Health-RI Metadata](#health-ri-metadata)
+  - [Project Homepage](#project-homepage)
 - [Main Classes](#main-classes)
   - [Mandatory Classes](#mandatory-classes)
   - [Recommended Classes](#recommended-classes)
@@ -107,6 +110,28 @@ This means that, for example, the `dct:publisher` and `dct:creator` can instanti
 - We aim to collect mapping examples from different data sources [here](https://health-ri.atlassian.net/wiki/spaces/FSD/folder/736985095). Currently, this collection only holds mapping examples to v1 though.
 
 - Please visit Confluence for general information about the [metadata schema](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/279281676/4A+Metadata+mapping) and [metadata mapping](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/290291734/Mapping+tutorial).
+
+## Permanent URLs for Health-RI Metadata Resources
+
+To support long-term FAIR (Findable, Accessible, Interoperable, and Reusable) access to Health-RI Metadata Schema resources, we provide persistent URLs using the [W3ID](https://w3id.org/) system. These permanent identifiers improve the **findability** and **accessibility** of the related artifacts.
+
+The following **W3ID redirects** are available for Health-RI metadata:
+
+### Health-RI Metadata
+
+- **Git repository:** [w3id.org/health-ri/metadata/git](https://w3id.org/health-ri/metadata/git)
+
+#### Versioning & Releases
+
+- **Latest release:** [w3id.org/health-ri/metadata/releases/latest](https://w3id.org/health-ri/metadata/releases/latest)
+- **All releases:** [w3id.org/health-ri/metadata/releases](https://w3id.org/health-ri/metadata/releases)
+- **Specific release:**
+  - Use the following pattern to reference a specific versioned release: `https://w3id.org/health-ri/metadata/releases/{version}`.
+  - For example: [w3id.org/health-ri/metadata/releases/v1.0.1](https://w3id.org/health-ri/metadata/releases/v1.0.1)
+
+### Project Homepage
+
+- **Main page:** [w3id.org/health-ri/metadata](https://w3id.org/health-ri/metadata)
 
 ## Main Classes
 
