@@ -40,7 +40,7 @@
     sh:nodeKind  sh:Literal;
     dash:editor dash:TextFieldEditor ;
     dash:viewer dash:LiteralViewer ;
-    sh:maxCount 1 ;
+    sh:minCount 1 ;
     sh:uniqueLang true ;
   ],
   [
