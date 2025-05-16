@@ -198,20 +198,24 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:c43d47d21f8e45a0a6b80a39c0fca5702;
+  sh:in _:genid-da6932df208249999cca8f74f47df74831-B8C0D19C0D0A0AADD3F5BBB535A1757B;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:c43d47d21f8e45a0a6b80a39c0fca5702 rdf:first status:COMPLETED;
-  rdf:rest _:c43d47d21f8e45a0a6b80a39c0fca5703 .
+_:genid-da6932df208249999cca8f74f47df74831-B8C0D19C0D0A0AADD3F5BBB535A1757B rdf:first
+    status:COMPLETED;
+  rdf:rest _:genid-da6932df208249999cca8f74f47df74831-BC386D931CCC43EB5DCD940CDE56E1B4 .
 
-_:c43d47d21f8e45a0a6b80a39c0fca5703 rdf:first status:DEVELOP;
-  rdf:rest _:c43d47d21f8e45a0a6b80a39c0fca5704 .
+_:genid-da6932df208249999cca8f74f47df74831-BC386D931CCC43EB5DCD940CDE56E1B4 rdf:first
+    status:DEVELOP;
+  rdf:rest _:genid-da6932df208249999cca8f74f47df74831-05FAACE1BBFD2C2DEC85572B168435DA .
 
-_:c43d47d21f8e45a0a6b80a39c0fca5704 rdf:first status:WITHDRAWN;
-  rdf:rest _:c43d47d21f8e45a0a6b80a39c0fca5705 .
+_:genid-da6932df208249999cca8f74f47df74831-05FAACE1BBFD2C2DEC85572B168435DA rdf:first
+    status:WITHDRAWN;
+  rdf:rest _:genid-da6932df208249999cca8f74f47df74831-AD0B8CAF3108E4231B2E6E045AC9894E .
 
-_:c43d47d21f8e45a0a6b80a39c0fca5705 rdf:first status:DEPRECATED;
+_:genid-da6932df208249999cca8f74f47df74831-AD0B8CAF3108E4231B2E6E045AC9894E rdf:first
+    status:DEPRECATED;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#dcat:temporalResolution> sh:path
@@ -229,3 +233,63 @@ _:c43d47d21f8e45a0a6b80a39c0fca5705 rdf:first status:DEPRECATED;
   sh:nodeKind sh:Literal;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
+
+hri:aux-PeriodOfTimeShape a owl:Ontology;
+  rdfs:label "Period of Time"@en;
+  rdfs:comment "Health-RI v2 Period of Time"@en;
+  dct:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
+  owl:versionInfo "0.1";
+  dct:modified "2025-04-24T09:10:17.860Z"^^xsd:dateTime .
+
+hri:PeriodOfTimeShape a sh:NodeShape;
+  rdfs:label "Period of Time"@en;
+  sh:targetClass dct:PeriodOfTime;
+  sh:property <http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:endDate>, <http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:startDate> .
+
+<http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:endDate> sh:path dcat:endDate;
+  sh:name "end date"@en;
+  sh:description "The end of the period."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:dateTime;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:DateTimePickerEditor .
+
+<http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:startDate> sh:path dcat:startDate;
+  sh:name "start date"@en;
+  sh:description "The start of the period."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:dateTime;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:DateTimePickerEditor .
+
+hri:aux-ChecksumShape a owl:Ontology;
+  rdfs:label "Checksum"@en;
+  rdfs:comment "Health-RI v2 Checksum."@en;
+  dct:description "SHACL definitions for the Health-RI v2 model for Checksum."@en;
+  owl:versionInfo "0.1";
+  dct:modified "2025-04-23T13:25:19.220Z"^^xsd:dateTime .
+
+hri:ChecksumShape a sh:NodeShape;
+  rdfs:label "Checksum"@en;
+  sh:targetClass spdx:Checksum;
+  sh:property <http://data.health-ri.nl/core/p2/ChecksumShape#spdx:algorithm>, <http://data.health-ri.nl/core/p2/ChecksumShape#spdx:checksumValue> .
+
+<http://data.health-ri.nl/core/p2/ChecksumShape#spdx:algorithm> sh:path spdx:algorithm;
+  sh:name "algorithm"@en;
+  sh:description "The algorithm used to produce the subject Checksum"@en;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/core/p2/ChecksumShape#spdx:checksumValue> sh:path spdx:checksumValue;
+  sh:name "checksum value"@en;
+  sh:description "A lower case hexadecimal encoded digest value produced using a specific algorithm"@en;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextAreaEditor .

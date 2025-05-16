@@ -26,6 +26,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
 
 <https://data.sparna.fr/shapes-example#> a owl:Ontology;
   rdfs:label "Dataset Series"@en;
@@ -125,3 +126,122 @@ hri:DatasetSeriesShape a sh:NodeShape;
   sh:datatype xsd:string;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
+
+hri:AgentShapeAgentShape a owl:Ontology;
+  rdfs:label "Agent class"@en;
+  rdfs:comment "Excel template for Agent class"@en;
+  dct:description "This is an excel template for Agent class in Health RI Core plateau 2."@en;
+  owl:versionInfo "0.1";
+  dct:modified "2024-02-10T00:00:00.000Z"^^xsd:dateTime .
+
+hri:AgentShape a sh:NodeShape;
+  rdfs:label "Agent"@en;
+  sh:targetClass foaf:Agent;
+  sh:property <http://data.health-ri.nl/core/p2/AgentShape#dct:spatial>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:mbox>,
+    <http://data.health-ri.nl/core/p2/AgentShape#dct:identifier>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:name>,
+    <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishernote>, <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishertype>,
+    <http://data.health-ri.nl/core/p2/AgentShape#dct:type>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:homepage> .
+
+<http://data.health-ri.nl/core/p2/AgentShape#dct:spatial> sh:path dct:spatial;
+  sh:name "country"@en;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/core/p2/AgentShape#foaf:mbox> sh:path foaf:mbox;
+  sh:name "email"@en;
+  sh:description "An email address via which contact can be made. This property SHOULD be used to provide the email address of the Agent, specified using fully qualified mailto: URI scheme. For example: mailto:info@example.com"@en;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  sh:pattern "^mailto:.+@.+\\..+$";
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/core/p2/AgentShape#dct:identifier> sh:path dct:identifier;
+  sh:name "identifier"@en;
+  sh:description "A unique identifier of the agent."@en;
+  sh:minCount 1;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextAreaEditor .
+
+<http://data.health-ri.nl/core/p2/AgentShape#foaf:name> sh:path foaf:name;
+  sh:name "name"@en;
+  sh:description "A name of the agent."@en;
+  sh:minCount 1;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextAreaEditor .
+
+<http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishernote> sh:path healthdcatap:publishernote;
+  sh:name "publisher note"@en;
+  sh:description "A description of the publisher activities"@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextAreaEditor .
+
+<http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishertype> sh:path healthdcatap:publishertype;
+  sh:name "publisher type"@en;
+  sh:description "A type of organisation that makes the Dataset available"@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/core/p2/AgentShape#dct:type> sh:path dct:type;
+  sh:name "type"@en;
+  sh:description "A type of the agent that makes the Catalogue or Dataset available"@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/core/p2/AgentShape#foaf:homepage> sh:path foaf:homepage;
+  sh:name "URL"@en;
+  sh:description "A webpage that either allows to make contact (i.e. a webform) or the information contains how to get into contact."@en;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+hri:KindShapeKindShape a owl:Ontology;
+  rdfs:label "Kind"@en;
+  rdfs:comment "Health-RI v2 Kind."@en;
+  dct:description "SHACL mandatory definitions for the Health-RI v2 model for vcard:Kind."@en;
+  owl:versionInfo "0.1";
+  dct:modified "2025-05-02T06:45:41.960Z"^^xsd:dateTime .
+
+hri:KindShape a sh:NodeShape;
+  rdfs:label "Kind"@en;
+  sh:targetClass vcard:Kind;
+  sh:property <http://data.health-ri.nl/core/p2/KindShape#vcard:hasURL>, <http://data.health-ri.nl/core/p2/KindShape#vcard:hasEmail>,
+    <http://data.health-ri.nl/core/p2/KindShape#vcard:fn> .
+
+<http://data.health-ri.nl/core/p2/KindShape#vcard:hasURL> sh:path vcard:hasURL;
+  sh:name "contact page"@en;
+  sh:description "A webpage that either allows to make contact (i.e. a webform) or the information contains how to get into contact."@en;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/core/p2/KindShape#vcard:hasEmail> sh:path vcard:hasEmail;
+  sh:name "has email"@en;
+  sh:description "A email address via which contact can be made. Make sure you use the correct format, starting with 'mailto:'. For example: mailto:info@example.com"@en;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  sh:pattern "^mailto:.+@.+\\..+$";
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/core/p2/KindShape#vcard:fn> sh:path vcard:fn;
+  sh:name "formatted name"@en;
+  sh:description "The full name of the contact point."@en;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextAreaEditor .

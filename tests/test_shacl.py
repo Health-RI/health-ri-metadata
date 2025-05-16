@@ -11,7 +11,7 @@ from pyshacl import validate
         ("DataService", "example-dataservice"),
     ],
 )
-def test_core_shapes(shacl, example):
+def test_core_shapes_examples(shacl, example):
     shacl_graph = get_shacl_path(shacl)
     example_graph = get_example_path(example)
 
@@ -23,15 +23,39 @@ def test_core_shapes(shacl, example):
     )
     assert conform, result_text
 
+
 @pytest.mark.parametrize(
     ("shacl", "example"),
     [
         ("Dataset", "example-dataset-bad"),
+        ("Dataset", "dataset-nomodified"),
+        ("Dataset", "dataset-nopublisher"),
+        ("Dataset", "dataset-nolicense"),
+        ("Dataset", "dataset-nodescription"),
     ],
 )
 def test_core_shapes_negative(shacl, example):
     shacl_graph = get_shacl_path(shacl)
-    example_graph = get_example_path(example)
+    example_graph = get_testcase_path(example)
+
+    conform, _, result_text = validate(
+        data_graph=example_graph,
+        shacl_graph=shacl_graph,
+        allow_warnings=False,
+        meta_shacl=True,
+    )
+    assert not conform, result_text
+
+
+@pytest.mark.parametrize(
+    ("shacl", "example"),
+    [
+        ("Dataset", "dataset-iso8601"),
+    ],
+)
+def test_core_shapes_good(shacl, example):
+    shacl_graph = get_shacl_path(shacl)
+    example_graph = get_testcase_path(example)
 
     conform, _, result_text = validate(
         data_graph=example_graph,
@@ -45,5 +69,10 @@ def test_core_shapes_negative(shacl, example):
 def get_example_path(example):
     return rf"Formalisation(shacl)/Core/Example-Data/{example}.ttl"
 
+
+def get_testcase_path(testcase):
+    return rf"tests/testdata/{testcase}.ttl"
+
+
 def get_shacl_path(shacl):
-    return rf"Formalisation(shacl)/Core/PiecesShape/{shacl}.ttl"
+    return rf"Formalisation(shacl)/Core/FairDataPointShape/{shacl}.ttl"

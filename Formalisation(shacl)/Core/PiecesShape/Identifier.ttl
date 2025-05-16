@@ -2,7 +2,6 @@
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
 @prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -28,10 +27,33 @@
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 
-hri:ResourceShape a owl:Ontology, sh:NodeShape;
-  rdfs:label "Resource"@en;
-  rdfs:comment "Health-RI v2 Resource placeholder."@en;
-  dct:description "SHACL stub for the Health-RI v2 model for Resource."@en;
+hri:aux-IdentifierShape a owl:Ontology;
+  rdfs:label "Identifier"@en;
+  rdfs:comment "Health-RI v2 Identifier"@en;
+  dct:description "SHACL definitions for the Health-RI v2 model for Identifier."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-23T13:25:07.820Z"^^xsd:dateTime;
-  sh:targetClass dcat:Resource .
+  dct:modified "2025-04-30T10:51:11.420Z"^^xsd:dateTime .
+
+hri:IdentifierShape a sh:NodeShape;
+  rdfs:label "Identifier"@en;
+  sh:targetClass adms:Identifier;
+  sh:property <http://data.health-ri.nl/core/p2/IdentifierShape#skos:notation>, <http://data.health-ri.nl/core/p2/IdentifierShape#adms:schemaAgency> .
+
+<http://data.health-ri.nl/core/p2/IdentifierShape#skos:notation> sh:path skos:notation;
+  sh:name "notation"@en;
+  sh:description "A string that is an identifier in the context of the identifier scheme referenced by its datatype."@en;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
+
+<http://data.health-ri.nl/core/p2/IdentifierShape#adms:schemaAgency> sh:path adms:schemaAgency;
+  sh:name "schema agency"@en;
+  sh:description "The name of the agency that issued the identifier."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .

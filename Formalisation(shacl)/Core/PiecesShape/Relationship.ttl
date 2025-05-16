@@ -2,7 +2,6 @@
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
 @prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -28,10 +27,30 @@
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 
-hri:ResourceShape a owl:Ontology, sh:NodeShape;
-  rdfs:label "Resource"@en;
-  rdfs:comment "Health-RI v2 Resource placeholder."@en;
-  dct:description "SHACL stub for the Health-RI v2 model for Resource."@en;
+hri:aux-RelationshipShape a owl:Ontology;
+  rdfs:label "Relationship"@en;
+  rdfs:comment "Health-RI v2 Relationship"@en;
+  dct:description "SHACL definitions for the Health-RI v2 model for Relationship."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-23T13:25:07.820Z"^^xsd:dateTime;
-  sh:targetClass dcat:Resource .
+  dct:modified "2025-04-30T12:55:04.260Z"^^xsd:dateTime .
+
+hri:RelationshipShape a sh:NodeShape;
+  rdfs:label "Relation"@en;
+  sh:targetClass dcat:Relationship;
+  sh:property <http://data.health-ri.nl/core/p2/RelationshipShape#dcat:hadRole>, <http://data.health-ri.nl/core/p2/RelationshipShape#dct:relation> .
+
+<http://data.health-ri.nl/core/p2/RelationshipShape#dcat:hadRole> sh:path dcat:hadRole;
+  sh:name "had role"@en;
+  sh:description "The nature of the relationship, as indicated via a value from the controlled vocabulary."@en;
+  sh:minCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/core/p2/RelationshipShape#dct:relation> sh:path dct:relation;
+  sh:name "relation"@en;
+  sh:description "A resource with a relationship to the cataloged resource."@en;
+  sh:minCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .

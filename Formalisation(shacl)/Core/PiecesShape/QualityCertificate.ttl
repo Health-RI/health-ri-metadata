@@ -2,12 +2,13 @@
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
 @prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix example: <https://data.sparna.fr/shapes-example/> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
@@ -28,10 +29,31 @@
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 
-hri:ResourceShape a owl:Ontology, sh:NodeShape;
-  rdfs:label "Resource"@en;
-  rdfs:comment "Health-RI v2 Resource placeholder."@en;
-  dct:description "SHACL stub for the Health-RI v2 model for Resource."@en;
+hri:aux-QualityCertificateShape a owl:Ontology;
+  rdfs:label "Quality Certificate"@en;
+  rdfs:comment "Health-RI v2 Quality Certificate"@en;
+  dct:description "SHACL definitions for the Health-RI v2 model for Quality Certificate."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-23T13:25:07.820Z"^^xsd:dateTime;
-  sh:targetClass dcat:Resource .
+  dct:modified "2025-04-24T11:33:11.140Z"^^xsd:dateTime .
+
+hri:QualityCertificateShape a sh:NodeShape;
+  rdfs:label "Quality Certificate"@en;
+  sh:targetClass dqv:QualityCertificate;
+  sh:property <http://data.health-ri.nl/core/p2/QualityCertificateShape#oa:hasTarget>,
+    <http://data.health-ri.nl/core/p2/QualityCertificateShape#oa:hasBody> .
+
+<http://data.health-ri.nl/core/p2/QualityCertificateShape#oa:hasTarget> sh:path oa:hasTarget;
+  sh:name "target"@en;
+  sh:description "The identifier of the described resource targetet by the quality certificate."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/core/p2/QualityCertificateShape#oa:hasBody> sh:path oa:hasBody;
+  sh:name "body"@en;
+  sh:description "The (web)location of the quality certificate."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
