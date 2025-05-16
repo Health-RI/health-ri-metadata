@@ -45,7 +45,7 @@ This is version 2.0 of Health-RI core metadata schema.
 
 ## Previous published version
 
-The previous published version (version 1.0.1) of the Health-RI core metadata schema is [available here](https://github.com/Health-RI/health-ri-metadata/releases/tag/v1.0.1).
+The previous published version (version 1.0.2) of the Health-RI core metadata schema is [available here](https://github.com/Health-RI/health-ri-metadata/releases/tag/v1.0.2).
 
 ## Purpose and audience
 
