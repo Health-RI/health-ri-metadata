@@ -33,7 +33,7 @@
   rdfs:comment "Health-RI v2 Dataset Series"@en;
   dct:description "SHACL mandatory definitions for the Health-RI v2 model for Dataset Series."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-23T13:25:09.770Z"^^xsd:dateTime .
+  dct:modified "2025-05-21T08:34:49.520Z"^^xsd:dateTime .
 
 hri:DatasetSeriesShape a sh:NodeShape;
   rdfs:label "DatasetSeries"@en;
@@ -56,6 +56,7 @@ hri:DatasetSeriesShape a sh:NodeShape;
 <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dcat:contactPoint> sh:path dcat:contactPoint;
   sh:name "contact point"@en;
   sh:description "Contact information that can be used for sending comments about the Dataset Series."@en;
+  sh:minCount 1;
   sh:node hri:KindShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .

@@ -42,7 +42,7 @@
     "SHACL definitions for the Health-RI v2 model for DataService."@en, "SHACL definitions for the Health-RI v2 model for Catalog."@en,
     "SHACL definitions for the Health-RI v2 model for Distribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-23T13:25:09.770Z"^^xsd:dateTime, "2025-05-20T11:37:55.390Z"^^xsd:dateTime,
+  dct:modified "2025-05-21T08:34:49.520Z"^^xsd:dateTime, "2025-05-20T11:37:55.390Z"^^xsd:dateTime,
     "2025-05-20T11:42:04.990Z"^^xsd:dateTime, "2025-05-20T11:40:23.340Z"^^xsd:dateTime .
 
 hri:DatasetSeriesShape a sh:NodeShape;
@@ -66,6 +66,7 @@ hri:DatasetSeriesShape a sh:NodeShape;
 <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dcat:contactPoint> sh:path dcat:contactPoint;
   sh:name "contact point"@en;
   sh:description "Contact information that can be used for sending comments about the Dataset Series."@en;
+  sh:minCount 1;
   sh:node hri:KindShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
@@ -653,23 +654,23 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-4c955fc79b52417fb8f3602582daee2770-D8A2452EA099660CFF960BD48AE024C8;
+  sh:in _:genid-2f857cc7609140f2ba0a5b21ab82347770-43D16488FCF62F91016C3DF8C7289F91;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-4c955fc79b52417fb8f3602582daee2770-D8A2452EA099660CFF960BD48AE024C8 rdf:first
+_:genid-2f857cc7609140f2ba0a5b21ab82347770-43D16488FCF62F91016C3DF8C7289F91 rdf:first
     status:COMPLETED;
-  rdf:rest _:genid-4c955fc79b52417fb8f3602582daee2770-D2DC4B7B3759F4952E2DC0625D094E68 .
+  rdf:rest _:genid-2f857cc7609140f2ba0a5b21ab82347770-68F7D8B7FD843089E1EF8B2B1277EE41 .
 
-_:genid-4c955fc79b52417fb8f3602582daee2770-D2DC4B7B3759F4952E2DC0625D094E68 rdf:first
+_:genid-2f857cc7609140f2ba0a5b21ab82347770-68F7D8B7FD843089E1EF8B2B1277EE41 rdf:first
     status:DEVELOP;
-  rdf:rest _:genid-4c955fc79b52417fb8f3602582daee2770-D2051730461D2509258F31935ED54FA4 .
+  rdf:rest _:genid-2f857cc7609140f2ba0a5b21ab82347770-061AB3EA1BD244EE10046AA9589F2786 .
 
-_:genid-4c955fc79b52417fb8f3602582daee2770-D2051730461D2509258F31935ED54FA4 rdf:first
+_:genid-2f857cc7609140f2ba0a5b21ab82347770-061AB3EA1BD244EE10046AA9589F2786 rdf:first
     status:WITHDRAWN;
-  rdf:rest _:genid-4c955fc79b52417fb8f3602582daee2770-CA7181979B347B8685ADE1CE0C628301 .
+  rdf:rest _:genid-2f857cc7609140f2ba0a5b21ab82347770-BA30959FFFFF5525835BBFAE76DBB6AE .
 
-_:genid-4c955fc79b52417fb8f3602582daee2770-CA7181979B347B8685ADE1CE0C628301 rdf:first
+_:genid-2f857cc7609140f2ba0a5b21ab82347770-BA30959FFFFF5525835BBFAE76DBB6AE rdf:first
     status:DEPRECATED;
   rdf:rest rdf:nil .
 
@@ -1000,19 +1001,19 @@ hri:DatasetShape a owl:Ontology, sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-4c955fc79b52417fb8f3602582daee2788-B8BF678C28099F2A3DD5D2508B39FCEC;
+  sh:in _:genid-2f857cc7609140f2ba0a5b21ab82347788-C2D185C3704AA7829BC126155141C8F1;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-4c955fc79b52417fb8f3602582daee2788-B8BF678C28099F2A3DD5D2508B39FCEC rdf:first
+_:genid-2f857cc7609140f2ba0a5b21ab82347788-C2D185C3704AA7829BC126155141C8F1 rdf:first
     eu:PUBLIC;
-  rdf:rest _:genid-4c955fc79b52417fb8f3602582daee2788-0A643F8AD19260A9B200397F1B1BAE8A .
+  rdf:rest _:genid-2f857cc7609140f2ba0a5b21ab82347788-0154D1F2F25393DBA07AB4A6E177B7B5 .
 
-_:genid-4c955fc79b52417fb8f3602582daee2788-0A643F8AD19260A9B200397F1B1BAE8A rdf:first
+_:genid-2f857cc7609140f2ba0a5b21ab82347788-0154D1F2F25393DBA07AB4A6E177B7B5 rdf:first
     eu:RESTRICTED;
-  rdf:rest _:genid-4c955fc79b52417fb8f3602582daee2788-519B9B66AAA127D6AC0DF89E5BC9694C .
+  rdf:rest _:genid-2f857cc7609140f2ba0a5b21ab82347788-F5CDBF511D2B13006EF357F679A021ED .
 
-_:genid-4c955fc79b52417fb8f3602582daee2788-519B9B66AAA127D6AC0DF89E5BC9694C rdf:first
+_:genid-2f857cc7609140f2ba0a5b21ab82347788-F5CDBF511D2B13006EF357F679A021ED rdf:first
     eu:NON_PUBLIC;
   rdf:rest rdf:nil .
 
