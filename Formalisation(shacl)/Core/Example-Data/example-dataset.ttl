@@ -31,7 +31,7 @@
     ] ;
     dct:license <https://opensource.org/license/mit> ;
     dct:accessRights <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC> ;
-    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime ;
+    dct:modified "2024-07-11T11:48:00Z"^^xsd:dateTime ;
     dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2025/327/oj> .
 
 
@@ -45,7 +45,7 @@
 
     dct:description "Impact of muggle technical inventions on word's magic presense" ;
     dct:identifier "test-dataset-id-1" ;
-    dct:issued "1992-03-04T00:00:00.923Z"^^xsd:dateTime ;
+    dct:issued "1992-03-04T00:00:00Z"^^xsd:dateTime ;
     dct:publisher [ a foaf:Agent ;
             dct:identifier "https://harrypotter.fandom.com/wiki/Gryffindor" ;
             foaf:homepage <https://harrypotter.fandom.com/wiki/Gryffindor> ;
@@ -62,7 +62,7 @@
     ];
     dct:license <https://opensource.org/license/mit>;
     dct:accessRights <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC> ;
-    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime ;
+    dct:modified "2024-07-11T11:48:00Z"^^xsd:dateTime ;
     dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2025/327/oj> .
 
 
@@ -75,7 +75,7 @@
                 ] ;
     dct:description "Comarative analysis of magic powers of muggle-born and blood wizards " ;
     dct:identifier "test-dataset-id-12" ;
-    dct:issued "1992-05-25T00:00:00.923Z"^^xsd:dateTime ;
+    dct:issued "1992-05-25T00:00:00Z"^^xsd:dateTime ;
     dct:publisher [ a foaf:Agent ;
                     dct:identifier "https://harrypotter.fandom.com/wiki/Slytherin" ;
                     foaf:mbox <mailto:harry@fandom.com> ;
@@ -95,7 +95,7 @@
     ] ;
     dct:license <https://opensource.org/license/mit>;
     dct:accessRights <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC> ;
-    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime ;
+    dct:modified "2024-07-11T11:48:00Z"^^xsd:dateTime ;
     dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2025/327/oj> .
 
 
@@ -107,7 +107,7 @@
                   foaf:mbox <mailto:luna@fandom.com>] ;
     dct:description "Linguistic analysis of spells" ;
     dct:identifier "test-dataset-id-3" ;
-    dct:issued "1992-05-26T00:00:00.923Z"^^xsd:dateTime ;
+    dct:issued "1992-05-26T00:00:00Z"^^xsd:dateTime ;
     dct:publisher [ a foaf:Agent ;
                     dct:identifier "https://harrypotter.fandom.com/wiki/Ravenclaw" ;
                     foaf:homepage <https://harrypotter.fandom.com/wiki/Ravenclaw> ;
@@ -122,7 +122,7 @@
     ] ;
     dct:license <https://opensource.org/license/mit>;
     dct:accessRights <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC> ;
-    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime ;
+    dct:modified "2024-07-11T11:48:00Z"^^xsd:dateTime ;
     dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2025/327/oj> .
 
 
@@ -134,7 +134,7 @@
                   foaf:mbox <mailto:williams@fandom.com>] ;
     dct:description "Domestics elfs reproduction rate changes in the last 100 years" ;
     dct:identifier "test-dataset-id-4" ;
-    dct:issued "1992-05-27T00:00:00.923Z"^^xsd:dateTime ;
+    dct:issued "1992-05-27T00:00:00Z"^^xsd:dateTime ;
     dct:publisher [ a foaf:Agent ;
             dct:identifier "https://harrypotter.fandom.com/wiki/Hufflepuff" ;
             foaf:homepage <https://harrypotter.fandom.com/wiki/Hufflepuff> ;
@@ -149,6 +149,6 @@
     ]; 
     dct:license <https://opensource.org/license/mit>;
     dct:accessRights <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC> ;
-    dct:modified "2024-07-11T11:48:00.923Z"^^xsd:dateTime ;
+    dct:modified "2024-07-11T11:48:00Z"^^xsd:dateTime ;
     dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2025/327/oj> .
 
