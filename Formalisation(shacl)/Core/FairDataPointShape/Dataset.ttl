@@ -71,19 +71,19 @@ hri:DatasetShape a owl:Ontology, sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-da6932df208249999cca8f74f47df74815-BF6149BFECB8E84A2A1B741A5BC0B788;
+  sh:in _:genid-2f857cc7609140f2ba0a5b21ab82347717-C2D185C3704AA7829BC126155141C8F1;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-da6932df208249999cca8f74f47df74815-BF6149BFECB8E84A2A1B741A5BC0B788 rdf:first
+_:genid-2f857cc7609140f2ba0a5b21ab82347717-C2D185C3704AA7829BC126155141C8F1 rdf:first
     eu:PUBLIC;
-  rdf:rest _:genid-da6932df208249999cca8f74f47df74815-9E62FD79D9F37683EED6986B00D42809 .
+  rdf:rest _:genid-2f857cc7609140f2ba0a5b21ab82347717-0154D1F2F25393DBA07AB4A6E177B7B5 .
 
-_:genid-da6932df208249999cca8f74f47df74815-9E62FD79D9F37683EED6986B00D42809 rdf:first
+_:genid-2f857cc7609140f2ba0a5b21ab82347717-0154D1F2F25393DBA07AB4A6E177B7B5 rdf:first
     eu:RESTRICTED;
-  rdf:rest _:genid-da6932df208249999cca8f74f47df74815-54095F1B2782AEC4774D363AA503AFE3 .
+  rdf:rest _:genid-2f857cc7609140f2ba0a5b21ab82347717-F5CDBF511D2B13006EF357F679A021ED .
 
-_:genid-da6932df208249999cca8f74f47df74815-54095F1B2782AEC4774D363AA503AFE3 rdf:first
+_:genid-2f857cc7609140f2ba0a5b21ab82347717-F5CDBF511D2B13006EF357F679A021ED rdf:first
     eu:NON_PUBLIC;
   rdf:rest rdf:nil .
 
@@ -596,3 +596,119 @@ hri:PeriodOfTimeShape a sh:NodeShape;
   sh:datatype xsd:dateTime;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
+
+hri:aux-AttributionShape a owl:Ontology;
+  rdfs:label "Attribution"@en;
+  rdfs:comment "Health-RI v2 Attribution"@en;
+  dct:description "SHACL definitions for the Health-RI v2 model for Attribution."@en;
+  owl:versionInfo "0.1";
+  dct:modified "2025-04-23T13:25:20.480Z"^^xsd:dateTime .
+
+hri:AttributionShape a sh:NodeShape;
+  rdfs:label "Attribution"@en;
+  sh:targetClass prov:Attribution;
+  sh:property <http://data.health-ri.nl/core/p2/AttributionShape#prov:agent>, <http://data.health-ri.nl/core/p2/AttributionShape#dcat:hadRole> .
+
+<http://data.health-ri.nl/core/p2/AttributionShape#prov:agent> sh:path prov:agent;
+  sh:name "agent"@en;
+  sh:description "The agent that has a specific role with the described resource."@en;
+  sh:maxCount 1;
+  sh:node hri:AgentShape;
+  dash:viewer dash:DetailsViewer;
+  dash:editor dash:BlankNodeEditor .
+
+<http://data.health-ri.nl/core/p2/AttributionShape#dcat:hadRole> sh:path dcat:hadRole;
+  sh:name "role"@en;
+  sh:description "The nature of the relationship between the agent and the described resource, as indicated by a value from the controlled vocabulary."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:LabelViewer;
+  dash:editor dash:URIEditor .
+
+hri:aux-IdentifierShape a owl:Ontology;
+  rdfs:label "Identifier"@en;
+  rdfs:comment "Health-RI v2 Identifier"@en;
+  dct:description "SHACL definitions for the Health-RI v2 model for Identifier."@en;
+  owl:versionInfo "0.1";
+  dct:modified "2025-04-30T10:51:11.420Z"^^xsd:dateTime .
+
+hri:IdentifierShape a sh:NodeShape;
+  rdfs:label "Identifier"@en;
+  sh:targetClass adms:Identifier;
+  sh:property <http://data.health-ri.nl/core/p2/IdentifierShape#skos:notation>, <http://data.health-ri.nl/core/p2/IdentifierShape#adms:schemaAgency> .
+
+<http://data.health-ri.nl/core/p2/IdentifierShape#skos:notation> sh:path skos:notation;
+  sh:name "notation"@en;
+  sh:description "A string that is an identifier in the context of the identifier scheme referenced by its datatype."@en;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
+
+<http://data.health-ri.nl/core/p2/IdentifierShape#adms:schemaAgency> sh:path adms:schemaAgency;
+  sh:name "schema agency"@en;
+  sh:description "The name of the agency that issued the identifier."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
+
+hri:aux-QualityCertificateShape a owl:Ontology;
+  rdfs:label "Quality Certificate"@en;
+  rdfs:comment "Health-RI v2 Quality Certificate"@en;
+  dct:description "SHACL definitions for the Health-RI v2 model for Quality Certificate."@en;
+  owl:versionInfo "0.1";
+  dct:modified "2025-04-24T11:33:11.140Z"^^xsd:dateTime .
+
+hri:QualityCertificateShape a sh:NodeShape;
+  rdfs:label "Quality Certificate"@en;
+  sh:targetClass dqv:QualityCertificate;
+  sh:property <http://data.health-ri.nl/core/p2/QualityCertificateShape#oa:hasTarget>,
+    <http://data.health-ri.nl/core/p2/QualityCertificateShape#oa:hasBody> .
+
+<http://data.health-ri.nl/core/p2/QualityCertificateShape#oa:hasTarget> sh:path oa:hasTarget;
+  sh:name "target"@en;
+  sh:description "The identifier of the described resource targetet by the quality certificate."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/core/p2/QualityCertificateShape#oa:hasBody> sh:path oa:hasBody;
+  sh:name "body"@en;
+  sh:description "The (web)location of the quality certificate."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+hri:aux-RelationshipShape a owl:Ontology;
+  rdfs:label "Relationship"@en;
+  rdfs:comment "Health-RI v2 Relationship"@en;
+  dct:description "SHACL definitions for the Health-RI v2 model for Relationship."@en;
+  owl:versionInfo "0.1";
+  dct:modified "2025-04-30T12:55:04.260Z"^^xsd:dateTime .
+
+hri:RelationshipShape a sh:NodeShape;
+  rdfs:label "Relation"@en;
+  sh:targetClass dcat:Relationship;
+  sh:property <http://data.health-ri.nl/core/p2/RelationshipShape#dcat:hadRole>, <http://data.health-ri.nl/core/p2/RelationshipShape#dct:relation> .
+
+<http://data.health-ri.nl/core/p2/RelationshipShape#dcat:hadRole> sh:path dcat:hadRole;
+  sh:name "had role"@en;
+  sh:description "The nature of the relationship, as indicated via a value from the controlled vocabulary."@en;
+  sh:minCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/core/p2/RelationshipShape#dct:relation> sh:path dct:relation;
+  sh:name "relation"@en;
+  sh:description "A resource with a relationship to the cataloged resource."@en;
+  sh:minCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
