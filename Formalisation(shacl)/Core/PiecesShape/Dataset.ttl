@@ -69,17 +69,17 @@ hri:DatasetShape a owl:Ontology, sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:9f21eb4526194ad58472bc6b665e15356;
+  sh:in _:c4017f41531e44eeb685618fe7fde5f36;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:9f21eb4526194ad58472bc6b665e15356 rdf:first eu:PUBLIC;
-  rdf:rest _:9f21eb4526194ad58472bc6b665e15357 .
+_:c4017f41531e44eeb685618fe7fde5f36 rdf:first eu:PUBLIC;
+  rdf:rest _:c4017f41531e44eeb685618fe7fde5f37 .
 
-_:9f21eb4526194ad58472bc6b665e15357 rdf:first eu:RESTRICTED;
-  rdf:rest _:9f21eb4526194ad58472bc6b665e15358 .
+_:c4017f41531e44eeb685618fe7fde5f37 rdf:first eu:RESTRICTED;
+  rdf:rest _:c4017f41531e44eeb685618fe7fde5f38 .
 
-_:9f21eb4526194ad58472bc6b665e15358 rdf:first eu:NON_PUBLIC;
+_:c4017f41531e44eeb685618fe7fde5f38 rdf:first eu:NON_PUBLIC;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#analytics> sh:path healthdcatap:analytics;
@@ -258,6 +258,7 @@ _:9f21eb4526194ad58472bc6b665e15358 rdf:first eu:NON_PUBLIC;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
   sh:datatype xsd:dateTime;
+  sh:pattern "^\\\\d{4}-\\\\d{2}-\\\\d{2}T\\\\d{2}:\\\\d{2}:\\\\d{2}(\\\\.\\\\d{1,3})?(Z|[+-]\\\\d{2}:\\\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -345,6 +346,7 @@ _:9f21eb4526194ad58472bc6b665e15358 rdf:first eu:NON_PUBLIC;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
   sh:datatype xsd:dateTime;
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 

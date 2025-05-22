@@ -33,7 +33,7 @@
   rdfs:comment "Health-RI v2 Distribution."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Distribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-20T11:40:23.340Z"^^xsd:dateTime .
+  dct:modified "2025-05-22T11:14:15.840Z"^^xsd:dateTime .
 
 hri:DistributionShape a sh:NodeShape;
   rdfs:label "Distribution"@en;
@@ -158,6 +158,7 @@ hri:DistributionShape a sh:NodeShape;
   sh:name "modification date"@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -174,6 +175,7 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The date the dataset distribution was issued."@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -199,23 +201,23 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-2f857cc7609140f2ba0a5b21ab82347743-43D16488FCF62F91016C3DF8C7289F91;
+  sh:in _:genid-7b4fcea54f6c4cfe8010e1157ceee9eb43-540E1911C4F60171D994A4E38298551E;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-2f857cc7609140f2ba0a5b21ab82347743-43D16488FCF62F91016C3DF8C7289F91 rdf:first
+_:genid-7b4fcea54f6c4cfe8010e1157ceee9eb43-540E1911C4F60171D994A4E38298551E rdf:first
     status:COMPLETED;
-  rdf:rest _:genid-2f857cc7609140f2ba0a5b21ab82347743-68F7D8B7FD843089E1EF8B2B1277EE41 .
+  rdf:rest _:genid-7b4fcea54f6c4cfe8010e1157ceee9eb43-81867088CF51512D2534ADE525897753 .
 
-_:genid-2f857cc7609140f2ba0a5b21ab82347743-68F7D8B7FD843089E1EF8B2B1277EE41 rdf:first
+_:genid-7b4fcea54f6c4cfe8010e1157ceee9eb43-81867088CF51512D2534ADE525897753 rdf:first
     status:DEVELOP;
-  rdf:rest _:genid-2f857cc7609140f2ba0a5b21ab82347743-061AB3EA1BD244EE10046AA9589F2786 .
+  rdf:rest _:genid-7b4fcea54f6c4cfe8010e1157ceee9eb43-292D1D793C040BA998BF4A273E5037F1 .
 
-_:genid-2f857cc7609140f2ba0a5b21ab82347743-061AB3EA1BD244EE10046AA9589F2786 rdf:first
+_:genid-7b4fcea54f6c4cfe8010e1157ceee9eb43-292D1D793C040BA998BF4A273E5037F1 rdf:first
     status:WITHDRAWN;
-  rdf:rest _:genid-2f857cc7609140f2ba0a5b21ab82347743-BA30959FFFFF5525835BBFAE76DBB6AE .
+  rdf:rest _:genid-7b4fcea54f6c4cfe8010e1157ceee9eb43-4DE79DC1FDCBF41B628310604661DF91 .
 
-_:genid-2f857cc7609140f2ba0a5b21ab82347743-BA30959FFFFF5525835BBFAE76DBB6AE rdf:first
+_:genid-7b4fcea54f6c4cfe8010e1157ceee9eb43-4DE79DC1FDCBF41B628310604661DF91 rdf:first
     status:DEPRECATED;
   rdf:rest rdf:nil .
 
@@ -240,7 +242,7 @@ hri:aux-PeriodOfTimeShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Period of Time"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-24T09:10:17.860Z"^^xsd:dateTime .
+  dct:modified "2025-05-22T08:05:16.640Z"^^xsd:dateTime .
 
 hri:PeriodOfTimeShape a sh:NodeShape;
   rdfs:label "Period of Time"@en;
@@ -253,6 +255,7 @@ hri:PeriodOfTimeShape a sh:NodeShape;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
   sh:datatype xsd:dateTime;
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -262,6 +265,7 @@ hri:PeriodOfTimeShape a sh:NodeShape;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
   sh:datatype xsd:dateTime;
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
