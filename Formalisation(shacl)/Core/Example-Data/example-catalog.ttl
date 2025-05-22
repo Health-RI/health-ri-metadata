@@ -24,7 +24,7 @@
 <http://example.com/catalog/1> a dcat:Catalog ;
     dct:description "Research works of 2nd grade Hogwarts students" ;
     dct:identifier "http://example.com/catalog/1" ;
-    dct:issued "1992-01-06T00:00:00"^^xsd:dateTime ;
+    dct:issued "1992-01-06T00:00:00Z"^^xsd:dateTime ;
     dct:title "Student research works 1992" ;
     dct:publisher [
         a foaf:Agent ;
