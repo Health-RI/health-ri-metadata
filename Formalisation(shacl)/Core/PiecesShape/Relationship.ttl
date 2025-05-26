@@ -32,7 +32,7 @@ hri:aux-RelationshipShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Relationship"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Relationship."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-30T12:55:04.260Z"^^xsd:dateTime .
+  dct:modified "2025-05-22T11:14:27.700Z"^^xsd:dateTime .
 
 hri:RelationshipShape a sh:NodeShape;
   rdfs:label "Relation"@en;

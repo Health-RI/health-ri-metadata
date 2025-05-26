@@ -16,7 +16,7 @@
   dcat:endpointURL <http://services.ga.gov.au/gis/services/Judicial_Courts/MapServer/WMSServer> ;
   dct:identifier "WMSServer" ;
   dct:license <https://creativecommons.org/public-domain/cc0/> ;
-  dct:modified "2025-01-06T00:00:00"^^xsd:dateTime ;
+  dct:modified "2025-01-06T00:00:00Z"^^xsd:dateTime ;
   dct:publisher [
     a foaf:Agent ;
     foaf:mbox <mailto:info@example.com> ;
