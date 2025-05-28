@@ -42,8 +42,8 @@
     "SHACL definitions for the Health-RI v2 model for DataService."@en, "SHACL definitions for the Health-RI v2 model for Catalog."@en,
     "SHACL definitions for the Health-RI v2 model for Distribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T11:18:44.760Z"^^xsd:dateTime, "2025-05-22T11:14:12.880Z"^^xsd:dateTime,
-    "2025-05-22T11:14:11.420Z"^^xsd:dateTime, "2025-05-22T11:14:15.840Z"^^xsd:dateTime .
+  dct:modified "2025-05-22T11:18:44.760Z"^^xsd:dateTime, "2025-05-28T11:53:21.820Z"^^xsd:dateTime,
+    "2025-05-22T13:17:04.530Z"^^xsd:dateTime, "2025-05-22T11:14:15.840Z"^^xsd:dateTime .
 
 hri:DatasetSeriesShape a sh:NodeShape;
   rdfs:label "DatasetSeries"@en;
@@ -247,9 +247,9 @@ hri:DataServiceShape a sh:NodeShape;
   sh:description "The property gives specific details of the actual endpoint instances, while dct:conformsTo is used to indicate the general standard or specification that the endpoints implement."@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:nodeKind sh:Literal;
-  dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextAreaEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:endpointURL> sh:path dcat:endpointURL;
   sh:name "end point URL"@en;
@@ -663,23 +663,23 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-b39180dffa4a4c3d8330511c17b03f4570-47CC1704548E396E0AD7BC89BB2D7539;
+  sh:in _:genid-ca4929703743490d9980d90263b229b670-4DC6193FCBAEC5B38E84CEF358B77BCD;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-b39180dffa4a4c3d8330511c17b03f4570-47CC1704548E396E0AD7BC89BB2D7539 rdf:first
+_:genid-ca4929703743490d9980d90263b229b670-4DC6193FCBAEC5B38E84CEF358B77BCD rdf:first
     status:COMPLETED;
-  rdf:rest _:genid-b39180dffa4a4c3d8330511c17b03f4570-C96BE0FCBFE9E3BEF033C81C48D7B638 .
+  rdf:rest _:genid-ca4929703743490d9980d90263b229b670-D72598B668421EEB9EE7C309B8095880 .
 
-_:genid-b39180dffa4a4c3d8330511c17b03f4570-C96BE0FCBFE9E3BEF033C81C48D7B638 rdf:first
+_:genid-ca4929703743490d9980d90263b229b670-D72598B668421EEB9EE7C309B8095880 rdf:first
     status:DEVELOP;
-  rdf:rest _:genid-b39180dffa4a4c3d8330511c17b03f4570-C73344FDBD82912E195AD5877F140175 .
+  rdf:rest _:genid-ca4929703743490d9980d90263b229b670-460F2F54B8C12A4786453B82E53234CF .
 
-_:genid-b39180dffa4a4c3d8330511c17b03f4570-C73344FDBD82912E195AD5877F140175 rdf:first
+_:genid-ca4929703743490d9980d90263b229b670-460F2F54B8C12A4786453B82E53234CF rdf:first
     status:WITHDRAWN;
-  rdf:rest _:genid-b39180dffa4a4c3d8330511c17b03f4570-2981CE68EA492BCB0A1DC81A543114EF .
+  rdf:rest _:genid-ca4929703743490d9980d90263b229b670-837C8491208B41F014D7EB75F5A18F42 .
 
-_:genid-b39180dffa4a4c3d8330511c17b03f4570-2981CE68EA492BCB0A1DC81A543114EF rdf:first
+_:genid-ca4929703743490d9980d90263b229b670-837C8491208B41F014D7EB75F5A18F42 rdf:first
     status:DEPRECATED;
   rdf:rest rdf:nil .
 
@@ -1010,19 +1010,19 @@ hri:DatasetShape a owl:Ontology, sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-b39180dffa4a4c3d8330511c17b03f4588-D3970BA2B6F094286CFA2AF0F70892DC;
+  sh:in _:genid-ca4929703743490d9980d90263b229b688-FA5005FEE946382924CAE7D5FDB56CCE;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-b39180dffa4a4c3d8330511c17b03f4588-D3970BA2B6F094286CFA2AF0F70892DC rdf:first
+_:genid-ca4929703743490d9980d90263b229b688-FA5005FEE946382924CAE7D5FDB56CCE rdf:first
     eu:PUBLIC;
-  rdf:rest _:genid-b39180dffa4a4c3d8330511c17b03f4588-65ABF4806A43CADC7D368238A4F79737 .
+  rdf:rest _:genid-ca4929703743490d9980d90263b229b688-D7FE6C3E8CAE7A960B5C3416C4CA21F9 .
 
-_:genid-b39180dffa4a4c3d8330511c17b03f4588-65ABF4806A43CADC7D368238A4F79737 rdf:first
+_:genid-ca4929703743490d9980d90263b229b688-D7FE6C3E8CAE7A960B5C3416C4CA21F9 rdf:first
     eu:RESTRICTED;
-  rdf:rest _:genid-b39180dffa4a4c3d8330511c17b03f4588-22D35088390CB9EA7E36B5DD7564CC28 .
+  rdf:rest _:genid-ca4929703743490d9980d90263b229b688-2E7CE2484722084BC7B01AC6DEB5777C .
 
-_:genid-b39180dffa4a4c3d8330511c17b03f4588-22D35088390CB9EA7E36B5DD7564CC28 rdf:first
+_:genid-ca4929703743490d9980d90263b229b688-2E7CE2484722084BC7B01AC6DEB5777C rdf:first
     eu:NON_PUBLIC;
   rdf:rest rdf:nil .
 

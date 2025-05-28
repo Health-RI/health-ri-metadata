@@ -33,7 +33,7 @@
   rdfs:comment "Health-RI v2 DataService."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for DataService."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T11:14:12.880Z"^^xsd:dateTime .
+  dct:modified "2025-05-28T11:53:21.820Z"^^xsd:dateTime .
 
 hri:DataServiceShape a sh:NodeShape;
   rdfs:label "DataService"@en;
@@ -110,9 +110,9 @@ hri:DataServiceShape a sh:NodeShape;
   sh:description "The property gives specific details of the actual endpoint instances, while dct:conformsTo is used to indicate the general standard or specification that the endpoints implement."@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:nodeKind sh:Literal;
-  dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextAreaEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:endpointURL> sh:path dcat:endpointURL;
   sh:name "end point URL"@en;
