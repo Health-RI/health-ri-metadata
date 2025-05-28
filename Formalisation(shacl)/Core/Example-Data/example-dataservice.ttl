@@ -12,7 +12,7 @@
     vcard:fn "Example" ;
   ] ;
   dct:description "This is an example description" ;
-  dcat:endpointDescription "http://services.ga.gov.au/gis/services/Judicial_Courts/MapServer/WMSServer"  ;
+  dcat:endpointDescription <http://services.ga.gov.au/gis/services/Judicial_Courts/MapServer/WMSServer>  ;
   dcat:endpointURL <http://services.ga.gov.au/gis/services/Judicial_Courts/MapServer/WMSServer> ;
   dct:identifier "WMSServer" ;
   dct:license <https://creativecommons.org/public-domain/cc0/> ;
