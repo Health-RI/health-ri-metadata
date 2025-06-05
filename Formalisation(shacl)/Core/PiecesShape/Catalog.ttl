@@ -32,7 +32,7 @@
   rdfs:comment "Health-RI v2 Catalog."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Catalog."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-23T13:25:16.780Z"^^xsd:dateTime .
+  dct:modified "2025-05-22T13:17:04.530Z"^^xsd:dateTime .
 
 hri:CatalogShape a sh:NodeShape;
   rdfs:label "Catalog"@en;
@@ -44,10 +44,9 @@ hri:CatalogShape a sh:NodeShape;
     <http://data.health-ri.nl/core/p2/CatalogShape#dct:hasPart>, <http://data.health-ri.nl/core/p2/CatalogShape#foaf:homepage>,
     <http://data.health-ri.nl/core/p2/CatalogShape#dct:language>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:license>,
     <http://data.health-ri.nl/core/p2/CatalogShape#dct:modified>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:publisher>,
-    <http://data.health-ri.nl/core/p2/CatalogShape#dcat:record>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:issued>,
-    <http://data.health-ri.nl/core/p2/CatalogShape#dct:rights>, <http://data.health-ri.nl/core/p2/CatalogShape#dcat:service>,
-    <http://data.health-ri.nl/core/p2/CatalogShape#dct:temporal>, <http://data.health-ri.nl/core/p2/CatalogShape#dcat:themeTaxonomy>,
-    <http://data.health-ri.nl/core/p2/CatalogShape#dct:title> .
+    <http://data.health-ri.nl/core/p2/CatalogShape#dct:issued>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:rights>,
+    <http://data.health-ri.nl/core/p2/CatalogShape#dcat:service>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:temporal>,
+    <http://data.health-ri.nl/core/p2/CatalogShape#dcat:themeTaxonomy>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:title> .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dcatap:applicableLegislation> sh:path
     dcatap:applicableLegislation;
@@ -58,7 +57,9 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dcat:catalog> sh:path dcat:catalog;
   sh:name "catalog"@en;
-  sh:class dcat:Catalog .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dcat:contactPoint> sh:path dcat:contactPoint;
   sh:name "Contact point"@en;
@@ -121,6 +122,7 @@ hri:CatalogShape a sh:NodeShape;
   sh:name "modification date"@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -132,14 +134,11 @@ hri:CatalogShape a sh:NodeShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<http://data.health-ri.nl/core/p2/CatalogShape#dcat:record> sh:path dcat:record;
-  sh:name "record"@en;
-  sh:class dcat:CatalogRecord .
-
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:issued> sh:path dct:issued;
   sh:name "release date"@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 

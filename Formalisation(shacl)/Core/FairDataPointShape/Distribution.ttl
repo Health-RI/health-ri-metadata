@@ -33,7 +33,7 @@
   rdfs:comment "Health-RI v2 Distribution."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Distribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-02T05:12:16.430Z"^^xsd:dateTime .
+  dct:modified "2025-05-22T11:14:15.840Z"^^xsd:dateTime .
 
 hri:DistributionShape a sh:NodeShape;
   rdfs:label "Distribution"@en;
@@ -158,6 +158,7 @@ hri:DistributionShape a sh:NodeShape;
   sh:name "modification date"@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -174,12 +175,14 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The date the dataset distribution was issued."@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#healthdcatap:retentionperiod>
   sh:path healthdcatap:retentionperiod;
   sh:name "retention period"@en;
+  sh:maxCount 1;
   sh:node hri:PeriodOfTimeShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
@@ -198,23 +201,23 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-da6932df208249999cca8f74f47df74831-B8C0D19C0D0A0AADD3F5BBB535A1757B;
+  sh:in _:genid-ca4929703743490d9980d90263b229b643-4DC6193FCBAEC5B38E84CEF358B77BCD;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-da6932df208249999cca8f74f47df74831-B8C0D19C0D0A0AADD3F5BBB535A1757B rdf:first
+_:genid-ca4929703743490d9980d90263b229b643-4DC6193FCBAEC5B38E84CEF358B77BCD rdf:first
     status:COMPLETED;
-  rdf:rest _:genid-da6932df208249999cca8f74f47df74831-BC386D931CCC43EB5DCD940CDE56E1B4 .
+  rdf:rest _:genid-ca4929703743490d9980d90263b229b643-D72598B668421EEB9EE7C309B8095880 .
 
-_:genid-da6932df208249999cca8f74f47df74831-BC386D931CCC43EB5DCD940CDE56E1B4 rdf:first
+_:genid-ca4929703743490d9980d90263b229b643-D72598B668421EEB9EE7C309B8095880 rdf:first
     status:DEVELOP;
-  rdf:rest _:genid-da6932df208249999cca8f74f47df74831-05FAACE1BBFD2C2DEC85572B168435DA .
+  rdf:rest _:genid-ca4929703743490d9980d90263b229b643-460F2F54B8C12A4786453B82E53234CF .
 
-_:genid-da6932df208249999cca8f74f47df74831-05FAACE1BBFD2C2DEC85572B168435DA rdf:first
+_:genid-ca4929703743490d9980d90263b229b643-460F2F54B8C12A4786453B82E53234CF rdf:first
     status:WITHDRAWN;
-  rdf:rest _:genid-da6932df208249999cca8f74f47df74831-AD0B8CAF3108E4231B2E6E045AC9894E .
+  rdf:rest _:genid-ca4929703743490d9980d90263b229b643-837C8491208B41F014D7EB75F5A18F42 .
 
-_:genid-da6932df208249999cca8f74f47df74831-AD0B8CAF3108E4231B2E6E045AC9894E rdf:first
+_:genid-ca4929703743490d9980d90263b229b643-837C8491208B41F014D7EB75F5A18F42 rdf:first
     status:DEPRECATED;
   rdf:rest rdf:nil .
 
@@ -239,7 +242,7 @@ hri:aux-PeriodOfTimeShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Period of Time"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-24T09:10:17.860Z"^^xsd:dateTime .
+  dct:modified "2025-05-22T08:05:16.640Z"^^xsd:dateTime .
 
 hri:PeriodOfTimeShape a sh:NodeShape;
   rdfs:label "Period of Time"@en;
@@ -252,6 +255,7 @@ hri:PeriodOfTimeShape a sh:NodeShape;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
   sh:datatype xsd:dateTime;
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -261,6 +265,7 @@ hri:PeriodOfTimeShape a sh:NodeShape;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
   sh:datatype xsd:dateTime;
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 

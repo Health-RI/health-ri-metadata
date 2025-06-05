@@ -33,7 +33,7 @@
   rdfs:comment "Health-RI v2 Distribution."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Distribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-02T05:12:16.430Z"^^xsd:dateTime .
+  dct:modified "2025-05-22T11:14:15.840Z"^^xsd:dateTime .
 
 hri:DistributionShape a sh:NodeShape;
   rdfs:label "Distribution"@en;
@@ -158,6 +158,7 @@ hri:DistributionShape a sh:NodeShape;
   sh:name "modification date"@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -174,12 +175,14 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The date the dataset distribution was issued."@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#healthdcatap:retentionperiod>
   sh:path healthdcatap:retentionperiod;
   sh:name "retention period"@en;
+  sh:maxCount 1;
   sh:node hri:PeriodOfTimeShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
@@ -198,20 +201,20 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:c43d47d21f8e45a0a6b80a39c0fca5702;
+  sh:in _:a07deeba86ea4a158f0b02eb8017e72a2;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:c43d47d21f8e45a0a6b80a39c0fca5702 rdf:first status:COMPLETED;
-  rdf:rest _:c43d47d21f8e45a0a6b80a39c0fca5703 .
+_:a07deeba86ea4a158f0b02eb8017e72a2 rdf:first status:COMPLETED;
+  rdf:rest _:a07deeba86ea4a158f0b02eb8017e72a3 .
 
-_:c43d47d21f8e45a0a6b80a39c0fca5703 rdf:first status:DEVELOP;
-  rdf:rest _:c43d47d21f8e45a0a6b80a39c0fca5704 .
+_:a07deeba86ea4a158f0b02eb8017e72a3 rdf:first status:DEVELOP;
+  rdf:rest _:a07deeba86ea4a158f0b02eb8017e72a4 .
 
-_:c43d47d21f8e45a0a6b80a39c0fca5704 rdf:first status:WITHDRAWN;
-  rdf:rest _:c43d47d21f8e45a0a6b80a39c0fca5705 .
+_:a07deeba86ea4a158f0b02eb8017e72a4 rdf:first status:WITHDRAWN;
+  rdf:rest _:a07deeba86ea4a158f0b02eb8017e72a5 .
 
-_:c43d47d21f8e45a0a6b80a39c0fca5705 rdf:first status:DEPRECATED;
+_:a07deeba86ea4a158f0b02eb8017e72a5 rdf:first status:DEPRECATED;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#dcat:temporalResolution> sh:path

@@ -32,7 +32,7 @@
   rdfs:comment "Health-RI v2 DataService."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for DataService."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-23T13:25:32.440Z"^^xsd:dateTime .
+  dct:modified "2025-05-28T11:53:21.820Z"^^xsd:dateTime .
 
 hri:DataServiceShape a sh:NodeShape;
   rdfs:label "DataService"@en;
@@ -109,9 +109,9 @@ hri:DataServiceShape a sh:NodeShape;
   sh:description "The property gives specific details of the actual endpoint instances, while dct:conformsTo is used to indicate the general standard or specification that the endpoints implement."@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:nodeKind sh:Literal;
-  dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextAreaEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:endpointURL> sh:path dcat:endpointURL;
   sh:name "end point URL"@en;
@@ -176,14 +176,15 @@ hri:DataServiceShape a sh:NodeShape;
   sh:name "modification date"@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#adms:identifier> sh:path adms:identifier;
   sh:name "other identifier"@en;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  sh:node hri:IdentifierShape;
+  dash:viewer dash:DetailsViewer;
+  dash:editor dash:BlankNodeEditor .
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dct:publisher> sh:path dct:publisher;
   sh:name "Publisher"@en;
