@@ -42,6 +42,7 @@ This is version 2.0 of Health-RI core metadata schema.
   - [Quality certificate](#quality-certificate)
 - [Further Information](#further-information)
   - [Model extension](#model-extension)
+- [License](#license)
 
 ## Previous published version
 
