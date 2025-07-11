@@ -32,7 +32,7 @@
   rdfs:comment "Health-RI v2 Catalog."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Catalog."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T13:17:04.530Z"^^xsd:dateTime .
+  dct:modified "2025-07-11T14:05:44.010Z"^^xsd:dateTime .
 
 hri:CatalogShape a sh:NodeShape;
   rdfs:label "Catalog"@en;
@@ -65,15 +65,15 @@ hri:CatalogShape a sh:NodeShape;
   sh:name "Contact point"@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:node hri:KindShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:creator> sh:path dct:creator;
   sh:name "creator"@en;
-  sh:node hri:AgentShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dcat:dataset> sh:path dcat:dataset;
   sh:name "dataset"@en .
@@ -130,9 +130,9 @@ hri:CatalogShape a sh:NodeShape;
   sh:name "publisher"@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:node hri:AgentShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:issued> sh:path dct:issued;
   sh:name "release date"@en;

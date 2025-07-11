@@ -33,7 +33,7 @@
   rdfs:comment "Health-RI v2 Distribution."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Distribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T11:14:15.840Z"^^xsd:dateTime .
+  dct:modified "2025-07-11T14:17:37.180Z"^^xsd:dateTime .
 
 hri:DistributionShape a sh:NodeShape;
   rdfs:label "Distribution"@en;
@@ -201,20 +201,20 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:a07deeba86ea4a158f0b02eb8017e72a2;
+  sh:in _:0a2ca676b3fe44bc8de071b426aaa48818;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:a07deeba86ea4a158f0b02eb8017e72a2 rdf:first status:COMPLETED;
-  rdf:rest _:a07deeba86ea4a158f0b02eb8017e72a3 .
+_:0a2ca676b3fe44bc8de071b426aaa48818 rdf:first status:COMPLETED;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48819 .
 
-_:a07deeba86ea4a158f0b02eb8017e72a3 rdf:first status:DEVELOP;
-  rdf:rest _:a07deeba86ea4a158f0b02eb8017e72a4 .
+_:0a2ca676b3fe44bc8de071b426aaa48819 rdf:first status:DEVELOP;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48820 .
 
-_:a07deeba86ea4a158f0b02eb8017e72a4 rdf:first status:WITHDRAWN;
-  rdf:rest _:a07deeba86ea4a158f0b02eb8017e72a5 .
+_:0a2ca676b3fe44bc8de071b426aaa48820 rdf:first status:WITHDRAWN;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48821 .
 
-_:a07deeba86ea4a158f0b02eb8017e72a5 rdf:first status:DEPRECATED;
+_:0a2ca676b3fe44bc8de071b426aaa48821 rdf:first status:DEPRECATED;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#dcat:temporalResolution> sh:path

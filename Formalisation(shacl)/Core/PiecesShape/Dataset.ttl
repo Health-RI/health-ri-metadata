@@ -9,6 +9,7 @@
 @prefix qb: <http://purl.org/linked-data/cube#> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix eu-freq: <http://publications.europa.eu/resource/authority/frequency/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
@@ -27,9 +28,11 @@
 @prefix eu: <http://publications.europa.eu/resource/authority/access-right/> .
 @prefix dpv-pd: <https://w3id.org/dpv/dpv-pd#> .
 @prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
+@prefix eu-th: <http://publications.europa.eu/resource/authority/data-theme/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix status: <http://publications.europa.eu/resource/authority/distribution-status/> .
 
 hri:DatasetShape a owl:Ontology, sh:NodeShape;
   rdfs:label "Excel template for Dataset class"@en, "Dataset"@en;
@@ -69,17 +72,17 @@ hri:DatasetShape a owl:Ontology, sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:a07deeba86ea4a158f0b02eb8017e72a6;
+  sh:in _:0a2ca676b3fe44bc8de071b426aaa48842;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:a07deeba86ea4a158f0b02eb8017e72a6 rdf:first eu:PUBLIC;
-  rdf:rest _:a07deeba86ea4a158f0b02eb8017e72a7 .
+_:0a2ca676b3fe44bc8de071b426aaa48842 rdf:first eu:PUBLIC;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48843 .
 
-_:a07deeba86ea4a158f0b02eb8017e72a7 rdf:first eu:RESTRICTED;
-  rdf:rest _:a07deeba86ea4a158f0b02eb8017e72a8 .
+_:0a2ca676b3fe44bc8de071b426aaa48843 rdf:first eu:RESTRICTED;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48844 .
 
-_:a07deeba86ea4a158f0b02eb8017e72a8 rdf:first eu:NON_PUBLIC;
+_:0a2ca676b3fe44bc8de071b426aaa48844 rdf:first eu:NON_PUBLIC;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#analytics> sh:path healthdcatap:analytics;
@@ -124,17 +127,17 @@ _:a07deeba86ea4a158f0b02eb8017e72a8 rdf:first eu:NON_PUBLIC;
   sh:description "Contact information that can be used for sending comments about the Dataset."@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:node hri:KindShape;
+  sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
-  dash:editor dash:BlankNodeEditor .
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#creator> sh:path dct:creator;
   sh:name "creator"@en;
   sh:description "An entity responsible for producing the dataset."@en;
   sh:minCount 1;
-  sh:node hri:AgentShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#description> sh:path dct:description;
   sh:name "description"@en;
@@ -164,8 +167,129 @@ _:a07deeba86ea4a158f0b02eb8017e72a8 rdf:first eu:NON_PUBLIC;
   sh:description "The frequency at which the Dataset is updated. This property must be filled with a value from a controlled vocabulary."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
+  sh:in _:0a2ca676b3fe44bc8de071b426aaa48845;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
+
+_:0a2ca676b3fe44bc8de071b426aaa48845 rdf:first eu-freq:BIDECENNIAL;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48846 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48846 rdf:first eu-freq:TRIDECENNIAL;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48847 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48847 rdf:first eu-freq:BIHOURLY;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48848 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48848 rdf:first eu-freq:TRIHOURLY;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48849 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48849 rdf:first eu-freq:OTHER;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48850 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48850 rdf:first eu-freq:WEEKLY;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48851 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48851 rdf:first eu-freq:NOT_PLANNED;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48852 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48852 rdf:first eu-freq:AS_NEEDED;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48853 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48853 rdf:first eu-freq:5MIN;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48854 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48854 rdf:first eu-freq:WEEKLY_5;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48855 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48855 rdf:first eu-freq:30MIN;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48856 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48856 rdf:first eu-freq:HOURLY;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48857 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48857 rdf:first eu-freq:QUADRENNIAL;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48858 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48858 rdf:first eu-freq:QUINQUENNIAL;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48859 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48859 rdf:first eu-freq:DECENNIAL;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48860 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48860 rdf:first eu-freq:1MIN;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48861 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48861 rdf:first eu-freq:15MIN;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48862 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48862 rdf:first eu-freq:WEEKLY_2;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48863 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48863 rdf:first eu-freq:WEEKLY_3;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48864 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48864 rdf:first eu-freq:12HRS;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48865 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48865 rdf:first eu-freq:UNKNOWN;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48866 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48866 rdf:first eu-freq:10MIN;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48867 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48867 rdf:first eu-freq:UPDATE_CONT;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48868 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48868 rdf:first eu-freq:QUARTERLY;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48869 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48869 rdf:first eu-freq:TRIENNIAL;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48870 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48870 rdf:first eu-freq:NEVER;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48871 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48871 rdf:first eu-freq:OP_DATPRO;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48872 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48872 rdf:first eu-freq:MONTHLY_2;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48873 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48873 rdf:first eu-freq:MONTHLY_3;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48874 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48874 rdf:first eu-freq:IRREG;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48875 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48875 rdf:first eu-freq:MONTHLY;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48876 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48876 rdf:first eu-freq:DAILY;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48877 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48877 rdf:first eu-freq:DAILY_2;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48878 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48878 rdf:first eu-freq:BIWEEKLY;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48879 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48879 rdf:first eu-freq:CONT;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48880 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48880 rdf:first eu-freq:BIENNIAL;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48881 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48881 rdf:first eu-freq:BIMONTHLY;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48882 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48882 rdf:first eu-freq:ANNUAL_2;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48883 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48883 rdf:first eu-freq:ANNUAL_3;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48884 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48884 rdf:first eu-freq:ANNUAL;
+  rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#geographical-coverage> sh:path dct:spatial;
   sh:name "geographical coverage"@en;
@@ -308,9 +432,9 @@ _:a07deeba86ea4a158f0b02eb8017e72a8 rdf:first eu:NON_PUBLIC;
   sh:description "An entity (organisation) responsible for making the Dataset available."@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:node hri:AgentShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#purpose> sh:path dpv:hasPurpose;
   sh:name "purpose"@en;
@@ -377,8 +501,21 @@ _:a07deeba86ea4a158f0b02eb8017e72a8 rdf:first eu:NON_PUBLIC;
   sh:description "The status of a dataset. This property can be filled with a value from a controlled vocabulary."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
+  sh:in _:0a2ca676b3fe44bc8de071b426aaa48885;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
+
+_:0a2ca676b3fe44bc8de071b426aaa48885 rdf:first status:COMPLETED;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48886 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48886 rdf:first status:DEVELOP;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48887 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48887 rdf:first status:WITHDRAWN;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48888 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48888 rdf:first status:DEPRECATED;
+  rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#temporal-coverage> sh:path dct:temporal;
   sh:name "temporal coverage"@en;
@@ -401,9 +538,49 @@ _:a07deeba86ea4a158f0b02eb8017e72a8 rdf:first eu:NON_PUBLIC;
   sh:description "A category of the Dataset. This property must be filled with a value from a controlled vocabulary. The default value of this property is http://publications.europa.eu/resource/authority/data-theme/HEAL from the controlled vocabulary."@en;
   sh:minCount 1;
   sh:nodeKind sh:IRI;
-  sh:defaultValue <http://publications.europa.eu/resource/authority/data-theme/HEAL>;
+  sh:in _:0a2ca676b3fe44bc8de071b426aaa48889;
+  sh:defaultValue eu-th:HEAL;
   dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  dash:editor dash:EnumSelectEditor .
+
+_:0a2ca676b3fe44bc8de071b426aaa48889 rdf:first eu-th:HEAL;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48890 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48890 rdf:first eu-th:TECH;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48891 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48891 rdf:first eu-th:TRAN;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48892 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48892 rdf:first eu-th:REGI;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48893 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48893 rdf:first eu-th:SOCI;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48894 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48894 rdf:first eu-th:AGRI;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48895 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48895 rdf:first eu-th:ECON;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48896 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48896 rdf:first eu-th:JUST;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48897 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48897 rdf:first eu-th:INTR;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48898 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48898 rdf:first eu-th:ENVI;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48899 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48899 rdf:first eu-th:GOVE;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa488100 .
+
+_:0a2ca676b3fe44bc8de071b426aaa488100 rdf:first eu-th:EDUC;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa488101 .
+
+_:0a2ca676b3fe44bc8de071b426aaa488101 rdf:first eu-th:ENER;
+  rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#title> sh:path dct:title;
   sh:name "title"@en;

@@ -1,4 +1,5 @@
 @prefix schema: <http://schema.org/> .
+@prefix role: <https://standards.iso.org/iso/19115/resources/Codelists/gml/CI_RoleCode.xml#> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -32,7 +33,7 @@ hri:aux-AttributionShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Attribution"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Attribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T11:14:23.140Z"^^xsd:dateTime .
+  dct:modified "2025-07-11T14:14:11.270Z"^^xsd:dateTime .
 
 hri:AttributionShape a sh:NodeShape;
   rdfs:label "Attribution"@en;
@@ -43,14 +44,75 @@ hri:AttributionShape a sh:NodeShape;
   sh:name "agent"@en;
   sh:description "The agent that has a specific role with the described resource."@en;
   sh:maxCount 1;
-  sh:node hri:AgentShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:LabelViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/AttributionShape#dcat:hadRole> sh:path dcat:hadRole;
   sh:name "role"@en;
   sh:description "The nature of the relationship between the agent and the described resource, as indicated by a value from the controlled vocabulary."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
+  sh:in _:0a2ca676b3fe44bc8de071b426aaa48822;
   dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
+
+_:0a2ca676b3fe44bc8de071b426aaa48822 rdf:first role:resourceProvider;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48823 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48823 rdf:first role:custodian;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48824 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48824 rdf:first role:owner;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48825 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48825 rdf:first role:user;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48826 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48826 rdf:first role:distributor;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48827 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48827 rdf:first role:originator;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48828 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48828 rdf:first role:pointOfContact;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48829 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48829 rdf:first role:principalInvestigator;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48830 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48830 rdf:first role:processor;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48831 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48831 rdf:first role:publisher;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48832 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48832 rdf:first role:author;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48833 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48833 rdf:first role:sponsor;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48834 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48834 rdf:first role:coAuthor;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48835 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48835 rdf:first role:collaborator;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48836 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48836 rdf:first role:editor;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48837 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48837 rdf:first role:mediator;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48838 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48838 rdf:first role:rightsHolder;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48839 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48839 rdf:first role:contributor;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48840 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48840 rdf:first role:funder;
+  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48841 .
+
+_:0a2ca676b3fe44bc8de071b426aaa48841 rdf:first role:stakeholder;
+  rdf:rest rdf:nil .

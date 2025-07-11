@@ -22,7 +22,9 @@
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 @prefix xls2rdf: <https://xls2rdf.sparna.fr/vocabulary#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix eu: <http://publications.europa.eu/resource/authority/access-right/> .
 @prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
+@prefix eu-th: <http://publications.europa.eu/resource/authority/data-theme/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -33,7 +35,7 @@
   rdfs:comment "Health-RI v2 DataService."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for DataService."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-28T11:53:21.820Z"^^xsd:dateTime .
+  dct:modified "2025-07-11T14:11:18.190Z"^^xsd:dateTime .
 
 hri:DataServiceShape a sh:NodeShape;
   rdfs:label "DataService"@en;
@@ -57,8 +59,21 @@ hri:DataServiceShape a sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
+  sh:in _:genid-e8fa081bd81645d2a203eb0b897cebe026-4ECA1D9ECB79A19F171433DB5636F0F1;
   dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  dash:editor dash:EnumSelectEditor .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe026-4ECA1D9ECB79A19F171433DB5636F0F1 rdf:first
+    eu:PUBLIC;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-F4A807CD0E572349F2AE7E6A6CCE5BA4 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe026-F4A807CD0E572349F2AE7E6A6CCE5BA4 rdf:first
+    eu:RESTRICTED;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-3C04BDCA27CF82E0E0C2988E585544C5 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe026-3C04BDCA27CF82E0E0C2988E585544C5 rdf:first
+    eu:NON_PUBLIC;
+  rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dcatap:applicableLegislation> sh:path
     dcatap:applicableLegislation;
@@ -80,15 +95,15 @@ hri:DataServiceShape a sh:NodeShape;
   sh:description "Contact information that can be used for sending comments about the Data Service."@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:node hri:KindShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dct:creator> sh:path dct:creator;
   sh:name "creator"@en;
-  sh:node hri:AgentShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dct:rights> sh:path dct:rights;
   sh:name "rights"@en;
@@ -192,9 +207,9 @@ hri:DataServiceShape a sh:NodeShape;
   sh:description "An entity (organisation) responsible for making the Data Service available."@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:node hri:AgentShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:servesDataset> sh:path dcat:servesDataset;
   sh:name "serves dataset"@en;
@@ -208,8 +223,62 @@ hri:DataServiceShape a sh:NodeShape;
   sh:description "A Data Service may be associated with multiple themes."@en;
   sh:minCount 1;
   sh:nodeKind sh:IRI;
+  sh:in _:genid-e8fa081bd81645d2a203eb0b897cebe026-9800A4B5FB32F41E82965B049938F148;
+  sh:defaultValue eu-th:HEAL;
   dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  dash:editor dash:EnumSelectEditor .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe026-9800A4B5FB32F41E82965B049938F148 rdf:first
+    eu-th:HEAL;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-052F8C0A6A672ED032723B2408E1B0A4 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe026-052F8C0A6A672ED032723B2408E1B0A4 rdf:first
+    eu-th:TECH;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-D92D256732E50D70687AB16936F34848 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe026-D92D256732E50D70687AB16936F34848 rdf:first
+    eu-th:TRAN;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-4AF10F6D4E5B319507741A35E928CA78 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe026-4AF10F6D4E5B319507741A35E928CA78 rdf:first
+    eu-th:REGI;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-44C05D58693F4071E6001A1D0DA65479 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe026-44C05D58693F4071E6001A1D0DA65479 rdf:first
+    eu-th:SOCI;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-0CF75DB4978388CF239D97660C3A297A .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe026-0CF75DB4978388CF239D97660C3A297A rdf:first
+    eu-th:AGRI;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-412D0801E12277D4E65D1BA71FF70F60 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe026-412D0801E12277D4E65D1BA71FF70F60 rdf:first
+    eu-th:ECON;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-B4921C14A0543A38AE1AFBE8295FC076 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe026-B4921C14A0543A38AE1AFBE8295FC076 rdf:first
+    eu-th:JUST;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-D85538E2DA62706183F29E6FA1555CD1 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe026-D85538E2DA62706183F29E6FA1555CD1 rdf:first
+    eu-th:INTR;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-BA0F3C9EA50C9BD8C1EA846008B322E5 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe026-BA0F3C9EA50C9BD8C1EA846008B322E5 rdf:first
+    eu-th:ENVI;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-BA14C36E97C10A1A6AD1A66AD3C68BB8 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe026-BA14C36E97C10A1A6AD1A66AD3C68BB8 rdf:first
+    eu-th:GOVE;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-663987B209AC76C8B587E9B981A0E0D2 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe026-663987B209AC76C8B587E9B981A0E0D2 rdf:first
+    eu-th:EDUC;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-B34689351FD8BEB2B5C1AE18DA2AD541 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe026-B34689351FD8BEB2B5C1AE18DA2AD541 rdf:first
+    eu-th:ENER;
+  rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dct:title> sh:path dct:title;
   sh:name "title"@en;

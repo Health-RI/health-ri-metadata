@@ -33,7 +33,7 @@
   rdfs:comment "Health-RI v2 Distribution."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Distribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T11:14:15.840Z"^^xsd:dateTime .
+  dct:modified "2025-07-11T14:17:37.180Z"^^xsd:dateTime .
 
 hri:DistributionShape a sh:NodeShape;
   rdfs:label "Distribution"@en;
@@ -201,23 +201,23 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-ca4929703743490d9980d90263b229b643-4DC6193FCBAEC5B38E84CEF358B77BCD;
+  sh:in _:genid-e8fa081bd81645d2a203eb0b897cebe061-B942F331A50F9427586A1CD4C7DA88A0;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-ca4929703743490d9980d90263b229b643-4DC6193FCBAEC5B38E84CEF358B77BCD rdf:first
+_:genid-e8fa081bd81645d2a203eb0b897cebe061-B942F331A50F9427586A1CD4C7DA88A0 rdf:first
     status:COMPLETED;
-  rdf:rest _:genid-ca4929703743490d9980d90263b229b643-D72598B668421EEB9EE7C309B8095880 .
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe061-8EC077B0FF268618B43464B0A10B0B28 .
 
-_:genid-ca4929703743490d9980d90263b229b643-D72598B668421EEB9EE7C309B8095880 rdf:first
+_:genid-e8fa081bd81645d2a203eb0b897cebe061-8EC077B0FF268618B43464B0A10B0B28 rdf:first
     status:DEVELOP;
-  rdf:rest _:genid-ca4929703743490d9980d90263b229b643-460F2F54B8C12A4786453B82E53234CF .
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe061-E3E173AEDFF7E1EE9E8E4A46F772E4F2 .
 
-_:genid-ca4929703743490d9980d90263b229b643-460F2F54B8C12A4786453B82E53234CF rdf:first
+_:genid-e8fa081bd81645d2a203eb0b897cebe061-E3E173AEDFF7E1EE9E8E4A46F772E4F2 rdf:first
     status:WITHDRAWN;
-  rdf:rest _:genid-ca4929703743490d9980d90263b229b643-837C8491208B41F014D7EB75F5A18F42 .
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe061-6FED42A7F2A2A99A3BB2311F80D2C871 .
 
-_:genid-ca4929703743490d9980d90263b229b643-837C8491208B41F014D7EB75F5A18F42 rdf:first
+_:genid-e8fa081bd81645d2a203eb0b897cebe061-6FED42A7F2A2A99A3BB2311F80D2C871 rdf:first
     status:DEPRECATED;
   rdf:rest rdf:nil .
 

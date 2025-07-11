@@ -26,12 +26,15 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix eu: <http://publications.europa.eu/resource/authority/access-right/> .
+@prefix eu-th: <http://publications.europa.eu/resource/authority/data-theme/> .
 @prefix status: <http://publications.europa.eu/resource/authority/distribution-status/> .
 @prefix dqv: <http://www.w3.org/ns/dqv#> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
+@prefix role: <https://standards.iso.org/iso/19115/resources/Codelists/gml/CI_RoleCode.xml#> .
+@prefix eu-freq: <http://publications.europa.eu/resource/authority/frequency/> .
 @prefix dpv: <https://w3id.org/dpv#> .
-@prefix eu: <http://publications.europa.eu/resource/authority/access-right/> .
 @prefix dpv-pd: <https://w3id.org/dpv/dpv-pd#> .
 
 <https://data.sparna.fr/shapes-example#> a owl:Ontology;
@@ -42,8 +45,8 @@
     "SHACL definitions for the Health-RI v2 model for DataService."@en, "SHACL definitions for the Health-RI v2 model for Catalog."@en,
     "SHACL definitions for the Health-RI v2 model for Distribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T11:18:44.760Z"^^xsd:dateTime, "2025-05-28T11:53:21.820Z"^^xsd:dateTime,
-    "2025-05-22T13:17:04.530Z"^^xsd:dateTime, "2025-05-22T11:14:15.840Z"^^xsd:dateTime .
+  dct:modified "2025-07-11T14:00:59.400Z"^^xsd:dateTime, "2025-07-11T14:11:18.190Z"^^xsd:dateTime,
+    "2025-07-11T14:05:44.010Z"^^xsd:dateTime, "2025-07-11T14:17:37.180Z"^^xsd:dateTime .
 
 hri:DatasetSeriesShape a sh:NodeShape;
   rdfs:label "DatasetSeries"@en;
@@ -67,9 +70,9 @@ hri:DatasetSeriesShape a sh:NodeShape;
   sh:name "contact point"@en;
   sh:description "Contact information that can be used for sending comments about the Dataset Series."@en;
   sh:minCount 1;
-  sh:node hri:KindShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:description> sh:path dct:description;
   sh:name "description"@en;
@@ -110,9 +113,9 @@ hri:DatasetSeriesShape a sh:NodeShape;
   sh:name "publisher"@en;
   sh:description "An entity (organisation) responsible for ensuring the coherency of the Dataset Series."@en;
   sh:maxCount 1;
-  sh:node hri:AgentShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:issued> sh:path dct:issued;
   sh:name "release date"@en;
@@ -194,8 +197,21 @@ hri:DataServiceShape a sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
+  sh:in _:genid-e8fa081bd81645d2a203eb0b897cebe084-4ECA1D9ECB79A19F171433DB5636F0F1;
   dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  dash:editor dash:EnumSelectEditor .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe084-4ECA1D9ECB79A19F171433DB5636F0F1 rdf:first
+    eu:PUBLIC;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe084-F4A807CD0E572349F2AE7E6A6CCE5BA4 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe084-F4A807CD0E572349F2AE7E6A6CCE5BA4 rdf:first
+    eu:RESTRICTED;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe084-3C04BDCA27CF82E0E0C2988E585544C5 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe084-3C04BDCA27CF82E0E0C2988E585544C5 rdf:first
+    eu:NON_PUBLIC;
+  rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dcatap:applicableLegislation> sh:path
     dcatap:applicableLegislation;
@@ -217,15 +233,15 @@ hri:DataServiceShape a sh:NodeShape;
   sh:description "Contact information that can be used for sending comments about the Data Service."@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:node hri:KindShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dct:creator> sh:path dct:creator;
   sh:name "creator"@en;
-  sh:node hri:AgentShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dct:rights> sh:path dct:rights;
   sh:name "rights"@en;
@@ -329,9 +345,9 @@ hri:DataServiceShape a sh:NodeShape;
   sh:description "An entity (organisation) responsible for making the Data Service available."@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:node hri:AgentShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:servesDataset> sh:path dcat:servesDataset;
   sh:name "serves dataset"@en;
@@ -345,8 +361,62 @@ hri:DataServiceShape a sh:NodeShape;
   sh:description "A Data Service may be associated with multiple themes."@en;
   sh:minCount 1;
   sh:nodeKind sh:IRI;
+  sh:in _:genid-e8fa081bd81645d2a203eb0b897cebe084-9800A4B5FB32F41E82965B049938F148;
+  sh:defaultValue eu-th:HEAL;
   dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  dash:editor dash:EnumSelectEditor .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe084-9800A4B5FB32F41E82965B049938F148 rdf:first
+    eu-th:HEAL;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe084-052F8C0A6A672ED032723B2408E1B0A4 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe084-052F8C0A6A672ED032723B2408E1B0A4 rdf:first
+    eu-th:TECH;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe084-D92D256732E50D70687AB16936F34848 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe084-D92D256732E50D70687AB16936F34848 rdf:first
+    eu-th:TRAN;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe084-4AF10F6D4E5B319507741A35E928CA78 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe084-4AF10F6D4E5B319507741A35E928CA78 rdf:first
+    eu-th:REGI;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe084-44C05D58693F4071E6001A1D0DA65479 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe084-44C05D58693F4071E6001A1D0DA65479 rdf:first
+    eu-th:SOCI;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe084-0CF75DB4978388CF239D97660C3A297A .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe084-0CF75DB4978388CF239D97660C3A297A rdf:first
+    eu-th:AGRI;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe084-412D0801E12277D4E65D1BA71FF70F60 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe084-412D0801E12277D4E65D1BA71FF70F60 rdf:first
+    eu-th:ECON;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe084-B4921C14A0543A38AE1AFBE8295FC076 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe084-B4921C14A0543A38AE1AFBE8295FC076 rdf:first
+    eu-th:JUST;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe084-D85538E2DA62706183F29E6FA1555CD1 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe084-D85538E2DA62706183F29E6FA1555CD1 rdf:first
+    eu-th:INTR;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe084-BA0F3C9EA50C9BD8C1EA846008B322E5 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe084-BA0F3C9EA50C9BD8C1EA846008B322E5 rdf:first
+    eu-th:ENVI;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe084-BA14C36E97C10A1A6AD1A66AD3C68BB8 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe084-BA14C36E97C10A1A6AD1A66AD3C68BB8 rdf:first
+    eu-th:GOVE;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe084-663987B209AC76C8B587E9B981A0E0D2 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe084-663987B209AC76C8B587E9B981A0E0D2 rdf:first
+    eu-th:EDUC;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe084-B34689351FD8BEB2B5C1AE18DA2AD541 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe084-B34689351FD8BEB2B5C1AE18DA2AD541 rdf:first
+    eu-th:ENER;
+  rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dct:title> sh:path dct:title;
   sh:name "title"@en;
@@ -387,15 +457,15 @@ hri:CatalogShape a sh:NodeShape;
   sh:name "Contact point"@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:node hri:KindShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:creator> sh:path dct:creator;
   sh:name "creator"@en;
-  sh:node hri:AgentShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dcat:dataset> sh:path dcat:dataset;
   sh:name "dataset"@en .
@@ -452,9 +522,9 @@ hri:CatalogShape a sh:NodeShape;
   sh:name "publisher"@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:node hri:AgentShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:issued> sh:path dct:issued;
   sh:name "release date"@en;
@@ -663,23 +733,23 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-ca4929703743490d9980d90263b229b670-4DC6193FCBAEC5B38E84CEF358B77BCD;
+  sh:in _:genid-e8fa081bd81645d2a203eb0b897cebe088-B942F331A50F9427586A1CD4C7DA88A0;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-ca4929703743490d9980d90263b229b670-4DC6193FCBAEC5B38E84CEF358B77BCD rdf:first
+_:genid-e8fa081bd81645d2a203eb0b897cebe088-B942F331A50F9427586A1CD4C7DA88A0 rdf:first
     status:COMPLETED;
-  rdf:rest _:genid-ca4929703743490d9980d90263b229b670-D72598B668421EEB9EE7C309B8095880 .
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe088-8EC077B0FF268618B43464B0A10B0B28 .
 
-_:genid-ca4929703743490d9980d90263b229b670-D72598B668421EEB9EE7C309B8095880 rdf:first
+_:genid-e8fa081bd81645d2a203eb0b897cebe088-8EC077B0FF268618B43464B0A10B0B28 rdf:first
     status:DEVELOP;
-  rdf:rest _:genid-ca4929703743490d9980d90263b229b670-460F2F54B8C12A4786453B82E53234CF .
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe088-E3E173AEDFF7E1EE9E8E4A46F772E4F2 .
 
-_:genid-ca4929703743490d9980d90263b229b670-460F2F54B8C12A4786453B82E53234CF rdf:first
+_:genid-e8fa081bd81645d2a203eb0b897cebe088-E3E173AEDFF7E1EE9E8E4A46F772E4F2 rdf:first
     status:WITHDRAWN;
-  rdf:rest _:genid-ca4929703743490d9980d90263b229b670-837C8491208B41F014D7EB75F5A18F42 .
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe088-6FED42A7F2A2A99A3BB2311F80D2C871 .
 
-_:genid-ca4929703743490d9980d90263b229b670-837C8491208B41F014D7EB75F5A18F42 rdf:first
+_:genid-e8fa081bd81645d2a203eb0b897cebe088-6FED42A7F2A2A99A3BB2311F80D2C871 rdf:first
     status:DEPRECATED;
   rdf:rest rdf:nil .
 
@@ -813,7 +883,7 @@ hri:aux-AttributionShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Attribution"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Attribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T11:14:23.140Z"^^xsd:dateTime .
+  dct:modified "2025-07-11T14:14:11.270Z"^^xsd:dateTime .
 
 hri:AttributionShape a sh:NodeShape;
   rdfs:label "Attribution"@en;
@@ -824,17 +894,98 @@ hri:AttributionShape a sh:NodeShape;
   sh:name "agent"@en;
   sh:description "The agent that has a specific role with the described resource."@en;
   sh:maxCount 1;
-  sh:node hri:AgentShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:LabelViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/AttributionShape#dcat:hadRole> sh:path dcat:hadRole;
   sh:name "role"@en;
   sh:description "The nature of the relationship between the agent and the described resource, as indicated by a value from the controlled vocabulary."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
+  sh:in _:genid-e8fa081bd81645d2a203eb0b897cebe094-34BB4842C1A3BCF78B3B832DDF85BC3B;
   dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe094-34BB4842C1A3BCF78B3B832DDF85BC3B rdf:first
+    role:resourceProvider;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe094-3A1AAD7DF8F1BF935B5D3743996B40BF .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe094-3A1AAD7DF8F1BF935B5D3743996B40BF rdf:first
+    role:custodian;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe094-9D22AE78240AA007C74DFC34A1ED1C7D .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe094-9D22AE78240AA007C74DFC34A1ED1C7D rdf:first
+    role:owner;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe094-CFD31BD226355FC56980F5A143674E95 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe094-CFD31BD226355FC56980F5A143674E95 rdf:first
+    role:user;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe094-E8C4C813C1FFB1172DFC39EB6A00EE5C .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe094-E8C4C813C1FFB1172DFC39EB6A00EE5C rdf:first
+    role:distributor;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe094-4CBA645B8FCB06397424EEC26D1A3151 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe094-4CBA645B8FCB06397424EEC26D1A3151 rdf:first
+    role:originator;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe094-AC00D451C1232E43BDBF3ADAA21BB081 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe094-AC00D451C1232E43BDBF3ADAA21BB081 rdf:first
+    role:pointOfContact;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe094-B75D438CD7D0AE7AAB61F709A02D187A .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe094-B75D438CD7D0AE7AAB61F709A02D187A rdf:first
+    role:principalInvestigator;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe094-780139B2866909F0050A6F2B21FF8389 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe094-780139B2866909F0050A6F2B21FF8389 rdf:first
+    role:processor;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe094-2F9BC51E5BD160F54FF7C75E41C961E4 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe094-2F9BC51E5BD160F54FF7C75E41C961E4 rdf:first
+    role:publisher;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe094-B8CB65621FD7B1E17BCC0DCDBCDE3133 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe094-B8CB65621FD7B1E17BCC0DCDBCDE3133 rdf:first
+    role:author;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe094-D1377FA4F4FF5CB3AE75B7C16D6AA90A .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe094-D1377FA4F4FF5CB3AE75B7C16D6AA90A rdf:first
+    role:sponsor;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe094-6318966867733785F8698991F4519DC4 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe094-6318966867733785F8698991F4519DC4 rdf:first
+    role:coAuthor;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe094-B3B588865B41B0EB98BE289FA186299E .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe094-B3B588865B41B0EB98BE289FA186299E rdf:first
+    role:collaborator;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe094-2532E3B66890479D553B90ABA2A64F6A .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe094-2532E3B66890479D553B90ABA2A64F6A rdf:first
+    role:editor;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe094-FE965BE523BC36D1EC49664AA447C68A .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe094-FE965BE523BC36D1EC49664AA447C68A rdf:first
+    role:mediator;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe094-1D2BB855AFC9F1FE69970CCAAE0D2794 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe094-1D2BB855AFC9F1FE69970CCAAE0D2794 rdf:first
+    role:rightsHolder;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe094-B074E7B5C2522615BEA8F8AE1A45BAFD .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe094-B074E7B5C2522615BEA8F8AE1A45BAFD rdf:first
+    role:contributor;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe094-7D3ADDD91E16F605F7A82B8410EF43AF .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe094-7D3ADDD91E16F605F7A82B8410EF43AF rdf:first
+    role:funder;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe094-AF9E7E7A42C3245A46CBCD0BF150DB7E .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe094-AF9E7E7A42C3245A46CBCD0BF150DB7E rdf:first
+    role:stakeholder;
+  rdf:rest rdf:nil .
 
 hri:KindShapeKindShape a owl:Ontology;
   rdfs:label "Kind"@en;
@@ -1010,19 +1161,19 @@ hri:DatasetShape a owl:Ontology, sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-ca4929703743490d9980d90263b229b688-FA5005FEE946382924CAE7D5FDB56CCE;
+  sh:in _:genid-e8fa081bd81645d2a203eb0b897cebe0106-4FC92EC082116884A3930455C7CF9413;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-ca4929703743490d9980d90263b229b688-FA5005FEE946382924CAE7D5FDB56CCE rdf:first
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-4FC92EC082116884A3930455C7CF9413 rdf:first
     eu:PUBLIC;
-  rdf:rest _:genid-ca4929703743490d9980d90263b229b688-D7FE6C3E8CAE7A960B5C3416C4CA21F9 .
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-3D329D9767F99A3E367E1BA5655B6CE8 .
 
-_:genid-ca4929703743490d9980d90263b229b688-D7FE6C3E8CAE7A960B5C3416C4CA21F9 rdf:first
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-3D329D9767F99A3E367E1BA5655B6CE8 rdf:first
     eu:RESTRICTED;
-  rdf:rest _:genid-ca4929703743490d9980d90263b229b688-2E7CE2484722084BC7B01AC6DEB5777C .
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-17CE2892B55072FC9DD537B00C65B87A .
 
-_:genid-ca4929703743490d9980d90263b229b688-2E7CE2484722084BC7B01AC6DEB5777C rdf:first
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-17CE2892B55072FC9DD537B00C65B87A rdf:first
     eu:NON_PUBLIC;
   rdf:rest rdf:nil .
 
@@ -1068,17 +1219,17 @@ _:genid-ca4929703743490d9980d90263b229b688-2E7CE2484722084BC7B01AC6DEB5777C rdf:
   sh:description "Contact information that can be used for sending comments about the Dataset."@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:node hri:KindShape;
+  sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
-  dash:editor dash:BlankNodeEditor .
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#creator> sh:path dct:creator;
   sh:name "creator"@en;
   sh:description "An entity responsible for producing the dataset."@en;
   sh:minCount 1;
-  sh:node hri:AgentShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#description> sh:path dct:description;
   sh:name "description"@en;
@@ -1108,8 +1259,169 @@ _:genid-ca4929703743490d9980d90263b229b688-2E7CE2484722084BC7B01AC6DEB5777C rdf:
   sh:description "The frequency at which the Dataset is updated. This property must be filled with a value from a controlled vocabulary."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
+  sh:in _:genid-e8fa081bd81645d2a203eb0b897cebe0106-C55EBA3FCB374CF64F90838ECEC94FAE;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-C55EBA3FCB374CF64F90838ECEC94FAE rdf:first
+    eu-freq:BIDECENNIAL;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-5F08660250EFA2D8EEFD695B8DCBEA15 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-5F08660250EFA2D8EEFD695B8DCBEA15 rdf:first
+    eu-freq:TRIDECENNIAL;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-318B95C0D82484C05FE13B6BD568E14E .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-318B95C0D82484C05FE13B6BD568E14E rdf:first
+    eu-freq:BIHOURLY;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-032A85A873D9C9336331BF99441FB139 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-032A85A873D9C9336331BF99441FB139 rdf:first
+    eu-freq:TRIHOURLY;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-36FB4EBEB277E47F3B647A4D474EA494 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-36FB4EBEB277E47F3B647A4D474EA494 rdf:first
+    eu-freq:OTHER;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-97849405F5C61830497A608D46B62873 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-97849405F5C61830497A608D46B62873 rdf:first
+    eu-freq:WEEKLY;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-CA5B36E10FD1D0496A3DF6D3BF1797D6 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-CA5B36E10FD1D0496A3DF6D3BF1797D6 rdf:first
+    eu-freq:NOT_PLANNED;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-5AB247A8026773FE2334E1F808A26FB4 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-5AB247A8026773FE2334E1F808A26FB4 rdf:first
+    eu-freq:AS_NEEDED;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-17682B506C3499E2365C60B681CACC95 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-17682B506C3499E2365C60B681CACC95 rdf:first
+    eu-freq:5MIN;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-FD6665AE3A2A78344D5C35D2DEA9587E .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-FD6665AE3A2A78344D5C35D2DEA9587E rdf:first
+    eu-freq:WEEKLY_5;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-0CF66083AB6137C7CAB114906BFB3A96 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-0CF66083AB6137C7CAB114906BFB3A96 rdf:first
+    eu-freq:30MIN;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-1F87907131C564172AEDA890584183D9 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-1F87907131C564172AEDA890584183D9 rdf:first
+    eu-freq:HOURLY;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-9557BC5158DE0547BA656CD3ADBC84AD .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-9557BC5158DE0547BA656CD3ADBC84AD rdf:first
+    eu-freq:QUADRENNIAL;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-CE67A09AF394451F7DEF815CA229AA47 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-CE67A09AF394451F7DEF815CA229AA47 rdf:first
+    eu-freq:QUINQUENNIAL;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-748636CE2DA3534478971EA074DC4B7D .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-748636CE2DA3534478971EA074DC4B7D rdf:first
+    eu-freq:DECENNIAL;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-A8FF9A2367D0F8CD86D5FD423230CB55 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-A8FF9A2367D0F8CD86D5FD423230CB55 rdf:first
+    eu-freq:1MIN;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-68DFA30A59BC7134CFA3C1E1B0EBF50B .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-68DFA30A59BC7134CFA3C1E1B0EBF50B rdf:first
+    eu-freq:15MIN;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-15ED6CCD7EB1476037E25B6DD1B1A940 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-15ED6CCD7EB1476037E25B6DD1B1A940 rdf:first
+    eu-freq:WEEKLY_2;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-0C910720BF03AE529DCEBD564A9AB405 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-0C910720BF03AE529DCEBD564A9AB405 rdf:first
+    eu-freq:WEEKLY_3;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-E7E44E519EDC9172A01400DFE3141D53 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-E7E44E519EDC9172A01400DFE3141D53 rdf:first
+    eu-freq:12HRS;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-56712BC4E027F506C67E272F0A335DB6 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-56712BC4E027F506C67E272F0A335DB6 rdf:first
+    eu-freq:UNKNOWN;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-1977F8820386BE7F21FF35666FB2CFED .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-1977F8820386BE7F21FF35666FB2CFED rdf:first
+    eu-freq:10MIN;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-0136FF7125BCEB083F9DC2BDA7A09992 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-0136FF7125BCEB083F9DC2BDA7A09992 rdf:first
+    eu-freq:UPDATE_CONT;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-8F17CBA819BD950448111E3399972C0E .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-8F17CBA819BD950448111E3399972C0E rdf:first
+    eu-freq:QUARTERLY;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-24B3753B9459AA5EC8014A97EA8F8662 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-24B3753B9459AA5EC8014A97EA8F8662 rdf:first
+    eu-freq:TRIENNIAL;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-E3CB8AA01B14D31F492382CB7E67CFC1 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-E3CB8AA01B14D31F492382CB7E67CFC1 rdf:first
+    eu-freq:NEVER;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-FBB2406A1D00E46DEDAB00720E5DCA6D .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-FBB2406A1D00E46DEDAB00720E5DCA6D rdf:first
+    eu-freq:OP_DATPRO;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-97A7B877099FEF9B94A0B3AF3CA30350 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-97A7B877099FEF9B94A0B3AF3CA30350 rdf:first
+    eu-freq:MONTHLY_2;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-3C5548BAFACDDF70BFBFD7B7C2A19756 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-3C5548BAFACDDF70BFBFD7B7C2A19756 rdf:first
+    eu-freq:MONTHLY_3;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-A1FEA9CFE11B80EE38AD08D89F54884E .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-A1FEA9CFE11B80EE38AD08D89F54884E rdf:first
+    eu-freq:IRREG;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-C40C71A871C9A38474DEC19D50A7F5B4 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-C40C71A871C9A38474DEC19D50A7F5B4 rdf:first
+    eu-freq:MONTHLY;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-16CEAF24D1E74DD2902F6724FE13DABF .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-16CEAF24D1E74DD2902F6724FE13DABF rdf:first
+    eu-freq:DAILY;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-C0C0F8D0DE5163F4CE3492D8660AAFD2 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-C0C0F8D0DE5163F4CE3492D8660AAFD2 rdf:first
+    eu-freq:DAILY_2;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-92E6F266339CB14CB6BA0A5F846888BE .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-92E6F266339CB14CB6BA0A5F846888BE rdf:first
+    eu-freq:BIWEEKLY;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-0DEA5EAB5518805E945DEB29114720A5 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-0DEA5EAB5518805E945DEB29114720A5 rdf:first
+    eu-freq:CONT;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-ACEA0B570F44CB2451C5323992A8E587 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-ACEA0B570F44CB2451C5323992A8E587 rdf:first
+    eu-freq:BIENNIAL;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-CC5837747F3BD0C3A601F6105DD9EED6 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-CC5837747F3BD0C3A601F6105DD9EED6 rdf:first
+    eu-freq:BIMONTHLY;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-FAE59205D234A9BA073A5A6C12A03000 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-FAE59205D234A9BA073A5A6C12A03000 rdf:first
+    eu-freq:ANNUAL_2;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-6CAF406EFEE23A5946BB33CE64828AB7 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-6CAF406EFEE23A5946BB33CE64828AB7 rdf:first
+    eu-freq:ANNUAL_3;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-B28A19FE9B963D9B72F42CDF290B4A5E .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-B28A19FE9B963D9B72F42CDF290B4A5E rdf:first
+    eu-freq:ANNUAL;
+  rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#geographical-coverage> sh:path dct:spatial;
   sh:name "geographical coverage"@en;
@@ -1252,9 +1564,9 @@ _:genid-ca4929703743490d9980d90263b229b688-2E7CE2484722084BC7B01AC6DEB5777C rdf:
   sh:description "An entity (organisation) responsible for making the Dataset available."@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:node hri:AgentShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#purpose> sh:path dpv:hasPurpose;
   sh:name "purpose"@en;
@@ -1321,8 +1633,25 @@ _:genid-ca4929703743490d9980d90263b229b688-2E7CE2484722084BC7B01AC6DEB5777C rdf:
   sh:description "The status of a dataset. This property can be filled with a value from a controlled vocabulary."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
+  sh:in _:genid-e8fa081bd81645d2a203eb0b897cebe0106-67ED17AED9901D47FBD1CA972D763C40;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-67ED17AED9901D47FBD1CA972D763C40 rdf:first
+    status:COMPLETED;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-4C6C2C2EF0920CE12A0DA46606326F8E .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-4C6C2C2EF0920CE12A0DA46606326F8E rdf:first
+    status:DEVELOP;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-831CBA2683EE041F88DC052397777278 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-831CBA2683EE041F88DC052397777278 rdf:first
+    status:WITHDRAWN;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-ECAAB92FB9618B817F0B3C2D8E9D80AC .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-ECAAB92FB9618B817F0B3C2D8E9D80AC rdf:first
+    status:DEPRECATED;
+  rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#temporal-coverage> sh:path dct:temporal;
   sh:name "temporal coverage"@en;
@@ -1345,9 +1674,62 @@ _:genid-ca4929703743490d9980d90263b229b688-2E7CE2484722084BC7B01AC6DEB5777C rdf:
   sh:description "A category of the Dataset. This property must be filled with a value from a controlled vocabulary. The default value of this property is http://publications.europa.eu/resource/authority/data-theme/HEAL from the controlled vocabulary."@en;
   sh:minCount 1;
   sh:nodeKind sh:IRI;
-  sh:defaultValue <http://publications.europa.eu/resource/authority/data-theme/HEAL>;
+  sh:in _:genid-e8fa081bd81645d2a203eb0b897cebe0106-177C8DB65211E281B463A830F3EAD1A1;
+  sh:defaultValue eu-th:HEAL;
   dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  dash:editor dash:EnumSelectEditor .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-177C8DB65211E281B463A830F3EAD1A1 rdf:first
+    eu-th:HEAL;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-9DC930726539834BF685FB50F4612642 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-9DC930726539834BF685FB50F4612642 rdf:first
+    eu-th:TECH;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-7CC20E0F86925EF32C9B8CA6ECD4A51D .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-7CC20E0F86925EF32C9B8CA6ECD4A51D rdf:first
+    eu-th:TRAN;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-3FE8259FEB3DD0B444B751BFF0A98D00 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-3FE8259FEB3DD0B444B751BFF0A98D00 rdf:first
+    eu-th:REGI;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-F5EAD6A13881648B04200917DD37E2B2 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-F5EAD6A13881648B04200917DD37E2B2 rdf:first
+    eu-th:SOCI;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-D974DE87E22049BD1039BA936F88303A .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-D974DE87E22049BD1039BA936F88303A rdf:first
+    eu-th:AGRI;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-FA7BB65891969F99071B80D8ACD95337 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-FA7BB65891969F99071B80D8ACD95337 rdf:first
+    eu-th:ECON;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-71BCFC4295C3F61FD2D51D07D6A69149 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-71BCFC4295C3F61FD2D51D07D6A69149 rdf:first
+    eu-th:JUST;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-71DE95D63F9968704757D620E4982E87 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-71DE95D63F9968704757D620E4982E87 rdf:first
+    eu-th:INTR;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-C07BA23BFB82A743329E781B7D79F02D .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-C07BA23BFB82A743329E781B7D79F02D rdf:first
+    eu-th:ENVI;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-92C6F38CEA2B3CBD3DC13F210D095C16 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-92C6F38CEA2B3CBD3DC13F210D095C16 rdf:first
+    eu-th:GOVE;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-C76A079DC544B7A7249D774E94F606F5 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-C76A079DC544B7A7249D774E94F606F5 rdf:first
+    eu-th:EDUC;
+  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe0106-7DE2B695C1899DBB0DC45E9EDEF183A6 .
+
+_:genid-e8fa081bd81645d2a203eb0b897cebe0106-7DE2B695C1899DBB0DC45E9EDEF183A6 rdf:first
+    eu-th:ENER;
+  rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#title> sh:path dct:title;
   sh:name "title"@en;

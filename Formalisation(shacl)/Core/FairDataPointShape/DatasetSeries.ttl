@@ -33,7 +33,7 @@
   rdfs:comment "Health-RI v2 Dataset Series"@en;
   dct:description "SHACL mandatory definitions for the Health-RI v2 model for Dataset Series."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T11:18:44.760Z"^^xsd:dateTime .
+  dct:modified "2025-07-11T14:00:59.400Z"^^xsd:dateTime .
 
 hri:DatasetSeriesShape a sh:NodeShape;
   rdfs:label "DatasetSeries"@en;
@@ -57,9 +57,9 @@ hri:DatasetSeriesShape a sh:NodeShape;
   sh:name "contact point"@en;
   sh:description "Contact information that can be used for sending comments about the Dataset Series."@en;
   sh:minCount 1;
-  sh:node hri:KindShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:description> sh:path dct:description;
   sh:name "description"@en;
@@ -100,9 +100,9 @@ hri:DatasetSeriesShape a sh:NodeShape;
   sh:name "publisher"@en;
   sh:description "An entity (organisation) responsible for ensuring the coherency of the Dataset Series."@en;
   sh:maxCount 1;
-  sh:node hri:AgentShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:issued> sh:path dct:issued;
   sh:name "release date"@en;
