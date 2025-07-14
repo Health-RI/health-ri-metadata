@@ -201,20 +201,20 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:5c97b93dac8c44d2a18875102669c7ec41;
+  sh:in _:3c1cb5b990c84e76b3c4233f05cdb89b41;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:5c97b93dac8c44d2a18875102669c7ec41 rdf:first status:COMPLETED;
-  rdf:rest _:5c97b93dac8c44d2a18875102669c7ec42 .
+_:3c1cb5b990c84e76b3c4233f05cdb89b41 rdf:first status:COMPLETED;
+  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b42 .
 
-_:5c97b93dac8c44d2a18875102669c7ec42 rdf:first status:DEVELOP;
-  rdf:rest _:5c97b93dac8c44d2a18875102669c7ec43 .
+_:3c1cb5b990c84e76b3c4233f05cdb89b42 rdf:first status:DEVELOP;
+  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b43 .
 
-_:5c97b93dac8c44d2a18875102669c7ec43 rdf:first status:WITHDRAWN;
-  rdf:rest _:5c97b93dac8c44d2a18875102669c7ec44 .
+_:3c1cb5b990c84e76b3c4233f05cdb89b43 rdf:first status:WITHDRAWN;
+  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b44 .
 
-_:5c97b93dac8c44d2a18875102669c7ec44 rdf:first status:DEPRECATED;
+_:3c1cb5b990c84e76b3c4233f05cdb89b44 rdf:first status:DEPRECATED;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#dcat:temporalResolution> sh:path

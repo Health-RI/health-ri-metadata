@@ -201,23 +201,23 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-24bfb77ce03e4c81be1a10dd4860425a60-6792C8505A35CFC4A21831795085E7B2;
+  sh:in _:genid-a8aef8a5df984653bbc9032dfa534e9b60-30AA8543FFD7C12C16A52AB8DA758EF0;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-24bfb77ce03e4c81be1a10dd4860425a60-6792C8505A35CFC4A21831795085E7B2 rdf:first
+_:genid-a8aef8a5df984653bbc9032dfa534e9b60-30AA8543FFD7C12C16A52AB8DA758EF0 rdf:first
     status:COMPLETED;
-  rdf:rest _:genid-24bfb77ce03e4c81be1a10dd4860425a60-0B42FD81A01EF30F8E3FDFD2F1E34A53 .
+  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b60-1076B68C7BDED5630950366DED2B8834 .
 
-_:genid-24bfb77ce03e4c81be1a10dd4860425a60-0B42FD81A01EF30F8E3FDFD2F1E34A53 rdf:first
+_:genid-a8aef8a5df984653bbc9032dfa534e9b60-1076B68C7BDED5630950366DED2B8834 rdf:first
     status:DEVELOP;
-  rdf:rest _:genid-24bfb77ce03e4c81be1a10dd4860425a60-E880DBF4BE2E9922A21DD13F81C571B6 .
+  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b60-03BACE422BFB4CB6A568E818109D0E41 .
 
-_:genid-24bfb77ce03e4c81be1a10dd4860425a60-E880DBF4BE2E9922A21DD13F81C571B6 rdf:first
+_:genid-a8aef8a5df984653bbc9032dfa534e9b60-03BACE422BFB4CB6A568E818109D0E41 rdf:first
     status:WITHDRAWN;
-  rdf:rest _:genid-24bfb77ce03e4c81be1a10dd4860425a60-B4F7FEF266E6FC9D2A9BEE533C889B9E .
+  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b60-7F2B5C5F3C1DFFFBE7E2429FF9C5B44A .
 
-_:genid-24bfb77ce03e4c81be1a10dd4860425a60-B4F7FEF266E6FC9D2A9BEE533C889B9E rdf:first
+_:genid-a8aef8a5df984653bbc9032dfa534e9b60-7F2B5C5F3C1DFFFBE7E2429FF9C5B44A rdf:first
     status:DEPRECATED;
   rdf:rest rdf:nil .
 
