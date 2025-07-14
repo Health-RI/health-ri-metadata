@@ -201,23 +201,23 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-d10398e89b8540ceae88d5bc093d1ee460-B5E09A37F9991C78540A3FD7F8BCA098;
+  sh:in _:genid-85bcddcbd6be432691d23f6937b2c8a860-6AEDB8356CE5E48225C95014571F5AE5;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-d10398e89b8540ceae88d5bc093d1ee460-B5E09A37F9991C78540A3FD7F8BCA098 rdf:first
+_:genid-85bcddcbd6be432691d23f6937b2c8a860-6AEDB8356CE5E48225C95014571F5AE5 rdf:first
     status:COMPLETED;
-  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee460-4F18AE233304C2A5CE40C1336534B725 .
+  rdf:rest _:genid-85bcddcbd6be432691d23f6937b2c8a860-22F897C717336F2FA9EF877FDEFEEF4C .
 
-_:genid-d10398e89b8540ceae88d5bc093d1ee460-4F18AE233304C2A5CE40C1336534B725 rdf:first
+_:genid-85bcddcbd6be432691d23f6937b2c8a860-22F897C717336F2FA9EF877FDEFEEF4C rdf:first
     status:DEVELOP;
-  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee460-4561A9A83F07451579DF7754DC732340 .
+  rdf:rest _:genid-85bcddcbd6be432691d23f6937b2c8a860-C598E392BDB3CD302D75F5C52F9C791A .
 
-_:genid-d10398e89b8540ceae88d5bc093d1ee460-4561A9A83F07451579DF7754DC732340 rdf:first
+_:genid-85bcddcbd6be432691d23f6937b2c8a860-C598E392BDB3CD302D75F5C52F9C791A rdf:first
     status:WITHDRAWN;
-  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee460-14C1B73EBE4583D1775DBD68445397D4 .
+  rdf:rest _:genid-85bcddcbd6be432691d23f6937b2c8a860-F546064A61CE3B61E024DD25A9416AFD .
 
-_:genid-d10398e89b8540ceae88d5bc093d1ee460-14C1B73EBE4583D1775DBD68445397D4 rdf:first
+_:genid-85bcddcbd6be432691d23f6937b2c8a860-F546064A61CE3B61E024DD25A9416AFD rdf:first
     status:DEPRECATED;
   rdf:rest rdf:nil .
 
@@ -242,26 +242,27 @@ hri:aux-PeriodOfTimeShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Period of Time"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-07-14T08:34:14.840Z"^^xsd:dateTime .
+  dct:modified "2025-07-14T11:05:09.340Z"^^xsd:dateTime .
 
 hri:PeriodOfTimeShape a sh:NodeShape;
   rdfs:label "Period of Time"@en;
   sh:targetClass dct:PeriodOfTime;
-  sh:property <http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:endDate>, <http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:startDate> .
-
-<http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:endDate> sh:path dcat:endDate;
-  sh:name "end date"@en;
-  sh:description "The end of the period."@en;
-  sh:maxCount 1;
-  sh:nodeKind sh:Literal;
-  sh:datatype xsd:dateTime;
-  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
-  dash:viewer dash:LiteralViewer;
-  dash:editor dash:DateTimePickerEditor .
+  sh:property <http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:startDate>, <http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:endDate> .
 
 <http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:startDate> sh:path dcat:startDate;
   sh:name "start date"@en;
   sh:description "The start of the period."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:dateTime;
+  sh:lessThanOrEquals <http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:endDate>;
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:DateTimePickerEditor .
+
+<http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:endDate> sh:path dcat:endDate;
+  sh:name "end date"@en;
+  sh:description "The end of the period."@en;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
   sh:datatype xsd:dateTime;

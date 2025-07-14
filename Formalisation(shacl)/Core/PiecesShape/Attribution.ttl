@@ -53,66 +53,66 @@ hri:AttributionShape a sh:NodeShape;
   sh:description "The nature of the relationship between the agent and the described resource, as indicated by a value from the controlled vocabulary."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:2cb6818a812e41589409ad9bd879bab045;
+  sh:in _:f1bf567529a84ed2b704180a9d2884f745;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:2cb6818a812e41589409ad9bd879bab045 rdf:first role:resourceProvider;
-  rdf:rest _:2cb6818a812e41589409ad9bd879bab046 .
+_:f1bf567529a84ed2b704180a9d2884f745 rdf:first role:resourceProvider;
+  rdf:rest _:f1bf567529a84ed2b704180a9d2884f746 .
 
-_:2cb6818a812e41589409ad9bd879bab046 rdf:first role:custodian;
-  rdf:rest _:2cb6818a812e41589409ad9bd879bab047 .
+_:f1bf567529a84ed2b704180a9d2884f746 rdf:first role:custodian;
+  rdf:rest _:f1bf567529a84ed2b704180a9d2884f747 .
 
-_:2cb6818a812e41589409ad9bd879bab047 rdf:first role:owner;
-  rdf:rest _:2cb6818a812e41589409ad9bd879bab048 .
+_:f1bf567529a84ed2b704180a9d2884f747 rdf:first role:owner;
+  rdf:rest _:f1bf567529a84ed2b704180a9d2884f748 .
 
-_:2cb6818a812e41589409ad9bd879bab048 rdf:first role:user;
-  rdf:rest _:2cb6818a812e41589409ad9bd879bab049 .
+_:f1bf567529a84ed2b704180a9d2884f748 rdf:first role:user;
+  rdf:rest _:f1bf567529a84ed2b704180a9d2884f749 .
 
-_:2cb6818a812e41589409ad9bd879bab049 rdf:first role:distributor;
-  rdf:rest _:2cb6818a812e41589409ad9bd879bab050 .
+_:f1bf567529a84ed2b704180a9d2884f749 rdf:first role:distributor;
+  rdf:rest _:f1bf567529a84ed2b704180a9d2884f750 .
 
-_:2cb6818a812e41589409ad9bd879bab050 rdf:first role:originator;
-  rdf:rest _:2cb6818a812e41589409ad9bd879bab051 .
+_:f1bf567529a84ed2b704180a9d2884f750 rdf:first role:originator;
+  rdf:rest _:f1bf567529a84ed2b704180a9d2884f751 .
 
-_:2cb6818a812e41589409ad9bd879bab051 rdf:first role:pointOfContact;
-  rdf:rest _:2cb6818a812e41589409ad9bd879bab052 .
+_:f1bf567529a84ed2b704180a9d2884f751 rdf:first role:pointOfContact;
+  rdf:rest _:f1bf567529a84ed2b704180a9d2884f752 .
 
-_:2cb6818a812e41589409ad9bd879bab052 rdf:first role:principalInvestigator;
-  rdf:rest _:2cb6818a812e41589409ad9bd879bab053 .
+_:f1bf567529a84ed2b704180a9d2884f752 rdf:first role:principalInvestigator;
+  rdf:rest _:f1bf567529a84ed2b704180a9d2884f753 .
 
-_:2cb6818a812e41589409ad9bd879bab053 rdf:first role:processor;
-  rdf:rest _:2cb6818a812e41589409ad9bd879bab054 .
+_:f1bf567529a84ed2b704180a9d2884f753 rdf:first role:processor;
+  rdf:rest _:f1bf567529a84ed2b704180a9d2884f754 .
 
-_:2cb6818a812e41589409ad9bd879bab054 rdf:first role:publisher;
-  rdf:rest _:2cb6818a812e41589409ad9bd879bab055 .
+_:f1bf567529a84ed2b704180a9d2884f754 rdf:first role:publisher;
+  rdf:rest _:f1bf567529a84ed2b704180a9d2884f755 .
 
-_:2cb6818a812e41589409ad9bd879bab055 rdf:first role:author;
-  rdf:rest _:2cb6818a812e41589409ad9bd879bab056 .
+_:f1bf567529a84ed2b704180a9d2884f755 rdf:first role:author;
+  rdf:rest _:f1bf567529a84ed2b704180a9d2884f756 .
 
-_:2cb6818a812e41589409ad9bd879bab056 rdf:first role:sponsor;
-  rdf:rest _:2cb6818a812e41589409ad9bd879bab057 .
+_:f1bf567529a84ed2b704180a9d2884f756 rdf:first role:sponsor;
+  rdf:rest _:f1bf567529a84ed2b704180a9d2884f757 .
 
-_:2cb6818a812e41589409ad9bd879bab057 rdf:first role:coAuthor;
-  rdf:rest _:2cb6818a812e41589409ad9bd879bab058 .
+_:f1bf567529a84ed2b704180a9d2884f757 rdf:first role:coAuthor;
+  rdf:rest _:f1bf567529a84ed2b704180a9d2884f758 .
 
-_:2cb6818a812e41589409ad9bd879bab058 rdf:first role:collaborator;
-  rdf:rest _:2cb6818a812e41589409ad9bd879bab059 .
+_:f1bf567529a84ed2b704180a9d2884f758 rdf:first role:collaborator;
+  rdf:rest _:f1bf567529a84ed2b704180a9d2884f759 .
 
-_:2cb6818a812e41589409ad9bd879bab059 rdf:first role:editor;
-  rdf:rest _:2cb6818a812e41589409ad9bd879bab060 .
+_:f1bf567529a84ed2b704180a9d2884f759 rdf:first role:editor;
+  rdf:rest _:f1bf567529a84ed2b704180a9d2884f760 .
 
-_:2cb6818a812e41589409ad9bd879bab060 rdf:first role:mediator;
-  rdf:rest _:2cb6818a812e41589409ad9bd879bab061 .
+_:f1bf567529a84ed2b704180a9d2884f760 rdf:first role:mediator;
+  rdf:rest _:f1bf567529a84ed2b704180a9d2884f761 .
 
-_:2cb6818a812e41589409ad9bd879bab061 rdf:first role:rightsHolder;
-  rdf:rest _:2cb6818a812e41589409ad9bd879bab062 .
+_:f1bf567529a84ed2b704180a9d2884f761 rdf:first role:rightsHolder;
+  rdf:rest _:f1bf567529a84ed2b704180a9d2884f762 .
 
-_:2cb6818a812e41589409ad9bd879bab062 rdf:first role:contributor;
-  rdf:rest _:2cb6818a812e41589409ad9bd879bab063 .
+_:f1bf567529a84ed2b704180a9d2884f762 rdf:first role:contributor;
+  rdf:rest _:f1bf567529a84ed2b704180a9d2884f763 .
 
-_:2cb6818a812e41589409ad9bd879bab063 rdf:first role:funder;
-  rdf:rest _:2cb6818a812e41589409ad9bd879bab064 .
+_:f1bf567529a84ed2b704180a9d2884f763 rdf:first role:funder;
+  rdf:rest _:f1bf567529a84ed2b704180a9d2884f764 .
 
-_:2cb6818a812e41589409ad9bd879bab064 rdf:first role:stakeholder;
+_:f1bf567529a84ed2b704180a9d2884f764 rdf:first role:stakeholder;
   rdf:rest rdf:nil .
