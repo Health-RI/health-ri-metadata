@@ -33,7 +33,7 @@ hri:ActivityShape a owl:Ontology, sh:NodeShape;
   rdfs:comment "Health-RI v2 Activity"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Activity."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-07-14T08:31:23.290Z"^^xsd:dateTime;
+  dct:modified "2025-07-14T08:35:54.900Z"^^xsd:dateTime;
   sh:targetClass prov:Activity;
   sh:property <http://data.health-ri.nl/core/p2/ActivityShape#rdfs:label>, <http://data.health-ri.nl/core/p2/ActivityShape#dct:type> .
 
@@ -49,75 +49,75 @@ hri:ActivityShape a owl:Ontology, sh:NodeShape;
   sh:name "type"@en;
   sh:description "The type of activity, as specified with a study-type from the EDDA taxonomy."@en;
   sh:nodeKind sh:IRI;
-  sh:in _:3c1cb5b990c84e76b3c4233f05cdb89b2;
+  sh:in _:2cb6818a812e41589409ad9bd879bab02;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:3c1cb5b990c84e76b3c4233f05cdb89b2 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23case_study>;
-  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b3 .
+_:2cb6818a812e41589409ad9bd879bab02 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23case_study>;
+  rdf:rest _:2cb6818a812e41589409ad9bd879bab03 .
 
-_:3c1cb5b990c84e76b3c4233f05cdb89b3 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23child_development_study>;
-  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b4 .
+_:2cb6818a812e41589409ad9bd879bab03 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23child_development_study>;
+  rdf:rest _:2cb6818a812e41589409ad9bd879bab04 .
 
-_:3c1cb5b990c84e76b3c4233f05cdb89b4 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23clinical_trial>;
-  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b5 .
+_:2cb6818a812e41589409ad9bd879bab04 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23clinical_trial>;
+  rdf:rest _:2cb6818a812e41589409ad9bd879bab05 .
 
-_:3c1cb5b990c84e76b3c4233f05cdb89b5 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23cohort_study>;
-  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b6 .
+_:2cb6818a812e41589409ad9bd879bab05 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23cohort_study>;
+  rdf:rest _:2cb6818a812e41589409ad9bd879bab06 .
 
-_:3c1cb5b990c84e76b3c4233f05cdb89b6 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23controlled_design>;
-  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b7 .
+_:2cb6818a812e41589409ad9bd879bab06 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23controlled_design>;
+  rdf:rest _:2cb6818a812e41589409ad9bd879bab07 .
 
-_:3c1cb5b990c84e76b3c4233f05cdb89b7 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23diagnostic_study>;
-  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b8 .
+_:2cb6818a812e41589409ad9bd879bab07 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23diagnostic_study>;
+  rdf:rest _:2cb6818a812e41589409ad9bd879bab08 .
 
-_:3c1cb5b990c84e76b3c4233f05cdb89b8 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23familial_study>;
-  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b9 .
+_:2cb6818a812e41589409ad9bd879bab08 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23familial_study>;
+  rdf:rest _:2cb6818a812e41589409ad9bd879bab09 .
 
-_:3c1cb5b990c84e76b3c4233f05cdb89b9 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23in_silico_study>;
-  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b10 .
+_:2cb6818a812e41589409ad9bd879bab09 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23in_silico_study>;
+  rdf:rest _:2cb6818a812e41589409ad9bd879bab010 .
 
-_:3c1cb5b990c84e76b3c4233f05cdb89b10 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23in_vitro_study>;
-  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b11 .
+_:2cb6818a812e41589409ad9bd879bab010 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23in_vitro_study>;
+  rdf:rest _:2cb6818a812e41589409ad9bd879bab011 .
 
-_:3c1cb5b990c84e76b3c4233f05cdb89b11 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23in_vivo_study>;
-  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b12 .
+_:2cb6818a812e41589409ad9bd879bab011 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23in_vivo_study>;
+  rdf:rest _:2cb6818a812e41589409ad9bd879bab012 .
 
-_:3c1cb5b990c84e76b3c4233f05cdb89b12 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23interventional_study>;
-  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b13 .
+_:2cb6818a812e41589409ad9bd879bab012 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23interventional_study>;
+  rdf:rest _:2cb6818a812e41589409ad9bd879bab013 .
 
-_:3c1cb5b990c84e76b3c4233f05cdb89b13 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23interview_study>;
-  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b14 .
+_:2cb6818a812e41589409ad9bd879bab013 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23interview_study>;
+  rdf:rest _:2cb6818a812e41589409ad9bd879bab014 .
 
-_:3c1cb5b990c84e76b3c4233f05cdb89b14 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23literature_review>;
-  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b15 .
+_:2cb6818a812e41589409ad9bd879bab014 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23literature_review>;
+  rdf:rest _:2cb6818a812e41589409ad9bd879bab015 .
 
-_:3c1cb5b990c84e76b3c4233f05cdb89b15 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23longitudinal_study>;
-  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b16 .
+_:2cb6818a812e41589409ad9bd879bab015 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23longitudinal_study>;
+  rdf:rest _:2cb6818a812e41589409ad9bd879bab016 .
 
-_:3c1cb5b990c84e76b3c4233f05cdb89b16 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23multidisciplinary_study>;
-  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b17 .
+_:2cb6818a812e41589409ad9bd879bab016 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23multidisciplinary_study>;
+  rdf:rest _:2cb6818a812e41589409ad9bd879bab017 .
 
-_:3c1cb5b990c84e76b3c4233f05cdb89b17 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23nutritional_study>;
-  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b18 .
+_:2cb6818a812e41589409ad9bd879bab017 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23nutritional_study>;
+  rdf:rest _:2cb6818a812e41589409ad9bd879bab018 .
 
-_:3c1cb5b990c84e76b3c4233f05cdb89b18 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23observational_study>;
-  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b19 .
+_:2cb6818a812e41589409ad9bd879bab018 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23observational_study>;
+  rdf:rest _:2cb6818a812e41589409ad9bd879bab019 .
 
-_:3c1cb5b990c84e76b3c4233f05cdb89b19 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23population_study>;
-  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b20 .
+_:2cb6818a812e41589409ad9bd879bab019 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23population_study>;
+  rdf:rest _:2cb6818a812e41589409ad9bd879bab020 .
 
-_:3c1cb5b990c84e76b3c4233f05cdb89b20 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23prospective_study>;
-  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b21 .
+_:2cb6818a812e41589409ad9bd879bab020 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23prospective_study>;
+  rdf:rest _:2cb6818a812e41589409ad9bd879bab021 .
 
-_:3c1cb5b990c84e76b3c4233f05cdb89b21 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23questionnaire>;
-  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b22 .
+_:2cb6818a812e41589409ad9bd879bab021 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23questionnaire>;
+  rdf:rest _:2cb6818a812e41589409ad9bd879bab022 .
 
-_:3c1cb5b990c84e76b3c4233f05cdb89b22 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23record-linkage_study>;
-  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b23 .
+_:2cb6818a812e41589409ad9bd879bab022 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23record-linkage_study>;
+  rdf:rest _:2cb6818a812e41589409ad9bd879bab023 .
 
-_:3c1cb5b990c84e76b3c4233f05cdb89b23 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23retrospective_study>;
-  rdf:rest _:3c1cb5b990c84e76b3c4233f05cdb89b24 .
+_:2cb6818a812e41589409ad9bd879bab023 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23retrospective_study>;
+  rdf:rest _:2cb6818a812e41589409ad9bd879bab024 .
 
-_:3c1cb5b990c84e76b3c4233f05cdb89b24 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23survey>;
+_:2cb6818a812e41589409ad9bd879bab024 rdf:first <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23survey>;
   rdf:rest rdf:nil .

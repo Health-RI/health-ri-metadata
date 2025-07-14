@@ -32,7 +32,7 @@ hri:aux-PeriodOfTimeShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Period of Time"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T08:05:16.640Z"^^xsd:dateTime .
+  dct:modified "2025-07-14T08:34:14.840Z"^^xsd:dateTime .
 
 hri:PeriodOfTimeShape a sh:NodeShape;
   rdfs:label "Period of Time"@en;

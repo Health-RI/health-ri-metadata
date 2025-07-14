@@ -41,7 +41,8 @@ hri:AgentShape a sh:NodeShape;
   sh:property <http://data.health-ri.nl/core/p2/AgentShape#dct:spatial>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:mbox>,
     <http://data.health-ri.nl/core/p2/AgentShape#dct:identifier>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:name>,
     <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishernote>, <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishertype>,
-    <http://data.health-ri.nl/core/p2/AgentShape#dct:type>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:homepage> .
+    <http://data.health-ri.nl/core/p2/AgentShape#dct:type>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:homepage>,
+    <http://data.health-ri.nl/core/p2/AgentShape#dct:title> .
 
 <http://data.health-ri.nl/core/p2/AgentShape#dct:spatial> sh:path dct:spatial;
   sh:name "country"@en;
@@ -107,3 +108,11 @@ hri:AgentShape a sh:NodeShape;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/core/p2/AgentShape#dct:title> sh:path dct:title;
+  sh:name "title"@en;
+  sh:description "tot test"@en;
+  sh:minCount 1;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .

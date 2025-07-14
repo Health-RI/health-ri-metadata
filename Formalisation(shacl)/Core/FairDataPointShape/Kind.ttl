@@ -33,13 +33,13 @@ hri:KindShapeKindShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Kind."@en;
   dct:description "SHACL mandatory definitions for the Health-RI v2 model for vcard:Kind."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-02T06:45:41.960Z"^^xsd:dateTime .
+  dct:modified "2025-07-14T08:42:01.170Z"^^xsd:dateTime .
 
 hri:KindShape a sh:NodeShape;
   rdfs:label "Kind"@en;
   sh:targetClass vcard:Kind;
   sh:property <http://data.health-ri.nl/core/p2/KindShape#vcard:hasURL>, <http://data.health-ri.nl/core/p2/KindShape#vcard:hasEmail>,
-    <http://data.health-ri.nl/core/p2/KindShape#vcard:fn> .
+    <http://data.health-ri.nl/core/p2/KindShape#vcard:fn>, <http://data.health-ri.nl/core/p2/KindShape#dct:title> .
 
 <http://data.health-ri.nl/core/p2/KindShape#vcard:hasURL> sh:path vcard:hasURL;
   sh:name "contact page"@en;
@@ -66,3 +66,11 @@ hri:KindShape a sh:NodeShape;
   sh:nodeKind sh:Literal;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
+
+<http://data.health-ri.nl/core/p2/KindShape#dct:title> sh:path dct:title;
+  sh:name "title"@en;
+  sh:description "tot test"@en;
+  sh:minCount 1;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .

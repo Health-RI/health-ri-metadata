@@ -201,23 +201,23 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-a8aef8a5df984653bbc9032dfa534e9b60-30AA8543FFD7C12C16A52AB8DA758EF0;
+  sh:in _:genid-d10398e89b8540ceae88d5bc093d1ee460-B5E09A37F9991C78540A3FD7F8BCA098;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b60-30AA8543FFD7C12C16A52AB8DA758EF0 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee460-B5E09A37F9991C78540A3FD7F8BCA098 rdf:first
     status:COMPLETED;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b60-1076B68C7BDED5630950366DED2B8834 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee460-4F18AE233304C2A5CE40C1336534B725 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b60-1076B68C7BDED5630950366DED2B8834 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee460-4F18AE233304C2A5CE40C1336534B725 rdf:first
     status:DEVELOP;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b60-03BACE422BFB4CB6A568E818109D0E41 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee460-4561A9A83F07451579DF7754DC732340 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b60-03BACE422BFB4CB6A568E818109D0E41 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee460-4561A9A83F07451579DF7754DC732340 rdf:first
     status:WITHDRAWN;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b60-7F2B5C5F3C1DFFFBE7E2429FF9C5B44A .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee460-14C1B73EBE4583D1775DBD68445397D4 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b60-7F2B5C5F3C1DFFFBE7E2429FF9C5B44A rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee460-14C1B73EBE4583D1775DBD68445397D4 rdf:first
     status:DEPRECATED;
   rdf:rest rdf:nil .
 
@@ -242,7 +242,7 @@ hri:aux-PeriodOfTimeShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Period of Time"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T08:05:16.640Z"^^xsd:dateTime .
+  dct:modified "2025-07-14T08:34:14.840Z"^^xsd:dateTime .
 
 hri:PeriodOfTimeShape a sh:NodeShape;
   rdfs:label "Period of Time"@en;

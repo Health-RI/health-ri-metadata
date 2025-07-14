@@ -26,6 +26,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix edda: <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23> .
 @prefix eu: <http://publications.europa.eu/resource/authority/access-right/> .
 @prefix eu-th: <http://publications.europa.eu/resource/authority/data-theme/> .
 @prefix status: <http://publications.europa.eu/resource/authority/distribution-status/> .
@@ -33,7 +34,6 @@
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
 @prefix role: <https://standards.iso.org/iso/19115/resources/Codelists/gml/CI_RoleCode.xml#> .
-@prefix edda: <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23> .
 @prefix eu-freq: <http://publications.europa.eu/resource/authority/frequency/> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix dpv-pd: <https://w3id.org/dpv/dpv-pd#> .
@@ -144,12 +144,129 @@ hri:DatasetSeriesShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
+hri:ActivityShape a owl:Ontology, sh:NodeShape;
+  rdfs:label "Activity"@en;
+  rdfs:comment "Health-RI v2 Activity"@en;
+  dct:description "SHACL definitions for the Health-RI v2 model for Activity."@en;
+  owl:versionInfo "0.1";
+  dct:modified "2025-07-14T08:35:54.900Z"^^xsd:dateTime;
+  sh:targetClass prov:Activity;
+  sh:property <http://data.health-ri.nl/core/p2/ActivityShape#rdfs:label>, <http://data.health-ri.nl/core/p2/ActivityShape#dct:type> .
+
+<http://data.health-ri.nl/core/p2/ActivityShape#rdfs:label> sh:path rdfs:label;
+  sh:name "label"@en;
+  sh:description "A free text description of the activity that generated the dataset."@en;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:string;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
+
+<http://data.health-ri.nl/core/p2/ActivityShape#dct:type> sh:path dct:type;
+  sh:name "type"@en;
+  sh:description "The type of activity, as specified with a study-type from the EDDA taxonomy."@en;
+  sh:nodeKind sh:IRI;
+  sh:in _:genid-d10398e89b8540ceae88d5bc093d1ee477-BAFEA3591DB75C3A7C7D3896C1DA9C47;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:EnumSelectEditor .
+
+_:genid-d10398e89b8540ceae88d5bc093d1ee477-BAFEA3591DB75C3A7C7D3896C1DA9C47 rdf:first
+    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23case_study>;
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee477-D7AAD0E4ABF76608FA67D4FA9E804EC3 .
+
+_:genid-d10398e89b8540ceae88d5bc093d1ee477-D7AAD0E4ABF76608FA67D4FA9E804EC3 rdf:first
+    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23child_development_study>;
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee477-5982677924AE6965CC91D42B10D25135 .
+
+_:genid-d10398e89b8540ceae88d5bc093d1ee477-5982677924AE6965CC91D42B10D25135 rdf:first
+    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23clinical_trial>;
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee477-996A6DF269AC697494AD17263415B8B4 .
+
+_:genid-d10398e89b8540ceae88d5bc093d1ee477-996A6DF269AC697494AD17263415B8B4 rdf:first
+    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23cohort_study>;
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee477-A3A09AC581E7331966765636EFD0054A .
+
+_:genid-d10398e89b8540ceae88d5bc093d1ee477-A3A09AC581E7331966765636EFD0054A rdf:first
+    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23controlled_design>;
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee477-BBD086321F3CA0EAB5F2B8A74241D77F .
+
+_:genid-d10398e89b8540ceae88d5bc093d1ee477-BBD086321F3CA0EAB5F2B8A74241D77F rdf:first
+    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23diagnostic_study>;
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee477-29B1730E8E9046F95C76C3E55C13271E .
+
+_:genid-d10398e89b8540ceae88d5bc093d1ee477-29B1730E8E9046F95C76C3E55C13271E rdf:first
+    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23familial_study>;
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee477-619FB21A1C679733CBE78E7C61971C86 .
+
+_:genid-d10398e89b8540ceae88d5bc093d1ee477-619FB21A1C679733CBE78E7C61971C86 rdf:first
+    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23in_silico_study>;
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee477-6B07640DBC47A945F46FA9AA904E889B .
+
+_:genid-d10398e89b8540ceae88d5bc093d1ee477-6B07640DBC47A945F46FA9AA904E889B rdf:first
+    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23in_vitro_study>;
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee477-C9678E8572DE777704F5537FBEEB7880 .
+
+_:genid-d10398e89b8540ceae88d5bc093d1ee477-C9678E8572DE777704F5537FBEEB7880 rdf:first
+    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23in_vivo_study>;
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee477-C527E80D09DD276C9897F37108464016 .
+
+_:genid-d10398e89b8540ceae88d5bc093d1ee477-C527E80D09DD276C9897F37108464016 rdf:first
+    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23interventional_study>;
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee477-F412E0FB41F89652DD3950AD42F1FCC4 .
+
+_:genid-d10398e89b8540ceae88d5bc093d1ee477-F412E0FB41F89652DD3950AD42F1FCC4 rdf:first
+    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23interview_study>;
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee477-A1B0EC97E4C3306BDE9D4508B479BD2C .
+
+_:genid-d10398e89b8540ceae88d5bc093d1ee477-A1B0EC97E4C3306BDE9D4508B479BD2C rdf:first
+    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23literature_review>;
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee477-2DF3CDCF59A3CB92CBA6867683473597 .
+
+_:genid-d10398e89b8540ceae88d5bc093d1ee477-2DF3CDCF59A3CB92CBA6867683473597 rdf:first
+    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23longitudinal_study>;
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee477-844DA4A1D49F33ABD4A301D0BD1D0E01 .
+
+_:genid-d10398e89b8540ceae88d5bc093d1ee477-844DA4A1D49F33ABD4A301D0BD1D0E01 rdf:first
+    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23multidisciplinary_study>;
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee477-B4ED44D57C993A2FCEDB701A4DA5DAE7 .
+
+_:genid-d10398e89b8540ceae88d5bc093d1ee477-B4ED44D57C993A2FCEDB701A4DA5DAE7 rdf:first
+    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23nutritional_study>;
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee477-5622CBDE1E24AE6FF36AD1B37ABFABB5 .
+
+_:genid-d10398e89b8540ceae88d5bc093d1ee477-5622CBDE1E24AE6FF36AD1B37ABFABB5 rdf:first
+    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23observational_study>;
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee477-A444DBF2FD5BDF3D07A3F916FAB3A6C1 .
+
+_:genid-d10398e89b8540ceae88d5bc093d1ee477-A444DBF2FD5BDF3D07A3F916FAB3A6C1 rdf:first
+    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23population_study>;
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee477-DA56C356786E5F74555D5CDAE9DC7DCD .
+
+_:genid-d10398e89b8540ceae88d5bc093d1ee477-DA56C356786E5F74555D5CDAE9DC7DCD rdf:first
+    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23prospective_study>;
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee477-CF607BB56EBB628B399AB571B48AD073 .
+
+_:genid-d10398e89b8540ceae88d5bc093d1ee477-CF607BB56EBB628B399AB571B48AD073 rdf:first
+    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23questionnaire>;
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee477-4BD2022DD9E91F53F37BF4FD8A0E3F55 .
+
+_:genid-d10398e89b8540ceae88d5bc093d1ee477-4BD2022DD9E91F53F37BF4FD8A0E3F55 rdf:first
+    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23record-linkage_study>;
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee477-BA91FD8C629F46D23EDC39F8BD850495 .
+
+_:genid-d10398e89b8540ceae88d5bc093d1ee477-BA91FD8C629F46D23EDC39F8BD850495 rdf:first
+    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23retrospective_study>;
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee477-57037DD6FCAB3A3EC05FFD1BFF93D622 .
+
+_:genid-d10398e89b8540ceae88d5bc093d1ee477-57037DD6FCAB3A3EC05FFD1BFF93D622 rdf:first
+    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23survey>;
+  rdf:rest rdf:nil .
+
 hri:aux-PeriodOfTimeShape a owl:Ontology;
   rdfs:label "Period of Time"@en;
   rdfs:comment "Health-RI v2 Period of Time"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T08:05:16.640Z"^^xsd:dateTime .
+  dct:modified "2025-07-14T08:34:14.840Z"^^xsd:dateTime .
 
 hri:PeriodOfTimeShape a sh:NodeShape;
   rdfs:label "Period of Time"@en;
@@ -198,19 +315,19 @@ hri:DataServiceShape a sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-a8aef8a5df984653bbc9032dfa534e9b79-41BAD11C95D2EAB20EA8E394FED4DD46;
+  sh:in _:genid-d10398e89b8540ceae88d5bc093d1ee481-2993D598F46CE9538ACA93E084D7F41C;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b79-41BAD11C95D2EAB20EA8E394FED4DD46 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee481-2993D598F46CE9538ACA93E084D7F41C rdf:first
     eu:PUBLIC;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b79-0C7585BB1FA075B924201B2D6FAD5163 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee481-03619BC61C1E23CEBDDB8C73A46BE898 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b79-0C7585BB1FA075B924201B2D6FAD5163 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee481-03619BC61C1E23CEBDDB8C73A46BE898 rdf:first
     eu:RESTRICTED;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b79-DC8920D90B274670D345399D972BC72D .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee481-A146D0E570073142327BF96974A87F54 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b79-DC8920D90B274670D345399D972BC72D rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee481-A146D0E570073142327BF96974A87F54 rdf:first
     eu:NON_PUBLIC;
   rdf:rest rdf:nil .
 
@@ -362,60 +479,60 @@ _:genid-a8aef8a5df984653bbc9032dfa534e9b79-DC8920D90B274670D345399D972BC72D rdf:
   sh:description "A Data Service may be associated with multiple themes."@en;
   sh:minCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-a8aef8a5df984653bbc9032dfa534e9b79-720811C85AEA42C89515CD156270B315;
+  sh:in _:genid-d10398e89b8540ceae88d5bc093d1ee481-DDE9614A0989CE9BB4261D3A8965A320;
   sh:defaultValue eu-th:HEAL;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b79-720811C85AEA42C89515CD156270B315 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee481-DDE9614A0989CE9BB4261D3A8965A320 rdf:first
     eu-th:HEAL;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b79-D3A1213FF4C7A01EF2740F52AFAB2851 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee481-DDF35B0748E1B5DBCFF3FE3D772B9C05 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b79-D3A1213FF4C7A01EF2740F52AFAB2851 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee481-DDF35B0748E1B5DBCFF3FE3D772B9C05 rdf:first
     eu-th:TECH;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b79-1011F2412130234738CEA920A7989168 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee481-A380A7B324E614C111188F12FF4F56CE .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b79-1011F2412130234738CEA920A7989168 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee481-A380A7B324E614C111188F12FF4F56CE rdf:first
     eu-th:TRAN;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b79-0881B15274410DA87C506D521E9E585A .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee481-1F9B36B29E7FAC669B627BD22290D274 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b79-0881B15274410DA87C506D521E9E585A rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee481-1F9B36B29E7FAC669B627BD22290D274 rdf:first
     eu-th:REGI;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b79-14CD4E2EAF1C221B07E1D946854A0C9F .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee481-4D9954219531C15C36B121FE2E195DF2 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b79-14CD4E2EAF1C221B07E1D946854A0C9F rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee481-4D9954219531C15C36B121FE2E195DF2 rdf:first
     eu-th:SOCI;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b79-03C45B7B805C06B506449272B5C56C2D .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee481-F4D1D9671968F0F8BBA8115846CFFCEA .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b79-03C45B7B805C06B506449272B5C56C2D rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee481-F4D1D9671968F0F8BBA8115846CFFCEA rdf:first
     eu-th:AGRI;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b79-D8371DAB218FFFEBCA0E028958A584AE .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee481-CA48E32452C70087429C9BD16CAD2F05 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b79-D8371DAB218FFFEBCA0E028958A584AE rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee481-CA48E32452C70087429C9BD16CAD2F05 rdf:first
     eu-th:ECON;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b79-5686F14071D3D290A69482E7525BBED8 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee481-3521FC0784FE304E4817BDFD8FEEB185 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b79-5686F14071D3D290A69482E7525BBED8 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee481-3521FC0784FE304E4817BDFD8FEEB185 rdf:first
     eu-th:JUST;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b79-28FBA6EF8A921E494D3AA45645AB325C .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee481-2D798B3DA9491832DD429BED5BAB503C .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b79-28FBA6EF8A921E494D3AA45645AB325C rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee481-2D798B3DA9491832DD429BED5BAB503C rdf:first
     eu-th:INTR;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b79-56D21A697B0A7AD0472CBF19E4DCCD9F .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee481-04CF4DB18F1D5EAB61E3E692CE4996D7 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b79-56D21A697B0A7AD0472CBF19E4DCCD9F rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee481-04CF4DB18F1D5EAB61E3E692CE4996D7 rdf:first
     eu-th:ENVI;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b79-CE09993DC76CF03EDC96E82E3BC91F98 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee481-A469057A627F186F1FDA1BA9D8497D12 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b79-CE09993DC76CF03EDC96E82E3BC91F98 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee481-A469057A627F186F1FDA1BA9D8497D12 rdf:first
     eu-th:GOVE;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b79-9E4FF595BA3EA947780BC0246CDF4259 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee481-6A5DEE6E48ADA9CE004ADD3FB397D78B .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b79-9E4FF595BA3EA947780BC0246CDF4259 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee481-6A5DEE6E48ADA9CE004ADD3FB397D78B rdf:first
     eu-th:EDUC;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b79-EF751EF613BFFAC24D0D7BD8A1DC4510 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee481-A1CE81EF99DC9D87F9923BD73B130CE4 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b79-EF751EF613BFFAC24D0D7BD8A1DC4510 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee481-A1CE81EF99DC9D87F9923BD73B130CE4 rdf:first
     eu-th:ENER;
   rdf:rest rdf:nil .
 
@@ -748,23 +865,23 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-a8aef8a5df984653bbc9032dfa534e9b83-30AA8543FFD7C12C16A52AB8DA758EF0;
+  sh:in _:genid-d10398e89b8540ceae88d5bc093d1ee485-B5E09A37F9991C78540A3FD7F8BCA098;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b83-30AA8543FFD7C12C16A52AB8DA758EF0 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee485-B5E09A37F9991C78540A3FD7F8BCA098 rdf:first
     status:COMPLETED;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b83-1076B68C7BDED5630950366DED2B8834 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee485-4F18AE233304C2A5CE40C1336534B725 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b83-1076B68C7BDED5630950366DED2B8834 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee485-4F18AE233304C2A5CE40C1336534B725 rdf:first
     status:DEVELOP;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b83-03BACE422BFB4CB6A568E818109D0E41 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee485-4561A9A83F07451579DF7754DC732340 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b83-03BACE422BFB4CB6A568E818109D0E41 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee485-4561A9A83F07451579DF7754DC732340 rdf:first
     status:WITHDRAWN;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b83-7F2B5C5F3C1DFFFBE7E2429FF9C5B44A .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee485-14C1B73EBE4583D1775DBD68445397D4 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b83-7F2B5C5F3C1DFFFBE7E2429FF9C5B44A rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee485-14C1B73EBE4583D1775DBD68445397D4 rdf:first
     status:DEPRECATED;
   rdf:rest rdf:nil .
 
@@ -826,7 +943,8 @@ hri:AgentShape a sh:NodeShape;
   sh:property <http://data.health-ri.nl/core/p2/AgentShape#dct:spatial>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:mbox>,
     <http://data.health-ri.nl/core/p2/AgentShape#dct:identifier>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:name>,
     <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishernote>, <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishertype>,
-    <http://data.health-ri.nl/core/p2/AgentShape#dct:type>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:homepage> .
+    <http://data.health-ri.nl/core/p2/AgentShape#dct:type>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:homepage>,
+    <http://data.health-ri.nl/core/p2/AgentShape#dct:title> .
 
 <http://data.health-ri.nl/core/p2/AgentShape#dct:spatial> sh:path dct:spatial;
   sh:name "country"@en;
@@ -893,6 +1011,14 @@ hri:AgentShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
+<http://data.health-ri.nl/core/p2/AgentShape#dct:title> sh:path dct:title;
+  sh:name "title"@en;
+  sh:description "tot test"@en;
+  sh:minCount 1;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
+
 hri:aux-AttributionShape a owl:Ontology;
   rdfs:label "Attribution"@en;
   rdfs:comment "Health-RI v2 Attribution"@en;
@@ -918,87 +1044,87 @@ hri:AttributionShape a sh:NodeShape;
   sh:description "The nature of the relationship between the agent and the described resource, as indicated by a value from the controlled vocabulary."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-a8aef8a5df984653bbc9032dfa534e9b89-31FD5C626CC4F5FD7521FB65F5A2E27F;
+  sh:in _:genid-d10398e89b8540ceae88d5bc093d1ee491-952C6FBF7825BA08826E14EAEA61F64E;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b89-31FD5C626CC4F5FD7521FB65F5A2E27F rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee491-952C6FBF7825BA08826E14EAEA61F64E rdf:first
     role:resourceProvider;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b89-9719523DF9333195F622B9F594CC434A .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee491-1B0CA9D343143021FD947FE92134C1BD .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b89-9719523DF9333195F622B9F594CC434A rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee491-1B0CA9D343143021FD947FE92134C1BD rdf:first
     role:custodian;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b89-CA762E427EE2BA8FB52F4C1325C921FB .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee491-B54658DF37C2B589276798935930C11C .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b89-CA762E427EE2BA8FB52F4C1325C921FB rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee491-B54658DF37C2B589276798935930C11C rdf:first
     role:owner;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b89-C652E8B756322EC2CDA65474A70340FA .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee491-C3F554D0B63FE401C3A93E7CC2029DC7 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b89-C652E8B756322EC2CDA65474A70340FA rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee491-C3F554D0B63FE401C3A93E7CC2029DC7 rdf:first
     role:user;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b89-545947ACA03F896A44FF5B9E49DFF29B .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee491-D6975FF53E7785E3937C1B0A743E39BF .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b89-545947ACA03F896A44FF5B9E49DFF29B rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee491-D6975FF53E7785E3937C1B0A743E39BF rdf:first
     role:distributor;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b89-4F73DB6A5065C2FC7C934A4E351F6F5D .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee491-7F06CF22FA0DE71A2E6D2938A4CA3D5B .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b89-4F73DB6A5065C2FC7C934A4E351F6F5D rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee491-7F06CF22FA0DE71A2E6D2938A4CA3D5B rdf:first
     role:originator;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b89-8A128E059A514EFF841B71912015B453 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee491-CD67235431071D4AD142B7E811CCC882 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b89-8A128E059A514EFF841B71912015B453 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee491-CD67235431071D4AD142B7E811CCC882 rdf:first
     role:pointOfContact;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b89-ACA1ABEB6783ABA57D47DAB17F17D7C4 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee491-49BA8B067AE5307B79A86FBC1FA2C060 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b89-ACA1ABEB6783ABA57D47DAB17F17D7C4 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee491-49BA8B067AE5307B79A86FBC1FA2C060 rdf:first
     role:principalInvestigator;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b89-83D5BEF8D6A343092725136757A77FD6 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee491-6632CD9B328E61334704D476A1E8BB3C .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b89-83D5BEF8D6A343092725136757A77FD6 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee491-6632CD9B328E61334704D476A1E8BB3C rdf:first
     role:processor;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b89-30545F912DD46FEAEBEC863045460385 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee491-110F46C092CFD3D6ACA3E932CB5ABAD7 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b89-30545F912DD46FEAEBEC863045460385 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee491-110F46C092CFD3D6ACA3E932CB5ABAD7 rdf:first
     role:publisher;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b89-00BB2A6939BD971D94D4A6CD5EC6AE53 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee491-E8DE56CF4F8A7E1C0B0F23EA0FAB27A0 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b89-00BB2A6939BD971D94D4A6CD5EC6AE53 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee491-E8DE56CF4F8A7E1C0B0F23EA0FAB27A0 rdf:first
     role:author;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b89-472AF47771DC7C19080075B059E62CF2 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee491-86B0EED86C5E5AC4ACBA345A5B9E3965 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b89-472AF47771DC7C19080075B059E62CF2 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee491-86B0EED86C5E5AC4ACBA345A5B9E3965 rdf:first
     role:sponsor;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b89-B05C822F52C01521C488BAC6737C089B .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee491-BFC9D5114DF0170071B947EFAF15A8D2 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b89-B05C822F52C01521C488BAC6737C089B rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee491-BFC9D5114DF0170071B947EFAF15A8D2 rdf:first
     role:coAuthor;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b89-757A57FD0DB5F1DA9C163B6F3AFD98AA .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee491-585555E6BD3CA5934BD9FE5BE8086041 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b89-757A57FD0DB5F1DA9C163B6F3AFD98AA rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee491-585555E6BD3CA5934BD9FE5BE8086041 rdf:first
     role:collaborator;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b89-45BAFEC3FDE253A1BF435D14F42EBF5D .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee491-5826C86FDDA9E1F760D39D7AC8EF5926 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b89-45BAFEC3FDE253A1BF435D14F42EBF5D rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee491-5826C86FDDA9E1F760D39D7AC8EF5926 rdf:first
     role:editor;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b89-4975F77A2E164FE9FAAAE62D1AB7B79F .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee491-532A634393DB54B9BA07DFB3B244386C .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b89-4975F77A2E164FE9FAAAE62D1AB7B79F rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee491-532A634393DB54B9BA07DFB3B244386C rdf:first
     role:mediator;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b89-2D342BA8C0AF7C4E02F1CD56922EA5B3 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee491-BCC659A4517784D4E829436ED322EE7A .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b89-2D342BA8C0AF7C4E02F1CD56922EA5B3 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee491-BCC659A4517784D4E829436ED322EE7A rdf:first
     role:rightsHolder;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b89-3410DD752DEF00D7EDC5C4672B37CE88 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee491-47F8C63712796756611D9119BE80CC8F .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b89-3410DD752DEF00D7EDC5C4672B37CE88 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee491-47F8C63712796756611D9119BE80CC8F rdf:first
     role:contributor;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b89-8CAC568B3DB38364F813E039A3AAF126 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee491-531F6A37AE52EF6086B06E1B5373A07A .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b89-8CAC568B3DB38364F813E039A3AAF126 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee491-531F6A37AE52EF6086B06E1B5373A07A rdf:first
     role:funder;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b89-9AD373790624ED207258DB7988D9E473 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee491-914A165897341A27FBD1D29217EF6950 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b89-9AD373790624ED207258DB7988D9E473 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee491-914A165897341A27FBD1D29217EF6950 rdf:first
     role:stakeholder;
   rdf:rest rdf:nil .
 
@@ -1035,13 +1161,13 @@ hri:KindShapeKindShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Kind."@en;
   dct:description "SHACL mandatory definitions for the Health-RI v2 model for vcard:Kind."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-02T06:45:41.960Z"^^xsd:dateTime .
+  dct:modified "2025-07-14T08:42:01.170Z"^^xsd:dateTime .
 
 hri:KindShape a sh:NodeShape;
   rdfs:label "Kind"@en;
   sh:targetClass vcard:Kind;
   sh:property <http://data.health-ri.nl/core/p2/KindShape#vcard:hasURL>, <http://data.health-ri.nl/core/p2/KindShape#vcard:hasEmail>,
-    <http://data.health-ri.nl/core/p2/KindShape#vcard:fn> .
+    <http://data.health-ri.nl/core/p2/KindShape#vcard:fn>, <http://data.health-ri.nl/core/p2/KindShape#dct:title> .
 
 <http://data.health-ri.nl/core/p2/KindShape#vcard:hasURL> sh:path vcard:hasURL;
   sh:name "contact page"@en;
@@ -1068,6 +1194,14 @@ hri:KindShape a sh:NodeShape;
   sh:nodeKind sh:Literal;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
+
+<http://data.health-ri.nl/core/p2/KindShape#dct:title> sh:path dct:title;
+  sh:name "title"@en;
+  sh:description "tot test"@en;
+  sh:minCount 1;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
 
 hri:aux-IdentifierShape a owl:Ontology;
   rdfs:label "Identifier"@en;
@@ -1138,123 +1272,6 @@ hri:ResourceShape a owl:Ontology, sh:NodeShape;
   dct:modified "2025-04-23T13:25:07.820Z"^^xsd:dateTime;
   sh:targetClass dcat:Resource .
 
-hri:ActivityShape a owl:Ontology, sh:NodeShape;
-  rdfs:label "Activity"@en;
-  rdfs:comment "Health-RI v2 Activity"@en;
-  dct:description "SHACL definitions for the Health-RI v2 model for Activity."@en;
-  owl:versionInfo "0.1";
-  dct:modified "2025-07-14T08:31:23.290Z"^^xsd:dateTime;
-  sh:targetClass prov:Activity;
-  sh:property <http://data.health-ri.nl/core/p2/ActivityShape#rdfs:label>, <http://data.health-ri.nl/core/p2/ActivityShape#dct:type> .
-
-<http://data.health-ri.nl/core/p2/ActivityShape#rdfs:label> sh:path rdfs:label;
-  sh:name "label"@en;
-  sh:description "A free text description of the activity that generated the dataset."@en;
-  sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
-  dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextFieldEditor .
-
-<http://data.health-ri.nl/core/p2/ActivityShape#dct:type> sh:path dct:type;
-  sh:name "type"@en;
-  sh:description "The type of activity, as specified with a study-type from the EDDA taxonomy."@en;
-  sh:nodeKind sh:IRI;
-  sh:in _:genid-a8aef8a5df984653bbc9032dfa534e9b101-4015FEE3D7924771D4E4AFB7DFCC5F7D;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:EnumSelectEditor .
-
-_:genid-a8aef8a5df984653bbc9032dfa534e9b101-4015FEE3D7924771D4E4AFB7DFCC5F7D rdf:first
-    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23case_study>;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b101-59330AAD8D6E14720D5765731A523725 .
-
-_:genid-a8aef8a5df984653bbc9032dfa534e9b101-59330AAD8D6E14720D5765731A523725 rdf:first
-    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23child_development_study>;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b101-7B6DDB29DA0F76523BB58F0D8920D670 .
-
-_:genid-a8aef8a5df984653bbc9032dfa534e9b101-7B6DDB29DA0F76523BB58F0D8920D670 rdf:first
-    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23clinical_trial>;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b101-CDB006A6882E318E2507E726C7B7A92D .
-
-_:genid-a8aef8a5df984653bbc9032dfa534e9b101-CDB006A6882E318E2507E726C7B7A92D rdf:first
-    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23cohort_study>;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b101-C63B3BAA0D41DF7AF81AC17C88CCB423 .
-
-_:genid-a8aef8a5df984653bbc9032dfa534e9b101-C63B3BAA0D41DF7AF81AC17C88CCB423 rdf:first
-    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23controlled_design>;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b101-6A9D953E02799C7D17572D294070B465 .
-
-_:genid-a8aef8a5df984653bbc9032dfa534e9b101-6A9D953E02799C7D17572D294070B465 rdf:first
-    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23diagnostic_study>;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b101-AA8FE0746990DBED38AC10BFAE48EA35 .
-
-_:genid-a8aef8a5df984653bbc9032dfa534e9b101-AA8FE0746990DBED38AC10BFAE48EA35 rdf:first
-    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23familial_study>;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b101-9FF48D1079DB0D3C3C96AD65BA622851 .
-
-_:genid-a8aef8a5df984653bbc9032dfa534e9b101-9FF48D1079DB0D3C3C96AD65BA622851 rdf:first
-    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23in_silico_study>;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b101-1EDC0A2FE9786C36B2B04BAEED5898A5 .
-
-_:genid-a8aef8a5df984653bbc9032dfa534e9b101-1EDC0A2FE9786C36B2B04BAEED5898A5 rdf:first
-    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23in_vitro_study>;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b101-7721391A22230C426644E03CD7D2D199 .
-
-_:genid-a8aef8a5df984653bbc9032dfa534e9b101-7721391A22230C426644E03CD7D2D199 rdf:first
-    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23in_vivo_study>;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b101-C039B8A71E8779D69CE59F9CE78A31F8 .
-
-_:genid-a8aef8a5df984653bbc9032dfa534e9b101-C039B8A71E8779D69CE59F9CE78A31F8 rdf:first
-    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23interventional_study>;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b101-A83940CE01310F4BC514CDB0EFB0CD6C .
-
-_:genid-a8aef8a5df984653bbc9032dfa534e9b101-A83940CE01310F4BC514CDB0EFB0CD6C rdf:first
-    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23interview_study>;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b101-9F8FBEDF1D742C612EB32EBDE219ADFD .
-
-_:genid-a8aef8a5df984653bbc9032dfa534e9b101-9F8FBEDF1D742C612EB32EBDE219ADFD rdf:first
-    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23literature_review>;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b101-F933FCE0CB21D600696A77916EEDE8F3 .
-
-_:genid-a8aef8a5df984653bbc9032dfa534e9b101-F933FCE0CB21D600696A77916EEDE8F3 rdf:first
-    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23longitudinal_study>;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b101-1B01065DC95F03523D306767332C051A .
-
-_:genid-a8aef8a5df984653bbc9032dfa534e9b101-1B01065DC95F03523D306767332C051A rdf:first
-    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23multidisciplinary_study>;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b101-1887D2A0E42D0655CC5BB082970BBF14 .
-
-_:genid-a8aef8a5df984653bbc9032dfa534e9b101-1887D2A0E42D0655CC5BB082970BBF14 rdf:first
-    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23nutritional_study>;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b101-596FCCA2C599E3BEA9E0DB77C49293CB .
-
-_:genid-a8aef8a5df984653bbc9032dfa534e9b101-596FCCA2C599E3BEA9E0DB77C49293CB rdf:first
-    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23observational_study>;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b101-34C4119AF2BAF1848CE56ACFD9C86DDE .
-
-_:genid-a8aef8a5df984653bbc9032dfa534e9b101-34C4119AF2BAF1848CE56ACFD9C86DDE rdf:first
-    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23population_study>;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b101-0623CB9AF9942D7F71C5ACE5012203E8 .
-
-_:genid-a8aef8a5df984653bbc9032dfa534e9b101-0623CB9AF9942D7F71C5ACE5012203E8 rdf:first
-    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23prospective_study>;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b101-320274AE2A01561D8AB472A385743522 .
-
-_:genid-a8aef8a5df984653bbc9032dfa534e9b101-320274AE2A01561D8AB472A385743522 rdf:first
-    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23questionnaire>;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b101-7114D7B3FB90914ADD0D57F8846273F8 .
-
-_:genid-a8aef8a5df984653bbc9032dfa534e9b101-7114D7B3FB90914ADD0D57F8846273F8 rdf:first
-    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23record-linkage_study>;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b101-19306765FABF8C1BB3CEAEC619B47E3B .
-
-_:genid-a8aef8a5df984653bbc9032dfa534e9b101-19306765FABF8C1BB3CEAEC619B47E3B rdf:first
-    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23retrospective_study>;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b101-30E849005DC1A0C9FA19B877E9EFCEA7 .
-
-_:genid-a8aef8a5df984653bbc9032dfa534e9b101-30E849005DC1A0C9FA19B877E9EFCEA7 rdf:first
-    <https://purl.bioontology.org/ontology/EDDA?conceptid=http%3A%2F%2Fontologies.dbmi.pitt.edu%2Fedda%2FStudyDesigns.owl%23survey>;
-  rdf:rest rdf:nil .
-
 hri:DatasetShape a owl:Ontology, sh:NodeShape;
   rdfs:label "Excel template for Dataset class"@en, "Dataset"@en;
   rdfs:comment "Excel template for Dataset class"@en;
@@ -1293,19 +1310,19 @@ hri:DatasetShape a owl:Ontology, sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-a8aef8a5df984653bbc9032dfa534e9b103-4749E533B7D8F9547890811C419C46F3;
+  sh:in _:genid-d10398e89b8540ceae88d5bc093d1ee4103-01C9BC41E70B261CC923C10B4CF33D67;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-4749E533B7D8F9547890811C419C46F3 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-01C9BC41E70B261CC923C10B4CF33D67 rdf:first
     eu:PUBLIC;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-DCB29042724EC8D533623CFDC4081F06 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-4EAC9B61DEBE97D73062B3324F358B23 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-DCB29042724EC8D533623CFDC4081F06 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-4EAC9B61DEBE97D73062B3324F358B23 rdf:first
     eu:RESTRICTED;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-C62AB2FBACEB97283CAAD7176E3B4560 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-A174E9957AD0724268703ED35B75F0D4 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-C62AB2FBACEB97283CAAD7176E3B4560 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-A174E9957AD0724268703ED35B75F0D4 rdf:first
     eu:NON_PUBLIC;
   rdf:rest rdf:nil .
 
@@ -1391,167 +1408,167 @@ _:genid-a8aef8a5df984653bbc9032dfa534e9b103-C62AB2FBACEB97283CAAD7176E3B4560 rdf
   sh:description "The frequency at which the Dataset is updated. This property must be filled with a value from a controlled vocabulary."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-a8aef8a5df984653bbc9032dfa534e9b103-B60C90CA7619CE47DEDCC104FDEB948E;
+  sh:in _:genid-d10398e89b8540ceae88d5bc093d1ee4103-D39376AAFFFB340FA6F6AF75550FDD9F;
   dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  dash:editor dash:EnumSelectEditor .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-B60C90CA7619CE47DEDCC104FDEB948E rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-D39376AAFFFB340FA6F6AF75550FDD9F rdf:first
     eu-freq:BIDECENNIAL;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-9DB5FAF286309A7EC5C48560B90E9EE3 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-C6A8FFBEDFBBAF8D9A188E62633B8025 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-9DB5FAF286309A7EC5C48560B90E9EE3 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-C6A8FFBEDFBBAF8D9A188E62633B8025 rdf:first
     eu-freq:TRIDECENNIAL;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-3BF5B142EA77060FCECAE06D8E1EF10B .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-7A0793033CDFA06A2CA929850AE09D48 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-3BF5B142EA77060FCECAE06D8E1EF10B rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-7A0793033CDFA06A2CA929850AE09D48 rdf:first
     eu-freq:BIHOURLY;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-09CC4BBAAF9312CF751157B4A112870E .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-3256C947722640359D8466011B01824C .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-09CC4BBAAF9312CF751157B4A112870E rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-3256C947722640359D8466011B01824C rdf:first
     eu-freq:TRIHOURLY;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-9780DC8B5B0488867BAD20920AD7127B .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-650C5E99598052C10207FBF2E4488311 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-9780DC8B5B0488867BAD20920AD7127B rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-650C5E99598052C10207FBF2E4488311 rdf:first
     eu-freq:OTHER;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-C21635B06ED6DD0BA9CA89D3EB231C68 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-4D0B5B6BC6D0C4BA26BE49333E153565 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-C21635B06ED6DD0BA9CA89D3EB231C68 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-4D0B5B6BC6D0C4BA26BE49333E153565 rdf:first
     eu-freq:WEEKLY;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-E9BD5E66A9D66714E260CF1BD64517D6 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-88D54537084E78F1EA6596A4C4F19970 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-E9BD5E66A9D66714E260CF1BD64517D6 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-88D54537084E78F1EA6596A4C4F19970 rdf:first
     eu-freq:NOT_PLANNED;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-D56F9A62BBAF7D3B3D8264DB53F0D888 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-2AF1BC9CDD7223E8365131BA6D226466 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-D56F9A62BBAF7D3B3D8264DB53F0D888 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-2AF1BC9CDD7223E8365131BA6D226466 rdf:first
     eu-freq:AS_NEEDED;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-9C03463FB23BDA975C5BABAA060E46BC .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-DDE361454D5A45090F9B5E1B2A7BDA10 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-9C03463FB23BDA975C5BABAA060E46BC rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-DDE361454D5A45090F9B5E1B2A7BDA10 rdf:first
     eu-freq:5MIN;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-01168EDA55A8594F401F362741D5AA6D .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-01F2DF14113C3C4CCB35C3C24A3CB86A .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-01168EDA55A8594F401F362741D5AA6D rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-01F2DF14113C3C4CCB35C3C24A3CB86A rdf:first
     eu-freq:WEEKLY_5;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-C4FDBD5CB5691ADED9A16D3BAD56B301 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-2E3A6DFFD9B3E5E901C133F168220E4A .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-C4FDBD5CB5691ADED9A16D3BAD56B301 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-2E3A6DFFD9B3E5E901C133F168220E4A rdf:first
     eu-freq:30MIN;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-177B4A9D1F1144AE2E567AEF405F4B89 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-4A42198D773DFEC3DC6F50FD21E02E14 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-177B4A9D1F1144AE2E567AEF405F4B89 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-4A42198D773DFEC3DC6F50FD21E02E14 rdf:first
     eu-freq:HOURLY;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-F42B829F7B1EE1FC44F80434283FB473 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-AC1D1CEA4F73FA731B6356AFE67A3656 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-F42B829F7B1EE1FC44F80434283FB473 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-AC1D1CEA4F73FA731B6356AFE67A3656 rdf:first
     eu-freq:QUADRENNIAL;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-548ECA4725BF570271D381BC409BBFB6 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-FF74DDF9FA62B96F961732EBF66EED6C .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-548ECA4725BF570271D381BC409BBFB6 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-FF74DDF9FA62B96F961732EBF66EED6C rdf:first
     eu-freq:QUINQUENNIAL;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-9749B1F458F517ED221CB0EF24068482 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-0F85B26A1A1FFBB7EC05AD9AFAE92AC1 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-9749B1F458F517ED221CB0EF24068482 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-0F85B26A1A1FFBB7EC05AD9AFAE92AC1 rdf:first
     eu-freq:DECENNIAL;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-B8BE03AF422B7A744662B4194D29D7C6 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-2A222E90B7C096E17E78034942F9D372 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-B8BE03AF422B7A744662B4194D29D7C6 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-2A222E90B7C096E17E78034942F9D372 rdf:first
     eu-freq:1MIN;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-4B47667F3FEA17DC6F07CB2756C6BC1B .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-473DE36CF382609B976E00BE3783D1EC .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-4B47667F3FEA17DC6F07CB2756C6BC1B rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-473DE36CF382609B976E00BE3783D1EC rdf:first
     eu-freq:15MIN;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-35856197EA817864C066F23F4763FBCA .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-05D664277FDA64B5C71DB032FA5DB377 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-35856197EA817864C066F23F4763FBCA rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-05D664277FDA64B5C71DB032FA5DB377 rdf:first
     eu-freq:WEEKLY_2;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-DE8E77B86DE0F48E366C590095B2DB0C .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-365B1E3B65510A5FEE0E3C3368A1169B .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-DE8E77B86DE0F48E366C590095B2DB0C rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-365B1E3B65510A5FEE0E3C3368A1169B rdf:first
     eu-freq:WEEKLY_3;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-62AFFA2B6CF02C902C467035242BE894 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-65D6AFFDD3AE7A6C9B5BC5B96C432EEB .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-62AFFA2B6CF02C902C467035242BE894 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-65D6AFFDD3AE7A6C9B5BC5B96C432EEB rdf:first
     eu-freq:12HRS;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-4FFFC207A87B1904CF2F0CB2100A09AD .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-98E38C57AC90EE4369426932D86D749F .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-4FFFC207A87B1904CF2F0CB2100A09AD rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-98E38C57AC90EE4369426932D86D749F rdf:first
     eu-freq:UNKNOWN;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-B396C53F6BC4F0C582FF13323DF6CD70 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-7B9D563CCCEF555EDEA2BDF034196D6B .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-B396C53F6BC4F0C582FF13323DF6CD70 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-7B9D563CCCEF555EDEA2BDF034196D6B rdf:first
     eu-freq:10MIN;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-25C14E4192CFC8483EC144B2A1A0A467 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-4FD21F2566328131B7907DC1F7405017 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-25C14E4192CFC8483EC144B2A1A0A467 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-4FD21F2566328131B7907DC1F7405017 rdf:first
     eu-freq:UPDATE_CONT;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-D727FBA365C925F807CA60756E59DABA .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-4AD5FD55AE4C8D56DF01529297D98469 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-D727FBA365C925F807CA60756E59DABA rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-4AD5FD55AE4C8D56DF01529297D98469 rdf:first
     eu-freq:QUARTERLY;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-56C8FE30F9358318372434A3B6F86C71 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-A2A4408484FA58ACE4FB62881637E5DE .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-56C8FE30F9358318372434A3B6F86C71 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-A2A4408484FA58ACE4FB62881637E5DE rdf:first
     eu-freq:TRIENNIAL;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-8FE8E2DE239F725D6C505F3B32AB174B .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-F5ED0DB089E2FCDE36336080CF3DCFF1 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-8FE8E2DE239F725D6C505F3B32AB174B rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-F5ED0DB089E2FCDE36336080CF3DCFF1 rdf:first
     eu-freq:NEVER;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-238E472DFB41DB5B80DB1BE4F9B01E6D .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-460B0E44BB9EDA2634129ED4B8FF6FB9 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-238E472DFB41DB5B80DB1BE4F9B01E6D rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-460B0E44BB9EDA2634129ED4B8FF6FB9 rdf:first
     eu-freq:OP_DATPRO;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-AEFC614A5E617CF94349337916E4753C .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-266E3C65E107720B6BB1F06449E47414 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-AEFC614A5E617CF94349337916E4753C rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-266E3C65E107720B6BB1F06449E47414 rdf:first
     eu-freq:MONTHLY_2;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-03369AFCA7F5CF917A53FA3BA14D0FF7 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-BE5C86CC2229E7505ED2823CFC7512E8 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-03369AFCA7F5CF917A53FA3BA14D0FF7 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-BE5C86CC2229E7505ED2823CFC7512E8 rdf:first
     eu-freq:MONTHLY_3;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-251BEAEF2BC60E70B219ABA5B2EB7A0A .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-436400B4D1496EAB6782309482CF95E9 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-251BEAEF2BC60E70B219ABA5B2EB7A0A rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-436400B4D1496EAB6782309482CF95E9 rdf:first
     eu-freq:IRREG;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-6553935409C83C070591E1CD34F4A620 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-ACDA0F2D80F537957D1C14E0CDD18613 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-6553935409C83C070591E1CD34F4A620 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-ACDA0F2D80F537957D1C14E0CDD18613 rdf:first
     eu-freq:MONTHLY;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-A63BAC82424A32CDFEAD954857359C83 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-F4C9328EA61F2BF7C68748DCD912A460 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-A63BAC82424A32CDFEAD954857359C83 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-F4C9328EA61F2BF7C68748DCD912A460 rdf:first
     eu-freq:DAILY;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-94EF8AC535EDADB8FFEAFDA5B09217BF .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-544264982ECD52C1736EC3BDCC0A4CBE .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-94EF8AC535EDADB8FFEAFDA5B09217BF rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-544264982ECD52C1736EC3BDCC0A4CBE rdf:first
     eu-freq:DAILY_2;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-4739D6B46CF3798FB6EA953C47516929 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-19E683DDC3D88C393DE56BB7F4E056BB .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-4739D6B46CF3798FB6EA953C47516929 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-19E683DDC3D88C393DE56BB7F4E056BB rdf:first
     eu-freq:BIWEEKLY;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-7030D7820B9F7A871A4FA3CFF821BBF7 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-DB9C93154A8EA4EFD9710DBC6AC1F596 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-7030D7820B9F7A871A4FA3CFF821BBF7 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-DB9C93154A8EA4EFD9710DBC6AC1F596 rdf:first
     eu-freq:CONT;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-60728D1AAF2C8D31B859AC385E3A7B32 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-FA61B408C1242AF68F9A7866D2F9EF38 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-60728D1AAF2C8D31B859AC385E3A7B32 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-FA61B408C1242AF68F9A7866D2F9EF38 rdf:first
     eu-freq:BIENNIAL;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-A3D899BC882B335B802D28083122DAEA .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-11C373E55DAEB17216E0938B439A9E95 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-A3D899BC882B335B802D28083122DAEA rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-11C373E55DAEB17216E0938B439A9E95 rdf:first
     eu-freq:BIMONTHLY;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-E399E623D3C79FA2DCAAA688DCE06186 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-6C0A85C00543A88BD6E2B1B3DB3D1CB8 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-E399E623D3C79FA2DCAAA688DCE06186 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-6C0A85C00543A88BD6E2B1B3DB3D1CB8 rdf:first
     eu-freq:ANNUAL_2;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-9B3BAB1EE7D61C5749A873490B8619E9 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-CD1F0D1813AAC5224A5A9970AB81F03C .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-9B3BAB1EE7D61C5749A873490B8619E9 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-CD1F0D1813AAC5224A5A9970AB81F03C rdf:first
     eu-freq:ANNUAL_3;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-8EC7BB249DA762AA85B6174BBD391921 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-37E3FA1A4A830DB48008AC08AC01EEE3 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-8EC7BB249DA762AA85B6174BBD391921 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-37E3FA1A4A830DB48008AC08AC01EEE3 rdf:first
     eu-freq:ANNUAL;
   rdf:rest rdf:nil .
 
@@ -1765,23 +1782,23 @@ _:genid-a8aef8a5df984653bbc9032dfa534e9b103-8EC7BB249DA762AA85B6174BBD391921 rdf
   sh:description "The status of a dataset. This property can be filled with a value from a controlled vocabulary."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-a8aef8a5df984653bbc9032dfa534e9b103-E1E1FD781FDC9F37851C552B76B8E515;
+  sh:in _:genid-d10398e89b8540ceae88d5bc093d1ee4103-DC0C0D8F8EB473508FEB15C001D70FDF;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-E1E1FD781FDC9F37851C552B76B8E515 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-DC0C0D8F8EB473508FEB15C001D70FDF rdf:first
     status:COMPLETED;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-2A18A7C70230F2656A88C5CFEA6093A9 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-23DD3934B2A7C85BEA6E42C0AA69CABE .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-2A18A7C70230F2656A88C5CFEA6093A9 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-23DD3934B2A7C85BEA6E42C0AA69CABE rdf:first
     status:DEVELOP;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-9E88E619FEF43763558E58755517DF43 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-35EF78E16CFA6D535B5912C3AA0CF096 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-9E88E619FEF43763558E58755517DF43 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-35EF78E16CFA6D535B5912C3AA0CF096 rdf:first
     status:WITHDRAWN;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-FE061C054351FAF87C26F7385303C526 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-24431CE94AC71BD307A04C139619B65B .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-FE061C054351FAF87C26F7385303C526 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-24431CE94AC71BD307A04C139619B65B rdf:first
     status:DEPRECATED;
   rdf:rest rdf:nil .
 
@@ -1806,60 +1823,60 @@ _:genid-a8aef8a5df984653bbc9032dfa534e9b103-FE061C054351FAF87C26F7385303C526 rdf
   sh:description "A category of the Dataset. This property must be filled with a value from a controlled vocabulary. The default value of this property is http://publications.europa.eu/resource/authority/data-theme/HEAL from the controlled vocabulary."@en;
   sh:minCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-a8aef8a5df984653bbc9032dfa534e9b103-7090820AC2264A2D3D408DE244573C38;
+  sh:in _:genid-d10398e89b8540ceae88d5bc093d1ee4103-376AF511728D1616478D8D3C17F0F10A;
   sh:defaultValue eu-th:HEAL;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-7090820AC2264A2D3D408DE244573C38 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-376AF511728D1616478D8D3C17F0F10A rdf:first
     eu-th:HEAL;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-91147E23FC5DBD12FF6C717E20396A3C .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-E7025007F72ACDE17B278B7842AC6EA7 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-91147E23FC5DBD12FF6C717E20396A3C rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-E7025007F72ACDE17B278B7842AC6EA7 rdf:first
     eu-th:TECH;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-CA48C1D4D2F5E6CBC887987BB55CB11A .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-5BB1E1827FCDA43D0AE43D366E002277 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-CA48C1D4D2F5E6CBC887987BB55CB11A rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-5BB1E1827FCDA43D0AE43D366E002277 rdf:first
     eu-th:TRAN;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-2D9886133ABC207DC3BFEE2E0658E92F .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-8C5452D97303DDDF67DF4AA2492DF847 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-2D9886133ABC207DC3BFEE2E0658E92F rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-8C5452D97303DDDF67DF4AA2492DF847 rdf:first
     eu-th:REGI;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-F80094A8FBBA541666BA83B159730A0C .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-AF63283336FEA4C755A6CD0AF826E453 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-F80094A8FBBA541666BA83B159730A0C rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-AF63283336FEA4C755A6CD0AF826E453 rdf:first
     eu-th:SOCI;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-D69DB03D9892FD8395F687D29E3890B5 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-72BFDCC3B2ECD372131572EDADDBD32F .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-D69DB03D9892FD8395F687D29E3890B5 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-72BFDCC3B2ECD372131572EDADDBD32F rdf:first
     eu-th:AGRI;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-E1C1A0074B211AE7993121FDE6EBD57C .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-4988DA26558EBADFF45C754323C16C9C .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-E1C1A0074B211AE7993121FDE6EBD57C rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-4988DA26558EBADFF45C754323C16C9C rdf:first
     eu-th:ECON;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-445A4E0BCF282A56A6FD26146B3EF1B0 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-401DF22669C016012CEBAC34BF6E3AB0 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-445A4E0BCF282A56A6FD26146B3EF1B0 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-401DF22669C016012CEBAC34BF6E3AB0 rdf:first
     eu-th:JUST;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-ECA95D8751ED69EDDA0B601794E04FBA .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-F932415E2D16A3A1326C024163440D81 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-ECA95D8751ED69EDDA0B601794E04FBA rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-F932415E2D16A3A1326C024163440D81 rdf:first
     eu-th:INTR;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-ACE0F43531977E3D477FCDD716B8252A .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-65A47BAF467A0CF58C5B41F5797958F0 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-ACE0F43531977E3D477FCDD716B8252A rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-65A47BAF467A0CF58C5B41F5797958F0 rdf:first
     eu-th:ENVI;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-E9E14E2DB928E2BAD0FE77C17C314E62 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-2C7BC564CD91F6464B8041BC92059606 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-E9E14E2DB928E2BAD0FE77C17C314E62 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-2C7BC564CD91F6464B8041BC92059606 rdf:first
     eu-th:GOVE;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-17323F74F88EE0F841CBF5B3F8FC0B56 .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-357970A54E36467DE112A7FFE555F034 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-17323F74F88EE0F841CBF5B3F8FC0B56 rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-357970A54E36467DE112A7FFE555F034 rdf:first
     eu-th:EDUC;
-  rdf:rest _:genid-a8aef8a5df984653bbc9032dfa534e9b103-9CE187F1EF3EFEB9FEE57E4E20916D0E .
+  rdf:rest _:genid-d10398e89b8540ceae88d5bc093d1ee4103-B23610752AB08A87C2D1BD719E2BF544 .
 
-_:genid-a8aef8a5df984653bbc9032dfa534e9b103-9CE187F1EF3EFEB9FEE57E4E20916D0E rdf:first
+_:genid-d10398e89b8540ceae88d5bc093d1ee4103-B23610752AB08A87C2D1BD719E2BF544 rdf:first
     eu-th:ENER;
   rdf:rest rdf:nil .
 
