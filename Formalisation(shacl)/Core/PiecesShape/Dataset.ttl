@@ -72,17 +72,17 @@ hri:DatasetShape a owl:Ontology, sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:0a2ca676b3fe44bc8de071b426aaa48842;
+  sh:in _:b8a61f747a934680bc036047b54557ac65;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:0a2ca676b3fe44bc8de071b426aaa48842 rdf:first eu:PUBLIC;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48843 .
+_:b8a61f747a934680bc036047b54557ac65 rdf:first eu:PUBLIC;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac66 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48843 rdf:first eu:RESTRICTED;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48844 .
+_:b8a61f747a934680bc036047b54557ac66 rdf:first eu:RESTRICTED;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac67 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48844 rdf:first eu:NON_PUBLIC;
+_:b8a61f747a934680bc036047b54557ac67 rdf:first eu:NON_PUBLIC;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#analytics> sh:path healthdcatap:analytics;
@@ -167,128 +167,128 @@ _:0a2ca676b3fe44bc8de071b426aaa48844 rdf:first eu:NON_PUBLIC;
   sh:description "The frequency at which the Dataset is updated. This property must be filled with a value from a controlled vocabulary."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:0a2ca676b3fe44bc8de071b426aaa48845;
+  sh:in _:b8a61f747a934680bc036047b54557ac68;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-_:0a2ca676b3fe44bc8de071b426aaa48845 rdf:first eu-freq:BIDECENNIAL;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48846 .
+_:b8a61f747a934680bc036047b54557ac68 rdf:first eu-freq:BIDECENNIAL;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac69 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48846 rdf:first eu-freq:TRIDECENNIAL;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48847 .
+_:b8a61f747a934680bc036047b54557ac69 rdf:first eu-freq:TRIDECENNIAL;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac70 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48847 rdf:first eu-freq:BIHOURLY;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48848 .
+_:b8a61f747a934680bc036047b54557ac70 rdf:first eu-freq:BIHOURLY;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac71 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48848 rdf:first eu-freq:TRIHOURLY;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48849 .
+_:b8a61f747a934680bc036047b54557ac71 rdf:first eu-freq:TRIHOURLY;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac72 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48849 rdf:first eu-freq:OTHER;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48850 .
+_:b8a61f747a934680bc036047b54557ac72 rdf:first eu-freq:OTHER;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac73 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48850 rdf:first eu-freq:WEEKLY;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48851 .
+_:b8a61f747a934680bc036047b54557ac73 rdf:first eu-freq:WEEKLY;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac74 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48851 rdf:first eu-freq:NOT_PLANNED;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48852 .
+_:b8a61f747a934680bc036047b54557ac74 rdf:first eu-freq:NOT_PLANNED;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac75 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48852 rdf:first eu-freq:AS_NEEDED;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48853 .
+_:b8a61f747a934680bc036047b54557ac75 rdf:first eu-freq:AS_NEEDED;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac76 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48853 rdf:first eu-freq:5MIN;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48854 .
+_:b8a61f747a934680bc036047b54557ac76 rdf:first eu-freq:5MIN;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac77 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48854 rdf:first eu-freq:WEEKLY_5;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48855 .
+_:b8a61f747a934680bc036047b54557ac77 rdf:first eu-freq:WEEKLY_5;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac78 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48855 rdf:first eu-freq:30MIN;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48856 .
+_:b8a61f747a934680bc036047b54557ac78 rdf:first eu-freq:30MIN;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac79 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48856 rdf:first eu-freq:HOURLY;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48857 .
+_:b8a61f747a934680bc036047b54557ac79 rdf:first eu-freq:HOURLY;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac80 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48857 rdf:first eu-freq:QUADRENNIAL;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48858 .
+_:b8a61f747a934680bc036047b54557ac80 rdf:first eu-freq:QUADRENNIAL;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac81 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48858 rdf:first eu-freq:QUINQUENNIAL;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48859 .
+_:b8a61f747a934680bc036047b54557ac81 rdf:first eu-freq:QUINQUENNIAL;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac82 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48859 rdf:first eu-freq:DECENNIAL;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48860 .
+_:b8a61f747a934680bc036047b54557ac82 rdf:first eu-freq:DECENNIAL;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac83 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48860 rdf:first eu-freq:1MIN;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48861 .
+_:b8a61f747a934680bc036047b54557ac83 rdf:first eu-freq:1MIN;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac84 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48861 rdf:first eu-freq:15MIN;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48862 .
+_:b8a61f747a934680bc036047b54557ac84 rdf:first eu-freq:15MIN;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac85 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48862 rdf:first eu-freq:WEEKLY_2;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48863 .
+_:b8a61f747a934680bc036047b54557ac85 rdf:first eu-freq:WEEKLY_2;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac86 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48863 rdf:first eu-freq:WEEKLY_3;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48864 .
+_:b8a61f747a934680bc036047b54557ac86 rdf:first eu-freq:WEEKLY_3;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac87 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48864 rdf:first eu-freq:12HRS;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48865 .
+_:b8a61f747a934680bc036047b54557ac87 rdf:first eu-freq:12HRS;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac88 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48865 rdf:first eu-freq:UNKNOWN;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48866 .
+_:b8a61f747a934680bc036047b54557ac88 rdf:first eu-freq:UNKNOWN;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac89 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48866 rdf:first eu-freq:10MIN;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48867 .
+_:b8a61f747a934680bc036047b54557ac89 rdf:first eu-freq:10MIN;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac90 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48867 rdf:first eu-freq:UPDATE_CONT;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48868 .
+_:b8a61f747a934680bc036047b54557ac90 rdf:first eu-freq:UPDATE_CONT;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac91 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48868 rdf:first eu-freq:QUARTERLY;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48869 .
+_:b8a61f747a934680bc036047b54557ac91 rdf:first eu-freq:QUARTERLY;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac92 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48869 rdf:first eu-freq:TRIENNIAL;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48870 .
+_:b8a61f747a934680bc036047b54557ac92 rdf:first eu-freq:TRIENNIAL;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac93 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48870 rdf:first eu-freq:NEVER;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48871 .
+_:b8a61f747a934680bc036047b54557ac93 rdf:first eu-freq:NEVER;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac94 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48871 rdf:first eu-freq:OP_DATPRO;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48872 .
+_:b8a61f747a934680bc036047b54557ac94 rdf:first eu-freq:OP_DATPRO;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac95 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48872 rdf:first eu-freq:MONTHLY_2;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48873 .
+_:b8a61f747a934680bc036047b54557ac95 rdf:first eu-freq:MONTHLY_2;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac96 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48873 rdf:first eu-freq:MONTHLY_3;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48874 .
+_:b8a61f747a934680bc036047b54557ac96 rdf:first eu-freq:MONTHLY_3;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac97 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48874 rdf:first eu-freq:IRREG;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48875 .
+_:b8a61f747a934680bc036047b54557ac97 rdf:first eu-freq:IRREG;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac98 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48875 rdf:first eu-freq:MONTHLY;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48876 .
+_:b8a61f747a934680bc036047b54557ac98 rdf:first eu-freq:MONTHLY;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac99 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48876 rdf:first eu-freq:DAILY;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48877 .
+_:b8a61f747a934680bc036047b54557ac99 rdf:first eu-freq:DAILY;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac100 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48877 rdf:first eu-freq:DAILY_2;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48878 .
+_:b8a61f747a934680bc036047b54557ac100 rdf:first eu-freq:DAILY_2;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac101 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48878 rdf:first eu-freq:BIWEEKLY;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48879 .
+_:b8a61f747a934680bc036047b54557ac101 rdf:first eu-freq:BIWEEKLY;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac102 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48879 rdf:first eu-freq:CONT;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48880 .
+_:b8a61f747a934680bc036047b54557ac102 rdf:first eu-freq:CONT;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac103 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48880 rdf:first eu-freq:BIENNIAL;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48881 .
+_:b8a61f747a934680bc036047b54557ac103 rdf:first eu-freq:BIENNIAL;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac104 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48881 rdf:first eu-freq:BIMONTHLY;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48882 .
+_:b8a61f747a934680bc036047b54557ac104 rdf:first eu-freq:BIMONTHLY;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac105 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48882 rdf:first eu-freq:ANNUAL_2;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48883 .
+_:b8a61f747a934680bc036047b54557ac105 rdf:first eu-freq:ANNUAL_2;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac106 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48883 rdf:first eu-freq:ANNUAL_3;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48884 .
+_:b8a61f747a934680bc036047b54557ac106 rdf:first eu-freq:ANNUAL_3;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac107 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48884 rdf:first eu-freq:ANNUAL;
+_:b8a61f747a934680bc036047b54557ac107 rdf:first eu-freq:ANNUAL;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#geographical-coverage> sh:path dct:spatial;
@@ -501,20 +501,20 @@ _:0a2ca676b3fe44bc8de071b426aaa48884 rdf:first eu-freq:ANNUAL;
   sh:description "The status of a dataset. This property can be filled with a value from a controlled vocabulary."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:0a2ca676b3fe44bc8de071b426aaa48885;
+  sh:in _:b8a61f747a934680bc036047b54557ac108;
   dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  dash:editor dash:EnumSelectEditor .
 
-_:0a2ca676b3fe44bc8de071b426aaa48885 rdf:first status:COMPLETED;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48886 .
+_:b8a61f747a934680bc036047b54557ac108 rdf:first status:COMPLETED;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac109 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48886 rdf:first status:DEVELOP;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48887 .
+_:b8a61f747a934680bc036047b54557ac109 rdf:first status:DEVELOP;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac110 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48887 rdf:first status:WITHDRAWN;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48888 .
+_:b8a61f747a934680bc036047b54557ac110 rdf:first status:WITHDRAWN;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac111 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48888 rdf:first status:DEPRECATED;
+_:b8a61f747a934680bc036047b54557ac111 rdf:first status:DEPRECATED;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#temporal-coverage> sh:path dct:temporal;
@@ -538,48 +538,48 @@ _:0a2ca676b3fe44bc8de071b426aaa48888 rdf:first status:DEPRECATED;
   sh:description "A category of the Dataset. This property must be filled with a value from a controlled vocabulary. The default value of this property is http://publications.europa.eu/resource/authority/data-theme/HEAL from the controlled vocabulary."@en;
   sh:minCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:0a2ca676b3fe44bc8de071b426aaa48889;
+  sh:in _:b8a61f747a934680bc036047b54557ac112;
   sh:defaultValue eu-th:HEAL;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:0a2ca676b3fe44bc8de071b426aaa48889 rdf:first eu-th:HEAL;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48890 .
+_:b8a61f747a934680bc036047b54557ac112 rdf:first eu-th:HEAL;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac113 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48890 rdf:first eu-th:TECH;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48891 .
+_:b8a61f747a934680bc036047b54557ac113 rdf:first eu-th:TECH;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac114 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48891 rdf:first eu-th:TRAN;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48892 .
+_:b8a61f747a934680bc036047b54557ac114 rdf:first eu-th:TRAN;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac115 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48892 rdf:first eu-th:REGI;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48893 .
+_:b8a61f747a934680bc036047b54557ac115 rdf:first eu-th:REGI;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac116 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48893 rdf:first eu-th:SOCI;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48894 .
+_:b8a61f747a934680bc036047b54557ac116 rdf:first eu-th:SOCI;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac117 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48894 rdf:first eu-th:AGRI;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48895 .
+_:b8a61f747a934680bc036047b54557ac117 rdf:first eu-th:AGRI;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac118 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48895 rdf:first eu-th:ECON;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48896 .
+_:b8a61f747a934680bc036047b54557ac118 rdf:first eu-th:ECON;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac119 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48896 rdf:first eu-th:JUST;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48897 .
+_:b8a61f747a934680bc036047b54557ac119 rdf:first eu-th:JUST;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac120 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48897 rdf:first eu-th:INTR;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48898 .
+_:b8a61f747a934680bc036047b54557ac120 rdf:first eu-th:INTR;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac121 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48898 rdf:first eu-th:ENVI;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48899 .
+_:b8a61f747a934680bc036047b54557ac121 rdf:first eu-th:ENVI;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac122 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48899 rdf:first eu-th:GOVE;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa488100 .
+_:b8a61f747a934680bc036047b54557ac122 rdf:first eu-th:GOVE;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac123 .
 
-_:0a2ca676b3fe44bc8de071b426aaa488100 rdf:first eu-th:EDUC;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa488101 .
+_:b8a61f747a934680bc036047b54557ac123 rdf:first eu-th:EDUC;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac124 .
 
-_:0a2ca676b3fe44bc8de071b426aaa488101 rdf:first eu-th:ENER;
+_:b8a61f747a934680bc036047b54557ac124 rdf:first eu-th:ENER;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#title> sh:path dct:title;
@@ -618,6 +618,6 @@ _:0a2ca676b3fe44bc8de071b426aaa488101 rdf:first eu-th:ENER;
 <http://data.health-ri.nl/core/p2/DatasetShape#was-generated-by> sh:path prov:wasGeneratedBy;
   sh:name "was generated by"@en;
   sh:description "An activity that generated, or provides the business context for, the creation of the dataset."@en;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  sh:node hri:aux-ActivityShape;
+  dash:viewer dash:DetailsViewer;
+  dash:editor dash:BlankNodeEditor .

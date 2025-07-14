@@ -33,7 +33,7 @@ hri:aux-AttributionShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Attribution"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Attribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-07-11T14:14:11.270Z"^^xsd:dateTime .
+  dct:modified "2025-07-14T08:18:04.730Z"^^xsd:dateTime .
 
 hri:AttributionShape a sh:NodeShape;
   rdfs:label "Attribution"@en;
@@ -53,66 +53,66 @@ hri:AttributionShape a sh:NodeShape;
   sh:description "The nature of the relationship between the agent and the described resource, as indicated by a value from the controlled vocabulary."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:0a2ca676b3fe44bc8de071b426aaa48822;
-  dash:viewer dash:LabelViewer;
-  dash:editor dash:URIEditor .
+  sh:in _:b8a61f747a934680bc036047b54557ac45;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:EnumSelectEditor .
 
-_:0a2ca676b3fe44bc8de071b426aaa48822 rdf:first role:resourceProvider;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48823 .
+_:b8a61f747a934680bc036047b54557ac45 rdf:first role:resourceProvider;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac46 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48823 rdf:first role:custodian;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48824 .
+_:b8a61f747a934680bc036047b54557ac46 rdf:first role:custodian;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac47 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48824 rdf:first role:owner;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48825 .
+_:b8a61f747a934680bc036047b54557ac47 rdf:first role:owner;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac48 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48825 rdf:first role:user;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48826 .
+_:b8a61f747a934680bc036047b54557ac48 rdf:first role:user;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac49 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48826 rdf:first role:distributor;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48827 .
+_:b8a61f747a934680bc036047b54557ac49 rdf:first role:distributor;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac50 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48827 rdf:first role:originator;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48828 .
+_:b8a61f747a934680bc036047b54557ac50 rdf:first role:originator;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac51 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48828 rdf:first role:pointOfContact;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48829 .
+_:b8a61f747a934680bc036047b54557ac51 rdf:first role:pointOfContact;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac52 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48829 rdf:first role:principalInvestigator;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48830 .
+_:b8a61f747a934680bc036047b54557ac52 rdf:first role:principalInvestigator;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac53 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48830 rdf:first role:processor;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48831 .
+_:b8a61f747a934680bc036047b54557ac53 rdf:first role:processor;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac54 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48831 rdf:first role:publisher;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48832 .
+_:b8a61f747a934680bc036047b54557ac54 rdf:first role:publisher;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac55 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48832 rdf:first role:author;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48833 .
+_:b8a61f747a934680bc036047b54557ac55 rdf:first role:author;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac56 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48833 rdf:first role:sponsor;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48834 .
+_:b8a61f747a934680bc036047b54557ac56 rdf:first role:sponsor;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac57 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48834 rdf:first role:coAuthor;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48835 .
+_:b8a61f747a934680bc036047b54557ac57 rdf:first role:coAuthor;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac58 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48835 rdf:first role:collaborator;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48836 .
+_:b8a61f747a934680bc036047b54557ac58 rdf:first role:collaborator;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac59 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48836 rdf:first role:editor;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48837 .
+_:b8a61f747a934680bc036047b54557ac59 rdf:first role:editor;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac60 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48837 rdf:first role:mediator;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48838 .
+_:b8a61f747a934680bc036047b54557ac60 rdf:first role:mediator;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac61 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48838 rdf:first role:rightsHolder;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48839 .
+_:b8a61f747a934680bc036047b54557ac61 rdf:first role:rightsHolder;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac62 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48839 rdf:first role:contributor;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48840 .
+_:b8a61f747a934680bc036047b54557ac62 rdf:first role:contributor;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac63 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48840 rdf:first role:funder;
-  rdf:rest _:0a2ca676b3fe44bc8de071b426aaa48841 .
+_:b8a61f747a934680bc036047b54557ac63 rdf:first role:funder;
+  rdf:rest _:b8a61f747a934680bc036047b54557ac64 .
 
-_:0a2ca676b3fe44bc8de071b426aaa48841 rdf:first role:stakeholder;
+_:b8a61f747a934680bc036047b54557ac64 rdf:first role:stakeholder;
   rdf:rest rdf:nil .

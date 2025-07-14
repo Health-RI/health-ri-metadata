@@ -32,7 +32,7 @@
   rdfs:comment "Health-RI v2 Catalog."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Catalog."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-07-11T14:05:44.010Z"^^xsd:dateTime .
+  dct:modified "2025-07-14T07:42:31.590Z"^^xsd:dateTime .
 
 hri:CatalogShape a sh:NodeShape;
   rdfs:label "Catalog"@en;
@@ -57,12 +57,14 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dcat:catalog> sh:path dcat:catalog;
   sh:name "catalog"@en;
+  sh:description "URI linking to a related catalogue."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dcat:contactPoint> sh:path dcat:contactPoint;
   sh:name "Contact point"@en;
+  sh:description "URI linking to a contact point specified with vcard:Kind. Whenever possible, use general contact information (for example from a department) instead of contact information of an individual."@en;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
@@ -71,6 +73,7 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:creator> sh:path dct:creator;
   sh:name "creator"@en;
+  sh:description "URI linking to a creator specified with foaf:Agent."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
@@ -80,6 +83,7 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:description> sh:path dct:description;
   sh:name "description"@en;
+  sh:description "Briefly describe the catalog and what it contains."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
   dash:viewer dash:LiteralViewer;
@@ -94,12 +98,15 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:hasPart> sh:path dct:hasPart;
   sh:name "has part"@en;
+  sh:description """Use this property to establish another catalogue in this catalogue.
+Note that deeply nested structures should be avoided, and can currently not be displayed in the National Health Data Catalogue."""@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#foaf:homepage> sh:path foaf:homepage;
   sh:name "home page"@en;
+  sh:description "The home page of the catalogue, if available."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
@@ -107,12 +114,15 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:language> sh:path dct:language;
   sh:name "language"@en;
+  sh:description """The value of this property must be an IRI from the provided controlled vocabulary.
+For example: http://publications.europa.eu/resource/authority/language/NLD"""@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:license> sh:path dct:license;
   sh:name "licence"@en;
+  sh:description "The licence under which the catalogue (with resource description) is made available. In the metadata of distributions and data services the licences of those resources are taken up."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
@@ -128,6 +138,7 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:publisher> sh:path dct:publisher;
   sh:name "publisher"@en;
+  sh:description "The organisation (or individual) that is holder of the catalogue. For more details about the publisher, see the class Agent. Example: Radboudumc."@en;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
@@ -144,6 +155,7 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:rights> sh:path dct:rights;
   sh:name "rights"@en;
+  sh:description "The rights statement should be a free-text statement placed at a web-accessible location such that the value of this property is the IRI pointing to that statement."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
@@ -151,6 +163,7 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dcat:service> sh:path dcat:service;
   sh:name "service"@en;
+  sh:description "Some datasets may have real-time Data Services (e.g., Beacon API counting individuals). IT teams should define the relationship between the catalog and the Data Service via this property. While crucial for interoperability, this property is not relevant for end-users to collect."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
@@ -170,6 +183,7 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:title> sh:path dct:title;
   sh:name "title"@en;
+  sh:description "Provide a unique title for your catalog."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
   dash:viewer dash:LiteralViewer;

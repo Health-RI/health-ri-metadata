@@ -28,7 +28,6 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
 
 <https://data.sparna.fr/shapes-example#> a owl:Ontology;
   rdfs:label "DataService"@en;
@@ -59,19 +58,19 @@ hri:DataServiceShape a sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-e8fa081bd81645d2a203eb0b897cebe026-4ECA1D9ECB79A19F171433DB5636F0F1;
+  sh:in _:genid-8c46be653e5d4710b1a3902948f4caa532-D6754B9B566DF9CB4EE009EBF3F61CA9;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-e8fa081bd81645d2a203eb0b897cebe026-4ECA1D9ECB79A19F171433DB5636F0F1 rdf:first
+_:genid-8c46be653e5d4710b1a3902948f4caa532-D6754B9B566DF9CB4EE009EBF3F61CA9 rdf:first
     eu:PUBLIC;
-  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-F4A807CD0E572349F2AE7E6A6CCE5BA4 .
+  rdf:rest _:genid-8c46be653e5d4710b1a3902948f4caa532-6CA96396DDD75044027D968CEE5DC43A .
 
-_:genid-e8fa081bd81645d2a203eb0b897cebe026-F4A807CD0E572349F2AE7E6A6CCE5BA4 rdf:first
+_:genid-8c46be653e5d4710b1a3902948f4caa532-6CA96396DDD75044027D968CEE5DC43A rdf:first
     eu:RESTRICTED;
-  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-3C04BDCA27CF82E0E0C2988E585544C5 .
+  rdf:rest _:genid-8c46be653e5d4710b1a3902948f4caa532-B8ACF4F0BAC043D6A911FD90BC15BC13 .
 
-_:genid-e8fa081bd81645d2a203eb0b897cebe026-3C04BDCA27CF82E0E0C2988E585544C5 rdf:first
+_:genid-8c46be653e5d4710b1a3902948f4caa532-B8ACF4F0BAC043D6A911FD90BC15BC13 rdf:first
     eu:NON_PUBLIC;
   rdf:rest rdf:nil .
 
@@ -223,60 +222,60 @@ _:genid-e8fa081bd81645d2a203eb0b897cebe026-3C04BDCA27CF82E0E0C2988E585544C5 rdf:
   sh:description "A Data Service may be associated with multiple themes."@en;
   sh:minCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-e8fa081bd81645d2a203eb0b897cebe026-9800A4B5FB32F41E82965B049938F148;
+  sh:in _:genid-8c46be653e5d4710b1a3902948f4caa532-F597EFE28B721315469AE7A4F7FF676C;
   sh:defaultValue eu-th:HEAL;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-e8fa081bd81645d2a203eb0b897cebe026-9800A4B5FB32F41E82965B049938F148 rdf:first
+_:genid-8c46be653e5d4710b1a3902948f4caa532-F597EFE28B721315469AE7A4F7FF676C rdf:first
     eu-th:HEAL;
-  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-052F8C0A6A672ED032723B2408E1B0A4 .
+  rdf:rest _:genid-8c46be653e5d4710b1a3902948f4caa532-00B4CC8032481CE44E895425CF980EEE .
 
-_:genid-e8fa081bd81645d2a203eb0b897cebe026-052F8C0A6A672ED032723B2408E1B0A4 rdf:first
+_:genid-8c46be653e5d4710b1a3902948f4caa532-00B4CC8032481CE44E895425CF980EEE rdf:first
     eu-th:TECH;
-  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-D92D256732E50D70687AB16936F34848 .
+  rdf:rest _:genid-8c46be653e5d4710b1a3902948f4caa532-99ED0D1A501FB498FB06C0E2DA8156DD .
 
-_:genid-e8fa081bd81645d2a203eb0b897cebe026-D92D256732E50D70687AB16936F34848 rdf:first
+_:genid-8c46be653e5d4710b1a3902948f4caa532-99ED0D1A501FB498FB06C0E2DA8156DD rdf:first
     eu-th:TRAN;
-  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-4AF10F6D4E5B319507741A35E928CA78 .
+  rdf:rest _:genid-8c46be653e5d4710b1a3902948f4caa532-05DFB9DFEF5256DD0A2B5B4DA4B194C2 .
 
-_:genid-e8fa081bd81645d2a203eb0b897cebe026-4AF10F6D4E5B319507741A35E928CA78 rdf:first
+_:genid-8c46be653e5d4710b1a3902948f4caa532-05DFB9DFEF5256DD0A2B5B4DA4B194C2 rdf:first
     eu-th:REGI;
-  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-44C05D58693F4071E6001A1D0DA65479 .
+  rdf:rest _:genid-8c46be653e5d4710b1a3902948f4caa532-40AEACCA52E05ED71586067F64AE5AB2 .
 
-_:genid-e8fa081bd81645d2a203eb0b897cebe026-44C05D58693F4071E6001A1D0DA65479 rdf:first
+_:genid-8c46be653e5d4710b1a3902948f4caa532-40AEACCA52E05ED71586067F64AE5AB2 rdf:first
     eu-th:SOCI;
-  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-0CF75DB4978388CF239D97660C3A297A .
+  rdf:rest _:genid-8c46be653e5d4710b1a3902948f4caa532-4A25A65D73F7B42BAF7D43B99E775CDF .
 
-_:genid-e8fa081bd81645d2a203eb0b897cebe026-0CF75DB4978388CF239D97660C3A297A rdf:first
+_:genid-8c46be653e5d4710b1a3902948f4caa532-4A25A65D73F7B42BAF7D43B99E775CDF rdf:first
     eu-th:AGRI;
-  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-412D0801E12277D4E65D1BA71FF70F60 .
+  rdf:rest _:genid-8c46be653e5d4710b1a3902948f4caa532-90DEB2597FE9BADB7447AF14FF0339B6 .
 
-_:genid-e8fa081bd81645d2a203eb0b897cebe026-412D0801E12277D4E65D1BA71FF70F60 rdf:first
+_:genid-8c46be653e5d4710b1a3902948f4caa532-90DEB2597FE9BADB7447AF14FF0339B6 rdf:first
     eu-th:ECON;
-  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-B4921C14A0543A38AE1AFBE8295FC076 .
+  rdf:rest _:genid-8c46be653e5d4710b1a3902948f4caa532-2A9F77095942D12E64DCFAD9838A9794 .
 
-_:genid-e8fa081bd81645d2a203eb0b897cebe026-B4921C14A0543A38AE1AFBE8295FC076 rdf:first
+_:genid-8c46be653e5d4710b1a3902948f4caa532-2A9F77095942D12E64DCFAD9838A9794 rdf:first
     eu-th:JUST;
-  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-D85538E2DA62706183F29E6FA1555CD1 .
+  rdf:rest _:genid-8c46be653e5d4710b1a3902948f4caa532-7897137DC196ADC8A4CF4C675878CD37 .
 
-_:genid-e8fa081bd81645d2a203eb0b897cebe026-D85538E2DA62706183F29E6FA1555CD1 rdf:first
+_:genid-8c46be653e5d4710b1a3902948f4caa532-7897137DC196ADC8A4CF4C675878CD37 rdf:first
     eu-th:INTR;
-  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-BA0F3C9EA50C9BD8C1EA846008B322E5 .
+  rdf:rest _:genid-8c46be653e5d4710b1a3902948f4caa532-313535F3B5A5BD295C31A2DF0F8424F3 .
 
-_:genid-e8fa081bd81645d2a203eb0b897cebe026-BA0F3C9EA50C9BD8C1EA846008B322E5 rdf:first
+_:genid-8c46be653e5d4710b1a3902948f4caa532-313535F3B5A5BD295C31A2DF0F8424F3 rdf:first
     eu-th:ENVI;
-  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-BA14C36E97C10A1A6AD1A66AD3C68BB8 .
+  rdf:rest _:genid-8c46be653e5d4710b1a3902948f4caa532-A40C5DB647A8FE50AE8464400C6CA344 .
 
-_:genid-e8fa081bd81645d2a203eb0b897cebe026-BA14C36E97C10A1A6AD1A66AD3C68BB8 rdf:first
+_:genid-8c46be653e5d4710b1a3902948f4caa532-A40C5DB647A8FE50AE8464400C6CA344 rdf:first
     eu-th:GOVE;
-  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-663987B209AC76C8B587E9B981A0E0D2 .
+  rdf:rest _:genid-8c46be653e5d4710b1a3902948f4caa532-0A4E5C4D5F66C0D5FC86449A8C172D1E .
 
-_:genid-e8fa081bd81645d2a203eb0b897cebe026-663987B209AC76C8B587E9B981A0E0D2 rdf:first
+_:genid-8c46be653e5d4710b1a3902948f4caa532-0A4E5C4D5F66C0D5FC86449A8C172D1E rdf:first
     eu-th:EDUC;
-  rdf:rest _:genid-e8fa081bd81645d2a203eb0b897cebe026-B34689351FD8BEB2B5C1AE18DA2AD541 .
+  rdf:rest _:genid-8c46be653e5d4710b1a3902948f4caa532-A12789839255C553E2124C4E561A641E .
 
-_:genid-e8fa081bd81645d2a203eb0b897cebe026-B34689351FD8BEB2B5C1AE18DA2AD541 rdf:first
+_:genid-8c46be653e5d4710b1a3902948f4caa532-A12789839255C553E2124C4E561A641E rdf:first
     eu-th:ENER;
   rdf:rest rdf:nil .
 
@@ -287,125 +286,6 @@ _:genid-e8fa081bd81645d2a203eb0b897cebe026-B34689351FD8BEB2B5C1AE18DA2AD541 rdf:
   sh:nodeKind sh:Literal;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
-
-hri:AgentShapeAgentShape a owl:Ontology;
-  rdfs:label "Agent class"@en;
-  rdfs:comment "Excel template for Agent class"@en;
-  dct:description "This is an excel template for Agent class in Health RI Core plateau 2."@en;
-  owl:versionInfo "0.1";
-  dct:modified "2024-02-10T00:00:00.000Z"^^xsd:dateTime .
-
-hri:AgentShape a sh:NodeShape;
-  rdfs:label "Agent"@en;
-  sh:targetClass foaf:Agent;
-  sh:property <http://data.health-ri.nl/core/p2/AgentShape#dct:spatial>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:mbox>,
-    <http://data.health-ri.nl/core/p2/AgentShape#dct:identifier>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:name>,
-    <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishernote>, <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishertype>,
-    <http://data.health-ri.nl/core/p2/AgentShape#dct:type>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:homepage> .
-
-<http://data.health-ri.nl/core/p2/AgentShape#dct:spatial> sh:path dct:spatial;
-  sh:name "country"@en;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
-<http://data.health-ri.nl/core/p2/AgentShape#foaf:mbox> sh:path foaf:mbox;
-  sh:name "email"@en;
-  sh:description "An email address via which contact can be made. This property SHOULD be used to provide the email address of the Agent, specified using fully qualified mailto: URI scheme. For example: mailto:info@example.com"@en;
-  sh:minCount 1;
-  sh:maxCount 1;
-  sh:nodeKind sh:IRI;
-  sh:pattern "^mailto:.+@.+\\..+$";
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
-<http://data.health-ri.nl/core/p2/AgentShape#dct:identifier> sh:path dct:identifier;
-  sh:name "identifier"@en;
-  sh:description "A unique identifier of the agent."@en;
-  sh:minCount 1;
-  sh:nodeKind sh:Literal;
-  dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextAreaEditor .
-
-<http://data.health-ri.nl/core/p2/AgentShape#foaf:name> sh:path foaf:name;
-  sh:name "name"@en;
-  sh:description "A name of the agent."@en;
-  sh:minCount 1;
-  sh:nodeKind sh:Literal;
-  dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextAreaEditor .
-
-<http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishernote> sh:path healthdcatap:publishernote;
-  sh:name "publisher note"@en;
-  sh:description "A description of the publisher activities"@en;
-  sh:maxCount 1;
-  sh:nodeKind sh:Literal;
-  dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextAreaEditor .
-
-<http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishertype> sh:path healthdcatap:publishertype;
-  sh:name "publisher type"@en;
-  sh:description "A type of organisation that makes the Dataset available"@en;
-  sh:maxCount 1;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
-<http://data.health-ri.nl/core/p2/AgentShape#dct:type> sh:path dct:type;
-  sh:name "type"@en;
-  sh:description "A type of the agent that makes the Catalogue or Dataset available"@en;
-  sh:maxCount 1;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
-<http://data.health-ri.nl/core/p2/AgentShape#foaf:homepage> sh:path foaf:homepage;
-  sh:name "URL"@en;
-  sh:description "A webpage that either allows to make contact (i.e. a webform) or the information contains how to get into contact."@en;
-  sh:minCount 1;
-  sh:maxCount 1;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
-hri:KindShapeKindShape a owl:Ontology;
-  rdfs:label "Kind"@en;
-  rdfs:comment "Health-RI v2 Kind."@en;
-  dct:description "SHACL mandatory definitions for the Health-RI v2 model for vcard:Kind."@en;
-  owl:versionInfo "0.1";
-  dct:modified "2025-05-02T06:45:41.960Z"^^xsd:dateTime .
-
-hri:KindShape a sh:NodeShape;
-  rdfs:label "Kind"@en;
-  sh:targetClass vcard:Kind;
-  sh:property <http://data.health-ri.nl/core/p2/KindShape#vcard:hasURL>, <http://data.health-ri.nl/core/p2/KindShape#vcard:hasEmail>,
-    <http://data.health-ri.nl/core/p2/KindShape#vcard:fn> .
-
-<http://data.health-ri.nl/core/p2/KindShape#vcard:hasURL> sh:path vcard:hasURL;
-  sh:name "contact page"@en;
-  sh:description "A webpage that either allows to make contact (i.e. a webform) or the information contains how to get into contact."@en;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
-<http://data.health-ri.nl/core/p2/KindShape#vcard:hasEmail> sh:path vcard:hasEmail;
-  sh:name "has email"@en;
-  sh:description "A email address via which contact can be made. Make sure you use the correct format, starting with 'mailto:'. For example: mailto:info@example.com"@en;
-  sh:minCount 1;
-  sh:maxCount 1;
-  sh:nodeKind sh:IRI;
-  sh:pattern "^mailto:.+@.+\\..+$";
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
-<http://data.health-ri.nl/core/p2/KindShape#vcard:fn> sh:path vcard:fn;
-  sh:name "formatted name"@en;
-  sh:description "The full name of the contact point."@en;
-  sh:minCount 1;
-  sh:maxCount 1;
-  sh:nodeKind sh:Literal;
-  dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextAreaEditor .
 
 hri:aux-IdentifierShape a owl:Ontology;
   rdfs:label "Identifier"@en;
