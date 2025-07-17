@@ -26,7 +26,7 @@ In fall 2024, HealthDCAT-AP introduced 3 types of cardinalities, based on which 
 
 **Decision**
 <!-- What was chosen and why? -->
-It was decided to adhere to the OPEN version to be compliant to in v2. 
+It was decided to adhere to the OPEN version for compliance in v2. 
 
 **Consequences**
 <!-- What happens now? -->
