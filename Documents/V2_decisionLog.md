@@ -21,7 +21,7 @@ In fall 2024, HealthDCAT-AP introduced 3 types of cardinalities, based on which 
 [Implement 1 flavor: PROTECTED] - This option was not considered. 
 
 [Implement 1 flavor: OPEN] 
- * Pros: Least burden for data holders for now to supply the required fields. Switching to HealthDCAT-AP fields is already a challange, and we don't want to require data holders to supply fields now that potentially might not end up in the final version of HealthDCAT-AP.  
++ * Pros: Least burden for data holders for now to supply the required fields. Switching to HealthDCAT-AP fields is already a challenge, and we don't want to require data holders to supply fields now that potentially might not end up in the final version of HealthDCAT-AP.  
   * Cons: Backward compatibility issues when we introduce the other 2 flavors which require more mandatory fields. 
 
 **Decision**
