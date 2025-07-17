@@ -194,7 +194,7 @@ In addition, some institutes do not work with the so far proposed identifier sys
 <!-- What was chosen and why? -->
 * dct:identifier in foaf:Agent class will stay a literal 
 * Concerning alternatives to ORCID, these are the proposed alternatives: 
-  * [ORCID](https://orcid.org/) - for people; commonly used by researcher but no identity check; it's possible to create multiple IDs for one person 
+  * [ORCID](https://orcid.org/) - for people; commonly used by researchers, but there is no identity check; it's possible to create multiple IDs for one person 
   * [ISNI](https://isni.org/) - for organizations and people 
   * [ROR](https://ror.org/) - for research organizations 
   * [TOOI](https://standaarden.overheid.nl/tooi/waardelijsten/) - Dutch public organizations / governmental bodies 
