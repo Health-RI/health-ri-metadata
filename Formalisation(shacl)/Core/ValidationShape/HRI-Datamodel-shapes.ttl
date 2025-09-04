@@ -30,7 +30,6 @@
 @prefix dqv: <http://www.w3.org/ns/dqv#> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
-@prefix role: <https://standards.iso.org/iso/19115/resources/Codelists/gml/CI_RoleCode.xml#> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix eu: <http://publications.europa.eu/resource/authority/access-right/> .
 @prefix dpv-pd: <https://w3id.org/dpv/dpv-pd#> .
@@ -44,7 +43,7 @@
     "SHACL definitions for the Health-RI v2 model for Distribution."@en;
   owl:versionInfo "0.1";
   dct:modified "2025-09-04T13:00:13.310Z"^^xsd:dateTime, "2025-09-04T13:00:22.410Z"^^xsd:dateTime,
-    "2025-09-04T13:00:37.050Z"^^xsd:dateTime, "2025-09-04T13:00:05.040Z"^^xsd:dateTime .
+    "2025-09-04T13:00:37.050Z"^^xsd:dateTime, "2025-09-04T13:26:04.700Z"^^xsd:dateTime .
 
 hri:DatasetSeriesShape a sh:NodeShape;
   rdfs:label "DatasetSeries"@en;
@@ -689,23 +688,23 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-6e23d51ffd474bd781277ece742b893870-BE61AFB1B8F98A44F7F436086E0215EB;
+  sh:in _:genid-c5e628a86d534e2caefebebe829e12ad70-043211734E8577F3738E4266FD172AC5;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-6e23d51ffd474bd781277ece742b893870-BE61AFB1B8F98A44F7F436086E0215EB rdf:first
+_:genid-c5e628a86d534e2caefebebe829e12ad70-043211734E8577F3738E4266FD172AC5 rdf:first
     status:COMPLETED;
-  rdf:rest _:genid-6e23d51ffd474bd781277ece742b893870-C5DC8141E181F4FA18C30B193F24FEF9 .
+  rdf:rest _:genid-c5e628a86d534e2caefebebe829e12ad70-85D7F9FEB2F4DB76A612C910926801D7 .
 
-_:genid-6e23d51ffd474bd781277ece742b893870-C5DC8141E181F4FA18C30B193F24FEF9 rdf:first
+_:genid-c5e628a86d534e2caefebebe829e12ad70-85D7F9FEB2F4DB76A612C910926801D7 rdf:first
     status:DEVELOP;
-  rdf:rest _:genid-6e23d51ffd474bd781277ece742b893870-BA529B9EC7F1FEF141CA601E0402A41C .
+  rdf:rest _:genid-c5e628a86d534e2caefebebe829e12ad70-787AEEF8B66F1E02B900B7D8CEA5F62C .
 
-_:genid-6e23d51ffd474bd781277ece742b893870-BA529B9EC7F1FEF141CA601E0402A41C rdf:first
+_:genid-c5e628a86d534e2caefebebe829e12ad70-787AEEF8B66F1E02B900B7D8CEA5F62C rdf:first
     status:WITHDRAWN;
-  rdf:rest _:genid-6e23d51ffd474bd781277ece742b893870-EE66FF6BBDE554196CB2A5992856ABB9 .
+  rdf:rest _:genid-c5e628a86d534e2caefebebe829e12ad70-E50E0672008833DC078EBB12FC33E060 .
 
-_:genid-6e23d51ffd474bd781277ece742b893870-EE66FF6BBDE554196CB2A5992856ABB9 rdf:first
+_:genid-c5e628a86d534e2caefebebe829e12ad70-E50E0672008833DC078EBB12FC33E060 rdf:first
     status:DEPRECATED;
   rdf:rest rdf:nil .
 
@@ -719,7 +718,7 @@ _:genid-6e23d51ffd474bd781277ece742b893870-EE66FF6BBDE554196CB2A5992856ABB9 rdf:
 
 <http://data.health-ri.nl/core/p2/DistributionShape#dct:title> sh:path dct:title;
   sh:name "title"@en;
-  sh:description "This property can be repeated for parallel language versions of the description."@en;
+  sh:description "This property can be repeated for parallel language versions of the title."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
   sh:uniqueLang true;
@@ -842,7 +841,7 @@ hri:aux-AttributionShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Attribution"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Attribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-09-04T08:34:47.410Z"^^xsd:dateTime .
+  dct:modified "2025-09-04T13:26:37.470Z"^^xsd:dateTime .
 
 hri:AttributionShape a sh:NodeShape;
   rdfs:label "Attribution"@en;
@@ -1039,19 +1038,19 @@ hri:DatasetShape a owl:Ontology, sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-6e23d51ffd474bd781277ece742b893888-86A2B5C6C3867FC603E28231995C4FA6;
+  sh:in _:genid-c5e628a86d534e2caefebebe829e12ad88-5A1B02616ED85CCA3CC5C08E78E892AB;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-6e23d51ffd474bd781277ece742b893888-86A2B5C6C3867FC603E28231995C4FA6 rdf:first
+_:genid-c5e628a86d534e2caefebebe829e12ad88-5A1B02616ED85CCA3CC5C08E78E892AB rdf:first
     eu:PUBLIC;
-  rdf:rest _:genid-6e23d51ffd474bd781277ece742b893888-424436D188DC2D9CAB7901650E00BB03 .
+  rdf:rest _:genid-c5e628a86d534e2caefebebe829e12ad88-790A62B298C5D4E89809EE3EC94423FE .
 
-_:genid-6e23d51ffd474bd781277ece742b893888-424436D188DC2D9CAB7901650E00BB03 rdf:first
+_:genid-c5e628a86d534e2caefebebe829e12ad88-790A62B298C5D4E89809EE3EC94423FE rdf:first
     eu:RESTRICTED;
-  rdf:rest _:genid-6e23d51ffd474bd781277ece742b893888-366E63A14789F4E2858C0BDF9E539ADB .
+  rdf:rest _:genid-c5e628a86d534e2caefebebe829e12ad88-E4F8DF7D9DD8A8B29715443CD46F7DC7 .
 
-_:genid-6e23d51ffd474bd781277ece742b893888-366E63A14789F4E2858C0BDF9E539ADB rdf:first
+_:genid-c5e628a86d534e2caefebebe829e12ad88-E4F8DF7D9DD8A8B29715443CD46F7DC7 rdf:first
     eu:NON_PUBLIC;
   rdf:rest rdf:nil .
 

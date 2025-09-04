@@ -1,5 +1,4 @@
 @prefix schema: <http://schema.org/> .
-@prefix role: <https://standards.iso.org/iso/19115/resources/Codelists/gml/CI_RoleCode.xml#> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -33,7 +32,7 @@ hri:aux-AttributionShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Attribution"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Attribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-09-04T08:34:47.410Z"^^xsd:dateTime .
+  dct:modified "2025-09-04T13:26:37.470Z"^^xsd:dateTime .
 
 hri:AttributionShape a sh:NodeShape;
   rdfs:label "Attribution"@en;
