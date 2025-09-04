@@ -34,7 +34,7 @@ hri:aux-QualityCertificateShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Quality Certificate"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Quality Certificate."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-24T11:33:11.140Z"^^xsd:dateTime .
+  dct:modified "2025-07-14T08:12:39.650Z"^^xsd:dateTime .
 
 hri:QualityCertificateShape a sh:NodeShape;
   rdfs:label "Quality Certificate"@en;

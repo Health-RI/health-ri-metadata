@@ -32,7 +32,7 @@ hri:aux-ChecksumShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Checksum."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Checksum."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-23T13:25:19.220Z"^^xsd:dateTime .
+  dct:modified "2025-07-14T08:12:23.310Z"^^xsd:dateTime .
 
 hri:ChecksumShape a sh:NodeShape;
   rdfs:label "Checksum"@en;

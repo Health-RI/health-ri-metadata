@@ -69,17 +69,17 @@ hri:DatasetShape a owl:Ontology, sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:a07deeba86ea4a158f0b02eb8017e72a6;
+  sh:in _:33b9fa7210724f6fa026d130f0fed8916;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:a07deeba86ea4a158f0b02eb8017e72a6 rdf:first eu:PUBLIC;
-  rdf:rest _:a07deeba86ea4a158f0b02eb8017e72a7 .
+_:33b9fa7210724f6fa026d130f0fed8916 rdf:first eu:PUBLIC;
+  rdf:rest _:33b9fa7210724f6fa026d130f0fed8917 .
 
-_:a07deeba86ea4a158f0b02eb8017e72a7 rdf:first eu:RESTRICTED;
-  rdf:rest _:a07deeba86ea4a158f0b02eb8017e72a8 .
+_:33b9fa7210724f6fa026d130f0fed8917 rdf:first eu:RESTRICTED;
+  rdf:rest _:33b9fa7210724f6fa026d130f0fed8918 .
 
-_:a07deeba86ea4a158f0b02eb8017e72a8 rdf:first eu:NON_PUBLIC;
+_:33b9fa7210724f6fa026d130f0fed8918 rdf:first eu:NON_PUBLIC;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#analytics> sh:path healthdcatap:analytics;
@@ -141,7 +141,7 @@ _:a07deeba86ea4a158f0b02eb8017e72a8 rdf:first eu:NON_PUBLIC;
   sh:description "A free-text account of the Dataset."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -216,7 +216,6 @@ _:a07deeba86ea4a158f0b02eb8017e72a8 rdf:first eu:NON_PUBLIC;
   sh:description "A keyword or tag describing the Dataset."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -299,7 +298,6 @@ _:a07deeba86ea4a158f0b02eb8017e72a8 rdf:first eu:NON_PUBLIC;
   sh:name "population coverage"@en;
   sh:description "A definition of the population within the dataset"@en;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -410,7 +408,7 @@ _:a07deeba86ea4a158f0b02eb8017e72a8 rdf:first eu:NON_PUBLIC;
   sh:description "A name given to the Dataset."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -426,7 +424,6 @@ _:a07deeba86ea4a158f0b02eb8017e72a8 rdf:first eu:NON_PUBLIC;
   sh:description "The version indicator (name or identifier) of a resource."@en;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -434,7 +431,7 @@ _:a07deeba86ea4a158f0b02eb8017e72a8 rdf:first eu:NON_PUBLIC;
   sh:name "version notes"@en;
   sh:description "A description of the differences between this version and a previous version of the Dataset"@en;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 

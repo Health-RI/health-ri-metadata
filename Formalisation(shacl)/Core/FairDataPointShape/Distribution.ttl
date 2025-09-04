@@ -33,7 +33,7 @@
   rdfs:comment "Health-RI v2 Distribution."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Distribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T11:14:15.840Z"^^xsd:dateTime .
+  dct:modified "2025-09-04T13:26:04.700Z"^^xsd:dateTime .
 
 hri:DistributionShape a sh:NodeShape;
   rdfs:label "Distribution"@en;
@@ -102,6 +102,7 @@ hri:DistributionShape a sh:NodeShape;
   sh:name "description"@en;
   sh:description "This property can be repeated for parallel language versions of the description."@en;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -201,23 +202,23 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-ca4929703743490d9980d90263b229b643-4DC6193FCBAEC5B38E84CEF358B77BCD;
+  sh:in _:genid-c5e628a86d534e2caefebebe829e12ad43-043211734E8577F3738E4266FD172AC5;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-ca4929703743490d9980d90263b229b643-4DC6193FCBAEC5B38E84CEF358B77BCD rdf:first
+_:genid-c5e628a86d534e2caefebebe829e12ad43-043211734E8577F3738E4266FD172AC5 rdf:first
     status:COMPLETED;
-  rdf:rest _:genid-ca4929703743490d9980d90263b229b643-D72598B668421EEB9EE7C309B8095880 .
+  rdf:rest _:genid-c5e628a86d534e2caefebebe829e12ad43-85D7F9FEB2F4DB76A612C910926801D7 .
 
-_:genid-ca4929703743490d9980d90263b229b643-D72598B668421EEB9EE7C309B8095880 rdf:first
+_:genid-c5e628a86d534e2caefebebe829e12ad43-85D7F9FEB2F4DB76A612C910926801D7 rdf:first
     status:DEVELOP;
-  rdf:rest _:genid-ca4929703743490d9980d90263b229b643-460F2F54B8C12A4786453B82E53234CF .
+  rdf:rest _:genid-c5e628a86d534e2caefebebe829e12ad43-787AEEF8B66F1E02B900B7D8CEA5F62C .
 
-_:genid-ca4929703743490d9980d90263b229b643-460F2F54B8C12A4786453B82E53234CF rdf:first
+_:genid-c5e628a86d534e2caefebebe829e12ad43-787AEEF8B66F1E02B900B7D8CEA5F62C rdf:first
     status:WITHDRAWN;
-  rdf:rest _:genid-ca4929703743490d9980d90263b229b643-837C8491208B41F014D7EB75F5A18F42 .
+  rdf:rest _:genid-c5e628a86d534e2caefebebe829e12ad43-E50E0672008833DC078EBB12FC33E060 .
 
-_:genid-ca4929703743490d9980d90263b229b643-837C8491208B41F014D7EB75F5A18F42 rdf:first
+_:genid-c5e628a86d534e2caefebebe829e12ad43-E50E0672008833DC078EBB12FC33E060 rdf:first
     status:DEPRECATED;
   rdf:rest rdf:nil .
 
@@ -231,9 +232,10 @@ _:genid-ca4929703743490d9980d90263b229b643-837C8491208B41F014D7EB75F5A18F42 rdf:
 
 <http://data.health-ri.nl/core/p2/DistributionShape#dct:title> sh:path dct:title;
   sh:name "title"@en;
-  sh:description "This property can be repeated for parallel language versions of the description."@en;
+  sh:description "This property can be repeated for parallel language versions of the title."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -242,7 +244,7 @@ hri:aux-PeriodOfTimeShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Period of Time"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T08:05:16.640Z"^^xsd:dateTime .
+  dct:modified "2025-07-14T08:12:35.020Z"^^xsd:dateTime .
 
 hri:PeriodOfTimeShape a sh:NodeShape;
   rdfs:label "Period of Time"@en;
@@ -274,7 +276,7 @@ hri:aux-ChecksumShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Checksum."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Checksum."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-23T13:25:19.220Z"^^xsd:dateTime .
+  dct:modified "2025-07-14T08:12:23.310Z"^^xsd:dateTime .
 
 hri:ChecksumShape a sh:NodeShape;
   rdfs:label "Checksum"@en;

@@ -72,6 +72,7 @@ hri:AgentShape a sh:NodeShape;
   sh:description "A name of the agent."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
@@ -80,6 +81,7 @@ hri:AgentShape a sh:NodeShape;
   sh:description "A description of the publisher activities"@en;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
