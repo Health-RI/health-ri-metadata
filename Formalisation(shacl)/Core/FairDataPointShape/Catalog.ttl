@@ -33,7 +33,7 @@
   rdfs:comment "Health-RI v2 Catalog."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Catalog."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T13:17:04.530Z"^^xsd:dateTime .
+  dct:modified "2025-09-04T13:00:37.050Z"^^xsd:dateTime .
 
 hri:CatalogShape a sh:NodeShape;
   rdfs:label "Catalog"@en;
@@ -52,18 +52,22 @@ hri:CatalogShape a sh:NodeShape;
 <http://data.health-ri.nl/core/p2/CatalogShape#dcatap:applicableLegislation> sh:path
     dcatap:applicableLegislation;
   sh:name "Applicable Legislation"@en;
+  sh:description "The legislation that mandates the creation or management of the Catalog."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dcat:catalog> sh:path dcat:catalog;
   sh:name "catalog"@en;
+  sh:description "This property serves to connect the different catalogs with each other."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dcat:contactPoint> sh:path dcat:contactPoint;
   sh:name "Contact point"@en;
+  sh:description """This property points to a contact point (department or person) that can answer questions about the catalogue. Details on how to describe these are provided under class vcard:Kind.
+Whenever possible, use a general contact information (for example from a department) instead of contact information of an individual."""@en;
   sh:minCount 1;
   sh:maxCount 1;
   sh:node hri:KindShape;
@@ -72,17 +76,21 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:creator> sh:path dct:creator;
   sh:name "creator"@en;
+  sh:description "Note that the Health-RI model diverges from DCAT-AP NL here, which reduces the maximum number of creators to 1. The Health-RI model allows specification of multiple creators of a catalogue."@en;
   sh:node hri:AgentShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dcat:dataset> sh:path dcat:dataset;
-  sh:name "dataset"@en .
+  sh:name "dataset"@en;
+  sh:description "Each catalog contains one or more datasets. This property serves to link datasets to a catalogue. Therefore, a dataset is always contained inside a catalogue."@en .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:description> sh:path dct:description;
   sh:name "description"@en;
+  sh:description "Briefly describe the catalog and what it contains. You can repeat this in multiple languages."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
@@ -95,12 +103,15 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:hasPart> sh:path dct:hasPart;
   sh:name "has part"@en;
+  sh:description """Use this property to establish another catalogue in this catalogue.
+Note that deeply nested structures should be avoided, and can currently not be displayed in the National Health Data Catalogue."""@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#foaf:homepage> sh:path foaf:homepage;
   sh:name "home page"@en;
+  sh:description "The home page of the catalogue, if available."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
@@ -108,12 +119,15 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:language> sh:path dct:language;
   sh:name "language"@en;
+  sh:description """The value of this property must be an IRI from the provided controlled vocabulary.
+For example: http://publications.europa.eu/resource/authority/language/NLD"""@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:license> sh:path dct:license;
   sh:name "licence"@en;
+  sh:description "The licence under which the catalogue (with resource description) is made available. In the description of distributions and data services the licences of that resources are taken up."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
@@ -121,6 +135,7 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:modified> sh:path dct:modified;
   sh:name "modification date"@en;
+  sh:description "The most recent date on which the Catalogue was modified."@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
   sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
@@ -129,6 +144,7 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:publisher> sh:path dct:publisher;
   sh:name "publisher"@en;
+  sh:description "The organisation or individual that is holder of the intellectual property rights of a dataset. For more details about the publisher, see the class Agent. Example: Radboudumc."@en;
   sh:minCount 1;
   sh:maxCount 1;
   sh:node hri:AgentShape;
@@ -137,6 +153,7 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:issued> sh:path dct:issued;
   sh:name "release date"@en;
+  sh:description "The date of formal issuance (e.g., publication) of the Catalogue."@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
   sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
@@ -145,6 +162,7 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:rights> sh:path dct:rights;
   sh:name "rights"@en;
+  sh:description "The rights statement should be a free-text statement placed at a web-accessible location such that the value of this property is the IRI pointing to that statement."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
@@ -152,12 +170,14 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dcat:service> sh:path dcat:service;
   sh:name "service"@en;
+  sh:description "Some datasets may have real-time Data Services (e.g., Beacon API counting individuals). IT teams should define the relationship between the catalog and the Data Service via this property. While crucial for interoperability, this property is not relevant for end-users to collect."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:temporal> sh:path dct:temporal;
   sh:name "temporal coverage"@en;
+  sh:description "A temporal period that the Catalogue covers, if applicable."@en;
   sh:node hri:PeriodOfTimeShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
@@ -171,8 +191,10 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:title> sh:path dct:title;
   sh:name "title"@en;
+  sh:description "Provide a unique title for your catalog, which can be repeated in multiple languages. Example: Healthy Brain Study."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -220,6 +242,7 @@ hri:AgentShape a sh:NodeShape;
   sh:description "A name of the agent."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
@@ -228,6 +251,7 @@ hri:AgentShape a sh:NodeShape;
   sh:description "A description of the publisher activities"@en;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
@@ -261,7 +285,7 @@ hri:KindShapeKindShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Kind."@en;
   dct:description "SHACL mandatory definitions for the Health-RI v2 model for vcard:Kind."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-02T06:45:41.960Z"^^xsd:dateTime .
+  dct:modified "2025-09-04T08:35:17.460Z"^^xsd:dateTime .
 
 hri:KindShape a sh:NodeShape;
   rdfs:label "Kind"@en;
@@ -300,7 +324,7 @@ hri:aux-PeriodOfTimeShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Period of Time"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T08:05:16.640Z"^^xsd:dateTime .
+  dct:modified "2025-07-14T08:12:35.020Z"^^xsd:dateTime .
 
 hri:PeriodOfTimeShape a sh:NodeShape;
   rdfs:label "Period of Time"@en;

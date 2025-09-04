@@ -32,7 +32,7 @@
   rdfs:comment "Health-RI v2 Dataset Series"@en;
   dct:description "SHACL mandatory definitions for the Health-RI v2 model for Dataset Series."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T11:18:44.760Z"^^xsd:dateTime .
+  dct:modified "2025-09-04T13:00:13.310Z"^^xsd:dateTime .
 
 hri:DatasetSeriesShape a sh:NodeShape;
   rdfs:label "DatasetSeries"@en;
@@ -65,7 +65,7 @@ hri:DatasetSeriesShape a sh:NodeShape;
   sh:description "A free-text account of the Dataset Series."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -125,6 +125,6 @@ hri:DatasetSeriesShape a sh:NodeShape;
   sh:description "A name given to the Dataset Series."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .

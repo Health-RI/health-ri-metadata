@@ -33,5 +33,5 @@ hri:ResourceShape a owl:Ontology, sh:NodeShape;
   rdfs:comment "Health-RI v2 Resource placeholder."@en;
   dct:description "SHACL stub for the Health-RI v2 model for Resource."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-23T13:25:07.820Z"^^xsd:dateTime;
+  dct:modified "2025-07-14T08:12:44.070Z"^^xsd:dateTime;
   sh:targetClass dcat:Resource .

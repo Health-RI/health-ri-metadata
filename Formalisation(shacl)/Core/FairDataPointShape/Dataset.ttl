@@ -32,6 +32,7 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
+@prefix role: <https://standards.iso.org/iso/19115/resources/Codelists/gml/CI_RoleCode.xml#> .
 
 hri:DatasetShape a owl:Ontology, sh:NodeShape;
   rdfs:label "Excel template for Dataset class"@en, "Dataset"@en;
@@ -71,19 +72,19 @@ hri:DatasetShape a owl:Ontology, sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-ca4929703743490d9980d90263b229b617-FA5005FEE946382924CAE7D5FDB56CCE;
+  sh:in _:genid-6e23d51ffd474bd781277ece742b893817-86A2B5C6C3867FC603E28231995C4FA6;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-ca4929703743490d9980d90263b229b617-FA5005FEE946382924CAE7D5FDB56CCE rdf:first
+_:genid-6e23d51ffd474bd781277ece742b893817-86A2B5C6C3867FC603E28231995C4FA6 rdf:first
     eu:PUBLIC;
-  rdf:rest _:genid-ca4929703743490d9980d90263b229b617-D7FE6C3E8CAE7A960B5C3416C4CA21F9 .
+  rdf:rest _:genid-6e23d51ffd474bd781277ece742b893817-424436D188DC2D9CAB7901650E00BB03 .
 
-_:genid-ca4929703743490d9980d90263b229b617-D7FE6C3E8CAE7A960B5C3416C4CA21F9 rdf:first
+_:genid-6e23d51ffd474bd781277ece742b893817-424436D188DC2D9CAB7901650E00BB03 rdf:first
     eu:RESTRICTED;
-  rdf:rest _:genid-ca4929703743490d9980d90263b229b617-2E7CE2484722084BC7B01AC6DEB5777C .
+  rdf:rest _:genid-6e23d51ffd474bd781277ece742b893817-366E63A14789F4E2858C0BDF9E539ADB .
 
-_:genid-ca4929703743490d9980d90263b229b617-2E7CE2484722084BC7B01AC6DEB5777C rdf:first
+_:genid-6e23d51ffd474bd781277ece742b893817-366E63A14789F4E2858C0BDF9E539ADB rdf:first
     eu:NON_PUBLIC;
   rdf:rest rdf:nil .
 
@@ -146,7 +147,7 @@ _:genid-ca4929703743490d9980d90263b229b617-2E7CE2484722084BC7B01AC6DEB5777C rdf:
   sh:description "A free-text account of the Dataset."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -221,7 +222,6 @@ _:genid-ca4929703743490d9980d90263b229b617-2E7CE2484722084BC7B01AC6DEB5777C rdf:
   sh:description "A keyword or tag describing the Dataset."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -304,7 +304,6 @@ _:genid-ca4929703743490d9980d90263b229b617-2E7CE2484722084BC7B01AC6DEB5777C rdf:
   sh:name "population coverage"@en;
   sh:description "A definition of the population within the dataset"@en;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -415,7 +414,7 @@ _:genid-ca4929703743490d9980d90263b229b617-2E7CE2484722084BC7B01AC6DEB5777C rdf:
   sh:description "A name given to the Dataset."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -431,7 +430,6 @@ _:genid-ca4929703743490d9980d90263b229b617-2E7CE2484722084BC7B01AC6DEB5777C rdf:
   sh:description "The version indicator (name or identifier) of a resource."@en;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -439,7 +437,7 @@ _:genid-ca4929703743490d9980d90263b229b617-2E7CE2484722084BC7B01AC6DEB5777C rdf:
   sh:name "version notes"@en;
   sh:description "A description of the differences between this version and a previous version of the Dataset"@en;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -494,6 +492,7 @@ hri:AgentShape a sh:NodeShape;
   sh:description "A name of the agent."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
@@ -502,6 +501,7 @@ hri:AgentShape a sh:NodeShape;
   sh:description "A description of the publisher activities"@en;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
@@ -535,7 +535,7 @@ hri:KindShapeKindShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Kind."@en;
   dct:description "SHACL mandatory definitions for the Health-RI v2 model for vcard:Kind."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-02T06:45:41.960Z"^^xsd:dateTime .
+  dct:modified "2025-09-04T08:35:17.460Z"^^xsd:dateTime .
 
 hri:KindShape a sh:NodeShape;
   rdfs:label "Kind"@en;
@@ -574,7 +574,7 @@ hri:aux-PeriodOfTimeShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Period of Time"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T08:05:16.640Z"^^xsd:dateTime .
+  dct:modified "2025-07-14T08:12:35.020Z"^^xsd:dateTime .
 
 hri:PeriodOfTimeShape a sh:NodeShape;
   rdfs:label "Period of Time"@en;
@@ -606,7 +606,7 @@ hri:aux-AttributionShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Attribution"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Attribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T11:14:23.140Z"^^xsd:dateTime .
+  dct:modified "2025-09-04T08:34:47.410Z"^^xsd:dateTime .
 
 hri:AttributionShape a sh:NodeShape;
   rdfs:label "Attribution"@en;
@@ -634,7 +634,7 @@ hri:aux-IdentifierShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Identifier"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Identifier."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-30T10:51:11.420Z"^^xsd:dateTime .
+  dct:modified "2025-07-29T14:03:03.240Z"^^xsd:dateTime .
 
 hri:IdentifierShape a sh:NodeShape;
   rdfs:label "Identifier"@en;
@@ -665,7 +665,7 @@ hri:aux-QualityCertificateShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Quality Certificate"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Quality Certificate."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-24T11:33:11.140Z"^^xsd:dateTime .
+  dct:modified "2025-07-14T08:12:39.650Z"^^xsd:dateTime .
 
 hri:QualityCertificateShape a sh:NodeShape;
   rdfs:label "Quality Certificate"@en;
@@ -694,7 +694,7 @@ hri:aux-RelationshipShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Relationship"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Relationship."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T11:14:27.700Z"^^xsd:dateTime .
+  dct:modified "2025-07-14T08:12:41.750Z"^^xsd:dateTime .
 
 hri:RelationshipShape a sh:NodeShape;
   rdfs:label "Relation"@en;

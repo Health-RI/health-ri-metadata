@@ -30,6 +30,7 @@
 @prefix dqv: <http://www.w3.org/ns/dqv#> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
+@prefix role: <https://standards.iso.org/iso/19115/resources/Codelists/gml/CI_RoleCode.xml#> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix eu: <http://publications.europa.eu/resource/authority/access-right/> .
 @prefix dpv-pd: <https://w3id.org/dpv/dpv-pd#> .
@@ -42,8 +43,8 @@
     "SHACL definitions for the Health-RI v2 model for DataService."@en, "SHACL definitions for the Health-RI v2 model for Catalog."@en,
     "SHACL definitions for the Health-RI v2 model for Distribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T11:18:44.760Z"^^xsd:dateTime, "2025-05-28T11:53:21.820Z"^^xsd:dateTime,
-    "2025-05-22T13:17:04.530Z"^^xsd:dateTime, "2025-05-22T11:14:15.840Z"^^xsd:dateTime .
+  dct:modified "2025-09-04T13:00:13.310Z"^^xsd:dateTime, "2025-09-04T13:00:22.410Z"^^xsd:dateTime,
+    "2025-09-04T13:00:37.050Z"^^xsd:dateTime, "2025-09-04T13:00:05.040Z"^^xsd:dateTime .
 
 hri:DatasetSeriesShape a sh:NodeShape;
   rdfs:label "DatasetSeries"@en;
@@ -76,7 +77,7 @@ hri:DatasetSeriesShape a sh:NodeShape;
   sh:description "A free-text account of the Dataset Series."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -136,7 +137,7 @@ hri:DatasetSeriesShape a sh:NodeShape;
   sh:description "A name given to the Dataset Series."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -145,7 +146,7 @@ hri:aux-PeriodOfTimeShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Period of Time"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T08:05:16.640Z"^^xsd:dateTime .
+  dct:modified "2025-07-14T08:12:35.020Z"^^xsd:dateTime .
 
 hri:PeriodOfTimeShape a sh:NodeShape;
   rdfs:label "Period of Time"@en;
@@ -238,6 +239,7 @@ hri:DataServiceShape a sh:NodeShape;
   sh:description "A free-text account of the Data Service."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
@@ -353,6 +355,7 @@ hri:DataServiceShape a sh:NodeShape;
   sh:description "A name given to the Data Service."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -373,18 +376,22 @@ hri:CatalogShape a sh:NodeShape;
 <http://data.health-ri.nl/core/p2/CatalogShape#dcatap:applicableLegislation> sh:path
     dcatap:applicableLegislation;
   sh:name "Applicable Legislation"@en;
+  sh:description "The legislation that mandates the creation or management of the Catalog."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dcat:catalog> sh:path dcat:catalog;
   sh:name "catalog"@en;
+  sh:description "This property serves to connect the different catalogs with each other."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dcat:contactPoint> sh:path dcat:contactPoint;
   sh:name "Contact point"@en;
+  sh:description """This property points to a contact point (department or person) that can answer questions about the catalogue. Details on how to describe these are provided under class vcard:Kind.
+Whenever possible, use a general contact information (for example from a department) instead of contact information of an individual."""@en;
   sh:minCount 1;
   sh:maxCount 1;
   sh:node hri:KindShape;
@@ -393,17 +400,21 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:creator> sh:path dct:creator;
   sh:name "creator"@en;
+  sh:description "Note that the Health-RI model diverges from DCAT-AP NL here, which reduces the maximum number of creators to 1. The Health-RI model allows specification of multiple creators of a catalogue."@en;
   sh:node hri:AgentShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dcat:dataset> sh:path dcat:dataset;
-  sh:name "dataset"@en .
+  sh:name "dataset"@en;
+  sh:description "Each catalog contains one or more datasets. This property serves to link datasets to a catalogue. Therefore, a dataset is always contained inside a catalogue."@en .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:description> sh:path dct:description;
   sh:name "description"@en;
+  sh:description "Briefly describe the catalog and what it contains. You can repeat this in multiple languages."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
@@ -416,12 +427,15 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:hasPart> sh:path dct:hasPart;
   sh:name "has part"@en;
+  sh:description """Use this property to establish another catalogue in this catalogue.
+Note that deeply nested structures should be avoided, and can currently not be displayed in the National Health Data Catalogue."""@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#foaf:homepage> sh:path foaf:homepage;
   sh:name "home page"@en;
+  sh:description "The home page of the catalogue, if available."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
@@ -429,12 +443,15 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:language> sh:path dct:language;
   sh:name "language"@en;
+  sh:description """The value of this property must be an IRI from the provided controlled vocabulary.
+For example: http://publications.europa.eu/resource/authority/language/NLD"""@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:license> sh:path dct:license;
   sh:name "licence"@en;
+  sh:description "The licence under which the catalogue (with resource description) is made available. In the description of distributions and data services the licences of that resources are taken up."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
@@ -442,6 +459,7 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:modified> sh:path dct:modified;
   sh:name "modification date"@en;
+  sh:description "The most recent date on which the Catalogue was modified."@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
   sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
@@ -450,6 +468,7 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:publisher> sh:path dct:publisher;
   sh:name "publisher"@en;
+  sh:description "The organisation or individual that is holder of the intellectual property rights of a dataset. For more details about the publisher, see the class Agent. Example: Radboudumc."@en;
   sh:minCount 1;
   sh:maxCount 1;
   sh:node hri:AgentShape;
@@ -458,6 +477,7 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:issued> sh:path dct:issued;
   sh:name "release date"@en;
+  sh:description "The date of formal issuance (e.g., publication) of the Catalogue."@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
   sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
@@ -466,6 +486,7 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:rights> sh:path dct:rights;
   sh:name "rights"@en;
+  sh:description "The rights statement should be a free-text statement placed at a web-accessible location such that the value of this property is the IRI pointing to that statement."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
@@ -473,12 +494,14 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dcat:service> sh:path dcat:service;
   sh:name "service"@en;
+  sh:description "Some datasets may have real-time Data Services (e.g., Beacon API counting individuals). IT teams should define the relationship between the catalog and the Data Service via this property. While crucial for interoperability, this property is not relevant for end-users to collect."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:temporal> sh:path dct:temporal;
   sh:name "temporal coverage"@en;
+  sh:description "A temporal period that the Catalogue covers, if applicable."@en;
   sh:node hri:PeriodOfTimeShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
@@ -492,8 +515,10 @@ hri:CatalogShape a sh:NodeShape;
 
 <http://data.health-ri.nl/core/p2/CatalogShape#dct:title> sh:path dct:title;
   sh:name "title"@en;
+  sh:description "Provide a unique title for your catalog, which can be repeated in multiple languages. Example: Healthy Brain Study."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -564,6 +589,7 @@ hri:DistributionShape a sh:NodeShape;
   sh:name "description"@en;
   sh:description "This property can be repeated for parallel language versions of the description."@en;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -663,23 +689,23 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-ca4929703743490d9980d90263b229b670-4DC6193FCBAEC5B38E84CEF358B77BCD;
+  sh:in _:genid-6e23d51ffd474bd781277ece742b893870-BE61AFB1B8F98A44F7F436086E0215EB;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-ca4929703743490d9980d90263b229b670-4DC6193FCBAEC5B38E84CEF358B77BCD rdf:first
+_:genid-6e23d51ffd474bd781277ece742b893870-BE61AFB1B8F98A44F7F436086E0215EB rdf:first
     status:COMPLETED;
-  rdf:rest _:genid-ca4929703743490d9980d90263b229b670-D72598B668421EEB9EE7C309B8095880 .
+  rdf:rest _:genid-6e23d51ffd474bd781277ece742b893870-C5DC8141E181F4FA18C30B193F24FEF9 .
 
-_:genid-ca4929703743490d9980d90263b229b670-D72598B668421EEB9EE7C309B8095880 rdf:first
+_:genid-6e23d51ffd474bd781277ece742b893870-C5DC8141E181F4FA18C30B193F24FEF9 rdf:first
     status:DEVELOP;
-  rdf:rest _:genid-ca4929703743490d9980d90263b229b670-460F2F54B8C12A4786453B82E53234CF .
+  rdf:rest _:genid-6e23d51ffd474bd781277ece742b893870-BA529B9EC7F1FEF141CA601E0402A41C .
 
-_:genid-ca4929703743490d9980d90263b229b670-460F2F54B8C12A4786453B82E53234CF rdf:first
+_:genid-6e23d51ffd474bd781277ece742b893870-BA529B9EC7F1FEF141CA601E0402A41C rdf:first
     status:WITHDRAWN;
-  rdf:rest _:genid-ca4929703743490d9980d90263b229b670-837C8491208B41F014D7EB75F5A18F42 .
+  rdf:rest _:genid-6e23d51ffd474bd781277ece742b893870-EE66FF6BBDE554196CB2A5992856ABB9 .
 
-_:genid-ca4929703743490d9980d90263b229b670-837C8491208B41F014D7EB75F5A18F42 rdf:first
+_:genid-6e23d51ffd474bd781277ece742b893870-EE66FF6BBDE554196CB2A5992856ABB9 rdf:first
     status:DEPRECATED;
   rdf:rest rdf:nil .
 
@@ -696,6 +722,7 @@ _:genid-ca4929703743490d9980d90263b229b670-837C8491208B41F014D7EB75F5A18F42 rdf:
   sh:description "This property can be repeated for parallel language versions of the description."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -704,7 +731,7 @@ hri:aux-QualityCertificateShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Quality Certificate"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Quality Certificate."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-24T11:33:11.140Z"^^xsd:dateTime .
+  dct:modified "2025-07-14T08:12:39.650Z"^^xsd:dateTime .
 
 hri:QualityCertificateShape a sh:NodeShape;
   rdfs:label "Quality Certificate"@en;
@@ -772,6 +799,7 @@ hri:AgentShape a sh:NodeShape;
   sh:description "A name of the agent."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
@@ -780,6 +808,7 @@ hri:AgentShape a sh:NodeShape;
   sh:description "A description of the publisher activities"@en;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
@@ -813,7 +842,7 @@ hri:aux-AttributionShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Attribution"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Attribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T11:14:23.140Z"^^xsd:dateTime .
+  dct:modified "2025-09-04T08:34:47.410Z"^^xsd:dateTime .
 
 hri:AttributionShape a sh:NodeShape;
   rdfs:label "Attribution"@en;
@@ -841,7 +870,7 @@ hri:KindShapeKindShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Kind."@en;
   dct:description "SHACL mandatory definitions for the Health-RI v2 model for vcard:Kind."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-02T06:45:41.960Z"^^xsd:dateTime .
+  dct:modified "2025-09-04T08:35:17.460Z"^^xsd:dateTime .
 
 hri:KindShape a sh:NodeShape;
   rdfs:label "Kind"@en;
@@ -880,7 +909,7 @@ hri:aux-RelationshipShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Relationship"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Relationship."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T11:14:27.700Z"^^xsd:dateTime .
+  dct:modified "2025-07-14T08:12:41.750Z"^^xsd:dateTime .
 
 hri:RelationshipShape a sh:NodeShape;
   rdfs:label "Relation"@en;
@@ -908,7 +937,7 @@ hri:aux-IdentifierShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Identifier"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Identifier."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-30T10:51:11.420Z"^^xsd:dateTime .
+  dct:modified "2025-07-29T14:03:03.240Z"^^xsd:dateTime .
 
 hri:IdentifierShape a sh:NodeShape;
   rdfs:label "Identifier"@en;
@@ -939,7 +968,7 @@ hri:aux-ChecksumShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Checksum."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Checksum."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-23T13:25:19.220Z"^^xsd:dateTime .
+  dct:modified "2025-07-14T08:12:23.310Z"^^xsd:dateTime .
 
 hri:ChecksumShape a sh:NodeShape;
   rdfs:label "Checksum"@en;
@@ -969,7 +998,7 @@ hri:ResourceShape a owl:Ontology, sh:NodeShape;
   rdfs:comment "Health-RI v2 Resource placeholder."@en;
   dct:description "SHACL stub for the Health-RI v2 model for Resource."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-23T13:25:07.820Z"^^xsd:dateTime;
+  dct:modified "2025-07-14T08:12:44.070Z"^^xsd:dateTime;
   sh:targetClass dcat:Resource .
 
 hri:DatasetShape a owl:Ontology, sh:NodeShape;
@@ -1010,19 +1039,19 @@ hri:DatasetShape a owl:Ontology, sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-ca4929703743490d9980d90263b229b688-FA5005FEE946382924CAE7D5FDB56CCE;
+  sh:in _:genid-6e23d51ffd474bd781277ece742b893888-86A2B5C6C3867FC603E28231995C4FA6;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-ca4929703743490d9980d90263b229b688-FA5005FEE946382924CAE7D5FDB56CCE rdf:first
+_:genid-6e23d51ffd474bd781277ece742b893888-86A2B5C6C3867FC603E28231995C4FA6 rdf:first
     eu:PUBLIC;
-  rdf:rest _:genid-ca4929703743490d9980d90263b229b688-D7FE6C3E8CAE7A960B5C3416C4CA21F9 .
+  rdf:rest _:genid-6e23d51ffd474bd781277ece742b893888-424436D188DC2D9CAB7901650E00BB03 .
 
-_:genid-ca4929703743490d9980d90263b229b688-D7FE6C3E8CAE7A960B5C3416C4CA21F9 rdf:first
+_:genid-6e23d51ffd474bd781277ece742b893888-424436D188DC2D9CAB7901650E00BB03 rdf:first
     eu:RESTRICTED;
-  rdf:rest _:genid-ca4929703743490d9980d90263b229b688-2E7CE2484722084BC7B01AC6DEB5777C .
+  rdf:rest _:genid-6e23d51ffd474bd781277ece742b893888-366E63A14789F4E2858C0BDF9E539ADB .
 
-_:genid-ca4929703743490d9980d90263b229b688-2E7CE2484722084BC7B01AC6DEB5777C rdf:first
+_:genid-6e23d51ffd474bd781277ece742b893888-366E63A14789F4E2858C0BDF9E539ADB rdf:first
     eu:NON_PUBLIC;
   rdf:rest rdf:nil .
 
@@ -1085,7 +1114,7 @@ _:genid-ca4929703743490d9980d90263b229b688-2E7CE2484722084BC7B01AC6DEB5777C rdf:
   sh:description "A free-text account of the Dataset."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -1160,7 +1189,6 @@ _:genid-ca4929703743490d9980d90263b229b688-2E7CE2484722084BC7B01AC6DEB5777C rdf:
   sh:description "A keyword or tag describing the Dataset."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -1243,7 +1271,6 @@ _:genid-ca4929703743490d9980d90263b229b688-2E7CE2484722084BC7B01AC6DEB5777C rdf:
   sh:name "population coverage"@en;
   sh:description "A definition of the population within the dataset"@en;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -1354,7 +1381,7 @@ _:genid-ca4929703743490d9980d90263b229b688-2E7CE2484722084BC7B01AC6DEB5777C rdf:
   sh:description "A name given to the Dataset."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -1370,7 +1397,6 @@ _:genid-ca4929703743490d9980d90263b229b688-2E7CE2484722084BC7B01AC6DEB5777C rdf:
   sh:description "The version indicator (name or identifier) of a resource."@en;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -1378,7 +1404,7 @@ _:genid-ca4929703743490d9980d90263b229b688-2E7CE2484722084BC7B01AC6DEB5777C rdf:
   sh:name "version notes"@en;
   sh:description "A description of the differences between this version and a previous version of the Dataset"@en;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:string;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 

@@ -33,7 +33,7 @@
   rdfs:comment "Health-RI v2 Distribution."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Distribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T11:14:15.840Z"^^xsd:dateTime .
+  dct:modified "2025-09-04T13:00:05.040Z"^^xsd:dateTime .
 
 hri:DistributionShape a sh:NodeShape;
   rdfs:label "Distribution"@en;
@@ -102,6 +102,7 @@ hri:DistributionShape a sh:NodeShape;
   sh:name "description"@en;
   sh:description "This property can be repeated for parallel language versions of the description."@en;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -201,20 +202,20 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:a07deeba86ea4a158f0b02eb8017e72a2;
+  sh:in _:826a16052c1247d09882ed794586083c2;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:a07deeba86ea4a158f0b02eb8017e72a2 rdf:first status:COMPLETED;
-  rdf:rest _:a07deeba86ea4a158f0b02eb8017e72a3 .
+_:826a16052c1247d09882ed794586083c2 rdf:first status:COMPLETED;
+  rdf:rest _:826a16052c1247d09882ed794586083c3 .
 
-_:a07deeba86ea4a158f0b02eb8017e72a3 rdf:first status:DEVELOP;
-  rdf:rest _:a07deeba86ea4a158f0b02eb8017e72a4 .
+_:826a16052c1247d09882ed794586083c3 rdf:first status:DEVELOP;
+  rdf:rest _:826a16052c1247d09882ed794586083c4 .
 
-_:a07deeba86ea4a158f0b02eb8017e72a4 rdf:first status:WITHDRAWN;
-  rdf:rest _:a07deeba86ea4a158f0b02eb8017e72a5 .
+_:826a16052c1247d09882ed794586083c4 rdf:first status:WITHDRAWN;
+  rdf:rest _:826a16052c1247d09882ed794586083c5 .
 
-_:a07deeba86ea4a158f0b02eb8017e72a5 rdf:first status:DEPRECATED;
+_:826a16052c1247d09882ed794586083c5 rdf:first status:DEPRECATED;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#dcat:temporalResolution> sh:path
@@ -230,5 +231,6 @@ _:a07deeba86ea4a158f0b02eb8017e72a5 rdf:first status:DEPRECATED;
   sh:description "This property can be repeated for parallel language versions of the description."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
