@@ -1,5 +1,16 @@
 # Changelog
 
+## v2.0.1
+
+Bug Fixes:
+- Remove xsd:string datatype restrictions and apply uniqueLang constraint for language-tag uniqueness in SHACL shapes.
+
+Enhancements:
+- Expand property descriptions across multiple SHACL shape files.
+
+Chores:
+- Delete unused Project.ttl and Study.ttl shape files.
+
 ## [v.2.0.0.] - 2025-06-05  
 
 ### Overview
