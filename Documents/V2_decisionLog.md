@@ -132,7 +132,7 @@ We decided to model Dataset Series according to DCAT-AP, so that it is a subclas
 
 **Consequences**
 <!-- What happens now? -->
-Possible issues with compliancy to the version 1. 
++Possible issues with compliance to the version 1. 
 
 **References**
 <!-- Link to related discussions, documents, or issues -->
