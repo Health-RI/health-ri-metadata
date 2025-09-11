@@ -42,8 +42,8 @@
     "SHACL definitions for the Health-RI v2 model for DataService."@en, "SHACL definitions for the Health-RI v2 model for Catalog."@en,
     "SHACL definitions for the Health-RI v2 model for Distribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-09-04T13:00:13.310Z"^^xsd:dateTime, "2025-09-04T13:00:22.410Z"^^xsd:dateTime,
-    "2025-09-04T13:00:37.050Z"^^xsd:dateTime, "2025-09-04T13:26:04.700Z"^^xsd:dateTime .
+  dct:modified "2025-09-09T13:39:39.990Z"^^xsd:dateTime, "2025-09-09T13:38:40.950Z"^^xsd:dateTime,
+    "2025-09-09T13:37:52.800Z"^^xsd:dateTime, "2025-09-09T13:40:11.050Z"^^xsd:dateTime .
 
 hri:DatasetSeriesShape a sh:NodeShape;
   rdfs:label "DatasetSeries"@en;
@@ -102,7 +102,7 @@ hri:DatasetSeriesShape a sh:NodeShape;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
   sh:datatype xsd:dateTime;
-  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -120,7 +120,7 @@ hri:DatasetSeriesShape a sh:NodeShape;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
   sh:datatype xsd:dateTime;
-  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -145,7 +145,7 @@ hri:aux-PeriodOfTimeShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Period of Time"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-07-14T08:12:35.020Z"^^xsd:dateTime .
+  dct:modified "2025-09-09T15:41:10.000Z"^^xsd:dateTime .
 
 hri:PeriodOfTimeShape a sh:NodeShape;
   rdfs:label "Period of Time"@en;
@@ -158,7 +158,7 @@ hri:PeriodOfTimeShape a sh:NodeShape;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
   sh:datatype xsd:dateTime;
-  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -168,7 +168,7 @@ hri:PeriodOfTimeShape a sh:NodeShape;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
   sh:datatype xsd:dateTime;
-  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -315,7 +315,7 @@ hri:DataServiceShape a sh:NodeShape;
   sh:name "modification date"@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
-  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -461,7 +461,7 @@ For example: http://publications.europa.eu/resource/authority/language/NLD"""@en
   sh:description "The most recent date on which the Catalogue was modified."@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
-  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -479,7 +479,7 @@ For example: http://publications.europa.eu/resource/authority/language/NLD"""@en
   sh:description "The date of formal issuance (e.g., publication) of the Catalogue."@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
-  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -645,7 +645,7 @@ hri:DistributionShape a sh:NodeShape;
   sh:name "modification date"@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
-  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -662,7 +662,7 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The date the dataset distribution was issued."@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
-  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -688,23 +688,23 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-c5e628a86d534e2caefebebe829e12ad70-043211734E8577F3738E4266FD172AC5;
+  sh:in _:genid-8f78fa14f645486180e7e851a575d7b170-488D34C64F8B892CDE2D36F0FFC34B1F;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-c5e628a86d534e2caefebebe829e12ad70-043211734E8577F3738E4266FD172AC5 rdf:first
+_:genid-8f78fa14f645486180e7e851a575d7b170-488D34C64F8B892CDE2D36F0FFC34B1F rdf:first
     status:COMPLETED;
-  rdf:rest _:genid-c5e628a86d534e2caefebebe829e12ad70-85D7F9FEB2F4DB76A612C910926801D7 .
+  rdf:rest _:genid-8f78fa14f645486180e7e851a575d7b170-23DD6A2B727629CE804AB1EBD0F8B033 .
 
-_:genid-c5e628a86d534e2caefebebe829e12ad70-85D7F9FEB2F4DB76A612C910926801D7 rdf:first
+_:genid-8f78fa14f645486180e7e851a575d7b170-23DD6A2B727629CE804AB1EBD0F8B033 rdf:first
     status:DEVELOP;
-  rdf:rest _:genid-c5e628a86d534e2caefebebe829e12ad70-787AEEF8B66F1E02B900B7D8CEA5F62C .
+  rdf:rest _:genid-8f78fa14f645486180e7e851a575d7b170-9F5564EEF68A741F51683CAE4ACE841B .
 
-_:genid-c5e628a86d534e2caefebebe829e12ad70-787AEEF8B66F1E02B900B7D8CEA5F62C rdf:first
+_:genid-8f78fa14f645486180e7e851a575d7b170-9F5564EEF68A741F51683CAE4ACE841B rdf:first
     status:WITHDRAWN;
-  rdf:rest _:genid-c5e628a86d534e2caefebebe829e12ad70-E50E0672008833DC078EBB12FC33E060 .
+  rdf:rest _:genid-8f78fa14f645486180e7e851a575d7b170-6C4D96DEC4146D6EF0F59C5D7973E235 .
 
-_:genid-c5e628a86d534e2caefebebe829e12ad70-E50E0672008833DC078EBB12FC33E060 rdf:first
+_:genid-8f78fa14f645486180e7e851a575d7b170-6C4D96DEC4146D6EF0F59C5D7973E235 rdf:first
     status:DEPRECATED;
   rdf:rest rdf:nil .
 
@@ -1038,19 +1038,19 @@ hri:DatasetShape a owl:Ontology, sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-c5e628a86d534e2caefebebe829e12ad88-5A1B02616ED85CCA3CC5C08E78E892AB;
+  sh:in _:genid-8f78fa14f645486180e7e851a575d7b188-0E9FBA2A86C8EF575D24BC2CB089C3C3;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-c5e628a86d534e2caefebebe829e12ad88-5A1B02616ED85CCA3CC5C08E78E892AB rdf:first
+_:genid-8f78fa14f645486180e7e851a575d7b188-0E9FBA2A86C8EF575D24BC2CB089C3C3 rdf:first
     eu:PUBLIC;
-  rdf:rest _:genid-c5e628a86d534e2caefebebe829e12ad88-790A62B298C5D4E89809EE3EC94423FE .
+  rdf:rest _:genid-8f78fa14f645486180e7e851a575d7b188-6502A7DFCFD4FC57DF8804007E42D687 .
 
-_:genid-c5e628a86d534e2caefebebe829e12ad88-790A62B298C5D4E89809EE3EC94423FE rdf:first
+_:genid-8f78fa14f645486180e7e851a575d7b188-6502A7DFCFD4FC57DF8804007E42D687 rdf:first
     eu:RESTRICTED;
-  rdf:rest _:genid-c5e628a86d534e2caefebebe829e12ad88-E4F8DF7D9DD8A8B29715443CD46F7DC7 .
+  rdf:rest _:genid-8f78fa14f645486180e7e851a575d7b188-9C947FA4CC2C23BF02E4A6F5A9BD53BC .
 
-_:genid-c5e628a86d534e2caefebebe829e12ad88-E4F8DF7D9DD8A8B29715443CD46F7DC7 rdf:first
+_:genid-8f78fa14f645486180e7e851a575d7b188-9C947FA4CC2C23BF02E4A6F5A9BD53BC rdf:first
     eu:NON_PUBLIC;
   rdf:rest rdf:nil .
 
@@ -1229,7 +1229,7 @@ _:genid-c5e628a86d534e2caefebebe829e12ad88-E4F8DF7D9DD8A8B29715443CD46F7DC7 rdf:
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
   sh:datatype xsd:dateTime;
-  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -1316,7 +1316,7 @@ _:genid-c5e628a86d534e2caefebebe829e12ad88-E4F8DF7D9DD8A8B29715443CD46F7DC7 rdf:
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
   sh:datatype xsd:dateTime;
-  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
