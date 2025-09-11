@@ -33,7 +33,7 @@
   rdfs:comment "Health-RI v2 DataService."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for DataService."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-28T11:53:21.820Z"^^xsd:dateTime .
+  dct:modified "2025-09-09T13:38:40.950Z"^^xsd:dateTime .
 
 hri:DataServiceShape a sh:NodeShape;
   rdfs:label "DataService"@en;
@@ -101,6 +101,7 @@ hri:DataServiceShape a sh:NodeShape;
   sh:description "A free-text account of the Data Service."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
@@ -177,7 +178,7 @@ hri:DataServiceShape a sh:NodeShape;
   sh:name "modification date"@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
-  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -216,6 +217,7 @@ hri:DataServiceShape a sh:NodeShape;
   sh:description "A name given to the Data Service."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -263,6 +265,7 @@ hri:AgentShape a sh:NodeShape;
   sh:description "A name of the agent."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
@@ -271,6 +274,7 @@ hri:AgentShape a sh:NodeShape;
   sh:description "A description of the publisher activities"@en;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
@@ -304,7 +308,7 @@ hri:KindShapeKindShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Kind."@en;
   dct:description "SHACL mandatory definitions for the Health-RI v2 model for vcard:Kind."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-02T06:45:41.960Z"^^xsd:dateTime .
+  dct:modified "2025-09-04T08:35:17.460Z"^^xsd:dateTime .
 
 hri:KindShape a sh:NodeShape;
   rdfs:label "Kind"@en;
@@ -343,7 +347,7 @@ hri:aux-IdentifierShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Identifier"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Identifier."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-30T10:51:11.420Z"^^xsd:dateTime .
+  dct:modified "2025-07-29T14:03:03.240Z"^^xsd:dateTime .
 
 hri:IdentifierShape a sh:NodeShape;
   rdfs:label "Identifier"@en;

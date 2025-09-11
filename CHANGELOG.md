@@ -1,5 +1,20 @@
 # Changelog
 
+## v2.0.1
+
+Bug Fixes:
+- Remove xsd:string datatype restrictions and apply uniqueLang constraint for language-tag uniqueness in SHACL shapes.
+- Small adjustment in regex for xsd:dateTime
+
+Enhancements:
+- Expand property descriptions across multiple SHACL shape files.
+- Make Excel of the model more user-friendly with additional value columns for multiple instances of main and supporting class
+- Improve usage notes for several properties related to Agent/Kind:
+  - Creator, contactPoint
+
+Chores:
+- Delete unused Project.ttl and Study.ttl shape files.
+
 ## [v.2.0.0.] - 2025-06-05  
 
 ### Overview

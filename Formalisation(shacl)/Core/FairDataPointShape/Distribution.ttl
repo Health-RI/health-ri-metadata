@@ -33,7 +33,7 @@
   rdfs:comment "Health-RI v2 Distribution."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Distribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T11:14:15.840Z"^^xsd:dateTime .
+  dct:modified "2025-09-09T13:40:11.050Z"^^xsd:dateTime .
 
 hri:DistributionShape a sh:NodeShape;
   rdfs:label "Distribution"@en;
@@ -102,6 +102,7 @@ hri:DistributionShape a sh:NodeShape;
   sh:name "description"@en;
   sh:description "This property can be repeated for parallel language versions of the description."@en;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -158,7 +159,7 @@ hri:DistributionShape a sh:NodeShape;
   sh:name "modification date"@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
-  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -175,7 +176,7 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The date the dataset distribution was issued."@en;
   sh:maxCount 1;
   sh:datatype xsd:dateTime;
-  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -201,23 +202,23 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-ca4929703743490d9980d90263b229b643-4DC6193FCBAEC5B38E84CEF358B77BCD;
+  sh:in _:genid-8f78fa14f645486180e7e851a575d7b143-488D34C64F8B892CDE2D36F0FFC34B1F;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-ca4929703743490d9980d90263b229b643-4DC6193FCBAEC5B38E84CEF358B77BCD rdf:first
+_:genid-8f78fa14f645486180e7e851a575d7b143-488D34C64F8B892CDE2D36F0FFC34B1F rdf:first
     status:COMPLETED;
-  rdf:rest _:genid-ca4929703743490d9980d90263b229b643-D72598B668421EEB9EE7C309B8095880 .
+  rdf:rest _:genid-8f78fa14f645486180e7e851a575d7b143-23DD6A2B727629CE804AB1EBD0F8B033 .
 
-_:genid-ca4929703743490d9980d90263b229b643-D72598B668421EEB9EE7C309B8095880 rdf:first
+_:genid-8f78fa14f645486180e7e851a575d7b143-23DD6A2B727629CE804AB1EBD0F8B033 rdf:first
     status:DEVELOP;
-  rdf:rest _:genid-ca4929703743490d9980d90263b229b643-460F2F54B8C12A4786453B82E53234CF .
+  rdf:rest _:genid-8f78fa14f645486180e7e851a575d7b143-9F5564EEF68A741F51683CAE4ACE841B .
 
-_:genid-ca4929703743490d9980d90263b229b643-460F2F54B8C12A4786453B82E53234CF rdf:first
+_:genid-8f78fa14f645486180e7e851a575d7b143-9F5564EEF68A741F51683CAE4ACE841B rdf:first
     status:WITHDRAWN;
-  rdf:rest _:genid-ca4929703743490d9980d90263b229b643-837C8491208B41F014D7EB75F5A18F42 .
+  rdf:rest _:genid-8f78fa14f645486180e7e851a575d7b143-6C4D96DEC4146D6EF0F59C5D7973E235 .
 
-_:genid-ca4929703743490d9980d90263b229b643-837C8491208B41F014D7EB75F5A18F42 rdf:first
+_:genid-8f78fa14f645486180e7e851a575d7b143-6C4D96DEC4146D6EF0F59C5D7973E235 rdf:first
     status:DEPRECATED;
   rdf:rest rdf:nil .
 
@@ -231,9 +232,10 @@ _:genid-ca4929703743490d9980d90263b229b643-837C8491208B41F014D7EB75F5A18F42 rdf:
 
 <http://data.health-ri.nl/core/p2/DistributionShape#dct:title> sh:path dct:title;
   sh:name "title"@en;
-  sh:description "This property can be repeated for parallel language versions of the description."@en;
+  sh:description "This property can be repeated for parallel language versions of the title."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
@@ -242,7 +244,7 @@ hri:aux-PeriodOfTimeShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Period of Time"@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-05-22T08:05:16.640Z"^^xsd:dateTime .
+  dct:modified "2025-09-09T15:41:10.000Z"^^xsd:dateTime .
 
 hri:PeriodOfTimeShape a sh:NodeShape;
   rdfs:label "Period of Time"@en;
@@ -255,7 +257,7 @@ hri:PeriodOfTimeShape a sh:NodeShape;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
   sh:datatype xsd:dateTime;
-  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -265,7 +267,7 @@ hri:PeriodOfTimeShape a sh:NodeShape;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
   sh:datatype xsd:dateTime;
-  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,3})?(Z|[+-]\\d{2}:\\d{2})$";
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
@@ -274,7 +276,7 @@ hri:aux-ChecksumShape a owl:Ontology;
   rdfs:comment "Health-RI v2 Checksum."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Checksum."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-04-23T13:25:19.220Z"^^xsd:dateTime .
+  dct:modified "2025-07-14T08:12:23.310Z"^^xsd:dateTime .
 
 hri:ChecksumShape a sh:NodeShape;
   rdfs:label "Checksum"@en;
