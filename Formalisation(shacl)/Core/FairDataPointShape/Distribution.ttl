@@ -33,7 +33,7 @@
   rdfs:comment "Health-RI v2 Distribution."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Distribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-09-09T13:40:11.050Z"^^xsd:dateTime .
+  dct:modified "2025-09-16T09:23:35.310Z"^^xsd:dateTime .
 
 hri:DistributionShape a sh:NodeShape;
   rdfs:label "Distribution"@en;
@@ -77,7 +77,7 @@ hri:DistributionShape a sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:integer;
+  sh:datatype xsd:nonNegativeInteger;
   sh:minExclusive 0;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
@@ -202,23 +202,23 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-8f78fa14f645486180e7e851a575d7b143-488D34C64F8B892CDE2D36F0FFC34B1F;
+  sh:in _:genid-4450bc34410b402bb9aee9482eed615a43-06A22B7B80332E5DA078223821B647BE;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-8f78fa14f645486180e7e851a575d7b143-488D34C64F8B892CDE2D36F0FFC34B1F rdf:first
+_:genid-4450bc34410b402bb9aee9482eed615a43-06A22B7B80332E5DA078223821B647BE rdf:first
     status:COMPLETED;
-  rdf:rest _:genid-8f78fa14f645486180e7e851a575d7b143-23DD6A2B727629CE804AB1EBD0F8B033 .
+  rdf:rest _:genid-4450bc34410b402bb9aee9482eed615a43-E0BDCDD8DD4BEDACB22E669C42EBE131 .
 
-_:genid-8f78fa14f645486180e7e851a575d7b143-23DD6A2B727629CE804AB1EBD0F8B033 rdf:first
+_:genid-4450bc34410b402bb9aee9482eed615a43-E0BDCDD8DD4BEDACB22E669C42EBE131 rdf:first
     status:DEVELOP;
-  rdf:rest _:genid-8f78fa14f645486180e7e851a575d7b143-9F5564EEF68A741F51683CAE4ACE841B .
+  rdf:rest _:genid-4450bc34410b402bb9aee9482eed615a43-A1C4D8E11B94E6450F23B64E1488982E .
 
-_:genid-8f78fa14f645486180e7e851a575d7b143-9F5564EEF68A741F51683CAE4ACE841B rdf:first
+_:genid-4450bc34410b402bb9aee9482eed615a43-A1C4D8E11B94E6450F23B64E1488982E rdf:first
     status:WITHDRAWN;
-  rdf:rest _:genid-8f78fa14f645486180e7e851a575d7b143-6C4D96DEC4146D6EF0F59C5D7973E235 .
+  rdf:rest _:genid-4450bc34410b402bb9aee9482eed615a43-2D28D5AE4EC8584516321AA20356A4A0 .
 
-_:genid-8f78fa14f645486180e7e851a575d7b143-6C4D96DEC4146D6EF0F59C5D7973E235 rdf:first
+_:genid-4450bc34410b402bb9aee9482eed615a43-2D28D5AE4EC8584516321AA20356A4A0 rdf:first
     status:DEPRECATED;
   rdf:rest rdf:nil .
 
