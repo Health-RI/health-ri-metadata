@@ -8,6 +8,6 @@
     dcat:accessURL <http://example.com/> ;
     dcat:mediaType <http://example.com/> ;
     dct:license <https://creativecommons.org/public-domain/cc0/> ;
-    dcat:byteSize 1024 ;
+    dcat:byteSize "1024"^^xsd:nonNegativeInteger ;
     dct:format <http://publications.europa.eu/resource/authority/file-type/TXT> ;
     dct:rights <http://example.com/rights.html> .

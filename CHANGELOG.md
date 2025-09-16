@@ -1,4 +1,12 @@
 # Changelog
+## v2.0.2
+
+Bug fixes:
+- data type of dcat:byteSize fixed to be xsd:nonNegativeInteger
+
+Chores:
+- added templates for SHACL generation to the repo
+
 
 ## v2.0.1
 
