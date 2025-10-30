@@ -39,6 +39,7 @@ This is version 2.0 of Health-RI core metadata schema.
   - [Identifier](#identifier)
   - [Period of time](#period-of-time)
   - [Relationship](#relationship)
+  - [Rights Statement](#rights-statement)
   - [Quality certificate](#quality-certificate)
 - [Further Information](#further-information)
   - [Model extension](#model-extension)
@@ -178,6 +179,7 @@ The following **W3ID redirects** are available for Health-RI metadata:
 | [Identifier](#identifier) | An identifier in a particular context, consisting of the string that is the identifier; an optional identifier for the identifier scheme; an optional identifier for the version of the identifier scheme; an optional identifier for the agency that manages the identifier scheme. | This class is instantiated by the property "other identifier" (`adms:identifier`) in other classes. Use this class to provide any additional identifier to the resource or dataset that is not the primary identifier provided in `dct:identifier`. | `adms:Identifier` |
 | [Period of Time](#period-of-time) | An interval of time that is named or defined by its start and end dates. | This class is instantiated by properties in other classes that have the range `dct:PeriodOfTime`. | `dct:PeriodOfTime` |
 | [Relationship](#relationship) | An association class for attaching additional information to a relationship between DCAT Resources. | This class is instantiated by the property "qualified relation" (`dcat:qualifiedRelation`) in other classes. Use this class to describe a relationship with another resource or dataset. Within the class, that resource is indicated, as well as the role this resource has in relation to the described one. The role is indicated based on a controlled vocabulary. | `dcat:Relationship` |
+| [Rights Statement](#rights-statement) | A statement about the intellectual property rights (IPR) held in or over a resource, a legal document giving official permission to do something with a resource, or a statement about access rights. | This class is instantiated by the property "access rights" (`dct:accessRights`) in classes Dataset and Data Service and property "rights" (`dct:rights`) in Distribution.  | `dct:RightsStatement` |
 | [Quality Certificate](#quality-certificate) | An annotation that associates a resource (especially, a dataset or a distribution) to another resource (for example, a document) that certifies the resource's quality according to a set of quality assessment rules. | This class is instantiated by the property "quality annotation" (`dqv:hasQualityAnnotation`) in other classes. Use this class to provide a link between the resource or dataset and an associated quality annotation.  | `dqv:QualityCertificate` |
 
 ## Main Properties per Class
@@ -341,6 +343,7 @@ A collection of datasets that are published separately, but share some character
 | [modification date](http://purl.org/dc/terms/modified) | Date on which the resource was changed. | `dct:modified` | NA | `xsd:dateTime` | This does not correspond to the most recently modified dataset in the collection of the dataset series. | 0..1 |
 | [publisher](http://purl.org/dc/terms/publisher) | An entity responsible for making the resource available. | `dct:publisher` | NA | `foaf:Agent` | The publisher of the dataset series may not be the publisher of all datasets. E.g., a digital archive could take over the publishing of older datasets in the series. | 0..1 |
 | [release date](http://purl.org/dc/terms/issued) | Date of formal issuance of the resource. | `dct:issued` | NA | `xsd:dateTime` | This refers to the moment when the dataset series was established as a managed resource. This is not equal to the release date of the oldest dataset in the collection of the dataset series. | 0..1 |
+| [series member](https://www.w3.org/ns/dcat#seriesMember) | A dataset that is part of the dataset series. | `dcat:seriesMember` | NA | `dcat:Dataset` | This is an inverse property of the Dataset's *dcat:inSeries* property. It can be used to show which Datasets are part of a Dataset Series. Note that this inverse **may** be used in addition to the *dcat:inSeries* (in Dataset class), but must not be used to replace it. So the connection between Datasets and Series still has to run primarily via the *dcat:inSeries*. | 0..\* |
 | [temporal coverage](http://purl.org/dc/terms/temporal) | Temporal characteristics of the resource. | `dct:temporal` | NA | `dct:PeriodOfTime` | When temporal coverage is a dimension in the dataset series, then the temporal coverage of each dataset in the collection should be part of the temporal coverage. In that case, an open-ended value is recommended, e.g., after 2012. | 0..\* |
 
 ### [Distribution](http://www.w3.org/ns/dcat#Distribution)
@@ -501,6 +504,23 @@ An association class for attaching additional information to a relationship betw
 #### Recommended Properties
 
 There are currently no recommended properties for this class.
+
+### [Rights Statement](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#RightsStatement)
+
+A statement about the intellectual property rights (IPR) held in or over a resource, a legal document giving official permission to do something with a resource, or a statement about access rights.<br><br>
+`Usage note`: This class is instantiated by the property "access rights" (`dct:accessRights`) in classes Dataset and Data Service and property "rights" (`dct:rights`) in Distribution. 
+
+#### Mandatory Properties
+
+There are currently no mandatory properties for this class.
+
+#### Recommended Properties
+
+
+| **Property name** | **Definition** | **URI** | **Controlled Vocabulary** | **rdfs:Range** | **Usage Note** | **Cardinality** |
+| --- | --- | --- | --- | --- | --- | --- |
+| [is defined by](http://www.w3.org/2000/01/rdf-schema#isDefinedBy) | rdfs:isDefinedBy is an instance of rdf:Property that is used to indicate a resource defining the subject resource. This property may be used to indicate an RDF vocabulary in which a resource is described. | `rdfs:isDefinedBy` | NA | `rdfs:Resource (IRI)` | Used to link to another resource that holds the rights statement. These properties could be used when dct:RightsStatement is used for the dct:rights (in Distribution), but are not mandatory, so do not need to be used for the dct:accessRights (in Dataset). | 0..1 |
+| [label](http://www.w3.org/2000/01/rdf-schema#label) | rdfs:label is an instance of rdf:Property that may be used to provide a human-readable version of a resource's name. | `rdfs:label` | NA | `rdfs:Literal` | This property allows free text description of the rights. | 0..1 |
 
 ### [Quality certificate](https://www.w3.org/TR/vocab-dqv/#dqv:QualityCertificate)
 
