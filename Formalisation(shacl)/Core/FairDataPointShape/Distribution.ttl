@@ -33,7 +33,7 @@
   rdfs:comment "Health-RI v2 Distribution."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Distribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-09-16T09:23:35.310Z"^^xsd:dateTime .
+  dct:modified "2025-11-03T15:30:26.920Z"^^xsd:dateTime .
 
 hri:DistributionShape a sh:NodeShape;
   rdfs:label "Distribution"@en;
@@ -193,32 +193,32 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "A statement that concerns all rights not addressed in fields License or Rights, such as copyright statements. Everything that is not covered with licece"@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  sh:node hri:RightsStatementShape;
+  dash:viewer dash:DetailsViewer;
+  dash:editor dash:BlankNodeEditor .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#adms:status> sh:path adms:status;
   sh:name "status"@en;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:genid-4450bc34410b402bb9aee9482eed615a43-06A22B7B80332E5DA078223821B647BE;
+  sh:in _:genid-9ff4ca38f1e143e7a0cd259b6d08200243-6388801460AC9A5D0CD2E98FE127588B;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:genid-4450bc34410b402bb9aee9482eed615a43-06A22B7B80332E5DA078223821B647BE rdf:first
+_:genid-9ff4ca38f1e143e7a0cd259b6d08200243-6388801460AC9A5D0CD2E98FE127588B rdf:first
     status:COMPLETED;
-  rdf:rest _:genid-4450bc34410b402bb9aee9482eed615a43-E0BDCDD8DD4BEDACB22E669C42EBE131 .
+  rdf:rest _:genid-9ff4ca38f1e143e7a0cd259b6d08200243-AE2F8BB64E0C82DA0604550949F6BA21 .
 
-_:genid-4450bc34410b402bb9aee9482eed615a43-E0BDCDD8DD4BEDACB22E669C42EBE131 rdf:first
+_:genid-9ff4ca38f1e143e7a0cd259b6d08200243-AE2F8BB64E0C82DA0604550949F6BA21 rdf:first
     status:DEVELOP;
-  rdf:rest _:genid-4450bc34410b402bb9aee9482eed615a43-A1C4D8E11B94E6450F23B64E1488982E .
+  rdf:rest _:genid-9ff4ca38f1e143e7a0cd259b6d08200243-CBDA8934CBA4438642FE71EE7F458699 .
 
-_:genid-4450bc34410b402bb9aee9482eed615a43-A1C4D8E11B94E6450F23B64E1488982E rdf:first
+_:genid-9ff4ca38f1e143e7a0cd259b6d08200243-CBDA8934CBA4438642FE71EE7F458699 rdf:first
     status:WITHDRAWN;
-  rdf:rest _:genid-4450bc34410b402bb9aee9482eed615a43-2D28D5AE4EC8584516321AA20356A4A0 .
+  rdf:rest _:genid-9ff4ca38f1e143e7a0cd259b6d08200243-F33E85F354AB15A22F35112AE0BF1451 .
 
-_:genid-4450bc34410b402bb9aee9482eed615a43-2D28D5AE4EC8584516321AA20356A4A0 rdf:first
+_:genid-9ff4ca38f1e143e7a0cd259b6d08200243-F33E85F354AB15A22F35112AE0BF1451 rdf:first
     status:DEPRECATED;
   rdf:rest rdf:nil .
 
@@ -300,3 +300,32 @@ hri:ChecksumShape a sh:NodeShape;
   sh:nodeKind sh:Literal;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
+
+hri:aux-RightsStatementShape a owl:Ontology;
+  rdfs:label "RightsStatement"@en;
+  rdfs:comment "Health-RI v2 RightsStatement"@en;
+  dct:description "SHACL definitions for the Health-RI v2 model for RightsStatement."@en;
+  owl:versionInfo "0.1";
+  dct:modified "2025-11-03T12:42:46.250Z"^^xsd:dateTime .
+
+hri:RightsStatementShape a sh:NodeShape;
+  rdfs:label "RightsStatement"@en;
+  sh:targetClass dct:RightsStatement;
+  sh:property <http://data.health-ri.nl/core/p2/RightsStatementShape#rdfs:isDefinedBy>,
+    <http://data.health-ri.nl/core/p2/RightsStatementShape#rdfs:label> .
+
+<http://data.health-ri.nl/core/p2/RightsStatementShape#rdfs:isDefinedBy> sh:path rdfs:isDefinedBy;
+  sh:name "is defined by"@en;
+  sh:description "Used to link to another resource that holds the rights statement. These properties could be used when dct:RightsStatement is used for the dct:rights (in Distribution), but are not mandatory, so do not need to be used for the dct:accessRights (in Dataset)."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<http://data.health-ri.nl/core/p2/RightsStatementShape#rdfs:label> sh:path rdfs:label;
+  sh:name "label"@en;
+  sh:description "This property allows free text description of the rights."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .

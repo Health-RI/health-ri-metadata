@@ -33,7 +33,7 @@
   rdfs:comment "Health-RI v2 Dataset Series"@en;
   dct:description "SHACL mandatory definitions for the Health-RI v2 model for Dataset Series."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-09-09T13:39:39.990Z"^^xsd:dateTime .
+  dct:modified "2025-11-03T12:42:06.440Z"^^xsd:dateTime .
 
 hri:DatasetSeriesShape a sh:NodeShape;
   rdfs:label "DatasetSeries"@en;
@@ -43,7 +43,7 @@ hri:DatasetSeriesShape a sh:NodeShape;
     <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:accrualPeriodicity>, <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:spatial>,
     <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:modified>, <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:publisher>,
     <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:issued>, <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:temporal>,
-    <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:title> .
+    <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:title>, <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dcat:seriesMember> .
 
 <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dcatap:applicableLegislation>
   sh:path dcatap:applicableLegislation;
@@ -129,6 +129,13 @@ hri:DatasetSeriesShape a sh:NodeShape;
   sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
+
+<http://data.health-ri.nl/core/p2/DatasetSeriesShape#dcat:seriesMember> sh:path dcat:seriesMember;
+  sh:name "series member"@en;
+  sh:description "This is an inverse property of the Dataset's *dcat:inSeries* property. It can be used to show which Datasets are part of a Dataset Series. Note that this inverse **may** be used in addition to the *dcat:inSeries* (in Dataset class), but must not be used to replace it. So the connection between Datasets and Series still has to run primarily via the *dcat:inSeries*."@en;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 hri:AgentShapeAgentShape a owl:Ontology;
   rdfs:label "Agent class"@en;

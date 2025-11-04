@@ -33,7 +33,7 @@
   rdfs:comment "Health-RI v2 Distribution."@en;
   dct:description "SHACL definitions for the Health-RI v2 model for Distribution."@en;
   owl:versionInfo "0.1";
-  dct:modified "2025-09-16T09:23:35.310Z"^^xsd:dateTime .
+  dct:modified "2025-11-03T15:30:26.920Z"^^xsd:dateTime .
 
 hri:DistributionShape a sh:NodeShape;
   rdfs:label "Distribution"@en;
@@ -193,29 +193,29 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "A statement that concerns all rights not addressed in fields License or Rights, such as copyright statements. Everything that is not covered with licece"@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  sh:node hri:RightsStatementShape;
+  dash:viewer dash:DetailsViewer;
+  dash:editor dash:BlankNodeEditor .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#adms:status> sh:path adms:status;
   sh:name "status"@en;
   sh:description "The status of the distribution in the context of maturity lifecycle."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:63db696725d34edebb948ae5f263a6622;
+  sh:in _:203596f9b4204980b480ecdf337dc6c92;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:63db696725d34edebb948ae5f263a6622 rdf:first status:COMPLETED;
-  rdf:rest _:63db696725d34edebb948ae5f263a6623 .
+_:203596f9b4204980b480ecdf337dc6c92 rdf:first status:COMPLETED;
+  rdf:rest _:203596f9b4204980b480ecdf337dc6c93 .
 
-_:63db696725d34edebb948ae5f263a6623 rdf:first status:DEVELOP;
-  rdf:rest _:63db696725d34edebb948ae5f263a6624 .
+_:203596f9b4204980b480ecdf337dc6c93 rdf:first status:DEVELOP;
+  rdf:rest _:203596f9b4204980b480ecdf337dc6c94 .
 
-_:63db696725d34edebb948ae5f263a6624 rdf:first status:WITHDRAWN;
-  rdf:rest _:63db696725d34edebb948ae5f263a6625 .
+_:203596f9b4204980b480ecdf337dc6c94 rdf:first status:WITHDRAWN;
+  rdf:rest _:203596f9b4204980b480ecdf337dc6c95 .
 
-_:63db696725d34edebb948ae5f263a6625 rdf:first status:DEPRECATED;
+_:203596f9b4204980b480ecdf337dc6c95 rdf:first status:DEPRECATED;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#dcat:temporalResolution> sh:path
