@@ -121,6 +121,14 @@ This means that, for example, the `dct:publisher` and `dct:creator` can instanti
 - We aim to collect mapping examples from different data sources [here](https://health-ri.atlassian.net/wiki/spaces/FSD/folder/736985095). Currently, this collection only holds mapping examples to v1 though.
 
 - Please visit Confluence for general information about the [metadata schema](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/279281676/4A+Metadata+mapping) and [metadata mapping](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/290291734/Mapping+tutorial).
+  <br> For recommendations on mapping of specific parts:
+  - [Recommendations on mapping to classes in the v2 core metadata](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/1020624897/Recommendations+on+mapping+to+classes+in+the+v2+core+metadata?atlOrigin=eyJpIjoiZGY4MzYxZjFkNTI2NGE3Y2EzYjk0OGNhOTk0ZjQ5ZDQiLCJwIjoiYyJ9)
+  - [Recommendations for filling in the dct:identifier field for  Dataset](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/1084751895/Recommendations+for+filling+in+the+dct+identifier+field+for+Dataset?atlOrigin=eyJpIjoiZjk2Yzk1NmFkNTEwNGYwODhmYTA4N2RlMTM2ZjFiMGQiLCJwIjoiYyJ9)
+  - [Recommendations on linking of complex datasets](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/1311834122/Recommendations+on+linking+of+complex+datasets?atlOrigin=eyJpIjoiZmIwNjE3ZmNiZDM3NDBlODllZTIyNDBiYzY3MTI0YmEiLCJwIjoiYyJ9)
+  - [Recommendations on filling publisher, creator and contactPoint properties](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/1513816065/Recommendations+on+filling+publisher+creator+and+contactPoint+properties?atlOrigin=eyJpIjoiMDUxYTk4MzY2Yjk4NDZmNmEwNzg2Yjc0MDUzNjJiYzYiLCJwIjoiYyJ9)
+  - [Recommendations on adding funder information in metadata](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/1458438145/Recommendations+on+adding+funder+information+in+metadata?atlOrigin=eyJpIjoiYjcyZWNmMTNkMDJhNDYyMGJmYzg0OGZkYmQ5OTZiMjIiLCJwIjoiYyJ9)
+
+
 
 ## Permanent URLs for Health-RI Metadata Resources
 
