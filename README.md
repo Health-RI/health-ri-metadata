@@ -1,6 +1,5 @@
-<br><img align="left" src="Images\HRI-Prim-2023_RGB-small.jpg" alt="Health-RI Core metadata schema" width="300"/> 
-<br><br><br>
-# Core metadata schema 
+<br>
+# Core metadata schema <img align="right" src="Images\HRI-Prim-2023_RGB-small.jpg" alt="Health-RI Core metadata schema" width="300"/> 
 This repo holds the **Health-RI Core metadata schema**, which is used to populate the [National Health Data Catalogue]([https://catalogus.healthdata.nl/).
 
 ## Technical specifications
