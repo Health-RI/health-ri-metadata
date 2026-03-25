@@ -1,7 +1,4 @@
-<br>
-<br><img align="left" src="Images\HRI-Prim-2023_RGB-small.jpg" alt="Health-RI Core metadata schema" width="300"/>
-<br>
-
+<img align="left" src="Images\HRI-Prim-2023_RGB-small.jpg" alt="Health-RI Core metadata schema" width="300"/>
 [![Project DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15395604.svg)](https://doi.org/10.5281/zenodo.15395604)
 [![Project Status - Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Health-RI/health-ri-metadata)
