@@ -6,7 +6,6 @@ This repo holds the **Health-RI Core metadata schema**, which is used to populat
 
 ## Technical specifications
 To view specifics of the metadata model per class and property, please visit the documentation page: [here](https://health-ri.github.io/metadata-documentation/)
-<br>
 <br>SHACL shapes corresponding to the latest version of the model can be found: [here](https://github.com/Health-RI/health-ri-metadata/tree/master/Formalisation(shacl)/Core).
 
 ## Using the model for your metadata
