@@ -1,3 +1,4 @@
+# Core metadata schema 
 <img align="right" src="Images\HRI-Prim-2023_RGB-small.jpg" alt="Health-RI Core metadata schema" width="300"/>
 
 [![Project DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15395604.svg)](https://doi.org/10.5281/zenodo.15395604)
@@ -9,7 +10,6 @@
 ![GitHub commits since latest release](https://img.shields.io/github/commits-since/Health-RI/health-ri-metadata/latest)
 ![GitHub contributors](https://img.shields.io/github/contributors/Health-RI/health-ri-metadata)
 
-# Core metadata schema 
 This repo holds the **Health-RI Core metadata schema**, which is used to populate the [National Health Data Catalogue]([https://catalogus.healthdata.nl/).
 
 ## Technical specifications
