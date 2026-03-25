@@ -6,6 +6,7 @@
 ![GitHub Release Date](https://img.shields.io/github/release-date/Health-RI/health-ri-metadata)
 ![GitHub commits since latest release](https://img.shields.io/github/commits-since/Health-RI/health-ri-metadata/latest)
 ![GitHub contributors](https://img.shields.io/github/contributors/Health-RI/health-ri-metadata)
+<br>
 <br><img align="left" src="Images\HRI-Prim-2023_RGB-small.jpg" alt="Health-RI Core metadata schema" width="300"/><br>
 <br>
 # Core metadata schema 
