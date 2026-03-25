@@ -9,7 +9,7 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/Health-RI/health-ri-metadata)
 
 <br><img align="left" src="Images\HRI-Prim-2023_RGB-small.jpg" alt="Health-RI Core metadata schema" width="300"/> 
-<br>
+<br><br><br>
 # Core metadata schema 
  
 This repo holds the **Health-RI Core metadata schema**, which is used to populate the [National Health Data Catalogue]([https://catalogus.healthdata.nl/).
