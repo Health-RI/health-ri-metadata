@@ -15,6 +15,7 @@ On our **Onboarding wiki**, you can find general information about [Onboarding](
 If you encounter an issue or identify a bug, please refer to the [CONTRIBUTING](https://github.com/Health-RI/health-ri-metadata/blob/master/CONTRIBUTING.md) page to see how to report issues or ask general questions.
 
 
+### Status
 [![Project DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15395604.svg)](https://doi.org/10.5281/zenodo.15395604)
 [![Project Status - Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Health-RI/health-ri-metadata)
