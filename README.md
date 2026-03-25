@@ -14,7 +14,7 @@ This repo holds the **Health-RI Core metadata schema**, which is used to populat
 
 ## Technical specifications
 To view specifics of the metadata model per class and property, please visit the documentation page: [Specification](https://health-ri.github.io/metadata-documentation/)
-<br>SHACL shapes corresponding to the latest version of the model can be found: [Shacl shapes](https://github.com/Health-RI/health-ri-metadata/tree/master/Formalisation(shacl)/Core).
+<br>SHACL shapes corresponding to the latest version of the model can be found: [Shapes](https://github.com/Health-RI/health-ri-metadata/tree/master/Formalisation(shacl)/Core).
 
 ## Using the model for your metadata
 On our **Onboarding wiki**, you can find general information about [Onboarding](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/279150593/Metadata+onboarding+on+the+National+Catalogue?atlOrigin=eyJpIjoiZTc2OTU4ZDAwNDAyNGY5Yzk0NzdmMTJhOTkyODcyNDAiLCJwIjoiYyJ9), [Metadata mapping](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/279281676/4A+Metadata+mapping?atlOrigin=eyJpIjoiZjViNzBiYjE5NWFhNDIxZGI4NTMyYjNiMDE0NzQ5YjkiLCJwIjoiYyJ9) in general and a [Metadata mapping tutorial](https://health-ri.atlassian.net/wiki/spaces/FSD/pages/290291734/Mapping+tutorial?atlOrigin=eyJpIjoiOGYxOTE4YTRhOWViNGQ0YWFlZWE4MTMyODJjZWEwZmEiLCJwIjoiYyJ9).
