@@ -1,5 +1,6 @@
 <img align="right" src="Images\HRI-Prim-2023_RGB-small.jpg" alt="Health-RI Core metadata schema" width="300"/>  
 
+
 # Health-RI Core metadata schema 
 
 
@@ -14,6 +15,7 @@ On our **Onboarding wiki**, you can find general information about [Onboarding](
  
 ## Questions, issues?
 If you encounter an issue or identify a bug, please refer to the [CONTRIBUTING](https://github.com/Health-RI/health-ri-metadata/blob/master/CONTRIBUTING.md) page to see how to report issues or ask general questions.
+
 
 [![Project DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15395604.svg)](https://doi.org/10.5281/zenodo.15395604)
 [![Project Status - Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
