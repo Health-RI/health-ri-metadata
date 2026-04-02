@@ -9,8 +9,8 @@
 ![GitHub commits since latest release](https://img.shields.io/github/commits-since/Health-RI/health-ri-metadata/latest)
 ![GitHub contributors](https://img.shields.io/github/contributors/Health-RI/health-ri-metadata)
 
-# Core metadata schema 
-This repo holds the **Health-RI Core metadata schema**, which is used to in the [National Health Data Catalogue]([https://catalogus.healthdata.nl/).
+# Health-RI core metadata schema 
+This repo holds the **Health-RI Core metadata schema**, which is used in the [National Health Data Catalogue]([https://catalogus.healthdata.nl/).
 
 ## Technical specifications
 To view specifics of the metadata model per class and property, please visit the **[documentation page](https://health-ri.github.io/metadata-documentation/)**.
