@@ -2,7 +2,7 @@
 ## v2.0.3
 
 Enhancements:
-- Added Excel with instructions for using the different controlled vocabularies in the model
+- Added Excel file with instructions for using the different controlled vocabularies in the model
 - Exchanged the Readme file in this repo by the more user-friendly documentation: https://health-ri.github.io/metadata-documentation/
 - Adjusted several usage notes:
   - Catalogue - licence
