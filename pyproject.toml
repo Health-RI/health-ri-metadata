@@ -5,7 +5,7 @@ requires-python = ">=3.8"
 dependencies = ["rdflib ~= 7.0", "pyshacl ~= 0.26", "pytest ~= 8.4"]
 
 [build-system]
-requires = ["hatchling >= 1.19.1"]
+requires = ["hatchling >= 1.27.0"]
 build-backend = "hatchling.build"
 
 [tool.pytest.ini_options]
