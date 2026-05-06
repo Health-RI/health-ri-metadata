@@ -2,7 +2,7 @@
 name = "healthri-metadata"
 version = "1.0"
 requires-python = ">=3.8"
-dependencies = ["rdflib ~= 7.0", "pyshacl ~= 0.26", "pytest ~= 8.2"]
+dependencies = ["rdflib ~= 7.0", "pyshacl ~= 0.26", "pytest ~= 8.4"]
 
 [build-system]
 requires = ["hatchling >= 1.19.1"]
