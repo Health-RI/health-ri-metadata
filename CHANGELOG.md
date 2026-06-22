@@ -1,4 +1,20 @@
 # Changelog
+## v2.0.3
+
+Enhancements:
+- Added Excel file with instructions for using the different controlled vocabularies in the model
+- Exchanged the Readme file in this repo by the more user-friendly documentation: https://health-ri.github.io/metadata-documentation/
+- Adjusted several usage notes:
+  - Catalogue - licence
+  - Distribution - media type
+  - Dataset - applicableLegislation
+  - Dataset - legalBasis
+  - Dataset - purpose
+
+Chores:
+- Updated the CONTRIBUTING.md 
+
+
 ## v2.0.2
 
 Bug fixes:
