@@ -1,0 +1,92 @@
+@prefix schema: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix adms_status: <http://purl.org/adms/status/> .
+@prefix odrl2: <http://www.w3.org/ns/odrl/2/> .
+@prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dcat: <https://www.w3.org/ns/dcat#> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix hri: <http://data.health-ri.nl/core/p2#> .
+@prefix linkml: <https://w3id.org/linkml/> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix xls2rdf: <https://xls2rdf.sparna.fr/vocabulary#> .
+@prefix dcatv3: <https://www.w3.org/ns/dcat/3#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix dqv-pd: <https://w3id.org/dpv/dpv-pd#> .
+@prefix eu: <http://publications.europa.eu/resource/authority/access-right/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix status: <http://publications.europa.eu/resource/authority/distribution-status/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+hri:aux-ColumnShape a owl:Ontology;
+  rdfs:label "Excel template for Column class"@en;
+  rdfs:comment "Excel template for Column class"@en;
+  dct:description "This is an excel template for Column class in Health RI Core plateau 2."@en;
+  owl:versionInfo "0.1" .
+
+hri:ColumnShape a sh:NodeShape;
+  rdfs:label "Column"@en;
+  sh:targetClass csvw:Column;
+  sh:property <http://data.health-ri.nl/core/p2#ColumnShape/csvw:name>, <http://data.health-ri.nl/core/p2#ColumnShape/csvw:title>,
+    <http://data.health-ri.nl/core/p2#ColumnShape/dct:description>, <http://data.health-ri.nl/core/p2#ColumnShape/csvw:datatype>,
+    <http://data.health-ri.nl/core/p2#ColumnShape/csvw:propetyUrl> .
+
+<http://data.health-ri.nl/core/p2#ColumnShape/csvw:name> sh:path csvw:name;
+  sh:name "name"@en;
+  sh:description "A Technical name given to the Variable as it appears in the CSV file."@en;
+  sh:minCount 1;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
+
+<http://data.health-ri.nl/core/p2#ColumnShape/csvw:title> sh:path csvw:title;
+  sh:name "title"@en;
+  sh:description "A Human-readable name given to the Variable."@en;
+  sh:minCount 1;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
+
+<http://data.health-ri.nl/core/p2#ColumnShape/dct:description> sh:path dct:description;
+  sh:name "description"@en;
+  sh:description "Variable description."@en;
+  sh:minCount 1;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
+
+<http://data.health-ri.nl/core/p2#ColumnShape/csvw:datatype> sh:path csvw:datatype;
+  sh:name "datatype"@en;
+  sh:description "Specifies the expected datatype of the values in the column."@en;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
+
+<http://data.health-ri.nl/core/p2#ColumnShape/csvw:propetyUrl> sh:path csvw:propetyUrl;
+  sh:name "property URL"@en;
+  sh:description "A URI template used to define the RDF predicate associated with the values in the column, relative to each row."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .

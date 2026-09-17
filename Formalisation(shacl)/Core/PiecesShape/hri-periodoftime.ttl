@@ -2,44 +2,53 @@
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix adms_status: <http://purl.org/adms/status/> .
+@prefix odrl2: <http://www.w3.org/ns/odrl/2/> .
+@prefix disco: <http://rdf-vocabulary.ddialliance.org/discovery#> .
 @prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix example: <https://data.sparna.fr/shapes-example/> .
 @prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcat: <https://www.w3.org/ns/dcat#> .
 @prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix hri: <http://data.health-ri.nl/core/p2/> .
+@prefix hri: <http://data.health-ri.nl/core/p2#> .
+@prefix linkml: <https://w3id.org/linkml/> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix dcatap: <http://data.europa.eu/r5r/> .
 @prefix org: <http://www.w3.org/ns/org#> .
-@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 @prefix xls2rdf: <https://xls2rdf.sparna.fr/vocabulary#> .
+@prefix dcatv3: <https://www.w3.org/ns/dcat/3#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
-@prefix shacl-play: <https://shacl-play.sparna.fr/ontology#> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix dqv-pd: <https://w3id.org/dpv/dpv-pd#> .
+@prefix eu: <http://publications.europa.eu/resource/authority/access-right/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix status: <http://publications.europa.eu/resource/authority/distribution-status/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 
 hri:aux-PeriodOfTimeShape a owl:Ontology;
-  rdfs:label "Period of Time"@en;
-  rdfs:comment "Health-RI v2 Period of Time"@en;
-  dct:description "SHACL definitions for the Health-RI v2 model for Period of Time."@en;
-  owl:versionInfo "0.1";
-  dct:modified "2025-09-09T15:41:10.000Z"^^xsd:dateTime .
+  rdfs:label "Excel template for PeriodOfTime class"@en;
+  rdfs:comment "Excel template for PeriodOfTime class"@en;
+  dct:description "This is an excel template for PeriodOfTime class in Health RI Core plateau 2."@en;
+  owl:versionInfo "0.1" .
 
 hri:PeriodOfTimeShape a sh:NodeShape;
-  rdfs:label "Period of Time"@en;
+  rdfs:label "PeriodOfTime"@en;
   sh:targetClass dct:PeriodOfTime;
-  sh:property <http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:endDate>, <http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:startDate> .
+  sh:property <http://data.health-ri.nl/core/p2#PeriodOfTimeShape/dcat:endDate>, <http://data.health-ri.nl/core/p2#PeriodOfTimeShape/dcat:startDate> .
 
-<http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:endDate> sh:path dcat:endDate;
+<http://data.health-ri.nl/core/p2#PeriodOfTimeShape/dcat:endDate> sh:path dcat:endDate;
   sh:name "end date"@en;
   sh:description "The end of the period."@en;
   sh:maxCount 1;
@@ -49,7 +58,7 @@ hri:PeriodOfTimeShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
-<http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:startDate> sh:path dcat:startDate;
+<http://data.health-ri.nl/core/p2#PeriodOfTimeShape/dcat:startDate> sh:path dcat:startDate;
   sh:name "start date"@en;
   sh:description "The start of the period."@en;
   sh:maxCount 1;
