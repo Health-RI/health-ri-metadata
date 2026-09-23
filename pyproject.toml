@@ -86,11 +86,11 @@ lint.ignore = [
 # Taken from https://github.com/astral-sh/ruff/issues/4368
 [tool.ruff.lint.per-file-ignores]
 "tests/**/*.py" = [
-    # at least this three should be fine in tests:
+    # At least these three should be fine in tests:
     "S101", # asserts allowed in tests...
     "ARG",  # Unused function args -> fixtures nevertheless are functionally relevant...
     "FBT",  # Don't care about booleans as positional arguments in tests, e.g. via @pytest.mark.parametrize()
-    # The below are debateable
+    # The following are debatable
     "PLR2004", # Magic value used in comparison, ...
     "S311",    # Standard pseudo-random generators are not suitable for cryptographic purposes
 ]
