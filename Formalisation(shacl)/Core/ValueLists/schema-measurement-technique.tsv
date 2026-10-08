@@ -1,0 +1,19 @@
+iri	label	source_vocabulary
+http://edamontology.org/topic_3673	Whole genome sequencing	EDAM
+http://edamontology.org/topic_3676	Exome sequencing	EDAM
+http://edamontology.org/topic_3170	RNA-Seq	EDAM
+http://purl.bioontology.org/ontology/MESH/D000092386	Single-Cell Gene Expression Analysis (some altLabels available)	MeSH
+http://edamontology.org/topic_4028	Single-cell sequencing	EDAM
+http://edamontology.org/topic_4061	Bisulfite sequencing	EDAM
+http://edamontology.org/topic_3169	ChIP-seq	EDAM
+http://edamontology.org/topic_4053	ATAC-seq	EDAM
+http://edamontology.org/topic_4052	Hi-C	EDAM
+http://purl.bioontology.org/ontology/MESH/D013058	Mass Spectrometry	MeSH
+http://purl.bioontology.org/ontology/MESH/D000097922	Liquid Chromatography-Mass Spectrometry (altLabel LC-MS)	MeSH
+http://purl.bioontology.org/ontology/MESH/D008401	Gas Chromatography-Mass Spectrometry (altLabel GCMS)	MeSH
+http://edamontology.org/topic_3518	Microarray experiment	EDAM
+http://edamontology.org/topic_3444	Magnetic resonance imaging	EDAM
+http://edamontology.org/topic__RDos3h5yRfjhLUcOImDOFgB	Positron emission tomography	EDAM bioimaging
+http://edamontology.org/topic__RxfmHE99gOkUOOML5krfsJ	Computed tomography	EDAM bioimaging
+http://purl.bioontology.org/ontology/MESH/D019906	Nuclear Magnetic Resonance, Biomolecular	MeSH
+http://edamontology.org/topic_4056	Long-read sequencing	EDAM
