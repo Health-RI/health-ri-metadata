@@ -13,6 +13,11 @@
 @prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
 @prefix dpv:    <https://w3id.org/dpv#> .
 @prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <https://schema.org/> .
+@prefix edam: <http://edamontology.org/> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix hri: <https://w3id.org/health-ri/metadata-vocabulary#> .
 
 <http://www.example.com/test_dataset>
         a                               dcat:Resource , dcat:Dataset ;
@@ -124,7 +129,47 @@
         adms:versionNotes               "Ten persons added to the dataset, compared to the 1224 persons in version 1.2.2"@en , 
                                         "Tien personen toegevoegd aan de dataset, in vergelijking tot de 1224 personen in versie 1.2.2."@nl ;
         prov:wasGeneratedBy             <internalURI:wasGeneratedBy1> ,
-                                        <internalURI:wasGeneratedBy2> .
+                                        <internalURI:wasGeneratedBy2> ;
+        edam:has_topic                  <http://edamontology.org/topic_0622> ;
+        schema:measurementTechnique     <http://edamontology.org/topic_3673> ;
+        hri:anatomicalLocationCovered   sct:39607008 ;
+        hri:healthConditionOfInterest   sct:22298006 ;
+        dct:alternative                 "HRI Test"@en ;
+        dcat:landingPage                <https://github.com/Health-RI/health-ri-metadata> ;
+        dct:provenance                  <internalURI:provenanceStatement0> ;
+        healthdcatap:hasVariables       <internalURI:tableGroup0> .
+
+<internalURI:tableGroup0>
+        a                              csvw:TableGroup ;
+        dct:title                      "My table group"@en ;
+        csvw:table                     <internalURI:table0> .
+
+<internalURI:table0>
+        a                              csvw:Table ;
+        dct:title                      "My test table"@en ;
+        dcat:keyword                   "test variables"@en ;
+        csvw:url                       <https://data.health.europa.eu/link/to/csv/with/variables> ;
+        csvw:column                    <internalURI:column0> ,
+                                       <internalURI:column1> .
+
+<internalURI:column0>
+        a                              csvw:Column ;
+        dct:description                "First column"@en ;
+        csvw:datatype                  "boolean";
+        csvw:name                      "Col_1";
+        csvw:title                     "Column 1"@en .
+
+<internalURI:column1>
+        a                              csvw:Column ;
+        dct:description                "Second column"@en ;
+        csvw:datatype                  "string";
+        csvw:name                      "Col_2";
+        csvw:title                     "Column 2"@en .
+
+<http://edamontology.org/topic_0622> a skos:Concept .
+<http://edamontology.org/topic_3673> a skos:Concept .
+sct:39607008 a skos:Concept .
+sct:22298006 a skos:Concept .
 
 <http://www.example.com/test_dataset_series>
         a                               dcat:DatasetSeries ;
@@ -190,7 +235,8 @@
         adms:status                     <http://publications.europa.eu/resource/authority/distribution-status/COMPLETED> ;
         dcat:temporalResolution         "P1Y"^^xsd:duration ;
         dct:title                       "Distribution title"@en ,
-                                        "Distributie titel"@nl .
+                                        "Distributie titel"@nl 
+        dcatap:availability             <http://publications.europa.eu/resource/authority/planned-availability/EXPERIMENTAL> .
 
 <internalURI:analytics0>
         a                               dcat:Distribution ;
@@ -414,3 +460,7 @@
     prov:startedAtTime                  "2023-03-01T09:00:00Z"^^xsd:dateTime ;
     prov:endedAtTime                    "2023-05-31T17:00:00Z"^^xsd:dateTime ;
     prov:wasAssociatedWith              <internalURI:creator2> . 
+
+<internalURI:provenanceStatement0>
+    a                                   dct:ProvenanceStatement ;
+    rdfs:label                          "Test data was created manually for each property of the Health-RI core model"@en .
