@@ -141,8 +141,8 @@
 
 <internalURI:tableGroup0>
         a                              csvw:TableGroup ;
-        dct:title                      "My table group"@en ;
-        csvw:table                     <internalURI:table0> .
+        csvw:table                     <internalURI:table0> ;
+        dct:title                      "my table group"@en .
 
 <internalURI:table0>
         a                              csvw:Table ;
@@ -155,16 +155,18 @@
 <internalURI:column0>
         a                              csvw:Column ;
         dct:description                "First column"@en ;
-        csvw:datatype                  "boolean";
-        csvw:name                      "Col_1";
-        csvw:title                     "Column 1"@en .
+        csvw:datatype                  "boolean" ;
+        csvw:name                      "Col_1" ;
+        csvw:title                     "Column 1"@en ;
+        csvw:propertyURL               <https://data.health.europa.eu/link/to/csv/with/variables/Col_1> .
 
 <internalURI:column1>
         a                              csvw:Column ;
         dct:description                "Second column"@en ;
-        csvw:datatype                  "string";
-        csvw:name                      "Col_2";
-        csvw:title                     "Column 2"@en .
+        csvw:datatype                  "string" ;
+        csvw:name                      "Col_2" ;
+        csvw:title                     "Column 2"@en ;
+        csvw:propertyURL               <https://data.health.europa.eu/link/to/csv/with/variables/Col_2> .
 
 <http://edamontology.org/topic_0622> a skos:Concept .
 <http://edamontology.org/topic_3673> a skos:Concept .
@@ -235,7 +237,7 @@ sct:22298006 a skos:Concept .
         adms:status                     <http://publications.europa.eu/resource/authority/distribution-status/COMPLETED> ;
         dcat:temporalResolution         "P1Y"^^xsd:duration ;
         dct:title                       "Distribution title"@en ,
-                                        "Distributie titel"@nl 
+                                        "Distributie titel"@nl ;
         dcatap:availability             <http://publications.europa.eu/resource/authority/planned-availability/EXPERIMENTAL> .
 
 <internalURI:analytics0>
