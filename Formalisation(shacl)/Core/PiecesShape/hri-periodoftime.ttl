@@ -1,0 +1,66 @@
+@prefix schema: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix hri: <https://w3id.org/health-ri/metadata-vocabulary#> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix edam: <http://edamontology.org/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix xls2rdf: <https://xls2rdf.sparna.fr/vocabulary#> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+hri:aux-PeriodOfTimeShape a owl:Ontology;
+  rdfs:label "Excel template for PeriodOfTime class"@en;
+  rdfs:comment "Excel template for PeriodOfTime class"@en;
+  dct:description "This is an excel template for PeriodOfTime class in Health RI Core plateau 2."@en;
+  owl:versionInfo "0.1" .
+
+hri:PeriodOfTimeShape a sh:NodeShape;
+  rdfs:label "PeriodOfTime"@en;
+  sh:targetClass dct:PeriodOfTime;
+  sh:property <https://w3id.org/health-ri/metadata-vocabulary#PeriodOfTimeShape/dcat:endDate>,
+    <https://w3id.org/health-ri/metadata-vocabulary#PeriodOfTimeShape/dcat:startDate> .
+
+<https://w3id.org/health-ri/metadata-vocabulary#PeriodOfTimeShape/dcat:endDate> sh:path
+    dcat:endDate;
+  sh:name "end date"@en;
+  sh:description "The end of the period."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:dateTime;
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:DateTimePickerEditor .
+
+<https://w3id.org/health-ri/metadata-vocabulary#PeriodOfTimeShape/dcat:startDate>
+  sh:path dcat:startDate;
+  sh:name "start date"@en;
+  sh:description "The start of the period."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  sh:datatype xsd:dateTime;
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:DateTimePickerEditor .

@@ -1,0 +1,62 @@
+@prefix schema: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix hri: <https://w3id.org/health-ri/metadata-vocabulary#> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix edam: <http://edamontology.org/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix xls2rdf: <https://xls2rdf.sparna.fr/vocabulary#> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+hri:aux-QualityCertificateShape a owl:Ontology;
+  rdfs:label "Excel template for QualityCertificate class"@en;
+  rdfs:comment "Excel template for QualityCertificate class"@en;
+  dct:description "This is an excel template for QualityCertificate class in Health RI Core plateau 2."@en;
+  owl:versionInfo "0.1" .
+
+hri:QualityCertificateShape a sh:NodeShape;
+  rdfs:label "QualityCertificate"@en;
+  sh:targetClass dqv:QualityCertificate;
+  sh:property <https://w3id.org/health-ri/metadata-vocabulary#QualityCertificateShape/oa:hasTarget>,
+    <https://w3id.org/health-ri/metadata-vocabulary#QualityCertificateShape/oa:hasBody> .
+
+<https://w3id.org/health-ri/metadata-vocabulary#QualityCertificateShape/oa:hasTarget>
+  sh:path oa:hasTarget;
+  sh:name "target"@en;
+  sh:description "The relationship between an Annotation and its Target."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
+
+<https://w3id.org/health-ri/metadata-vocabulary#QualityCertificateShape/oa:hasBody>
+  sh:path oa:hasBody;
+  sh:name "body"@en;
+  sh:description "The object of the relationship is a resource that is a body of the Annotation."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
