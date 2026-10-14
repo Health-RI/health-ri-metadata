@@ -246,8 +246,36 @@ hri:DistributionShape a sh:NodeShape;
   sh:description "The status of the Asset in the context of a particular workflow process."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
+  sh:in _:29f1d5ae0f9d4e6fb94d374ebb07d9072;
   dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  dash:editor dash:EnumSelectEditor .
+
+_:29f1d5ae0f9d4e6fb94d374ebb07d9072 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/COMPLETED>;
+  rdf:rest _:29f1d5ae0f9d4e6fb94d374ebb07d9073 .
+
+_:29f1d5ae0f9d4e6fb94d374ebb07d9073 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/DEVELOP>;
+  rdf:rest _:29f1d5ae0f9d4e6fb94d374ebb07d9074 .
+
+_:29f1d5ae0f9d4e6fb94d374ebb07d9074 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/WITHDRAWN>;
+  rdf:rest _:29f1d5ae0f9d4e6fb94d374ebb07d9075 .
+
+_:29f1d5ae0f9d4e6fb94d374ebb07d9075 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/PLANNED>;
+  rdf:rest _:29f1d5ae0f9d4e6fb94d374ebb07d9076 .
+
+_:29f1d5ae0f9d4e6fb94d374ebb07d9076 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/ARCHIVE>;
+  rdf:rest _:29f1d5ae0f9d4e6fb94d374ebb07d9077 .
+
+_:29f1d5ae0f9d4e6fb94d374ebb07d9077 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/ONGOING>;
+  rdf:rest _:29f1d5ae0f9d4e6fb94d374ebb07d9078 .
+
+_:29f1d5ae0f9d4e6fb94d374ebb07d9078 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/REQUIRED>;
+  rdf:rest _:29f1d5ae0f9d4e6fb94d374ebb07d9079 .
+
+_:29f1d5ae0f9d4e6fb94d374ebb07d9079 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/OP_DATPRO>;
+  rdf:rest _:29f1d5ae0f9d4e6fb94d374ebb07d90710 .
+
+_:29f1d5ae0f9d4e6fb94d374ebb07d90710 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/DEPRECATED>;
+  rdf:rest rdf:nil .
 
 <https://w3id.org/health-ri/metadata-vocabulary#DistributionShape/dcat:temporalResolution>
   sh:path dcat:temporalResolution;

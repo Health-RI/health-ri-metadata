@@ -84,8 +84,18 @@ hri:DatasetShape a sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
+  sh:in _:5e0157b31afc46ffa0d446c39fa4e28d2;
   dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  dash:editor dash:EnumSelectEditor .
+
+_:5e0157b31afc46ffa0d446c39fa4e28d2 rdf:first <http://publications.europa.eu/resource/authority/access-right/PUBLIC>;
+  rdf:rest _:5e0157b31afc46ffa0d446c39fa4e28d3 .
+
+_:5e0157b31afc46ffa0d446c39fa4e28d3 rdf:first <http://publications.europa.eu/resource/authority/access-right/RESTRICTED>;
+  rdf:rest _:5e0157b31afc46ffa0d446c39fa4e28d4 .
+
+_:5e0157b31afc46ffa0d446c39fa4e28d4 rdf:first <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC>;
+  rdf:rest rdf:nil .
 
 <https://w3id.org/health-ri/metadata-vocabulary#DatasetShape/dct:alternative> sh:path
     dct:alternative;

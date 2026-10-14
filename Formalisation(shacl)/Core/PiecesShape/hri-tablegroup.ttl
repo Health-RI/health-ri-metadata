@@ -40,7 +40,8 @@ hri:aux-TableGroupShape a owl:Ontology;
 hri:TableGroupShape a sh:NodeShape;
   rdfs:label "TableGroup"@en;
   sh:targetClass csvw:TableGroup;
-  sh:property <https://w3id.org/health-ri/metadata-vocabulary#TableGroupShape/csvw:table> .
+  sh:property <https://w3id.org/health-ri/metadata-vocabulary#TableGroupShape/csvw:table>,
+    <https://w3id.org/health-ri/metadata-vocabulary#TableGroupShape/dct:title> .
 
 <https://w3id.org/health-ri/metadata-vocabulary#TableGroupShape/csvw:table> sh:path
     csvw:table;
@@ -50,3 +51,13 @@ hri:TableGroupShape a sh:NodeShape;
   sh:node hri:TableShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
+
+<https://w3id.org/health-ri/metadata-vocabulary#TableGroupShape/dct:title> sh:path
+    dct:title;
+  sh:name "title"@en;
+  sh:description "Table group title."@en;
+  sh:minCount 1;
+  sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .

@@ -63,8 +63,18 @@ hri:DataServiceShape a sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
+  sh:in _:0a871abfb7104a95ab3571d0bc4556f42;
   dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  dash:editor dash:EnumSelectEditor .
+
+_:0a871abfb7104a95ab3571d0bc4556f42 rdf:first <http://publications.europa.eu/resource/authority/access-right/PUBLIC>;
+  rdf:rest _:0a871abfb7104a95ab3571d0bc4556f43 .
+
+_:0a871abfb7104a95ab3571d0bc4556f43 rdf:first <http://publications.europa.eu/resource/authority/access-right/RESTRICTED>;
+  rdf:rest _:0a871abfb7104a95ab3571d0bc4556f44 .
+
+_:0a871abfb7104a95ab3571d0bc4556f44 rdf:first <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC>;
+  rdf:rest rdf:nil .
 
 <https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dcatap:applicableLegislation>
   sh:path dcatap:applicableLegislation;
