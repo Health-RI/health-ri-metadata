@@ -376,6 +376,7 @@ sct:22298006 a skos:Concept .
         a                               vcard:Kind ;
         vcard:hasURL                    <https://www.example.com/website_contactPoint1> ,
                                         <https://www.example.com/website_contactPoint2> ;
+                                        # hasEmail is not using "mailto" prefix 
         vcard:hasEmail                  <contact_point@example.com> ;
         vcard:fn                        "Contact Point" .
 
