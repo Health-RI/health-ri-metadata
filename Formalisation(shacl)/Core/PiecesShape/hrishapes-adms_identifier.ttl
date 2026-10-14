@@ -26,17 +26,36 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix hrishapes: <http://data.health-ri.nl/core/p2/> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 
-hri:aux-ResourceShape a owl:Ontology;
-  rdfs:label "Excel template for Resource class"@en;
-  rdfs:comment "Excel template for Resource class"@en;
-  dct:description "This is an excel template for Resource class in Health RI Core plateau 2."@en;
+hrishapes:aux-IdentifierShape a owl:Ontology;
+  rdfs:label "Excel template for Identifier class"@en;
+  rdfs:comment "Excel template for Identifier class"@en;
+  dct:description "This is an excel template for Identifier class in Health RI Core plateau 2."@en;
   owl:versionInfo "0.1" .
 
-hri:ResourceShape a sh:NodeShape;
-  rdfs:label "Resource"@en;
-  sh:targetClass dcat:Resource .
+hrishapes:IdentifierShape a sh:NodeShape;
+  rdfs:label "Identifier"@en;
+  sh:targetClass adms:Identifier;
+  sh:property <http://data.health-ri.nl/core/p2/IdentifierShape#skos:notation>, <http://data.health-ri.nl/core/p2/IdentifierShape#adms:schemaAgency> .
+
+<http://data.health-ri.nl/core/p2/IdentifierShape#skos:notation> sh:path skos:notation;
+  sh:name "notation"@en;
+  sh:description "A string that is an identifier in the context of the identifier scheme referenced by its datatype."@en;
+  sh:minCount 1;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .
+
+<http://data.health-ri.nl/core/p2/IdentifierShape#adms:schemaAgency> sh:path adms:schemaAgency;
+  sh:name "schema agency"@en;
+  sh:description "The name of the agency that issued the identifier."@en;
+  sh:maxCount 1;
+  sh:nodeKind sh:Literal;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .

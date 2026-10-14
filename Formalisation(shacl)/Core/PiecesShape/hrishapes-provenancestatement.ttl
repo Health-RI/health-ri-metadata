@@ -26,37 +26,28 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix hrishapes: <http://data.health-ri.nl/core/p2/> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 
-hri:aux-QualityCertificateShape a owl:Ontology;
-  rdfs:label "Excel template for QualityCertificate class"@en;
-  rdfs:comment "Excel template for QualityCertificate class"@en;
-  dct:description "This is an excel template for QualityCertificate class in Health RI Core plateau 2."@en;
+hrishapes:aux-ProvenanceStatementShape a owl:Ontology;
+  rdfs:label "Excel template for ProvenanceStatement class"@en;
+  rdfs:comment "Excel template for ProvenanceStatement class"@en;
+  dct:description "This is an excel template for ProvenanceStatement class in Health RI Core plateau 2."@en;
   owl:versionInfo "0.1" .
 
-hri:QualityCertificateShape a sh:NodeShape;
-  rdfs:label "QualityCertificate"@en;
-  sh:targetClass dqv:QualityCertificate;
-  sh:property <https://w3id.org/health-ri/metadata-vocabulary#QualityCertificateShape/oa:hasTarget>,
-    <https://w3id.org/health-ri/metadata-vocabulary#QualityCertificateShape/oa:hasBody> .
+hrishapes:ProvenanceStatementShape a sh:NodeShape;
+  rdfs:label "ProvenanceStatement"@en;
+  sh:targetClass dct:ProvenanceStatement;
+  sh:property <http://data.health-ri.nl/core/p2/ProvenanceStatementShape#rdfs:label> .
 
-<https://w3id.org/health-ri/metadata-vocabulary#QualityCertificateShape/oa:hasTarget>
-  sh:path oa:hasTarget;
-  sh:name "target"@en;
-  sh:description "The relationship between an Annotation and its Target."@en;
-  sh:maxCount 1;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
-
-<https://w3id.org/health-ri/metadata-vocabulary#QualityCertificateShape/oa:hasBody>
-  sh:path oa:hasBody;
-  sh:name "body"@en;
-  sh:description "The object of the relationship is a resource that is a body of the Annotation."@en;
-  sh:maxCount 1;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+<http://data.health-ri.nl/core/p2/ProvenanceStatementShape#rdfs:label> sh:path rdfs:label;
+  sh:name "label"@en;
+  sh:description "In this context, the definition should be considered as: A textual statement describing the provenance of the Dataset, including information about its origin, history, or activities involved in its creation or modification."@en;
+  sh:minCount 1;
+  sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
+  dash:viewer dash:LiteralViewer;
+  dash:editor dash:TextFieldEditor .

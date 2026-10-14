@@ -26,34 +26,36 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix hrishapes: <http://data.health-ri.nl/core/p2/> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 
-hri:aux-ActivityShape a owl:Ontology;
-  rdfs:label "Excel template for Activity class"@en;
-  rdfs:comment "Excel template for Activity class"@en;
-  dct:description "This is an excel template for Activity class in Health RI Core plateau 2."@en;
+hrishapes:aux-QualityCertificateShape a owl:Ontology;
+  rdfs:label "Excel template for QualityCertificate class"@en;
+  rdfs:comment "Excel template for QualityCertificate class"@en;
+  dct:description "This is an excel template for QualityCertificate class in Health RI Core plateau 2."@en;
   owl:versionInfo "0.1" .
 
-hri:ActivityShape a sh:NodeShape;
-  rdfs:label "Activity"@en;
-  sh:targetClass prov:Activity;
-  sh:property <https://w3id.org/health-ri/metadata-vocabulary#ActivityShape/dct:type>,
-    <https://w3id.org/health-ri/metadata-vocabulary#ActivityShape/schema:studyDesign> .
+hrishapes:QualityCertificateShape a sh:NodeShape;
+  rdfs:label "QualityCertificate"@en;
+  sh:targetClass dqv:QualityCertificate;
+  sh:property <http://data.health-ri.nl/core/p2/QualityCertificateShape#oa:hasTarget>,
+    <http://data.health-ri.nl/core/p2/QualityCertificateShape#oa:hasBody> .
 
-<https://w3id.org/health-ri/metadata-vocabulary#ActivityShape/dct:type> sh:path dct:type;
-  sh:name "type"@en;
-  sh:description "The nature or genre of the resource."@en;
+<http://data.health-ri.nl/core/p2/QualityCertificateShape#oa:hasTarget> sh:path oa:hasTarget;
+  sh:name "target"@en;
+  sh:description "The relationship between an Annotation and its Target."@en;
+  sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#ActivityShape/schema:studyDesign>
-  sh:path schema:studyDesign;
-  sh:name "study design"@en;
-  sh:description "Specifics about the observational study design."@en;
+<http://data.health-ri.nl/core/p2/QualityCertificateShape#oa:hasBody> sh:path oa:hasBody;
+  sh:name "body"@en;
+  sh:description "The object of the relationship is a resource that is a body of the Annotation."@en;
+  sh:maxCount 1;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .

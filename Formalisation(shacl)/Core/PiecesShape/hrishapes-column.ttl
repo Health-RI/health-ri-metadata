@@ -26,25 +26,26 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix hrishapes: <http://data.health-ri.nl/core/p2/> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 
-hri:aux-ColumnShape a owl:Ontology;
+hrishapes:aux-ColumnShape a owl:Ontology;
   rdfs:label "Excel template for Column class"@en;
   rdfs:comment "Excel template for Column class"@en;
   dct:description "This is an excel template for Column class in Health RI Core plateau 2."@en;
   owl:versionInfo "0.1" .
 
-hri:ColumnShape a sh:NodeShape;
+hrishapes:ColumnShape a sh:NodeShape;
   rdfs:label "Column"@en;
   sh:targetClass csvw:Column;
-  sh:property <https://w3id.org/health-ri/metadata-vocabulary#ColumnShape/csvw:name>,
-    <https://w3id.org/health-ri/metadata-vocabulary#ColumnShape/csvw:title>, <https://w3id.org/health-ri/metadata-vocabulary#ColumnShape/dct:description>,
-    <https://w3id.org/health-ri/metadata-vocabulary#ColumnShape/csvw:datatype>, <https://w3id.org/health-ri/metadata-vocabulary#ColumnShape/csvw:propertyUrl> .
+  sh:property <http://data.health-ri.nl/core/p2/ColumnShape#csvw:name>, <http://data.health-ri.nl/core/p2/ColumnShape#csvw:title>,
+    <http://data.health-ri.nl/core/p2/ColumnShape#dct:description>, <http://data.health-ri.nl/core/p2/ColumnShape#csvw:datatype>,
+    <http://data.health-ri.nl/core/p2/ColumnShape#csvw:propertyUrl> .
 
-<https://w3id.org/health-ri/metadata-vocabulary#ColumnShape/csvw:name> sh:path csvw:name;
+<http://data.health-ri.nl/core/p2/ColumnShape#csvw:name> sh:path csvw:name;
   sh:name "name"@en;
   sh:description "A technical name given to the Variable as it appears in the CSV file."@en;
   sh:minCount 1;
@@ -53,7 +54,7 @@ hri:ColumnShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#ColumnShape/csvw:title> sh:path csvw:title;
+<http://data.health-ri.nl/core/p2/ColumnShape#csvw:title> sh:path csvw:title;
   sh:name "title"@en;
   sh:description "A human-readable name given to the Variable."@en;
   sh:minCount 1;
@@ -62,8 +63,7 @@ hri:ColumnShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#ColumnShape/dct:description> sh:path
-    dct:description;
+<http://data.health-ri.nl/core/p2/ColumnShape#dct:description> sh:path dct:description;
   sh:name "description"@en;
   sh:description "Variable description."@en;
   sh:minCount 1;
@@ -72,8 +72,7 @@ hri:ColumnShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#ColumnShape/csvw:datatype> sh:path
-    csvw:datatype;
+<http://data.health-ri.nl/core/p2/ColumnShape#csvw:datatype> sh:path csvw:datatype;
   sh:name "datatype"@en;
   sh:description "Specifies the expected datatype of the values in the column."@en;
   sh:minCount 1;
@@ -82,8 +81,7 @@ hri:ColumnShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#ColumnShape/csvw:propertyUrl> sh:path
-    csvw:propertyUrl;
+<http://data.health-ri.nl/core/p2/ColumnShape#csvw:propertyUrl> sh:path csvw:propertyUrl;
   sh:name "property URL"@en;
   sh:description "A URI template used to define the RDF predicate associated with the values in the column, relative to each row."@en;
   sh:maxCount 1;

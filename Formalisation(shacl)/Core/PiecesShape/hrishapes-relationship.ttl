@@ -26,38 +26,35 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix hrishapes: <http://data.health-ri.nl/core/p2/> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 
-hri:aux-TableGroupShape a owl:Ontology;
-  rdfs:label "Excel template for TableGroup class"@en;
-  rdfs:comment "Excel template for TableGroup class"@en;
-  dct:description "This is an excel template for TableGroup class in Health RI Core plateau 2."@en;
+hrishapes:aux-RelationshipShape a owl:Ontology;
+  rdfs:label "Excel template for Relationship class"@en;
+  rdfs:comment "Excel template for Relationship class"@en;
+  dct:description "This is an excel template for Relationship class in Health RI Core plateau 2."@en;
   owl:versionInfo "0.1" .
 
-hri:TableGroupShape a sh:NodeShape;
-  rdfs:label "TableGroup"@en;
-  sh:targetClass csvw:TableGroup;
-  sh:property <https://w3id.org/health-ri/metadata-vocabulary#TableGroupShape/csvw:table>,
-    <https://w3id.org/health-ri/metadata-vocabulary#TableGroupShape/dct:title> .
+hrishapes:RelationshipShape a sh:NodeShape;
+  rdfs:label "Relationship"@en;
+  sh:targetClass dcat:Relationship;
+  sh:property <http://data.health-ri.nl/core/p2/RelationshipShape#dcat:hadRole>, <http://data.health-ri.nl/core/p2/RelationshipShape#dct:relation> .
 
-<https://w3id.org/health-ri/metadata-vocabulary#TableGroupShape/csvw:table> sh:path
-    csvw:table;
-  sh:name "table"@en;
-  sh:description "A table is a single CSV file within a CSVW Table Group."@en;
+<http://data.health-ri.nl/core/p2/RelationshipShape#dcat:hadRole> sh:path dcat:hadRole;
+  sh:name "had role"@en;
+  sh:description "The function of an entity or agent with respect to another entity or resource."@en;
   sh:minCount 1;
-  sh:node hri:TableShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#TableGroupShape/dct:title> sh:path
-    dct:title;
-  sh:name "title"@en;
-  sh:description "Table group title."@en;
+<http://data.health-ri.nl/core/p2/RelationshipShape#dct:relation> sh:path dct:relation;
+  sh:name "relation"@en;
+  sh:description "A related resource."@en;
   sh:minCount 1;
-  sh:nodeKind sh:Literal;
-  sh:uniqueLang true;
-  dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextFieldEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .

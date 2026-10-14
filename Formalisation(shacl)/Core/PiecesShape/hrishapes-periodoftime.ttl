@@ -26,53 +26,39 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix hrishapes: <http://data.health-ri.nl/core/p2/> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 
-hri:aux-TableShape a owl:Ontology;
-  rdfs:label "Excel template for Table class"@en;
-  rdfs:comment "Excel template for Table class"@en;
-  dct:description "This is an excel template for Table class in Health RI Core plateau 2."@en;
+hrishapes:aux-PeriodOfTimeShape a owl:Ontology;
+  rdfs:label "Excel template for PeriodOfTime class"@en;
+  rdfs:comment "Excel template for PeriodOfTime class"@en;
+  dct:description "This is an excel template for PeriodOfTime class in Health RI Core plateau 2."@en;
   owl:versionInfo "0.1" .
 
-hri:TableShape a sh:NodeShape;
-  rdfs:label "Table"@en;
-  sh:targetClass csvw:Table;
-  sh:property <https://w3id.org/health-ri/metadata-vocabulary#TableShape/csvw:url>,
-    <https://w3id.org/health-ri/metadata-vocabulary#TableShape/dct:title>, <https://w3id.org/health-ri/metadata-vocabulary#TableShape/dcat:keyword>,
-    <https://w3id.org/health-ri/metadata-vocabulary#TableShape/csvw:column> .
+hrishapes:PeriodOfTimeShape a sh:NodeShape;
+  rdfs:label "PeriodOfTime"@en;
+  sh:targetClass dct:PeriodOfTime;
+  sh:property <http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:endDate>, <http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:startDate> .
 
-<https://w3id.org/health-ri/metadata-vocabulary#TableShape/csvw:url> sh:path csvw:url;
-  sh:name "url"@en;
-  sh:description "The URL of the CSV file to which this table refers."@en;
+<http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:endDate> sh:path dcat:endDate;
+  sh:name "end date"@en;
+  sh:description "The end of the period."@en;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
-  sh:datatype xsd:anyURI;
+  sh:datatype xsd:dateTime;
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextFieldEditor .
+  dash:editor dash:DateTimePickerEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#TableShape/dct:title> sh:path dct:title;
-  sh:name "title"@en;
-  sh:description "Table title."@en;
-  sh:minCount 1;
+<http://data.health-ri.nl/core/p2/PeriodOfTimeShape#dcat:startDate> sh:path dcat:startDate;
+  sh:name "start date"@en;
+  sh:description "The start of the period."@en;
+  sh:maxCount 1;
   sh:nodeKind sh:Literal;
-  sh:uniqueLang true;
+  sh:datatype xsd:dateTime;
+  sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$";
   dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextFieldEditor .
-
-<https://w3id.org/health-ri/metadata-vocabulary#TableShape/dcat:keyword> sh:path dcat:keyword;
-  sh:name "keyword"@en;
-  sh:description "A keyword or tag describing the table."@en;
-  sh:nodeKind sh:Literal;
-  dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextFieldEditor .
-
-<https://w3id.org/health-ri/metadata-vocabulary#TableShape/csvw:column> sh:path csvw:column;
-  sh:name "column"@en;
-  sh:description "A variable (column) defines metadata about one field in the CSV file."@en;
-  sh:minCount 1;
-  sh:node hri:ColumnShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  dash:editor dash:DateTimePickerEditor .

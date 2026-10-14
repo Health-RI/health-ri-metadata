@@ -26,50 +26,48 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix hrishapes: <http://data.health-ri.nl/core/p2/> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 
-hri:aux-CatalogShape a owl:Ontology;
+hrishapes:aux-CatalogShape a owl:Ontology;
   rdfs:label "Excel template for Catalog class"@en;
   rdfs:comment "Excel template for Catalog class"@en;
   dct:description "This is an excel template for Catalog class in Health RI Core plateau 2."@en;
   owl:versionInfo "0.1" .
 
-hri:CatalogShape a sh:NodeShape;
+hrishapes:CatalogShape a sh:NodeShape;
   rdfs:label "Catalog"@en;
   sh:targetClass dcat:Catalog;
-  sh:property <https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dcatap:applicableLegislation>,
-    <https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dcat:catalog>, <https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dcat:contactPoint>,
-    <https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dct:creator>, <https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dcat:dataset>,
-    <https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dct:description>, <https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dct:spatial>,
-    <https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dct:hasPart>, <https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/foaf:homepage>,
-    <https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dct:language>, <https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dct:license>,
-    <https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dct:modified>, <https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dct:publisher>,
-    <https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dct:issued>, <https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dct:rights>,
-    <https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dcat:service>, <https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dct:temporal>,
-    <https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dcat:themeTaxonomy>,
-    <https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dct:title> .
+  sh:property <http://data.health-ri.nl/core/p2/CatalogShape#dcatap:applicableLegislation>,
+    <http://data.health-ri.nl/core/p2/CatalogShape#dcat:catalog>, <http://data.health-ri.nl/core/p2/CatalogShape#dcat:contactPoint>,
+    <http://data.health-ri.nl/core/p2/CatalogShape#dct:creator>, <http://data.health-ri.nl/core/p2/CatalogShape#dcat:dataset>,
+    <http://data.health-ri.nl/core/p2/CatalogShape#dct:description>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:spatial>,
+    <http://data.health-ri.nl/core/p2/CatalogShape#dct:hasPart>, <http://data.health-ri.nl/core/p2/CatalogShape#foaf:homepage>,
+    <http://data.health-ri.nl/core/p2/CatalogShape#dct:language>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:license>,
+    <http://data.health-ri.nl/core/p2/CatalogShape#dct:modified>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:publisher>,
+    <http://data.health-ri.nl/core/p2/CatalogShape#dct:issued>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:rights>,
+    <http://data.health-ri.nl/core/p2/CatalogShape#dcat:service>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:temporal>,
+    <http://data.health-ri.nl/core/p2/CatalogShape#dcat:themeTaxonomy>, <http://data.health-ri.nl/core/p2/CatalogShape#dct:title> .
 
-<https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dcatap:applicableLegislation>
-  sh:path dcatap:applicableLegislation;
+<http://data.health-ri.nl/core/p2/CatalogShape#dcatap:applicableLegislation> sh:path
+    dcatap:applicableLegislation;
   sh:name "applicable legislation"@en;
   sh:description "The legislation that is applicable to this resource."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dcat:catalog> sh:path
-    dcat:catalog;
+<http://data.health-ri.nl/core/p2/CatalogShape#dcat:catalog> sh:path dcat:catalog;
   sh:name "catalogue"@en;
   sh:description "A catalogue that is listed in the catalogue."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dcat:contactPoint> sh:path
-    dcat:contactPoint;
+<http://data.health-ri.nl/core/p2/CatalogShape#dcat:contactPoint> sh:path dcat:contactPoint;
   sh:name "contact point"@en;
   sh:description "Relevant contact information for the catalogued resource."@en;
   sh:minCount 1;
@@ -78,24 +76,21 @@ hri:CatalogShape a sh:NodeShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dct:creator> sh:path
-    dct:creator;
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:creator> sh:path dct:creator;
   sh:name "creator"@en;
   sh:description "An entity responsible for making the resource."@en;
   sh:node hri:AgentShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dcat:dataset> sh:path
-    dcat:dataset;
+<http://data.health-ri.nl/core/p2/CatalogShape#dcat:dataset> sh:path dcat:dataset;
   sh:name "dataset"@en;
   sh:description "A dataset that is listed in the catalogue."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dct:description> sh:path
-    dct:description;
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:description> sh:path dct:description;
   sh:name "description"@en;
   sh:description "An account of the resource."@en;
   sh:minCount 1;
@@ -104,24 +99,21 @@ hri:CatalogShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dct:spatial> sh:path
-    dct:spatial;
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:spatial> sh:path dct:spatial;
   sh:name "geographical coverage"@en;
   sh:description "Spatial characteristics of the resource."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dct:hasPart> sh:path
-    dct:hasPart;
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:hasPart> sh:path dct:hasPart;
   sh:name "has part"@en;
   sh:description "A related resource that is included either physically or logically in the described resource."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/foaf:homepage> sh:path
-    foaf:homepage;
+<http://data.health-ri.nl/core/p2/CatalogShape#foaf:homepage> sh:path foaf:homepage;
   sh:name "home page"@en;
   sh:description "A homepage for some thing."@en;
   sh:maxCount 1;
@@ -129,16 +121,14 @@ hri:CatalogShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dct:language> sh:path
-    dct:language;
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:language> sh:path dct:language;
   sh:name "language"@en;
   sh:description "A language of the resource."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dct:license> sh:path
-    dct:license;
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:license> sh:path dct:license;
   sh:name "licence"@en;
   sh:description "A legal document giving official permission to do something with the resource."@en;
   sh:maxCount 1;
@@ -146,8 +136,7 @@ hri:CatalogShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dct:modified> sh:path
-    dct:modified;
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:modified> sh:path dct:modified;
   sh:name "modification date"@en;
   sh:description "Date on which the resource was changed."@en;
   sh:maxCount 1;
@@ -157,8 +146,7 @@ hri:CatalogShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dct:publisher> sh:path
-    dct:publisher;
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:publisher> sh:path dct:publisher;
   sh:name "publisher"@en;
   sh:description "An entity responsible for making the resource available."@en;
   sh:minCount 1;
@@ -167,7 +155,7 @@ hri:CatalogShape a sh:NodeShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dct:issued> sh:path dct:issued;
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:issued> sh:path dct:issued;
   sh:name "release date"@en;
   sh:description "Date of formal issuance of the resource."@en;
   sh:maxCount 1;
@@ -177,7 +165,7 @@ hri:CatalogShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dct:rights> sh:path dct:rights;
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:rights> sh:path dct:rights;
   sh:name "rights"@en;
   sh:description "Information about rights held in and over the resource."@en;
   sh:maxCount 1;
@@ -185,30 +173,27 @@ hri:CatalogShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dcat:service> sh:path
-    dcat:service;
+<http://data.health-ri.nl/core/p2/CatalogShape#dcat:service> sh:path dcat:service;
   sh:name "service"@en;
   sh:description "A service that is listed in the catalogue."@en;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dct:temporal> sh:path
-    dct:temporal;
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:temporal> sh:path dct:temporal;
   sh:name "temporal coverage"@en;
   sh:description "Temporal characteristics of the resource."@en;
   sh:node hri:PeriodOfTimeShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dcat:themeTaxonomy> sh:path
-    dcat:themeTaxonomy;
+<http://data.health-ri.nl/core/p2/CatalogShape#dcat:themeTaxonomy> sh:path dcat:themeTaxonomy;
   sh:name "themes"@en;
   sh:description "A main category of the resource. A resource can have multiple themes."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#CatalogShape/dct:title> sh:path dct:title;
+<http://data.health-ri.nl/core/p2/CatalogShape#dct:title> sh:path dct:title;
   sh:name "title"@en;
   sh:description "A name given to the resource."@en;
   sh:minCount 1;

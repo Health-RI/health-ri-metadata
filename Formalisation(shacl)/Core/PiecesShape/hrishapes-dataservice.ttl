@@ -26,74 +26,69 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix hrishapes: <http://data.health-ri.nl/core/p2/> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 
-hri:aux-DataServiceShape a owl:Ontology;
+hrishapes:aux-DataServiceShape a owl:Ontology;
   rdfs:label "Excel template for DataService class"@en;
   rdfs:comment "Excel template for DataService class"@en;
   dct:description "This is an excel template for DataService class in Health RI Core plateau 2."@en;
   owl:versionInfo "0.1" .
 
-hri:DataServiceShape a sh:NodeShape;
+hrishapes:DataServiceShape a sh:NodeShape;
   rdfs:label "DataService"@en;
   sh:targetClass dcat:DataService;
-  sh:property <https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dct:accessRights>,
-    <https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dcatap:applicableLegislation>,
-    <https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dct:conformsTo>,
-    <https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dcat:contactPoint>,
-    <https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dct:creator>, <https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dct:rights>,
-    <https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dct:description>,
-    <https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dcat:endpointDescription>,
-    <https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dcat:endpointURL>,
-    <https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dct:format>, <https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dcatap:hvdCategory>,
-    <https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dct:identifier>,
-    <https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dcat:keyword>, <https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dcat:landingPage>,
-    <https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dct:language>, <https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dct:license>,
-    <https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dct:modified>, <https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/adms:identifier>,
-    <https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dct:publisher>, <https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dcat:servesDataset>,
-    <https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dcat:theme>, <https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dct:title> .
+  sh:property <http://data.health-ri.nl/core/p2/DataServiceShape#dct:accessRights>,
+    <http://data.health-ri.nl/core/p2/DataServiceShape#dcatap:applicableLegislation>,
+    <http://data.health-ri.nl/core/p2/DataServiceShape#dct:conformsTo>, <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:contactPoint>,
+    <http://data.health-ri.nl/core/p2/DataServiceShape#dct:creator>, <http://data.health-ri.nl/core/p2/DataServiceShape#dct:rights>,
+    <http://data.health-ri.nl/core/p2/DataServiceShape#dct:description>, <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:endpointDescription>,
+    <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:endpointURL>, <http://data.health-ri.nl/core/p2/DataServiceShape#dct:format>,
+    <http://data.health-ri.nl/core/p2/DataServiceShape#dcatap:hvdCategory>, <http://data.health-ri.nl/core/p2/DataServiceShape#dct:identifier>,
+    <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:keyword>, <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:landingPage>,
+    <http://data.health-ri.nl/core/p2/DataServiceShape#dct:language>, <http://data.health-ri.nl/core/p2/DataServiceShape#dct:license>,
+    <http://data.health-ri.nl/core/p2/DataServiceShape#dct:modified>, <http://data.health-ri.nl/core/p2/DataServiceShape#adms:identifier>,
+    <http://data.health-ri.nl/core/p2/DataServiceShape#dct:publisher>, <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:servesDataset>,
+    <http://data.health-ri.nl/core/p2/DataServiceShape#dcat:theme>, <http://data.health-ri.nl/core/p2/DataServiceShape#dct:title> .
 
-<https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dct:accessRights>
-  sh:path dct:accessRights;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:accessRights> sh:path dct:accessRights;
   sh:name "access rights"@en;
   sh:description "Information about who can access the resource or an indication of its security status."@en;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:0a871abfb7104a95ab3571d0bc4556f42;
+  sh:in _:ac57721d3f2d48b39b1758701ecfab0c2;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:0a871abfb7104a95ab3571d0bc4556f42 rdf:first <http://publications.europa.eu/resource/authority/access-right/PUBLIC>;
-  rdf:rest _:0a871abfb7104a95ab3571d0bc4556f43 .
+_:ac57721d3f2d48b39b1758701ecfab0c2 rdf:first <http://publications.europa.eu/resource/authority/access-right/PUBLIC>;
+  rdf:rest _:ac57721d3f2d48b39b1758701ecfab0c3 .
 
-_:0a871abfb7104a95ab3571d0bc4556f43 rdf:first <http://publications.europa.eu/resource/authority/access-right/RESTRICTED>;
-  rdf:rest _:0a871abfb7104a95ab3571d0bc4556f44 .
+_:ac57721d3f2d48b39b1758701ecfab0c3 rdf:first <http://publications.europa.eu/resource/authority/access-right/RESTRICTED>;
+  rdf:rest _:ac57721d3f2d48b39b1758701ecfab0c4 .
 
-_:0a871abfb7104a95ab3571d0bc4556f44 rdf:first <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC>;
+_:ac57721d3f2d48b39b1758701ecfab0c4 rdf:first <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC>;
   rdf:rest rdf:nil .
 
-<https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dcatap:applicableLegislation>
-  sh:path dcatap:applicableLegislation;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dcatap:applicableLegislation> sh:path
+    dcatap:applicableLegislation;
   sh:name "applicable legislation"@en;
   sh:description "The legislation that is applicable to this resource."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dct:conformsTo> sh:path
-    dct:conformsTo;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:conformsTo> sh:path dct:conformsTo;
   sh:name "application profile"@en;
   sh:description "An established standard to which the described resource conforms."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dcat:contactPoint>
-  sh:path dcat:contactPoint;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dcat:contactPoint> sh:path dcat:contactPoint;
   sh:name "contact point"@en;
   sh:description "Relevant contact information for the catalogued resource."@en;
   sh:minCount 1;
@@ -102,24 +97,21 @@ _:0a871abfb7104a95ab3571d0bc4556f44 rdf:first <http://publications.europa.eu/res
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dct:creator> sh:path
-    dct:creator;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:creator> sh:path dct:creator;
   sh:name "creator"@en;
   sh:description "An entity responsible for making the resource."@en;
   sh:node hri:AgentShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dct:rights> sh:path
-    dct:rights;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:rights> sh:path dct:rights;
   sh:name "rights"@en;
   sh:description "Information about rights held in and over the resource."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dct:description>
-  sh:path dct:description;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:description> sh:path dct:description;
   sh:name "description"@en;
   sh:description "An account of the resource."@en;
   sh:minCount 1;
@@ -128,8 +120,8 @@ _:0a871abfb7104a95ab3571d0bc4556f44 rdf:first <http://publications.europa.eu/res
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dcat:endpointDescription>
-  sh:path dcat:endpointDescription;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dcat:endpointDescription> sh:path
+    dcat:endpointDescription;
   sh:name "endpoint description"@en;
   sh:description "A description of the services available via the endpoints, including their operations, parameters, etc."@en;
   sh:minCount 1;
@@ -138,8 +130,7 @@ _:0a871abfb7104a95ab3571d0bc4556f44 rdf:first <http://publications.europa.eu/res
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dcat:endpointURL>
-  sh:path dcat:endpointURL;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dcat:endpointURL> sh:path dcat:endpointURL;
   sh:name "endpoint URL"@en;
   sh:description "The root location or primary endpoint of the service (a Web-resolvable IRI)."@en;
   sh:minCount 1;
@@ -148,24 +139,21 @@ _:0a871abfb7104a95ab3571d0bc4556f44 rdf:first <http://publications.europa.eu/res
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dct:format> sh:path
-    dct:format;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:format> sh:path dct:format;
   sh:name "format"@en;
   sh:description "The file format, physical medium, or dimensions of the resource."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dcatap:hvdCategory>
-  sh:path dcatap:hvdCategory;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dcatap:hvdCategory> sh:path dcatap:hvdCategory;
   sh:name "HVD Category"@en;
   sh:description "A data category defined in the High Value Dataset Implementing Regulation."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dct:identifier> sh:path
-    dct:identifier;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:identifier> sh:path dct:identifier;
   sh:name "identifier"@en;
   sh:description "An unambiguous reference to the resource within a given context."@en;
   sh:minCount 1;
@@ -174,32 +162,28 @@ _:0a871abfb7104a95ab3571d0bc4556f44 rdf:first <http://publications.europa.eu/res
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dcat:keyword> sh:path
-    dcat:keyword;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dcat:keyword> sh:path dcat:keyword;
   sh:name "keyword"@en;
   sh:description "A keyword or tag describing the resource."@en;
   sh:nodeKind sh:Literal;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dcat:landingPage>
-  sh:path dcat:landingPage;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dcat:landingPage> sh:path dcat:landingPage;
   sh:name "landing page"@en;
   sh:description "A Web page that can be navigated to in a Web browser to gain access to the catalogue, a dataset, its distributions and/or additional information."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dct:language> sh:path
-    dct:language;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:language> sh:path dct:language;
   sh:name "language"@en;
   sh:description "A language of the resource."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dct:license> sh:path
-    dct:license;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:license> sh:path dct:license;
   sh:name "licence"@en;
   sh:description "A legal document giving official permission to do something with the resource."@en;
   sh:minCount 1;
@@ -208,8 +192,7 @@ _:0a871abfb7104a95ab3571d0bc4556f44 rdf:first <http://publications.europa.eu/res
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dct:modified> sh:path
-    dct:modified;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:modified> sh:path dct:modified;
   sh:name "modification date"@en;
   sh:description "Date on which the resource was changed."@en;
   sh:maxCount 1;
@@ -219,16 +202,14 @@ _:0a871abfb7104a95ab3571d0bc4556f44 rdf:first <http://publications.europa.eu/res
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/adms:identifier>
-  sh:path adms:identifier;
+<http://data.health-ri.nl/core/p2/DataServiceShape#adms:identifier> sh:path adms:identifier;
   sh:name "other identifier"@en;
   sh:description "Links a resource to an adms:Identifier class."@en;
   sh:node hri:IdentifierShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dct:publisher> sh:path
-    dct:publisher;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:publisher> sh:path dct:publisher;
   sh:name "publisher"@en;
   sh:description "An entity responsible for making the resource available."@en;
   sh:minCount 1;
@@ -237,16 +218,14 @@ _:0a871abfb7104a95ab3571d0bc4556f44 rdf:first <http://publications.europa.eu/res
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dcat:servesDataset>
-  sh:path dcat:servesDataset;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dcat:servesDataset> sh:path dcat:servesDataset;
   sh:name "serves dataset"@en;
   sh:description "A collection of data that this data service can distribute."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dcat:theme> sh:path
-    dcat:theme;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dcat:theme> sh:path dcat:theme;
   sh:name "theme"@en;
   sh:description "A main category of the resource. A resource can have multiple themes."@en;
   sh:minCount 1;
@@ -255,8 +234,7 @@ _:0a871abfb7104a95ab3571d0bc4556f44 rdf:first <http://publications.europa.eu/res
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#DataServiceShape/dct:title> sh:path
-    dct:title;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:title> sh:path dct:title;
   sh:name "title"@en;
   sh:description "A name given to the resource."@en;
   sh:minCount 1;

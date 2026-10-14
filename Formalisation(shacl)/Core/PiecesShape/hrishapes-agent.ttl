@@ -26,34 +26,34 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix hrishapes: <http://data.health-ri.nl/core/p2/> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 
-hri:aux-AgentShape a owl:Ontology;
+hrishapes:aux-AgentShape a owl:Ontology;
   rdfs:label "Excel template for Agent class"@en;
   rdfs:comment "Excel template for Agent class"@en;
   dct:description "This is an excel template for Agent class in Health RI Core plateau 2."@en;
   owl:versionInfo "0.1" .
 
-hri:AgentShape a sh:NodeShape;
+hrishapes:AgentShape a sh:NodeShape;
   rdfs:label "Agent"@en;
   sh:targetClass foaf:Agent;
-  sh:property <https://w3id.org/health-ri/metadata-vocabulary#AgentShape/dct:spatial>,
-    <https://w3id.org/health-ri/metadata-vocabulary#AgentShape/foaf:mbox>, <https://w3id.org/health-ri/metadata-vocabulary#AgentShape/dct:identifier>,
-    <https://w3id.org/health-ri/metadata-vocabulary#AgentShape/foaf:name>, <https://w3id.org/health-ri/metadata-vocabulary#AgentShape/healthdcatap:publishernote>,
-    <https://w3id.org/health-ri/metadata-vocabulary#AgentShape/healthdcatap:publishertype>,
-    <https://w3id.org/health-ri/metadata-vocabulary#AgentShape/dct:type>, <https://w3id.org/health-ri/metadata-vocabulary#AgentShape/foaf:homepage> .
+  sh:property <http://data.health-ri.nl/core/p2/AgentShape#dct:spatial>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:mbox>,
+    <http://data.health-ri.nl/core/p2/AgentShape#dct:identifier>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:name>,
+    <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishernote>, <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishertype>,
+    <http://data.health-ri.nl/core/p2/AgentShape#dct:type>, <http://data.health-ri.nl/core/p2/AgentShape#foaf:homepage> .
 
-<https://w3id.org/health-ri/metadata-vocabulary#AgentShape/dct:spatial> sh:path dct:spatial;
+<http://data.health-ri.nl/core/p2/AgentShape#dct:spatial> sh:path dct:spatial;
   sh:name "country"@en;
   sh:description "Spatial characteristics of the resource."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#AgentShape/foaf:mbox> sh:path foaf:mbox;
+<http://data.health-ri.nl/core/p2/AgentShape#foaf:mbox> sh:path foaf:mbox;
   sh:name "email"@en;
   sh:description "An email address via which contact can be made. This property SHOULD be used to provide the email address of the Agent, specified using the fully qualified mailto: URI scheme defined in RFC 6068. The email SHOULD be used to establish a communication channel to the agent."@en;
   sh:minCount 1;
@@ -63,8 +63,7 @@ hri:AgentShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#AgentShape/dct:identifier> sh:path
-    dct:identifier;
+<http://data.health-ri.nl/core/p2/AgentShape#dct:identifier> sh:path dct:identifier;
   sh:name "identifier"@en;
   sh:description "An unambiguous reference to the resource within a given context."@en;
   sh:minCount 1;
@@ -72,7 +71,7 @@ hri:AgentShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#AgentShape/foaf:name> sh:path foaf:name;
+<http://data.health-ri.nl/core/p2/AgentShape#foaf:name> sh:path foaf:name;
   sh:name "name"@en;
   sh:description "A name for some thing."@en;
   sh:minCount 1;
@@ -81,8 +80,7 @@ hri:AgentShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#AgentShape/healthdcatap:publishernote>
-  sh:path healthdcatap:publishernote;
+<http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishernote> sh:path healthdcatap:publishernote;
   sh:name "publisher note"@en;
   sh:description "A description of the publisher's activities."@en;
   sh:maxCount 1;
@@ -91,8 +89,7 @@ hri:AgentShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#AgentShape/healthdcatap:publishertype>
-  sh:path healthdcatap:publishertype;
+<http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishertype> sh:path healthdcatap:publishertype;
   sh:name "publisher type"@en;
   sh:description "A type of organisation that makes the Dataset available."@en;
   sh:maxCount 1;
@@ -100,7 +97,7 @@ hri:AgentShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#AgentShape/dct:type> sh:path dct:type;
+<http://data.health-ri.nl/core/p2/AgentShape#dct:type> sh:path dct:type;
   sh:name "type"@en;
   sh:description "The nature or genre of the resource."@en;
   sh:maxCount 1;
@@ -108,8 +105,7 @@ hri:AgentShape a sh:NodeShape;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#AgentShape/foaf:homepage> sh:path
-    foaf:homepage;
+<http://data.health-ri.nl/core/p2/AgentShape#foaf:homepage> sh:path foaf:homepage;
   sh:name "URL"@en;
   sh:description "A homepage for some thing."@en;
   sh:minCount 1;

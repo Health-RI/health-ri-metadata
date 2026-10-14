@@ -26,38 +26,36 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix hrishapes: <http://data.health-ri.nl/core/p2/> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 
-hri:aux-IdentifierShape a owl:Ontology;
-  rdfs:label "Excel template for Identifier class"@en;
-  rdfs:comment "Excel template for Identifier class"@en;
-  dct:description "This is an excel template for Identifier class in Health RI Core plateau 2."@en;
+hrishapes:aux-TableGroupShape a owl:Ontology;
+  rdfs:label "Excel template for TableGroup class"@en;
+  rdfs:comment "Excel template for TableGroup class"@en;
+  dct:description "This is an excel template for TableGroup class in Health RI Core plateau 2."@en;
   owl:versionInfo "0.1" .
 
-hri:IdentifierShape a sh:NodeShape;
-  rdfs:label "Identifier"@en;
-  sh:targetClass adms:Identifier;
-  sh:property <https://w3id.org/health-ri/metadata-vocabulary#IdentifierShape/skos:notation>,
-    <https://w3id.org/health-ri/metadata-vocabulary#IdentifierShape/adms:schemaAgency> .
+hrishapes:TableGroupShape a sh:NodeShape;
+  rdfs:label "TableGroup"@en;
+  sh:targetClass csvw:TableGroup;
+  sh:property <http://data.health-ri.nl/core/p2/TableGroupShape#csvw:table>, <http://data.health-ri.nl/core/p2/TableGroupShape#dct:title> .
 
-<https://w3id.org/health-ri/metadata-vocabulary#IdentifierShape/skos:notation> sh:path
-    skos:notation;
-  sh:name "notation"@en;
-  sh:description "A string that is an identifier in the context of the identifier scheme referenced by its datatype."@en;
+<http://data.health-ri.nl/core/p2/TableGroupShape#csvw:table> sh:path csvw:table;
+  sh:name "table"@en;
+  sh:description "A table is a single CSV file within a CSVW Table Group."@en;
   sh:minCount 1;
-  sh:maxCount 1;
-  sh:nodeKind sh:Literal;
-  dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextFieldEditor .
+  sh:node hri:TableShape;
+  dash:viewer dash:DetailsViewer;
+  dash:editor dash:BlankNodeEditor .
 
-<https://w3id.org/health-ri/metadata-vocabulary#IdentifierShape/adms:schemaAgency>
-  sh:path adms:schemaAgency;
-  sh:name "schema agency"@en;
-  sh:description "The name of the agency that issued the identifier."@en;
-  sh:maxCount 1;
+<http://data.health-ri.nl/core/p2/TableGroupShape#dct:title> sh:path dct:title;
+  sh:name "title"@en;
+  sh:description "Table group title."@en;
+  sh:minCount 1;
   sh:nodeKind sh:Literal;
+  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
