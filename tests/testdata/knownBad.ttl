@@ -25,10 +25,10 @@
 # - Dataset.has_topic is not using a term from the EDAM ontology
 # - Distribution.availability is not using controlled vocabulary 
 # - Kind.hasEmail not using "mailto" prefix 
-# - Dataset.has_topic is not using a term from the EDAM ontology   
 # - Dataset.measurement_technique is not using a value from the correct value list  
 # - Dataset.anatomical_location is not using a term from SNOMED
-#  - Dataset.health_condition is not using a term from SNOMED, ICD-10 or ORPHAcodes
+# - Dataset.health_condition is not using a term from SNOMED, ICD-10 or ORPHAcodes
+# - TableGroup.title is missing 
 
 <http://www.example.com/test_dataset>
         a                               dcat:Resource , dcat:Dataset ;
@@ -156,8 +156,8 @@
 
 <internalURI:tableGroup0>
         a                              csvw:TableGroup ;
-        csvw:table                     <internalURI:table0> ;
-        dct:title                      "my table group"@en .
+        csvw:table                     <internalURI:table0> .
+                                        # ERROR: TableGroup.title is missing
 
 <internalURI:table0>
         a                              csvw:Table ;
