@@ -58,6 +58,7 @@ hrishapes:DistributionShape a sh:NodeShape;
   sh:name "access service"@en;
   sh:description "A data service that gives access to the distribution of the dataset."@en;
   sh:maxCount 1;
+  sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
@@ -83,7 +84,7 @@ hrishapes:DistributionShape a sh:NodeShape;
   sh:description "An indication of how long it is planned to keep the Distribution of the Dataset available."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#dcat:byteSize> sh:path dcat:byteSize;
@@ -99,7 +100,7 @@ hrishapes:DistributionShape a sh:NodeShape;
   sh:name "checksum"@en;
   sh:description "The checksum property provides a mechanism that can be used to verify that the contents of a file or package have not changed."@en;
   sh:maxCount 1;
-  sh:node hri:ChecksumShape;
+  sh:node hrishapes:ChecksumShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
@@ -108,7 +109,7 @@ hrishapes:DistributionShape a sh:NodeShape;
   sh:description "The compression format of the distribution in which the data is compressed, e.g., to reduce the size of the downloadable file."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#dct:description> sh:path dct:description;
@@ -139,14 +140,14 @@ hrishapes:DistributionShape a sh:NodeShape;
   sh:description "The file format, physical medium, or dimensions of the resource."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#dct:language> sh:path dct:language;
   sh:name "language"@en;
   sh:description "A language of the resource."@en;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#dct:license> sh:path dct:license;
@@ -170,7 +171,7 @@ hrishapes:DistributionShape a sh:NodeShape;
   sh:description "The media type of the distribution as defined by IANA."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#dct:modified> sh:path dct:modified;
@@ -188,7 +189,7 @@ hrishapes:DistributionShape a sh:NodeShape;
   sh:description "The package format of the distribution in which one or more data files are grouped together, e.g., to enable a set of related files to be downloaded together."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#dct:issued> sh:path dct:issued;
@@ -206,7 +207,7 @@ hrishapes:DistributionShape a sh:NodeShape;
   sh:name "retention period"@en;
   sh:description "A temporal period during which the dataset is available for secondary use."@en;
   sh:maxCount 1;
-  sh:node hri:PeriodOfTimeShape;
+  sh:node hrishapes:PeriodOfTimeShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
@@ -223,35 +224,35 @@ hrishapes:DistributionShape a sh:NodeShape;
   sh:description "The status of the Asset in the context of a particular workflow process."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:2a532c9791ef44979b25051b7e35ec1d2;
-  dash:viewer dash:URIViewer;
+  sh:in _:0135e3961de1449fbb916fd6ba72d7512;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:2a532c9791ef44979b25051b7e35ec1d2 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/COMPLETED>;
-  rdf:rest _:2a532c9791ef44979b25051b7e35ec1d3 .
+_:0135e3961de1449fbb916fd6ba72d7512 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/COMPLETED>;
+  rdf:rest _:0135e3961de1449fbb916fd6ba72d7513 .
 
-_:2a532c9791ef44979b25051b7e35ec1d3 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/DEVELOP>;
-  rdf:rest _:2a532c9791ef44979b25051b7e35ec1d4 .
+_:0135e3961de1449fbb916fd6ba72d7513 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/DEVELOP>;
+  rdf:rest _:0135e3961de1449fbb916fd6ba72d7514 .
 
-_:2a532c9791ef44979b25051b7e35ec1d4 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/WITHDRAWN>;
-  rdf:rest _:2a532c9791ef44979b25051b7e35ec1d5 .
+_:0135e3961de1449fbb916fd6ba72d7514 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/WITHDRAWN>;
+  rdf:rest _:0135e3961de1449fbb916fd6ba72d7515 .
 
-_:2a532c9791ef44979b25051b7e35ec1d5 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/PLANNED>;
-  rdf:rest _:2a532c9791ef44979b25051b7e35ec1d6 .
+_:0135e3961de1449fbb916fd6ba72d7515 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/PLANNED>;
+  rdf:rest _:0135e3961de1449fbb916fd6ba72d7516 .
 
-_:2a532c9791ef44979b25051b7e35ec1d6 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/ARCHIVE>;
-  rdf:rest _:2a532c9791ef44979b25051b7e35ec1d7 .
+_:0135e3961de1449fbb916fd6ba72d7516 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/ARCHIVE>;
+  rdf:rest _:0135e3961de1449fbb916fd6ba72d7517 .
 
-_:2a532c9791ef44979b25051b7e35ec1d7 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/ONGOING>;
-  rdf:rest _:2a532c9791ef44979b25051b7e35ec1d8 .
+_:0135e3961de1449fbb916fd6ba72d7517 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/ONGOING>;
+  rdf:rest _:0135e3961de1449fbb916fd6ba72d7518 .
 
-_:2a532c9791ef44979b25051b7e35ec1d8 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/REQUIRED>;
-  rdf:rest _:2a532c9791ef44979b25051b7e35ec1d9 .
+_:0135e3961de1449fbb916fd6ba72d7518 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/REQUIRED>;
+  rdf:rest _:0135e3961de1449fbb916fd6ba72d7519 .
 
-_:2a532c9791ef44979b25051b7e35ec1d9 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/OP_DATPRO>;
-  rdf:rest _:2a532c9791ef44979b25051b7e35ec1d10 .
+_:0135e3961de1449fbb916fd6ba72d7519 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/OP_DATPRO>;
+  rdf:rest _:0135e3961de1449fbb916fd6ba72d75110 .
 
-_:2a532c9791ef44979b25051b7e35ec1d10 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/DEPRECATED>;
+_:0135e3961de1449fbb916fd6ba72d75110 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/DEPRECATED>;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#dcat:temporalResolution> sh:path

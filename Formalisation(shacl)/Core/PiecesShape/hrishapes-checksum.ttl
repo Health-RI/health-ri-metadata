@@ -60,4 +60,4 @@ hrishapes:ChecksumShape a sh:NodeShape;
   sh:nodeKind sh:Literal;
   sh:datatype xsd:hexBinary;
   dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextFieldEditor .
+  dash:editor dash:TextAreaEditor .

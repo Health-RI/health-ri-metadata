@@ -59,7 +59,7 @@ hrishapes:DatasetSeriesShape a sh:NodeShape;
 <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dcat:contactPoint> sh:path dcat:contactPoint;
   sh:name "contact point"@en;
   sh:description "Relevant contact information for the catalogued resource."@en;
-  sh:node hri:KindShape;
+  sh:node hrishapes:KindShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
@@ -78,14 +78,14 @@ hrishapes:DatasetSeriesShape a sh:NodeShape;
   sh:description "The frequency with which items are added to a collection."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:spatial> sh:path dct:spatial;
   sh:name "geographical coverage"@en;
   sh:description "Spatial characteristics of the resource."@en;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:modified> sh:path dct:modified;
@@ -102,7 +102,7 @@ hrishapes:DatasetSeriesShape a sh:NodeShape;
   sh:name "publisher"@en;
   sh:description "An entity responsible for making the resource available."@en;
   sh:maxCount 1;
-  sh:node hri:AgentShape;
+  sh:node hrishapes:AgentShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
@@ -119,7 +119,7 @@ hrishapes:DatasetSeriesShape a sh:NodeShape;
 <http://data.health-ri.nl/core/p2/DatasetSeriesShape#dct:temporal> sh:path dct:temporal;
   sh:name "temporal coverage"@en;
   sh:description "Temporal characteristics of the resource."@en;
-  sh:node hri:PeriodOfTimeShape;
+  sh:node hrishapes:PeriodOfTimeShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 

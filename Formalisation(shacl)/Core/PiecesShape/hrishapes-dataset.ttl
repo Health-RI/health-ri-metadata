@@ -76,17 +76,17 @@ hrishapes:DatasetShape a sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:44b651879d984abdade332d79acf1d392;
-  dash:viewer dash:URIViewer;
+  sh:in _:8978003d12034af6a5d2a029710913512;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:44b651879d984abdade332d79acf1d392 rdf:first <http://publications.europa.eu/resource/authority/access-right/PUBLIC>;
-  rdf:rest _:44b651879d984abdade332d79acf1d393 .
+_:8978003d12034af6a5d2a029710913512 rdf:first <http://publications.europa.eu/resource/authority/access-right/PUBLIC>;
+  rdf:rest _:8978003d12034af6a5d2a029710913513 .
 
-_:44b651879d984abdade332d79acf1d393 rdf:first <http://publications.europa.eu/resource/authority/access-right/RESTRICTED>;
-  rdf:rest _:44b651879d984abdade332d79acf1d394 .
+_:8978003d12034af6a5d2a029710913513 rdf:first <http://publications.europa.eu/resource/authority/access-right/RESTRICTED>;
+  rdf:rest _:8978003d12034af6a5d2a029710913514 .
 
-_:44b651879d984abdade332d79acf1d394 rdf:first <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC>;
+_:8978003d12034af6a5d2a029710913514 rdf:first <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC>;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#dct:alternative> sh:path dct:alternative;
@@ -108,8 +108,8 @@ _:44b651879d984abdade332d79acf1d394 rdf:first <http://publications.europa.eu/res
   sh:name "anatomical location covered"@en;
   sh:description "Relates a dataset to an anatomical class that is Anatomical structure (SNOMED CT 91723000) or one of its subclasses, describing anatomical coverage of the dataset as a whole at metadata or catalogue level."@en;
   sh:nodeKind sh:IRI;
-  sh:pattern "^http://snomed\\\\.info/id/[0-9]{6,18}$";
-  dash:viewer dash:URIViewer;
+  sh:pattern "^http://snomed\\.info/id/[0-9]{6,18}$";
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#dcatap:applicableLegislation> sh:path
@@ -127,7 +127,7 @@ _:44b651879d984abdade332d79acf1d394 rdf:first <http://publications.europa.eu/res
   sh:name "code values"@en;
   sh:description "Health classifications and their codes associated with the dataset"@en;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#healthdcatap:hasCodingSystem> sh:path
@@ -150,7 +150,7 @@ _:44b651879d984abdade332d79acf1d394 rdf:first <http://publications.europa.eu/res
   sh:description "Relevant contact information for the catalogued resource."@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:node hri:KindShape;
+  sh:node hrishapes:KindShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
@@ -158,7 +158,7 @@ _:44b651879d984abdade332d79acf1d394 rdf:first <http://publications.europa.eu/res
   sh:name "creator"@en;
   sh:description "An entity responsible for making the resource."@en;
   sh:minCount 1;
-  sh:node hri:AgentShape;
+  sh:node hrishapes:AgentShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
@@ -189,7 +189,7 @@ _:44b651879d984abdade332d79acf1d394 rdf:first <http://publications.europa.eu/res
   sh:name "domain of the data"@en;
   sh:description "In this context, the definition should be considered as: The data domain(s) present in the Dataset."@en;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#dct:accrualPeriodicity> sh:path dct:accrualPeriodicity;
@@ -197,14 +197,14 @@ _:44b651879d984abdade332d79acf1d394 rdf:first <http://publications.europa.eu/res
   sh:description "The frequency with which items are added to a collection."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#dct:spatial> sh:path dct:spatial;
   sh:name "geographical coverage"@en;
   sh:description "Spatial characteristics of the resource."@en;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#dcat:hasVersion> sh:path dcat:hasVersion;
@@ -219,8 +219,8 @@ _:44b651879d984abdade332d79acf1d394 rdf:first <http://publications.europa.eu/res
   sh:name "health condition of interest"@en;
   sh:description "Relates a dataset to a SNOMED CT, ICD-10, or ORPHAcode concept representing a disease, disorder, or other clinical condition that the dataset concerns as a whole."@en;
   sh:nodeKind sh:IRI;
-  sh:pattern "^(http://snomed\\\\.info/id/[0-9]{6,18}|http://id\\\\.who\\\\.int/icd/entity/[0-9]+|http://www\\\\.orpha\\\\.net/ORDO/Orphanet_[0-9]+)$";
-  dash:viewer dash:URIViewer;
+  sh:pattern "^(http://snomed\\.info/id/[0-9]{6,18}|http://id\\.who\\.int/icd/entity/[0-9]+|http://www\\.orpha\\.net/ORDO/Orphanet_[0-9]+)$";
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#healthdcatap:healthTheme> sh:path healthdcatap:healthTheme;
@@ -272,14 +272,14 @@ _:44b651879d984abdade332d79acf1d394 rdf:first <http://publications.europa.eu/res
   sh:name "language"@en;
   sh:description "A language of the resource."@en;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#dpv:hasLegalBasis> sh:path dpv:hasLegalBasis;
   sh:name "legal basis"@en;
   sh:description "Indicates use or applicability of a Legal Basis."@en;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#healthdcatap:maxTypicalAge> sh:path
@@ -307,7 +307,7 @@ _:44b651879d984abdade332d79acf1d394 rdf:first <http://publications.europa.eu/res
   sh:name "measurement technique"@en;
   sh:description "A technique, method or technology used in a Dataset."@en;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#dct:modified> sh:path dct:modified;
@@ -343,7 +343,7 @@ _:44b651879d984abdade332d79acf1d394 rdf:first <http://publications.europa.eu/res
 <http://data.health-ri.nl/core/p2/DatasetShape#adms:identifier> sh:path adms:identifier;
   sh:name "other identifier"@en;
   sh:description "Links a resource to an adms:Identifier class."@en;
-  sh:node hri:IdentifierShape;
+  sh:node hrishapes:IdentifierShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
@@ -365,15 +365,16 @@ _:44b651879d984abdade332d79acf1d394 rdf:first <http://publications.europa.eu/res
 <http://data.health-ri.nl/core/p2/DatasetShape#dct:provenance> sh:path dct:provenance;
   sh:name "provenance"@en;
   sh:description "A statement about the lineage of a Dataset."@en;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  sh:node hrishapes:ProvenanceStatementShape;
+  dash:viewer dash:DetailsViewer;
+  dash:editor dash:BlankNodeEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#dct:publisher> sh:path dct:publisher;
   sh:name "publisher"@en;
   sh:description "An entity responsible for making the resource available."@en;
   sh:minCount 1;
   sh:maxCount 1;
-  sh:node hri:AgentShape;
+  sh:node hrishapes:AgentShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
@@ -388,21 +389,21 @@ _:44b651879d984abdade332d79acf1d394 rdf:first <http://publications.europa.eu/res
     prov:qualifiedAttribution;
   sh:name "qualified attribution"@en;
   sh:description "Attribution is the ascribing of an entity to an agent."@en;
-  sh:node hri:AttributionShape;
+  sh:node hrishapes:AttributionShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#dcat:qualifiedRelation> sh:path dcat:qualifiedRelation;
   sh:name "qualified relation"@en;
   sh:description "Link to a description of a relationship with another resource."@en;
-  sh:node hri:RelationshipShape;
+  sh:node hrishapes:RelationshipShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#dqv:hasQualityAnnotation> sh:path dqv:hasQualityAnnotation;
   sh:name "quality annotation"@en;
   sh:description "Refers to a quality annotation."@en;
-  sh:node hri:QualityCertificateShape;
+  sh:node hrishapes:QualityCertificateShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
@@ -421,7 +422,7 @@ _:44b651879d984abdade332d79acf1d394 rdf:first <http://publications.europa.eu/res
   sh:name "retention period"@en;
   sh:description "A temporal period during which the dataset is available for secondary use."@en;
   sh:maxCount 1;
-  sh:node hri:PeriodOfTimeShape;
+  sh:node hrishapes:PeriodOfTimeShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
@@ -444,13 +445,13 @@ _:44b651879d984abdade332d79acf1d394 rdf:first <http://publications.europa.eu/res
   sh:description "The status of the Asset in the context of a particular workflow process."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#dct:temporal> sh:path dct:temporal;
   sh:name "temporal coverage"@en;
   sh:description "Temporal characteristics of the resource."@en;
-  sh:node hri:PeriodOfTimeShape;
+  sh:node hrishapes:PeriodOfTimeShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
@@ -469,7 +470,7 @@ _:44b651879d984abdade332d79acf1d394 rdf:first <http://publications.europa.eu/res
   sh:minCount 1;
   sh:nodeKind sh:IRI;
   sh:defaultValue <http://publications.europa.eu/resource/authority/data-theme/HEAL>;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#dct:title> sh:path dct:title;
@@ -485,14 +486,14 @@ _:44b651879d984abdade332d79acf1d394 rdf:first <http://publications.europa.eu/res
   sh:name "type"@en;
   sh:description "The nature or genre of the resource."@en;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#healthdcatap:hasVariables> sh:path
     healthdcatap:hasVariables;
   sh:name "variables"@en;
   sh:description "Links the Dataset to a CSVW TableGroup that provides a machine-readable description of the data variables."@en;
-  sh:node hri:TableGroupShape;
+  sh:node hrishapes:TableGroupShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
@@ -515,5 +516,6 @@ _:44b651879d984abdade332d79acf1d394 rdf:first <http://publications.europa.eu/res
 <http://data.health-ri.nl/core/p2/DatasetShape#prov:wasGeneratedBy> sh:path prov:wasGeneratedBy;
   sh:name "was generated by"@en;
   sh:description "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation."@en;
-  dash:viewer dash:URIViewer;
-  dash:editor dash:URIEditor .
+  sh:node hrishapes:ActivityShape;
+  dash:viewer dash:DetailsViewer;
+  dash:editor dash:BlankNodeEditor .

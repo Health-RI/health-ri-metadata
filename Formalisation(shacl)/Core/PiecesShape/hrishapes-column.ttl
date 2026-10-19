@@ -70,7 +70,7 @@ hrishapes:ColumnShape a sh:NodeShape;
   sh:nodeKind sh:Literal;
   sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextAreaEditor .
+  dash:editor dash:TextFieldEditor .
 
 <http://data.health-ri.nl/core/p2/ColumnShape#csvw:datatype> sh:path csvw:datatype;
   sh:name "datatype"@en;

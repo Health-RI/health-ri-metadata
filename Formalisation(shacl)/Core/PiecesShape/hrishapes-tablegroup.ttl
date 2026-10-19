@@ -47,7 +47,7 @@ hrishapes:TableGroupShape a sh:NodeShape;
   sh:name "table"@en;
   sh:description "A table is a single CSV file within a CSVW Table Group."@en;
   sh:minCount 1;
-  sh:node hri:TableShape;
+  sh:node hrishapes:TableShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
@@ -56,6 +56,5 @@ hrishapes:TableGroupShape a sh:NodeShape;
   sh:description "Table group title."@en;
   sh:minCount 1;
   sh:nodeKind sh:Literal;
-  sh:uniqueLang true;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .

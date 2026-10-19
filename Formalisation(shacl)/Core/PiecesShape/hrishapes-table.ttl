@@ -73,6 +73,6 @@ hrishapes:TableShape a sh:NodeShape;
   sh:name "column"@en;
   sh:description "A variable (column) defines metadata about one field in the CSV file."@en;
   sh:minCount 1;
-  sh:node hri:ColumnShape;
+  sh:node hrishapes:ColumnShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .

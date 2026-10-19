@@ -48,7 +48,7 @@ hrishapes:RelationshipShape a sh:NodeShape;
   sh:description "The function of an entity or agent with respect to another entity or resource."@en;
   sh:minCount 1;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/RelationshipShape#dct:relation> sh:path dct:relation;

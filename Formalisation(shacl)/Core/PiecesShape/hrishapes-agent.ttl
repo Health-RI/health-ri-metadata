@@ -50,7 +50,7 @@ hrishapes:AgentShape a sh:NodeShape;
   sh:name "country"@en;
   sh:description "Spatial characteristics of the resource."@en;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/AgentShape#foaf:mbox> sh:path foaf:mbox;
@@ -94,7 +94,7 @@ hrishapes:AgentShape a sh:NodeShape;
   sh:description "A type of organisation that makes the Dataset available."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/AgentShape#dct:type> sh:path dct:type;
@@ -102,7 +102,7 @@ hrishapes:AgentShape a sh:NodeShape;
   sh:description "The nature or genre of the resource."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:URIViewer;
+  dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/AgentShape#foaf:homepage> sh:path foaf:homepage;

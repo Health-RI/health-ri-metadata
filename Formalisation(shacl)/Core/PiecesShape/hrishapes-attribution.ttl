@@ -47,7 +47,7 @@ hrishapes:AttributionShape a sh:NodeShape;
   sh:name "agent"@en;
   sh:description "The prov:agent property references a prov:Agent that influenced a resource."@en;
   sh:maxCount 1;
-  sh:node hri:AgentShape;
+  sh:node hrishapes:AgentShape;
   dash:viewer dash:DetailsViewer;
   dash:editor dash:BlankNodeEditor .
 
