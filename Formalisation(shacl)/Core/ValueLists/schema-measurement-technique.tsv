@@ -3,17 +3,17 @@ http://edamontology.org/topic_3673	Whole genome sequencing	EDAM
 http://edamontology.org/topic_3676	Exome sequencing	EDAM
 http://purl.obolibrary.org/obo/NCIT_C158253	Targeted Genome Sequencing	NCIT
 http://edamontology.org/topic_3170	RNA-Seq	EDAM
-http://id.nlm.nih.gov/mesh/D000092386	Single-Cell Gene Expression Analysis (some altLabels available)	MeSH
+http://id.nlm.nih.gov/mesh/D000092386	Single-Cell Gene Expression Analysis	MeSH
 http://edamontology.org/topic_4028	Single-cell sequencing	EDAM
-http://www.ebi.ac.uk/efo/EFO_0002759	Methylation profiling by array	EFO
+http://www.ebi.ac.uk/efo/EFO_0002759	methylation profiling by array	EFO
 http://edamontology.org/topic_4061	Bisulfite sequencing	EDAM
 http://edamontology.org/topic_3169	ChIP-seq	EDAM
 http://edamontology.org/topic_4053	ATAC-seq	EDAM
 http://edamontology.org/topic_4052	Hi-C	EDAM
 http://id.nlm.nih.gov/mesh/D013058	Mass Spectrometry	MeSH
-http://id.nlm.nih.gov/mesh/D000097922	Liquid Chromatography-Mass Spectrometry (altLabel LC-MS)	MeSH
+http://id.nlm.nih.gov/mesh/D000097922	Liquid Chromatography-Mass Spectrometry	MeSH
 http://purl.obolibrary.org/obo/CHMO_0000701	liquid chromatography-tandem mass spectrometry	CHMO
-http://id.nlm.nih.gov/mesh/D008401	Gas Chromatography-Mass Spectrometry (altLabel GCMS)	MeSH
+http://id.nlm.nih.gov/mesh/D008401	Gas Chromatography-Mass Spectrometry	MeSH
 http://edamontology.org/topic_3518	Microarray experiment	EDAM
 http://edamontology.org/topic_3444	Magnetic resonance imaging	EDAM
 http://edamontology.org/topic__RDos3h5yRfjhLUcOImDOFgB	Positron emission tomography	EDAM bioimaging
