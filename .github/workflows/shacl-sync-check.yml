@@ -15,23 +15,26 @@ jobs:
   sync-check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - name: Generate SHACLs from the Excel file
+      - name: Regenerate SHACLs in place
         uses: Health-RI/metadata-automation@v1.0.0
         with:
           excel-path: ${{ env.EXCEL_PATH }}
-          output-path: ${{ runner.temp }}/generated
+          output-path: ${{ env.SHACL_PATH }}
 
-      - name: Compare generated SHACLs with the committed SHACLs
+      - name: Check that regenerating changed nothing
         env:
           HEAD_REF: ${{ github.head_ref }}
           REGENERATE_URL: ${{ github.server_url }}/${{ github.repository }}/actions/workflows/shacl-regenerate.yml
         run: |
-          if diff -ru -x README.md "$SHACL_PATH" "$RUNNER_TEMP/generated" > "$RUNNER_TEMP/sync.diff"; then
+          # Stage everything (also new and deleted files) so a single diff shows all differences
+          git add --all -- "$SHACL_PATH"
+          if git diff --cached --quiet; then
             echo "Excel and SHACLs are in sync."
             exit 0
           fi
+          git diff --cached > "$RUNNER_TEMP/sync.diff"
           {
             echo "## Excel and SHACLs are out of sync"
             echo
