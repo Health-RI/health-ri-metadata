@@ -1,0 +1,47 @@
+name: Regenerate SHACLs
+run-name: Regenerate SHACLs on ${{ inputs.branch }}
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: Branch to regenerate the SHACLs on; a commit is pushed to it if anything changed
+        required: true
+        type: string
+
+env:
+  EXCEL_PATH: Documents/Health-RI_v2.1.0-for-FDP.xlsx
+  SHACL_PATH: Formalisation(shacl)/Core/PiecesShape
+  NAMESPACE: hrishapes
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch }}
+
+      - name: Generate SHACLs from the Excel file
+        uses: Health-RI/metadata-automation@v1.0.0
+        with:
+          excel-path: ${{ env.EXCEL_PATH }}
+          output-path: ${{ env.SHACL_PATH }}
+          namespace: ${{ env.NAMESPACE }}
+
+      - name: Commit and push changes
+        env:
+          BRANCH: ${{ inputs.branch }}
+        run: |
+          git add --all -- "$SHACL_PATH"
+          if git diff --cached --quiet; then
+            echo "SHACLs on $BRANCH are already in sync with the Excel file; nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(shacl): regenerate SHACLs from Excel"
+          git push origin "HEAD:refs/heads/$BRANCH"
+          echo "Pushed regenerated SHACLs to $BRANCH. Pushes made with GITHUB_TOKEN do not start other workflows; re-run the PR checks if needed."
