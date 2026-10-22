@@ -11,7 +11,6 @@ on:
 env:
   EXCEL_PATH: Documents/Health-RI_v2.1.0-for-FDP.xlsx
   SHACL_PATH: Formalisation(shacl)/Core/PiecesShape
-  NAMESPACE: hrishapes
 
 permissions:
   contents: write
@@ -29,7 +28,6 @@ jobs:
         with:
           excel-path: ${{ env.EXCEL_PATH }}
           output-path: ${{ env.SHACL_PATH }}
-          namespace: ${{ env.NAMESPACE }}
 
       - name: Commit and push changes
         env:

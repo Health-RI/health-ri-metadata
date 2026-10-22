@@ -10,7 +10,6 @@ on:
 env:
   EXCEL_PATH: Documents/Health-RI_v2.1.0-for-FDP.xlsx
   SHACL_PATH: Formalisation(shacl)/Core/PiecesShape
-  NAMESPACE: hrishapes
 
 jobs:
   sync-check:
@@ -23,7 +22,6 @@ jobs:
         with:
           excel-path: ${{ env.EXCEL_PATH }}
           output-path: ${{ runner.temp }}/generated
-          namespace: ${{ env.NAMESPACE }}
 
       - name: Compare generated SHACLs with the committed SHACLs
         env:
