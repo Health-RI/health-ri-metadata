@@ -1,0 +1,62 @@
+name: SHACL sync check
+on:
+  # Only run if the Excel source or the generated SHACLs have changed
+  pull_request:
+    paths:
+      - 'Documents/Health-RI_v2.1.0-for-FDP.xlsx'
+      - 'Formalisation(shacl)/Core/PiecesShape/**'
+      - '.github/workflows/shacl-sync-check.yml'
+      - '.github/scripts/shacl_graph_diff.py'
+
+env:
+  EXCEL_PATH: Documents/Health-RI_v2.1.0-for-FDP.xlsx
+  SHACL_PATH: Formalisation(shacl)/Core/PiecesShape
+
+jobs:
+  sync-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Regenerate SHACLs in place
+        uses: Health-RI/metadata-automation@v1.0.0
+        with:
+          excel-path: ${{ env.EXCEL_PATH }}
+          output-path: ${{ env.SHACL_PATH }}
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install rdflib
+        run: pip install "rdflib~=7.6"
+
+      - name: Check that regenerating changed nothing
+        env:
+          HEAD_REF: ${{ github.head_ref }}
+          REGENERATE_URL: ${{ github.server_url }}/${{ github.repository }}/actions/workflows/shacl-regenerate.yml
+        run: |
+          # Compare as RDF graphs: the generator writes RDF lists with random blank node labels,
+          # so the bytes of a file can change without its content changing.
+          if python .github/scripts/shacl_graph_diff.py "$SHACL_PATH" > "$RUNNER_TEMP/sync.diff"; then
+            cat "$RUNNER_TEMP/sync.diff"
+            exit 0
+          fi
+          {
+            echo "## Excel and SHACLs are out of sync"
+            echo
+            echo "\`$SHACL_PATH\` does not match (as RDF) what is generated from \`$EXCEL_PATH\`."
+            echo
+            echo "### Next step"
+            echo "Run the [Regenerate SHACLs]($REGENERATE_URL) workflow (\"Run workflow\") with branch \`$HEAD_REF\`,"
+            echo "then pull the new commit. Alternatively, run the \`metadata-automation\` tool locally."
+            echo
+            echo "<details><summary>Differences</summary>"
+            echo
+            echo '```diff'
+            head -c 50000 "$RUNNER_TEMP/sync.diff"
+            echo '```'
+            echo "</details>"
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "::error title=Excel and SHACLs are out of sync::Run the 'Regenerate SHACLs' workflow ($REGENERATE_URL) on branch '$HEAD_REF', then pull the new commit."
+          exit 1
