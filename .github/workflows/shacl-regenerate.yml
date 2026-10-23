@@ -29,10 +29,20 @@ jobs:
           excel-path: ${{ env.EXCEL_PATH }}
           output-path: ${{ env.SHACL_PATH }}
 
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install rdflib
+        run: pip install "rdflib~=7.6"
+
       - name: Commit and push changes
         env:
           BRANCH: ${{ inputs.branch }}
         run: |
+          # The generator writes RDF lists with random blank node labels. Put back the committed bytes of
+          # files that did not change as RDF graphs, so that only real changes are committed.
+          python .github/scripts/shacl_graph_diff.py "$SHACL_PATH" --restore-equivalent > /dev/null || true
           git add --all -- "$SHACL_PATH"
           if git diff --cached --quiet; then
             echo "SHACLs on $BRANCH are already in sync with the Excel file; nothing to commit."
