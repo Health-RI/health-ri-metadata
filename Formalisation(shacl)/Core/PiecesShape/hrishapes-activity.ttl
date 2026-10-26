@@ -41,18 +41,11 @@ hrishapes:aux-ActivityShape a owl:Ontology;
 hrishapes:ActivityShape a sh:NodeShape;
   rdfs:label "Activity"@en;
   sh:targetClass prov:Activity;
-  sh:property <http://data.health-ri.nl/core/p2/ActivityShape#dct:type>, <http://data.health-ri.nl/core/p2/ActivityShape#schema:studyDesign> .
+  sh:property <http://data.health-ri.nl/core/p2/ActivityShape#dct:type> .
 
 <http://data.health-ri.nl/core/p2/ActivityShape#dct:type> sh:path dct:type;
   sh:name "type"@en;
   sh:description "The nature or genre of the resource."@en;
-  sh:nodeKind sh:IRI;
-  dash:viewer dash:LabelViewer;
-  dash:editor dash:URIEditor .
-
-<http://data.health-ri.nl/core/p2/ActivityShape#schema:studyDesign> sh:path schema:studyDesign;
-  sh:name "study design"@en;
-  sh:description "Specifics about the observational study design."@en;
   sh:nodeKind sh:IRI;
   dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .

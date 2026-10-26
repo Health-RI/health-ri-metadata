@@ -48,8 +48,7 @@ hrishapes:TableShape a sh:NodeShape;
   sh:name "url"@en;
   sh:description "The URL of the CSV file to which this table refers."@en;
   sh:maxCount 1;
-  sh:nodeKind sh:Literal;
-  sh:datatype xsd:anyURI;
+  sh:nodeKind sh:IRI;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextFieldEditor .
 

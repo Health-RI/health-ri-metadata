@@ -1,0 +1,143 @@
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix hrishapes: <http://data.health-ri.nl/core/p2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+hrishapes:TableGroupShape a sh:NodeShape ;
+    rdfs:label "TableGroup"@en ;
+    sh:property <http://data.health-ri.nl/core/p2/TableGroupShape#csvw:table>,
+        <http://data.health-ri.nl/core/p2/TableGroupShape#dct:title> ;
+    sh:targetClass csvw:TableGroup .
+
+hrishapes:aux-ColumnShape a owl:Ontology ;
+    rdfs:label "Excel template for Column class"@en ;
+    dct:description "This is an excel template for Column class in Health RI Core plateau 2."@en ;
+    rdfs:comment "Excel template for Column class"@en ;
+    owl:versionInfo "0.1" .
+
+hrishapes:aux-TableGroupShape a owl:Ontology ;
+    rdfs:label "Excel template for TableGroup class"@en ;
+    dct:description "This is an excel template for TableGroup class in Health RI Core plateau 2."@en ;
+    rdfs:comment "Excel template for TableGroup class"@en ;
+    owl:versionInfo "0.1" .
+
+hrishapes:aux-TableShape a owl:Ontology ;
+    rdfs:label "Excel template for Table class"@en ;
+    dct:description "This is an excel template for Table class in Health RI Core plateau 2."@en ;
+    rdfs:comment "Excel template for Table class"@en ;
+    owl:versionInfo "0.1" .
+
+hrishapes:ColumnShape a sh:NodeShape ;
+    rdfs:label "Column"@en ;
+    sh:property <http://data.health-ri.nl/core/p2/ColumnShape#csvw:datatype>,
+        <http://data.health-ri.nl/core/p2/ColumnShape#csvw:name>,
+        <http://data.health-ri.nl/core/p2/ColumnShape#csvw:propertyUrl>,
+        <http://data.health-ri.nl/core/p2/ColumnShape#csvw:title>,
+        <http://data.health-ri.nl/core/p2/ColumnShape#dct:description> ;
+    sh:targetClass csvw:Column .
+
+<http://data.health-ri.nl/core/p2/ColumnShape#csvw:datatype> dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LiteralViewer ;
+    sh:description "Specifies the expected datatype of the values in the column."@en ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "datatype"@en ;
+    sh:nodeKind sh:Literal ;
+    sh:path csvw:datatype .
+
+<http://data.health-ri.nl/core/p2/ColumnShape#csvw:name> dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LiteralViewer ;
+    sh:description "A technical name given to the Variable as it appears in the CSV file."@en ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:name "name"@en ;
+    sh:nodeKind sh:Literal ;
+    sh:path csvw:name .
+
+<http://data.health-ri.nl/core/p2/ColumnShape#csvw:propertyUrl> dash:editor dash:URIEditor ;
+    dash:viewer dash:URIViewer ;
+    sh:description "A URI template used to define the RDF predicate associated with the values in the column, relative to each row."@en ;
+    sh:maxCount 1 ;
+    sh:name "property URL"@en ;
+    sh:nodeKind sh:IRI ;
+    sh:path csvw:propertyUrl .
+
+<http://data.health-ri.nl/core/p2/ColumnShape#csvw:title> dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LiteralViewer ;
+    sh:description "A human-readable name given to the Variable."@en ;
+    sh:minCount 1 ;
+    sh:name "title"@en ;
+    sh:nodeKind sh:Literal ;
+    sh:path csvw:title ;
+    sh:uniqueLang true .
+
+<http://data.health-ri.nl/core/p2/ColumnShape#dct:description> dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LiteralViewer ;
+    sh:description "Variable description."@en ;
+    sh:minCount 1 ;
+    sh:name "description"@en ;
+    sh:nodeKind sh:Literal ;
+    sh:path dct:description ;
+    sh:uniqueLang true .
+
+<http://data.health-ri.nl/core/p2/TableGroupShape#csvw:table> dash:editor dash:BlankNodeEditor ;
+    dash:viewer dash:DetailsViewer ;
+    sh:description "A table is a single CSV file within a CSVW Table Group."@en ;
+    sh:minCount 1 ;
+    sh:name "table"@en ;
+    sh:node hrishapes:TableShape ;
+    sh:path csvw:table .
+
+<http://data.health-ri.nl/core/p2/TableGroupShape#dct:title> dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LiteralViewer ;
+    sh:description "Table group title."@en ;
+    sh:minCount 1 ;
+    sh:name "title"@en ;
+    sh:nodeKind sh:Literal ;
+    sh:path dct:title .
+
+hrishapes:TableShape a sh:NodeShape ;
+    rdfs:label "Table"@en ;
+    sh:property <http://data.health-ri.nl/core/p2/TableShape#csvw:column>,
+        <http://data.health-ri.nl/core/p2/TableShape#csvw:url>,
+        <http://data.health-ri.nl/core/p2/TableShape#dcat:keyword>,
+        <http://data.health-ri.nl/core/p2/TableShape#dct:title> ;
+    sh:targetClass csvw:Table .
+
+<http://data.health-ri.nl/core/p2/TableShape#csvw:column> dash:editor dash:BlankNodeEditor ;
+    dash:viewer dash:DetailsViewer ;
+    sh:description "A variable (column) defines metadata about one field in the CSV file."@en ;
+    sh:minCount 1 ;
+    sh:name "column"@en ;
+    sh:node hrishapes:ColumnShape ;
+    sh:path csvw:column .
+
+<http://data.health-ri.nl/core/p2/TableShape#csvw:url> dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LiteralViewer ;
+    sh:description "The URL of the CSV file to which this table refers."@en ;
+    sh:maxCount 1 ;
+    sh:name "url"@en ;
+    sh:nodeKind sh:IRI ;
+    sh:path csvw:url .
+
+<http://data.health-ri.nl/core/p2/TableShape#dcat:keyword> dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LiteralViewer ;
+    sh:description "A keyword or tag describing the table."@en ;
+    sh:name "keyword"@en ;
+    sh:nodeKind sh:Literal ;
+    sh:path dcat:keyword .
+
+<http://data.health-ri.nl/core/p2/TableShape#dct:title> dash:editor dash:TextFieldEditor ;
+    dash:viewer dash:LiteralViewer ;
+    sh:description "Table title."@en ;
+    sh:minCount 1 ;
+    sh:name "title"@en ;
+    sh:nodeKind sh:Literal ;
+    sh:path dct:title ;
+    sh:uniqueLang true .
+

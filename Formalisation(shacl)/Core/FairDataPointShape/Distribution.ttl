@@ -75,7 +75,6 @@ hrishapes:ChecksumShape a sh:NodeShape ;
 
 <http://data.health-ri.nl/core/p2/ChecksumShape#spdx:checksumValue> dash:editor dash:TextAreaEditor ;
     dash:viewer dash:LiteralViewer ;
-    sh:datatype xsd:hexBinary ;
     sh:description "The checksumValue property provides a lowercase hexadecimal-encoded digest value produced using a specific algorithm."@en ;
     sh:maxCount 1 ;
     sh:minCount 1 ;

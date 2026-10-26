@@ -76,17 +76,17 @@ hrishapes:DatasetShape a sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:8978003d12034af6a5d2a029710913512;
+  sh:in _:8391b79bf59346debf1de05826915bc92;
   dash:viewer dash:LabelViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:8978003d12034af6a5d2a029710913512 rdf:first <http://publications.europa.eu/resource/authority/access-right/PUBLIC>;
-  rdf:rest _:8978003d12034af6a5d2a029710913513 .
+_:8391b79bf59346debf1de05826915bc92 rdf:first <http://publications.europa.eu/resource/authority/access-right/PUBLIC>;
+  rdf:rest _:8391b79bf59346debf1de05826915bc93 .
 
-_:8978003d12034af6a5d2a029710913513 rdf:first <http://publications.europa.eu/resource/authority/access-right/RESTRICTED>;
-  rdf:rest _:8978003d12034af6a5d2a029710913514 .
+_:8391b79bf59346debf1de05826915bc93 rdf:first <http://publications.europa.eu/resource/authority/access-right/RESTRICTED>;
+  rdf:rest _:8391b79bf59346debf1de05826915bc94 .
 
-_:8978003d12034af6a5d2a029710913514 rdf:first <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC>;
+_:8391b79bf59346debf1de05826915bc94 rdf:first <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC>;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#dct:alternative> sh:path dct:alternative;
@@ -217,9 +217,9 @@ _:8978003d12034af6a5d2a029710913514 rdf:first <http://publications.europa.eu/res
 <http://data.health-ri.nl/core/p2/DatasetShape#hri:healthConditionOfInterest> sh:path
     hri:healthConditionOfInterest;
   sh:name "health condition of interest"@en;
-  sh:description "Relates a dataset to a SNOMED CT, ICD-10, or ORPHAcode concept representing a disease, disorder, or other clinical condition that the dataset concerns as a whole."@en;
+  sh:description "Relates a dataset to a SNOMED CT, ICD-10, ICD-11, or ORPHAcode concept representing a disease, disorder, or other clinical condition that the dataset concerns as a whole."@en;
   sh:nodeKind sh:IRI;
-  sh:pattern "^(http://snomed\\.info/id/[0-9]{6,18}|http://id\\.who\\.int/icd/entity/[0-9]+|http://www\\.orpha\\.net/ORDO/Orphanet_[0-9]+)$";
+  sh:pattern "^(http://snomed[.]info/id/[0-9]+|http://id[.]who[.]int/icd/release/10/([0-9]{4}/)?[A-Za-z0-9][A-Za-z0-9.-]* |http://id[.]who[.]int/icd/release/11/.+ |http://www[.]orpha[.]net/ORDO/Orphanet_[0-9]+)$";
   dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
@@ -493,9 +493,9 @@ _:8978003d12034af6a5d2a029710913514 rdf:first <http://publications.europa.eu/res
     healthdcatap:hasVariables;
   sh:name "variables"@en;
   sh:description "Links the Dataset to a CSVW TableGroup that provides a machine-readable description of the data variables."@en;
-  sh:node hrishapes:TableGroupShape;
-  dash:viewer dash:DetailsViewer;
-  dash:editor dash:BlankNodeEditor .
+  sh:nodeKind sh:IRI;
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#dcat:version> sh:path dcat:version;
   sh:name "version"@en;
