@@ -646,7 +646,7 @@ hrishapes:AttributionShape a sh:NodeShape ;
     sh:name "health condition of interest"@en ;
     sh:nodeKind sh:IRI ;
     sh:path hri:healthConditionOfInterest ;
-    sh:pattern "^(http://snomed[.]info/id/[0-9]+|http://id[.]who[.]int/icd/release/10/([0-9]{4}/)?[A-Za-z0-9][A-Za-z0-9.-]* |http://id[.]who[.]int/icd/release/11/.+ |http://www[.]orpha[.]net/ORDO/Orphanet_[0-9]+)$" .
+    sh:pattern "^(http://snomed[.]info/id/[0-9]+|^http://id[.]who[.]int/icd/entity/[0-9]+$|http://id[.]who[.]int/icd/release/10/([0-9]{4}/)?[A-Za-z0-9][A-Za-z0-9.-]* |http://id[.]who[.]int/icd/release/11/.+ |http://www[.]orpha[.]net/ORDO/Orphanet_[0-9]+)$" .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#prov:qualifiedAttribution> dash:editor dash:BlankNodeEditor ;
     dash:viewer dash:DetailsViewer ;

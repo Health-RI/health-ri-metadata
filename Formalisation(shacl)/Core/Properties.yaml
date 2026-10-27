@@ -1,0 +1,77 @@
+---
+schemas:
+  Resource:
+  - hrishapes-resource.ttl
+  Dataset:
+  - hrishapes-dataset.ttl
+  - hrishapes-kind.ttl
+  - hrishapes-agent.ttl
+  - hrishapes-adms_identifier.ttl
+  - hrishapes-provenancestatement.ttl
+  - hrishapes-attribution.ttl
+  - hrishapes-relationship.ttl
+  - hrishapes-qualitycertificate.ttl
+  - hrishapes-periodoftime.ttl
+  - hrishapes-activity.ttl
+  Catalog:
+  - hrishapes-catalogue.ttl
+  - hrishapes-kind.ttl
+  - hrishapes-agent.ttl
+  - hrishapes-periodoftime.ttl
+  Distribution:
+  - hrishapes-distribution.ttl
+  - hrishapes-checksum.ttl
+  - hrishapes-periodoftime.ttl
+  Dataset Series:
+  - hrishapes-datasetseries.ttl
+  - hrishapes-kind.ttl
+  - hrishapes-agent.ttl
+  - hrishapes-periodoftime.ttl
+  Data Service:
+  - hrishapes-dataservice.ttl
+  - hrishapes-kind.ttl
+  - hrishapes-agent.ttl
+  - hrishapes-adms_identifier.ttl
+  Table Group:
+  - hrishapes-tablegroup.ttl
+  - hrishapes-table.ttl
+  - hrishapes-column.ttl
+parentChild:
+  Resource:
+  - Dataset
+  - Catalog
+  - Data Service
+resources:
+  Analytics Distribution:
+    parentResource: Dataset
+    parentRelationIri: http://healthdataportal.eu/ns/health#analytics
+    schema: Distribution
+  Dataset Series:
+    parentResource: Dataset
+    parentRelationIri: http://www.w3.org/ns/dcat#inSeries
+    schema: Dataset Series
+  Sample Distribution:
+    parentResource: Dataset
+    parentRelationIri: http://www.w3.org/ns/adms#sample
+    schema: Distribution
+  Variables:
+    parentResource: Dataset
+    parentRelationIri: http://healthdataportal.eu/ns/health#hasVariables
+    schema: Table Group
+  Data Service:
+    parentResource: Distribution
+    parentRelationIri: http://www.w3.org/ns/dcat#accessService
+    schema: Data Service
+schemasToPublish:
+- Resource
+- Dataset
+- Catalog
+- Distribution
+- Dataset Series
+- Data Service
+- Table Group
+schemaVersion: 2.1.2
+inputDir: https://raw.githubusercontent.com/Health-RI/health-ri-metadata/master/Formalisation(shacl)/Core/PiecesShape/
+piecesDir: PiecesShape
+fairDataPointDir: FairDataPointShape
+validationDir: ValidationShape

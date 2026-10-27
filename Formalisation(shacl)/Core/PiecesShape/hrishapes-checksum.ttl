@@ -58,5 +58,6 @@ hrishapes:ChecksumShape a sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
+  sh:datatype xsd:hexBinary;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
