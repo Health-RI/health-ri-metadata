@@ -1,4 +1,33 @@
 # Changelog
+## v2.1.0
+
+#### New properties Based on user requirements
+The following properties have been added to meet user requirements
+- Dataset: domain of the data (including [value list for edam:has_topic](https://github.com/Health-RI/health-ri-metadata/blob/master/Formalisation(shacl)/Core/ValueLists/edam-has-topic.tsv))
+- Dataset: measurement technique (including [value list for schema:measurementTechnique](https://github.com/Health-RI/health-ri-metadata/blob/master/Formalisation(shacl)/Core/ValueLists/schema-measurement-technique.tsv))
+- Dataset: health condition of interest
+- Dataset: anatomical location covered
+#### New classes and properties for HealthDCAT-AP compliance
+The following classes and properties have been added:
+- Dataset: alternative
+- Dataset: landing page
+- Dataset: provenance (with range ProvenanceStatement)
+- Dataset: variables (with range CSVW TableGroup)
+- Table group class (CSVW)
+- Table class (CSVW)
+- Column class (CSVW)
+
+#### Relaxed properties
+The following properties are no longer mandatory:
+- Distribution: bytesize
+- Distribution: format
+- Distribution: rights
+- Dataset Series: contact point
+- Kind: formatted namek
+
+#### Enhancements
+- Grammar checks on definitions and usage notes
+- Added Known Good (including all properties of the model) and Known Bad (causing validation errors for the changed properties in v2.1) data.
 ## v2.0.3
 
 Enhancements:
