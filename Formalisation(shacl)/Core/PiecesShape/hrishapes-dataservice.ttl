@@ -60,17 +60,17 @@ hrishapes:DataServiceShape a sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:cc6fe5fb8f1947f78b8a26960b415bf82;
+  sh:in _:9ab0233c9d814074a9f264e11b0c3cbd2;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:cc6fe5fb8f1947f78b8a26960b415bf82 rdf:first <http://publications.europa.eu/resource/authority/access-right/PUBLIC>;
-  rdf:rest _:cc6fe5fb8f1947f78b8a26960b415bf83 .
+_:9ab0233c9d814074a9f264e11b0c3cbd2 rdf:first <http://publications.europa.eu/resource/authority/access-right/PUBLIC>;
+  rdf:rest _:9ab0233c9d814074a9f264e11b0c3cbd3 .
 
-_:cc6fe5fb8f1947f78b8a26960b415bf83 rdf:first <http://publications.europa.eu/resource/authority/access-right/RESTRICTED>;
-  rdf:rest _:cc6fe5fb8f1947f78b8a26960b415bf84 .
+_:9ab0233c9d814074a9f264e11b0c3cbd3 rdf:first <http://publications.europa.eu/resource/authority/access-right/RESTRICTED>;
+  rdf:rest _:9ab0233c9d814074a9f264e11b0c3cbd4 .
 
-_:cc6fe5fb8f1947f78b8a26960b415bf84 rdf:first <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC>;
+_:9ab0233c9d814074a9f264e11b0c3cbd4 rdf:first <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC>;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dcatap:applicableLegislation> sh:path

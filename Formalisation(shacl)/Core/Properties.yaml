@@ -70,7 +70,7 @@ schemasToPublish:
 - Dataset Series
 - Data Service
 - Table Group
-schemaVersion: 2.1.2
+schemaVersion: 2.1.0
 inputDir: https://raw.githubusercontent.com/Health-RI/health-ri-metadata/master/Formalisation(shacl)/Core/PiecesShape/
 piecesDir: PiecesShape
 fairDataPointDir: FairDataPointShape

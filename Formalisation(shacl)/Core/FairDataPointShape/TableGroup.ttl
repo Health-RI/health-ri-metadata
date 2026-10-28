@@ -117,8 +117,8 @@ hrishapes:TableShape a sh:NodeShape ;
     sh:node hrishapes:ColumnShape ;
     sh:path csvw:column .
 
-<http://data.health-ri.nl/core/p2/TableShape#csvw:url> dash:editor dash:TextFieldEditor ;
-    dash:viewer dash:LiteralViewer ;
+<http://data.health-ri.nl/core/p2/TableShape#csvw:url> dash:editor dash:URIEditor ;
+    dash:viewer dash:URIViewer ;
     sh:description "The URL of the CSV file to which this table refers."@en ;
     sh:maxCount 1 ;
     sh:name "url"@en ;

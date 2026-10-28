@@ -176,6 +176,12 @@ hrishapes:ResourceShape a sh:NodeShape ;
     rdfs:label "Resource"@en ;
     sh:targetClass dcat:Resource .
 
+hrishapes:TableGroupShape a sh:NodeShape ;
+    rdfs:label "TableGroup"@en ;
+    sh:property <http://data.health-ri.nl/core/p2/TableGroupShape#csvw:table>,
+        <http://data.health-ri.nl/core/p2/TableGroupShape#dct:title> ;
+    sh:targetClass csvw:TableGroup .
+
 hrishapes:aux-ActivityShape a owl:Ontology ;
     rdfs:label "Excel template for Activity class"@en ;
     dct:description "This is an excel template for Activity class in Health RI Core plateau 2."@en ;
@@ -292,8 +298,7 @@ hrishapes:aux-TableShape a owl:Ontology ;
 
 hrishapes:ActivityShape a sh:NodeShape ;
     rdfs:label "Activity"@en ;
-    sh:property <http://data.health-ri.nl/core/p2/ActivityShape#dct:type>,
-        <http://data.health-ri.nl/core/p2/ActivityShape#schema:studyDesign> ;
+    sh:property <http://data.health-ri.nl/core/p2/ActivityShape#dct:type> ;
     sh:targetClass prov:Activity .
 
 <http://data.health-ri.nl/core/p2/ActivityShape#dct:type> dash:editor dash:URIEditor ;
@@ -302,13 +307,6 @@ hrishapes:ActivityShape a sh:NodeShape ;
     sh:name "type"@en ;
     sh:nodeKind sh:IRI ;
     sh:path dct:type .
-
-<http://data.health-ri.nl/core/p2/ActivityShape#schema:studyDesign> dash:editor dash:URIEditor ;
-    dash:viewer dash:LabelViewer ;
-    sh:description "Specifics about the observational study design."@en ;
-    sh:name "study design"@en ;
-    sh:nodeKind sh:IRI ;
-    sh:path schema1:studyDesign .
 
 <http://data.health-ri.nl/core/p2/AgentShape#dct:identifier> dash:editor dash:TextFieldEditor ;
     dash:viewer dash:LiteralViewer ;
@@ -567,7 +565,6 @@ hrishapes:ChecksumShape a sh:NodeShape ;
 
 <http://data.health-ri.nl/core/p2/ChecksumShape#spdx:checksumValue> dash:editor dash:TextAreaEditor ;
     dash:viewer dash:LiteralViewer ;
-    sh:datatype xsd:hexBinary ;
     sh:description "The checksumValue property provides a lowercase hexadecimal-encoded digest value produced using a specific algorithm."@en ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
@@ -1213,11 +1210,11 @@ hrishapes:ColumnShape a sh:NodeShape ;
     sh:nodeKind sh:IRI ;
     sh:path healthdcatap:hasCodingSystem .
 
-<http://data.health-ri.nl/core/p2/DatasetShape#healthdcatap:hasVariables> dash:editor dash:BlankNodeEditor ;
-    dash:viewer dash:DetailsViewer ;
+<http://data.health-ri.nl/core/p2/DatasetShape#healthdcatap:hasVariables> dash:editor dash:URIEditor ;
+    dash:viewer dash:URIViewer ;
     sh:description "Links the Dataset to a CSVW TableGroup that provides a machine-readable description of the data variables."@en ;
     sh:name "variables"@en ;
-    sh:node hrishapes:TableGroupShape ;
+    sh:nodeKind sh:IRI ;
     sh:path healthdcatap:hasVariables .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#healthdcatap:healthTheme> dash:editor dash:URIEditor ;
@@ -1288,11 +1285,11 @@ hrishapes:ColumnShape a sh:NodeShape ;
 
 <http://data.health-ri.nl/core/p2/DatasetShape#hri:healthConditionOfInterest> dash:editor dash:URIEditor ;
     dash:viewer dash:LabelViewer ;
-    sh:description "Relates a dataset to a SNOMED CT, ICD-10, or ORPHAcode concept representing a disease, disorder, or other clinical condition that the dataset concerns as a whole."@en ;
+    sh:description "Relates a dataset to a SNOMED CT, ICD-10, ICD-11, or ORPHAcode concept representing a disease, disorder, or other clinical condition that the dataset concerns as a whole."@en ;
     sh:name "health condition of interest"@en ;
     sh:nodeKind sh:IRI ;
     sh:path hri:healthConditionOfInterest ;
-    sh:pattern "^(http://snomed\\.info/id/[0-9]{6,18}|http://id\\.who\\.int/icd/entity/[0-9]+|http://www\\.orpha\\.net/ORDO/Orphanet_[0-9]+)$" .
+    sh:pattern "^(http://snomed[.]info/id/[0-9]+|http://id[.]who[.]int/icd/entity/[0-9]+|http://id[.]who[.]int/icd/release/10/([0-9]{4}/)?[A-Za-z0-9][A-Za-z0-9.-]* |http://id[.]who[.]int/icd/release/11/.+ |http://www[.]orpha[.]net/ORDO/Orphanet_[0-9]+)$" .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#prov:qualifiedAttribution> dash:editor dash:BlankNodeEditor ;
     dash:viewer dash:DetailsViewer ;
@@ -1625,12 +1622,6 @@ hrishapes:RelationshipShape a sh:NodeShape ;
     sh:nodeKind sh:IRI ;
     sh:path dct:relation .
 
-hrishapes:TableGroupShape a sh:NodeShape ;
-    rdfs:label "TableGroup"@en ;
-    sh:property <http://data.health-ri.nl/core/p2/TableGroupShape#csvw:table>,
-        <http://data.health-ri.nl/core/p2/TableGroupShape#dct:title> ;
-    sh:targetClass csvw:TableGroup .
-
 <http://data.health-ri.nl/core/p2/TableGroupShape#csvw:table> dash:editor dash:BlankNodeEditor ;
     dash:viewer dash:DetailsViewer ;
     sh:description "A table is a single CSV file within a CSVW Table Group."@en ;
@@ -1663,13 +1654,12 @@ hrishapes:TableShape a sh:NodeShape ;
     sh:node hrishapes:ColumnShape ;
     sh:path csvw:column .
 
-<http://data.health-ri.nl/core/p2/TableShape#csvw:url> dash:editor dash:TextFieldEditor ;
-    dash:viewer dash:LiteralViewer ;
-    sh:datatype xsd:anyURI ;
+<http://data.health-ri.nl/core/p2/TableShape#csvw:url> dash:editor dash:URIEditor ;
+    dash:viewer dash:URIViewer ;
     sh:description "The URL of the CSV file to which this table refers."@en ;
     sh:maxCount 1 ;
     sh:name "url"@en ;
-    sh:nodeKind sh:Literal ;
+    sh:nodeKind sh:IRI ;
     sh:path csvw:url .
 
 <http://data.health-ri.nl/core/p2/TableShape#dcat:keyword> dash:editor dash:TextFieldEditor ;

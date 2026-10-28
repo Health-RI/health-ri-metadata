@@ -49,8 +49,8 @@ hrishapes:TableShape a sh:NodeShape;
   sh:description "The URL of the CSV file to which this table refers."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  dash:viewer dash:LiteralViewer;
-  dash:editor dash:TextFieldEditor .
+  dash:viewer dash:URIViewer;
+  dash:editor dash:URIEditor .
 
 <http://data.health-ri.nl/core/p2/TableShape#dct:title> sh:path dct:title;
   sh:name "title"@en;
