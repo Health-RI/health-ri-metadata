@@ -22,12 +22,12 @@
 # ERRORS:
 # - Dataset.minTypicalAge is not a non negative integer
 # - Dataset.creator is missing
-# - Dataset.has_topic is not using a term from the EDAM ontology
+# - Dataset.has_topic is not using a correct value
 # - Distribution.availability is not using controlled vocabulary 
 # - Kind.hasEmail not using "mailto" prefix 
-# - Dataset.measurement_technique is not using a value from the correct value list  
+# - Dataset.measurement_technique is not using a correct value
 # - Dataset.anatomical_location is not using a term from SNOMED
-# - Dataset.health_condition is not using a term from SNOMED, ICD-10 or ORPHAcodes
+# - Dataset.health_condition is not using a term from SNOMED, ICD-10, ICD-11 or ORPHAcodes
 # - TableGroup.title is missing 
 
 <http://www.example.com/test_dataset>
@@ -141,13 +141,13 @@
                                         "Tien personen toegevoegd aan de dataset, in vergelijking tot de 1224 personen in versie 1.2.2."@nl ;
         prov:wasGeneratedBy             <internalURI:wasGeneratedBy1> ,
                                         <internalURI:wasGeneratedBy2> ;
-                                        # ERROR: has_topic is not using a term from the EDAM ontology
-        edam:has_topic                  <https://www.wikidata.org/wiki/Q222046> ;        
-                                        # ERROR: measurement technique is not using a value from the correct value list  
+                                        # ERROR: has_topic is not using a correct value
+        edam:has_topic                  "Genomics" ;        
+                                        # ERROR: measurement_technique is not using a correct value 
         schema:measurementTechnique     "NGS" ;
                                         # ERROR: anatomical location is not using a term from SNOMED
         hri:anatomicalLocationCovered   "left lung" ;
-                                        # ERROR: health condition is not using a term from SNOMED, ICD-10 or ORPHAcodes
+                                        # ERROR: health condition is not using a term from SNOMED, ICD-10, ICD-11 or ORPHAcodes
         hri:healthConditionOfInterest   <https://www.wikidata.org/wiki/Q128581> ;
         dct:alternative                 "HRI Test"@en ;
         dcat:landingPage                <https://github.com/Health-RI/health-ri-metadata> ;
