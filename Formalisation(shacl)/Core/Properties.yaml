@@ -54,7 +54,7 @@ resources:
     parentResource: Dataset
     parentRelationIri: http://www.w3.org/ns/adms#sample
     schema: Distribution
-  Variables:
+  Variable:
     parentResource: Dataset
     parentRelationIri: http://healthdataportal.eu/ns/health#hasVariables
     schema: Table Group
