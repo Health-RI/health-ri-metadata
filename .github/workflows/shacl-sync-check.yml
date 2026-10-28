@@ -5,12 +5,17 @@ on:
     paths:
       - 'Documents/Health-RI_v2.1.0-for-FDP.xlsx'
       - 'Formalisation(shacl)/Core/PiecesShape/**'
+      - 'Formalisation(shacl)/Core/FairDataPointShape/**'
+      - 'Formalisation(shacl)/Core/ValidationShape/**'
       - '.github/workflows/shacl-sync-check.yml'
       - '.github/scripts/shacl_graph_diff.py'
 
 env:
   EXCEL_PATH: Documents/Health-RI_v2.1.0-for-FDP.xlsx
   SHACL_PATH: Formalisation(shacl)/Core/PiecesShape
+  FDP_PATH: Formalisation(shacl)/Core/FairDataPointShape
+  VALIDATION_PATH: Formalisation(shacl)/Core/ValidationShape
+  VALIDATION_FILE: HRI-Datamodel-shapes.ttl
 
 jobs:
   sync-check:
@@ -19,10 +24,13 @@ jobs:
       - uses: actions/checkout@v6
 
       - name: Regenerate SHACLs in place
-        uses: Health-RI/metadata-automation@v1.0.0
+        uses: Health-RI/metadata-automation@88fbc1acadd459653fb414cc9194003542d8c7b5 # TODO: pin to v1.1.0 once released (metadata-automation#39)
         with:
           excel-path: ${{ env.EXCEL_PATH }}
           output-path: ${{ env.SHACL_PATH }}
+          fdp-output-path: ${{ env.FDP_PATH }}
+          validation-output-path: ${{ env.VALIDATION_PATH }}
+          validation-file-name: ${{ env.VALIDATION_FILE }}
 
       - uses: actions/setup-python@v6
         with:
@@ -38,14 +46,19 @@ jobs:
         run: |
           # Compare as RDF graphs: the generator writes RDF lists with random blank node labels,
           # so the bytes of a file can change without its content changing.
-          if python .github/scripts/shacl_graph_diff.py "$SHACL_PATH" > "$RUNNER_TEMP/sync.diff"; then
+          status=0
+          : > "$RUNNER_TEMP/sync.diff"
+          for path in "$SHACL_PATH" "$FDP_PATH" "$VALIDATION_PATH"; do
+            python .github/scripts/shacl_graph_diff.py "$path" >> "$RUNNER_TEMP/sync.diff" || status=1
+          done
+          if [ "$status" -eq 0 ]; then
             cat "$RUNNER_TEMP/sync.diff"
             exit 0
           fi
           {
             echo "## Excel and SHACLs are out of sync"
             echo
-            echo "\`$SHACL_PATH\` does not match (as RDF) what is generated from \`$EXCEL_PATH\`."
+            echo "The SHACLs in \`$SHACL_PATH\`, \`$FDP_PATH\` and \`$VALIDATION_PATH\` do not all match (as RDF) what is generated from \`$EXCEL_PATH\`."
             echo
             echo "### Next step"
             echo "Run the [Regenerate SHACLs]($REGENERATE_URL) workflow (\"Run workflow\") with branch \`$HEAD_REF\`,"

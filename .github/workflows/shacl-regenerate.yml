@@ -11,6 +11,9 @@ on:
 env:
   EXCEL_PATH: Documents/Health-RI_v2.1.0-for-FDP.xlsx
   SHACL_PATH: Formalisation(shacl)/Core/PiecesShape
+  FDP_PATH: Formalisation(shacl)/Core/FairDataPointShape
+  VALIDATION_PATH: Formalisation(shacl)/Core/ValidationShape
+  VALIDATION_FILE: HRI-Datamodel-shapes.ttl
 
 permissions:
   contents: write
@@ -24,10 +27,13 @@ jobs:
           ref: ${{ inputs.branch }}
 
       - name: Generate SHACLs from the Excel file
-        uses: Health-RI/metadata-automation@v1.0.0
+        uses: Health-RI/metadata-automation@88fbc1acadd459653fb414cc9194003542d8c7b5 # TODO: pin to v1.1.0 once released (metadata-automation#39)
         with:
           excel-path: ${{ env.EXCEL_PATH }}
           output-path: ${{ env.SHACL_PATH }}
+          fdp-output-path: ${{ env.FDP_PATH }}
+          validation-output-path: ${{ env.VALIDATION_PATH }}
+          validation-file-name: ${{ env.VALIDATION_FILE }}
 
       - uses: actions/setup-python@v6
         with:
@@ -42,8 +48,10 @@ jobs:
         run: |
           # The generator writes RDF lists with random blank node labels. Put back the committed bytes of
           # files that did not change as RDF graphs, so that only real changes are committed.
-          python .github/scripts/shacl_graph_diff.py "$SHACL_PATH" --restore-equivalent > /dev/null || true
-          git add --all -- "$SHACL_PATH"
+          for path in "$SHACL_PATH" "$FDP_PATH" "$VALIDATION_PATH"; do
+            python .github/scripts/shacl_graph_diff.py "$path" --restore-equivalent > /dev/null || true
+            git add --all -- "$path"
+          done
           if git diff --cached --quiet; then
             echo "SHACLs on $BRANCH are already in sync with the Excel file; nothing to commit."
             exit 0
