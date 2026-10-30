@@ -1,30 +1,50 @@
-name: SHACL sync check
+name: Validate model
 on:
   # Only run if the Excel source or the generated SHACLs have changed
   pull_request:
     paths:
-      - 'Documents/Health-RI_v2.1.0-for-FDP.xlsx'
+      - 'Documents/Health-RI_v2.1.0.xlsx'
       - 'Formalisation(shacl)/Core/PiecesShape/**'
       - 'Formalisation(shacl)/Core/FairDataPointShape/**'
       - 'Formalisation(shacl)/Core/ValidationShape/**'
-      - '.github/workflows/shacl-sync-check.yml'
+      - '.github/workflows/validate.yml'
       - '.github/scripts/shacl_graph_diff.py'
 
 env:
-  EXCEL_PATH: Documents/Health-RI_v2.1.0-for-FDP.xlsx
+  EXCEL_PATH: Documents/Health-RI_v2.1.0.xlsx
+  IGNORE_GAPS: SeMPyRO_*
   SHACL_PATH: Formalisation(shacl)/Core/PiecesShape
   FDP_PATH: Formalisation(shacl)/Core/FairDataPointShape
   VALIDATION_PATH: Formalisation(shacl)/Core/ValidationShape
   VALIDATION_FILE: HRI-Datamodel-shapes.ttl
 
 jobs:
-  sync-check:
+  excel-check:
+    name: Excel check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Check the technical columns of the Excel
+        uses: Health-RI/metadata-automation/excel-check@c0fb29caeed52ed79a9258268da9ba0c30df1bb4 # TODO: pin to a release once metadata-automation is released
+        with:
+          excel-path: ${{ env.EXCEL_PATH }}
+          ignore-gaps: ${{ env.IGNORE_GAPS }}
+          hint: >-
+            Run the [Plan Excel columns](${{ github.server_url }}/${{ github.repository }}/actions/workflows/excel-plan.yml)
+            workflow with branch `${{ github.head_ref }}`, pull the plan file it commits, inspect it, apply it with
+            `metadata-automation apply-plan` and commit the updated Excel.
+
+  shacl-sync:
+    name: SHACL sync check
+    # The SHACLs are only compared once the Excel they are generated from is correct and complete.
+    needs: excel-check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
 
       - name: Regenerate SHACLs in place
-        uses: Health-RI/metadata-automation@88fbc1acadd459653fb414cc9194003542d8c7b5 # TODO: pin to v1.1.0 once released (metadata-automation#39)
+        uses: Health-RI/metadata-automation@c0fb29caeed52ed79a9258268da9ba0c30df1bb4 # TODO: pin to a release once metadata-automation is released
         with:
           excel-path: ${{ env.EXCEL_PATH }}
           output-path: ${{ env.SHACL_PATH }}
