@@ -1,0 +1,61 @@
+name: Plan Excel columns
+run-name: Plan Excel columns on ${{ inputs.branch }}
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: Branch to plan the technical columns of the Excel on; the plan file is committed to it
+        required: true
+        type: string
+      overwrite:
+        description: Replace an existing plan, including any edits made to it
+        required: false
+        type: boolean
+        default: false
+
+env:
+  EXCEL_PATH: Documents/Health-RI_v2.1.0.xlsx
+  # Columns that are not required yet, as the artifacts that need them are not generated from the Excel.
+  IGNORE_GAPS: SeMPyRO_*
+
+permissions:
+  contents: write
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ inputs.branch }}
+
+      - name: Plan the technical columns
+        id: plan
+        uses: Health-RI/metadata-automation/excel-plan@c0fb29caeed52ed79a9258268da9ba0c30df1bb4 # TODO: pin to a release once metadata-automation is released
+        with:
+          excel-path: ${{ env.EXCEL_PATH }}
+          ignore-gaps: ${{ env.IGNORE_GAPS }}
+          overwrite: ${{ inputs.overwrite }}
+
+      - name: Commit the plan
+        if: steps.plan.outputs.plan-written == 'true'
+        env:
+          BRANCH: ${{ inputs.branch }}
+          PLAN_PATH: ${{ steps.plan.outputs.plan-path }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "$PLAN_PATH"
+          git commit -m "chore(excel): plan the technical columns"
+          git push origin "HEAD:refs/heads/$BRANCH"
+          {
+            echo "### Plan committed to \`$BRANCH\`"
+            echo
+            echo "Pull the branch, inspect \`$PLAN_PATH\` (set Apply to no to skip an edit, fill Value to apply on the Gaps sheet),"
+            echo "then apply it with \`metadata-automation apply-plan -p $PLAN_PATH\` and commit the updated Excel."
+            echo "Pushes made with GITHUB_TOKEN do not start the PR checks; they run on your push."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Nothing to plan
+        if: steps.plan.outputs.plan-written != 'true'
+        run: echo "The technical columns of $EXCEL_PATH are correct and complete; no plan was written." >> "$GITHUB_STEP_SUMMARY"
