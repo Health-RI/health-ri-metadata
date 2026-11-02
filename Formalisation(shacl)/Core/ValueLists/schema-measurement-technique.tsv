@@ -18,6 +18,9 @@ http://edamontology.org/topic_3518	Microarray experiment	EDAM
 http://edamontology.org/topic_3444	Magnetic resonance imaging	EDAM
 http://edamontology.org/topic__RDos3h5yRfjhLUcOImDOFgB	Positron emission tomography	EDAM bioimaging
 http://edamontology.org/topic__RxfmHE99gOkUOOML5krfsJ	Computed tomography	EDAM bioimaging
+http://edamontology.org/topic__RBHw300pzIYcttGsAmIZvk5	Ultrasonography	EDAM bioimaging
+http://edamontology.org/topic______X_ray_imaging	X-ray imaging	EDAM bioimaging
+http://id.nlm.nih.gov/mesh/D008327	Mammography	MeSH
 http://id.nlm.nih.gov/mesh/D009682	Magnetic Resonance Spectroscopy	MeSH
 http://edamontology.org/topic_4056	Long-read sequencing	EDAM
 http://id.nlm.nih.gov/mesh/D020161	Physical Chromosome Mapping	MeSH
