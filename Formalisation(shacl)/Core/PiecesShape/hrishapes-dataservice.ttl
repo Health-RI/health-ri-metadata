@@ -1,4 +1,4 @@
-@prefix schema: <http://schema.org/> .
+@prefix schema: <https://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dqv: <https://www.w3.org/TR/vocab-dqv/> .
@@ -60,17 +60,17 @@ hrishapes:DataServiceShape a sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:7106fb818f4243cf82fbf8691d1ec8092;
+  sh:in _:c464c44d77c34cd99991c040b34f454d2;
   dash:viewer dash:URIViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:7106fb818f4243cf82fbf8691d1ec8092 rdf:first <http://publications.europa.eu/resource/authority/access-right/PUBLIC>;
-  rdf:rest _:7106fb818f4243cf82fbf8691d1ec8093 .
+_:c464c44d77c34cd99991c040b34f454d2 rdf:first <http://publications.europa.eu/resource/authority/access-right/PUBLIC>;
+  rdf:rest _:c464c44d77c34cd99991c040b34f454d3 .
 
-_:7106fb818f4243cf82fbf8691d1ec8093 rdf:first <http://publications.europa.eu/resource/authority/access-right/RESTRICTED>;
-  rdf:rest _:7106fb818f4243cf82fbf8691d1ec8094 .
+_:c464c44d77c34cd99991c040b34f454d3 rdf:first <http://publications.europa.eu/resource/authority/access-right/RESTRICTED>;
+  rdf:rest _:c464c44d77c34cd99991c040b34f454d4 .
 
-_:7106fb818f4243cf82fbf8691d1ec8094 rdf:first <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC>;
+_:c464c44d77c34cd99991c040b34f454d4 rdf:first <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC>;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DataServiceShape#dcatap:applicableLegislation> sh:path

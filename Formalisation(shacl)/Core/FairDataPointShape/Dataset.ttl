@@ -15,7 +15,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema1: <http://schema.org/> .
+@prefix schema: <https://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
@@ -667,7 +667,7 @@ hrishapes:AttributionShape a sh:NodeShape ;
     sh:description "A technique, method or technology used in a Dataset."@en ;
     sh:name "measurement technique"@en ;
     sh:nodeKind sh:IRI ;
-    sh:path schema1:measurementTechnique .
+    sh:path schema:measurementTechnique .
 
 hrishapes:IdentifierShape a sh:NodeShape ;
     rdfs:label "Identifier"@en ;
