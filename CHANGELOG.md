@@ -23,7 +23,7 @@ The following properties are no longer mandatory:
 - Distribution: format
 - Distribution: rights
 - Dataset Series: contact point
-- Kind: formatted namek
+- Kind: formatted name
 
 #### Enhancements
 - Grammar checks on definitions and usage notes
