@@ -168,7 +168,7 @@ hrishapes:DistributionShape a sh:NodeShape ;
         <http://data.health-ri.nl/core/p2/DistributionShape#dct:rights>,
         <http://data.health-ri.nl/core/p2/DistributionShape#dct:title>,
         <http://data.health-ri.nl/core/p2/DistributionShape#foaf:page>,
-        <http://data.health-ri.nl/core/p2/DistributionShape#healthdcatap:retentionperiod>,
+        <http://data.health-ri.nl/core/p2/DistributionShape#healthdcatap:retentionPeriod>,
         <http://data.health-ri.nl/core/p2/DistributionShape#spdx:checksum> ;
     sh:targetClass dcat:Distribution .
 
@@ -1485,13 +1485,13 @@ hrishapes:ColumnShape a sh:NodeShape ;
     sh:nodeKind sh:IRI ;
     sh:path foaf:page .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#healthdcatap:retentionperiod> dash:editor dash:BlankNodeEditor ;
+<http://data.health-ri.nl/core/p2/DistributionShape#healthdcatap:retentionPeriod> dash:editor dash:BlankNodeEditor ;
     dash:viewer dash:DetailsViewer ;
     sh:description "A temporal period during which the dataset is available for secondary use."@en ;
     sh:maxCount 1 ;
     sh:name "retention period"@en ;
     sh:node hrishapes:PeriodOfTimeShape ;
-    sh:path healthdcatap:retentionperiod .
+    sh:path healthdcatap:retentionPeriod .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#spdx:checksum> dash:editor dash:BlankNodeEditor ;
     dash:viewer dash:DetailsViewer ;
