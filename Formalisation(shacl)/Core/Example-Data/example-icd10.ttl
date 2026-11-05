@@ -1,0 +1,5 @@
+@prefix hri: <https://w3id.org/health-ri/metadata-vocabulary#> .
+
+# Expected-to-fail fixture until the separate ICD-10 regex bug is fixed.
+<http://example.com/dataset>
+    hri:healthConditionOfInterest <http://id.who.int/icd/release/10/2019/C34> .

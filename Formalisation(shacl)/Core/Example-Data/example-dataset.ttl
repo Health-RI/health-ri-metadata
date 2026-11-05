@@ -4,6 +4,14 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix dcatap: <http://data.europa.eu/r5r/> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
+@prefix edam: <http://edamontology.org/> .
+@prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
+@prefix hri: <https://w3id.org/health-ri/metadata-vocabulary#> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 
 <http://example.com/dataset> a dcat:Dataset ;
     dct:title "Example Dataset" ;
@@ -152,3 +160,36 @@
     dct:modified "2024-07-11T11:48:00Z"^^xsd:dateTime ;
     dcatap:applicableLegislation <http://data.europa.eu/eli/reg/2025/327/oj> .
 
+# New property coverage for the testing release.
+<http://example.com/dataset>
+    dct:alternative "Example biomedical dataset"@en ;
+    dct:provenance <http://example.com/dataset/provenance> ;
+    dqv:hasQualityAnnotation <http://example.com/dataset/quality-certificate> ;
+    edam:has_topic <http://edamontology.org/topic_3384> ;
+    healthdcatap:hasVariables <http://example.com/dataset/variables> ;
+    hri:anatomicalLocationCovered <http://snomed.info/id/91723000> ;
+    hri:healthConditionOfInterest <http://snomed.info/id/22298006> ;
+    schema:measurementTechnique <http://edamontology.org/topic_3444> .
+
+<http://example.com/dataset/provenance> a dct:ProvenanceStatement ;
+    rdfs:label "Derived from the illustrative source dataset"@en .
+
+<http://example.com/dataset/quality-certificate> a dqv:QualityCertificate ;
+    oa:hasTarget <http://example.com/dataset> ;
+    oa:hasBody <http://example.com/quality-certificate> .
+
+<http://example.com/dataset/variables> a csvw:TableGroup ;
+    dct:title "Dataset variables"@en ;
+    csvw:table <http://example.com/dataset/variables/table> .
+
+<http://example.com/dataset/variables/table> a csvw:Table ;
+    dct:title "Illustrative observations"@en ;
+    csvw:url <http://example.com/dataset/observations.csv> ;
+    csvw:column <http://example.com/dataset/variables/age> .
+
+<http://example.com/dataset/variables/age> a csvw:Column ;
+    csvw:name "age" ;
+    csvw:title "Age"@en ;
+    csvw:datatype "integer" ;
+    csvw:propertyUrl <https://schema.org/age> ;
+    dct:description "Age in years"@en .
