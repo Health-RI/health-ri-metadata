@@ -76,17 +76,17 @@ hrishapes:DatasetShape a sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:ca5c4dde0e46432dbeaf6ec0c0c3f8712;
+  sh:in _:5e32738f00d34807b9242e8a215a76752;
   dash:viewer dash:LabelViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:ca5c4dde0e46432dbeaf6ec0c0c3f8712 rdf:first <http://publications.europa.eu/resource/authority/access-right/PUBLIC>;
-  rdf:rest _:ca5c4dde0e46432dbeaf6ec0c0c3f8713 .
+_:5e32738f00d34807b9242e8a215a76752 rdf:first <http://publications.europa.eu/resource/authority/access-right/PUBLIC>;
+  rdf:rest _:5e32738f00d34807b9242e8a215a76753 .
 
-_:ca5c4dde0e46432dbeaf6ec0c0c3f8713 rdf:first <http://publications.europa.eu/resource/authority/access-right/RESTRICTED>;
-  rdf:rest _:ca5c4dde0e46432dbeaf6ec0c0c3f8714 .
+_:5e32738f00d34807b9242e8a215a76753 rdf:first <http://publications.europa.eu/resource/authority/access-right/RESTRICTED>;
+  rdf:rest _:5e32738f00d34807b9242e8a215a76754 .
 
-_:ca5c4dde0e46432dbeaf6ec0c0c3f8714 rdf:first <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC>;
+_:5e32738f00d34807b9242e8a215a76754 rdf:first <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC>;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#dct:alternative> sh:path dct:alternative;
@@ -219,7 +219,7 @@ _:ca5c4dde0e46432dbeaf6ec0c0c3f8714 rdf:first <http://publications.europa.eu/res
   sh:name "health condition of interest"@en;
   sh:description "Relates a dataset to a SNOMED CT, ICD-10, ICD-11, or ORPHAcode concept representing a disease, disorder, or other clinical condition that the dataset concerns as a whole."@en;
   sh:nodeKind sh:IRI;
-  sh:pattern "^(http://snomed[.]info/id/[0-9]+|http://id[.]who[.]int/icd/entity/[0-9]+|http://id[.]who[.]int/icd/release/10/([0-9]{4}/)?[A-Za-z0-9][A-Za-z0-9.-]* |http://id[.]who[.]int/icd/release/11/.+ |http://www[.]orpha[.]net/ORDO/Orphanet_[0-9]+)$";
+  sh:pattern "^(http://snomed[.]info/id/[0-9]+|http://id[.]who[.]int/icd/entity/[0-9]+|http://id[.]who[.]int/icd/release/10/([0-9]{4}/)?[A-Za-z0-9][A-Za-z0-9.-]*|http://id[.]who[.]int/icd/release/11/.+|http://www[.]orpha[.]net/ORDO/Orphanet_[0-9]+)$";
   dash:viewer dash:LabelViewer;
   dash:editor dash:URIEditor .
 
