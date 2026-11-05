@@ -1,5 +1,0 @@
-@prefix hri: <https://w3id.org/health-ri/metadata-vocabulary#> .
-
-# Valid ICD-10 release IRI for SHACL health-condition regression testing.
-<http://example.com/dataset>
-    hri:healthConditionOfInterest <http://id.who.int/icd/release/10/2019/C34> .
