@@ -144,11 +144,15 @@ def test_csvw_missing_column_name_is_rejected():
     assert not conform, report
 
 
-@pytest.mark.xfail(strict=True, reason="Pending separately scoped ICD-10 regex fix")
-def test_icd10_iri_should_be_accepted():
-    from rdflib import Graph
+def test_icd10_and_icd11_iris_should_be_accepted():
+    from rdflib import Graph, Namespace, URIRef
     graph = Graph().parse(get_example_path("example-dataset"))
     graph.parse(get_example_path("example-icd10"))
+    graph.add((
+        URIRef("http://example.com/dataset"),
+        Namespace("https://w3id.org/health-ri/metadata-vocabulary#").healthConditionOfInterest,
+        URIRef("http://id.who.int/icd/release/11/2024-01/mms/123456789"),
+    ))
     conform, _, report = validate(
         data_graph=graph,
         shacl_graph=get_shacl_path("Dataset"),
@@ -156,3 +160,40 @@ def test_icd10_iri_should_be_accepted():
         meta_shacl=True,
     )
     assert conform, report
+
+
+def test_access_service_requires_dataservice_class():
+    from rdflib import Graph, Namespace, URIRef
+    from rdflib.namespace import RDF
+
+    graph = Graph().parse(get_example_path("example-distribution"))
+    dcat = Namespace("http://www.w3.org/ns/dcat#")
+    distribution = URIRef("http://example.com/distribution")
+    service = graph.value(distribution, dcat.accessService)
+    assert service is not None
+    assert (service, RDF.type, dcat.DataService) in graph
+
+    graph.remove((service, RDF.type, dcat.DataService))
+    conform, _, report = validate(
+        data_graph=graph,
+        shacl_graph=get_shacl_path("Distribution"),
+        allow_warnings=False,
+        meta_shacl=True,
+    )
+    assert not conform, report
+
+
+def test_combined_validation_shape_requires_dataservice_class():
+    from rdflib import Graph, Namespace, URIRef
+    from rdflib.namespace import SH
+
+    shapes = Graph().parse(
+        "Formalisation(shacl)/Core/ValidationShape/HRI-Datamodel-shapes.ttl",
+        format="turtle",
+    )
+    property_shape = URIRef(
+        "http://data.health-ri.nl/core/p2/DistributionShape#dcat:accessService"
+    )
+    dcat = Namespace("http://www.w3.org/ns/dcat#")
+    assert (property_shape, SH.path, dcat.accessService) in shapes
+    assert (property_shape, SH["class"], dcat.DataService) in shapes

@@ -96,7 +96,7 @@ hrishapes:ChecksumShape a sh:NodeShape ;
     sh:description "A data service that gives access to the distribution of the dataset."@en ;
     sh:maxCount 1 ;
     sh:name "access service"@en ;
-    sh:nodeKind sh:IRI ;
+    sh:class dcat:DataService ;
     sh:path dcat:accessService .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#dcat:accessURL> dash:editor dash:URIEditor ;
