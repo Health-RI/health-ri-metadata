@@ -50,7 +50,7 @@ hrishapes:DistributionShape a sh:NodeShape;
     <http://data.health-ri.nl/core/p2/DistributionShape#dct:language>, <http://data.health-ri.nl/core/p2/DistributionShape#dct:license>,
     <http://data.health-ri.nl/core/p2/DistributionShape#dct:conformsTo>, <http://data.health-ri.nl/core/p2/DistributionShape#dcat:mediaType>,
     <http://data.health-ri.nl/core/p2/DistributionShape#dct:modified>, <http://data.health-ri.nl/core/p2/DistributionShape#dcat:packageFormat>,
-    <http://data.health-ri.nl/core/p2/DistributionShape#dct:issued>, <http://data.health-ri.nl/core/p2/DistributionShape#healthdcatap:retentionperiod>,
+    <http://data.health-ri.nl/core/p2/DistributionShape#dct:issued>, <http://data.health-ri.nl/core/p2/DistributionShape#healthdcatap:retentionPeriod>,
     <http://data.health-ri.nl/core/p2/DistributionShape#dct:rights>, <http://data.health-ri.nl/core/p2/DistributionShape#adms:status>,
     <http://data.health-ri.nl/core/p2/DistributionShape#dcat:temporalResolution>, <http://data.health-ri.nl/core/p2/DistributionShape#dct:title> .
 
@@ -202,8 +202,8 @@ hrishapes:DistributionShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#healthdcatap:retentionperiod>
-  sh:path healthdcatap:retentionperiod;
+<http://data.health-ri.nl/core/p2/DistributionShape#healthdcatap:retentionPeriod>
+  sh:path healthdcatap:retentionPeriod;
   sh:name "retention period"@en;
   sh:description "A temporal period during which the dataset is available for secondary use."@en;
   sh:maxCount 1;
