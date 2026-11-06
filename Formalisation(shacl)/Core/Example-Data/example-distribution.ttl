@@ -15,5 +15,4 @@
 
 # New distribution property coverage.
 <http://example.com/distribution>
-    dcatap:availability <http://publications.europa.eu/resource/authority/planned-availability/STABLE> ;
-    dcat:accessService [ a dcat:DataService ] .
+    dcatap:availability <http://publications.europa.eu/resource/authority/planned-availability/STABLE> .
