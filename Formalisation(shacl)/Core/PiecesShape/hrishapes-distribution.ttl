@@ -58,7 +58,7 @@ hrishapes:DistributionShape a sh:NodeShape;
   sh:name "access service"@en;
   sh:description "A data service that gives access to the distribution of the dataset."@en;
   sh:maxCount 1;
-  sh:class dcat:DataService;
+  sh:nodeKind sh:IRI;
   dash:viewer dash:URIViewer;
   dash:editor dash:URIEditor .
 
