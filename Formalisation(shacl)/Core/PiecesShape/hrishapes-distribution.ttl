@@ -1,7 +1,7 @@
 @prefix schema: <https://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> .
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -50,7 +50,7 @@ hrishapes:DistributionShape a sh:NodeShape;
     <http://data.health-ri.nl/core/p2/DistributionShape#dct:language>, <http://data.health-ri.nl/core/p2/DistributionShape#dct:license>,
     <http://data.health-ri.nl/core/p2/DistributionShape#dct:conformsTo>, <http://data.health-ri.nl/core/p2/DistributionShape#dcat:mediaType>,
     <http://data.health-ri.nl/core/p2/DistributionShape#dct:modified>, <http://data.health-ri.nl/core/p2/DistributionShape#dcat:packageFormat>,
-    <http://data.health-ri.nl/core/p2/DistributionShape#dct:issued>, <http://data.health-ri.nl/core/p2/DistributionShape#healthdcatap:retentionperiod>,
+    <http://data.health-ri.nl/core/p2/DistributionShape#dct:issued>, <http://data.health-ri.nl/core/p2/DistributionShape#healthdcatap:retentionPeriod>,
     <http://data.health-ri.nl/core/p2/DistributionShape#dct:rights>, <http://data.health-ri.nl/core/p2/DistributionShape#adms:status>,
     <http://data.health-ri.nl/core/p2/DistributionShape#dcat:temporalResolution>, <http://data.health-ri.nl/core/p2/DistributionShape#dct:title> .
 
@@ -202,8 +202,8 @@ hrishapes:DistributionShape a sh:NodeShape;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:DateTimePickerEditor .
 
-<http://data.health-ri.nl/core/p2/DistributionShape#healthdcatap:retentionperiod>
-  sh:path healthdcatap:retentionperiod;
+<http://data.health-ri.nl/core/p2/DistributionShape#healthdcatap:retentionPeriod>
+  sh:path healthdcatap:retentionPeriod;
   sh:name "retention period"@en;
   sh:description "A temporal period during which the dataset is available for secondary use."@en;
   sh:maxCount 1;
@@ -224,35 +224,35 @@ hrishapes:DistributionShape a sh:NodeShape;
   sh:description "The status of the Asset in the context of a particular workflow process."@en;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:dbaf84b16d8d41baa9f23e85f5af636a2;
+  sh:in _:4976aa17599844aa85856f46748286552;
   dash:viewer dash:LabelViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:dbaf84b16d8d41baa9f23e85f5af636a2 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/COMPLETED>;
-  rdf:rest _:dbaf84b16d8d41baa9f23e85f5af636a3 .
+_:4976aa17599844aa85856f46748286552 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/COMPLETED>;
+  rdf:rest _:4976aa17599844aa85856f46748286553 .
 
-_:dbaf84b16d8d41baa9f23e85f5af636a3 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/DEVELOP>;
-  rdf:rest _:dbaf84b16d8d41baa9f23e85f5af636a4 .
+_:4976aa17599844aa85856f46748286553 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/DEVELOP>;
+  rdf:rest _:4976aa17599844aa85856f46748286554 .
 
-_:dbaf84b16d8d41baa9f23e85f5af636a4 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/WITHDRAWN>;
-  rdf:rest _:dbaf84b16d8d41baa9f23e85f5af636a5 .
+_:4976aa17599844aa85856f46748286554 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/WITHDRAWN>;
+  rdf:rest _:4976aa17599844aa85856f46748286555 .
 
-_:dbaf84b16d8d41baa9f23e85f5af636a5 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/PLANNED>;
-  rdf:rest _:dbaf84b16d8d41baa9f23e85f5af636a6 .
+_:4976aa17599844aa85856f46748286555 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/PLANNED>;
+  rdf:rest _:4976aa17599844aa85856f46748286556 .
 
-_:dbaf84b16d8d41baa9f23e85f5af636a6 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/ARCHIVE>;
-  rdf:rest _:dbaf84b16d8d41baa9f23e85f5af636a7 .
+_:4976aa17599844aa85856f46748286556 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/ARCHIVE>;
+  rdf:rest _:4976aa17599844aa85856f46748286557 .
 
-_:dbaf84b16d8d41baa9f23e85f5af636a7 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/ONGOING>;
-  rdf:rest _:dbaf84b16d8d41baa9f23e85f5af636a8 .
+_:4976aa17599844aa85856f46748286557 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/ONGOING>;
+  rdf:rest _:4976aa17599844aa85856f46748286558 .
 
-_:dbaf84b16d8d41baa9f23e85f5af636a8 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/REQUIRED>;
-  rdf:rest _:dbaf84b16d8d41baa9f23e85f5af636a9 .
+_:4976aa17599844aa85856f46748286558 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/REQUIRED>;
+  rdf:rest _:4976aa17599844aa85856f46748286559 .
 
-_:dbaf84b16d8d41baa9f23e85f5af636a9 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/OP_DATPRO>;
-  rdf:rest _:dbaf84b16d8d41baa9f23e85f5af636a10 .
+_:4976aa17599844aa85856f46748286559 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/OP_DATPRO>;
+  rdf:rest _:4976aa17599844aa85856f467482865510 .
 
-_:dbaf84b16d8d41baa9f23e85f5af636a10 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/DEPRECATED>;
+_:4976aa17599844aa85856f467482865510 rdf:first <http://publications.europa.eu/resource/authority/distribution-status/DEPRECATED>;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DistributionShape#dcat:temporalResolution> sh:path

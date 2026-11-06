@@ -1,7 +1,7 @@
 @prefix schema: <https://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> .
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -76,17 +76,17 @@ hrishapes:DatasetShape a sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:IRI;
-  sh:in _:5e32738f00d34807b9242e8a215a76752;
+  sh:in _:8da98f3ac9f949b2896fa738e962c5102;
   dash:viewer dash:LabelViewer;
   dash:editor dash:EnumSelectEditor .
 
-_:5e32738f00d34807b9242e8a215a76752 rdf:first <http://publications.europa.eu/resource/authority/access-right/PUBLIC>;
-  rdf:rest _:5e32738f00d34807b9242e8a215a76753 .
+_:8da98f3ac9f949b2896fa738e962c5102 rdf:first <http://publications.europa.eu/resource/authority/access-right/PUBLIC>;
+  rdf:rest _:8da98f3ac9f949b2896fa738e962c5103 .
 
-_:5e32738f00d34807b9242e8a215a76753 rdf:first <http://publications.europa.eu/resource/authority/access-right/RESTRICTED>;
-  rdf:rest _:5e32738f00d34807b9242e8a215a76754 .
+_:8da98f3ac9f949b2896fa738e962c5103 rdf:first <http://publications.europa.eu/resource/authority/access-right/RESTRICTED>;
+  rdf:rest _:8da98f3ac9f949b2896fa738e962c5104 .
 
-_:5e32738f00d34807b9242e8a215a76754 rdf:first <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC>;
+_:8da98f3ac9f949b2896fa738e962c5104 rdf:first <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC>;
   rdf:rest rdf:nil .
 
 <http://data.health-ri.nl/core/p2/DatasetShape#dct:alternative> sh:path dct:alternative;

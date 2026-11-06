@@ -1,7 +1,7 @@
 @prefix schema: <https://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> .
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -58,5 +58,6 @@ hrishapes:ChecksumShape a sh:NodeShape;
   sh:minCount 1;
   sh:maxCount 1;
   sh:nodeKind sh:Literal;
+  sh:datatype xsd:hexBinary;
   dash:viewer dash:LiteralViewer;
   dash:editor dash:TextAreaEditor .
