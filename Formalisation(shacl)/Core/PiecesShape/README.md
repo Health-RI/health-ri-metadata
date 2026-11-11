@@ -7,4 +7,4 @@ These are the files supplied to `FAIRDataPointSchemaTool` when publishing schema
 - [FairDataPointShape](../FairDataPointShape/): bundles for individual configured schemas, including their supporting shapes.
 - [ValidationShape](../ValidationShape/): all individual shapes combined into one validation graph.
 
-For the shared generation context, configuration, and reported title-cardinality limitation, see the [core overview](../README.md).
+For the packaging relationships, configuration, and validation considerations, see the [core overview](../README.md).

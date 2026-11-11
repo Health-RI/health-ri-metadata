@@ -1,22 +1,20 @@
 # Health-RI Core Shapes
 
-For v2.1.0, the three SHACL outputs share the **for-FDP specification**. They organize those definitions differently and serve different workflows.
+The core SHACL shapes for v2.1.0 are available in three layouts based on the **for-FDP specification**. Each layout serves a different FDP publication or RDF instance validation workflow.
 
 ## Which shapes should I use?
 
 | Directory | v2.1.0 layout | Purpose |
 |---|---|---|
-| [PiecesShape](PiecesShape/) | 19 individual class shape files | Main and supporting class shapes; inputs to `FAIRDataPointSchemaTool` for FDP publication and to the combined outputs. |
-| [FairDataPointShape](FairDataPointShape/) | 7 schema bundles | Each configured schema together with its required supporting shapes, prepared for FDP use. Selected bundles are also used by the automated tests. |
-| [ValidationShape](ValidationShape/) | 1 combined shape file | All individual shapes in one graph for RDF instance validation. It retains the same FDP-oriented basis. |
-
-These folders represent different packaging of the FDP-oriented definitions. A separate set of model-oriented shapes is a design question that the team deferred to a major release.
+| [PiecesShape](PiecesShape/) | 19 individual class shape files | Main and supporting class shapes used to build the combined outputs and as input to `FAIRDataPointSchemaTool`. |
+| [FairDataPointShape](FairDataPointShape/) | 7 schema bundles | Schema-specific groupings of the individual shapes, configured in `Properties.yaml` and prepared for FDP use. |
+| [ValidationShape](ValidationShape/) | 1 combined shape file | All individual shapes in a single graph for RDF instance validation. |
 
 ## Packaging and consumers
 
-The diagram shows the shape groupings and their consumers. It omits spreadsheet conversion commands and manual editing steps, which require confirmation from the generation maintainers.
+The individual shapes in `PiecesShape` are grouped by schema into `FairDataPointShape` bundles, using the groupings defined in `Properties.yaml`, or combined into `ValidationShape` for RDF instance validation. `FAIRDataPointSchemaTool` consumes the individual pieces for schema publication to a FAIR Data Point. The `FairDataPointShape` bundles provide another path for supplying shapes to a FAIR Data Point.
 
-Colors identify roles: **blue** for SHACL outputs, **amber** for configuration, **gray** for tools and validation activities, and **green** for the FDP service.
+In the diagram, solid arrows show shape aggregation or use, while the dashed arrow identifies configuration. Colors distinguish **SHACL artifacts** (blue), **configuration** (amber), **tools and validation activities** (gray), and the **FAIR Data Point service** (green).
 
 ```mermaid
 flowchart TD
@@ -25,7 +23,7 @@ flowchart TD
     Y["Properties.yaml"] -.->|schema groupings| F
     P --> S["FAIRDataPointSchemaTool"]
     S --> D["FAIR Data Point"]
-    F --> T["pySHACL tests"]
+    F --> D["FAIR Data Point"]
     V --> I["RDF instance validation"]
 
     classDef artifact fill:#DBEAFE,stroke:#2563EB,color:#172554;
@@ -35,20 +33,14 @@ flowchart TD
 
     class P,F,V artifact;
     class Y configuration;
-    class S,T,I tool;
+    class S,I tool;
     class D service;
 ```
 
-Maintainers clarified during v2.1.0 release testing that `FAIRDataPointSchemaTool` receives the individual files from `PiecesShape` when publishing schemas to an FDP. In earlier model versions, that tool also assembled the combined files. The current generation pipeline produces all three outputs.
-
-[Properties.yaml](Properties.yaml) lists the source pieces for each schema, the schemas to publish, FDP resource relationships, the schema version, and input/output locations. Its v2.1.0 `inputDir` points to the upstream `testing` branch.
+[Properties.yaml](Properties.yaml) defines the pieces included in each schema bundle, the schemas to publish, FDP resource relationships, the schema version, and the input/output locations. For v2.1.0, its `inputDir` references the upstream `testing` branch.
 
 See [SHACL_pipeline_templates](SHACL_pipeline_templates/) for the intermediate Excel templates and [Documents](../../Documents/README.md) for the model and FDP workbooks.
 
-## FDP adaptations and release notes
+## Validation considerations
 
-The release-testing discussion identifies a mandatory `dct:title` requirement for classes managed as independent FDP resources. A check that a title property exists does not establish that it is mandatory. In the current v2.1.0 [Distribution piece](PiecesShape/hrishapes-distribution.ttl) and [Distribution bundle](FairDataPointShape/Distribution.ttl), the title property has no `sh:minCount`. This records the title-cardinality concern raised during release testing.
-
-The common FDP-oriented basis does not by itself establish exact constraint parity between every checked-in output. Consult the relevant shapes when checking a particular constraint.
-
-For a separate example of validation-message design, [HealthDCAT-AP issue #65](https://code.europa.eu/healthdataeu/healthdcat-ap/-/work_items/65) discusses separating cardinality and nested-shape checks to avoid misleading messages. That report does not establish the same defect in Health-RI.
+These shapes implement the FDP-oriented specification, including its FDP-specific adaptations. For v2.1.0, the `dct:title` property in the [Distribution piece](PiecesShape/hrishapes-distribution.ttl) and [Distribution bundle](FairDataPointShape/Distribution.ttl) has no `sh:minCount`, so neither file requires that property during SHACL validation. Inspect the specific shape file used in your workflow to determine which constraints are enforced.

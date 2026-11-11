@@ -2,7 +2,7 @@
 
 SHACL bundles prepared for FDP use. Each file combines one schema configured in [Properties.yaml](../Properties.yaml) with the supporting class shapes assigned to it. For v2.1.0, the configured schemas are Resource, Dataset, Catalog, Distribution, Dataset Series, Data Service, and Table Group.
 
-The bundles are assembled from [PiecesShape](../PiecesShape/) and retain the for-FDP specification. The individual pieces are also the input to `FAIRDataPointSchemaTool` for FDP publication; see the [core overview](../README.md) for that relationship and the reported title-cardinality limitation.
+The bundles are assembled from [PiecesShape](../PiecesShape/) and retain the for-FDP specification. The individual pieces are also the input to `FAIRDataPointSchemaTool` for FDP publication; see the [core overview](../README.md) for the packaging and publication relationships and validation considerations.
 
 The existing preprocessing target documented for these files is FDP Reference Implementation 1.16. Compatibility with the FDP version being used requires separate verification.
 
