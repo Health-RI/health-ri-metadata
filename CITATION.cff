@@ -23,13 +23,17 @@ identifiers:
     description: Git repository
 repository-code: 'https://w3id.org/health-ri/metadata/git'
 abstract: >-
-  The Health-RI Core Metadata Schema (v2.1.0) is an
-  RDF-based specification developed for the Dutch National Health Data
-  Catalogue. It draws on DCAT-AP NL and draft
-  HealthDCAT-AP and includes Health-RI-specific and
-  ELSI-related fields. The schema defines main and
-  supporting classes with structured properties to describe,
-  among others, datasets, catalogues, and data services.
+  The Health-RI Core Metadata Schema (v2.1.0) is an RDF-based
+  specification for the National Health Data Catalogue. It draws on
+  DCAT-AP NL and a draft of HealthDCAT-AP, with Health-RI-specific
+  adaptations. The schema defines classes, properties, cardinalities, and
+  controlled vocabularies for describing catalogues, datasets, data
+  services, dataset series, distributions, and supporting entities.
+  Definitions and usage notes help data holders and technical implementers
+  apply the schema consistently. These common, machine-readable resource
+  descriptions support interoperability and help make health and life
+  sciences data in the Netherlands findable and reusable across
+  institutions, in line with the FAIR principles.
 keywords:
   - metadata
   - FAIR
