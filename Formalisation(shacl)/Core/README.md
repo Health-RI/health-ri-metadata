@@ -16,6 +16,8 @@ These folders represent different packaging of the FDP-oriented definitions. A s
 
 The diagram shows the shape groupings and their consumers. It omits spreadsheet conversion commands and manual editing steps, which require confirmation from the generation maintainers.
 
+Colors identify roles: **blue** for SHACL outputs, **amber** for configuration, **gray** for tools and validation activities, and **green** for the FDP service.
+
 ```mermaid
 flowchart TD
     P["PiecesShape"] -->|group by schema| F["FairDataPointShape"]
@@ -25,6 +27,16 @@ flowchart TD
     S --> D["FAIR Data Point"]
     F --> T["pySHACL tests"]
     V --> I["RDF instance validation"]
+
+    classDef artifact fill:#DBEAFE,stroke:#2563EB,color:#172554;
+    classDef configuration fill:#FEF3C7,stroke:#B45309,color:#451A03;
+    classDef tool fill:#F1F5F9,stroke:#64748B,color:#0F172A;
+    classDef service fill:#DCFCE7,stroke:#15803D,color:#14532D;
+
+    class P,F,V artifact;
+    class Y configuration;
+    class S,T,I tool;
+    class D service;
 ```
 
 Maintainers clarified during v2.1.0 release testing that `FAIRDataPointSchemaTool` receives the individual files from `PiecesShape` when publishing schemas to an FDP. In earlier model versions, that tool also assembled the combined files. The current generation pipeline produces all three outputs.
