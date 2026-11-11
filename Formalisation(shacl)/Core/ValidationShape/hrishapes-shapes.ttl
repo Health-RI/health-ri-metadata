@@ -1709,4 +1709,3 @@ hrishapes:AgentShape a sh:NodeShape ;
         <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishernote>,
         <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishertype> ;
     sh:targetClass foaf:Agent .
-
