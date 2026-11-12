@@ -22,7 +22,7 @@ The reference metadata specification and its FDP-oriented implementation have di
 | `dcat:dataset` on `dcat:Catalog` | `1..n` (mandatory) | `0..n` | The FDP must allow a catalogue to be created before its datasets are added. Requiring a dataset immediately would create a dependency that prevents the initial creation of the catalogue. |
 | `dct:title` on `dcat:Distribution` | `0..n` (recommended) | `1..n` (mandatory) | The FDP requires a title to create and manage a distribution as an independently identifiable resource. |
 
-Although the FDP-oriented workbook still labels `dcat:dataset` as *Mandatory* in its requirement-level column, its FDP-specific cardinality is `0..n`, and the corresponding SHACL shape does not enforce a minimum count.
+The FDP-oriented workbook specifies a cardinality of `0..n` for `dcat:dataset`, and the corresponding SHACL shape does not enforce a minimum count.
 
 Conversely, the FDP-oriented specification makes `dct:title` mandatory for distributions, and the corresponding SHACL shapes enforce this requirement through `sh:minCount 1`.
 

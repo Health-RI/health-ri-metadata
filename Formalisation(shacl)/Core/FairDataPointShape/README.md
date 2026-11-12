@@ -8,4 +8,4 @@ The existing preprocessing target documented for these files is FDP Reference Im
 
 ## Automated tests
 
-[test_shacl.py](../../../tests/test_shacl.py) uses pySHACL to exercise the Catalog, Dataset, Distribution, and Data Service bundles with selected examples and fixtures. This is the current automated coverage, rather than a test of every bundle or of a running FDP installation.
+[test_shacl.py](../../../tests/test_shacl.py) uses pytest and pySHACL to validate example RDF data against the Catalog, Dataset, Distribution, and Data Service bundles. Additional test cases focus on Dataset. These tests do not cover every bundle or exercise a running FDP installation.
