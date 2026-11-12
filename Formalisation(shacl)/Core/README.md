@@ -43,4 +43,8 @@ See [SHACL_pipeline_templates](SHACL_pipeline_templates/) for the intermediate E
 
 ## Validation considerations
 
-These shapes implement the FDP-oriented specification, including its FDP-specific adaptations. For v2.1.0, the `dct:title` property in the [Distribution piece](PiecesShape/hrishapes-distribution.ttl) and [Distribution bundle](FairDataPointShape/Distribution.ttl) has no `sh:minCount`, so neither file requires that property during SHACL validation. Inspect the specific shape file used in your workflow to determine which constraints are enforced.
+All three SHACL layouts are based on the FDP-oriented specification, not directly on the reference metadata workbook. They therefore retain FDP-specific validation adaptations, including the relaxed minimum cardinality of `dcat:dataset` for catalogues and the additional mandatory `dct:title` constraint for distributions.
+
+In particular, the combined `ValidationShape` graph should not be interpreted as an independent implementation of the reference specification.
+
+See [FDP-specific validation rules](../../Documents/README.md#fdp-specific-validation-rules) for the precise differences and their rationale. Inspect the actual SHACL revision used by your workflow to determine which constraints are enforced.
