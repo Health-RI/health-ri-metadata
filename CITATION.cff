@@ -2,11 +2,18 @@
 # Visit https://bit.ly/cffinit to generate yours today!
 
 cff-version: 1.2.0
-title: Health-RI Core Metadata Schema
+title: Health-RI Metadata Model
+
 message: >-
-  If you use this software, please cite it using the
-  metadata from this file.
+  If you use, implement, or adapt the Health-RI Metadata Model,
+  including its schema workbooks, SHACL shapes, and related
+  machine-readable artifacts, please cite this repository using the
+  metadata in this file. For the human-readable Health-RI Metadata
+  Model specification, cite the metadata-documentation repository
+  (https://github.com/Health-RI/metadata-documentation).
+
 type: software
+
 authors:
   - name: Stichting Health-RI
     address: Jaarbeursplein 6
@@ -17,13 +24,16 @@ authors:
     email: info@health-ri.nl
     tel: '+31 85 3039498 '
     website: 'https://www.health-ri.nl/'
+
 identifiers:
   - type: url
     value: 'https://w3id.org/health-ri/metadata/git'
     description: Git repository
+
 repository-code: 'https://w3id.org/health-ri/metadata/git'
+
 abstract: >-
-  The Health-RI Core Metadata Schema (v2.1.0) is an RDF-based
+  The Health-RI Metadata Model (v2.1.0) is an RDF-based
   specification for the National Health Data Catalogue. It draws on
   DCAT-AP NL and a draft of HealthDCAT-AP, with Health-RI-specific
   adaptations. The schema defines classes, properties, cardinalities, and
@@ -34,10 +44,13 @@ abstract: >-
   descriptions support interoperability and help make health and life
   sciences data in the Netherlands findable and reusable across
   institutions, in line with the FAIR principles.
+
 keywords:
   - metadata
   - FAIR
   - health data
   - DCAT
   - healthcare
+
 version: v2.1.0
+license: CC-BY-4.0
