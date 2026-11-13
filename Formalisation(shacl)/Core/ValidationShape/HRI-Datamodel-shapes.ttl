@@ -1474,6 +1474,7 @@ hrishapes:ColumnShape a sh:NodeShape ;
 <http://data.health-ri.nl/core/p2/DistributionShape#dct:title> dash:editor dash:TextFieldEditor ;
     dash:viewer dash:LiteralViewer ;
     sh:description "A name given to the resource."@en ;
+    sh:minCount 1 ;
     sh:name "title"@en ;
     sh:nodeKind sh:Literal ;
     sh:path dct:title ;
@@ -1709,4 +1710,3 @@ hrishapes:AgentShape a sh:NodeShape ;
         <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishernote>,
         <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishertype> ;
     sh:targetClass foaf:Agent .
-
