@@ -37,7 +37,7 @@ flowchart TD
     class D service;
 ```
 
-[Properties.yaml](Properties.yaml) defines the pieces included in each schema bundle, the schemas to publish, FDP resource relationships, the schema version, and the input/output locations. For v2.1.0, its `inputDir` references the upstream `testing` branch.
+[Properties.yaml](Properties.yaml) defines the pieces included in each schema bundle, the schemas to publish, FDP resource relationships, the schema version, and the input/output locations. For v2.1.0, its `inputDir` references the upstream `v2.1.0` tag.
 
 See [SHACL_pipeline_templates](SHACL_pipeline_templates/) for the intermediate Excel templates and [Documents](../../Documents/README.md) for the model and FDP workbooks.
 
