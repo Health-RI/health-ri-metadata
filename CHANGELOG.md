@@ -1,4 +1,33 @@
 # Changelog
+## v2.1.0
+
+#### New properties Based on user requirements
+The following properties have been added to meet user requirements
+- Dataset: domain of the data (including [value list for edam:has_topic](https://github.com/Health-RI/health-ri-metadata/blob/master/Formalisation(shacl)/Core/ValueLists/edam-has-topic.tsv))
+- Dataset: measurement technique (including [value list for schema:measurementTechnique](https://github.com/Health-RI/health-ri-metadata/blob/master/Formalisation(shacl)/Core/ValueLists/schema-measurement-technique.tsv))
+- Dataset: health condition of interest
+- Dataset: anatomical location covered
+#### New classes and properties for HealthDCAT-AP compliance
+The following classes and properties have been added:
+- Dataset: alternative
+- Dataset: landing page
+- Dataset: provenance (with range ProvenanceStatement)
+- Dataset: variables (with range CSVW TableGroup)
+- Table group class (CSVW)
+- Table class (CSVW)
+- Column class (CSVW)
+
+#### Relaxed properties
+The following properties are no longer mandatory:
+- Distribution: bytesize
+- Distribution: format
+- Distribution: rights
+- Dataset Series: contact point
+- Kind: formatted name
+
+#### Enhancements
+- Grammar checks on definitions and usage notes
+- Added Known Good (including all properties of the model) and Known Bad (causing validation errors for the changed properties in v2.1) data.
 ## v2.0.3
 
 Enhancements:
@@ -45,7 +74,7 @@ Chores:
 
 The new version (v2) of the Health-RI model is somewhat more extensive than v1. While it introduces only a limited number of new mandatory properties, there are many new recommended properties a data holder can use to describe their data. Most of these are taken from the [HealthDCAT-AP draft](https://healthdcat-ap.github.io/).
 
-In [this sheet](Documents/Metadata_CoreGenericHealth_v2.xlsx) we state for each property whether it is identical to v1, adapted compared to v1, or completely new (column I). In below table you find an overview of the number of mandatory and recommended properties in both versions.
+In [this sheet](https://github.com/Health-RI/health-ri-metadata/blob/v2.0.0/Documents/Metadata_CoreGenericHealth_v2.xlsx) we state for each property whether it is identical to v1, adapted compared to v1, or completely new (column I). In below table you find an overview of the number of mandatory and recommended properties in both versions.
 
 ---
 
