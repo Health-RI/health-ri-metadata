@@ -18,6 +18,10 @@ To view specifics of the metadata model per class and property, please visit the
 
 Looking for the **Excel file** with all classes and properties? This can be found [here](Documents/Health-RI_v2.1.0.xlsx).
 
+## Modelling rationale
+
+[Health-RI Metadata Schema v2.1.0: Modelling Rationale and Design Considerations](https://doi.org/10.5281/zenodo.24396797) complements the technical specifications by explaining why the release reuses existing properties and introduces new Health-RI terms, how the controlled value lists were curated, and how the release advances alignment with HealthDCAT-AP.
+
 ## How to cite
 
 This repository maintains the **Health-RI Metadata Model**, including schema workbooks, SHACL shapes, controlled vocabulary resources, and related machine-readable artifacts.
