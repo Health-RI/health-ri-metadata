@@ -1,4 +1,4 @@
-<img align="right" src="Images\HRI-Prim-2023_RGB-small.jpg" alt="Health-RI Metadata Model" width="300"/>
+<img align="right" src="Images/HRI-Prim-2023_RGB-small.jpg" alt="Health-RI Metadata Model" width="300"/>
 
 [![Project DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15395604.svg)](https://doi.org/10.5281/zenodo.15395604)
 [![Project Status - Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
@@ -10,13 +10,13 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/Health-RI/health-ri-metadata)
 
 # Health-RI Metadata Model
-This repo holds the **Health-RI Metadata Model**, which is used in the [National Health Data Catalogue]([https://catalogus.healthdata.nl/).
+This repo holds the **Health-RI Metadata Model**, which is used in the [National Health Data Catalogue](https://catalogus.healthdata.nl/).
 
 ## Technical specifications
 To view specifics of the metadata model per class and property, please visit the **[documentation page](https://health-ri.github.io/metadata-documentation/)**.
 <br>**SHACL shapes** corresponding to the latest version of the model can be found in the [Shapes](https://github.com/Health-RI/health-ri-metadata/tree/master/Formalisation(shacl)/Core) folder in this repository.
 
-Looking for the **Excel file** with all classes and properties? This can be found [here](https://github.com/Health-RI/health-ri-metadata/blob/master/Documents/Metadata_CoreGenericHealth_v2.xlsx).
+Looking for the **Excel file** with all classes and properties? This can be found [here](Documents/Health-RI_v2.1.0.xlsx).
 
 ## How to cite
 
