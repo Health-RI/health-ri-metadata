@@ -704,10 +704,9 @@ hrishapes:ColumnShape a sh:NodeShape ;
     sh:nodeKind sh:IRI ;
     sh:path dcatap:hvdCategory .
 
-<http://data.health-ri.nl/core/p2/DataServiceShape#dct:accessRights> dash:editor dash:EnumSelectEditor ;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:accessRights> dash:editor dash:URIEditor ;
     dash:viewer dash:URIViewer ;
     sh:description "Information about who can access the resource or an indication of its security status."@en ;
-    sh:in ( <http://publications.europa.eu/resource/authority/access-right/PUBLIC> <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC> ) ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "access rights"@en ;
@@ -1710,3 +1709,4 @@ hrishapes:AgentShape a sh:NodeShape ;
         <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishernote>,
         <http://data.health-ri.nl/core/p2/AgentShape#healthdcatap:publishertype> ;
     sh:targetClass foaf:Agent .
+

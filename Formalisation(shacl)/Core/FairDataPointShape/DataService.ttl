@@ -7,7 +7,6 @@
 @prefix healthdcatap: <http://healthdataportal.eu/ns/health#> .
 @prefix hrishapes: <http://data.health-ri.nl/core/p2/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -210,10 +209,9 @@ hrishapes:aux-KindShape a owl:Ontology ;
     sh:nodeKind sh:IRI ;
     sh:path dcatap:hvdCategory .
 
-<http://data.health-ri.nl/core/p2/DataServiceShape#dct:accessRights> dash:editor dash:EnumSelectEditor ;
+<http://data.health-ri.nl/core/p2/DataServiceShape#dct:accessRights> dash:editor dash:URIEditor ;
     dash:viewer dash:URIViewer ;
     sh:description "Information about who can access the resource or an indication of its security status."@en ;
-    sh:in ( <http://publications.europa.eu/resource/authority/access-right/PUBLIC> <http://publications.europa.eu/resource/authority/access-right/RESTRICTED> <http://publications.europa.eu/resource/authority/access-right/NON_PUBLIC> ) ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:name "access rights"@en ;
