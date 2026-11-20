@@ -9,11 +9,13 @@ the shapes against test data of which we know the expected test result.
 
 ## Running the tests
 
-The tests are automatically run by Github actions on every pull request. However, you can also run
-these locally. You will need to have [Hatch](https://www.python.org/) installed on your computer.
-To install Hatch, follow the instructions at this link for your operating system: <https://hatch.pypa.io/latest/install/>
+The tests are automatically run by GitHub Actions when a pull request changes files under
+`Formalisation(shacl)/**` or `tests/**`. However, you can also run these locally. You will need to
+have [Hatch](https://hatch.pypa.io/latest/) installed on your computer. To install Hatch, follow
+the instructions at this link for your operating system: <https://hatch.pypa.io/latest/install/>
 
-To run the tests, go to your commandline of choice and running `hatch run test`. You will get a test report then.
+To run the tests locally, run `hatch run test` from the repository root. The CI workflow currently
+runs `hatch run pytest`; both commands run the pytest-based testing harness.
 
 If any of the tests fail, the testing tool will show you which test failed and what the associated
 error message was.
